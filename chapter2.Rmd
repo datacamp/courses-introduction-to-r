@@ -1,0 +1,999 @@
+--- 
+courseTitle       : DEMO Introduction to R
+chapterTitle      : Vectors
+description       : We take you on a trip to Vegas, where you'll learn how to analyze your gambling results using vectors in R! After completing this chapter, you'll be able to create vectors in R, name them, select elements from them and compare different vectors. 
+framework : datamind
+mode: selfcontained
+--- 
+
+## Create a vector
+
+Feeling lucky? 
+
+You better be, because this chapter takes you on a trip to the City of Sins, also known as "Statisticians Paradise" ;-)
+
+Thanks to R and your new data-analytical skills, you will see how to uplift your performance at the tables, and fire off your career as a professional gambler. This chapter will show you how to easily keep track of your betting progress and how to do some simple analysis on past actions. Next Stop, Vegas Baby...VEGAS!!!!
+
+*** =instructions
+
+1. Let's look what you remember from last chapter. Assign to the variable `Vegas` the value `"Here we go!"`.
+
+*** =hint
+Type: `Vegas <- "Here we go!"`
+
+*** =sample_code
+```{r eval=FALSE}
+
+```
+
+*** =solution
+```{r eval=FALSE}
+Vegas <- "Here we go!"
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- DM.closedTest( "Vegas", 'c("Here we go!")' )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Create a vector (2)
+
+But hey, let's focus first! 
+
+On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimensional arrays that can hold numeric data, character data, or logical data. Simply said, a vector is a very simple tool to store data away. For example, your daily gains and losses in the casino's. 
+
+In R, you create a vector with the combine function `c()`. Between the brackets you place the vector elements separated with a comma. For example:
+- `numeric.vector`
+- `character.vector`
+- `boolean.vector`
+
+Once you have created these vectors in R, you can use them to do calculations.
+
+*** =instructions
+
+1. Complete the code such that boolean.vector contains the three elements: TRUE, FALSE,TRUE
+
+*** =hint
+Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean.vector` with the `<-` operator.
+
+*** =sample_code
+```{r eval=FALSE}
+numeric.vector <- c(1,10,49)
+character.vector <- c("a","b","c")
+boolean.vector
+
+numeric.vector
+character.vector
+boolean.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+numeric.vector <- c(1,10,49)
+character.vector <- c("a","b","c")
+boolean.vector <- c(TRUE,FALSE,TRUE)
+
+numeric.vector
+character.vector
+boolean.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- DM.closedTest(names="boolean.vector",values="c(TRUE,FALSE,TRUE)")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Create a vector (3)
+
+After one week in Las Vegas, and still zero Ferrari's in your garage, you decide it is time to start using your data analytical superpowers. 
+
+Before doing a first analysis, you decide to first collect the winnings and losses for the last week: 
+For `poker.vector`: 
+- On monday you won 140\$, 
+- tuesday you lost 50\$, 
+- wednesday you won 20\$, 
+- thursday you lost 120\$ 
+- and friday you won 240\$. 
+
+For `roulette.vector`: 
+- On monday you lost 24\$, 
+- tuesday you lost 50\$, 
+- wednesday you won 100\$, 
+- thursday you lost 350\$ and
+- friday you won 10\$. 
+
+You only played Poker and Roulette, since there was a delegation of paragnosts that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker.vector` and `roulette.vector`.
+
+*** =instructions
+
+1. Assign to the variable `roulette.vector` the winnings/losses for roulette.
+
+*** =hint
+To help you with this step, the editor already contains the code for creating `poker.vector`. Assign the correct values to `roulette.vector` based on the numbers in the assignment. Don't forget that losses are negative numbers.
+
+*** =sample_code
+```{r eval=FALSE} 
+# Poker winnings from Monday to Friday:
+poker.vector <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector  
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+```
+
+*** =sct
+```{r eval=FALSE}
+names <- c("poker.vector","roulette.vector")
+values <- list("c(140,-50,20,-120,240)", "c(-24,-50,100,-350,10)")
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Naming a vector
+
+As a data-analyst, it is extremely important to always have a clear view on the data you are using. Understanding what each element refers to is therefore key. 
+
+In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could indicate that in the vector itself. 
+
+You can give a name to the elements of a vector with the `names()` function. For example: `names(some.vector)`.
+
+*** =instructions
+
+1. Go ahead and assign the days of the week as names to the poker and roulette vector. In case you're not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday, Friday.
+
+*** =hint
+You can use `names( poker.vector )` to set the names of the variable `poker.vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by: `c("Monday","Tuesday","Wednesday","Thursday","Friday")`
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+#Add your code here!
+
+#Print the named vectors to the console
+poker.vector
+roulette.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+names(poker.vector) <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+
+#Print the named vectors
+poker.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","roulette.vector","names(poker.vector)","names(roulette.vector)")  
+values   <- list("poker.vector","roulette.vector",'c("Monday","Tuesday","Wednesday","Thursday","Friday")','c("Monday","Tuesday","Wednesday","Thursday","Friday")') 
+DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Naming a vector (2)
+
+If you want to become a good statistician, you have to become lazy! (If you are already lazy, feel proud, chances are high your one of those exceptional, natural-born statistical talents) 
+
+In the previous exercises you probably experienced it is boring and frustrating to type and retype information such as the days of the week. However, when looking at it from a higher perspective, there is a more efficient way to do this: assign the days of the week vector to a **variable**! 
+
+Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+
+*** =instructions
+
+1. Create a variable `days.vector` that contains the days Monday until Friday.
+2. Use that variable `days.vector` to set the names of `poker.vector` and `roulette.vector`.
+
+*** =hint
+You can use `names( poker.vector )` to set the names of the variable `poker.vector`. Make sure not to forget the parentheses around the days of the week.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Create the variable days:
+days.vector <-
+ 
+#Assign the names of the day to the roulette and poker vectors
+names(poker.vector)     <- 
+names(roulette.vector) <- 
+
+#Print the named vectors to the console
+poker.vector
+roulette.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Create the variable days:
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+
+#Assign the names of the day to the roulette and poker vectors
+names(poker.vector) <- days.vector
+names(roulette.vector) <- days.vector
+
+#Print the named vectors
+poker.vector
+roulette.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","roulette.vector","names(poker.vector)","names(roulette.vector)")  
+values   <- list("poker.vector","roulette.vector",'c("Monday","Tuesday","Wednesday","Thursday","Friday")','c("Monday","Tuesday","Wednesday","Thursday","Friday")') 
+DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Calculating total winnings
+
+Now that you have the poker and roulette winnings nicely as a named vector, you can start doing some data analytical magic. 
+
+You want to find out the following type of information:
+- How much has been your overall profit or loss per day of the week?
+- Have you lost money over the week in total?
+- Are you winning/losing money on poker or on roulette?
+
+To get the answer to this, you have to do arithmetic calculations on vectors. 
+
+Important to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let's try this first!
+
+*** =instructions
+
+1. Take the sum of the variables `A.vector` and `B.vector` and assign to `total.vector`.
+
+*** =hint
+Use the `+` operator to sum `A.vector` and `B.vector`. Use `<-` to assign the result to `total.vector`.
+
+*** =sample_code
+```{r eval=FALSE}
+A.vector   <- c(1,2,3)
+B.vector   <- c(4,5,6)
+
+# Take the sum of A.vector and B.vector
+total.vector <- 
+
+# Show me:
+total.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+A.vector   <- c(1,2,3)
+B.vector   <- c(4,5,6)
+
+# Take the sum of A.vector and B.vector
+total.vector <- A.vector + B.vector
+
+# Show me:
+total.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("A.vector","B.vector","total.vector")
+values   <- list("c(1,2,3)","c(4,5,6)","A.vector+B.vector")
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Calculating total winnings (2)
+
+So you understand how R does arithmetic calculations with vectors? 
+
+Then it is time to get those ferrari's in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit, is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+
+In R, this is just the sum of the `roulette.vector` and `poker.vector`.
+
+*** =instructions
+
+1. Assign to the variable `total.daily` how much you won or lost on each day in total (poker & roulette combined)
+
+*** =hint
+Just click the Run button on the right.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+# Up to you now:
+total.daily <- 
+
+# Show me:
+total.daily
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector   <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+# Up to you now:
+total.daily <- poker.vector + roulette.vector
+
+# Show me:
+total.daily
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","roulette.vector","total.daily")
+values   <- c("poker.vector","roulette.vector","poker.vector+roulette.vector")
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Calculating total winnings (3)
+
+Looking back at the previous analysis, it seemed that you had a mix of good and bad days. This is not what your ego expected, and you wonder if maybe there is a (very very very) tiny chance you've lost money over the week in total? 
+
+A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you lost/won with poker you do: `total.poker <- poker.vector`.
+
+*** =instructions
+
+1. Calculate the total amount of money you've won/lost with roulette and assign to the variable `total.roulette`.
+2. Now you have the totals for roulette and poker, you can easily calculate `total.week` (which is the sum of all gains and losses of the week)
+
+*** =hint
+Just click the Run button on the right.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+total.poker <- sum(poker.vector)
+# Up to you now:
+total.roulette <-
+total.week <- 
+
+# Show me:
+total.week
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+total.poker <- sum(poker.vector)
+# Up to you now:
+total.roulette <-  sum(roulette.vector)
+total.week <- total.roulette + total.poker
+
+#print variables
+total.week
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","roulette.vector","total.poker","total.roulette","total.week")
+values   <- c("poker.vector","roulette.vector","sum(poker.vector)","sum(roulette.vector)","total.poker+total.roulette")
+DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Comparing total winnings
+
+Ooops, it seems like you're losing money :-s. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+
+After a short brainstorm in your hotel's yacuzzi, you realize a possible explanation is that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+
+*** =instructions
+
+1. Calculate `total.poker` and `total.roulette`.
+2. Check if your total gains in poker are higher than in roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
+(Tip: You partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
+
+*** =hint
+To check if 6 is larger than 5, you type `6 > 5`. This returns a variable with data type Logical (`TRUE` or `FALSE`).
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+# Calculate total gains for poker and roulette
+total.poker <-
+total.roulette <-
+
+# Check if you realized higher total gains in poker then in roulette 
+answer <-
+
+#Show me the
+answer
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+
+# Name poker and roulette
+days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- days
+names(poker.vector) <- days
+
+# Calculate total gains for poker and roulette
+total.poker <- sum(poker.vector)
+total.roulette <- sum(roulette.vector)
+
+# Check if you realized higher total gains in poker then in roulette
+answer <- total.poker > total.roulette
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","roulette.vector","total.poker","total.roulette","answer")
+values   <- c("poker.vector","roulette.vector","sum(poker.vector)","sum(roulette.vector)","total.poker > total.roulette")
+DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Vector selection: the good times
+
+Your hunch seemed to be right, it appears that the game of poker is more your cup of tea than roulette. 
+
+Another possible route for investigation, is your performance at the beginning of the working week versus at the end of it? You did have a couple of Margarita cocktails at the end of the week... 
+
+Seeing the gains/losses of a certain day, or number of days, means in this case you only want to see a part/selection of the total vector. So our goal is to select specific elements of the vector. To select elements of a vector (and later on matrices, dataframes...) you always make use of square brackets. Between the square brackets, you indicate what elements to select: [...elements to select..] 
+
+For example, to select the first element of the vector, you type `poker.vector[1]`. To select the second element of the vector, you type `poker.vector[2]` etc.
+
+*** =instructions
+
+1. Assign to the variable `poker.wednesday` the poker results of wednesday.
+
+*** =hint
+Wednesday is the third element of `poker.vector`, and can thus be selected with `poker.vector[3]`.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variable based on a selection:
+poker.wednesday
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variable based on a selection:
+poker.wednesday <- poker.vector[3]
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","poker.wednesday")
+values   <- c("poker.vector","poker.vector[3]")
+DM.result   <- DM.closedTest( names, values )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Vector selection: the good times (2)
+
+What if you want to analyze your midweek results? 
+
+To select multiple elements at once, you put between square brackets a vector that indicates which elements to select. Suppose you want to select the first and the fifth day of the week, you use the vector `c(1,5)`. This gives: `poker.vector[c(1,5)]`. Thus, you select here the first and the fifth element of `poker.vector`.
+
+*** =instructions
+
+1. Assign to variable `poker.midweek` the poker results of Tuesday, Wednesday and Thursday.
+
+*** =hint
+Use the vector `c(2,3,4)` between square brackets to select the correct elements of `poker.vector`.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variable based on a selection:
+poker.midweek
+
+# Show me the
+poker.midweek
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variable based on a selection:
+poker.midweek <- poker.vector[ c(2,3,4) ]
+
+# Show me the
+poker.midweek
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","poker.midweek")
+values   <- c("poker.vector","poker.vector[ c(2,3,4) ]")
+DM.result   <- DM.closedTest( names, values )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+``` 
+
+
+---
+
+## Vector selection: the good times (3)
+
+Selecting multiple elements of poker.midweek with `c(2,3,4)` is repetitive, boring, and not very convenient. But many statisticians are lazy people by nature, so they created an easier way to do this: `c(2,3,4)` can be generated faster by `2:4`, which generates a vector with all natural numbers from 2 upto 4. 
+
+You can thus select the elements of poker.midweek by typing: `poker.vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 upto 4.
+
+*** =instructions
+
+1. Assign to `roulette.selection.vector` the results from Tuesday upto Friday by making use of `:`.
+
+*** =hint
+Assign to `roulette.selection.vector` a selection of `roulette.vector` by placing `2:5` between square brackets.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variables containing a selection:
+roulette.selection.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# Define new variable based on a selection:
+roulette.selection.vector <- roulette.vector[2:5]
+
+#Show me the 
+roulette.selection.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- DM.codeTest("roulette.vector[2:5]")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Vector selection: the good times (4)
+
+Another way to tackle the previous exercise is by making use of the element names (Monday, Tuesday...) instead of the numeric positions. For example, when typing `poker.vector["Monday"]`, the first element of `poker.vector` is selected since we gave it the name "Monday" previously. 
+
+Just as you did in the previous exercise with numerics, you can also use the element names to select multiple elements with: `poker.vector[c("Monday","Tuesday")]`.
+
+*** =instructions
+
+1. Calculate the average gain you obtained on poker during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average.midweek.gain`.
+
+*** =hint
+To get the mean of the vector poker, you can use `mean(poker.vector)`. Now, you don't need the mean of all poker elements, only of the first three days.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker.vector and roulette.vector
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+average.midweek.gain <- 
+
+# Show me the
+average.midweek.gain
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+average.midweek.gain <- mean( poker.vector[c("Monday","Tuesday","Wednesday")] )
+
+# Show me the
+average.midweek.gain
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","average.midweek.gain")
+values   <- c("poker.vector",'mean( poker.vector[c("Monday","Tuesday","Wednesday")] )')
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Selection by comparison - Step 1
+
+By making use of comparison operators, we can approach the previous question in a more pro-active way. 
+
+The comparison operators known to R are:
+- `<` for smaller than
+- `>` for larger than
+- `>=` for larger than or equal to
+- `==` for equal to each other
+- `!=` not equal to each other
+
+As seen in the previous chapter, stating `6 > 5` returns TRUE. The cool thing about R, is that you can use these comparison operators also on vectors. For example, the statement `c(4,5,6) > 5` returns: `FALSE FALSE TRUE`. In other words, you test for every element of the vector if the condition stated by the comparison operator is true or false. Don't take our word for it, try it in the console ;-).
+
+*** =instructions
+
+1. Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection.vector`.
+
+*** =hint
+To check for which days your poker gains are positive, R should check for each element of `poker.vector` whether it is larger than zero. `Some.vector > 0` is the way to tell R what you're after.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on poker?
+selection.vector <- 
+
+# Show me
+selection.vector
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on poker?
+selection.vector <- poker.vector > 0
+  
+# Show me
+selection.vector
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","selection.vector")
+values   <- c("poker.vector",'poker.vector > 0')
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Selection by comparison - Step 2
+
+Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+
+In the previous exercises you used: `selection.vector <- poker.vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+
+You can select the desired elements, by putting `selection.vector` between square brackets when selecting from `poker.vector`. This works, because by default R only selects those elements where selection.vector is TRUE. For `selection.vector` this means where `poker.vector > 0`.
+
+*** =instructions
+
+1. Assign to variable `poker.winning.days`, the amounts you won on the profitable days.
+
+*** =hint
+Use `selection.vector` to select the desired elements from `poker.vector`, and assign the result to `poker.winning.days`.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on poker?
+selection.vector <- poker.vector > 0
+# Select from poker.vector these days:
+poker.winning.days <- 
+  
+# Show me
+poker.winning.days
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on poker?
+selection.vector <- poker.vector > 0
+# Select from poker.vector these days:
+poker.winning.days <- poker.vector[ selection.vector ]
+  
+# Show me
+poker.winning.days
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("poker.vector","poker.winning.days")
+values   <- c("poker.vector",'poker.vector[ selection.vector ]')
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Advanced selection
+
+Just like you did for poker, you also want those days where you realized a positive return for roulette.
+
+*** =instructions
+
+1. Assign to variable `roulette.winning.days`, how much you made on the days you ended positively for roulette.
+
+*** =hint
+Have a look at the previous exercise, and do the similar analysis but now for `roulette.vector`.
+
+*** =sample_code
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on roulette?
+
+# Select from roulette.vector these days:
+  
+# Show me
+roulette.winning.days
+```
+
+*** =solution
+```{r eval=FALSE}
+# Poker winnings from Monday to Friday:
+poker.vector    <- c(140,-50,20,-120,240)
+# Roulette winnings form Monday to Friday:
+roulette.vector <- c(-24,-50,100,-350,10)
+# Name poker and roulette
+days.vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette.vector) <- names(poker.vector) <- days.vector
+
+# What days of the week did you make money on roulette?
+selection.vector <- roulette.vector > 0
+# Select from roulette.vector these days:
+roulette.winning.days <- roulette.vector[ selection.vector ]
+  
+# Show me
+roulette.winning.days
+```
+
+*** =sct
+```{r eval=FALSE}
+names    <- c("roulette.vector","roulette.winning.days")
+values   <- c("roulette.vector",'roulette.vector[ selection.vector ]')
+DM.result   <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```

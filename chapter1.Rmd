@@ -1,0 +1,461 @@
+--- 
+courseTitle       : DEMO Introduction to R 
+chapterTitle      : Intro to basics
+description       : In this chapter you'll take your first steps with R. You'll learn how to use the console as a calculator, assign variables and you'll get to know the basic data types in R. Let's get started!
+framework : datamind
+mode: selfcontained
+---
+
+## How it works
+
+In the **editor** on the right you will have to type your code for solving the exercises. Now it just contains `3+4` and `demo("graphics")`. 
+
+Since understanding and structuring long parts of code is not always straight-forward, R makes use of the `#` sign to add comments. Just like Twitter! Comments are not run as R-code, so they will not influence your result. 
+
+The ouput of you R code is shown in the **console** in the lower right corner, while graphs will be shown in the upper right corner.
+
+*** =instructions
+
+1. Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form R can thus be used as a calculator or to generate plots, but there's much more ;-).
+2. Use the arrows to browse through some cool visualizations generated with R, and shown here in upper right corner. Note that you can make the graph window larger, if you would like to have a closer look.
+
+*** =hint
+Just click the Submit Answer button on the right.
+
+*** =sample_code
+```{r eval=FALSE}
+# This  is the editor and the part below the white line is called the console.
+
+# The  hashtag is used to add comments
+
+# Show some demo graphs generated with R
+demo("graphics")
+
+# Calculate 3+4
+3+4
+```
+
+*** =solution
+```{r eval=FALSE}
+#Just click the Submit Answer button!
+
+# This  is the editor and the part below the white line is called the console.
+
+# The  hashtag is used to add comments
+
+# Calculate 3+4
+3+4
+
+# Show some demo graphs generated with R
+demo("graphics")
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- TRUE
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Little arithmetics with R
+
+In its most basic form, R can be used as a simple calculator. We'll have a look at the following arithmetic operators:
+
+- Addition: `+`
+- Substraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Exponentiation: `^`
+- Modulo: `%%`
+
+While the first 4 operators speak for themself, the last two might need some explaining:
+- the ^ operator takes the number in front of it to the power of the number behind it, for example `3^2` is 9
+- the modulo returns the remainder of the division of the number left to it by the number on its right-hand side, for example 5 modulo 3 is found by: `5%%3` which is 2.
+
+*** =instructions
+
+1. Type `2^5` in the editor to calculate 2 to the power 5.
+2. Type `17%%4` to calculate 17 modulo 4.
+3. Click Submit Answer and have a look at the R output in the console.
+4. Note how we use the `#` symbol to give comments on certain lines.
+
+*** =hint
+Just follow the instructions, this should be easy ;-).
+
+*** =sample_code
+```{r eval=FALSE}
+# An addition
+5+5 
+
+# A substraction
+5-5 
+
+# A multiplication
+3*5
+
+ # A division
+(5+5)/2 
+
+# Exponentiation
+# Add your code here!
+
+# Modulo
+# Add your code here!
+```
+
+*** =solution
+```{r eval=FALSE}
+# An addition
+5+5 
+
+# A substraction
+5-5 
+
+# A multiplication
+3*5
+
+ # A division
+(5+5)/2 
+
+# Exponentiation
+# Add your code here!
+2^5
+# Modulo
+# Add your code here!
+17%%4
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- DM.codeTest( c("17%%4","2^5") )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Variable assignment
+
+When you want to use R for more complex calculations, you will often make use of **Variables**. 
+
+A variable allows you to store a value (e.g. 4) or object (e.g. a function description) in R. Then later you can use this variable's name to easily access the value or object that is stored within this variable. Further in this course, you'll see that this way of working will allow you to work in a more structured and rapid way. 
+
+You can assign a value 4 to a variable `my.variable` with: `my.variable`
+
+*** =instructions
+
+1. Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer and see when asked to print `x` the value 42 appears.
+
+*** =hint
+Just click the Run button on the right.
+
+*** =sample_code
+```{r eval=FALSE}
+# Assign the value 42 to x
+x <- 
+
+# Print out the value of the variable answer
+x
+```
+
+*** =solution
+```{r eval=FALSE}
+# Assign the value 42 to X
+x <- 42
+
+# Print out the value of the variable answer
+x
+```
+
+*** =sct
+```{r eval=FALSE}
+DM.result <- DM.codeTest( "x <- 42" )
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Variable assignment (2)
+
+Suppose you have a fruit basket with 5 apples. As a data analyst in training, you want to store the amount of apples in a variable with the name `my.apples`. 
+
+Remember, if you want to assign a number or object to a variable in R, you can make use of `<-`
+
+*** =instructions
+
+1. Type the following code: `my.apples <- 5` to assign the value 5 to `my.apples`.
+2. Type: `my.apples` below the second comment.
+3. Click Submit Answer, and look at the console: we see that the number 5 is printed. So R now links the variable `my.apples` to the value 5.
+
+*** =hint
+Just click the Run button on the right.
+
+*** =sample_code
+```{r eval=FALSE}
+# Assign the value 5 to the variable called my.apples
+
+# Print out the value of the variable answer
+```
+
+*** =solution
+```{r eval=FALSE}
+# Assign the value 5 to the variable called my.apples
+my.apples <- 5
+
+# Print out the value of the variable answer
+my.apples
+```
+
+*** =sct
+```{r eval=FALSE}
+names  <- "my.apples"
+values  <- 5
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Variable assignment (3)
+
+Every tasty fruit basket needs oranges, you decide to add 6 oranges. As a good data analyst your reflex is to immediatly create the variable `my.oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Thanks to your variables, you can now code this in an easy and clear way: `my.apples + my.oranges`.
+
+*** =instructions
+
+1. Assign to `my.oranges` the value 6.
+2. R allows you to combine the variables `my.apples` and `my.oranges` into a new variable `my.fruit`. Create this new variable `my.fruit`, which is the total amount of fruits in your fruit basket.
+
+*** =hint
+`my.fruit` is just the sum of `my.apples` and `my.oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my.fruit`.`
+
+*** =sample_code
+```{r eval=FALSE}
+# Assign a value to the variable called my.apples and my.oranges
+my.apples <- 5
+
+# Add these two variables together and print the result
+
+# Create the variable my.fruit
+```
+
+*** =solution
+```{r eval=FALSE}
+# Assign a value to the variable called my.apples and my.oranges
+my.apples  <- 5
+my.oranges <- 6
+
+# Add these two variables together and print the DM.DM.DM.DM.DM.result
+my.apples + my.oranges
+
+# Create the variable my.fruit by adding my.apples and my.oranges
+my.fruit <- my.apples + my.oranges
+```
+
+*** =sct
+```{r eval=FALSE}
+names  <- c("my.apples","my.oranges","my.fruit")
+values <- c(5,6,"my.apples+my.oranges")
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+---
+
+## Apples and oranges
+
+Common knowledge tells you not to add apples with oranges. But hey, that's what we just did, didn't we :-)? The `my.apples` and `my.oranges` variables both contained a number in the previous exercise. The `+` operator can work with what 's called numeric variables in R. Suppose we really tried to add "apples" and "oranges", and assigned a text value to the variable `my.oranges`. As you can see in the editor on the right. The assigment of the `my.fruit` variable now contains the addition of a numeric and a character variable, which is not possible.
+
+*** =instructions
+
+1. Click Submit Answer and read the error message. Make sure to understand why this didn't work.
+2. Adjust the code such that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+
+*** =hint
+You have to assign the numeric value '6' to the my.oranges variable instead of the character value "six". Note how the quotation mark is used to indicate that "six" is a character.
+
+*** =sample_code
+```{r eval=FALSE}
+my.apples <- 5  # Assign a value to the variable called my.apples
+my.apples       # Print out the value of answer
+
+#Add a character
+my.oranges <- "six" 
+my.oranges 
+
+# New variable that contains total amount of fruit.
+my.fruit   <- my.apples + my.oranges 
+my.fruit
+```
+
+*** =solution
+```{r eval=FALSE}
+my.apples <- 5  # Assign a value to the variable called my.apples
+my.apples       # Print out the value of answer
+
+my.oranges <- 6 #Add a numeric!
+my.oranges 
+
+# New variable that contains total amount of fruit.
+my.fruit   <- my.apples + my.oranges 
+my.fruit
+```
+
+*** =sct
+```{r eval=FALSE}
+names  <- c("my.apples","my.oranges","my.fruit")
+values <- c(5,6,"my.apples+my.oranges")
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## Basic data types in R
+
+R works with numerous data types. Some of the most basic types to get started are:
+
+- Decimals values like 4.5 are called **numerics **
+- Natural numbers like 4 are called **integers**
+- Boolean values (TRUE or FALSE) are called **logical**
+- Text (or string) values are called **character**
+
+Note how the quotation marks on the right indicate that "some text" is a character.
+
+*** =instructions
+Change the value of:
+
+1. `my.numeric` variable to 42
+2. `my.character` variable to "forty-two". Note: the quotation marks indicate that "forty-two" is a character.
+3. `my.logical` variable to FALSE
+
+Note that R is case sensitive!
+
+*** =hint
+Replace in the editor the values with what's given in the exercise. For example: 
+`my.numeric <- 42`
+assigns the value 42 to the variable `my.numeric`.
+
+*** =sample_code
+```{r eval=FALSE}
+# What's the answer to the universe?
+my.numeric <- 42.5
+
+# The quotation marks indicate that the variable is of type character
+my.character <- "some text"
+
+my.logical <- TRUE
+```
+
+*** =solution
+```{r eval=FALSE}
+# What's the answer to the universe?
+my.numeric <- 42
+
+# The quotation marks indicate that the variable is of type character
+my.character <- "forty-two"
+
+my.logical <- FALSE
+```
+
+*** =sct
+```{r eval=FALSE}
+names  <- c("my.numeric","my.character","my.logical")
+values <- c(42,"c('forty-two')",FALSE)
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
+
+
+---
+
+## What's that data type?
+
+Remember when you added `5 + "six"` and got an error due to a mismatch in data types? You avoid such embarrassing situations by checking the data type of a variable upfront. You can do this as follow: `class(some.variable.name)`
+
+*** =instructions
+
+1. Complete the code in the editor and assign to `datatype1`, `datatype2` and `datatype3` the data type (or object class) of respectively the variables `my.numeric`, `my.character` and `my.logical`.
+
+*** =hint
+You can find out the data type of the `my.numeric` variable for example by typing: `datatype1 <- class("my.numeric")` What you should do is similar for `my.character` and `my.logical`. 
+
+*** =sample_code
+```{r eval=FALSE}
+# Declare variables of different types:
+my.numeric <- 42
+my.character <- "forty-two"
+my.logical <- FALSE
+
+#Check which type these variables have:
+datatype1 <- 
+datatype2  
+datatype3 
+
+#Print the types:
+datatype1
+datatype2
+datatype3
+```
+
+*** =solution
+```{r eval=FALSE}
+# Declare variables of different types:
+my.numeric <- 42
+my.character <- "forty-two"
+my.logical <- FALSE
+
+#Check which type these variables have:
+datatype1 <- class(my.numeric)
+datatype2 <- class(my.character)
+datatype3 <- class(my.logical)
+
+#Print the types:
+datatype1
+datatype2
+datatype3
+```
+
+*** =sct
+```{r eval=FALSE}
+names  <- c("datatype1","datatype2","datatype3")
+values <- c("c('numeric')","c('character')","c('logical')") 
+DM.result <- DM.closedTest(names,values)
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+
+```
