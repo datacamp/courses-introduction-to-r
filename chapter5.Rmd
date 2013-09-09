@@ -12,7 +12,7 @@ You may remember from the chapter about matrices that all the elements you put i
 
 However, when doing a market research survey you often have questions such as:
 - 'Are your married?' or a 'yes/no' questions (= boolean data type)
-- 'How old are your?' (= numeric data type)
+- 'How old are you?' (= numeric data type)
 - 'What is your opinion on this product?' or other 'open- ended' questions(= character data type)
 - ...
 
@@ -54,7 +54,7 @@ DM.result <- TRUE
 
 Wow, that's a lot of cars! 
 
-Working with large datasets is not uncommon in data analysis. When working with (extremely) large datasets and data frames, the first important task of you, the data analyst, is to have a clear understanding of its structure and main elements. Therefore, it is often usefull to show only a small part of the entire dataset. This instead of printing the entire dataset every time you need it. 
+Working with large datasets is not uncommon in data analysis. When working with (extremely) large datasets and data frames, the first important task you, the data analyst, have is to develop a clear understanding of its structure and main elements. Therefore, it is often usefull to show only a small part of the entire dataset. This instead of printing the entire dataset every time you need it. 
 
 So how to do this in R?
 - The function `head()` enables you to show the first observations of a data frame (or any R object you pass to it).

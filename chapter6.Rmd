@@ -214,12 +214,12 @@ DM.result <- closed_test(name,value)
 
 Being a huge movie fan (remember your job @ LucasFilms), you decide to start storing information on good movies with the help of lists. 
 
-Start by creating a list for the movie "The shining". We already created the variables `actors` and `reviews` in your R workspace. Type `actors` or `reviews` in the console to check these.
+Start by creating a list for the movie "The Shining". We already created the variables `actors` and `reviews` in your R workspace. Type `actors` or `reviews` in the console to check these.
 
 *** =instructions
 
 1. Create the variable `shining.list`. The list contains the following components:
-  - moviename: "The shining"
+  - moviename: "The Shining"
   - actors: a vector with main actors names
   - reviews: a data frame containing some reviews
 
@@ -258,7 +258,7 @@ reviews     <- data.frame(scores,sources,comments)
 
 ---
 
-## Selecting elements from a lists
+## Selecting elements from a list
 
 Often, your list will be build out of numerous elements and components. Therfore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
 

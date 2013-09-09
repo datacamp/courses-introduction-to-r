@@ -12,7 +12,7 @@ In this chapter you dive into the wonderful world of **factors**.
 
 The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable on the other hand, can correspond to an infinite number of values. 
 
-It is important that R knows whether it's dealing with a continuous or a categorical variable. This, since the statistical models you will develop in the future threat both in a different way. (You will see later why this is the case).
+It is important that R knows whether it's dealing with a continuous or a categorical variable. This, since the statistical models you will develop in the future treat both in a different way. (You will see later why this is the case).
 
 A good example of a categorical variable, is the variable 'Gender'. As you hopefully know by now, a human individual can either be "Male" or "Female". So "Male" and "Female" are here the (only two) values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
 

@@ -239,7 +239,7 @@ DM.result <- closed_test(names,values)
 
 ## Adding a column for the Worlwide box office (2)
 
-In the previous exercise, you calculated the vector that contained the worldwide boxoffice recette for each of the three star wars movies. However, this vector is not yet part of `star.wars.matrix`...
+In the previous exercise, you calculated the vector that contained the worldwide boxoffice receipt for each of the three star wars movies. However, this vector is not yet part of `star.wars.matrix`...
 
 When you want to add a column or multiple columns to a matrix. A good way to do this is `cbind()`, which merges matrices and/or vectors together by column. For example: `new.combined.matrix <- cbind( matrix1, matrix2, vector1, ... )`.
 
@@ -260,7 +260,7 @@ col.titles     <-  c("US","non-US")
 star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,dimnames=list(movie.names,col.titles))
 worldwide.vector <- rowSums(star.wars.matrix)
 
-# Bind the new variabel total.per.movie as a column to star.wars
+# Bind the new variable total.per.movie as a column to star.wars
 new.star.wars.matrix <- 
 
 # Show me the
@@ -280,7 +280,7 @@ star.wars.matrix      <- matrix(box.office.all, nrow=3,byrow=TRUE,dimnames=list(
 worldwide.vector <-  rowSums(star.wars.matrix);
 worldwide.vector # Print worldwide revenue per movie
 
-# Bind the new variabel total.per.movie as a column to star.wars
+# Bind the new variable total.per.movie as a column to star.wars
 new.star.wars.matrix <- cbind( star.wars.matrix, worldwide.vector )
 
 # Show me the:
