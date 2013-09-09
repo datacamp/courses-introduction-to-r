@@ -135,7 +135,7 @@ my.list
 ```{r eval=FALSE}
 names  <- c("my.vector","my.matrix","my.df","my.list")
 values <- c("my.vector","my.matrix","my.df","list(my.vector,my.matrix,my.df)")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -199,7 +199,7 @@ my.list
 ```{r eval=FALSE}
 name   <- "my.list"
 value  <- "list(VECTOR=my.vector,MATRIX=my.matrix,DATAFRAME=my.df)"
-DM.result <- DM.closedTest(name,value)
+DM.result <- closed_test(name,value)
 ```
 
 *** =pre_exercise_code
@@ -243,7 +243,7 @@ shining.list <- list(moviename="The Shining",actors=actors, reviews=reviews )
 ```{r eval=FALSE}
 names     <- c("actors","reviews","shining.list")
 values    <- c("actors","reviews","list(moviename='The Shining',actors=actors, reviews=reviews )")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -287,7 +287,7 @@ shining.list <- list(moviename="The Shining",actors=actors, reviews=reviews )
 last.actor    <- 
 second.review <- 
 
-# Show DM.results: 
+# Show results: 
 last.actor
 second.review
 ```
@@ -301,7 +301,7 @@ shining.list <- list(moviename="The Shining",actors=actors, reviews=reviews )
 last.actor    <- shining.list$actors[ length(shining.list$actors) ]
 second.review <- shining.list$reviews[2,]
 
-# Show DM.results: 
+# Show results: 
 last.actor
 second.review
 ```
@@ -310,7 +310,7 @@ second.review
 ```{r eval=FALSE}
 names  <- c("shining.list","last.actor","second.review")
 values <- c("list(moviename='The Shining',actors=actors, reviews=reviews )","shining.list$actors[ length(shining.list$actors) ]","shining.list$reviews[2,]")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -383,7 +383,7 @@ str(shining.list)
 ```{r eval=FALSE}
 name   <- "shining.list"
 value  <- "list(moviename='The Shining',actors=actors, reviews=reviews, year=1980 )"
-DM.result <- DM.closedTest(name,value)
+DM.result <- closed_test(name,value)
 ```
 
 *** =pre_exercise_code

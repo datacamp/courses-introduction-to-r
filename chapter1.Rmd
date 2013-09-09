@@ -133,7 +133,7 @@ Just follow the instructions, this should be easy ;-).
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest( c("17%%4","2^5") )
+DM.result <- code_test( c("17%%4","2^5") )
 ```
 
 *** =pre_exercise_code
@@ -179,7 +179,7 @@ x
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest( "x <- 42" )
+DM.result <- code_test( "x <- 42" )
 ```
 
 *** =pre_exercise_code
@@ -225,7 +225,7 @@ my.apples
 ```{r eval=FALSE}
 names  <- "my.apples"
 values  <- 5
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -264,7 +264,7 @@ my.apples <- 5
 my.apples  <- 5
 my.oranges <- 6
 
-# Add these two variables together and print the DM.DM.DM.DM.DM.result
+# Add these two variables together and print the result
 my.apples + my.oranges
 
 # Create the variable my.fruit by adding my.apples and my.oranges
@@ -275,7 +275,7 @@ my.fruit <- my.apples + my.oranges
 ```{r eval=FALSE}
 names  <- c("my.apples","my.oranges","my.fruit")
 values <- c(5,6,"my.apples+my.oranges")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -328,7 +328,7 @@ my.fruit
 ```{r eval=FALSE}
 names  <- c("my.apples","my.oranges","my.fruit")
 values <- c(5,6,"my.apples+my.oranges")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -390,7 +390,7 @@ my.logical <- FALSE
 ```{r eval=FALSE}
 names  <- c("my.numeric","my.character","my.logical")
 values <- c(42,"c('forty-two')",FALSE)
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -452,7 +452,7 @@ datatype3
 ```{r eval=FALSE}
 names  <- c("datatype1","datatype2","datatype3")
 values <- c("c('numeric')","c('character')","c('logical')") 
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code

@@ -37,7 +37,7 @@ matrix(1:9, byrow=TRUE, nrow=3)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest("matrix(1:9, byrow=TRUE, nrow=3)")
+DM.result <- code_test("matrix(1:9, byrow=TRUE, nrow=3)")
 ```
 
 *** =pre_exercise_code
@@ -97,7 +97,7 @@ star.wars.matrix
 names    <- "star.wars.matrix"
 values   <- 'matrix( c(new.hope,empire.strikes,return.jedi), 
                             nrow=3, byrow=TRUE)'
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -165,7 +165,7 @@ star.wars.matrix
 ```{r eval=FALSE}
 names  <- c( "star.wars.matrix","colnames(star.wars.matrix)", "rownames(star.wars.matrix)" )
 values <- list( "star.wars.matrix", 'c("US","non-US")', 'c("A new hope", "The empire strikes back", "Return of the Jedi")' )
-DM.result   <- DM.closedTest(names,values,check.existence=c(T,F,F))
+DM.result   <- closed_test(names,values,check.existence=c(T,F,F))
 ```
 
 *** =pre_exercise_code
@@ -226,7 +226,7 @@ worldwide.vector
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","worldwide.vector")
 values <- c("star.wars.matrix","rowSums(star.wars.matrix)")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -291,7 +291,7 @@ new.star.wars.matrix
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","worldwide.vector","new.star.wars.matrix")
 values <- c("star.wars.matrix","rowSums(star.wars.matrix)","cbind(star.wars.matrix,worldwide.vector)")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -345,7 +345,7 @@ all.wars.matrix
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","star.wars.matrix2","all.wars.matrix")
 values  <- c("star.wars.matrix","star.wars.matrix2","rbind(star.wars.matrix,star.wars.matrix2)")
-DM.result  <- DM.closedTest(names,values)
+DM.result  <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -398,7 +398,7 @@ total.revenue.vector <- colSums( all.wars.matrix )
 ```{r eval=FALSE}
 names  <- c("all.wars.matrix","total.revenue.vector")
 values <- c("all.wars.matrix","colSums( all.wars.matrix )")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -495,7 +495,7 @@ non.us.some
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","non.us.all","non.us.some")
 values <- c("star.wars.matrix","mean( star.wars.matrix[,2] )","mean( star.wars.matrix[1:2,2] )") 
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -556,7 +556,7 @@ visitors
 ```{r eval=FALSE}
 names  <- c("star.wars.matrix","visitors")
 values <- c("star.wars.matrix","star.wars.matrix/5") 
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -632,7 +632,7 @@ names  <- c("star.wars.matrix","ticket.prices.matrix","visitors",
             "average.us.visitor","average.non.us.visitor")
 values <- c("star.wars.matrix","ticket.prices.matrix", "star.wars.matrix/ticket.prices.matrix",
             "mean( visitors[,1] )","mean( visitors[,2] )") 
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code

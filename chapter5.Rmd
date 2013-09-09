@@ -81,7 +81,7 @@ head(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest("head(mtcars)")
+DM.result <- code_test("head(mtcars)")
 ```
 
 *** =pre_exercise_code
@@ -124,7 +124,7 @@ str(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest("str(mtcars)")
+DM.result <- code_test("str(mtcars)")
 ```
 
 *** =pre_exercise_code
@@ -184,7 +184,7 @@ str(planets.df)
 ```{r eval=FALSE}
 names <- "planets.df" 
 values <- list("data.frame(planets,type,diameter,rotation,rings)" )
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -218,7 +218,7 @@ str(planets.df)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest("str(planets.df)")
+DM.result <- code_test("str(planets.df)")
 ```
 
 *** =pre_exercise_code
@@ -280,7 +280,7 @@ furthest.planets.df
 ```{r eval=FALSE}
 names  <- c("planets.df","closest.planets.df","furthest.planets.df")
 values <- c("planets.df","planets.df[1:3,]","planets.df[6:8,]")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -332,7 +332,7 @@ furthest.planets.diameter
 ```{r eval=FALSE}
 names  <- c("planets.df","furthest.planets.diameter")
 values <- c("planets.df","planets.df[3:8,'diameter']")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -379,7 +379,7 @@ rings.vector <- planets.df$rings
 ```{r eval=FALSE}
 names  <- c("planets.df","rings.vector")
 values <- c("planets.df","planets.df$rings")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -442,7 +442,7 @@ planets.with.rings.df
 ```{r eval=FALSE}
 names  <- c("planets.df","rings.vector","planets.with.rings.df")
 values <- c("planets.df","planets.df$rings", "planets.df[rings.vector,]")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -498,7 +498,7 @@ small.planets.df
 ```{r eval=FALSE}
 names  <- c("planets.df","small.planets.df")
 values  <-  c("planets.df","subset(planets.df, subset = planets.df$diameter < 1)")
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -601,7 +601,7 @@ largest.first.df
 ```{r eval=FALSE}
 names  <- c("planets.df","positions","largest.first.df")
 values <- c("planets.df"," order(planets.df$diameter, decreasing=TRUE)"," planets.df[positions,]" )
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code

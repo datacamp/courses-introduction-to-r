@@ -33,7 +33,7 @@ Vegas <- "Here we go!"
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.closedTest( "Vegas", 'c("Here we go!")' )
+DM.result <- closed_test( "Vegas", 'c("Here we go!")' )
 ```
 
 *** =pre_exercise_code
@@ -88,7 +88,7 @@ boolean.vector
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.closedTest(names="boolean.vector",values="c(TRUE,FALSE,TRUE)")
+DM.result <- closed_test(names="boolean.vector",values="c(TRUE,FALSE,TRUE)")
 ```
 
 *** =pre_exercise_code
@@ -149,7 +149,7 @@ roulette.vector <- c(-24,-50,100,-350,10)
 ```{r eval=FALSE}
 names <- c("poker.vector","roulette.vector")
 values <- list("c(140,-50,20,-120,240)", "c(-24,-50,100,-350,10)")
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -209,7 +209,7 @@ poker.vector
 ```{r eval=FALSE}
 names    <- c("poker.vector","roulette.vector","names(poker.vector)","names(roulette.vector)")  
 values   <- list("poker.vector","roulette.vector",'c("Monday","Tuesday","Wednesday","Thursday","Friday")','c("Monday","Tuesday","Wednesday","Thursday","Friday")') 
-DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
+DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
 ```
 
 *** =pre_exercise_code
@@ -280,7 +280,7 @@ roulette.vector
 ```{r eval=FALSE}
 names    <- c("poker.vector","roulette.vector","names(poker.vector)","names(roulette.vector)")  
 values   <- list("poker.vector","roulette.vector",'c("Monday","Tuesday","Wednesday","Thursday","Friday")','c("Monday","Tuesday","Wednesday","Thursday","Friday")') 
-DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
+DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
 ```
 
 *** =pre_exercise_code
@@ -339,7 +339,7 @@ total.vector
 ```{r eval=FALSE}
 names    <- c("A.vector","B.vector","total.vector")
 values   <- list("c(1,2,3)","c(4,5,6)","A.vector+B.vector")
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -407,7 +407,7 @@ total.daily
 ```{r eval=FALSE}
 names    <- c("poker.vector","roulette.vector","total.daily")
 values   <- c("poker.vector","roulette.vector","poker.vector+roulette.vector")
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -478,7 +478,7 @@ total.week
 ```{r eval=FALSE}
 names    <- c("poker.vector","roulette.vector","total.poker","total.roulette","total.week")
 values   <- c("poker.vector","roulette.vector","sum(poker.vector)","sum(roulette.vector)","total.poker+total.roulette")
-DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
+DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
 ```
 
 *** =pre_exercise_code
@@ -551,7 +551,7 @@ answer <- total.poker > total.roulette
 ```{r eval=FALSE}
 names    <- c("poker.vector","roulette.vector","total.poker","total.roulette","answer")
 values   <- c("poker.vector","roulette.vector","sum(poker.vector)","sum(roulette.vector)","total.poker > total.roulette")
-DM.result   <- DM.closedTest(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
+DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
 ```
 
 *** =pre_exercise_code
@@ -611,7 +611,7 @@ poker.wednesday <- poker.vector[3]
 ```{r eval=FALSE}
 names    <- c("poker.vector","poker.wednesday")
 values   <- c("poker.vector","poker.vector[3]")
-DM.result   <- DM.closedTest( names, values )
+DM.result   <- closed_test( names, values )
 ```
 
 *** =pre_exercise_code
@@ -673,7 +673,7 @@ poker.midweek
 ```{r eval=FALSE}
 names    <- c("poker.vector","poker.midweek")
 values   <- c("poker.vector","poker.vector[ c(2,3,4) ]")
-DM.result   <- DM.closedTest( names, values )
+DM.result   <- closed_test( names, values )
 ```
 
 *** =pre_exercise_code
@@ -730,7 +730,7 @@ roulette.selection.vector
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest("roulette.vector[2:5]")
+DM.result <- code_test("roulette.vector[2:5]")
 ```
 
 *** =pre_exercise_code
@@ -790,7 +790,7 @@ average.midweek.gain
 ```{r eval=FALSE}
 names    <- c("poker.vector","average.midweek.gain")
 values   <- c("poker.vector",'mean( poker.vector[c("Monday","Tuesday","Wednesday")] )')
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -859,7 +859,7 @@ selection.vector
 ```{r eval=FALSE}
 names    <- c("poker.vector","selection.vector")
 values   <- c("poker.vector",'poker.vector > 0')
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -927,7 +927,7 @@ poker.winning.days
 ```{r eval=FALSE}
 names    <- c("poker.vector","poker.winning.days")
 values   <- c("poker.vector",'poker.vector[ selection.vector ]')
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -990,7 +990,7 @@ roulette.winning.days
 ```{r eval=FALSE}
 names    <- c("roulette.vector","roulette.winning.days")
 values   <- c("roulette.vector",'roulette.vector[ selection.vector ]')
-DM.result   <- DM.closedTest(names,values)
+DM.result   <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code

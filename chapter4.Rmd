@@ -36,7 +36,7 @@ theory <- "R uses factors for categorical variables!"
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.closedTest("theory","c('R uses factors for categorical variables!')")
+DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
 ```
 
 *** =pre_exercise_code
@@ -82,7 +82,7 @@ factor.gender.vector
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.closedTest( "factor.gender.vector", "factor(gender.vector)" )
+DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
 ```
 
 *** =pre_exercise_code
@@ -182,7 +182,7 @@ factor.survey.vector
 ```{r eval=FALSE}
 names  <- c("survey.vector","factor.survey.vector","levels(factor.survey.vector)") 
 values <- c("survey.vector","factor.survey.vector","c('Female','Male')") 
-DM.result <- DM.closedTest(names,values,check.existence=c(T,T,F))
+DM.result <- closed_test(names,values,check.existence=c(T,T,F))
 ```
 
 *** =pre_exercise_code
@@ -235,7 +235,7 @@ summary(factor.survey.vector)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- DM.codeTest(c("summary(survey.vector)","summary(factor.survey.vector)"))
+DM.result <- code_test(c("summary(survey.vector)","summary(factor.survey.vector)"))
 ```
 
 *** =pre_exercise_code
@@ -334,7 +334,7 @@ speed.vector <- c("Fast","Slow","Slow","Fast","Ultra-fast")
 ```{r eval=FALSE}
 names <- "speed.vector"
 values <- 'c("Fast","Slow","Slow","Fast","Ultra-fast")'
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -382,7 +382,7 @@ summary(factor.speed.vector) # R prints automagically in the right order
 ```{r eval=FALSE}
 names  <- "factor.speed.vector"
 values <- 'factor(speed.vector, ordered=TRUE,levels=c("Slow","Fast","Ultra-fast") )'
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
@@ -431,7 +431,7 @@ compare.them
 ```{r eval=FALSE}
 names <- "compare.them" 
 values <- "speed.factor.vector[2] > speed.factor.vector[5]" 
-DM.result <- DM.closedTest(names,values)
+DM.result <- closed_test(names,values)
 ```
 
 *** =pre_exercise_code
