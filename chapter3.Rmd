@@ -1,5 +1,5 @@
 --- 
-courseTitle       : DEMO Introduction to R
+courseTitle       : Introduction to R v2
 chapterTitle      : Matrices
 description       : In this chapter, you'll learn how to work with matrices in R. By the end of the chapter you'll be able to create matrices, and understand how you can do basic computations with them. You'll analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
 framework : datamind 
@@ -245,10 +245,10 @@ When you want to add a column or multiple columns to a matrix. A good way to do 
 
 *** =instructions
 
-1. Add `worldwide.vector` as a new column to the `star.wars matrix` and assign to `new.star.wars.matrix`. Use the `cbind()` function.
+1. Add `worldwide.vector` as a new column to the `star.wars matrix` and assign to `all.wars.matrix`. Use the `cbind()` function.
 
 *** =hint
-Bind the `worldwide.vector` to the `star.wars.matrix` with the `cbind()` function, with `cbind( the.correct.matrix, the.correct.vector)` and assign to `new.star.wars.matrix`.
+Bind the `worldwide.vector` to the `star.wars.matrix` with the `cbind()` function, with `cbind( the.correct.matrix, the.correct.vector)` and assign to `all.star.wars.matrix`.
 
 *** =sample_code
 ```{r eval=FALSE}
@@ -261,10 +261,10 @@ star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,dimnames=list
 worldwide.vector <- rowSums(star.wars.matrix)
 
 # Bind the new variable total.per.movie as a column to star.wars
-new.star.wars.matrix <- 
+all.wars.matrix <- 
 
 # Show me the
-new.star.wars.matrix
+all.wars.matrix
 ```
 
 *** =solution
@@ -281,15 +281,15 @@ worldwide.vector <-  rowSums(star.wars.matrix);
 worldwide.vector # Print worldwide revenue per movie
 
 # Bind the new variable total.per.movie as a column to star.wars
-new.star.wars.matrix <- cbind( star.wars.matrix, worldwide.vector )
+all.wars.matrix <- cbind( star.wars.matrix, worldwide.vector )
 
 # Show me the:
-new.star.wars.matrix
+all.wars.matrix
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("star.wars.matrix","worldwide.vector","new.star.wars.matrix")
+names  <- c("star.wars.matrix","worldwide.vector","all.wars.matrix")
 values <- c("star.wars.matrix","rowSums(star.wars.matrix)","cbind(star.wars.matrix,worldwide.vector)")
 DM.result <- closed_test(names,values)
 ```
@@ -571,7 +571,7 @@ DM.result <- closed_test(names,values)
 
 Just like `2*my.matrix` multiplied every element of `my.matrix` by two, `my.matrix1 * my.matrix2` creates a matrix where each element is the product of the corresponding elements in `my.matrix1` and `my.matrix2`. 
 
-After looking at the result of the previous exercise, big boss Lucas pointed out that the ticket prices went up over time with one dollar per movie. He askes to redo the analysis based on the prices you can find in `ticket.prices.matrix` (source: imagination). 
+After looking at the result of the previous exercise, big boss Lucas pointed out that the ticket prices went up over time with one dollar per movie. He asks to redo the analysis based on the prices you can find in `ticket.prices.matrix` (source: imagination). 
 
 (Those familiar with matrices should note this is not the standard matrix multiplication for which you should use `%*%` in R)
 
