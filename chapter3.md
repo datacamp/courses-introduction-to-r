@@ -26,24 +26,29 @@ The third argument `nrow` indicates that the matrix should have three rows.
 Read the assigment carefully, the answer is already given ;-).
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Construction of a matrix with 3 rows containing the numbers 1 upto 9
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-matrix(1:9, byrow=TRUE, nrow=3)
+
+```r
+matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
+
 *** =sct
-```{r eval=FALSE}
+
+```r
 DM.result <- code_test("matrix(1:9, byrow=TRUE, nrow=3)")
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+*** =pre_exercise_code
+
+
 
 
 ---
@@ -62,48 +67,51 @@ In the editor, three vectors are defined, each representing the box office numbe
 Remember that you can construct a matrix containing the numbers 1 upto 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the number 1 upto 9, but the elements of the 3 star wars movie: this means the input vector is thus: `c(new.hope,empire.strikes,return.jedi)`.
 
 *** =sample_code
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# First element: US, Second element: Non-US 
-new.hope <- c( 460.998007, 314.4); 
-empire.strikes <- c(290.475067, 247.900000); 
-return.jedi <- c(309.306177,165.8); 
+
+```r
+# Box office Star Wars: In Millions (!)  First element: US, Second
+# element: Non-US
+new.hope <- c(460.998007, 314.4)
+empire.strikes <- c(290.475067, 247.9)
+return.jedi <- c(309.306177, 165.8)
 
 # Add your code below to construct the matrix
 star.wars.matrix <- 
-
-# Show me the 
+# Show me the
 star.wars.matrix
 ```
+
 
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# First element: US, Second element: Non-US 
-new.hope <- c( 460.998007, 314.4); 
-empire.strikes <- c(290.475067, 247.900000);
-return.jedi <- c(309.306177,165.8)
+
+```r
+# Box office Star Wars: In Millions (!)  First element: US, Second
+# element: Non-US
+new.hope <- c(460.998007, 314.4)
+empire.strikes <- c(290.475067, 247.9)
+return.jedi <- c(309.306177, 165.8)
 
 # Add your code below to construct the matrix
-star.wars.matrix <- matrix( c(new.hope,empire.strikes,return.jedi), 
-                            nrow=3, byrow=TRUE) 
+star.wars.matrix <- matrix(c(new.hope, empire.strikes, return.jedi), nrow = 3, 
+    byrow = TRUE)
 
-# Show me the 
+# Show me the
 star.wars.matrix
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names    <- "star.wars.matrix"
-values   <- 'matrix( c(new.hope,empire.strikes,return.jedi), 
-                            nrow=3, byrow=TRUE)'
-DM.result   <- closed_test(names,values)
+
+```r
+names <- "star.wars.matrix"
+values <- "matrix( c(new.hope,empire.strikes,return.jedi),\nnrow=3, byrow=TRUE)"
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 ---
 
@@ -127,15 +135,17 @@ Similar to vectors, you can add names for the rows and the columns of a matrix w
 Don't forget that R is case sensitive. The vector for the column names is thus: `c("US","non-US")` and for the row names: `c("A new hope","The empire strikes back","Return of the Jedi")`.
 
 *** =sample_code
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# First element: US, Second element: Non-US 
-new.hope <- c( 460.998007, 314.4); 
-empire.strikes <- c(290.475067, 247.900000);
-return.jedi <- c(309.306177,165.8)
+
+```r
+# Box office Star Wars: In Millions (!)  First element: US, Second
+# element: Non-US
+new.hope <- c(460.998007, 314.4)
+empire.strikes <- c(290.475067, 247.9)
+return.jedi <- c(309.306177, 165.8)
 
 # Construct matrix:
-star.wars.matrix <- matrix(c(new.hope,empire.strikes,return.jedi), nrow=3,byrow=TRUE)
+star.wars.matrix <- matrix(c(new.hope, empire.strikes, return.jedi), nrow = 3, 
+    byrow = TRUE)
 
 # Add your code here such that rows and columns of star.wars have a name!
 
@@ -143,35 +153,40 @@ star.wars.matrix <- matrix(c(new.hope,empire.strikes,return.jedi), nrow=3,byrow=
 star.wars.matrix
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# First element: US, Second element: Non-US 
-new.hope <- c( 460.998007, 314.4); 
-empire.strikes <- c(290.475067, 247.900000);
-return.jedi <- c(309.306177,165.8)
+
+```r
+# Box office Star Wars: In Millions (!)  First element: US, Second
+# element: Non-US
+new.hope <- c(460.998007, 314.4)
+empire.strikes <- c(290.475067, 247.9)
+return.jedi <- c(309.306177, 165.8)
 
 # Construct matrix:
-star.wars.matrix <- matrix(c(new.hope,empire.strikes,return.jedi), nrow=3,byrow=TRUE)
+star.wars.matrix <- matrix(c(new.hope, empire.strikes, return.jedi), nrow = 3, 
+    byrow = TRUE)
 
-colnames(star.wars.matrix) <- c("US","non-US")
-rownames(star.wars.matrix) <- c("A new hope","The empire strikes back","Return of the Jedi")
+colnames(star.wars.matrix) <- c("US", "non-US")
+rownames(star.wars.matrix) <- c("A new hope", "The empire strikes back", "Return of the Jedi")
 
 # Print the matrix to the console:
 star.wars.matrix
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c( "star.wars.matrix","colnames(star.wars.matrix)", "rownames(star.wars.matrix)" )
-values <- list( "star.wars.matrix", 'c("US","non-US")', 'c("A new hope", "The empire strikes back", "Return of the Jedi")' )
-DM.result   <- closed_test(names,values,check.existence=c(T,F,F))
+
+```r
+names <- c("star.wars.matrix", "colnames(star.wars.matrix)", "rownames(star.wars.matrix)")
+values <- list("star.wars.matrix", "c(\"US\",\"non-US\")", "c(\"A new hope\", \"The empire strikes back\", \"Return of the Jedi\")")
+DM.result <- closed_test(names, values, check.existence = c(T, F, F))
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 
 ---
@@ -192,7 +207,8 @@ In R, the function `rowSums()` conveniently calculates the totals for each row o
 The `rowSums()` function will calculate the total box office for each row of the `star.wars.matrix`, if you supply `star.wars.matrix` as an argument to that function by putting it between the brackets.
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Box office Star Wars: In Millions (!) 
 # Construct matrix: 
 box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
@@ -207,14 +223,16 @@ worldwide.vector <- #Your code here!
 worldwide.vector
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,dimnames=list(movie.names,col.titles))
+
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
 
 worldwide.vector <- rowSums(star.wars.matrix)
 
@@ -222,17 +240,19 @@ worldwide.vector <- rowSums(star.wars.matrix)
 worldwide.vector
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","worldwide.vector")
-values <- c("star.wars.matrix","rowSums(star.wars.matrix)")
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "worldwide.vector")
+values <- c("star.wars.matrix", "rowSums(star.wars.matrix)")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 
 ---
@@ -251,53 +271,57 @@ When you want to add a column or multiple columns to a matrix. A good way to do 
 Bind the `worldwide.vector` to the `star.wars.matrix` with the `cbind()` function, with `cbind( the.correct.matrix, the.correct.vector)` and assign to `all.star.wars.matrix`.
 
 *** =sample_code
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,dimnames=list(movie.names,col.titles))
+
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
 worldwide.vector <- rowSums(star.wars.matrix)
 
 # Bind the new variable total.per.movie as a column to star.wars
 all.wars.matrix <- 
-
 # Show me the
 all.wars.matrix
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3,byrow=TRUE,dimnames=list(movie.names,col.titles))
+
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
 
 # Print the matrix to the console:
-worldwide.vector <-  rowSums(star.wars.matrix);
-worldwide.vector # Print worldwide revenue per movie
+worldwide.vector <- rowSums(star.wars.matrix)
+worldwide.vector  # Print worldwide revenue per movie
 
 # Bind the new variable total.per.movie as a column to star.wars
-all.wars.matrix <- cbind( star.wars.matrix, worldwide.vector )
+all.wars.matrix <- cbind(star.wars.matrix, worldwide.vector)
 
 # Show me the:
 all.wars.matrix
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","worldwide.vector","all.wars.matrix")
-values <- c("star.wars.matrix","rowSums(star.wars.matrix)","cbind(star.wars.matrix,worldwide.vector)")
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "worldwide.vector", "all.wars.matrix")
+values <- c("star.wars.matrix", "rowSums(star.wars.matrix)", "cbind(star.wars.matrix,worldwide.vector)")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 
 ---
@@ -316,23 +340,25 @@ Your R workspace now contains two matrices, the `star.wars.matrix` we just used 
 Bind the two matrices together in the following way: `rbind( matrix1, matrix2 )` and assign to `all.wars.matrix`.
 
 *** =sample_code
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-star.wars.matrix    # Matrix containing first trilogy box office
-star.wars.matrix2 # Matrix containing second trilogy box office
+
+```r
+# Box office Star Wars: In Millions (!)
+star.wars.matrix  # Matrix containing first trilogy box office
+star.wars.matrix2  # Matrix containing second trilogy box office
 
 # Combine the both Star Wars trilogies in one matrix
 all.wars.matrix <- 
-
 # Show me the
 all.wars.matrix
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-star.wars.matrix    # Matrix containing first trilogy box office
-star.wars.matrix2 # Matrix containing second trilogy box office
+
+```r
+# Box office Star Wars: In Millions (!)
+star.wars.matrix  # Matrix containing first trilogy box office
+star.wars.matrix2  # Matrix containing second trilogy box office
 
 # Combine the both Star Wars trilogies in one matrix
 all.wars.matrix <- rbind(star.wars.matrix, star.wars.matrix2)
@@ -341,28 +367,33 @@ all.wars.matrix <- rbind(star.wars.matrix, star.wars.matrix2)
 all.wars.matrix
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","star.wars.matrix2","all.wars.matrix")
-values  <- c("star.wars.matrix","star.wars.matrix2","rbind(star.wars.matrix,star.wars.matrix2)")
-DM.result  <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "star.wars.matrix2", "all.wars.matrix")
+values <- c("star.wars.matrix", "star.wars.matrix2", "rbind(star.wars.matrix,star.wars.matrix2)")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,  
-                                dimnames=list(movie.names,col.titles))
 
-# Construct matrix2: 
-box.office.all2 <- c( 474.5, 552.5, 310.7, 338.7, 380.3, 468.5 )
-movie.names2    <- c( "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
-star.wars.matrix2 <- matrix(box.office.all2, nrow=3, byrow=TRUE,  
-                                dimnames=list(movie.names2,col.titles))
+```r
+# Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
+
+# Construct matrix2:
+box.office.all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
+movie.names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
+star.wars.matrix2 <- matrix(box.office.all2, nrow = 3, byrow = TRUE, dimnames = list(movie.names2, 
+    col.titles))
 ```
+
 
 
 ---
@@ -379,51 +410,59 @@ Just like every `cbind()` has an `rbind()`, every `colSums()` has a `rowSums()`.
 You should use the `colSums()` function with `star.wars.matrix` as argument to find the total box office per region.
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Print box office Star Wars: In Millions (!) for 2 trilogies
 all.wars.matrix
 
-total.revenue.vector 
+total.revenue.vector
 ```
+
 
 *** =solution
-```{r eval=FALSE}
+
+```r
 # Print box office Star Wars: In Millions (!) for 2 trilogies
 all.wars.matrix
 
-total.revenue.vector <- colSums( all.wars.matrix )
+total.revenue.vector <- colSums(all.wars.matrix)
 ```
+
 
 *** =sct
-```{r eval=FALSE}
-names  <- c("all.wars.matrix","total.revenue.vector")
-values <- c("all.wars.matrix","colSums( all.wars.matrix )")
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("all.wars.matrix", "total.revenue.vector")
+values <- c("all.wars.matrix", "colSums( all.wars.matrix )")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE,  
-                                dimnames=list(movie.names,col.titles))
 
-# Construct matrix2: 
-box.office.all2 <- c( 474.5, 552.5, 310.7, 338.7, 380.3, 468.5 )
-movie.names2    <- c( "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
-star.wars.matrix2 <- matrix(box.office.all2, nrow=3, byrow=TRUE,  
-                                dimnames=list(movie.names2,col.titles))
+```r
+# Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
+
+# Construct matrix2:
+box.office.all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
+movie.names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
+star.wars.matrix2 <- matrix(box.office.all2, nrow = 3, byrow = TRUE, dimnames = list(movie.names2, 
+    col.titles))
 
 
-# Box office Star Wars: In Millions (!) 
-star.wars.matrix    # Matrix containing first trilogy box office
-star.wars.matrix2 # Matrix containing second trilogy box office
+# Box office Star Wars: In Millions (!)
+star.wars.matrix  # Matrix containing first trilogy box office
+star.wars.matrix2  # Matrix containing second trilogy box office
 
 # Combine the both Star Wars trilogies in one matrix
-all.wars.matrix <- rbind( star.wars.matrix, star.wars.matrix2 )
+all.wars.matrix <- rbind(star.wars.matrix, star.wars.matrix2)
 ```
+
 
 
 ---
@@ -452,7 +491,8 @@ Hint: Use the function `mean()` to compute the average.
 You can use the function `mean()` to calculate the average of the inputs to the function. Remember that you can select all rows of a matrix for a specific column x, by typing `my.matrix[,x]`. Non-US is the second column.
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Box office Star Wars: In Millions (!) 
 # Construct matrix: 
 box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
@@ -471,37 +511,40 @@ non.us.all
 non.us.some
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <-  c("US","non-US")
-star.wars.matrix  <- matrix(box.office.all, nrow=3, byrow=TRUE,  
-                         dimnames=list(movie.names,col.titles)) 
 
-star.wars.matrix 
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
 
-non.us.all  <- mean( star.wars.matrix[,2] )
-non.us.some <- mean( star.wars.matrix[1:2,2] )
+star.wars.matrix
+
+non.us.all <- mean(star.wars.matrix[, 2])
+non.us.some <- mean(star.wars.matrix[1:2, 2])
 
 # Print to console both averages:
 non.us.all
 non.us.some
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","non.us.all","non.us.some")
-values <- c("star.wars.matrix","mean( star.wars.matrix[,2] )","mean( star.wars.matrix[1:2,2] )") 
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "non.us.all", "non.us.some")
+values <- c("star.wars.matrix", "mean( star.wars.matrix[,2] )", "mean( star.wars.matrix[1:2,2] )")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 
 ---
@@ -523,7 +566,8 @@ As a newly-hired data analyst for Lucasfilm, your job is to find out how many vi
 The number of visitors is the revenue (which is stored in `star.wars.matrix` ) divided by the price of ticket (assumed to be $5).
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Box office Star Wars: In Millions (!) 
 # Construct matrix: 
 box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
@@ -537,32 +581,36 @@ visitors <- #your code here!
 visitors
 ```
 
-*** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <- c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3,byrow=TRUE,dimnames=list(movie.names,col.titles)) 
 
-visitors <- star.wars.matrix/5;
-  
-# Show me (also in millions!) the 
+*** =solution
+
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
+
+visitors <- star.wars.matrix/5
+
+# Show me (also in millions!) the
 visitors
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","visitors")
-values <- c("star.wars.matrix","star.wars.matrix/5") 
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "visitors")
+values <- c("star.wars.matrix", "star.wars.matrix/5")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
 
 
 ---
@@ -587,7 +635,8 @@ After looking at the result of the previous exercise, big boss Lucas pointed out
 - To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`
 
 *** =sample_code
-```{r eval=FALSE}
+
+```r
 # Box office Star Wars: In Millions (!) 
 # Construct matrix: 
 box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
@@ -606,36 +655,41 @@ average.us.visitor
 average.non.us.visitor
 ```
 
+
 *** =solution
-```{r eval=FALSE}
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box.office.all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie.names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col.titles     <- c("US","non-US")
-star.wars.matrix      <- matrix(box.office.all, nrow=3, byrow=TRUE, dimnames=list(movie.names,col.titles)) 
-ticket.prices.matrix  <- matrix( c(5,7,6,8,7,9), nrow=3,byrow=TRUE,dimnames=list(movie.names,col.titles)) 
+
+```r
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box.office.all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie.names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col.titles <- c("US", "non-US")
+star.wars.matrix <- matrix(box.office.all, nrow = 3, byrow = TRUE, dimnames = list(movie.names, 
+    col.titles))
+ticket.prices.matrix <- matrix(c(5, 7, 6, 8, 7, 9), nrow = 3, byrow = TRUE, 
+    dimnames = list(movie.names, col.titles))
 
 visitors <- star.wars.matrix/ticket.prices.matrix
-average.us.visitor <- mean(visitors[,1])
-average.non.us.visitor <- mean(visitors[,2])
+average.us.visitor <- mean(visitors[, 1])
+average.non.us.visitor <- mean(visitors[, 2])
 
-#Show me the (all in Millions)
+# Show me the (all in Millions)
 visitors
 average.us.visitor
 average.non.us.visitor
 ```
 
+
 *** =sct
-```{r eval=FALSE}
-names  <- c("star.wars.matrix","ticket.prices.matrix","visitors",
-            "average.us.visitor","average.non.us.visitor")
-values <- c("star.wars.matrix","ticket.prices.matrix", "star.wars.matrix/ticket.prices.matrix",
-            "mean( visitors[,1] )","mean( visitors[,2] )") 
-DM.result <- closed_test(names,values)
+
+```r
+names <- c("star.wars.matrix", "ticket.prices.matrix", "visitors", "average.us.visitor", 
+    "average.non.us.visitor")
+values <- c("star.wars.matrix", "ticket.prices.matrix", "star.wars.matrix/ticket.prices.matrix", 
+    "mean( visitors[,1] )", "mean( visitors[,2] )")
+DM.result <- closed_test(names, values)
 ```
+
 
 *** =pre_exercise_code
-```{r eval=FALSE}
 
-```
+
