@@ -81,7 +81,7 @@ head(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- code_test("head(mtcars)")
+DM.result <- code_test("head(mtcars")
 ```
 
 *** =pre_exercise_code

@@ -20,14 +20,14 @@ The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
 
-1. Construct a matrix with 3 rows containing the numbers 1 upto 9 in the editor, the click Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
+1. Construct a matrix with 3 rows containing the numbers 1 up to 9 in the editor, the click Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
 
 *** =hint
 Read the assigment carefully, the answer is already given ;-).
 
 *** =sample_code
 ```{r eval=FALSE}
-# Construction of a matrix with 3 rows containing the numbers 1 upto 9
+# Construction of a matrix with 3 rows containing the numbers 1 up to 9
 ```
 
 *** =solution
@@ -59,7 +59,7 @@ In the editor, three vectors are defined, each representing the box office numbe
 1. Construct a matrix with one row for each movie (thus with 3 rows), a column for the US box office revenue, and a second column for the non-US box office revenue. Name the matrix `star.wars.matrix`.
 
 *** =hint
-Remember that you can construct a matrix containing the numbers 1 upto 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the number 1 upto 9, but the elements of the 3 star wars movie: this means the input vector is thus: `c(new.hope,empire.strikes,return.jedi)`.
+Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the number 1 up to 9, but the elements of the 3 star wars movie: this means the input vector is thus: `c(new.hope,empire.strikes,return.jedi)`.
 
 *** =sample_code
 ```{r eval=FALSE}

@@ -101,9 +101,9 @@ Just use the `list()` function with `my.vector`, `my.matrix` and `my.df` as argu
 
 *** =sample_code
 ```{r eval=FALSE}
-# Vector with numerics from 1 upto 10
+# Vector with numerics from 1 up to 10
 my.vector <- 1:10 
-# Matrix with numerics from 1 upto 9
+# Matrix with numerics from 1 up to 9
 my.matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
 my.df     <- mtcars[1:10,] 
@@ -117,9 +117,9 @@ my.list
 
 *** =solution
 ```{r eval=FALSE}
-# Vector with numerics from 1 upto 10
+# Vector with numerics from 1 up to 10
 my.vector <- 1:10 
-# Matrix with numerics from 1 upto 9
+# Matrix with numerics from 1 up to 9
 my.matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
 my.df     <- mtcars[1:10,] 
@@ -165,9 +165,9 @@ No hints, you can do this!
 
 *** =sample_code
 ```{r eval=FALSE}
-# Vector with numerics from 1 upto 10
+# Vector with numerics from 1 up to 10
 my.vector <- 1:10 
-# Matrix with numerics from 1 upto 9
+# Matrix with numerics from 1 up to 9
 my.matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
 my.df     <- mtcars[1:10,] 
@@ -181,9 +181,9 @@ my.list
 
 *** =solution
 ```{r eval=FALSE}
-# Vector with numerics from 1 upto 10
+# Vector with numerics from 1 up to 10
 my.vector <- 1:10 
-# Matrix with numerics from 1 upto 9
+# Matrix with numerics from 1 up to 9
 my.matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
 my.df     <- mtcars[1:10,] 
