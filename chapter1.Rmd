@@ -439,12 +439,12 @@ my_numeric <- 42
 my_character <- "forty-two"
 my_logical <- FALSE
 
-#Check which type these variables have:
+# What data type?
 datatype1 <- 
 datatype2  
 datatype3 
 
-#Print the types:
+# Print the types:
 datatype1
 datatype2
 datatype3
