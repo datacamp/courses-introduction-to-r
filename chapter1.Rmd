@@ -8,7 +8,7 @@ mode: selfcontained
 
 ## How it works
 
-In the **editor** on the right you will have to type your code for solving the exercises. Now it just contains `3+4` and `demo("graphics")`. 
+In the **editor** on the right you will have to type your code to solve the exercises.
 
 Since understanding and structuring long parts of code is not always straight-forward, R makes use of the `#` sign to add comments. Just like Twitter! Comments are not run as R-code, so they will not influence your result. 
 
