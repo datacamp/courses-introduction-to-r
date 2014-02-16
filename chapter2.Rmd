@@ -289,11 +289,6 @@ values   <- list("poker_vector","roulette_vector",'c("Monday","Tuesday","Wednesd
 DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE))
 ```
 
-*** =pre_exercise_code
-```{r eval=FALSE}
-
-```
-
 ---
 
 ## Calculating total winnings
@@ -311,39 +306,42 @@ Important to know is that if you sum two vectors in R, it takes the element-wise
 
 *** =instructions
 
-1. Take the sum of the variables `A.vector` and `B.vector` and assign to `total.vector`.
+1. Take the sum of the variables `A_vector` and `B_vector` and assign to `total_vector`.
 
 *** =hint
-Use the `+` operator to sum `A.vector` and `B.vector`. Use `<-` to assign the result to `total.vector`.
+Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
 
 *** =sample_code
-```{r eval=FALSE}
-A.vector   <- c(1,2,3)
-B.vector   <- c(4,5,6)
 
-# Take the sum of A.vector and B.vector
-total.vector <- 
+```{r eval=FALSE}
+A_vector   <- c(1,2,3)
+B_vector   <- c(4,5,6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- 
 
 # Show me:
-total.vector
+total_vector
 ```
 
 *** =solution
-```{r eval=FALSE}
-A.vector   <- c(1,2,3)
-B.vector   <- c(4,5,6)
 
-# Take the sum of A.vector and B.vector
-total.vector <- A.vector + B.vector
+```{r eval=FALSE}
+A_vector   <- c(1,2,3)
+B_vector   <- c(4,5,6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- A_vector + B_vector
 
 # Show me:
-total.vector
+total_vector
 ```
 
 *** =sct
+
 ```{r eval=FALSE}
-names    <- c("A.vector","B.vector","total.vector")
-values   <- list("c(1,2,3)","c(4,5,6)","A.vector+B.vector")
+names    <- c("A_vector","B_vector","total_vector")
+values   <- list("c(1,2,3)","c(4,5,6)","A_vector+B_vector")
 DM.result   <- closed_test(names,values)
 ```
 
@@ -359,18 +357,19 @@ DM.result   <- closed_test(names,values)
 
 So you understand how R does arithmetic calculations with vectors? 
 
-Then it is time to get those ferrari's in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit, is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+Then it is time to get those Ferrari's in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total_daily profit, is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
 
 In R, this is just the sum of the `roulette_vector` and `poker_vector`.
 
 *** =instructions
 
-1. Assign to the variable `total.daily` how much you won or lost on each day in total (poker & roulette combined)
+1. Assign to the variable `total_daily` how much you won or lost on each day in total (poker & roulette combined).
 
 *** =hint
 Just click the Run button on the right.
 
 *** =sample_code
+
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
 poker_vector    <- c(140,-50,20,-120,240)
@@ -383,13 +382,14 @@ names(roulette_vector) <- days
 names(poker_vector) <- days
 
 # Up to you now:
-total.daily <- 
+total_daily <- 
 
 # Show me:
-total.daily
+total_daily
 ```
 
 *** =solution
+
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
 poker_vector   <- c(140,-50,20,-120,240)
@@ -402,15 +402,16 @@ names(roulette_vector) <- days
 names(poker_vector) <- days
 
 # Up to you now:
-total.daily <- poker_vector + roulette_vector
+total_daily <- poker_vector + roulette_vector
 
 # Show me:
-total.daily
+total_daily
 ```
 
 *** =sct
+
 ```{r eval=FALSE}
-names    <- c("poker_vector","roulette_vector","total.daily")
+names    <- c("poker_vector","roulette_vector","total_daily")
 values   <- c("poker_vector","roulette_vector","poker_vector+roulette_vector")
 DM.result   <- closed_test(names,values)
 ```
@@ -420,14 +421,13 @@ DM.result   <- closed_test(names,values)
 
 ```
 
-
 ---
 
 ## Calculating total winnings (3)
 
-Looking back at the previous analysis, it seemed that you had a mix of good and bad days. This is not what your ego expected, and you wonder if maybe there is a (very very very) tiny chance you've lost money over the week in total? 
+Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if maybe there is a (very very very) tiny chance you've lost money over the week in total? 
 
-A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you lost/won with poker you do: `total.poker <- poker_vector`.
+A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you lost/won with poker you do: `total_poker <- poker_vector`.
 
 *** =instructions
 
@@ -449,7 +449,7 @@ days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) <- days
 names(poker_vector) <- days
 
-total.poker <- sum(poker_vector)
+total_poker <- sum(poker_vector)
 # Up to you now:
 total.roulette <-
 total.week <- 
@@ -470,10 +470,10 @@ days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) <- days
 names(poker_vector) <- days
 
-total.poker <- sum(poker_vector)
+total_poker <- sum(poker_vector)
 # Up to you now:
 total.roulette <-  sum(roulette_vector)
-total.week <- total.roulette + total.poker
+total.week <- total.roulette + total_poker
 
 #print variables
 total.week
@@ -481,8 +481,8 @@ total.week
 
 *** =sct
 ```{r eval=FALSE}
-names    <- c("poker_vector","roulette_vector","total.poker","total.roulette","total.week")
-values   <- c("poker_vector","roulette_vector","sum(poker_vector)","sum(roulette_vector)","total.poker+total.roulette")
+names    <- c("poker_vector","roulette_vector","total_poker","total.roulette","total.week")
+values   <- c("poker_vector","roulette_vector","sum(poker_vector)","sum(roulette_vector)","total_poker+total.roulette")
 DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
 ```
 
@@ -502,7 +502,7 @@ After a short brainstorm in your hotel's jacuzzi, you realize a possible explana
 
 *** =instructions
 
-1. Calculate `total.poker` and `total.roulette`.
+1. Calculate `total_poker` and `total.roulette`.
 2. Check if your total gains in poker are higher than in roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
 (Tip: You partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
 
@@ -522,7 +522,7 @@ names(roulette_vector) <- days
 names(poker_vector) <- days
 
 # Calculate total gains for poker and roulette
-total.poker <-
+total_poker <-
 total.roulette <-
 
 # Check if you realized higher total gains in poker then in roulette 
@@ -545,17 +545,17 @@ names(roulette_vector) <- days
 names(poker_vector) <- days
 
 # Calculate total gains for poker and roulette
-total.poker <- sum(poker_vector)
+total_poker <- sum(poker_vector)
 total.roulette <- sum(roulette_vector)
 
 # Check if you realized higher total gains in poker then in roulette
-answer <- total.poker > total.roulette
+answer <- total_poker > total.roulette
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names    <- c("poker_vector","roulette_vector","total.poker","total.roulette","answer")
-values   <- c("poker_vector","roulette_vector","sum(poker_vector)","sum(roulette_vector)","total.poker > total.roulette")
+names    <- c("poker_vector","roulette_vector","total_poker","total.roulette","answer")
+values   <- c("poker_vector","roulette_vector","sum(poker_vector)","sum(roulette_vector)","total_poker > total.roulette")
 DM.result   <- closed_test(names,values,check.existence=c(TRUE,TRUE,FALSE,FALSE,TRUE))
 ```
 
@@ -573,7 +573,7 @@ Your hunch seemed to be right, it appears that the game of poker is more your cu
 
 Another possible route for investigation, is your performance at the beginning of the working week versus at the end of it? You did have a couple of Margarita cocktails at the end of the week... 
 
-Seeing the gains/losses of a certain day, or number of days, means in this case you only want to see a part/selection of the total vector. So our goal is to select specific elements of the vector. To select elements of a vector (and later on matrices, dataframes...) you always make use of square brackets. Between the square brackets, you indicate what elements to select: [...elements to select..] 
+Seeing the gains/losses of a certain day, or number of days, means in this case you only want to see a part/selection of the total_vector. So our goal is to select specific elements of the vector. To select elements of a vector (and later on matrices, dataframes...) you always make use of square brackets. Between the square brackets, you indicate what elements to select: [...elements to select..] 
 
 For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]` etc.
 
