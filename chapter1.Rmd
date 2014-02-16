@@ -1,5 +1,5 @@
 --- 
-courseTitle       : Introduction to R v2
+courseTitle       : Introduction to R vMartijn
 chapterTitle      : Intro to basics
 description       : In this chapter you'll take your first steps with R. You'll learn how to use the console as a calculator, assign variables and you'll get to know the basic data types in R. Let's get started!
 framework : datamind
