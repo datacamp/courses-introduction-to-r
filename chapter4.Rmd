@@ -1,5 +1,5 @@
 --- 
-courseTitle       : Introduction to R v2
+courseTitle       : Introduction to R v3
 chapterTitle      : Factors
 description       : Data falls into a limited number of categories very often. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of factors in data analysis, start learning how to create, subset and compare factors now!
 framework : datamind
@@ -21,20 +21,23 @@ A good example of a categorical variable, is the variable 'Gender'. As you hopef
 1. Assign to variable `theory` the value `"R uses factors for categorical variables!"`
 
 *** =hint
-Just click the Run button and look at the console.
+Just click the Submit Answer button and look at the console.
 
 *** =sample_code
+
 ```{r eval=FALSE}
 # Assign to the variable theory what this chapter is about!
 ```
 
 *** =solution
+
 ```{r eval=FALSE}
 # Assign to the variable theory what this chapter is about!
 theory <- "R uses factors for categorical variables!"
 ```
 
 *** =sct
+
 ```{r eval=FALSE}
 DM.result <- closed_test("theory","c('R uses factors for categorical variables!')")
 ```
@@ -49,40 +52,40 @@ DM.result <- closed_test("theory","c('R uses factors for categorical variables!'
 
 ## What's a factor and why would you use it? (2)
 
-To create factors in R you make use of the function `factor()`. First thing to do is create a vector that contains all the observations belonging to a limited number of categories. For example, gender vector contains the sex of 5 different individuals: `gender.vector <- c("Male","Female","Female","Male","Male")`.
+To create factors in R you make use of the function `factor()`. First thing to do is create a vector that contains all the observations belonging to a limited number of categories. For example, gender_vector contains the sex of 5 different individuals: `gender_vector <- c("Male","Female","Female","Male","Male")`.
 
 It is clear, that there are 2 categories, or in R-terms **'factor levels'**, here: "Male" and "Female". 
 
-The function `factor()` will encode the vector as a factor: `factor.gender.vector <- factor(gender.vector)`. 
+The function `factor()` will encode the vector as a factor: `factor_gender_vector <- factor(gender_vector)`. 
 
 *** =instructions
 
-1. Assign to `factor.gender.vector` the character vector `gender.vector` converted to a **factor**. Look at the console and note that R prints out the factor levels below the actual values.
+1. Assign to `factor_gender_vector` the character vector `gender_vector` converted to a **factor**. Look at the console and note that R prints out the factor levels below the actual values.
 
 *** =hint
-Just click the Run button and look at the console.
+Just click the Submit Answer button and look at the console.
 
 *** =sample_code
 ```{r eval=FALSE}
-gender.vector <- c("Male","Female","Female","Male","Male")
+gender_vector <- c("Male","Female","Female","Male","Male")
 
-factor.gender.vector <-
+factor_gender_vector <-
 
-factor.gender.vector
+factor_gender_vector
 ```
 
 *** =solution
 ```{r eval=FALSE}
-gender.vector <- c("Male","Female","Female","Male","Male")
+gender_vector <- c("Male","Female","Female","Male","Male")
 
-factor.gender.vector <- factor(gender.vector) 
+factor_gender_vector <- factor(gender_vector)
 
-factor.gender.vector
+factor_gender_vector
 ```
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
+DM.result <- closed_test( "factor_gender_vector", "factor(gender_vector)" )
 ```
 
 *** =pre_exercise_code
@@ -94,46 +97,49 @@ DM.result <- closed_test( "factor.gender.vector", "factor(gender.vector)" )
 
 ## What's a factor and why would you use it? (3)
 
-There are two types of categorical variabels: a **nominal categorical variable** and an **ordinal categorical variable**. 
+There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**. 
 
-A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `hair.color.vector`, with the categories `"Ginger", "Blonde", "Brunette"` and `"Grey"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
+A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `animals_vector`, with the categories `"Elephant", `"Giraffe"`, "Donkey"` and `"Horse"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
 
-In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature.vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is easy to see that `"Medium"` stand above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stand above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
 
-1. Click Submit Answer to check how R contructs and prints nominal and ordinal variables. Don't worry if you don't understand all the code just yet, we'll get to that.
+1. Click Submit Answer to check how R constructs and prints nominal and ordinal variables. Don't worry if you don't understand all the code just yet, we'll get to that.
 
 *** =hint
 Just click the Submit Answer button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
 
 *** =sample_code
+
 ```{r eval=FALSE}
-hair.color.vector <- c("Blonde","Blonde","Brunette","Ginger","Grey","Brunette")
-temperature.vector <- c("High","Low","High","Low","Medium")
+animals_vector<- c("Elephant", "Giraffe", "Donkey","Horse")
+temperature_vector <- c("High","Low","High","Low","Medium")
 
-factor.hair.color.vector  <- factor(hair.color.vector)
-factor.temperature.vector <- factor( temperature.vector,order=TRUE,levels=c("Low","Medium","High") )
+factor_animals_vector <- factor(animals_vector)
+factor_temperature_vector <- factor( temperature_vector,order=TRUE,levels=c("Low","Medium","High") )
 
-factor.temperature.vector
-factor.hair.color.vector
+factor_temperature_vector
+factor_animals_vector
 ```
 
 *** =solution
+
 ```{r eval=FALSE}
 # Just click the Submit Answer button and look at the console.
 ```
 
 *** =sct
+
 ```{r eval=FALSE}
 DM.result <- TRUE
 ```
 
 *** =pre_exercise_code
+
 ```{r eval=FALSE}
 
 ```
-
 
 ---
 

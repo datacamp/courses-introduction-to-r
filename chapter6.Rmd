@@ -1,5 +1,5 @@
 --- 
-courseTitle       : Introduction to R v2
+courseTitle       : Introduction to R v3
 chapterTitle      : Lists
 description       : List have components of different types just like your to-do list at home or at work. Learn how to create, name and subset in this chapter!
 framework : datamind

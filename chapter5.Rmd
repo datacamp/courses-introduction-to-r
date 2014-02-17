@@ -1,5 +1,5 @@
 --- 
-courseTitle       : Introduction to R v2
+courseTitle       : Introduction to R v3
 chapterTitle      : Data frames
 description       : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, I'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
 framework : datamind 
