@@ -9,7 +9,7 @@ mode: selfcontained
 
 ## What's a matrix?
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical), that is arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
 In R, you can construct a matrix with the `matrix` function, for example: `matrix(1:9, byrow=TRUE, nrow=3)`:
 - The first argument, is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which constructs the vector `c(1,2,3,4,5,6,7,8,9)`. 
@@ -17,8 +17,7 @@ In R, you can construct a matrix with the `matrix` function, for example: `matri
 - The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
-
-1. Construct a matrix with 3 rows containing the numbers 1 up to 9 in the editor, the click Submit Answer button and look at the output in the console. Extra tip: use `matrix(1:9, byrow=TRUE, nrow=3)`.
+1. Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
 
 *** =hint
 Read the assignment carefully, the answer is already given ;-).
@@ -59,21 +58,21 @@ DM.result <- code_test("matrix(1:9, byrow=TRUE, nrow=3)")
 
 It is time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchisee. May the force be with you! 
 
-In the editor, three vectors are defined, each representing the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element of each vector refers to the Non-US box office (source: Wikipedia).
+In the editor, three vectors are defined each representing the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
 
 *** =instructions
 
-1. Construct a matrix with one row for each movie (thus 3 rows), a column for the US box office revenue, and a second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
+1. Construct a matrix with one row for each movie (thus 3 rows). The first column is for the US box office revenue, and the second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
 
 *** =hint
-Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the numbers 1 up to 9, but the elements of the 3 star wars movies: this means the input vector is thus: `c(new_hope,empire_strikes,return_jedi)`.
+Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is thus: `c(new_hope,empire_strikes,return_jedi)`.
 
 *** =sample_code
 
 
 ```r
-# Box office Star Wars: In Millions (!)  First element: US, Second element:
-# Non-US
+# Box office Star Wars: In Millions!  The first element: US, the second
+# element: Non-US
 new_hope <- c(460.998007, 314.4)
 empire_strikes <- c(290.475067, 247.9)
 return_jedi <- c(309.306177, 165.8)
@@ -89,7 +88,7 @@ star_wars_matrix
 
 
 ```r
-# Box office Star Wars: In Millions (!)  First element: US, Second element:
+# Box office Star Wars: In Millions!  The first element: US, Second element:
 # Non-US
 new_hope <- c(460.998007, 314.4)
 empire_strikes <- c(290.475067, 247.9)
@@ -149,14 +148,14 @@ new_hope <- c(460.998007, 314.4)
 empire_strikes <- c(290.475067, 247.9)
 return_jedi <- c(309.306177, 165.8)
 
-# Construct matrix:
+# Construct matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, 
     byrow = TRUE)
 
 # Add your code here such that rows and columns of star_wars_matrix have a
 # name!
 
-# Print the matrix to the console:
+# Print the matrix to the console
 star_wars_matrix
 ```
 
@@ -171,14 +170,15 @@ new_hope <- c(460.998007, 314.4)
 empire_strikes <- c(290.475067, 247.9)
 return_jedi <- c(309.306177, 165.8)
 
-# Construct matrix:
+# Construct matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, 
     byrow = TRUE)
 
+# Add your code here such that rows and columns of star.wars have a name
 colnames(star_wars_matrix) <- c("US", "non-US")
 rownames(star_wars_matrix) <- c("A new hope", "The empire strikes back", "Return of the Jedi")
 
-# Print the matrix to the console:
+# Print the matrix to the console
 star_wars_matrix
 ```
 
@@ -203,7 +203,7 @@ DM.result <- closed_test(names, values, check.existence = c(T, F, F))
 
 ## Calculating the worldwide box office 
 
-The single most important thing for a movie to become an instant legend in Tinseltown, is its worldwide box office figures. 
+The single most important thing for a movie to become an instant legend in Tinseltown is its worldwide box office figures. 
 
 To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
@@ -220,16 +220,15 @@ The `rowSums()` function will calculate the total box office for each row of the
 
 
 ```r
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box_office_all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie_names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col_titles     <-  c("US","non-US")
-star_wars_matrix      <- matrix(box_office_all, nrow=3, byrow=TRUE,dimnames=list(movie_names,col_titles))
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col_titles <- c("US", "non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
+    col_titles))
 
-
-worldwide_vector <- #Your code here!
-
+# Your code here
+worldwide_vector <- 
 # Show me the
 worldwide_vector
 ```
@@ -246,6 +245,7 @@ col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
 
+# Your code here
 worldwide_vector <- rowSums(star_wars_matrix)
 
 # Show me the
@@ -270,9 +270,9 @@ DM.result <- closed_test(names, values)
 
 ---
 
-## Adding a column for the Worlwide box office (2)
+## Adding a column for the Worlwide box office 
 
-In the previous exercise, you calculated the vector that contained the worldwide box office receipt for each of the three star wars movies. However, this vector is not yet part of `star_wars_matrix`...
+In the previous exercise, you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`...
 
 You can add a column or multiple columns to a matrix with the `cbind` function, which merges matrices and/or vectors together by column. For example: `new_combined_matrix <- cbind( matrix1, matrix2, vector1, ... )`.
 
@@ -287,12 +287,14 @@ Bind the `worldwide_vector` to the `star_wars_matrix` with the `cbind()` functio
 
 
 ```r
-# Box office Star Wars: In Millions (!)  Construct matrix:
+# Box office Star Wars: In Millions (!)  Construct matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
 col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
+
+# The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
 
 # Bind the new variable worldwide_vector as a column to star_wars_matrix
@@ -313,14 +315,13 @@ col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
 
-# Print the matrix to the console:
+# The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
-worldwide_vector  # Print worldwide revenue per movie
 
 # Bind the new variable worldwide_vector as a column to star_wars_matrix
 all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
-# Show me the:
+# Show me the
 all_wars_matrix
 ```
 
@@ -341,11 +342,11 @@ DM.result <- closed_test(names, values)
 
 ---
 
-## Adding a column for the worldwide box office
+## Adding a row
 
 Just like every action has a reaction, every `cbind()` has a `rbind()`. (Okay, we admit, we are pretty bad with metaphors.) 
 
-Your R workspace now contains two matrices, the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter, in case you want to have a closer look.
+Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices, the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
 
 *** =instructions
 
@@ -359,8 +360,12 @@ Bind the two matrices together in the following way: `rbind( matrix1, matrix2 )`
 
 ```r
 # Box office Star Wars: In Millions (!)
-star_wars_matrix  # Matrix containing first trilogy box office
-star_wars_matrix2  # Matrix containing second trilogy box office
+
+# Matrix containing first trilogy box office
+star_wars_matrix
+
+# Matrix containing second trilogy box office
+star_wars_matrix2
 
 # Combine the both Star Wars trilogies in one matrix
 all_wars_matrix <- 
@@ -372,10 +377,15 @@ all_wars_matrix
 *** =solution
 
 
+
 ```r
 # Box office Star Wars: In Millions (!)
-star_wars_matrix  # Matrix containing first trilogy box office
-star_wars_matrix2  # Matrix containing second trilogy box office
+
+# Matrix containing first trilogy box office
+star_wars_matrix
+
+# Matrix containing second trilogy box office
+star_wars_matrix2
 
 # Combine the both Star Wars trilogies in one matrix
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
@@ -399,14 +409,14 @@ DM.result <- closed_test(names, values)
 
 
 ```r
-# Construct matrix:
+# Construct matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
 col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
 
-# Construct matrix2:
+# Construct matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 <- matrix(box_office_all2, nrow = 3, byrow = TRUE, dimnames = list(movie_names2, 
@@ -417,9 +427,9 @@ star_wars_matrix2 <- matrix(box_office_all2, nrow = 3, byrow = TRUE, dimnames = 
 
 ---
 
-## Adding a column for the Worlwide box office
+## The total box office revenue for the entire saga
 
-Just like every `cbind()` has an `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you don't recall what it contains). Let's now calculate the total box office revenue for the entire saga.
+Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you don't recall what it contains). Let's now calculate the total box office revenue for the entire saga.
 
 *** =instructions
 
@@ -464,23 +474,18 @@ DM.result <- closed_test(names, values)
 
 
 ```r
-# Construct matrix:
+# Construct matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
 col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
 
-# Construct matrix2:
+# Construct matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 <- matrix(box_office_all2, nrow = 3, byrow = TRUE, dimnames = list(movie_names2, 
     col_titles))
-
-
-# Box office Star Wars: In Millions (!)
-star_wars_matrix  # Matrix containing first trilogy box office
-star_wars_matrix2  # Matrix containing second trilogy box office
 
 # Combine the both Star Wars trilogies in one matrix
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
@@ -516,20 +521,19 @@ You can use the function `mean()` to calculate the average of the inputs to the 
 
 
 ```r
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box_office_all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie_names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col_titles     <-  c("US","non-US")
-star_wars_matrix  <- matrix(box_office_all, nrow=3, byrow=TRUE,  
-                         dimnames=list(movie_names,col_titles)) 
+# Box office Star Wars: In Millions (!)  Construct matrix
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col_titles <- c("US", "non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
+    col_titles))
 
-star_wars_matrix 
+star_wars_matrix
 
-non_us_all  <-     #your code here
-non_us_some <- #your code here
-
-# Print both averages  to console:
+# your code here
+non_us_all <- # your code here
+non_us_some <- 
+# Print both averages to console:\
 non_us_all
 non_us_some
 ```
@@ -548,10 +552,12 @@ star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = li
 
 star_wars_matrix
 
+# your code here
 non_us_all <- mean(star_wars_matrix[, 2])
+# your code here
 non_us_some <- mean(star_wars_matrix[1:2, 2])
 
-# Print to console both averages:
+# Print to console both averages
 non_us_all
 non_us_some
 ```
@@ -593,16 +599,16 @@ The number of visitors is the revenue (which is stored in `star_wars_matrix` ) d
 
 
 ```r
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box_office_all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie_names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col_titles     <- c("US","non-US")
-star_wars_matrix      <- matrix(box_office_all, nrow=3, byrow=TRUE,dimnames=list(movie_names,col_titles)) 
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col_titles <- c("US", "non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
+    col_titles))
 
-visitors <- #your code here!
-  
-# Show me (also in millions!) the 
+# your code here!
+visitors <- 
+# Show me (also in millions!) the
 visitors
 ```
 
@@ -618,6 +624,7 @@ col_titles <- c("US", "non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
     col_titles))
 
+# your code here!
 visitors <- star_wars_matrix/5
 
 # Show me (also in millions!) the
@@ -664,19 +671,21 @@ After looking at the result of the previous exercise, big boss Lucas pointed out
 
 
 ```r
-# Box office Star Wars: In Millions (!) 
-# Construct matrix: 
-box_office_all <- c(461, 314.4,290.5, 247.9,309.3,165.8)
-movie_names    <- c("A new hope","The empire strikes back","Return of the Jedi")
-col_titles     <- c("US","non-US")
-star_wars_matrix      <- matrix(box_office_all, nrow=3, byrow=TRUE,dimnames=list(movie_names,col_titles)) 
-ticket_prices_matrix  <- matrix( c(5,5,6,6,7,7), nrow=3,byrow=TRUE,dimnames=list(movie_names,col_titles)) 
+# Box office Star Wars: In Millions (!)  Construct matrix:
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie_names <- c("A new hope", "The empire strikes back", "Return of the Jedi")
+col_titles <- c("US", "non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, 
+    col_titles))
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, 
+    dimnames = list(movie_names, col_titles))
 
-visitors <- # your code here
-average_us_visitor <- # your code here
-average_non_us_visitor <- # your code here
+# Your code below:
+visitors <- # Your code below:
+average_us_visitor <- # Your code below:
+average_non_us_visitor <- 
 
-#Show me the (all in Millions)
+# Show me the (all in Millions)
 visitors
 average_us_visitor
 average_non_us_visitor
@@ -696,8 +705,11 @@ star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = li
 ticket_prices_matrix <- matrix(c(5, 7, 6, 8, 7, 9), nrow = 3, byrow = TRUE, 
     dimnames = list(movie_names, col_titles))
 
+# Your code here
 visitors <- star_wars_matrix/ticket_prices_matrix
+# Your code here
 average_us_visitor <- mean(visitors[, 1])
+# Your code here
 average_non_us_visitor <- mean(visitors[, 2])
 
 # Show me the (all in Millions)
