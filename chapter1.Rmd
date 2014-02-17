@@ -2,7 +2,7 @@
 courseTitle       : Introduction to R v3
 chapterTitle      : Intro to basics
 description       : In this chapter you'll take your first steps with R. You learn how to use the console as a calculator, assign variables, and get to know the basic data types in R. Let's get started!
-framework : datamind
+framework : datacamp
 mode: selfcontained
 ---
 
@@ -65,14 +65,14 @@ DM.result <- TRUE
 
 ## Little arithmetics with R
 
-In its most basic form R can be used as a simple calculator. Let's look at the following arithmetic operators:
+In its most basic form R can be used as a simple calculator. Let's consider at the following arithmetic operators:
 
 - Addition: `+`
 - Substraction: `-`
 - Multiplication: `*`
 - Division: `/`
 - Exponentiation: `^`
-- Modulo: `%%`.
+- Modulo: `%%`
 
 The last two might need some explaining:
 - The `^` operator takes the number left to it to the power of the number on its right-hand side: for example `3^2` is 9.
@@ -104,10 +104,9 @@ Just follow the instructions, this should be easy ;-).
 (5+5)/2 
 
 # Exponentiation
-# Add your code here!
 
 # Modulo
-# Add your code here!
+
 ```
 
 *** =solution
@@ -157,7 +156,7 @@ You can assign a value 4 to a variable `my_variable` with the command: `my_varia
 
 *** =instructions
 
-1. Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer and see that when asked to print `x` the value 42 appears.
+1. Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when asking R to print `x` the value 42 appears.
 
 *** =hint
 
@@ -169,17 +168,17 @@ Just click the Submit Answer button on the right.
 # Assign the value 42 to x
 x <- 
 
-# Print out the value of the variable answer
+# Print out the value of the variable x
 x
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-# Assign the value 42 to X
+# Assign the value 42 to x
 x <- 42
 
-# Print out the value of the variable answer
+# Print out the value of the variable x
 x
 ```
 
@@ -216,7 +215,7 @@ Remember, if you want to assign a number or object to a variable in R, you can m
 ```{r eval=FALSE}
 # Assign the value 5 to the variable called my_apples
 
-# Print out the value of the variable answer
+# Print out the value of the variable my_apples
 ```
 
 *** =solution
@@ -225,7 +224,7 @@ Remember, if you want to assign a number or object to a variable in R, you can m
 # Assign the value 5 to the variable called my_apples
 my_apples <- 5
 
-# Print out the value of the variable answer
+# Print out the value of the variable my_apples
 my_apples
 ```
 
@@ -259,7 +258,7 @@ Every tasty fruit basket needs oranges so you decide to add 6 oranges. As a data
 *** =sample_code
 
 ```{r eval=FALSE}
-# Assign a value to the variable called my_apples and my_oranges
+# Assign a value to the variables called my_apples and my_oranges
 my_apples <- 5
 
 # Add these two variables together and print the result
@@ -314,10 +313,10 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples
 my_apples <- 5 
-# Print out the value of answer
+# Print out the value of my_apples
 my_apples       
 
-#Add a character
+# Add a character
 my_oranges <- "six" 
 my_oranges 
 
@@ -335,7 +334,7 @@ my_apples <- 5
 # Print out the value of answer
 my_apples  
 
-#Add a numeric
+# Add a numeric
 my_oranges <- 6
 my_oranges 
 
@@ -434,7 +433,7 @@ Remember when you added `5 + "six"` and got an error due to a mismatch in data t
 1. Complete the code in the editor and assign to `datatype1`, `datatype2` and `datatype3` the data type (or object class) of the variables `my_numeric`, `my_character` and `my_logical` respectively.
 
 *** =hint
-You can find out the data type of the `my_numeric` variable for example by typing: `datatype1 <- class("my_numeric")`. What you should do is similar for `my_character` and `my_logical`. 
+You can find out the data type of the `my_numeric` variable for example by typing: `datatype1 <- class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
 
 *** =sample_code
 
@@ -444,10 +443,10 @@ my_numeric <- 42
 my_character <- "forty-two"
 my_logical <- FALSE
 
-# What data type
-datatype1 <- 
-datatype2 <- 
-datatype3 <-
+# Assign the data type
+datatype1 
+datatype2  
+datatype3  
 
 # Print the types
 datatype1
@@ -463,12 +462,12 @@ my_numeric <- 42
 my_character <- "forty-two"
 my_logical <- FALSE
 
-#Check which type these variables have:
+# Check which type these variables have:
 datatype1 <- class(my_numeric)
 datatype2 <- class(my_character)
 datatype3 <- class(my_logical)
 
-#Print the types:
+# Print the types:
 datatype1
 datatype2
 datatype3

@@ -1,8 +1,7 @@
 base
 bitops
-datamind
-datamindSCT
-devtools
+datacamp
+datacampSCT
 httr
 RCurl
 rjson
