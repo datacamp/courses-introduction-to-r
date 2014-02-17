@@ -1,6 +1,7 @@
 --- 
 courseTitle       : Introduction to R v3
 chapterTitle      : Matrices
+chapterTitleMeta  : Chapter 3
 description       : In this chapter, you'll learn how to work with matrices in R. By the end of the chapter you'll be able to create matrices, and understand how you can do basic computations with them. You'll analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
 framework : datamind 
 mode: selfcontained 
@@ -17,7 +18,7 @@ In R, you can construct a matrix with the `matrix` function, for example: `matri
 
 *** =instructions
 
-1. Construct a matrix with 3 rows containing the numbers 1 up to 9 in the editor, the click Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
+1. Construct a matrix with 3 rows containing the numbers 1 up to 9 in the editor, the click Submit Answer button and look at the output in the console. Extra tip: use `matrix(1:9, byrow=TRUE, nrow=3)`.
 
 *** =hint
 Read the assignment carefully, the answer is already given ;-).
@@ -34,6 +35,7 @@ Read the assignment carefully, the answer is already given ;-).
 
 
 ```r
+# Construction of a matrix with 3 rows containing the numbers 1 up to 9
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
@@ -131,7 +133,7 @@ Similar to vectors, you can add names for the rows and the columns of a matrix w
 *** =instructions
 
 1. Give the columns of `star_wars_matrix` the names `"US"` and `"non-US"`.
-2. Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie_names are: "A new hope", "The empire strikes back" and "Return of the Jedi".
+2. Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie names are: "A new hope", "The empire strikes back" and "Return of the Jedi".
 
 
 *** =hint
@@ -151,7 +153,8 @@ return_jedi <- c(309.306177, 165.8)
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, 
     byrow = TRUE)
 
-# Add your code here such that rows and columns of star.wars have a name!
+# Add your code here such that rows and columns of star_wars_matrix have a
+# name!
 
 # Print the matrix to the console:
 star_wars_matrix
@@ -292,7 +295,7 @@ star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = li
     col_titles))
 worldwide_vector <- rowSums(star_wars_matrix)
 
-# Bind the new variable total.per.movie as a column to star.wars
+# Bind the new variable worldwide_vector as a column to star_wars_matrix
 all_wars_matrix <- 
 # Show me the
 all_wars_matrix
@@ -314,7 +317,7 @@ star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = li
 worldwide_vector <- rowSums(star_wars_matrix)
 worldwide_vector  # Print worldwide revenue per movie
 
-# Bind the new variable total.per.movie as a column to star.wars
+# Bind the new variable worldwide_vector as a column to star_wars_matrix
 all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 # Show me the:
@@ -648,7 +651,7 @@ After looking at the result of the previous exercise, big boss Lucas pointed out
 
 *** =instructions
 
-1. Assign to visitors the matrix with your estimated number of Non-US and US visitors for the three movies.
+1. Assign to `visitors` the matrix with your estimated number of Non-US and US visitors for the three movies.
 2. Assign to `average_us_visitor` the average number of visitors in the US for a Star Wars movie.
 3. Assign to `average_non_us_visitor` the average number of visitors in non-US areas.
 
@@ -669,9 +672,9 @@ col_titles     <- c("US","non-US")
 star_wars_matrix      <- matrix(box_office_all, nrow=3, byrow=TRUE,dimnames=list(movie_names,col_titles)) 
 ticket_prices_matrix  <- matrix( c(5,5,6,6,7,7), nrow=3,byrow=TRUE,dimnames=list(movie_names,col_titles)) 
 
-visitors <- #your code here
-average_us_visitor <- #your code here
-average_non_us_visitor <- #your code here
+visitors <- # your code here
+average_us_visitor <- # your code here
+average_non_us_visitor <- # your code here
 
 #Show me the (all in Millions)
 visitors

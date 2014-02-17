@@ -1,6 +1,7 @@
 --- 
-courseTitle       : Introduction to R v3
+courseTitle       : Introduction to R
 chapterTitle      : Vectors
+chapterTitleMeta  : Chapter 2
 description       : We take you on a trip to Vegas, where you'll learn how to analyze your gambling results using vectors in R! After completing this chapter, you'll be able to create vectors in R, name them, select elements from them and compare different vectors. 
 framework : datamind
 mode: selfcontained

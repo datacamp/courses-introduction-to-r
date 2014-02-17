@@ -1,6 +1,7 @@
 --- 
-courseTitle       : Introduction to R v3
+courseTitle       : Introduction to R
 chapterTitle      : Intro to basics
+chapterTitleMeta  : Chapter 1
 description       : In this chapter you'll take your first steps with R. You learn how to use the console as a calculator, assign variables, and get to know the basic data types in R. Let's get started!
 framework : datacamp
 mode: selfcontained
@@ -476,8 +477,11 @@ my_numeric <- 42
 my_character <- "forty-two"
 my_logical <- FALSE
 
-# What data type
-datatype1 <- datatype2 <- datatype3 <- 
+# Assign the data type
+datatype1
+datatype2
+datatype3
+
 # Print the types
 datatype1
 datatype2
