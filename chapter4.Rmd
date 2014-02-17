@@ -52,7 +52,7 @@ DM.result <- closed_test("theory","c('R uses factors for categorical variables!'
 
 ## What's a factor and why would you use it? (2)
 
-To create factors in R you make use of the function `factor()`. First thing to do is create a vector that contains all the observations belonging to a limited number of categories. For example, gender_vector contains the sex of 5 different individuals: `gender_vector <- c("Male","Female","Female","Male","Male")`.
+To create factors in R you make use of the function `factor()`. First thing to do is create a vector that contains all the observations belonging to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals: `gender_vector <- c("Male","Female","Female","Male","Male")`.
 
 It is clear, that there are 2 categories, or in R-terms **'factor levels'**, here: "Male" and "Female". 
 
@@ -99,9 +99,9 @@ DM.result <- closed_test( "factor_gender_vector", "factor(gender_vector)" )
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**. 
 
-A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `animals_vector`, with the categories `"Elephant", `"Giraffe"`, "Donkey"` and `"Horse"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
+A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `animals_vector`, with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
 
-In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stand above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
 
