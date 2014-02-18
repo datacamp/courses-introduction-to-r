@@ -104,7 +104,7 @@ There are two types of categorical variables: a **nominal categorical variable**
 
 A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `animals_vector`, with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
 
-In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
 
@@ -129,7 +129,14 @@ factor_animals_vector
 *** =solution
 
 ```{r eval=FALSE}
-# Just click the Submit Answer button and look at the console.
+animals_vector<- c("Elephant", "Giraffe", "Donkey","Horse")
+temperature_vector <- c("High","Low","High","Low","Medium")
+
+factor_animals_vector <- factor(animals_vector)
+factor_temperature_vector <- factor( temperature_vector,order=TRUE,levels=c("Low","Medium","High") )
+
+factor_temperature_vector
+factor_animals_vector
 ```
 
 *** =sct
@@ -169,7 +176,7 @@ Mind the order in which you have to type in the factor levels. Hint: look at the
 *** =sample_code
 ```{r eval=FALSE}
 survey_vector <- c("M","F","F","M","M")
-factor_survey_vector <- factor( survey_vector )
+factor_survey_vector <-
 
 # Print to console
 factor_survey_vector
