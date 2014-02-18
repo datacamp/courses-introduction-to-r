@@ -143,12 +143,12 @@ As a first goal, you want to construct a data frame that describes the main char
 - The planet's rotation across the sun relative to that of earth.
 - If the planet has rings or not (TRUE or FALSE).
 
-After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: planets, type, diameter, rotation and rings. (see editor, note that an element of one vector is linked to the element of another vector based on its position) 
+After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: planets, type, diameter, rotation and rings (see editor, note that an element of one vector is linked to the element of another vector based on its position).
 
 You construct a data frame with the `data.frame` function. As arguments, you should provide the above mentioned vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget, it is possible (and likely) they have different types of data.
 
 *** =instructions
-- Use the function `data.frame()` to construct a data frame. Call this variable `planets.df`.
+- Use the function `data.frame` to construct a data frame. Call this variable `planets_df`.
 
 *** =hint
 The `data.frame(col1,col2,col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are: planet, diameter, rotation and rings.
@@ -161,7 +161,6 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-
 # Create the data frame:
 ```
 
@@ -173,14 +172,14 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(planets,type,diameter,rotation,rings)
+planets_df <- data.frame(planets,type,diameter,rotation,rings)
 
-str(planets.df)
+str(planets_df)
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names <- "planets.df" 
+names <- "planets_df" 
 values <- list("data.frame(planets,type,diameter,rotation,rings)" )
 DM.result <- closed_test(names,values)
 ```
@@ -198,25 +197,25 @@ Make sure you have 8 observations and 5 variables.
 
 *** =instructions
 
-1. Use of the function `str()` to investigate the structure of the new `planets.df` variable.
+1. Use of the function `str()` to investigate the structure of the new `planets_df` variable.
 
 *** =hint
 This is easy, no hints ;-)!
 
 *** =sample_code
 ```{r eval=FALSE}
-# Check the structure of planets.df
+# Check the structure of planets_df
 ```
 
 *** =solution
 ```{r eval=FALSE}
 # Check the structure of planet.df
-str(planets.df)
+str(planets_df)
 ```
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- code_test("str(planets.df)")
+DM.result <- code_test("str(planets_df)")
 ```
 
 *** =pre_exercise_code
@@ -227,7 +226,7 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -237,47 +236,47 @@ planets.df <- data.frame(type,planets,diameter,rotation,rings)
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
 
-- `my.data.frame[1,2]` selects from the first row in `my.data.frame`, the second element.
-- `my.data.frame[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4 in `my.data.frame`.
+- `my_data_frame[1,2]` selects from the first row in `my_data_frame`, the second element.
+- `my_data_frame[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4 in `my_data_frame`.
 
-Sometimes you want to select all elements of a row or column. In this case, you just don't put anything in front or behind the comma: e.g. `my.data.frame[1,]` selects all elements of the first row. Let's now apply this technique on planets.df!
+Sometimes you want to select all elements of a row or column. In that case, you just don't put anything in front or behind the comma: e.g. `my_data_frame[1,]` selects all elements of the first row. Let's now apply this technique on `planets_df`!
 
 *** =instructions
 
-1. Create `closest.planets.df`. Here, put all the data you have on the first three planets.
-2. Create `furthest.planets.df`. Here, put all the data you have on the last three planets.
+1. Create the data frame `closest_planets_df` containing all data on the first three planets.
+2. Create the data frame `furthest_planets_df` containing all data on the last three planets.
 
 *** =hint
-`planets.df[1:3,]` will select alle elements of the first three rows.
+`planets_df[1:3,]` will select alle elements of the first three rows.
 
 *** =sample_code
 ```{r eval=FALSE}
-# planets.df from the previous exercise is pre-loaded
-closest.planets.df <- 
+# The planets_df data frame from the previous exercise is pre-loaded
+closest_planets_df <- 
 
-furthest.planets.df <- 
+furthest_planets_df <- 
 
 # Have a look:
-closest.planets.df
-furthest.planets.df
+closest_planets_df
+furthest_planets_df
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# planets.df from the previous exercise is pre-loaded
-closest.planets.df <- planets.df[1:3,]
+# The planets_df data frame from the previous exercise is pre-loaded
+closest_planets_df <- planets_df[1:3,]
 
-furthest.planets.df <- planets.df[6:8,]
+furthest_planets_df <- planets_df[6:8,]
 
 # Have a look:
-closest.planets.df
-furthest.planets.df
+closest_planets_df
+furthest_planets_df
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","closest.planets.df","furthest.planets.df")
-values <- c("planets.df","planets.df[1:3,]","planets.df[6:8,]")
+names  <- c("planets_df","closest_planets_df","furthest_planets_df")
+values <- c("planets_df","planets_df[1:3,]","planets_df[6:8,]")
 DM.result <- closed_test(names,values)
 ```
 
@@ -289,7 +288,7 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -297,39 +296,37 @@ planets.df <- data.frame(type,planets,diameter,rotation,rings)
 
 ## Selection of data frame elements (2)
 
-Instead of using numerics to select elements of a data frame, you can also use variable names to select columns of a data frame. 
+Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
 
-Maybe you want to select for the first three rows, only the elements of the variable 'type'. One way to do this, is by typing `planets.df[1:3,1]`. A possible disadvantage of this approach is that you have to know (or look up) the position of the variable 'type', which gets hard if you have a lot of variables. It is often easier just to make use of the variable name `"type"`:
-
-`planets.df[1:3,"type"]`.
+Maybe you want to select only the first 3 elements of the variable 'type'. One way to do this is: `planets_df[1:3,1]`. A possible disadvantage of this approach is that you have to know (or look up) the position of the variable 'type', which gets hard if you have a lot of variables. It is often easier just to make use of the variable name, e.g. `planets_df[1:3,"type"]`.
 
 *** =instructions
 
-1. Select for the last six rows only the diameter and assign this selection to `furthest.planets.diameter`.
+1. Select for the last six rows only the diameter and assign this selection to `furthest_planets_diameter`.
 
 *** =hint
 You select elements of a data frame conveniently with the square brackets. Select `3:8` for the rows, and `"diameter"` for the columns.
 
 *** =sample_code
 ```{r eval=FALSE}
-# planets.df from the previous exercise is pre-loaded: 
-furthest.planets.diameter <- 
+# The planets_df data frame from the previous exercise is pre-loaded: 
+furthest_planets_diameter <- 
 
 # Show me the 
-furthest.planets.diameter
+furthest_planets_diameter
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# planets.df from the previous exercise is pre-loaded
-furthest.planets.diameter <- planets.df[3:8,"diameter"]
-furthest.planets.diameter
+# The planets_df data frame from the previous exercise is pre-loaded
+furthest_planets_diameter <- planets_df[3:8,"diameter"]
+furthest_planets_diameter
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","furthest.planets.diameter")
-values <- c("planets.df","planets.df[3:8,'diameter']")
+names  <- c("planets_df","furthest_planets_diameter")
+values <- c("planets_df","planets_df[3:8,'diameter']")
 DM.result <- closed_test(names,values)
 ```
 
@@ -341,42 +338,43 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 ---
+
 ## Only planets with rings
 
-You'll often want to select an entire column, i.e. 1 specific variable from a data frame. For example: Suppose you want to select all elements of the variable `rings`. As seen before, one way to do this is making use of `planets.df[,5]` or `planets.df[,"rings"]`. 
+You'll often want to select an entire column, i.e. 1 specific variable from a data frame. Suppose you want to select all elements of the variable `rings`: both `planets_df[,5]` and `planets_df[,"rings"]` do the trick. 
 
-However, there is a short-cut. Use the `$` -sign to tell R it only has to look up all the elements of the variable behind the sign: `data.frame.name$variable.name`
+However, there is a short-cut. Use the `$`-sign to tell R it only has to look up all the elements of the variable behind the sign: `data_frame_name$variable_name`.
 
 *** =instructions
 
-1. Make use of the `$` -sign to create the `rings.vector` that contains all elements of the 'rings' variable in the planets.df data frame.
+1. Make use of the `$` -sign to create the `rings_vector` that contains all elements of the 'rings' variable in the planets_df data frame.
 
 *** =hint
-`data.frame.name$variable.name` is the most convenient way to select a variable from a data frame. In this case the data frame of choice is `planets.df` and the variable of choice is `rings`.
+`data_frame_name$variable_name` is the most convenient way to select a variable from a data frame. In this case the data frame of choice is `planets_df` and the variable of choice is `rings`.
 
 *** =sample_code
 ```{r eval=FALSE}
-# Create the rings.vector
-rings.vector <- 
+# Create the rings_vector
+rings_vector <- 
 
 # Show me the 
-rings.vector
+rings_vector
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Create the rings.vector
-rings.vector <- planets.df$rings
+# Create the rings_vector
+rings_vector <- planets_df$rings
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","rings.vector")
-values <- c("planets.df","planets.df$rings")
+names  <- c("planets_df","rings_vector")
+values <- c("planets_df","planets_df$rings")
 DM.result <- closed_test(names,values)
 ```
 
@@ -388,7 +386,7 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -401,23 +399,23 @@ From highschool, you remember some planets in our solar system have rings and ot
 
 Could R help you out? (Spoiler alert: of course it can!) 
 
-Mmm, type `rings.vector` in the console and you get: FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE 
+Mmm, type `rings_vector` in the console and you get: FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE 
 
-This means that the first 4 observations (or planets) do not have a ring (FALSE), but the other 4 do (TRUE). However, you don't get a nice overview of the names of these planets, their diameter, etc. As a next step, use `rings.vector` to select from `planets.df` all the data (i.e. all columns) on the four planets with rings.
+This means that the first 4 observations (or planets) do not have a ring (FALSE), but the other 4 do (TRUE). However, you don't get a nice overview of the names of these planets, their diameter, etc. As a next step, use `rings_vector` to select from `planets_df` all the data (i.e. all columns) on the four planets with rings.
 
 *** =instructions
 
-1. Assign to `planets.with.rings.df` all data in the planets.df dataset for the planets with rings (i.e. where `rings.vector` is TRUE).
+1. Assign to `planets.with.rings.df` all data in the planets_df dataset for the planets with rings (i.e. where `rings_vector` is TRUE).
 
 *** =hint
-Select elements from `planets.df` using the square brackets. The `rings.vector` contains boolean values and R will select only those rows/columns were the vector element is TRUE. In this case you want to select rows based on `rings.vector` and select all the columns.
+Select elements from `planets_df` using the square brackets. The `rings_vector` contains boolean values and R will select only those rows/columns were the vector element is TRUE. In this case you want to select rows based on `rings_vector` and select all the columns.
 
 *** =sample_code
 ```{r eval=FALSE}
-# Note that the planets.df dataset and rings.vector is pre-loaded in your workspace
+# Note that the planets_df dataset and rings_vector is pre-loaded in your workspace
 
 # Select the information on planets with rings:
-rings.vector <- planets.df$rings
+rings_vector <- planets_df$rings
 planets.with.rings.df <- 
 
 # Show me the
@@ -426,11 +424,11 @@ planets.with.rings.df
 
 *** =solution
 ```{r eval=FALSE}
-# Note that the planets.df dataset is pre-loaded in your workspace
+# Note that the planets_df dataset is pre-loaded in your workspace
 
 # Select the information on planets with rings:
-rings.vector <- planets.df$rings
-planets.with.rings.df <- planets.df[rings.vector,]
+rings_vector <- planets_df$rings
+planets.with.rings.df <- planets_df[rings_vector,]
 
 # Show me the
 planets.with.rings.df
@@ -438,8 +436,8 @@ planets.with.rings.df
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","rings.vector","planets.with.rings.df")
-values <- c("planets.df","planets.df$rings", "planets.df[rings.vector,]")
+names  <- c("planets_df","rings_vector","planets.with.rings.df")
+values <- c("planets_df","planets_df$rings", "planets_df[rings_vector,]")
 DM.result <- closed_test(names,values)
 ```
 
@@ -451,8 +449,8 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
-rings.vector <- planets.df$rings
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
+rings_vector <- planets_df$rings
 ```
 
 
@@ -460,20 +458,20 @@ rings.vector <- planets.df$rings
 
 ## Only planets with rings but shorter
 
-So what exactly did you learn in the past exercises? You selected a subset from a data frame ( `planets.df` ), based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+So what exactly did you learn in the past exercises? You selected a subset from a data frame ( `planets_df` ), based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
 
 Now, let's move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you just did. 
 
-`subset(data.frame.name, subset = some.condition)` 
+`subset(data_frame_name, subset = some.condition)` 
 
 The first argument of `subset()` specifies the dataset from which you want a subset. With the second argument, you give R the necessary information and conditions to select the correct subset. 
-For example: `subset(planets.df, subset=(planets.df$rings == TRUE))` 
+For example: `subset(planets_df, subset=(planets_df$rings == TRUE))` 
 
 R will give you exactly the same result as you got in the previous exercise. But this time with 1 line of code!
 
 *** =instructions
 
-1. Create a dataframe `small.planets.df` with planets that have a diameter smaller than earth (i.e smaller than 1, since diameter is a relative measure of the planets diameter).
+1. Create a dataframe `small.planets_df` with planets that have a diameter smaller than earth (i.e smaller than 1, since diameter is a relative measure of the planets diameter).
 
 *** =hint
 Sorry, you're on your own here.
@@ -481,21 +479,21 @@ Sorry, you're on your own here.
 *** =sample_code
 ```{r eval=FALSE}
 # Planets smaller than earth:
-small.planets.df  <- # Your code here!
-small.planets.df
+small.planets_df  <- # Your code here!
+small.planets_df
 ```
 
 *** =solution
 ```{r eval=FALSE}
 # Planets smaller than earth:
-small.planets.df  <- subset(planets.df, subset = planets.df$diameter < 1)
-small.planets.df
+small.planets_df  <- subset(planets_df, subset = planets_df$diameter < 1)
+small.planets_df
 ```
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","small.planets.df")
-values  <-  c("planets.df","subset(planets.df, subset = planets.df$diameter < 1)")
+names  <- c("planets_df","small.planets_df")
+values  <-  c("planets_df","subset(planets_df, subset = planets_df$diameter < 1)")
 DM.result   <- closed_test(names,values)
 ```
 
@@ -507,7 +505,7 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -564,16 +562,16 @@ Alright, now that you understand the `order()` function, let's do something usef
 *** =instructions
 
 1. Assign to the variable positions the desired ordering for the new data frame you will create in the next step. You can use the `order()` function for that, with the additional argument `decreasing=TRUE`.
-2. Now create the data frame `largest.first.df`, wich contains the same information as `planets.df`, but with the planets in decreasing order of magnitude.
+2. Now create the data frame `largest.first.df`, wich contains the same information as `planets_df`, but with the planets in decreasing order of magnitude.
 
 *** =hint
-`order(planets.df$diameter, decreasing=TRUE)` will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data `frame planets.df` !
+`order(planets_df$diameter, decreasing=TRUE)` will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data `frame planets_df` !
 
 *** =sample_code
 ```{r eval=FALSE}
-#NOTE: The data frame planets.df has been pre-loaded
+#NOTE: The data frame planets_df has been pre-loaded
 
-# What is the correct ordering based on the planets.df$diameter variable?
+# What is the correct ordering based on the planets_df$diameter variable?
 positions <-  
 
 # Create new "ordered" data frame:
@@ -585,11 +583,11 @@ largest.first.df
 
 *** =solution
 ```{r eval=FALSE}
-# What is the correct ordering based on the planets.df$diameter variable?
-positions <-  order(planets.df$diameter, decreasing=TRUE)
+# What is the correct ordering based on the planets_df$diameter variable?
+positions <-  order(planets_df$diameter, decreasing=TRUE)
 
 # Create new "ordered" data frame:
-largest.first.df <- planets.df[positions,]
+largest.first.df <- planets_df[positions,]
 
 # Have a look:
 largest.first.df
@@ -597,8 +595,8 @@ largest.first.df
 
 *** =sct
 ```{r eval=FALSE}
-names  <- c("planets.df","positions","largest.first.df")
-values <- c("planets.df"," order(planets.df$diameter, decreasing=TRUE)"," planets.df[positions,]" )
+names  <- c("planets_df","positions","largest.first.df")
+values <- c("planets_df"," order(planets_df$diameter, decreasing=TRUE)"," planets_df[positions,]" )
 DM.result <- closed_test(names,values)
 ```
 
@@ -610,6 +608,6 @@ diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);  
 rings  <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets.df <- data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 

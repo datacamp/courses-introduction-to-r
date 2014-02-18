@@ -1,6 +1,7 @@
 --- 
 courseTitle       : Introduction to R v3
 chapterTitle      : Factors
+chapterTitleMeta  : Chapter 4
 description       : Data falls into a limited number of categories very often. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of factors in data analysis, start learning how to create, subset and compare factors now!
 framework : datamind
 mode: selfcontained
@@ -76,6 +77,7 @@ Just click the Submit Answer button and look at the console.
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 factor_gender_vector <- 
+# This will print the result
 factor_gender_vector
 ```
 
@@ -87,6 +89,7 @@ gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 factor_gender_vector <- factor(gender_vector)
 
+# This will print the result
 factor_gender_vector
 ```
 
@@ -110,7 +113,7 @@ There are two types of categorical variables: a **nominal categorical variable**
 
 A nominal variable is a categorical variable without an implied order. This means it is impossible to say that 'one is worth more than the other'. Think for example of the categorical variable `animals_vector`, with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say one stands above or below the other. (Note: some of you might disagree ;-) ). 
 
-In contrast, ordinal variables do have a natural ordering, consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
 
@@ -139,7 +142,15 @@ factor_animals_vector
 
 
 ```r
-# Just click the Submit Answer button and look at the console.
+animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+
+factor_animals_vector <- factor(animals_vector)
+factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", 
+    "Medium", "High"))
+
+factor_temperature_vector
+factor_animals_vector
 ```
 
 
@@ -172,21 +183,23 @@ Next, when you want to start your data analysis your main concern is to keep a n
 
 *** =instructions
 
-1. Convert the character vector `survey_vector` into a factor vector. Assign to `factor_survey_vector`
+1. Convert the character vector `survey_vector` into a factor vector. Assign to `factor_survey_vector`.
 2. Change the factor levels of `factor_survey_vector` to `"Male"` and `"Female"`.
 
 *** =hint
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed).
+Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed.
 
 *** =sample_code
 
 ```r
-survey_vector <- c("M","F","F","M","M")
-factor_survey_vector <- factor( survey_vector )
-factor_survey_vector # Print to console
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- 
+# Print to console
+factor_survey_vector
 
-levels(factor_survey_vector) <- # Your code here
-
+# Your code here
+levels(factor_survey_vector) <- 
+# Print to console
 factor_survey_vector
 ```
 
@@ -196,9 +209,14 @@ factor_survey_vector
 ```r
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
-factor_survey_vector  # Print to console
 
+# Print to console
+factor_survey_vector
+
+# Your code here
 levels(factor_survey_vector) <- c("Female", "Male")
+
+# Print to console
 factor_survey_vector
 ```
 
@@ -257,7 +275,10 @@ factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
+# Type your code here for survey_vector
 summary(survey_vector)
+
+# Type your code here for factor_survey_vector
 summary(factor_survey_vector)
 ```
 
@@ -296,10 +317,12 @@ survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 
-# Battle of the sexes:
-factor_survey_vector[1]  # Male
-factor_survey_vector[2]  # Female
-factor_survey_vector[1] > factor_survey_vector[2]  # Male larger than female?
+# Battle of the sexes: Male
+factor_survey_vector[1]
+# Female
+factor_survey_vector[2]
+# Male larger than female?
+factor_survey_vector[1] > factor_survey_vector[2]
 ```
 
 
@@ -310,10 +333,12 @@ survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 
-# Battle of the sexes:
-factor_survey_vector[1]  # Male
-factor_survey_vector[2]  # Female
-factor_survey_vector[1] > factor_survey_vector[2]  # Male larger than female?
+# Battle of the sexes: Male
+factor_survey_vector[1]
+# Female
+factor_survey_vector[2]
+# Male larger than female?
+factor_survey_vector[1] > factor_survey_vector[2]
 ```
 
 
@@ -404,12 +429,14 @@ Use the function `factor()` to create `speed_factor_vector` based on `speed_char
 ```r
 speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
 
-# Add your code below:
+# Add your code below
 factor_speed_vector
 
+# Print
 factor_speed_vector
 
-summary(factor_speed_vector)  # R prints automagically in the right order
+# R prints automagically in the right order
+summary(factor_speed_vector)
 ```
 
 
@@ -417,10 +444,15 @@ summary(factor_speed_vector)  # R prints automagically in the right order
 
 ```r
 speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
+# Add your code below
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("Slow", 
     "Fast", "Ultra-fast"))
+
+# Print
 factor_speed_vector
-summary(factor_speed_vector)  # R prints automagically in the right order
+
+# R prints automagically in the right order
+summary(factor_speed_vector)
 ```
 
 
@@ -460,9 +492,9 @@ speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
 speed_factor_vector <- factor(speed_vector, ordered = TRUE, levels = c("Slow", 
     "Fast", "Ultra-fast"))
 
-# Your code below:
+# Your code below
 compare_them <- 
-# Is data analyst 2 faster than data analyst 5?
+# Is data analyst 2 faster than data analyst 5
 compare_them
 ```
 
@@ -474,8 +506,10 @@ speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
 speed_factor_vector <- factor(speed_vector, ordered = TRUE, levels = c("Slow", 
     "Fast", "Ultra-fast"))
 
+# Your code below
 compare_them <- speed_factor_vector[2] > speed_factor_vector[5]
-# Is data analyst 2 faster than data analyst 5?
+
+# Is data analyst 2 faster than data analyst 5
 compare_them
 ```
 
