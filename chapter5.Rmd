@@ -1,7 +1,7 @@
 --- 
 courseTitle       : Introduction to R v3
 chapterTitle      : Data frames
-description       : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, I'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
+description       : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, you'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
 framework : datamind 
 mode: selfcontained 
 --- 
@@ -22,10 +22,10 @@ A data frame has the variables of a dataset as columns and the observations as r
 
 *** =instructions
 
-1. Click Submit Answer and have a look at the console printing sample data frame that built-in as an example in R.
+1. Click Submit Answer. The data from the built-in example data frame `mtcars` will be printed to the console.
 
 *** =hint
-Just click Run!
+Just click Submit Answer!
 
 *** =sample_code
 ```{r eval=FALSE}
@@ -47,24 +47,23 @@ DM.result <- TRUE
 
 ```
 
-
 ---
 
 ## Quick, have a look at your dataset
 
 Wow, that's a lot of cars! 
 
-Working with large datasets is not uncommon in data analysis. When working with (extremely) large datasets and data frames, the first important task you, the data analyst, have is to develop a clear understanding of its structure and main elements. Therefore, it is often usefull to show only a small part of the entire dataset. This instead of printing the entire dataset every time you need it. 
+Working with large datasets is not uncommon in data analysis. When working with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
 
 So how to do this in R?
 - The function `head()` enables you to show the first observations of a data frame (or any R object you pass to it).
-- Unoriginal, the function `tail()` prints out the last observations in your dataset.
+- Unoriginally, the function `tail()` prints out the last observations in your dataset.
 
-As you will see, both `head()` and `tail()` print the column names at the top. This top line is called the 'header' and contains the name of the different variables in your dataset.
+Both `head()` and `tail()` also print a top line called the 'header', which contains the names of the different variables in your dataset.
 
 *** =instructions
 
-1. Give an overview of the mtcars data set by printing its first observations and the corresponding header.
+1. Give an overview of the `mtcars` data set by printing its first observations and the corresponding header.
 
 *** =hint
 Use the `head()` function and ask the head of `mtcars`.
@@ -89,7 +88,6 @@ DM.result <- code_test("head(mtcars")
 
 ```
 
-
 ---
 
 ## Have a look at the structure
@@ -106,7 +104,7 @@ Applying the `str()` function will often be the first thing you do when receivin
 
 *** =instructions
 
-1. Investigate the structure of the `mtcars`. Make sure you see the same numbers, variables and data types as mentioned above.
+1. Investigate the structure of the `mtcars`. Make sure you see the same numbers, variables and data types as  mentioned above.
 
 *** =hint
 Use the `str()` function with `mtcars` as input!
@@ -124,7 +122,7 @@ str(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-DM.result <- code_test("str(mtcars)")
+DM.result <- code_test("str(mtcars")
 ```
 
 *** =pre_exercise_code
@@ -140,14 +138,14 @@ DM.result <- code_test("str(mtcars)")
 Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. So put your jet pack on, because it is time for some good old fashioned space exploration! 
 
 As a first goal, you want to construct a data frame that describes the main characteristics of 8 planets in our solar system. According to your good friend Buzz the main features of a planet are:
-- The type of planet (Terrestrial or Gass Giant)
-- The planet's diameter relative to the diameter of the earth
-- The planet's rotation across the sun relative to that of earth
-- If the planet has rings or not (TRUE or FALSE)
+- The type of planet (Terrestrial or Gass Giant).
+- The planet's diameter relative to the diameter of the earth.
+- The planet's rotation across the sun relative to that of earth.
+- If the planet has rings or not (TRUE or FALSE).
 
 After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: planets, type, diameter, rotation and rings. (see editor, note that an element of one vector is linked to the element of another vector based on its position) 
 
-You construct a data frame with the `data.frame()` function, giving it the vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget, it is possible (and likely) they have different types of data.
+You construct a data frame with the `data.frame` function. As arguments, you should provide the above mentioned vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget, it is possible (and likely) they have different types of data.
 
 *** =instructions
 - Use the function `data.frame()` to construct a data frame. Call this variable `planets.df`.

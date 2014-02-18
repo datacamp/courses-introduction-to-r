@@ -1,6 +1,7 @@
 --- 
 courseTitle       : Introduction to R v3
 chapterTitle      : Factors
+chapterTitleMeta  : Chapter 4
 description       : Data falls into a limited number of categories very often. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of factors in data analysis, start learning how to create, subset and compare factors now!
 framework : datamind
 mode: selfcontained
