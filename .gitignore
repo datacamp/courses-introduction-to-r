@@ -1,3 +1,5 @@
+*
 !*.Rmd
 !*.yml
 !README.md
+!.gitignore
