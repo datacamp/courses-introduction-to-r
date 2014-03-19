@@ -160,7 +160,7 @@ A basic concept in (statistical) programming is called a **variable**.
 
 A variable allows you to store a value (e.g. 4) or object (e.g. a function description) in R. Then later you can use this variable's name to easily access the value or object that is stored within this variable. 
 
-You can assign a value 4 to a variable `my_variable` with the command: `my_variable <- 4`. 
+You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
 
 *** =instructions
 	- Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when asking R to print `x` the value 42 appears.
@@ -173,7 +173,7 @@ Just click the Submit Answer button on the right.
 
 ```{r eval=FALSE}
 # Assign the value 42 to x
-x <- 
+x = 
 
 # Print out the value of the variable x
 x
@@ -183,7 +183,7 @@ x
 
 ```{r eval=FALSE}
 # Assign the value 42 to x
-x <- 42
+x = 42
 
 # Print out the value of the variable x
 x
@@ -214,13 +214,13 @@ if (!exists("x")){
 Suppose you have a fruit basket with 5 apples. As a data analyst in training, you want to store your amount of apples in a variable with the name `my_apples`. 
 
 *** =instructions
-	- Type the following code: `my_apples <- 5` to assign the value 5 to `my_apples`.
+	- Type the following code: `my_apples = 5` to assign the value 5 to `my_apples`.
 	- Type: `my_apples` below the second comment.
 	- Click Submit Answer, and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
 
-Remember, if you want to assign a number or object to a variable in R, you can make use of the assignment operator `<-`.
+Remember, if you want to assign a number or object to a variable in R, you can make use of the assignment operator `=`.
 
 *** =sample_code
 
@@ -234,7 +234,7 @@ Remember, if you want to assign a number or object to a variable in R, you can m
 
 ```{r eval=FALSE}
 # Assign the value 5 to the variable called my_apples
-my_apples <- 5
+my_apples = 5
 
 # Print out the value of the variable my_apples
 my_apples
@@ -268,13 +268,13 @@ Every tasty fruit basket needs oranges so you decide to add 6 oranges. As a data
 	- R allows you to combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`. Create this new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
 
 *** =hint
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `=` to assign that value to the variable `my_fruit`.
 
 *** =sample_code
 
 ```{r eval=FALSE}
 # Assign a value to the variables called my_apples and my_oranges
-my_apples <- 5
+my_apples = 5
 
 # Add these two variables together and print the result
 
@@ -285,14 +285,14 @@ my_apples <- 5
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples and my_oranges
-my_apples  <- 5
-my_oranges <- 6
+my_apples  = 5
+my_oranges = 6
 
 # Add these two variables together and print the result
 my_apples + my_oranges
 
 # Create the variable my_fruit by adding my_apples and my_oranges
-my_fruit <- my_apples + my_oranges
+my_fruit = my_apples + my_oranges
 ```
 
 *** =sct
@@ -336,16 +336,16 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples
-my_apples <- 5 
+my_apples = 5 
 # Print out the value of my_apples
 my_apples       
 
 # Add a character
-my_oranges <- "six" 
+my_oranges = "six" 
 my_oranges 
 
 # New variable that contains total amount of fruit
-my_fruit   <- my_apples + my_oranges 
+my_fruit   = my_apples + my_oranges 
 my_fruit
 ```
 
@@ -353,17 +353,17 @@ my_fruit
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples
-my_apples <- 5  
+my_apples = 5  
 
 # Print out the value of answer
 my_apples  
 
 # Add a numeric
-my_oranges <- 6
+my_oranges = 6
 my_oranges 
 
 # New variable that contains total amount of fruit
-my_fruit   <- my_apples + my_oranges 
+my_fruit   = my_apples + my_oranges 
 my_fruit
 ```
 
@@ -416,30 +416,30 @@ Note that R is case sensitive!
 
 *** =hint 
 Replace in the editor the values with the values provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`. 
+`my_numeric = 42` assigns the value 42 to the variable `my_numeric`. 
 
 *** =sample_code
 
 ```{r eval=FALSE}
 # What's the answer to the universe
-my_numeric <- 42.5
+my_numeric = 42.5
 
 # The quotation marks indicate that the variable is of type character
-my_character <- "some text"
+my_character = "some text"
 
-my_logical <- TRUE
+my_logical = TRUE
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # What's the answer to the universe?
-my_numeric <- 42
+my_numeric = 42
 
 # The quotation marks indicate that the variable is of type character
-my_character <- "forty-two"
+my_character = "forty-two"
 
-my_logical <- FALSE
+my_logical = FALSE
 ```
 
 *** =sct
@@ -484,9 +484,9 @@ You can find out the data type of the `my_numeric` variable for example by typin
 
 ```{r eval=FALSE}
 # Declare variables of different types
-my_numeric <- 42
-my_character <- "forty-two"
-my_logical <- FALSE 
+my_numeric = 42
+my_character = "forty-two"
+my_logical = FALSE 
 
 # Check which type these variables have:
 
@@ -496,9 +496,9 @@ my_logical <- FALSE
 
 ```{r eval=FALSE}
 # Declare variables of different types:
-my_numeric <- 42
-my_character <- "forty-two"
-my_logical <- FALSE
+my_numeric = 42
+my_character = "forty-two"
+my_logical = FALSE
 
 # Check which type these variables have:
 class(my_numeric)
