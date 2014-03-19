@@ -24,6 +24,7 @@ The output of your R code shows in the **console** in the lower right corner, wh
 Just click the Submit Answer button on the right.
 
 *** =sample_code
+
 ```{r eval=FALSE}
 # This  is the editor and the part below the white line is called the console
 
@@ -37,6 +38,7 @@ demo("graphics")
 ```
 
 *** =solution
+
 ```{r eval=FALSE}
 #Just click the Submit Answer button
 
@@ -52,11 +54,13 @@ demo("graphics")
 ```
 
 *** =sct
+
 ```{r eval=FALSE}
 DM.result = list(TRUE, "Great! Let's get started!");
 ```
 
 *** =pre_exercise_code
+
 ```{r eval=FALSE}
 
 ```
@@ -476,11 +480,10 @@ if (!exists("my_numeric")){
 Remember when you added `5 + "six"` and got an error due to a mismatch in data types? You avoid such embarrassing situations by checking the data type of a variable upfront. You can do this as follow: `class(some_variable_name)`.
 
 *** =instructions
-
-1. Complete the code in the editor and assign to `datatype1`, `datatype2` and `datatype3` the data type (or object class) of the variables `my_numeric`, `my_character` and `my_logical` respectively.
+  - Complete the code in the editor and print the class of `my_numeric`, `my_character` and `my_logical` to the console. 
 
 *** =hint
-You can find out the data type of the `my_numeric` variable for example by typing: `datatype1 <- class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
+You can find out the data type of the `my_numeric` variable for example by typing: `class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
 
 *** =sample_code
 
@@ -488,17 +491,10 @@ You can find out the data type of the `my_numeric` variable for example by typin
 # Declare variables of different types
 my_numeric <- 42
 my_character <- "forty-two"
-my_logical <- FALSE
+my_logical <- FALSE 
 
-# Assign the data type
-datatype1 
-datatype2  
-datatype3  
+# Check which type these variables have:
 
-# Print the types
-datatype1
-datatype2
-datatype3
 ```
 
 *** =solution
@@ -510,37 +506,20 @@ my_character <- "forty-two"
 my_logical <- FALSE
 
 # Check which type these variables have:
-datatype1 <- class(my_numeric)
-datatype2 <- class(my_character)
-datatype3 <- class(my_logical)
-
-# Print the types:
-datatype1
-datatype2
-datatype3
+class(my_numeric)
+class(my_character)
+class(my_logical)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("datatype1")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'datatype1'.");
-} else if (!isTRUE(try(all.equal(datatype1,class(my_numeric))))){
-  DM.result = list(FALSE, "Make sure that you assign the 'class' of 'my_numeric' to 'datatype1'.");
-} if (!exists("datatype2")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'datatype2'.");
-} else if (!isTRUE(try(all.equal(datatype2,class(my_character))))){
-  DM.result = list(FALSE, "Make sure that you assign the 'class' of 'my_character' to 'datatype2'.");
-} if (!exists("datatype3")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'datatype3'.");
-} else if (!isTRUE(try(all.equal(datatype3,class(my_logical))))){
-  DM.result = list(FALSE, "Make sure that you assign the 'class' of 'my_logical' to 'datatype3'.");
-} else if (!(isTRUE(try(output_contains("datatype1")))){
-  DM.result = list(FALSE, "The output doesn't contain the result 'datatype1'.");
-} else if (!(isTRUE(try(output_contains("datatype2")))){
-  DM.result = list(FALSE, "The output doesn't contain the result 'datatype2'.");
-} else if (!(isTRUE(try(output_contains("datatype3")))){
-  DM.result = list(FALSE, "The output doesn't contain the result 'datatype3'.");
+if (!(isTRUE(try(output_contains("class(my_numeric)")))){
+  DM.result = list(FALSE, "The output doesn't contain the class of 'my_numeric'.");
+} else if (!(isTRUE(try(output_contains("class(my_character)")))){
+  DM.result = list(FALSE, "The output doesn't contain the class of 'my_character'.");
+} else if (!(isTRUE(try(output_contains("class(my_logical)")))){
+  DM.result = list(FALSE, "The output doesn't contain the class of 'my_logical'.");
 } else {
 	DM.result = list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");
 }
