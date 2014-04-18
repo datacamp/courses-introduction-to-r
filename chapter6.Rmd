@@ -1,4 +1,5 @@
 --- 
+title_meta  : Chapter 6
 title       : Lists
 description : List have components of different types just like your to-do list at home or at work. Learn how to create, name and subset in this chapter!
 framework   : datacamp
