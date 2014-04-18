@@ -1,11 +1,11 @@
 --- 
-courseTitle       : Introduction to R v3
-chapterTitle      : Matrices
-chapterTitleMeta  : Chapter 3
-description       : In this chapter, you'll learn how to work with matrices in R. By the end of the chapter you'll be able to create matrices, and understand how you can do basic computations with them. You'll analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
-framework : datamind 
-mode: selfcontained 
---- 
+title       : Matrices
+description : In this chapter, you'll learn how to work with matrices in R. By the end of the chapter you'll be able to create matrices, and understand how you can do basic computations with them. You'll analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
+framework   : datacamp
+mode        : selfcontained
+
+---
+
 
 ## What's a matrix?
 
