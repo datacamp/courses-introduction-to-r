@@ -1,4 +1,5 @@
 --- 
+title_meta  : Chapter 2
 title       : Vectors
 description : We take you on a trip to Vegas, where you'll learn how to analyze your gambling results using vectors in R! After completing this chapter, you'll be able to create vectors in R, name them, select elements from them and compare different vectors. 
 framework   : datacamp
