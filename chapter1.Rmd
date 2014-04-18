@@ -1,11 +1,10 @@
 --- 
-courseTitle       : Introduction to R
-chapterTitle      : Intro to basics
-chapterTitleMeta  : Chapter 1
-description       : In this chapter you'll take your first steps with R. You learn how to use the console as a calculator, assign variables, and get to know the basic data types in R. Let's get started!
-framework : datacamp
-mode: selfcontained
+title       : Intro to basics
+description : In this chapter you'll take your first steps with R. You learn how to use the console as a calculator, assign variables, and get to know the basic data types in R. Let's get started!
+framework   : datacamp
+mode        : selfcontained
 ---
+
 
 ## How it works
 
