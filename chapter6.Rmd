@@ -1,9 +1,9 @@
 --- 
-courseTitle       : Introduction to R v3
-chapterTitle      : Lists
-description       : List have components of different types just like your to-do list at home or at work. Learn how to create, name and subset in this chapter!
-framework : datamind
-mode: selfcontained 
+title       : Lists
+description : List have components of different types just like your to-do list at home or at work. Learn how to create, name and subset in this chapter!
+framework   : datacamp
+mode        : selfcontained
+
 ---
 
 ## Lists, why would you need them?
