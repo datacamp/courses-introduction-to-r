@@ -1,3 +1,11 @@
-courseTitle: Introduction to R v3
-courseAuthors: Jonathan Cornelissen
-courseDescription: With over 2 million users worldwide R is rapidly becoming the leading programming language in statistics and data science. Every year, the number of R users grows with over 40%, and an increasing number of organizations start to use it in their day-to-day activities.<br><br>In this introduction to R, you will master the basics of this beautiful open source language. We'll take you on trips to Las Vegas and galaxies far far away. Basic topics such as factors, lists and data frames will be covered. After finishing this introductory R course, you'll master some very valuable R skills and are ready to undertake your first very own data analysis.<br><br><i>This course is aimed at people who'd like to start using R for their study assignments, research projects or professional endeavors. No previous experience in programming languages or data science is required.</i>
+id: 226
+title: Introduction to R v3
+author_field: Jonathan Cornelissen
+description: With over 2 million users worldwide R is rapidly becoming the leading programming language in statistics and data science. Every year, the number of R users grows with over 40%, and an increasing number of organizations start to use it in their day-to-day activities.<br><br>In this introduction to R, you will master the basics of this beautiful open source language. We'll take you on trips to Las Vegas and galaxies far far away. Basic topics such as factors, lists and data frames will be covered. After finishing this introductory R course, you'll master some very valuable R skills and are ready to undertake your first very own data analysis.<br><br><i>This course is aimed at people who'd like to start using R for their study assignments, research projects or professional endeavors. No previous experience in programming languages or data science is required.</i>
+chapters:
+  - chapter1.Rmd:651 
+  - chapter2.Rmd:652 
+  - chapter3.Rmd:653 
+  - chapter4.Rmd:654 
+  - chapter5.Rmd:655 
+  - chapter6.Rmd:656 
