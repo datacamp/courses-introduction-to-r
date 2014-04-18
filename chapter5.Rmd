@@ -1,10 +1,10 @@
 --- 
-courseTitle       : Introduction to R v3
-chapterTitle      : Data frames
-description       : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, you'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
-framework : datamind 
-mode: selfcontained 
---- 
+title       : Data frames
+description : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, you'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
+framework   : datacamp
+mode        : selfcontained
+
+---
 
 ## What's a data frame?
 
