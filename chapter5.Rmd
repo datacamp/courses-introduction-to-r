@@ -1,4 +1,5 @@
 --- 
+title_meta  : Chapter 5
 title       : Data frames
 description : Most datasets you'll be working with will be stored as a data frame. By the end of this chapter, you'll be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
 framework   : datacamp
