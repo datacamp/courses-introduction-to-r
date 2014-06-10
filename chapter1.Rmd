@@ -136,12 +136,12 @@ Just follow the instructions, this should be easy ;-).
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("2^5")))){
+if (!(isTRUE(try(output_contains("2^5"))))) {
   DM.result = list(FALSE, "The exponentiation example doesn't seem right. Make sure to carefully read the instructions.");
-} else if (!(isTRUE(try(output_contains("17%%4")))){
-	DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to carefully read the instructions.");
+} else if (!(isTRUE(try(output_contains("17%%4"))))) {
+  DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to carefully read the instructions.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -297,18 +297,17 @@ my_fruit = my_apples + my_oranges
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("my_oranges")){
+if (!exists("my_oranges")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_oranges'.");
-} else if (!isTRUE(try(all.equal(my_oranges,6)))){
+} else if (!isTRUE(try(all.equal(my_oranges,6)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'.");
-} else if (!(isTRUE(try(output_contains("my_apples + my_oranges")))){
   DM.result = list(FALSE, "The output doesn't contain the result of adding 'my_apples' and 'my_oranges'.");
-} else if (!exists("my_fruit")){
+} else if (!exists("my_fruit")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
-} else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))){
+} else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_fruit'.");
 } else {
-	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -369,18 +368,18 @@ my_fruit
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("my_oranges")){
+if (!exists("my_oranges")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_oranges'.");
-} else if (!isTRUE(try(all.equal(my_oranges,6)))){
+} else if (!isTRUE(try(all.equal(my_oranges,6)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'. A string does not equal a number!");
-} else if (!(isTRUE(try(output_contains("my_apples + my_oranges")))){
+} else if (!(isTRUE(try(output_contains("my_apples + my_oranges"))))) {
   DM.result = list(FALSE, "The output doesn't contain the result of adding 'my_apples' and 'my_oranges'.");
-} else if (!exists("my_fruit")){
+} else if (!exists("my_fruit")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
-} else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))){
+} else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_fruit'.");
 } else {
-	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -443,20 +442,20 @@ my_logical = FALSE
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("my_numeric")){
+if (!exists("my_numeric")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_numeric'.");
-} else if (!isTRUE(try(all.equal(my_numeric,42)))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_numeric'.");
-} if (!exists("my_character")){
+} else if (!isTRUE(try(all.equal(my_numeric,42)))) {
+  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_numeric.'");
+} else if (!exists("my_character")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_character'.");
-} else if (!isTRUE(try(all.equal(my_character,"forty-two")))){
+} else if (!isTRUE(try(all.equal(my_character,"forty-two")))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_character'. Don't forget the quotes.");
-} if (!exists("my_logical")){
+} else if (!exists("my_logical")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_logical'.");
-} else if (!isTRUE(try(all.equal(my_logical,FALSE)))){
+} else if (!isTRUE(try(all.equal(my_logical,FALSE)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_logical'.");
 } else {
-	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -507,11 +506,11 @@ class(my_logical)
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("class(my_numeric)")))){
+if (!(isTRUE(try(output_contains("class(my_numeric)"))))) {
   DM.result = list(FALSE, "The output doesn't contain the class of 'my_numeric'.");
-} else if (!(isTRUE(try(output_contains("class(my_character)")))){
+} else if (!(isTRUE(try(output_contains("class(my_character)"))))) {
   DM.result = list(FALSE, "The output doesn't contain the class of 'my_character'.");
-} else if (!(isTRUE(try(output_contains("class(my_logical)")))){
+} else if (!(isTRUE(try(output_contains("class(my_logical)"))))) {
   DM.result = list(FALSE, "The output doesn't contain the class of 'my_logical'.");
 } else {
 	DM.result = list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");

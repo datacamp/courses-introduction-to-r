@@ -623,7 +623,7 @@ if (!exists("total_poker")){
 
 ---
 
-
+## Vector selection: the good times
 
 Your hunch seemed to be right, it appears that the poker game is more your cup of tea than roulette. 
 
