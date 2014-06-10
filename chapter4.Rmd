@@ -39,9 +39,9 @@ theory = "R uses factors for categorical variables!"
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("theory")){
+if (!exists("theory")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'theory'.");
-} else if (!isTRUE(try(all.equal(theory,"R uses factors for categorical variables!")))){
+} else if (!isTRUE(try(all.equal(theory,"R uses factors for categorical variables!")))) {
   DM.result = list(FALSE, "Make sure to assign the correct sentence to 'theory'. Remember that R is case sensitive.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
@@ -213,12 +213,12 @@ factor_survey_vector
 ```{r eval=FALSE}
 if (!exists("factor_survey_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'factor_survey_vector'.");
-} else if (!isTRUE(try(all.equal(factor_survey_vector,factor(survey_vector))))){
+} else if (!isTRUE(try(all(as.numeric(factor_survey_vector) == as.numeric(factor(survey_vector)))))) {
   DM.result = list(FALSE, "Did you assign the factor of 'survey_vector' to 'factor_survey_vector'?");
-} else if (!isTRUE(try(all.equal(levels(factor_survey_vector),c("Female","Male")) || all.equal(levels(factor_survey_vector),c("Male","Female"))))){
+} else if (!isTRUE(try(all(levels(factor_survey_vector) %in% c("Male","Female"))))) {
   DM.result = list(FALSE, "Did you assign the correct factor levels to 'factor_survey_vector'? Remember that R is case sensitive.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -277,9 +277,9 @@ summary(factor_survey_vector)
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("summary(survey_vector)")))){
+if (!(isTRUE(try(output_contains("summary(survey_vector)"))))) {
 	DM.result = list(FALSE, "Did you call the summary function on the 'survey_vector'?");
-} else if (!(isTRUE(try(output_contains("summary(factor_survey_vector)")))){
+} else if (!(isTRUE(try(output_contains("summary(factor_survey_vector)"))))) {
 	DM.result = list(FALSE, "Did you call the summary function on the 'factor_survey_vector'?");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
