@@ -10,7 +10,7 @@ mode        : selfcontained
 
 Feeling lucky? 
 
-You better, because this chapter takes you on a trip to the City of Sins, also known as "Statisticians Paradise" ;-).
+You better, because this chapter takes you on a trip to the City of Sins, also known as *"Statisticians Paradise"* ;-).
 
 Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables, and fire off your career as a professional gambler. This chapter will show you how to easily keep track of your betting progress and how to do some simple analysis on past actions. Next Stop, Vegas Baby...VEGAS!!!!
 
@@ -113,6 +113,7 @@ if (!exists("boolean_vector")){
 After one week in Las Vegas, and still zero Ferrari's in your garage, you decide it is time to start using your data analytical superpowers. 
 
 Before doing a first analysis, you decide to first collect the winnings and losses for the last week: 
+
 For `poker_vector`: 
 - On Monday you won 140\$ 
 - Tuesday you lost 50\$
@@ -191,7 +192,7 @@ You can use `names(poker_vector)` to set the names of the variable `poker_vector
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
@@ -204,7 +205,7 @@ roulette_vector = c(-24,-50,100,-350,10)
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
@@ -243,7 +244,7 @@ if (!exists("poker_vector")){
 
 If you want to become a good statistician, you have to become lazy! (If you are already lazy, feel proud, chances are high you are one of those exceptional, natural-born statistical talents.) 
 
-In the previous exercises you probably experienced it is boring and frustrating to type and retype information such as the days of the week. However, when looking at it from a higher perspective, there is a more efficient way to do this: assign the days of the week vector to a **variable**! 
+In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when looking at it from a higher perspective, there is a more efficient way to do this: assign the days of the week vector to a **variable**! 
 
 Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
 
@@ -258,29 +259,29 @@ You can use `names(poker_vector)` to set the names of the variable `poker_vector
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
-# Create the variable days_vector
+# Create the variable days_vector containing "Monday","Tuesday","Wednesday","Thursday","Friday"
 days_vector =
  
 #Assign the names of the day to the roulette and poker_vectors
-names(poker_vector)      
-names(roulette_vector)  
+names(poker_vector) =   
+names(roulette_vector) =
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
-# Create the variable days_vector
+# Create the variable days_vector containing "Monday","Tuesday","Wednesday","Thursday","Friday"
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 
 #Assign the names of the day to the roulette and poker_vectors
@@ -332,8 +333,8 @@ Use the `+` operator to sum `A_vector` and `B_vector`. Use `=` to assign the res
 *** =sample_code
 
 ```{r eval=FALSE}
-A_vector   = c(1,2,3)
-B_vector   = c(4,5,6)
+A_vector = c(1,2,3)
+B_vector = c(4,5,6)
 
 # Take the sum of A_vector and B_vector
 total_vector = 
@@ -342,8 +343,8 @@ total_vector =
 *** =solution
 
 ```{r eval=FALSE}
-A_vector   = c(1,2,3)
-B_vector   = c(4,5,6)
+A_vector = c(1,2,3)
+B_vector = c(4,5,6)
 
 # Take the sum of A_vector and B_vector
 total_vector = A_vector + B_vector
@@ -394,7 +395,7 @@ Just click the Submit Answer button on the right.
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday:
 roulette_vector = c(-24,-50,100,-350,10)
 
@@ -411,7 +412,7 @@ total_daily =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
-poker_vector   = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday:
 roulette_vector = c(-24,-50,100,-350,10)
 
@@ -473,7 +474,7 @@ Use the `sum` function to get the total of the `roulette_vector`. `total_week` i
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
@@ -556,7 +557,7 @@ To check if 6 is larger than 5, you type `6 > 5`. This returns a variable with d
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
@@ -577,7 +578,7 @@ answer =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
@@ -641,7 +642,7 @@ Wednesday is the third element of `poker_vector`, and can thus be selected with 
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -656,7 +657,7 @@ poker_wednesday =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -711,7 +712,7 @@ Use the vector `c(2,3,4)` between square brackets to select the correct elements
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -726,7 +727,7 @@ poker_midweek =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -781,7 +782,7 @@ Assign to `roulette_selection_vector` a selection of `roulette_vector` by placin
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -796,7 +797,7 @@ roulette_selection_vector =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -845,7 +846,7 @@ To get the mean of the vector poker, you can use `mean(poker_vector)`. Now, you 
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker_vector and roulette_vector
@@ -859,7 +860,7 @@ average_midweek_gain =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -921,7 +922,7 @@ To check for which days your poker gains are positive, R should check for each e
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -936,7 +937,7 @@ selection_vector =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -994,7 +995,7 @@ Use `selection_vector` to select the desired elements from `poker_vector`, and a
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -1011,7 +1012,7 @@ poker_winning_days =
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -1071,7 +1072,7 @@ Have a look at the previous exercise, and do the similar analysis but now for `r
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
@@ -1088,7 +1089,7 @@ names(roulette_vector) = names(poker_vector) = days_vector
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    = c(140,-50,20,-120,240)
+poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings form Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
