@@ -562,9 +562,9 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 
 # Name poker and roulette
-days = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = days
-names(poker_vector) = days
+days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Calculate total gains for poker and roulette
 total_poker =
@@ -583,9 +583,9 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 
 # Name poker and roulette
-days = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = days
-names(poker_vector) = days
+days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Calculate total gains for poker and roulette
 total_poker = sum(poker_vector)
@@ -647,7 +647,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 poker_wednesday = 
@@ -662,7 +663,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 poker_wednesday = poker_vector[3]
@@ -671,15 +673,7 @@ poker_wednesday = poker_vector[3]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("poker_wednesday")){
+if (!exists("poker_wednesday")){
   DM.result = list(FALSE, "Please make sure to define a variable 'poker_wednesday'.");
 } else if (!isTRUE(try(all.equal(poker_wednesday,poker_vector[3])))){
   DM.result = list(FALSE, "Looks like 'poker_wednesday' doesn't contain the correct value of the 'poker_vector'.");
@@ -717,7 +711,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 poker_midweek = 
@@ -732,7 +727,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 poker_midweek = poker_vector[ c(2,3,4) ]
@@ -741,15 +737,7 @@ poker_midweek = poker_vector[ c(2,3,4) ]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("poker_midweek")){
+if (!exists("poker_midweek")){
   DM.result = list(FALSE, "Please make sure to define a variable 'poker_midweek'.");
 } else if (!isTRUE(try(all.equal(poker_midweek,poker_vector[ c(2,3,4) ])))){
   DM.result = list(FALSE, "Looks like 'poker_midweek' doesn't contain the correct values from 'poker_vector'.");
@@ -787,7 +775,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 roulette_selection_vector = 
@@ -802,7 +791,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # Define new variable based on a selection
 roulette_selection_vector = roulette_vector[2:5]
@@ -811,15 +801,7 @@ roulette_selection_vector = roulette_vector[2:5]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_selection_vector")){
+if (!exists("roulette_selection_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'roulette_selection_vector'.");
 } else if (!isTRUE(try(all.equal(roulette_selection_vector,roulette_vector[2:5])))){
   DM.result = list(FALSE, "Looks like 'roulette_selection_vector' doesn't contain the correct selection from 'roulette_vector'. Make sure to to use the right indices.");
@@ -851,7 +833,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker_vector and roulette_vector
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 average_midweek_gain = 
 ```
@@ -865,7 +848,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 average_midweek_gain = mean( poker_vector[c("Monday","Tuesday","Wednesday")] )
 ```
@@ -873,15 +857,7 @@ average_midweek_gain = mean( poker_vector[c("Monday","Tuesday","Wednesday")] )
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("average_midweek_gain")){
+if (!exists("average_midweek_gain")){
   DM.result = list(FALSE, "Please make sure to define a variable 'average_midweek_gain'.");
 } else if (!isTRUE(try(all.equal(average_midweek_gain,mean( poker_vector[c("Monday","Tuesday","Wednesday")] ))))){
   DM.result = list(FALSE, "Looks like 'average_midweek_gain' doesn't contain the mean of the correct selection of 'poker_vector'.");
@@ -927,7 +903,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on poker
 selection_vector = 
@@ -942,7 +919,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on poker
 selection_vector = poker_vector > 0
@@ -951,15 +929,7 @@ selection_vector = poker_vector > 0
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("selection_vector")){
+if (!exists("selection_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
 } else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
   DM.result = list(FALSE, "Looks like 'selection_vector' doesn't the correct result. Remember that R uses element wise operations for vectors.");
@@ -1000,7 +970,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on poker
 selection_vector = poker_vector > 0
@@ -1017,7 +988,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on poker
 selection_vector = poker_vector > 0
@@ -1028,15 +1000,7 @@ poker_winning_days = poker_vector[selection_vector]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("selection_vector")){
+if (!exists("selection_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
 } else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
   DM.result = list(FALSE, "Looks like 'selection_vector' doesn't the correct result. Remember that R uses element wise operations for vectors.");
@@ -1077,7 +1041,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on roulette
 
@@ -1094,7 +1059,8 @@ poker_vector = c(140,-50,20,-120,240)
 roulette_vector = c(-24,-50,100,-350,10)
 # Name poker and roulette
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) = names(poker_vector) = days_vector
+names(roulette_vector) = days_vector
+names(poker_vector) = days_vector
 
 # What days of the week did you make money on roulette
 selection_vector = roulette_vector > 0
@@ -1105,15 +1071,7 @@ roulette_winning_days = roulette_vector[ selection_vector ]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Looks like 'poker_vector' doesn't contain the correct vector.");
-} else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Looks like 'roulette_vector' doesn't contain the correct vector.");
-} else if (!exists("selection_vector")){
+if (!exists("selection_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
 } else if (!isTRUE(try(all.equal(selection_vector,roulette_vector > 0)))){
   DM.result = list(FALSE, "Looks like 'selection_vector' doesn't the correct result. Make sure you use 'roulette_vector'.");
