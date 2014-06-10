@@ -18,7 +18,7 @@ It is important that R knows whether it's dealing with a continuous or a categor
 A good example of a categorical variable, is the variable 'Gender'. As you hopefully know by now, a human individual can either be "Male" or "Female". So "Male" and "Female" are here the (only two) values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
 
 *** =instructions
-	- Assign to variable `theory` the value `"R uses factors for categorical variables!"`
+- Assign to variable `theory` the value `"R uses factors for categorical variables!"`
 
 *** =hint
 Just click the Submit Answer button and look at the console.
@@ -66,7 +66,7 @@ It is clear, that there are 2 categories, or in R-terms **'factor levels'**, her
 The function `factor()` will encode the vector as a factor: `factor_gender_vector = factor(gender_vector)`. 
 
 *** =instructions
-	- Assign to `factor_gender_vector` the character vector `gender_vector` converted to a **factor**. Look at the console and note that R prints out the factor levels below the actual values.
+- Assign to `factor_gender_vector` the character vector `gender_vector` converted to a **factor**. Look at the console and note that R prints out the factor levels below the actual values.
 
 *** =hint
 Just click the Submit Answer button and look at the console.
@@ -116,7 +116,7 @@ A nominal variable is a categorical variable without an implied order. This mean
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
-	- Click Submit Answer to check how R constructs and prints nominal and ordinal variables. Don't worry if you don't understand all the code just yet, we'll get to that.
+- Click Submit Answer to check how R constructs and prints nominal and ordinal variables. Don't worry if you don't understand all the code just yet, we'll get to that.
 
 *** =hint
 Just click the Submit Answer button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
@@ -178,8 +178,8 @@ A good illustration is the raw data provided to you by a survey. A standard ques
 Next, when you want to start your data analysis your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier. 
 
 *** =instructions
-	- Convert the character vector `survey_vector` into a factor vector. Assign to `factor_survey_vector`.
-	- Change the factor levels of `factor_survey_vector` to `"Male"` and `"Female"`.
+- Convert the character vector `survey_vector` into a factor vector. Assign to `factor_survey_vector`.
+- Change the factor levels of `factor_survey_vector` to `"Male"` and `"Female"`.
 
 *** =hint
 Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed.
@@ -239,7 +239,7 @@ After finishing this course, one of your favourite functions in R will be `summa
 Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"`. The `summary()` function gives the answer to this question.
 
 *** =instructions
-	- Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the result for both vectors, are they both equally useful in this case?
+- Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the result for both vectors, are they both equally useful in this case?
 
 The fact that you identified `"Male"` and `"Female"` as factor levels in `factor_survey_vector`, enables R to show the number of elements for each category.
 
@@ -302,7 +302,7 @@ if (!(isTRUE(try(output_contains("summary(survey_vector)")))){
 In `factor_survey_vector` we have a factor with two levels: male & female. But how does R value these relatively to each other? In other words, who sees R to be worth more, males or females?
 
 *** =instructions
-	- Read the code in the editor and click Submit Answer to see whether males are worth more than females.
+- Read the code in the editor and click Submit Answer to see whether males are worth more than females.
 
 *** =hint
 Just click Submit Answer.
@@ -363,13 +363,13 @@ This is not always the case! Sometimes you will deal with factors that do have a
 Let's say your leading a research team of 5 data analysts and want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"Slow"`, `"Fast"` or `"Ultra-Fast"`, and save the results in `speed_vector`.
 
 *** =instructions
-	- As a first step, assign `speed_vector` knowing that: 
- 		Analyst 1: Fast, 
- 		Analyst 2: Slow, 
- 		Analyst 3: Slow,
- 		Analyst 4: Fast and
- 		Analyst 5: Ultra-fast.
- 		Just as characters for now.
+- As a first step, assign `speed_vector` knowing that: 
+Analyst 1: Fast, 
+Analyst 2: Slow, 
+Analyst 3: Slow,
+Analyst 4: Fast and
+Analyst 5: Ultra-fast.
+Just as characters for now.
 
 *** =hint
 Assign to `speed_vector` : `c("Fast","Slow",...?`.
@@ -418,7 +418,7 @@ if (!exists("speed_vector")){
 By setting the argument `ordered=TRUE` in the function `factor()`, you indicate the factor is ordered. With the argument `levels` you give the values of the factor in the correct order, e.g. `levels = c("Low","Medium","High")`.
 
 *** =instructions
-	- Rewrite the code for `speed_factor_vector`, this time taking into account that there is a specific order for the factor levels.
+- Rewrite the code for `speed_factor_vector`, this time taking into account that there is a specific order for the factor levels.
 
 *** =hint
 Use the function `factor()` to create `speed_factor_vector` based on `speed_character_vector`. The argument order should be set to `TRUE` since there is a natural ordering. The factor levels are in this case: `c("Slow","Fast","Ultra-fast")`.
@@ -480,7 +480,7 @@ Having a bad day at work, 'data analyst number two' enters your office and start
 The fact that `speed_factor_vector` is now ordered, enables us to compare different elements (i.e. data analysts in this case). You can simply do this by using the well-known operators.
 
 *** =instructions
-	- Check whether data analyst 2 is faster than data analyst 5 and assign the result to `compare_them`. Remember the `>` operator allows to check whether one element is larger than the other.
+- Check whether data analyst 2 is faster than data analyst 5 and assign the result to `compare_them`. Remember the `>` operator allows to check whether one element is larger than the other.
 
 *** =hint
 You can compare the elements of the vector with the `>` operator. Relevant for this case: `vector[1] > vector[2]` checks whether the first elements of vector is larger than the second element.

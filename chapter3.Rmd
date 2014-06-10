@@ -18,7 +18,7 @@ In R, you can construct a matrix with the `matrix` function, for example: `matri
 - The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
-	- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
+- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
 
 *** =hint
 Read the assignment carefully, the answer is already given ;-).
@@ -62,7 +62,7 @@ It is time to get your hands dirty. In the following exercises you will analyze 
 In the editor, three vectors are defined each representing the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
 
 *** =instructions
-	- Construct a matrix with one row for each movie (thus 3 rows). The first column is for the US box office revenue, and the second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
+- Construct a matrix with one row for each movie (thus 3 rows). The first column is for the US box office revenue, and the second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
 
 *** =hint
 Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is thus: `c(new_hope,empire_strikes,return_jedi)`.
@@ -136,8 +136,8 @@ Similar to vectors, you can add names for the rows and the columns of a matrix w
 
 
 *** =instructions
-	- Give the columns of `star_wars_matrix` the names `"US"` and `"non-US"`.
-	- Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie names are: "A new hope", "The empire strikes back" and "Return of the Jedi".
+- Give the columns of `star_wars_matrix` the names `"US"` and `"non-US"`.
+- Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie names are: "A new hope", "The empire strikes back" and "Return of the Jedi".
 
 
 *** =hint
@@ -222,7 +222,7 @@ To calculate the total box office revenue for the three Star Wars movies, you ha
 In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector. `sum_of_rows_vector =  rowSums(my_matrix)`.
 
 *** =instructions
-	- Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+- Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
 
 *** =hint
 The `rowSums()` function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the brackets.
@@ -299,7 +299,7 @@ In the previous exercise, you calculated the vector that contained the worldwide
 You can add a column or multiple columns to a matrix with the `cbind` function, which merges matrices and/or vectors together by column. For example: `new_combined_matrix = cbind( matrix1, matrix2, vector1, ... )`.
 
 *** =instructions
-	- Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign to `all_wars_matrix`. Use the `cbind()` function.
+- Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign to `all_wars_matrix`. Use the `cbind()` function.
 
 *** =hint
 Bind the `worldwide_vector` to the `star_wars_matrix` with the `cbind()` function, with `cbind( the_correct_matrix, the_correct_vector)` and assign to `all_star_wars_matrix`.
@@ -385,7 +385,7 @@ Just like every action has a reaction, every `cbind()` has a `rbind()`. (Okay, w
 Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices, the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
 
 *** =instructions
-	- Assign to `all_wars_matrix` a new matrix with `star_wars_matrix` in the first three rows and `star_wars_matrix2` in the next three rows.
+- Assign to `all_wars_matrix` a new matrix with `star_wars_matrix` in the first three rows and `star_wars_matrix2` in the next three rows.
 
 *** =hint
 Bind the two matrices together in the following way: `rbind( matrix1, matrix2 )` and assign to `all_wars_matrix`.
@@ -455,7 +455,7 @@ star_wars_matrix2 = matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(mo
 Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you don't recall what it contains). Let's now calculate the total box office revenue for the entire saga.
 
 *** =instructions
-	- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()` function.
+- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()` function.
 
 *** =hint
 You should use the `colSums()` function with `star_wars_matrix` as argument to find the total box office per region.
@@ -524,8 +524,8 @@ If you want to select all elements of a row or column, no number is needed befor
 Back to Star Wars with this newly acquired knowledge!
 
 *** =instructions
-	- Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable (In other words: take the average of all elements of the second column).
-	- Same question, but now only for the first two Star Wars movies.
+- Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable (In other words: take the average of all elements of the second column).
+- Same question, but now only for the first two Star Wars movies.
 
 Hint: Use the function `mean()` to compute the average.
 
@@ -605,7 +605,7 @@ For example: `2*my_matrix` multiplies each element of `my_matrix` by two.
 As a newly-hired data analyst for Lucasfilm, your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `star_wars_matrix`. Assume that the price of a ticket was 5 dollars. Note that box office numbers divided by the ticket price gives you the number of visitors.
 
 *** =instructions
-	- Assign to `visitors` the matrix with the estimated number of Non-US and US visitors for the three movies.
+- Assign to `visitors` the matrix with the estimated number of Non-US and US visitors for the three movies.
 
 
 *** =hint
@@ -672,13 +672,13 @@ After looking at the result of the previous exercise, big boss Lucas pointed out
 (Those familiar with matrices should note this is not the standard matrix multiplication for which you should use `%*%` in R.)
 
 *** =instructions
-	- Assign to `visitors` the matrix with your estimated number of Non-US and US visitors for the three movies.
-	- Assign to `average_us_visitor` the average number of visitors in the US for a Star Wars movie.
-	- Assign to `average_non_us_visitor` the average number of visitors in non-US areas.
+- Assign to `visitors` the matrix with your estimated number of Non-US and US visitors for the three movies.
+- Assign to `average_us_visitor` the average number of visitors in the US for a Star Wars movie.
+- Assign to `average_non_us_visitor` the average number of visitors in non-US areas.
 
 *** =hint
-	- You can use the function `mean()` to calculate the average of the inputs to the function.
-	- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- You can use the function `mean()` to calculate the average of the inputs to the function.
+- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
 
 *** =sample_code
 

@@ -162,7 +162,7 @@ A variable allows you to store a value (e.g. 4) or object (e.g. a function descr
 You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
 
 *** =instructions
-	- Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when asking R to print `x` the value 42 appears.
+- Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when asking R to print `x` the value 42 appears.
 
 *** =hint
 

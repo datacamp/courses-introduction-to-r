@@ -18,7 +18,7 @@ Congratulations! At this point in the course you are alreade a (semi-)expert in:
 Pretty sweet for an R newbie don't you think? ;-)
 
 *** =instructions
-	- Click Submit Answer to start learning everything about lists!
+- Click Submit Answer to start learning everything about lists!
 
 *** =hint
 Just click the Run button.
@@ -59,7 +59,7 @@ A list in R allows you to gather a variety of objects under one name (the name o
 Maybe you can even say that a list is a kind of super data type ;-)
 
 *** =instructions
-	- Click Submit Answer to start the first exercise on lists.
+- Click Submit Answer to start the first exercise on lists.
 
 *** =hint
 Click Run to start the first exercise on lists.
@@ -100,7 +100,7 @@ Let's create our first list! To construct a list you use the function `list()`:
 The arguments to the list function are the list components. Remember, these components can be a  collection of matrices, vectors...` 
 
 *** =instructions
-	- Construct a list with `my_vector`, `my_matrix` and `my_df` as list components.
+- Construct a list with `my_vector`, `my_matrix` and `my_df` as list components.
 
 *** =hint
 Just use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
@@ -165,7 +165,7 @@ Like on your to-do list, you want to avoid not knowing (or remembering) what the
 This creates for you a list with the components `"name1"` and `"name2"` and so on.
 
 *** =instructions
-	- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_matrix` the name `MATRIX`, for `my_vector` `VECTOR` and for `my_df` `DATAFRAME`. Look at the console output to see how R prints a list.
+- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_matrix` the name `MATRIX`, for `my_vector` `VECTOR` and for `my_df` `DATAFRAME`. Look at the console output to see how R prints a list.
 
 *** =hint
 No hints, you can do this!
@@ -226,10 +226,10 @@ Being a huge movie fan (remember your job @ LucasFilms), you decide to start sto
 Start by creating a list for the movie "The Shining". We already created the variables `actors` and `reviews` in your R workspace. Type `actors` or `reviews` in the console to check these.
 
 *** =instructions
-	- Create the variable `shining_list`. The list contains the following components:
-  	- moviename: "The Shining"
-  	- actors: a vector with main actors names
-  	- reviews: a data frame containing some reviews
+- Create the variable `shining_list`. The list contains the following components:
+- moviename: "The Shining"
+- actors: a vector with main actors names
+- reviews: a data frame containing some reviews
 
 Do not forget to name the list components accordingly!
 
@@ -288,12 +288,12 @@ Another way is referring to the names of the components. `shining_list[["reviews
 Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component actors (= `shining_list[[2]]` ) the first element ( `[1]` ). When you type this in the console, you will see the answer is Jack Nicholson.
 
 *** =instructions
-	- Select from the `shining_list` the last actor and assign to the `last_actor`.
-	- Select from the `shining_list` all information regarding the second review.
+- Select from the `shining_list` the last actor and assign to the `last_actor`.
+- Select from the `shining_list` all information regarding the second review.
 
 *** =hint
-	- If you want to do things nicely: `length(shining_list$actors])` gives you the number of actors, and thus the element to select.
-	- You can select the information of the second review with `shining_list$reviews[2,]`.
+- If you want to do things nicely: `length(shining_list$actors])` gives you the number of actors, and thus the element to select.
+- You can select the information of the second review with `shining_list$reviews[2,]`.
 
 *** =sample_code
 
@@ -354,7 +354,7 @@ To conviently add elements to lists, you use the concatenate function `c()`:
 If you want to give the new list item a name, you just add this to the function: `c(list1,new.item.name=some.object)`.
 
 *** =instructions
-	- Complete the code below such that an item named `year` is added to the `shining_list` with the value 1980.
+- Complete the code below such that an item named `year` is added to the `shining_list` with the value 1980.
 
 *** =hint
 You're on your own now!

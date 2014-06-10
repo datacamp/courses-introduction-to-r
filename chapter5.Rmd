@@ -22,7 +22,7 @@ The output when doing the above survey on a number of respondents, is a dataset 
 A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
 
 *** =instructions
-	- Click Submit Answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+- Click Submit Answer. The data from the built-in example data frame `mtcars` will be printed to the console.
 
 *** =hint
 Just click Submit Answer!
@@ -70,7 +70,7 @@ So how to do this in R?
 Both `head()` and `tail()` also print a top line called the 'header', which contains the names of the different variables in your dataset.
 
 *** =instructions
-	- Give an overview of the `mtcars` data set by printing its first observations and the corresponding header.
+- Give an overview of the `mtcars` data set by printing its first observations and the corresponding header.
 
 *** =hint
 Use the `head()` function and ask the head of `mtcars`.
@@ -118,7 +118,7 @@ Another, often used, method to get a rapid overview of your data is the function
 Applying the `str()` function will often be the first thing you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis!
 
 *** =instructions
-	- Investigate the structure of the `mtcars`. Make sure you see the same numbers, variables and data types as  mentioned above.
+- Investigate the structure of the `mtcars`. Make sure you see the same numbers, variables and data types as  mentioned above.
 
 *** =hint
 Use the `str()` function with `mtcars` as input!
@@ -170,7 +170,7 @@ After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wi
 You construct a data frame with the `data.frame` function. As arguments, you should provide the above mentioned vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget, it is possible (and likely) they have different types of data.
 
 *** =instructions
-	- Use the function `data.frame` to construct a data frame. Call this variable `planets_df`.
+- Use the function `data.frame` to construct a data frame. Call this variable `planets_df`.
 
 *** =hint
 The `data.frame(col1,col2,col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are (in this order): planet, type, diameter, rotation and rings.
@@ -226,7 +226,7 @@ if (!exists("planets_df")){
 Make sure you have 8 observations and 5 variables. (The `planets_df` has been loaded in the workspace.)
 
 *** =instructions
-	- Use of the function `str()` to investigate the structure of the new `planets_df` variable.
+- Use of the function `str()` to investigate the structure of the new `planets_df` variable.
 
 *** =hint
 This is easy, no hints ;-)!
@@ -279,8 +279,8 @@ Similar to vectors and matrices, you select elements from a data frame with the 
 Sometimes you want to select all elements of a row or column. In that case, you just don't put anything in front or behind the comma: e.g. `my_data_frame[1,]` selects all elements of the first row. Let's now apply this technique on `planets_df`!
 
 *** =instructions
-	- Create the data frame `closest_planets_df` containing all data on the first three planets.
-	- Create the data frame `furthest_planets_df` containing all data on the last three planets.
+- Create the data frame `closest_planets_df` containing all data on the first three planets.
+- Create the data frame `furthest_planets_df` containing all data on the last three planets.
 
 *** =hint
 `planets_df[1:3,]` will select alle elements of the first three rows.
@@ -349,7 +349,7 @@ Instead of using numerics to select elements of a data frame, you can also use t
 Maybe you want to select only the first 3 elements of the variable 'type'. One way to do this is: `planets_df[1:3,1]`. A possible disadvantage of this approach is that you have to know (or look up) the position of the variable 'type', which gets hard if you have a lot of variables. It is often easier just to make use of the variable name, e.g. `planets_df[1:3,"type"]`.
 
 *** =instructions
-	- Select for the last six rows only the diameter and assign this selection to `furthest_planets_diameter`.
+- Select for the last six rows only the diameter and assign this selection to `furthest_planets_diameter`.
 
 *** =hint
 You select elements of a data frame conveniently with the square brackets. Select `3:8` for the rows, and `"diameter"` for the columns.
@@ -401,7 +401,7 @@ You'll often want to select an entire column, i.e. 1 specific variable from a da
 However, there is a short-cut. Use the `$`-sign to tell R it only has to look up all the elements of the variable behind the sign: `data_frame_name$variable_name`.
 
 *** =instructions
-	- Make use of the `$` -sign to create the `rings_vector` that contains all elements of the 'rings' variable in the planets_df data frame.
+- Make use of the `$` -sign to create the `rings_vector` that contains all elements of the 'rings' variable in the planets_df data frame.
 
 *** =hint
 `data_frame_name$variable_name` is the most convenient way to select a variable from a data frame. In this case the data frame of choice is `planets_df` and the variable of choice is `rings`.
@@ -459,7 +459,7 @@ Mmm, type `rings_vector` in the console and you get: FALSE FALSE FALSE FALSE TRU
 This means that the first 4 observations (or planets) do not have a ring (FALSE), but the other 4 do (TRUE). However, you don't get a nice overview of the names of these planets, their diameter, etc. As a next step, use `rings_vector` to select from `planets_df` all the data (i.e. all columns) on the four planets with rings.
 
 *** =instructions
-	- Assign to `planets_with_rings_df` all data in the planets_df dataset for the planets with rings (i.e. where `rings_vector` is TRUE).
+- Assign to `planets_with_rings_df` all data in the planets_df dataset for the planets with rings (i.e. where `rings_vector` is TRUE).
 
 *** =hint
 Select elements from `planets_df` using the square brackets. The `rings_vector` contains boolean values and R will select only those rows/columns were the vector element is TRUE. In this case you want to select rows based on `rings_vector` and select all the columns.
@@ -524,7 +524,7 @@ For example: `subset(planets_df, subset=(planets_df$rings == TRUE))`
 R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
 
 *** =instructions
-	- Create a dataframe `small_planets_df` with planets that have a diameter smaller than earth (i.e smaller than 1, since diameter is a relative measure of the planets diameter).
+- Create a dataframe `small_planets_df` with planets that have a diameter smaller than earth (i.e smaller than 1, since diameter is a relative measure of the planets diameter).
 
 *** =hint
 Sorry, you're on your own here.
@@ -581,7 +581,7 @@ In data analysis you will sort your data according to a certain variable in the 
 Subsequently, `a[order(a)]` will give you the ordered vector 9,100,101, since it first picks the second element of a, then the first, then the last. Got it? If you're not sure, use the console to play with the `order()` function.` 
 
 *** =instructions
-	- Click Submit Answer when you are ready.
+- Click Submit Answer when you are ready.
 
 *** =hint
 Just play with the `order()` function in the console!
@@ -626,8 +626,8 @@ if (!isTRUE(try(student_typed('order(')))){
 Alright, now that you understand the `order()` function, let's do something useful shall we? You'd like to rearrange your data frame such that it starts with the largest planet and ends with the smallest one (i.e. sort on the column diameter).
 
 *** =instructions
-	- Assign to the variable positions the desired ordering for the new data frame you will create in the next step. You can use the `order()` function for that, with the additional argument `decreasing=TRUE`.
-	- Now create the data frame `largest_first_df`, wich contains the same information as `planets_df`, but with the planets in decreasing order of magnitude.
+- Assign to the variable positions the desired ordering for the new data frame you will create in the next step. You can use the `order()` function for that, with the additional argument `decreasing=TRUE`.
+- Now create the data frame `largest_first_df`, wich contains the same information as `planets_df`, but with the planets in decreasing order of magnitude.
 
 *** =hint
 `order(planets_df$diameter, decreasing=TRUE)` will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data `frame planets_df` !

@@ -15,7 +15,7 @@ You better, because this chapter takes you on a trip to the City of Sins, also k
 Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables, and fire off your career as a professional gambler. This chapter will show you how to easily keep track of your betting progress and how to do some simple analysis on past actions. Next Stop, Vegas Baby...VEGAS!!!!
 
 *** =instructions
-	- Still remember what you learned in the first chapter? Assign to the variable `Vegas` the value `"Here we go!"`.
+- Still remember what you learned in the first chapter? Assign to the variable `Vegas` the value `"Here we go!"`.
 
 *** =hint
 Type: `Vegas = "Here we go!"`. Note that R is case sensitive. 
@@ -66,7 +66,7 @@ In R, you create a vector with the combine function `c()`. Between the brackets 
 Once you have created these vectors in R, you can use them to do calculations. 
 
 *** =instructions 
-	- Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+- Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
 
 *** =hint 
 Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean_vector` with the `=` operator. 
@@ -130,7 +130,7 @@ For `roulette_vector`:
 You only played Poker and Roulette, since there was a delegation of paragnosts that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 *** =instructions
-	- Assign to the variable `roulette_vector` the winnings/losses for roulette.
+- Assign to the variable `roulette_vector` the winnings/losses for roulette.
 
 *** =hint
 To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Don't forget that losses are negative numbers.
@@ -182,7 +182,7 @@ In the previous exercise, we created a vector with your winnings over the week. 
 You can give a name to the elements of a vector with the `names()` function. For example: `names(some_vector)`.
 
 *** =instructions
-	- Go ahead and assign the days of the week as names to `poker_vector` and `roulette_vector`. In case you're not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday, Friday.
+- Go ahead and assign the days of the week as names to `poker_vector` and `roulette_vector`. In case you're not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday, Friday.
 
 *** =hint
 You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by: `c("Monday","Tuesday","Wednesday","Thursday","Friday")`.
@@ -248,8 +248,8 @@ In the previous exercises you probably experienced it is boring and frustrating 
 Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
 
 *** =instructions
-	- Create a variable `days_vector` that contains the days Monday until Friday.
-	- Use that variable `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- Create a variable `days_vector` that contains the days Monday until Friday.
+- Use that variable `days_vector` to set the names of `poker_vector` and `roulette_vector`.
 
 *** =hint
 You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses around the days of the week.
@@ -324,7 +324,7 @@ To get the answer to this, you have to do arithmetic calculations on vectors.
 Important to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let's try this first!
 
 *** =instructions
-	- Take the sum of the variables `A_vector` and `B_vector` and assign to `total_vector`.
+- Take the sum of the variables `A_vector` and `B_vector` and assign to `total_vector`.
 
 *** =hint
 Use the `+` operator to sum `A_vector` and `B_vector`. Use `=` to assign the result to `total_vector`.
@@ -385,7 +385,7 @@ Then it is time to get those Ferrari's in your garage! First, you need to unders
 In R, this is just the sum of the `roulette_vector` and `poker_vector`.
 
 *** =instructions
-	- Assign to the variable `total_daily` how much you won or lost on each day in total (poker & roulette combined).
+- Assign to the variable `total_daily` how much you won or lost on each day in total (poker & roulette combined).
 
 *** =hint
 Just click the Submit Answer button on the right.
@@ -463,8 +463,8 @@ Based on the previous analysis, it looks like you had a mix of good and bad days
 A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you've lost/won with poker you do: `total_poker = sum(poker_vector)`.
 
 *** =instructions
-	- Calculate the total amount of money you've won/lost with roulette and assign to the variable `total_roulette`.
-	- Now you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
+- Calculate the total amount of money you've won/lost with roulette and assign to the variable `total_roulette`.
+- Now you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
 
 *** =hint
 Use the `sum` function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
@@ -545,8 +545,8 @@ Ooops, it seems like you're losing money :-s. Time to rethink and adapt your str
 After a short brainstorm in your hotel's jacuzzi, you realize a possible explanation is that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
 
 *** =instructions
-	- Calculate `total_poker` and `total_roulette`.
-	- Check if your total gains in poker are higher than for roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
+- Calculate `total_poker` and `total_roulette`.
+- Check if your total gains in poker are higher than for roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
 (Tip: You partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
 
 *** =hint
@@ -623,7 +623,7 @@ if (!exists("total_poker")){
 
 ---
 
-## Vector selection: the good times
+
 
 Your hunch seemed to be right, it appears that the poker game is more your cup of tea than roulette. 
 
@@ -632,7 +632,7 @@ Another possible route for investigation is your performance at the beginning of
 To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...) you can use square brackets. Between the square brackets, you indicate what elements to select: `[...elements to select..]`. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
 
 *** =instructions
-	- Assign to the variable `poker_wednesday` the poker results of wednesday.
+- Assign to the variable `poker_wednesday` the poker results of wednesday.
 
 *** =hint
 Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
@@ -702,7 +702,7 @@ How about analyzing your midweek results?
 To select multiple elements from a vector, you can add square brackets at the end of it. Between the square brackets, you should indicate what element should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1,5)` between the square brackets:  `poker_vector[c(1,5)]`. Thus, you select here the first and the fifth element of `poker_vector`.
 
 *** =instructions
-	- Assign to the variable `poker_midweek` the poker results of Tuesday, Wednesday and Thursday.
+- Assign to the variable `poker_midweek` the poker results of Tuesday, Wednesday and Thursday.
 
 *** =hint
 Use the vector `c(2,3,4)` between square brackets to select the correct elements of `poker_vector`.
@@ -772,7 +772,7 @@ Selecting multiple elements of `poker_vector` with `c(2,3,4)` is not very conven
 Another way to find the mid-week results is thus `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
 
 *** =instructions
-	- Assign to `roulette_selection_vector` the results from Tuesday up to Friday by making use of `:`.
+- Assign to `roulette_selection_vector` the results from Tuesday up to Friday by making use of `:`.
 
 *** =hint
 Assign to `roulette_selection_vector` a selection of `roulette_vector` by placing `2:5` between square brackets.
@@ -836,7 +836,7 @@ Another way to tackle the previous exercise, is by using the names of the vector
 Just as you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: `poker_vector[c("Monday","Tuesday")]`. 
 
 *** =instructions
-	- Calculate your average poker gains during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average_midweek_gain`. To get the average of a vector, you can use `mean(vector_name)`.
+- Calculate your average poker gains during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average_midweek_gain`. To get the average of a vector, you can use `mean(vector_name)`.
 
 *** =hint
 To get the mean of the vector poker, you can use `mean(poker_vector)`. Now, you don't need the mean of all poker elements, but only of the first three days.
@@ -912,7 +912,7 @@ The (logical) comparison operators known to R are:
 As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example, the statement `c(4,5,6) > 5` returns: `FALSE FALSE TRUE`. In other words, you test for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`. Don't take our word for it, try it in the console ;-).
 
 *** =instructions
-	- Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection_vector`.
+- Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection_vector`.
 
 *** =hint
 To check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you're after.
@@ -985,7 +985,7 @@ In the previous exercises you used: `selection_vector = poker_vector > 0` to fin
 You can select the desired elements, by putting `selection_vector` between square brackets when selecting from `poker_vector`. This works, because by default R only selects those elements where `selection_vector` is `TRUE`. For `selection_vector` this means where `poker_vector > 0`.
 
 *** =instructions
-	- Assign to variable `poker_winning_days`, the amounts you won on the profitable days.
+- Assign to variable `poker_winning_days`, the amounts you won on the profitable days.
 
 *** =hint
 Use `selection_vector` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
@@ -1062,7 +1062,7 @@ if (!exists("poker_vector")){
 Just like you did for poker, you also want those days where you realized a positive return for roulette.
 
 *** =instructions
-	- Assign to variable `roulette_winning_days` the amount you made on the days you ended positively for roulette.
+- Assign to variable `roulette_winning_days` the amount you made on the days you ended positively for roulette.
 
 *** =hint
 Have a look at the previous exercise, and do the similar analysis but now for `roulette_vector`.
