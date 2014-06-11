@@ -13,15 +13,15 @@ In this chapter you dive into the wonderful world of **factors**.
 
 The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable on the other hand, can correspond to an infinite number of values. 
 
-It is important that R knows whether it's dealing with a continuous or a categorical variable. This, since the statistical models you will develop in the future treat both in a different way. (You will see later why this is the case.)
+It is important that R knows whether it's dealing with a continuous or a categorical variable. This, since the statistical models you will develop in the future treat both types in a different way. (You will see later why this is the case.)
 
-A good example of a categorical variable, is the variable 'Gender'. As you hopefully know by now, a human individual can either be "Male" or "Female". So "Male" and "Female" are here the (only two) values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+A good example of a categorical variable is the variable 'Gender'. As you hopefully know by now, a human individual can either be "Male" or "Female". So "Male" and "Female" are here the (only two) values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
 
 *** =instructions
 - Assign to variable `theory` the value `"R uses factors for categorical variables!"`
 
 *** =hint
-Just click the Submit Answer button and look at the console.
+Make use of the `factor()` function.
 
 *** =sample_code
 
@@ -236,10 +236,10 @@ After finishing this course, one of your favourite functions in R will be `summa
 
 `summary(some_variable)` 
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"`. The `summary()` function gives the answer to this question.
+Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary()` function gives the answer to this question.
 
 *** =instructions
-- Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the result for both vectors, are they both equally useful in this case?
+- Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results for both vectors, are they both equally useful in this case?
 
 The fact that you identified `"Male"` and `"Female"` as factor levels in `factor_survey_vector`, enables R to show the number of elements for each category.
 
@@ -369,7 +369,7 @@ Analyst 2: Slow,
 Analyst 3: Slow,
 Analyst 4: Fast and
 Analyst 5: Ultra-fast.
-Just as characters for now.
+No need to specify these are factors yet.
 
 *** =hint
 Assign to `speed_vector` : `c("Fast","Slow",...?`.
