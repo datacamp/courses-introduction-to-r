@@ -21,18 +21,18 @@ Pretty sweet for an R newbie don't you think? ;-)
 - Click Submit Answer to start learning everything about lists!
 
 *** =hint
-Just click the Run button.
+Just click the Submit Answer button.
 
 *** =sample_code
 
 ```{r eval=FALSE}
-# Just click the Run button!
+# Just click the Submit Answer button.
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-# Just click the Run button.
+# Just click the Submit Answer button.
 ```
 
 *** =sct
@@ -62,12 +62,12 @@ Maybe you can even say that a list is a kind of super data type ;-)
 - Click Submit Answer to start the first exercise on lists.
 
 *** =hint
-Click Run to start the first exercise on lists.
+Click Submit Answer to start the first exercise on lists.
 
 *** =sample_code
 
 ```{r eval=FALSE}
-# Click Run to start the first exercise on lists.
+# Click Submit Answer to start the first exercise on lists.
 ```
 
 *** =solution
@@ -158,7 +158,7 @@ if (!exists("my_list")){
 
 Well done! Let's keep this train going! 
 
-Like on your to-do list, you want to avoid not knowing (or remembering) what the components of your to-do list stand for. That is why you should give names to them: 
+Like on your to-do list you want to avoid not knowing (or remembering) what the components of your to-do list stand for. That is why you should give names to them: 
 
 `list(name1=your.component1, name2=component2,?)` 
 
@@ -279,7 +279,7 @@ reviews     = data.frame(scores,sources,comments)
 
 ## Selecting elements from a list
 
-Often, your list will be build out of numerous elements and components. Therfore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+Often, your list will be build out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
 
 One way to select a component, is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type `shining_list[[1]]`. (Remember, to select elements out of a data set you use square brackets `[ ]` ) A quick way to check this out is by typing it in the console. 
 
@@ -288,7 +288,7 @@ Another way is referring to the names of the components. `shining_list[["reviews
 Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component actors (= `shining_list[[2]]` ) the first element ( `[1]` ). When you type this in the console, you will see the answer is Jack Nicholson.
 
 *** =instructions
-- Select from the `shining_list` the last actor and assign to the `last_actor`.
+- Select from the `shining_list` the last actor and assign to `last_actor`.
 - Select from the `shining_list` all information regarding the second review.
 
 *** =hint
@@ -347,7 +347,7 @@ shining_list = list(moviename="The Shining",actors=actors, reviews=reviews )
 
 Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members (a guy named M. McDowell) noted you forgot to add the release year. Given your ambitions to become next years president of the club, you decide to add this info to the list. 
 
-To conviently add elements to lists, you use the concatenate function `c()`: 
+To conveniently add elements to lists, you use the concatenate function `c()`: 
 
 `c(list1,some.object)` 
 
