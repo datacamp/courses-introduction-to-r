@@ -276,10 +276,10 @@ planets_df = data.frame(type,planets,diameter,rotation,rings)
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
 
-- `my_data_frame[1,2]` selects from the first row in `my_data_frame`, the second element.
+- `my_data_frame[1,2]` selects from the first row in `my_data_frame` the second element.
 - `my_data_frame[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4 in `my_data_frame`.
 
-Sometimes you want to select all elements of a row or column. In that case, you just don't put anything in front or behind the comma: e.g. `my_data_frame[1,]` selects all elements of the first row. Let's now apply this technique on `planets_df`!
+Sometimes you want to select all elements of a row or column. To do this, you can use the follwing. `my_data_frame[1,]` selects all elements of the first row. Let's now apply this technique on `planets_df`!
 
 *** =instructions
 - Create the data frame `closest_planets_df` containing all data on the first three planets.
@@ -452,12 +452,11 @@ planets_df = data.frame(type,planets,diameter,rotation,rings)
 
 ## Only planets with rings (2)
 
-From highschool, you remember some planets in our solar system have rings and others don't. But due to other priorities at that time (read: puberty) you can't recall their names, let alone their rotation speed, etc. 
-
+You probably remember from highschool that  some planets in our solar system have rings and others don't. But due to other priorities at that time (read: puberty) you can't recall their names, let alone their rotation speed, etc. 
 
 Could R help you out? (Spoiler alert: of course it can!) 
 
-Mmm, type `rings_vector` in the console and you get: FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE 
+If you type `rings_vector` in the console you get: FALSE FALSE FALSE FALSE TRUE TRUE TRUE TRUE 
 
 This means that the first 4 observations (or planets) do not have a ring (FALSE), but the other 4 do (TRUE). However, you don't get a nice overview of the names of these planets, their diameter, etc. As a next step, use `rings_vector` to select from `planets_df` all the data (i.e. all columns) on the four planets with rings.
 
@@ -515,19 +514,19 @@ rings_vector = planets_df$rings
 
 ## Only planets with rings but shorter
 
-So what exactly did you learn in the past exercises? You selected a subset from a data frame ( `planets_df` ), based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+So what exactly did you learn in the past exercises? You selected a subset from a data frame ( `planets_df` ) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
 
-Now, let's move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you just did. 
+Now, let's move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
 
 `subset(data_frame_name, subset = some.condition)` 
 
-The first argument of `subset()` specifies the dataset from which you want a subset. With the second argument, you give R the necessary information and conditions to select the correct subset. 
+The first argument of `subset()` specifies the dataset for which you want a subset. With the second argument you give R the necessary information and conditions to select the correct subset. 
 For example: `subset(planets_df, subset=(planets_df$rings == TRUE))` 
 
 R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
 
 *** =instructions
-- Create a dataframe `small_planets_df` with planets that have a diameter smaller than earth (i.e smaller than 1, since diameter is a relative measure of the planets diameter).
+- Create a dataframe `small_planets_df` with planets that have a diameter smaller than earth (so smaller than 1, since diameter is a relative measure of the planets diameter).
 
 *** =hint
 Sorry, you're on your own here.
@@ -575,7 +574,7 @@ planets_df = data.frame(type,planets,diameter,rotation,rings)
 
 ## Sorting
 
-Making and creating rankings, is one of mankinds favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influencial moviestars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
+Making and creating rankings is one of mankinds favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influencial moviestars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
 
 In data analysis you will sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
 
@@ -592,7 +591,7 @@ Just play with the `order()` function in the console!
 *** =sample_code
 
 ```{r eval=FALSE}
-
+# Just play around with the order function in the console to see how it works
 ```
 
 *** =solution
@@ -609,9 +608,9 @@ order(c(5,4,6,7))
 
 ```{r eval=FALSE}
 if (!isTRUE(try(student_typed('order(')))){
-  DM.result = list(FALSE, "Makse sure to use the 'order' function.");
+  DM.result = list(FALSE, "Make sure to use the 'order' function.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -626,7 +625,7 @@ if (!isTRUE(try(student_typed('order(')))){
 
 ## Sorting your data frame
 
-Alright, now that you understand the `order()` function, let's do something useful shall we? You'd like to rearrange your data frame such that it starts with the largest planet and ends with the smallest one (i.e. sort on the column diameter).
+Alright, now that you understand the `order()` function let's do something useful with it. You'd like to rearrange your data frame such that it starts with the largest planet and ends with the smallest one (i.e. sort on the column diameter).
 
 *** =instructions
 - Assign to the variable positions the desired ordering for the new data frame you will create in the next step. You can use the `order()` function for that, with the additional argument `decreasing=TRUE`.
