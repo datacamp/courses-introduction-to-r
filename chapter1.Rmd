@@ -97,7 +97,7 @@ Just follow the instructions, this should be easy ;-).
 # An addition
 5+5 
 
-# A substraction
+# A subtraction
 5-5 
 
 # A multiplication
@@ -118,7 +118,7 @@ Just follow the instructions, this should be easy ;-).
 # An addition
 5+5 
 
-# A substraction
+# A subtraction
 5-5 
 
 # A multiplication
