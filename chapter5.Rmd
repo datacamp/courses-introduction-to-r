@@ -607,7 +607,7 @@ order(c(5,4,6,7))
 *** =sct
 
 ```{r eval=FALSE}
-if (!isTRUE(try(student_typed('order(')))){
+if (! (c("order") %in% called_functions())) {
   DM.result = list(FALSE, "Make sure to use the 'order' function.");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
