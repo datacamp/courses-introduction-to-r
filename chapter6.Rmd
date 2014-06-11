@@ -9,7 +9,7 @@ mode        : selfcontained
 
 ## Lists, why would you need them?
 
-Congratulations! At this point in the course you are alreade a (semi-)expert in:
+Congratulations! At this point in the course you are already a (semi-)expert in:
 
 - **Vectors** (one dimensional array) Holds numeric, character or logical values. The elements in one vector all have the same datatype.
 - **Matrices** (two dimensional array) Holds numeric, character or logical values. The elements in one matrix all have the same datatype.
