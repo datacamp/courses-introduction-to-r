@@ -110,7 +110,7 @@ if (!exists("boolean_vector")){
 
 ## Create a vector (3)
 
-After one week in Las Vegas, and still zero Ferrari's in your garage, you decide it is time to start using your data analytical superpowers. 
+After one week in Las Vegas and still zero Ferrari's in your garage, you decide it is time to start using your data analytical superpowers. 
 
 Before doing a first analysis, you decide to first collect the winnings and losses for the last week: 
 
@@ -128,7 +128,7 @@ For `roulette_vector`:
 - Thursday you lost 350\$
 - Friday you won 10\$
 
-You only played Poker and Roulette, since there was a delegation of paragnosts that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+You only played poker and roulette, since there was a delegation of paragnosts that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 *** =instructions
 - Assign to the variable `roulette_vector` the winnings/losses for roulette.
@@ -242,7 +242,7 @@ if (!exists("poker_vector")){
 
 ## Naming a vector (2)
 
-If you want to become a good statistician, you have to become lazy! (If you are already lazy, feel proud, chances are high you are one of those exceptional, natural-born statistical talents.) 
+If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.) 
 
 In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when looking at it from a higher perspective, there is a more efficient way to do this: assign the days of the week vector to a **variable**! 
 
@@ -320,7 +320,7 @@ You want to find out the following type of information:
 - Have you lost money over the week in total?
 - Are you winning/losing money on poker or on roulette?
 
-To get the answer to this, you have to do arithmetic calculations on vectors. 
+To get the answers, you have to do arithmetic calculations on vectors. 
 
 Important to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let's try this first!
 
@@ -626,9 +626,9 @@ if (!exists("total_poker")){
 
 ## Vector selection: the good times
 
-Your hunch seemed to be right, it appears that the poker game is more your cup of tea than roulette. 
+Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
 
-Another possible route for investigation is your performance at the beginning of the working week versus at the end of it? You did have a couple of Margarita cocktails at the end of the week... 
+Another possible route for investigation is your performance at the beginning of the working week versus at the end of it. You did have a couple of Margarita cocktails at the end of the week... 
 
 To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...) you can use square brackets. Between the square brackets, you indicate what elements to select: `[...elements to select..]`. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
 
@@ -822,7 +822,7 @@ Just as you did in the previous exercise with numerics, you can also use the ele
 - Calculate your average poker gains during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average_midweek_gain`. To get the average of a vector, you can use `mean(vector_name)`.
 
 *** =hint
-To get the mean of the vector poker, you can use `mean(poker_vector)`. Now, you don't need the mean of all poker elements, but only of the first three days.
+To get the mean of the vector poker, you can use `mean(poker_vector)`. You don't need the mean of all poker elements, but only of the first three days.
 
 *** =sample_code
 
