@@ -18,7 +18,7 @@ In R, you can construct a matrix with the `matrix` function, for example: `matri
 - The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
-- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console. Hint, use: `matrix(1:9, byrow=TRUE, nrow=3)`.
+- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console.
 
 *** =hint
 Read the assignment carefully, the answer is already given ;-).
@@ -380,9 +380,9 @@ if (!exists("box_office_all")){
 
 ## Adding a row
 
-Just like every action has a reaction, every `cbind()` has a `rbind()`. (Okay, we admit, we are pretty bad with metaphors.) 
+Just like every action has a reaction, every `cbind()` has a `rbind()`. (We admit, we are pretty bad with metaphors.) 
 
-Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices, the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
+Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices: the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
 
 *** =instructions
 - Assign to `all_wars_matrix` a new matrix with `star_wars_matrix` in the first three rows and `star_wars_matrix2` in the next three rows.
@@ -401,7 +401,7 @@ star_wars_matrix
 # Matrix containing second trilogy box office
 star_wars_matrix2 
 
-# Combine the both Star Wars trilogies in one matrix
+# Combine both Star Wars trilogies in one matrix
 all_wars_matrix = 
 ```
 
@@ -416,7 +416,7 @@ star_wars_matrix
 # Matrix containing second trilogy box office
 star_wars_matrix2 
 
-# Combine the both Star Wars trilogies in one matrix
+# Combine both Star Wars trilogies in one matrix
 all_wars_matrix = rbind(star_wars_matrix, star_wars_matrix2)
 ```
 
@@ -504,7 +504,7 @@ box_office_all2 = c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 = c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 = matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(movie_names2,col_titles))
 
-# Combine the both Star Wars trilogies in one matrix
+# Combine both Star Wars trilogies in one matrix
 all_wars_matrix = rbind(star_wars_matrix, star_wars_matrix2)
 ```
 
@@ -526,8 +526,6 @@ Back to Star Wars with this newly acquired knowledge!
 *** =instructions
 - Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable (In other words: take the average of all elements of the second column).
 - Same question, but now only for the first two Star Wars movies.
-
-Hint: Use the function `mean()` to compute the average.
 
 *** =hint
 You can use the function `mean()` to calculate the average of the inputs to the function. Remember that you can select all rows of a matrix for a specific column x, by typing `my_matrix[,x]`. Non-US is the second column.
@@ -598,7 +596,7 @@ if (!exists("star_wars_matrix")){
 
 ## A little arithmetic with matrices
 
-Similar to what you learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Similar to what you've learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
 
 For example: `2*my_matrix` multiplies each element of `my_matrix` by two. 
 
