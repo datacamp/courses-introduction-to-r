@@ -161,7 +161,7 @@ if (!(isTRUE(try(output_contains("str(mtcars)")))){
 Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. So put your jet pack on because it is time for some good old fashioned space exploration! 
 
 As a first goal, you want to construct a data frame that describes the main characteristics of 8 planets in our solar system. According to your good friend Buzz the main features of a planet are:
-- The type of planet (Terrestrial or Gass Giant).
+- The type of planet (Terrestrial or Gas Giant).
 - The planet's diameter relative to the diameter of the earth.
 - The planet's rotation across the sun relative to that of earth.
 - If the planet has rings or not (TRUE or FALSE).
@@ -180,7 +180,7 @@ The `data.frame(col1,col2,col3,...)` function takes as arguments the vectors tha
 
 ```{r eval=FALSE}
 planets 	= c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter 	= c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -194,7 +194,7 @@ planets_df  =
 
 ```{r eval=FALSE}
 planets 	= c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter 	= c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -261,7 +261,7 @@ if (!(isTRUE(try(output_contains("str(planets_df)"))))){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -334,7 +334,7 @@ if (!exists("closest_planets_df")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type  = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type  = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -387,7 +387,7 @@ if (!exists("furthest_planets_diameter")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -439,7 +439,7 @@ if (!exists("rings_vector")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -500,7 +500,7 @@ if (!exists("planets_with_rings_df")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -561,7 +561,7 @@ if (!exists("small_planets_df")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
@@ -678,7 +678,7 @@ if (!exists("positions")){
 
 ```{r eval=FALSE}
 planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gass giant","Gass giant","Gass giant","Gass giant")
+type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
 diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
 rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
