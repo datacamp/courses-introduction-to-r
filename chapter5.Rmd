@@ -14,10 +14,10 @@ You may remember from the chapter about matrices that all the elements you put i
 However, when doing a market research survey you often have questions such as:
 - 'Are your married?' or a 'yes/no' questions (= boolean data type)
 - 'How old are you?' (= numeric data type)
-- 'What is your opinion on this product?' or other 'open- ended' questions(= character data type)
+- 'What is your opinion on this product?' or other 'open- ended' questions (= character data type)
 - ...
 
-The output when doing the above survey on a number of respondents, is a dataset of different data types. You will often find yourself working with datasets containing different data types instead of only one. 
+The output when doing the above survey on a number of respondents is a dataset of different data types. You will often find yourself working with datasets containing different data types instead of only one. 
 
 A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
 
@@ -36,7 +36,7 @@ mtcars # Built-in R dataset stored in a data frame
 *** =solution
 
 ```{r eval=FALSE}
-# Just click the Run button
+mtcars # Built-in R dataset stored in a data frame
 ```
 
 *** =sct
@@ -67,7 +67,7 @@ So how to do this in R?
 - The function `head()` enables you to show the first observations of a data frame (or any R object you pass to it).
 - Unoriginally, the function `tail()` prints out the last observations in your dataset.
 
-Both `head()` and `tail()` also print a top line called the 'header', which contains the names of the different variables in your dataset.
+Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
 
 *** =instructions
 - Give an overview of the `mtcars` data set by printing its first observations and the corresponding header.
@@ -84,6 +84,7 @@ Use the `head()` function and ask the head of `mtcars`.
 *** =solution
 
 ```{r eval=FALSE}
+# Have a quick look at your data
 head(mtcars)
 ```
 
@@ -107,7 +108,7 @@ if (!(isTRUE(try(output_contains("head(mtcars)")))){
 
 ## Have a look at the structure
 
-Another, often used, method to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Another often used method to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
 
 - The total number of observations (e.g. 32 car types)
 - The total number of variables (e.g. 11 car features)
@@ -115,7 +116,7 @@ Another, often used, method to get a rapid overview of your data is the function
 - The data type of each variable (e.g. num for car features)
 - The first observations
 
-Applying the `str()` function will often be the first thing you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis!
+Applying the `str()` function will often be the first thing you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
 
 *** =instructions
 - Investigate the structure of the `mtcars`. Make sure you see the same numbers, variables and data types as  mentioned above.
@@ -157,7 +158,7 @@ if (!(isTRUE(try(output_contains("str(mtcars)")))){
 
 ## Creating a data frame 
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. So put your jet pack on, because it is time for some good old fashioned space exploration! 
+Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. So put your jet pack on because it is time for some good old fashioned space exploration! 
 
 As a first goal, you want to construct a data frame that describes the main characteristics of 8 planets in our solar system. According to your good friend Buzz the main features of a planet are:
 - The type of planet (Terrestrial or Gass Giant).
@@ -165,7 +166,7 @@ As a first goal, you want to construct a data frame that describes the main char
 - The planet's rotation across the sun relative to that of earth.
 - If the planet has rings or not (TRUE or FALSE).
 
-After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: planets, type, diameter, rotation and rings (see editor, note that an element of one vector is linked to the element of another vector based on its position).
+After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `planets`, `type`, `diameter`, `rotation` and `rings` (see editor, note that an element of one vector is linked to the element of another vector based on its position).
 
 You construct a data frame with the `data.frame` function. As arguments, you should provide the above mentioned vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget, it is possible (and likely) they have different types of data.
 
@@ -185,6 +186,8 @@ rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
 # Create the data frame:
+planets_df  =
+
 ```
 
 *** =solution
@@ -196,9 +199,9 @@ diameter 	= c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
 rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
 rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
+# Create the data frame:
 planets_df 	= data.frame(planets,type,diameter,rotation,rings)
 
-str(planets_df)
 ```
 
 *** =sct
@@ -240,14 +243,14 @@ This is easy, no hints ;-)!
 *** =solution
 
 ```{r eval=FALSE}
-# Check the structure of planet.df
+# Check the structure of planets.df
 str(planets_df)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("str(planets_df)")))){
+if (!(isTRUE(try(output_contains("str(planets_df)"))))){
 	DM.result = list(FALSE, "Make sure you use the 'str()' function on 'planets_df'.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
