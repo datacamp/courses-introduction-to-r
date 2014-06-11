@@ -128,7 +128,7 @@ For `roulette_vector`:
 - Thursday you lost 350\$
 - Friday you won 10\$
 
-You only played poker and roulette, since there was a delegation of paragnosts that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 *** =instructions
 - Assign to the variable `roulette_vector` the winnings/losses for roulette.
