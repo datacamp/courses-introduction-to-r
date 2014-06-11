@@ -292,7 +292,7 @@ if (!exists("box_office_all")){
 
 ---
 
-## Adding a column for the Worlwide box office 
+## Adding a column for the Worldwide box office 
 
 In the previous exercise, you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`...
 
