@@ -42,7 +42,7 @@ mtcars # Built-in R dataset stored in a data frame
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("mtcars")))){
+if (!(isTRUE(try(output_contains("mtcars"))))) {
 	DM.result = list(FALSE, "Make sure you output 'mtcars'.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");

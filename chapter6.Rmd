@@ -400,17 +400,11 @@ str(shining_list)
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("shining_list")){
+if (!exists("shining_list")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'shining_list'.");
-} else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews, year=1980) )))){
+} else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews, year=1980))))) {
   DM.result = list(FALSE, "Looks like 'shining_list' doesn't contain the year item.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
-```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
 ```
