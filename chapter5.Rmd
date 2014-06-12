@@ -91,7 +91,7 @@ head(mtcars)
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("head(mtcars)")))){
+if (!(isTRUE(try(output_contains("head(mtcars)"))))){
 	DM.result = list(FALSE, "Make sure you use the 'head()' function on 'mtcars'.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
@@ -140,7 +140,7 @@ str(mtcars)
 *** =sct
 
 ```{r eval=FALSE}
-if (!(isTRUE(try(output_contains("str(mtcars)")))){
+if (!(isTRUE(try(output_contains("str(mtcars)"))))){
 	DM.result = list(FALSE, "Make sure you use the 'str()' function on 'mtcars'.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
