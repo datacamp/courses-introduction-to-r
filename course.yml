@@ -1,5 +1,5 @@
-id: 470
-title: Introduction to R v3
+id: 58
+title: Introduction to R
 author_field: Jonathan Cornelissen
 description: With over 2 million users worldwide R is rapidly becoming the leading
   programming language in statistics and data science. Every year, the number of R
@@ -13,10 +13,10 @@ description: With over 2 million users worldwide R is rapidly becoming the leadi
   research projects or professional endeavors. No previous experience in programming
   languages or data science is required.</i>
 chapters:
-- chapter1.Rmd: 1014
-- chapter2.Rmd: 1015
-- chapter3.Rmd: 1016
-- chapter4.Rmd: 1017
-- chapter5.Rmd: 1018
-- chapter6.Rmd: 1019
+- chapter1.Rmd: 316
+- chapter2.Rmd: 317
+- chapter3.Rmd: 318
+- chapter4.Rmd: 319
+- chapter5.Rmd: 320
+- chapter6.Rmd: 321
 
