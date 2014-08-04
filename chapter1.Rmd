@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 1
 title       : Intro to basics
-description : In this chapter you will take your first steps with R. You learn how to use the console as a calculator, assign variables, and get to know the basic data types in R. Let's get started!
+description : In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let us get started!
 framework   : datacamp
 mode        : selfcontained
 ---
@@ -11,14 +11,14 @@ mode        : selfcontained
 
 In the **editor** on the right you should type R code to solve the exercises. 
 
-R makes use of the `#` sign to add comments, such that you and others can understand what the R code is about. Just like Twitter! 
+R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! 
 Comments are not run as R-code, so they will not influence your result. 
 
 The output of your R code is shown in the **console** in the lower right corner, while **graphs** are shown in the upper right corner.
 
 *** =instructions
-- Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form R can thus be used as a calculator or to generate plots, but there's much more ;-).
-- In the upper right corner R generated some cool visualizations. Use the arrows above the graphs to browse through these. 
+- Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form, R can thus be used as a calculator or as a means to generate plots, but there is much more ;-)!
+- You can see that R has generated some cool visualizations in the upper right corner. Use the arrows above the graphs to browse through these. 
 
 *** =hint
 Just click the Submit Answer button.
@@ -26,9 +26,9 @@ Just click the Submit Answer button.
 *** =sample_code
 
 ```{r eval=FALSE}
-# This  is the editor and the part below the white line is called the console
+# This is the editor and the part below the white line is called the console
 
-# The  hashtag is used to add comments
+# The hashtag is used to add comments
 
 # Show some demo graphs generated with R
 demo("graphics")
@@ -42,9 +42,9 @@ demo("graphics")
 ```{r eval=FALSE}
 #Just click the Submit Answer button
 
-# This  is the editor and the part below the white line is called the console
+# This is the editor and the part below the white line is called the console
 
-# The  hashtag is used to add comments
+# The hashtag is used to add comments
 
 # Calculate 3+4
 3+4
@@ -56,7 +56,7 @@ demo("graphics")
 *** =sct
 
 ```{r eval=FALSE}
-DM.result = list(TRUE, "Great! Let's get started!");
+DM.result = list(TRUE, "Great! Let us get started!");
 ```
 
 *** =pre_exercise_code
@@ -70,7 +70,7 @@ DM.result = list(TRUE, "Great! Let's get started!");
 
 ## Little arithmetics with R
 
-In its most basic form R can be used as a simple calculator. Let's consider the following arithmetic operators:
+In its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
 
 - Addition: `+`
 - Subtraction: `-`
@@ -80,14 +80,14 @@ In its most basic form R can be used as a simple calculator. Let's consider the 
 - Modulo: `%%`
 
 The last two might need some explaining:
-- The `^` operator takes the number left to it to the power of the number on its right-hand side: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number left to it by the number on its right-hand side, for example 5 modulo 3 or `5%%3` is 2.
+- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
+- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5%%3` is 2.
 
 *** =instructions
 - Type `2^5` in the editor to calculate 2 to the power 5.
 - Type `17%%4` to calculate 17 modulo 4.
 - Click Submit Answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to give comments on certain lines.
+- Note how the `#` symbol is used to add comments on the R code.
 
 *** =hint
 Just follow the instructions, this should be easy ;-).
@@ -141,7 +141,7 @@ Just follow the instructions, this should be easy ;-).
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("2^5"))))) {
-  DM.result = list(FALSE, "The exponentiation example doesn't seem right. Make sure to carefully read the instructions.");
+  DM.result = list(FALSE, "The exponentiation example is not correct. Make sure to carefully read the instructions.");
 } else if (!(isTRUE(try(output_contains("17%%4"))))) {
   DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to carefully read the instructions.");
 } else {
@@ -161,12 +161,12 @@ if (!(isTRUE(try(output_contains("2^5"))))) {
 
 A basic concept in (statistical) programming is called a **variable**. 
 
-A variable allows you to store a value (e.g. 4) or object (e.g. a function description) in R. Then later you can use this variable's name to easily access the value or object that is stored within this variable. 
+A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
 
 You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
 
 *** =instructions
-- Up to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when asking R to print `x` the value 42 appears.
+- Over to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when you ask R to print `x`, the value 42 appears.
 
 *** =hint
 
@@ -214,7 +214,7 @@ if (!exists("x")){
 
 ## Variable assignment (2)
 
-Suppose you have a fruit basket with 5 apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
+Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
 
 *** =instructions
 - Type the following code: `my_apples = 5` to assign the value 5 to `my_apples`.
@@ -223,7 +223,7 @@ Suppose you have a fruit basket with 5 apples. As a data analyst in training, yo
 
 *** =hint
 
-Remember, if you want to assign a number or object to a variable in R, you can make use of the assignment operator `=`.
+Remember, if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `=`.
 
 *** =sample_code
 
@@ -251,7 +251,7 @@ if (!exists("my_apples")){
 } else if (!isTRUE(try(all.equal(my_apples,5)))){
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_apples'.");
 } else {
-	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
 }
 ```
 
@@ -264,7 +264,7 @@ if (!exists("my_apples")){
 
 ## Variable assignment (3)
 
-Every tasty fruit basket needs oranges so you decide to add 6 oranges. As a data analyst your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: `my_apples + my_oranges`.
+Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: `my_apples + my_oranges`.
 
 *** =instructions
 - Assign to `my_oranges` the value 6.
@@ -305,7 +305,7 @@ if (!exists("my_oranges")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_oranges'.");
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'.");
-  DM.result = list(FALSE, "The output doesn't contain the result of adding 'my_apples' and 'my_oranges'.");
+  DM.result = list(FALSE, "The output does not contain the result of adding 'my_apples' and 'my_oranges'.");
 } else if (!exists("my_fruit")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
@@ -325,11 +325,11 @@ if (!exists("my_oranges")) {
 
 ## Apples and oranges
 
-Common knowledge tells you not to add apples with oranges. But hey, that's what you just did, didn't you :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with what's called numeric variables in R. Suppose you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor). You now try to assign the addition of a numeric and a character variable to the variable `my_fruit`, which is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, didn't you :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. Suppose you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
 
 *** =instructions
-- Click Submit Answer and read the error message. Make sure to understand why this didn't work.
-- Adjust the code such that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Click Submit Answer and read the error message. Make sure to understand why this did not work.
+- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
 
 *** =hint
 You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
@@ -346,7 +346,7 @@ my_apples
 my_oranges = "six" 
 my_oranges 
 
-# New variable that contains total amount of fruit
+# New variable that contains the total amount of fruit
 my_fruit   = my_apples + my_oranges 
 my_fruit
 ```
@@ -364,7 +364,7 @@ my_apples
 my_oranges = 6
 my_oranges 
 
-# New variable that contains total amount of fruit
+# New variable that contains the total amount of fruit
 my_fruit   = my_apples + my_oranges 
 my_fruit
 ```
@@ -377,13 +377,13 @@ if (!exists("my_oranges")) {
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'. A string does not equal a number!");
 } else if (!(isTRUE(try(output_contains("my_apples + my_oranges"))))) {
-  DM.result = list(FALSE, "The output doesn't contain the result of adding 'my_apples' and 'my_oranges'.");
+  DM.result = list(FALSE, "The output does not contain the result of adding 'my_apples' and 'my_oranges'.");
 } else if (!exists("my_fruit")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
   DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_fruit'.");
 } else {
-  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result = list(TRUE, "Continue to the next exercise. Keep up the good work!");
 }
 ```
 
@@ -416,13 +416,13 @@ Change the value of:
 Note that R is case sensitive!
 
 *** =hint 
-Replace in the editor the values with the values provided in the exercise. For example: 
+Replace the values in the editor with the values that are provided in the exercise. For example: 
 `my_numeric = 42` assigns the value 42 to the variable `my_numeric`. 
 
 *** =sample_code
 
 ```{r eval=FALSE}
-# What's the answer to the universe
+# What is the answer to the universe?
 my_numeric = 42.5
 
 # The quotation marks indicate that the variable is of type character
@@ -434,7 +434,7 @@ my_logical = TRUE
 *** =solution
 
 ```{r eval=FALSE}
-# What's the answer to the universe?
+# What is the answer to the universe?
 my_numeric = 42
 
 # The quotation marks indicate that the variable is of type character
@@ -453,7 +453,7 @@ if (!exists("my_numeric")) {
 } else if (!exists("my_character")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_character'.");
 } else if (!isTRUE(try(all.equal(my_character,"forty-two")))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_character'. Don't forget the quotes.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_character'. Do not forget the quotes.");
 } else if (!exists("my_logical")) {
   DM.result = list(FALSE, "Please make sure to define a variable 'my_logical'.");
 } else if (!isTRUE(try(all.equal(my_logical,FALSE)))) {
@@ -473,7 +473,7 @@ if (!exists("my_numeric")) {
 
 ## What's that data type?
 
-Remember when you added `5 + "six"` and got an error due to a mismatch in data types? You avoid such embarrassing situations by checking the data type of a variable upfront. You can do this as follow: `class(some_variable_name)`.
+Remember when you added `5 + "six"` and got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this as follows: `class(some_variable_name)`.
 
 *** =instructions
 - Complete the code in the editor and print the class of `my_numeric`, `my_character` and `my_logical` to the console. 
@@ -511,11 +511,11 @@ class(my_logical)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("class(my_numeric)"))))) {
-  DM.result = list(FALSE, "The output doesn't contain the class of 'my_numeric'.");
+  DM.result = list(FALSE, "The output does not contain the class of 'my_numeric'.");
 } else if (!(isTRUE(try(output_contains("class(my_character)"))))) {
-  DM.result = list(FALSE, "The output doesn't contain the class of 'my_character'.");
+  DM.result = list(FALSE, "The output does not contain the class of 'my_character'.");
 } else if (!(isTRUE(try(output_contains("class(my_logical)"))))) {
-  DM.result = list(FALSE, "The output doesn't contain the class of 'my_logical'.");
+  DM.result = list(FALSE, "The output does not contain the class of 'my_logical'.");
 } else {
 	DM.result = list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");
 }
