@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 3
 title       : Matrices
-description : In this chapter, you'll learn how to work with matrices in R. By the end of the chapter you'll be able to create matrices, and understand how you can do basic computations with them. You'll analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
+description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices, and understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
 framework   : datacamp
 mode        : selfcontained
 
@@ -13,7 +13,7 @@ mode        : selfcontained
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
 In R, you can construct a matrix with the `matrix` function, for example: `matrix(1:9, byrow=TRUE, nrow=3)`:
-- The first argument, is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which constructs the vector `c(1,2,3,4,5,6,7,8,9)`. 
+- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which constructs the vector `c(1,2,3,4,5,6,7,8,9)`. 
 - The argument `byrow` indicates that the matrix is filled by the rows. If we want the vector to be filled by the columns, we just place `bycol=TRUE` or `byrow=FALSE`. 
 - The third argument `nrow` indicates that the matrix should have three rows.
 
@@ -57,15 +57,15 @@ if (!(isTRUE(try(output_contains("matrix(1:9, byrow=TRUE, nrow=3)"))))){
 
 ## Analyzing matrices, you shall
 
-It is time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchisee. May the force be with you! 
+It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
 
-In the editor, three vectors are defined each representing the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
 
 *** =instructions
 - Construct a matrix with one row for each movie (thus 3 rows). The first column is for the US box office revenue, and the second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
 
 *** =hint
-Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you don't want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is thus: `c(new_hope,empire_strikes,return_jedi)`.
+Remember that you can construct a matrix containing the numbers 1 up to 9 with: `matrix(1:9, byrow=TRUE, nrow=3)`. In this case, you do not want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is thus: `c(new_hope,empire_strikes,return_jedi)`.
 
 *** =sample_code
 
@@ -127,7 +127,7 @@ if (!exists("new_hope")){
 
 ## Naming a matrix
 
-To help you remember what's stored in `star_wars_matrix`, you'd like to add the names of the movies for the rows. Not only does this helps you to read the data, it is also useful to select certain elements from the matrix later. 
+To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, it is also useful to select certain elements from the matrix later. 
 
 Similar to vectors, you can add names for the rows and the columns of a matrix with:
 
@@ -141,7 +141,7 @@ Similar to vectors, you can add names for the rows and the columns of a matrix w
 
 
 *** =hint
-Don't forget that R is case sensitive. The vector for the column names is thus: `c("US","non-US")` and for the row names: `c("A New Hope","The Empire Strikes Back","Return of the Jedi")`.
+Do not forget that R is case sensitive. The vector for the column names is thus: `c("US","non-US")` and for the row names: `c("A New Hope","The Empire Strikes Back","Return of the Jedi")`.
 
 *** =sample_code
 
@@ -215,7 +215,7 @@ if (!exists("new_hope")){
 
 ## Calculating the worldwide box office 
 
-The single most important thing for a movie to become an instant legend in Tinseltown is its worldwide box office figures. 
+The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
 
 To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
@@ -279,7 +279,7 @@ if (!exists("box_office_all")){
 } else if (!isTRUE(try(all.equal(worldwide_vector,rowSums(star_wars_matrix))))){
   DM.result = list(FALSE, "Did you use the 'rowSums() function on the correct vector?'");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
 }
 ```
 
@@ -382,7 +382,7 @@ if (!exists("box_office_all")){
 
 Just like every action has a reaction, every `cbind()` has a `rbind()`. (We admit, we are pretty bad with metaphors.) 
 
-Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices: the `star_wars_matrix` we just used (the first trilogy) but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
+Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices: the `star_wars_matrix` we just used for the first trilogy but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
 
 *** =instructions
 - Assign to `all_wars_matrix` a new matrix with `star_wars_matrix` in the first three rows and `star_wars_matrix2` in the next three rows.
@@ -395,10 +395,10 @@ Bind the two matrices together in the following way: `rbind( matrix1, matrix2 )`
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
 
-# Matrix containing first trilogy box office
+# Matrix that contains the first trilogy box office
 star_wars_matrix  
 
-# Matrix containing second trilogy box office
+# Matrix that contains the second trilogy box office
 star_wars_matrix2 
 
 # Combine both Star Wars trilogies in one matrix
@@ -410,10 +410,10 @@ all_wars_matrix =
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
 
-# Matrix containing first trilogy box office
+# Matrix that contains the first trilogy box office
 star_wars_matrix  
 
-# Matrix containing second trilogy box office
+# Matrix that contains the second trilogy box office
 star_wars_matrix2 
 
 # Combine both Star Wars trilogies in one matrix
@@ -452,13 +452,13 @@ star_wars_matrix2 = matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(mo
 
 ## The total box office revenue for the entire saga
 
-Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you don't recall what it contains). Let's now calculate the total box office revenue for the entire saga.
+Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you do not recall what it contains). Let us now calculate the total box office revenue for the entire saga.
 
 *** =instructions
 - Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()` function.
 
 *** =hint
-You should use the `colSums()` function with `star_wars_matrix` as argument to find the total box office per region.
+You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
 
 *** =sample_code
 
@@ -513,22 +513,22 @@ all_wars_matrix = rbind(star_wars_matrix, star_wars_matrix2)
 
 ## Selection of matrix elements
 
-Similar to vectors, use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have 1 dimension, matrices have 2 dimensions, therefore use a comma to separate what to select from the rows and what from the columns. For example: 
+Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate that what to select from the rows from that what you want to select from the columns. For example: 
 - `my_matrix[1,2]` selects from the first row the second element.
 - `my_matrix[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4.
 
-If you want to select all elements of a row or column, no number is needed before or after the comma:
+If you want to select all elements of a row or a column, no number is needed before or after the comma:
 - `my_matrix[,1]` selects all elements of the first column.
 - `my_matrix[1,]` selects all elements of the first row.
 
 Back to Star Wars with this newly acquired knowledge!
 
 *** =instructions
-- Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable (In other words: take the average of all elements of the second column).
+- Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable (In other words, take the average of all elements of the second column).
 - Same question, but now only for the first two Star Wars movies.
 
 *** =hint
-You can use the function `mean()` to calculate the average of the inputs to the function. Remember that you can select all rows of a matrix for a specific column x, by typing `my_matrix[,x]`. Non-US is the second column.
+You can use the function `mean()` to calculate the average of the inputs to the function. Remember that you can select all rows of a matrix for a specific column x by typing `my_matrix[,x]`. Non-US is the second column.
 
 *** =sample_code
 
@@ -596,18 +596,18 @@ if (!exists("star_wars_matrix")){
 
 ## A little arithmetic with matrices
 
-Similar to what you've learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
 
 For example: `2*my_matrix` multiplies each element of `my_matrix` by two. 
 
-As a newly-hired data analyst for Lucasfilm, your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `star_wars_matrix`. Assume that the price of a ticket was 5 dollars. Note that box office numbers divided by the ticket price gives you the number of visitors.
+As a newly-hired data analyst for Lucasfilm, it is your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `star_wars_matrix`. Assume that the price of a ticket was 5 dollars. Note that box office numbers divided by the ticket price gives you the number of visitors.
 
 *** =instructions
-- Assign to `visitors` the matrix with the estimated number of Non-US and US visitors for the three movies.
+- Assign the matrix with the estimated number of Non-US and US visitors for the three movies to `visitors`.
 
 
 *** =hint
-The number of visitors is the revenue (which is stored in `star_wars_matrix` ) divided by the price of ticket (assumed to be $5).
+The number of visitors is the revenue (which is stored in `star_wars_matrix`) divided by the price of ticket (assumed to be $5).
 
 *** =sample_code
 
@@ -647,7 +647,7 @@ if (!exists("star_wars_matrix")){
 } else if (!exists("visitors")){
   DM.result = list(FALSE, "Please make sure to define a variable 'visitors'.");
 } else if (!isTRUE(try(all.equal(visitors,star_wars_matrix / 5)))){
-  DM.result = list(FALSE, "Looks like 'visitors' doesn't contain the correct value. Remember that operations on matrices are element-wise.");
+  DM.result = list(FALSE, "It looks like 'visitors' does not contain the correct value. Remember that operations on matrices are element-wise.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -665,9 +665,9 @@ if (!exists("star_wars_matrix")){
 
 Just like `2*my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
 
-After looking at the result of the previous exercise, big boss Lucas pointed out that the ticket prices went up over time with one dollar per movie. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination). 
+After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time with one dollar per movie. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination). 
 
-(Those familiar with matrices should note this is not the standard matrix multiplication for which you should use `%*%` in R.)
+(Those familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R.)
 
 *** =instructions
 - Assign to `visitors` the matrix with your estimated number of Non-US and US visitors for the three movies.
@@ -730,15 +730,15 @@ if (!exists("star_wars_matrix")){
 } else if (!exists("visitors")){
   DM.result = list(FALSE, "Please make sure to define a variable 'visitors'.");
 } else if (!isTRUE(try(all.equal(visitors,star_wars_matrix / ticket_prices_matrix)))){
-  DM.result = list(FALSE, "Looks like 'visitors' doesn't contain the correct value. Remember that you can divide two matrices.");
+  DM.result = list(FALSE, "It looks like 'visitors' does not contain the correct value. Remember that you can divide two matrices.");
 } else if (!exists("average_us_visitor")){
   DM.result = list(FALSE, "Please make sure to define a variable 'average_us_visitor'.");
 } else if (!isTRUE(try(all.equal(average_us_visitor,mean(visitors[,1]))))){
-  DM.result = list(FALSE, "Looks like 'average_us_visitor' doesn't contain the average of the US visitors.");
+  DM.result = list(FALSE, "It looks like 'average_us_visitor' does not contain the average of the US visitors.");
 } else if (!exists("visitors")){
   DM.result = list(FALSE, "Please make sure to define a variable 'visitors'.");
 } else if (!isTRUE(try(all.equal(average_non_us_visitor,mean(visitors[,2]))))){
-  DM.result = list(FALSE, "Looks like 'average_non_us_visitor' doesn't contain the average of the non-US visitors.");
+  DM.result = list(FALSE, "It looks like 'average_non_us_visitor' does not contain the average of the non-US visitors.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
