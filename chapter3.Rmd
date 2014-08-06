@@ -18,7 +18,7 @@ In R, you can construct a matrix with the `matrix` function, for example: `matri
 - The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
-- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the Submit Answer button and look at the output in the console.
+- Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the 'Submit Answer' button and look at the output in the console.
 
 *** =hint
 Read the assignment carefully, the answer is already given ;-).

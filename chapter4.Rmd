@@ -69,7 +69,7 @@ The function `factor()` will encode the vector as a factor: `factor_gender_vecto
 - Assign to `factor_gender_vector` the character vector `gender_vector` converted to a **factor**. Look at the console and note that R prints out the factor levels below the actual values.
 
 *** =hint
-Just click the Submit Answer button and look at the console.
+Just click the 'Submit Answer' button and look at the console.
 
 *** =sample_code
 
@@ -116,10 +116,10 @@ A nominal variable is a categorical variable without an implied order. This mean
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 *** =instructions
-- Click Submit Answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+- Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
 
 *** =hint
-Just click the Submit Answer button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
 
 *** =sample_code
 
@@ -302,10 +302,10 @@ if (!(isTRUE(try(output_contains("summary(survey_vector)"))))) {
 In `factor_survey_vector` we have a factor with two levels: male and female. But how does R value these relatively to each other? In other words, who sees R to be worth more, males or females?
 
 *** =instructions
-- Read the code in the editor and click Submit Answer to see whether males are worth more than females.
+- Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
 
 *** =hint
-Just click Submit Answer.
+Just click 'Submit Answer'.
 
 *** =sample_code
 

@@ -389,7 +389,7 @@ In R, this is just the sum of the `roulette_vector` and `poker_vector`.
 - Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
 
 *** =hint
-Just click the Submit Answer button on the right.
+Just click the 'Submit Answer' button on the right.
 
 *** =sample_code
 

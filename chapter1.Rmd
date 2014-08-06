@@ -17,11 +17,11 @@ Comments are not run as R-code, so they will not influence your result.
 The output of your R code is shown in the **console** in the lower right corner, while **graphs** are shown in the upper right corner.
 
 *** =instructions
-- Click Submit Answer and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form, R can thus be used as a calculator or as a means to generate plots, but there is much more ;-)!
+- Click 'Submit Answer' and see how the console now shows you the executed R code: the solution `7` appears as the sum of `3` and `4`. In its most basic form, R can thus be used as a calculator or as a means to generate plots, but there is much more ;-)!
 - You can see that R has generated some cool visualizations in the upper right corner. Use the arrows above the graphs to browse through these. 
 
 *** =hint
-Just click the Submit Answer button.
+Just click the 'Submit Answer' button.
 
 *** =sample_code
 
@@ -40,7 +40,7 @@ demo("graphics")
 *** =solution
 
 ```{r eval=FALSE}
-#Just click the Submit Answer button
+#Just click the 'Submit Answer' button
 
 # This is the editor and the part below the white line is called the console
 
@@ -86,7 +86,7 @@ The last two might need some explaining:
 *** =instructions
 - Type `2^5` in the editor to calculate 2 to the power 5.
 - Type `17%%4` to calculate 17 modulo 4.
-- Click Submit Answer and have a look at the R output in the console.
+- Click 'Submit Answer' and have a look at the R output in the console.
 - Note how the `#` symbol is used to add comments on the R code.
 
 *** =hint
@@ -166,7 +166,7 @@ A variable allows you to store a value (e.g. 4) or an object (e.g. a function de
 You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
 
 *** =instructions
-- Over to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click Submit Answer. Notice that when you ask R to print `x`, the value 42 appears.
+- Over to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
 
 *** =hint
 
@@ -219,7 +219,7 @@ Suppose you have a fruit basket with five apples. As a data analyst in training,
 *** =instructions
 - Type the following code: `my_apples = 5` to assign the value 5 to `my_apples`.
 - Type: `my_apples` below the second comment.
-- Click Submit Answer, and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
 
@@ -328,7 +328,7 @@ if (!exists("my_oranges")) {
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, didn't you :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. Suppose you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
 
 *** =instructions
-- Click Submit Answer and read the error message. Make sure to understand why this did not work.
+- Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
 - Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
 
 *** =hint

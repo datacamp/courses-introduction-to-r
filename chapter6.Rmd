@@ -18,21 +18,21 @@ Congratulations! At this point in the course you are already a (semi-)expert in:
 Pretty sweet for an R newbie, right? ;-)
 
 *** =instructions
-- Click Submit Answer to start learning everything about lists!
+- Click 'Submit Answer' to start learning everything about lists!
 
 *** =hint
-Just click the Submit Answer button.
+Just click the 'Submit Answer' button.
 
 *** =sample_code
 
 ```{r eval=FALSE}
-# Just click the Submit Answer button.
+# Just click the 'Submit Answer' button.
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-# Just click the Submit Answer button.
+# Just click the 'Submit Answer' button.
 ```
 
 *** =sct
@@ -60,21 +60,21 @@ A list in R allows you to gather a variety of objects under one name (that is, t
 Maybe you can even say that a list is a kind of super data type ;-)
 
 *** =instructions
-- Click Submit Answer to start the first exercise on lists.
+- Click 'Submit Answer' to start the first exercise on lists.
 
 *** =hint
-Click Submit Answer to start the first exercise on lists.
+Click 'Submit Answer' to start the first exercise on lists.
 
 *** =sample_code
 
 ```{r eval=FALSE}
-# Click Submit Answer to start the first exercise on lists.
+# Click 'Submit Answer' to start the first exercise on lists.
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-# Click Submit Answer to start the first exercise on lists.
+# Click 'Submit Answer' to start the first exercise on lists.
 ```
 
 *** =sct

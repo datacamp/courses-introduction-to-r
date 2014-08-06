@@ -22,10 +22,10 @@ The output, namely the respondents' answers to the questions formulated above, i
 A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
 
 *** =instructions
-- Click Submit Answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+- Click 'Submit Answer'. The data from the built-in example data frame `mtcars` will be printed to the console.
 
 *** =hint
-Just click Submit Answer!
+Just click 'Submit Answer'!
 
 *** =sample_code
 
@@ -583,7 +583,7 @@ In data analysis you will sort your data according to a certain variable in the 
 Subsequently, `a[order(a)]` will give you the ordered vector 9,100,101, since it first picks the second element of a, then the first and then the last. Got it? If you are not sure, use the console to play with the `order()` function.` 
 
 *** =instructions
-- Click Submit Answer when you are ready.
+- Click 'Submit Answer' when you are ready.
 
 *** =hint
 Just play with the `order()` function in the console!
