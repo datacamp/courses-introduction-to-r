@@ -70,7 +70,7 @@ DM.result = list(TRUE, "Great! Let us get started!");
 
 ## Little arithmetics with R
 
-In its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
+As previously stated, in its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
 
 - Addition: `+`
 - Subtraction: `-`
@@ -141,9 +141,9 @@ Just follow the instructions, this should be easy ;-).
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("2^5"))))) {
-  DM.result = list(FALSE, "The exponentiation example is not correct. Make sure to carefully read the instructions.");
+  DM.result = list(FALSE, "The exponentiation example is not correct. Make sure to read the instructions carefully.");
 } else if (!(isTRUE(try(output_contains("17%%4"))))) {
-  DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to carefully read the instructions.");
+  DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -166,7 +166,7 @@ A variable allows you to store a value (e.g. 4) or an object (e.g. a function de
 You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
 
 *** =instructions
-- Over to you: Complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
+- Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
 
 *** =hint
 
@@ -223,7 +223,7 @@ Suppose you have a fruit basket with five apples. As a data analyst in training,
 
 *** =hint
 
-Remember, if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `=`.
+Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `=`.
 
 *** =sample_code
 
@@ -325,7 +325,7 @@ if (!exists("my_oranges")) {
 
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, didn't you :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. Suppose you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
 
 *** =instructions
 - Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
@@ -410,7 +410,7 @@ Note how the quotation marks on the right indicate that "some text" is a charact
 *** =instructions
 Change the value of:
 - `my_numeric` variable to `42`.
-- `my_character` variable to `"forty-two"`. Note: the quotation marks indicate that `"forty-two"` is a character.
+- `my_character` variable to `"forty-two"`. Note that the quotation marks indicate that `"forty-two"` is a character.
 - `my_logical` variable to `FALSE`.
 
 Note that R is case sensitive!
@@ -473,13 +473,13 @@ if (!exists("my_numeric")) {
 
 ## What's that data type?
 
-Remember when you added `5 + "six"` and got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this as follows: `class(some_variable_name)`.
+Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this as follows: `class(some_variable_name)`.
 
 *** =instructions
 - Complete the code in the editor and print the class of `my_numeric`, `my_character` and `my_logical` to the console. 
 
 *** =hint
-You can find out the data type of the `my_numeric` variable for example by typing: `class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
+You can find out the data type of the `my_numeric` variable for example by typing `class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
 
 *** =sample_code
 
