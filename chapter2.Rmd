@@ -12,7 +12,7 @@ Feeling lucky?
 
 You better, because this chapter takes you on a trip to the City of Sins, also known as *"Statisticians Paradise"* ;-).
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables, and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next Stop, Vegas Baby...VEGAS!!!!
+Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next Stop, Vegas Baby...VEGAS!!!!
 
 *** =instructions
 - Do you still remember what you have learned in the first chapter? Assign the value `"Here we go!"` to the variable `Vegas`!
@@ -38,7 +38,7 @@ Vegas = "Here we go!"
 if (!exists("Vegas")){
   DM.result = list(FALSE, "Please make sure to define a variable 'Vegas'.");
 } else if (!isTRUE(try(all.equal(Vegas,"Here we go!")))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'Vegas'. Do not forget that R is case sensitive.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to 'Vegas'. Do not forget that R is case sensitive!");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -110,7 +110,7 @@ if (!exists("boolean_vector")){
 
 ## Create a vector (3)
 
-After one week in Las Vegas and still zero Ferrari's in your garage, you decide it is time to start using your data analytical superpowers. 
+After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers. 
 
 Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
 
@@ -186,7 +186,7 @@ You can give a name to the elements of a vector with the `names()` function. For
 - Go ahead and assign the days of the week as names to `poker_vector` and `roulette_vector`. In case you are not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday and Friday.
 
 *** =hint
-You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by: `c("Monday","Tuesday","Wednesday","Thursday","Friday")`.
+You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by `c("Monday","Tuesday","Wednesday","Thursday","Friday")`.
 
 *** =sample_code
 
@@ -244,7 +244,7 @@ if (!exists("poker_vector")){
 
 If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
 
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this: assign the days of the week vector to a **variable**! 
+In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
 
 Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
 
@@ -264,7 +264,7 @@ poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings from Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
-# Create the variable days_vector containing "Monday","Tuesday","Wednesday","Thursday","Friday"
+# Create the variable days_vector that contains "Monday","Tuesday","Wednesday","Thursday","Friday"
 days_vector =
  
 #Assign the names of the day to the roulette and poker_vectors
@@ -281,7 +281,7 @@ poker_vector = c(140,-50,20,-120,240)
 # Roulette winnings from Monday to Friday
 roulette_vector = c(-24,-50,100,-350,10)
 
-# Create the variable days_vector containing "Monday","Tuesday","Wednesday","Thursday","Friday"
+# Create the variable days_vector that contains "Monday","Tuesday","Wednesday","Thursday","Friday"
 days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 
 #Assign the names of the day to the roulette and poker_vectors
@@ -322,7 +322,7 @@ You want to find out the following type of information:
 
 To get the answers, you have to do arithmetic calculations on vectors. 
 
-It is mportant to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let us try this first!
+It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let us try this first!
 
 *** =instructions
 - Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
@@ -464,8 +464,8 @@ Based on the previous analysis, it looks like you had a mix of good and bad days
 A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: `total_poker = sum(poker_vector)`.
 
 *** =instructions
-- Calculate the total amount of money you have won/lost with roulette and assign to the variable `total_roulette`.
-- Now you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
+- Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
+- Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
 
 *** =hint
 Use the `sum` function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
@@ -548,7 +548,7 @@ After a short brainstorm in your hotel's jacuzzi, you realize that a possible ex
 *** =instructions
 - Calculate `total_poker` and `total_roulette`.
 - Check if your total gains in poker are higher than for roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
-(Tip: You partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
+(Tip: you partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
 
 *** =hint
 To check if 6 is larger than 5, you type `6 > 5`. This returns a variable with data type Logical (`TRUE` or `FALSE`).
@@ -609,7 +609,7 @@ if (!exists("total_poker")){
 } else if (!exists("answer")){
   DM.result = list(FALSE, "Please make sure to define a variable 'answer'.");
 } else if (!isTRUE(try(all.equal(answer,total_poker > total_roulette)))){
-  DM.result = list(FALSE, "It looks like answer variable does not contain the correct answer. Make sure to carefully read the assignment.");
+  DM.result = list(FALSE, "It looks like the answer variable does not contain the correct answer. Make sure to read the assignment carefully.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -628,9 +628,9 @@ if (!exists("total_poker")){
 
 Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
 
-Another possible route for investigation is your performance at the beginning of the working week versus at the end of it. You did have a couple of Margarita cocktails at the end of the week... 
+Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...) you can use square brackets. Between the square brackets, you indicate what elements to select: `[...elements to select..]`. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
+To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select: `[...elements to select..]`. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
 
 *** =instructions
 - Assign the poker results of Wednesday to the variable `poker_wednesday`.
@@ -906,7 +906,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on poker
+# What days of the week did you make money on poker?
 selection_vector = 
 ```
 
@@ -922,7 +922,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on poker
+# What days of the week did you make money on poker?
 selection_vector = poker_vector > 0
 ```
 
@@ -973,7 +973,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on poker
+# What days of the week did you make money on poker?
 selection_vector = poker_vector > 0
 # Select from poker_vector these days
 poker_winning_days = 
@@ -991,7 +991,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on poker
+# What days of the week did you make money on poker?
 selection_vector = poker_vector > 0
 # Select from poker_vector these days
 poker_winning_days = poker_vector[selection_vector]
@@ -1027,7 +1027,7 @@ if (!exists("selection_vector")){
 Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
 
 *** =instructions
-- Assign the amount that you made on the days you ended positively for roulette to the variable `roulette_winning_days`.
+- Assign the amount that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`.
 
 *** =hint
 Have a look at the previous exercise and do the similar analysis, this time for `roulette_vector`.
@@ -1044,7 +1044,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on roulette
+# What days of the week did you make money on roulette?
 
 # Select from roulette_vector these days
 
@@ -1062,7 +1062,7 @@ days_vector = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 names(roulette_vector) = days_vector
 names(poker_vector) = days_vector
 
-# What days of the week did you make money on roulette
+# What days of the week did you make money on roulette?
 selection_vector = roulette_vector > 0
 # Select from roulette_vector these days
 roulette_winning_days = roulette_vector[ selection_vector ]
@@ -1074,11 +1074,11 @@ roulette_winning_days = roulette_vector[ selection_vector ]
 if (!exists("selection_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
 } else if (!isTRUE(try(all.equal(selection_vector,roulette_vector > 0)))){
-  DM.result = list(FALSE, "It looks like 'selection_vector' does not the correct result. Make sure you use 'roulette_vector'.");
+  DM.result = list(FALSE, "It looks like 'selection_vector' does not the correct result. Make sure that you use 'roulette_vector'.");
 } else if (!exists("roulette_winning_days")){
   DM.result = list(FALSE, "Please make sure to define a variable 'roulette_winning_days'.");
 } else if (!isTRUE(try(all.equal(roulette_winning_days,roulette_vector[selection_vector])))){
-  DM.result = list(FALSE, "It looks like 'roulette_winning_days' does not the correct result. Make sure you use 'roulette_vector'.");
+  DM.result = list(FALSE, "It looks like 'roulette_winning_days' does not the correct result. Make sure that you use 'roulette_vector'.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
