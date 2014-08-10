@@ -9,7 +9,7 @@ mode        : selfcontained
 
 ## What's a data frame?
 
-You may remember from the chapter about matrices that all the elements you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
 
 When doing a market research survey, however, you often have questions such as:
 - 'Are your married?' or 'yes/no' questions (= boolean data type)
@@ -162,8 +162,8 @@ Since using built-in datasets is not even half the fun of creating your own data
 
 As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
 - The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the earth.
-- The planet's rotation across the sun relative to that of earth.
+- The planet's diameter relative to the diameter of the Earth.
+- The planet's rotation across the sun relative to that of the Earth.
 - If the planet has rings or not (TRUE or FALSE).
 
 After doing some high-quality research on [wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `planets`, `type`, `diameter`, `rotation` and `rings` (see editor, note that an element of one vector is linked to the element of another vector based on its position).
@@ -399,9 +399,9 @@ planets_df = data.frame(type,planets,diameter,rotation,rings)
 
 ## Only planets with rings
 
-You will often want to select an entire column, namely one specific variable from a data frame. Suppose you want to select all elements of the variable `rings`, both `planets_df[,5]` and `planets_df[,"rings"]` do the trick. 
+You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `rings`, both `planets_df[,5]` and `planets_df[,"rings"]` do the trick. 
 
-However, there is a short-cut. Use the `$`-sign to tell R it only has to look up all the elements of the variable behind the sign: `data_frame_name$variable_name`.
+However, there is a short-cut. Use the `$`-sign to tell R that it only has to look up all the elements of the variable behind the sign: `data_frame_name$variable_name`.
 
 *** =instructions
 - Make use of the `$` -sign to create the `rings_vector` that contains all elements of the 'rings' variable in the planets_df data frame.
@@ -464,7 +464,7 @@ This means that the first four observations (or planets) do not have a ring (FAL
 - Assign to `planets_with_rings_df` all data in the `planets_df`dataset for the planets with rings, that is, where `rings_vector` is TRUE. 
 
 *** =hint
-Select elements from `planets_df` using the square brackets. The `rings_vector` contains boolean values and R will select only those rows/columns were the vector element is TRUE. In this case, you want to select rows based on `rings_vector` and select all the columns.
+Select elements from `planets_df` by using the square brackets. The `rings_vector` contains boolean values and R will select only those rows/columns were the vector element is TRUE. In this case, you want to select rows based on `rings_vector` and select all the columns.
 
 *** =sample_code
 
@@ -664,7 +664,7 @@ largest_first_df = planets_df[positions,]
 if (!exists("positions")){
   DM.result = list(FALSE, "Please make sure to define a variable 'positions'.");
 } else if (!isTRUE(try(all.equal(positions,order(planets_df$diameter, decreasing=TRUE) )))){
-  DM.result = list(FALSE, "Looks like 'positions' doesn't contain all the correct ordering of the diameter column.");
+  DM.result = list(FALSE, "It looks like 'positions' does not contain all the correct ordering of the diameter column.");
 } else if (!exists("largest_first_df")){
   DM.result = list(FALSE, "Please make sure to define a variable 'largest_first_df'.");
 } else if (!isTRUE(try(all.equal(largest_first_df,planets_df[positions,] )))){
