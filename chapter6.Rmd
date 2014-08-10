@@ -11,9 +11,9 @@ mode        : selfcontained
 
 Congratulations! At this point in the course you are already a (semi-)expert in:
 
-- **Vectors** (one dimensional array) Holds numeric, character or logical values. The elements in one vector all have the same datatype.
-- **Matrices** (two dimensional array) Holds numeric, character or logical values. The elements in one matrix all have the same datatype.
-- **Data frames** (two-dimensional objects) Holds numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectors** (one dimensional array) holds numeric, character or logical values. The elements in one vector all have the same datatype.
+- **Matrices** (two dimensional array) hold numeric, character or logical values. The elements in one matrix all have the same datatype.
+- **Data frames** (two-dimensional objects) hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
 
 Pretty sweet for an R newbie, right? ;-)
 
@@ -230,7 +230,7 @@ Start by creating a list for the movie "The Shining". We have already created th
 - Create the variable `shining_list`. The list contains the following components:
 - moviename: "The Shining"
 - actors: a vector with the main actors' names
-- reviews: a data frame containing some reviews
+- reviews: a data frame that contains some reviews
 
 Do not forget to name the list components accordingly!
 
@@ -346,7 +346,7 @@ shining_list = list(moviename="The Shining",actors=actors, reviews=reviews )
 
 ## Adding more movie information to the list
 
-Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next years president of the club, you decide to add this information to the list. 
+Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 
 
 In order to conveniently add elements to lists you use the concatenate function `c()`: 
 
