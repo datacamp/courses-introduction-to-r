@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 3
 title       : Matrices
-description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices, and understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
+description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices and to understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May to force be with you! 
 framework   : datacamp
 mode        : selfcontained
 
@@ -12,7 +12,7 @@ mode        : selfcontained
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
-In R, you can construct a matrix with the `matrix` function, for example: `matrix(1:9, byrow=TRUE, nrow=3)`:
+You can construct a matrix in R with the `matrix` function, for example: `matrix(1:9, byrow=TRUE, nrow=3)`:
 - The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which constructs the vector `c(1,2,3,4,5,6,7,8,9)`. 
 - The argument `byrow` indicates that the matrix is filled by the rows. If we want the vector to be filled by the columns, we just place `bycol=TRUE` or `byrow=FALSE`. 
 - The third argument `nrow` indicates that the matrix should have three rows.
@@ -26,13 +26,13 @@ Read the assignment carefully, the answer is already given ;-).
 *** =sample_code
 
 ```{r eval=FALSE}
-# Construction of a matrix with 3 rows containing the numbers 1 up to 9
+# Construction of a matrix with 3 rows that contain the numbers 1 up to 9
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-# Construction of a matrix with 3 rows containing the numbers 1 up to 9
+# Construction of a matrix with 3 rows that contain the numbers 1 up to 9
 matrix(1:9, byrow=TRUE, nrow=3)
 ```
 
@@ -99,19 +99,19 @@ star_wars_matrix = matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=
 if (!exists("new_hope")){
   DM.result = list(FALSE, "Please make sure to define a variable 'new_hope'.");
 } else if (!isTRUE(try(all.equal(new_hope,c(460.998007, 314.4))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'new_hope' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'new_hope'.");
 } else if (!exists("empire_strikes")){
   DM.result = list(FALSE, "Please make sure to define a variable 'empire_strikes'.");
 } else if (!isTRUE(try(all.equal(empire_strikes,c(290.475067, 247.900000))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'empire_strikes' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'empire_strikes'.");
 } else if (!exists("return_jedi")){
   DM.result = list(FALSE, "Please make sure to define a variable 'return_jedi'.");
 } else if (!isTRUE(try(all.equal(return_jedi,c(309.306177,165.8))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'return_jedi' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'return_jedi'.");
 } else if (!exists("star_wars_matrix")){
   DM.result = list(FALSE, "Please make sure to define a variable 'star_wars_matrix'.");
 } else if (!isTRUE(try(all.equal(star_wars_matrix,matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE))))){
-  DM.result = list(FALSE, "Did you assign to 'star_wars_matrix' to the correct matrix containing the vector that holds all three movies?");
+  DM.result = list(FALSE, "Did you assign the correct matrix containing the vector that holds all three movies to 'star_wars_matrix?");
 } else {
 	DM.result = list(TRUE, "Good! Continue to the next exercise.");
 }
@@ -127,7 +127,7 @@ if (!exists("new_hope")){
 
 ## Naming a matrix
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, it is also useful to select certain elements from the matrix later. 
+To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix later. 
 
 Similar to vectors, you can add names for the rows and the columns of a matrix with:
 
@@ -152,7 +152,7 @@ new_hope = c( 460.998007, 314.4)
 empire_strikes = c(290.475067, 247.900000)
 return_jedi = c(309.306177,165.8)
 
-# Construct matrix
+# Construct the matrix
 star_wars_matrix = matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE)
 
 # Add your code here such that rows and columns of star_wars_matrix have a name!
@@ -168,7 +168,7 @@ new_hope = c( 460.998007, 314.4)
 empire_strikes = c(290.475067, 247.900000)
 return_jedi = c(309.306177,165.8)
 
-# Construct matrix
+# Construct the matrix
 star_wars_matrix = matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE)
 
 # Add your code here such that rows and columns of star_wars_matrix have a name!
@@ -182,21 +182,21 @@ rownames(star_wars_matrix) = c("A New Hope","The Empire Strikes Back","Return of
 if (!exists("new_hope")){
   DM.result = list(FALSE, "Please make sure to define a variable 'new_hope'.");
 } else if (!isTRUE(try(all.equal(new_hope,c(460.998007, 314.4))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'new_hope' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'new_hope'.");
 } else if (!exists("empire_strikes")){
   DM.result = list(FALSE, "Please make sure to define a variable 'empire_strikes'.");
 } else if (!isTRUE(try(all.equal(empire_strikes,c(290.475067, 247.900000))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'empire_strikes' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'empire_strikes'.");
 } else if (!exists("return_jedi")){
   DM.result = list(FALSE, "Please make sure to define a variable 'return_jedi'.");
 } else if (!isTRUE(try(all.equal(return_jedi,c(309.306177,165.8))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'return_jedi' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'return_jedi'.");
 } else if (!exists("star_wars_matrix")){
   DM.result = list(FALSE, "Please make sure to define a variable 'star_wars_matrix'.");
 } else if (!isTRUE(try(all.equal(star_wars_matrix,matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE,dimnames=list(c("A New Hope","The Empire Strikes Back","Return of the Jedi"),c("US","non-US"))))))){
-  DM.result = list(FALSE, "Did you assign to 'star_wars_matrix' to the correct matrix containing the vector that holds all three movies?");
+  DM.result = list(FALSE, "Did you assign the correct matrix containing the vector that holds all three movies to 'star_wars_matrix'?");
 } else if (!isTRUE(try(all.equal(colnames(star_wars_matrix),c("US","non-US"))))){
-  DM.result = list(FALSE, "Did you set the column names of 'star_wars_matrix' to the correct vector?");
+  DM.result = list(FALSE, "Did you set the column names of'star_wars_matrix' to the correct vector?");
 } else if (!isTRUE(try(all.equal(rownames(star_wars_matrix),c("A New Hope","The Empire Strikes Back","Return of the Jedi"))))){
   DM.result = list(FALSE, "Did you set the rownames names of 'star_wars_matrix' to the correct vector?");
 } else {
@@ -231,7 +231,7 @@ The `rowSums()` function will calculate the total box office for each row of the
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix: 
+# Construct the matrix: 
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -245,7 +245,7 @@ worldwide_vector =
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix: 
+# Construct the matrix: 
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -261,19 +261,19 @@ worldwide_vector = rowSums(star_wars_matrix)
 if (!exists("box_office_all")){
   DM.result = list(FALSE, "Please make sure to define a variable 'box_office_all'.");
 } else if (!isTRUE(try(all.equal(box_office_all,c(461, 314.4,290.5, 247.9,309.3,165.8))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'box_office_all' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'box_office_all'.");
 } else if (!exists("movie_names")){
   DM.result = list(FALSE, "Please make sure to define a variable 'movie_names'.");
 } else if (!isTRUE(try(all.equal(movie_names,c("A New Hope","The Empire Strikes Back","Return of the Jedi"))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'movie_names' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'movie_names'.");
 } else if (!exists("col_titles")){
   DM.result = list(FALSE, "Please make sure to define a variable 'col_titles'.");
 } else if (!isTRUE(try(all.equal(col_titles,c("US","non-US"))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'col_titles' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'col_titles'.");
 } else if (!exists("star_wars_matrix")){
   DM.result = list(FALSE, "Please make sure to define a variable 'star_wars_matrix'.");
 } else if (!isTRUE(try(all.equal(star_wars_matrix,matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles)))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'star_wars_matrix' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'star_wars_matrix'.");
 } else if (!exists("worldwide_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'worldwide_vector'.");
 } else if (!isTRUE(try(all.equal(worldwide_vector,rowSums(star_wars_matrix))))){
@@ -294,7 +294,7 @@ if (!exists("box_office_all")){
 
 ## Adding a column for the Worldwide box office 
 
-In the previous exercise, you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`...
+In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`...
 
 You can add a column or multiple columns to a matrix with the `cbind` function, which merges matrices and/or vectors together by column. For example: `new_combined_matrix = cbind( matrix1, matrix2, vector1, ... )`.
 
@@ -308,7 +308,7 @@ Bind the `worldwide_vector` to the `star_wars_matrix` with the `cbind()` functio
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix
+# Construct the matrix
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -325,7 +325,7 @@ all_wars_matrix =
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix
+# Construct the matrix
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -344,19 +344,19 @@ all_wars_matrix = cbind(star_wars_matrix, worldwide_vector)
 if (!exists("box_office_all")){
   DM.result = list(FALSE, "Please make sure to define a variable 'box_office_all'.");
 } else if (!isTRUE(try(all.equal(box_office_all,c(461, 314.4,290.5, 247.9,309.3,165.8))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'box_office_all' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'box_office_all'.");
 } else if (!exists("movie_names")){
   DM.result = list(FALSE, "Please make sure to define a variable 'movie_names'.");
 } else if (!isTRUE(try(all.equal(movie_names,c("A New Hope","The Empire Strikes Back","Return of the Jedi"))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'movie_names' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'movie_names'.");
 } else if (!exists("col_titles")){
   DM.result = list(FALSE, "Please make sure to define a variable 'col_titles'.");
 } else if (!isTRUE(try(all.equal(col_titles,c("US","non-US"))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'col_titles' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'col_titles'.");
 } else if (!exists("star_wars_matrix")){
   DM.result = list(FALSE, "Please make sure to define a variable 'star_wars_matrix'.");
 } else if (!isTRUE(try(all.equal(star_wars_matrix,matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles)))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'star_wars_matrix' to the correct vector.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'star_wars_matrix'.");
 } else if (!exists("worldwide_vector")){
   DM.result = list(FALSE, "Please make sure to define a variable 'worldwide_vector'.");
 } else if (!isTRUE(try(all.equal(worldwide_vector,rowSums(star_wars_matrix))))){
@@ -382,7 +382,7 @@ if (!exists("box_office_all")){
 
 Just like every action has a reaction, every `cbind()` has a `rbind()`. (We admit, we are pretty bad with metaphors.) 
 
-Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices: the `star_wars_matrix` we just used for the first trilogy but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
+Your R workspace ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)) now contains two matrices: the `star_wars_matrix` that we have just used for the first trilogy but also the `star_wars_matrix2` for the second trilogy. Type the name of the matrices in the console and press enter in case you want to have a closer look.
 
 *** =instructions
 - Assign to `all_wars_matrix` a new matrix with `star_wars_matrix` in the first three rows and `star_wars_matrix2` in the next three rows.
@@ -452,7 +452,7 @@ star_wars_matrix2 = matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(mo
 
 ## The total box office revenue for the entire saga
 
-Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` you constructed in the previous exercise (Type `all_wars_matrix` in the console if you do not recall what it contains). Let us now calculate the total box office revenue for the entire saga.
+Just like every `cbind()` has a `rbind()`, every `colSums()` has a `rowSums()`. Your R workspace contains the `all_wars_matrix` that you constructed in the previous exercise (Type `all_wars_matrix` in the console if you do not recall what it contains). Let us now calculate the total box office revenue for the entire saga.
 
 *** =instructions
 - Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()` function.
@@ -613,7 +613,7 @@ The number of visitors is the revenue (which is stored in `star_wars_matrix`) di
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix:
+# Construct the matrix:
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -627,7 +627,7 @@ visitors =
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix: 
+# Construct the matrix: 
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -667,7 +667,7 @@ Just like `2*my_matrix` multiplied every element of `my_matrix` by two, `my_matr
 
 After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time with one dollar per movie. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination). 
 
-(Those familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R.)
+(Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R.)
 
 *** =instructions
 - Assign to `visitors` the matrix with your estimated number of Non-US and US visitors for the three movies.
@@ -682,7 +682,7 @@ After looking at the result of the previous exercise, big boss Lucas points out 
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix: 
+# Construct the matrix: 
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
@@ -701,7 +701,7 @@ average_non_us_visitor =
 
 ```{r eval=FALSE}
 # Box office Star Wars: In Millions (!) 
-# Construct matrix: 
+# Construct the matrix: 
 box_office_all = c(461, 314.4,290.5, 247.9,309.3,165.8)
 movie_names = c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles = c("US","non-US")
