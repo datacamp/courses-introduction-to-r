@@ -418,10 +418,10 @@ if (!exists("speed_vector")){
 By setting the argument `ordered=TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order, e.g. `levels = c("Low","Medium","High")`.
 
 *** =instructions
-- Rewrite the code for `speed_factor_vector`. This time take into account that there is a specific order for the factor levels.
+- Rewrite the code for `factor_speed_vector`. This time take into account that there is a specific order for the factor levels.
 
 *** =hint
-Use the function `factor()` to create `speed_factor_vector` based on `speed_character_vector`. The argument order should be set to `TRUE` since there is a natural ordering. The factor levels are in this case: `c("Slow","Fast","Ultra-fast")`.
+Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument order should be set to `TRUE` since there is a natural ordering. The factor levels are in this case: `c("Slow","Fast","Ultra-fast")`.
 
 *** =sample_code
 
@@ -477,7 +477,7 @@ if (!exists("factor_speed_vector")){
 
 Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true. 
 
-The fact that `speed_factor_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
 
 *** =instructions
 - Check whether data analyst 2 is faster than data analyst 5 and assign the result to `compare_them`. Remember the `>` operator allows you to check whether one element is larger than the other.
@@ -489,7 +489,7 @@ You can compare the elements of the vector with the `>` operator. Relevant for t
 
 ```{r eval=FALSE}
 speed_vector = c("Fast","Slow","Slow","Fast","Ultra-fast")
-speed_factor_vector = factor(speed_vector, ordered=TRUE, levels=c("Slow","Fast","Ultra-fast"))
+factor_speed_vector = factor(speed_vector, ordered=TRUE, levels=c("Slow","Fast","Ultra-fast"))
 
 # Your code below
 compare_them = 
@@ -502,10 +502,10 @@ compare_them
 
 ```{r eval=FALSE}
 speed_vector = c("Fast","Slow","Slow","Fast","Ultra-fast") 
-speed_factor_vector = factor(speed_vector, ordered=TRUE, levels=c("Slow","Fast","Ultra-fast")) 
+factor_speed_vector = factor(speed_vector, ordered=TRUE, levels=c("Slow","Fast","Ultra-fast")) 
 
 # Your code below
-compare_them = speed_factor_vector[2] > speed_factor_vector[5] 
+compare_them = factor_speed_vector[2] > factor_speed_vector[5] 
 
 # Is data analyst 2 faster than data analyst 5?
 compare_them
@@ -516,7 +516,7 @@ compare_them
 ```{r eval=FALSE}
 if (!exists("compare_them")){
   DM.result = list(FALSE, "Please make sure to define a variable 'compare_them'.");
-} else if (!isTRUE(try(all.equal(compare_them,speed_factor_vector[2] > speed_factor_vector[5])))){
+} else if (!isTRUE(try(all.equal(compare_them,factor_speed_vector[2] > factor_speed_vector[5])))){
   DM.result = list(FALSE, "It looks like 'compare_them' does not compare the correct data analysts. Make sure to check the indices again.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
