@@ -137,7 +137,7 @@ Similar to vectors, you can add names for the rows and the columns of a matrix w
 
 *** =instructions
 - Give the columns of `star_wars_matrix` the names `"US"` and `"non-US"`.
-- Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie names are: "A new hope", "The empire strikes back" and "Return of the Jedi".
+- Give the rows of the matrix `star_wars_matrix` the names of the three movies. In case you are not a fan ;-), the movie names are: "A New Hope", "The Empire Strikes Back" and "Return of the Jedi".
 
 
 *** =hint
