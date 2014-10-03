@@ -279,9 +279,9 @@ Every tasty fruit basket needs oranges, so you decide to add six oranges. As a d
 # Assign a value to the variables called my_apples and my_oranges
 my_apples = 5
 
-# Add these two variables together and print the result
+# Create the variable my_fruit and assign the sum of both variables
 
-# Create the variable my_fruit
+# Print the result
 ```
 
 *** =solution
@@ -291,11 +291,11 @@ my_apples = 5
 my_apples  = 5
 my_oranges = 6
 
-# Add these two variables together and print the result
-my_apples + my_oranges
-
-# Create the variable my_fruit by adding my_apples and my_oranges
+# Create the variable my_fruit and assign the sum of both variables
 my_fruit = my_apples + my_oranges
+
+# Print the result
+my_fruit
 ```
 
 *** =sct
