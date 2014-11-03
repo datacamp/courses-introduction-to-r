@@ -293,7 +293,7 @@ Besides selecting components, you often need to select specific elements out of 
 - Select from the `shining_list` all information regarding the second review.
 
 *** =hint
-- If you want to do things nicely: `length(shining_list$actors])` gives you the number of actors, and thus the element to select.
+- If you want to do things nicely: `length(shining_list$actors)` gives you the number of actors, and thus the element to select.
 - You can select the information of the second review with `shining_list$reviews[2,]`.
 
 *** =sample_code
