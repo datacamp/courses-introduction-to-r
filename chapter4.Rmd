@@ -141,13 +141,13 @@ factor_animals_vector = factor(animals_vector)
 factor_temperature_vector = factor(temperature_vector, order=TRUE, levels=c("Low","Medium","High"))
 ```
 
-*** =sct
+*** =pre_exercise_code
 
 ```{r eval=FALSE}
-DM.result = TRUE
+
 ```
 
-*** =pre_exercise_code
+*** =sct
 
 ```{r eval=FALSE}
 if (!exists("factor_animals_vector")){
@@ -203,7 +203,7 @@ survey_vector = c("M","F","F","M","M")
 factor_survey_vector = factor(survey_vector)
 
 # Your code here
-levels(factor_survey_vector) = c("Male","Female")
+levels(factor_survey_vector) = c("Female","Male")
 
 factor_survey_vector
 ```
@@ -217,6 +217,8 @@ if (!exists("factor_survey_vector")){
   DM.result = list(FALSE, "Did you assign the factor of 'survey_vector' to 'factor_survey_vector'?");
 } else if (!isTRUE(try(all(levels(factor_survey_vector) %in% c("Male","Female"))))) {
   DM.result = list(FALSE, "Did you assign the correct factor levels to 'factor_survey_vector'? Remember that R is case sensitive.");
+} else if (!isTRUE(try(levels(factor_survey_vector)[1] == "Female"))) {
+  DM.result = list(FALSE, "Did you follow the correct order when assigning new factor levels to 'factor_survey_vector'?");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
