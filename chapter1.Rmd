@@ -196,9 +196,9 @@ x
 
 ```{r eval=FALSE}
 if (!exists("x")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'x'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>x</code>.");
 } else if (!isTRUE(try(all.equal(x,42)))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'x'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>x</code>.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -247,9 +247,9 @@ my_apples
 
 ```{r eval=FALSE}
 if (!exists("my_apples")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_apples'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_apples</code>.");
 } else if (!isTRUE(try(all.equal(my_apples,5)))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_apples'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_apples</code>.");
 } else {
 	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
 }
@@ -302,14 +302,13 @@ my_fruit = my_apples + my_oranges
 
 ```{r eval=FALSE}
 if (!exists("my_oranges")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_oranges'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'.");
-  DM.result = list(FALSE, "The output does not contain the result of adding 'my_apples' and 'my_oranges'.");
+  DM.result = list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
 } else if (!exists("my_fruit")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_fruit'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -373,15 +372,15 @@ my_fruit
 
 ```{r eval=FALSE}
 if (!exists("my_oranges")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_oranges'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_oranges'. A string does not equal a number!");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_oranges</code>. A string does not equal a number!");
 } else if (!(isTRUE(try(output_contains("my_apples + my_oranges"))))) {
-  DM.result = list(FALSE, "The output does not contain the result of adding 'my_apples' and 'my_oranges'.");
+  DM.result = list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
 } else if (!exists("my_fruit")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_fruit'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_fruit'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
 } else {
   DM.result = list(TRUE, "Continue to the next exercise. Keep up the good work!");
 }
@@ -447,17 +446,17 @@ my_logical = FALSE
 
 ```{r eval=FALSE}
 if (!exists("my_numeric")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_numeric'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_numeric</code>.");
 } else if (!isTRUE(try(all.equal(my_numeric,42)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_numeric.'");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_numeric.</code>");
 } else if (!exists("my_character")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_character'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_character</code>.");
 } else if (!isTRUE(try(all.equal(my_character,"forty-two")))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_character'. Do not forget the quotes.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_character</code>. Do not forget the quotes.");
 } else if (!exists("my_logical")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_logical'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_logical</code>.");
 } else if (!isTRUE(try(all.equal(my_logical,FALSE)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'my_logical'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_logical</code>.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -511,11 +510,11 @@ class(my_logical)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("class(my_numeric)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of 'my_numeric'.");
+  DM.result = list(FALSE, "The output does not contain the class of <code>my_numeric</code>.");
 } else if (!(isTRUE(try(output_contains("class(my_character)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of 'my_character'.");
+  DM.result = list(FALSE, "The output does not contain the class of <code>my_character</code>.");
 } else if (!(isTRUE(try(output_contains("class(my_logical)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of 'my_logical'.");
+  DM.result = list(FALSE, "The output does not contain the class of <code>my_logical</code>.");
 } else {
 	DM.result = list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");
 }

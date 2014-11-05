@@ -36,7 +36,7 @@ mtcars # Built-in R dataset stored in a data frame
 *** =solution
 
 ```{r eval=FALSE}
-mtcars # Built-in R dataset stored in a data frame
+mtcars # Built-in R dataset stored in a data frame<
 ```
 
 *** =sct
@@ -92,7 +92,7 @@ head(mtcars)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("head(mtcars)"))))){
-	DM.result = list(FALSE, "Make sure that you use the 'head()' function on 'mtcars'.");
+	DM.result = list(FALSE, "Make sure that you use the <code>head()</code> function on <code>mtcars</code>.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -141,7 +141,7 @@ str(mtcars)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("str(mtcars)"))))){
-	DM.result = list(FALSE, "Make sure that you use the 'str()' function on 'mtcars'.");
+	DM.result = list(FALSE, "Make sure that you use the <code>str()</code> function on <code>mtcars</code>.");
 } else {
 	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
 }
@@ -208,9 +208,9 @@ planets_df 	= data.frame(planets,type,diameter,rotation,rings)
 
 ```{r eval=FALSE}
 if (!exists("planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'planets_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>planets_df</code>.");
 } else if (!isTRUE(try(all.equal(planets_df,data.frame(planets,type,diameter,rotation,rings))))){
-  DM.result = list(FALSE, "Make sure to assign the correct order of arguments to the data.frame 'planets_df'. The correct order is planets, type, diameter, rotation and rings.");
+  DM.result = list(FALSE, "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -251,7 +251,7 @@ str(planets_df)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("str(planets_df)"))))){
-	DM.result = list(FALSE, "Make sure that you use the 'str()' function on 'planets_df'.");
+	DM.result = list(FALSE, "Make sure that you use the <code>str()</code> function on <code>planets_df</code>.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -318,13 +318,13 @@ furthest_planets_df
 
 ```{r eval=FALSE}
 if (!exists("closest_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'closest_planets_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>closest_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(closest_planets_df,planets_df[1:3,])))){
-  DM.result = list(FALSE, "Did you select the first three rows of 'planets_df'?");
+  DM.result = list(FALSE, "Did you select the first three rows of <code>planets_df</code>?");
 } else if (!exists("furthest_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'furthest_planets_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>furthest_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(furthest_planets_df,planets_df[6:8,])))){
-  DM.result = list(FALSE, "Make sure that you select the last three rows of 'planets_df'.");
+  DM.result = list(FALSE, "Make sure that you select the last three rows of <code>planets_df</code>.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -375,9 +375,9 @@ furthest_planets_diameter = planets_df[3:8,"diameter"]
 
 ```{r eval=FALSE}
 if (!exists("furthest_planets_diameter")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'furthest_planets_diameter'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>furthest_planets_diameter</code>.");
 } else if (!isTRUE(try(all.equal(furthest_planets_diameter,planets_df[3:8,"diameter"])))){
-  DM.result = list(FALSE, "Make sure that you select the last six rows and only the 'diameter' column.");
+  DM.result = list(FALSE, "Make sure that you select the last six rows and only the <code>diameter</code> column.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -427,9 +427,9 @@ rings_vector = planets_df$rings
 
 ```{r eval=FALSE}
 if (!exists("rings_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'rings_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>rings_vector</code>.");
 } else if (!isTRUE(try(all.equal(rings_vector,planets_df$rings)))){
-  DM.result = list(FALSE, "It looks like 'rings_vector' does not contain all the element of the 'ring' variable of the 'planets_df'.");
+  DM.result = list(FALSE, "It looks like <code>rings_vector</code> does not contain all the element of the <code>ring</code> variable of the <code>planets_df</code>.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -488,9 +488,9 @@ planets_with_rings_df = planets_df[rings_vector,]
 
 ```{r eval=FALSE}
 if (!exists("planets_with_rings_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'planets_with_rings_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>planets_with_rings_df</code>.");
 } else if (!isTRUE(try(all.equal(planets_with_rings_df,planets_df[rings_vector,])))){
-  DM.result = list(FALSE, "It looks like 'planets_with_rings_df' does not contain all the data of the planets with rings.");
+  DM.result = list(FALSE, "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -549,9 +549,9 @@ small_planets_df  = subset(planets_df, subset = planets_df$diameter < 1)
 
 ```{r eval=FALSE}
 if (!exists("small_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'small_planets_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>small_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(small_planets_df,subset(planets_df, subset = planets_df$diameter < 1) )))){
-  DM.result = list(FALSE, "It looks like 'small_planets_df' does not contain all the correct subset of planets_df.");
+  DM.result = list(FALSE, "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -608,7 +608,7 @@ order(c(5,4,6,7))
 
 ```{r eval=FALSE}
 if (! (c("order") %in% called_functions())) {
-  DM.result = list(FALSE, "Make sure to use the 'order' function.");
+  DM.result = list(FALSE, "Make sure to use the <code>order()</code> function.");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -662,13 +662,13 @@ largest_first_df = planets_df[positions,]
 
 ```{r eval=FALSE}
 if (!exists("positions")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'positions'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>positions</code>.");
 } else if (!isTRUE(try(all.equal(positions,order(planets_df$diameter, decreasing=TRUE) )))){
-  DM.result = list(FALSE, "It looks like 'positions' does not contain all the correct ordering of the diameter column.");
+  DM.result = list(FALSE, "It looks like <code>positions</code> does not contain all the correct ordering of the diameter column.");
 } else if (!exists("largest_first_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'largest_first_df'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>largest_first_df</code>.");
 } else if (!isTRUE(try(all.equal(largest_first_df,planets_df[positions,] )))){
-  DM.result = list(FALSE, "It looks like 'largest_first_df' does not contain the positions of the ordered 'planets_df'.");
+  DM.result = list(FALSE, "It looks like <code>largest_first_df</code> does not contain the positions of the ordered <code>planets_df</code>.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }

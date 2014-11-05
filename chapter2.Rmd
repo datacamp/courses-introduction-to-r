@@ -36,9 +36,9 @@ Vegas = "Here we go!"
 
 ```{r eval=FALSE}
 if (!exists("Vegas")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'Vegas'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>Vegas</code>.");
 } else if (!isTRUE(try(all.equal(Vegas,"Here we go!")))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to 'Vegas'. Do not forget that R is case sensitive!");
+  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>Vegas</code>. Do not forget that R is case sensitive!");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -91,9 +91,9 @@ boolean_vector = c(TRUE,FALSE,TRUE)
 
 ```{r eval=FALSE}
 if (!exists("boolean_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'boolean_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>boolean_vector</code>.");
 } else if (!isTRUE(try(all.equal(boolean_vector,c(TRUE,FALSE,TRUE))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct values to 'boolean_vector'. The order matters!");
+  DM.result = list(FALSE, "Make sure that you assign the correct values to <code>boolean_vector</code>. The order matters!");
 } else {
 	DM.result = list(TRUE, "Perfect! Continue to the next exercise.");
 }
@@ -160,13 +160,13 @@ roulette_vector = c(-24,-50,100,-350,10)
 
 ```{r eval=FALSE}
 if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
 } else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct values to 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct values to <code>poker_vector</code>.");
 } else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
 } else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct values to 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct values to <code>roulette_vector</code>.");
 } else {
 	DM.result = list(TRUE, "Very good! Continue to the next exercise.");
 }
@@ -219,13 +219,13 @@ names(roulette_vector) = c("Monday","Tuesday","Wednesday","Thursday","Friday")
 
 ```{r eval=FALSE}
 if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(poker_vector),c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct names vector to 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct names vector to <code>poker_vector</code>.");
 } else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(roulette_vector),c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct names vector to 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct names vector to <code>roulette_vector</code>.");
 } else {
 	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
 }
@@ -293,17 +293,17 @@ names(roulette_vector) = days_vector
 
 ```{r eval=FALSE}
 if (!exists("days_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'days_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>days_vector</code>.");
 } else if (!isTRUE(try(all.equal(days_vector,c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'days_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to <code>days_vector</code>.");
 } else if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(poker_vector),days_vector)))){
-  DM.result = list(FALSE, "Make sure that you assign the variable 'days_vector' to the names of 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the variable <code>days_vector</code> to the names of <code>poker_vector</code>.");
 } else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(roulette_vector),days_vector)))){
-  DM.result = list(FALSE, "Make sure that you assign the 'days_vector' to the names of 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the <code>days_vector</code> to the names of <code>roulette_vector</code>.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -354,17 +354,17 @@ total_vector = A_vector + B_vector
 
 ```{r eval=FALSE}
 if (!exists("A_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'A_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>A_vector</code>.");
 } else if (!isTRUE(try(all.equal(A_vector,c(1,2,3))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'A_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to <code>A_vector</code>.");
 } else if (!exists("B_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'B_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>B_vector</code>.");
 } else if (!isTRUE(try(all.equal(B_vector,c(4,5,6))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'B_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to <code>B_vector</code>.");
 } else if (!exists("total_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_vector</code>.");
 } else if (!isTRUE(try(all.equal(total_vector,A_vector + B_vector)))){
-  DM.result = list(FALSE, "Make sure that 'total_vector' contains the sum of 'A_vector' and 'B_vector'.");
+  DM.result = list(FALSE, "Make sure that <code>total_vector</code> contains the sum of <code>A_vector</code> and <code>B_vector</code>.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -429,21 +429,21 @@ total_daily = poker_vector + roulette_vector
 
 ```{r eval=FALSE}
 if (!exists("days_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'days_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>days_vector</code>.");
 } else if (!isTRUE(try(all.equal(days_vector,c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result = list(FALSE, "Make sure that you assign the correct vector to 'days_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the correct vector to <code>days_vector</code>.");
 } else if (!exists("poker_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(poker_vector),days_vector)))){
-  DM.result = list(FALSE, "Make sure that you assign the variable 'days_vector' to the names of 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the variable <code>days_vector</code> to the names of <code>poker_vector</code>.");
 } else if (!exists("roulette_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
 } else if (!isTRUE(try(all.equal(names(roulette_vector),days_vector)))){
-  DM.result = list(FALSE, "Make sure that you assign the 'days_vector' to the names of 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign the <code>days_vector</code> to the names of <code>roulette_vector</code>.");
 } else if (!exists("total_daily")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_daily'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_daily</code>.");
 } else if (!isTRUE(try(all.equal(total_daily,poker_vector + roulette_vector)))){
-  DM.result = list(FALSE, "Make sure that you assign the sum of 'poker_vector' and 'roulette_vector' to 'total_daily'.");
+  DM.result = list(FALSE, "Make sure that you assign the sum of <code>poker_vector</code> and <code>roulette_vector</code> to <code>total_daily</code>.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -514,17 +514,17 @@ total_week = total_roulette + total_poker
 
 ```{r eval=FALSE}
 if (!exists("total_poker")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_poker'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_poker</code>.");
 } else if (!isTRUE(try(all.equal(total_poker,sum(poker_vector))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'total_poker' the sum of the 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.");
 } else if (!exists("total_roulette")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_roulette'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_roulette</code>.");
 } else if (!isTRUE(try(all.equal(total_roulette,sum(roulette_vector))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'total_roulette' the sum of the 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.");
 } else if (!exists("total_week")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_week'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_week</code>.");
 } else if (!isTRUE(try(all.equal(total_week,total_roulette + total_poker)))){
-  DM.result = list(FALSE, "Make sure that you assign to 'total_week' the sum of the other two total vectors.");
+  DM.result = list(FALSE, "Make sure that you assign to <code>total_week</code> the sum of the other two total vectors.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -599,15 +599,15 @@ answer = total_poker > total_roulette
 
 ```{r eval=FALSE}
 if (!exists("total_poker")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_poker'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_poker</code>.");
 } else if (!isTRUE(try(all.equal(total_poker,sum(poker_vector))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'total_poker' the sum of the 'poker_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.");
 } else if (!exists("total_roulette")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'total_roulette'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>total_roulette</code>.");
 } else if (!isTRUE(try(all.equal(total_roulette,sum(roulette_vector))))){
-  DM.result = list(FALSE, "Make sure that you assign to 'total_roulette' the sum of the 'roulette_vector'.");
+  DM.result = list(FALSE, "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.");
 } else if (!exists("answer")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'answer'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>answer</code>.");
 } else if (!isTRUE(try(all.equal(answer,total_poker > total_roulette)))){
   DM.result = list(FALSE, "It looks like the answer variable does not contain the correct answer. Make sure to read the assignment carefully.");
 } else {
@@ -674,9 +674,9 @@ poker_wednesday = poker_vector[3]
 
 ```{r eval=FALSE}
 if (!exists("poker_wednesday")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_wednesday'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_wednesday</code>.");
 } else if (!isTRUE(try(all.equal(poker_wednesday,poker_vector[3])))){
-  DM.result = list(FALSE, "It looks like 'poker_wednesday' does not contain the correct value of the 'poker_vector'.");
+  DM.result = list(FALSE, "It looks like <code>poker_wednesday</code> does not contain the correct value of the <code>poker_vector</code>.");
 } else {
 	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -738,9 +738,9 @@ poker_midweek = poker_vector[ c(2,3,4) ]
 
 ```{r eval=FALSE}
 if (!exists("poker_midweek")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_midweek'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_midweek</code>.");
 } else if (!isTRUE(try(all.equal(poker_midweek,poker_vector[ c(2,3,4) ])))){
-  DM.result = list(FALSE, "It looks like 'poker_midweek' does not contain the correct values from 'poker_vector'.");
+  DM.result = list(FALSE, "It looks like <code>poker_midweek</code> does not contain the correct values from <code>poker_vector</code>.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -802,9 +802,9 @@ roulette_selection_vector = roulette_vector[2:5]
 
 ```{r eval=FALSE}
 if (!exists("roulette_selection_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_selection_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_selection_vector</code>.");
 } else if (!isTRUE(try(all.equal(roulette_selection_vector,roulette_vector[2:5])))){
-  DM.result = list(FALSE, "It looks like 'roulette_selection_vector' does not contain the correct selection from 'roulette_vector'. Make sure to to use the right indices.");
+  DM.result = list(FALSE, "It looks like <code>roulette_selection_vector</code> does not contain the correct selection from <code>roulette_vector</code>. Make sure to to use the right indices.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -858,9 +858,9 @@ average_midweek_gain = mean( poker_vector[c("Monday","Tuesday","Wednesday")] )
 
 ```{r eval=FALSE}
 if (!exists("average_midweek_gain")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'average_midweek_gain'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>average_midweek_gain</code>.");
 } else if (!isTRUE(try(all.equal(average_midweek_gain,mean( poker_vector[c("Monday","Tuesday","Wednesday")] ))))){
-  DM.result = list(FALSE, "It looks like 'average_midweek_gain' does not contain the mean of the correct selection of 'poker_vector'.");
+  DM.result = list(FALSE, "It looks like <code>average_midweek_gain</code> does not contain the mean of the correct selection of <code>poker_vector</code>.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -930,9 +930,9 @@ selection_vector = poker_vector > 0
 
 ```{r eval=FALSE}
 if (!exists("selection_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
 } else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
-  DM.result = list(FALSE, "It looks like 'selection_vector' does not the correct result. Remember that R uses element wise operations for vectors.");
+  DM.result = list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -1001,13 +1001,13 @@ poker_winning_days = poker_vector[selection_vector]
 
 ```{r eval=FALSE}
 if (!exists("selection_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
 } else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
-  DM.result = list(FALSE, "It looks like 'selection_vector' does not the correct result. Remember that R uses element wise operations for vectors.");
+  DM.result = list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.");
 } else if (!exists("poker_winning_days")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'poker_winning_days'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>poker_winning_days</code>.");
 } else if (!isTRUE(try(all.equal(poker_winning_days,poker_vector[selection_vector])))){
-  DM.result = list(FALSE, "It looks like 'poker_winning_days' does not the correct result. Remember that R uses element wise operations for vectors.");
+  DM.result = list(FALSE, "It looks like <code>poker_winning_days</code> does not the correct result. Remember that R uses element wise operations for vectors.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }
@@ -1072,13 +1072,13 @@ roulette_winning_days = roulette_vector[ selection_vector ]
 
 ```{r eval=FALSE}
 if (!exists("selection_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'selection_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
 } else if (!isTRUE(try(all.equal(selection_vector,roulette_vector > 0)))){
-  DM.result = list(FALSE, "It looks like 'selection_vector' does not the correct result. Make sure that you use 'roulette_vector'.");
+  DM.result = list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.");
 } else if (!exists("roulette_winning_days")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'roulette_winning_days'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>roulette_winning_days</code>.");
 } else if (!isTRUE(try(all.equal(roulette_winning_days,roulette_vector[selection_vector])))){
-  DM.result = list(FALSE, "It looks like 'roulette_winning_days' does not the correct result. Make sure that you use 'roulette_vector'.");
+  DM.result = list(FALSE, "It looks like <code>roulette_winning_days</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.");
 } else {
   DM.result = list(TRUE, "Good job! Continue to the next exercise.");
 }

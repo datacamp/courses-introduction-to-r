@@ -1,4 +1,4 @@
---- 
+  --- 
 title_meta  : Chapter 4
 title       : Factors
 description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
@@ -91,9 +91,9 @@ factor_gender_vector = factor(gender_vector)
 
 ```{r eval=FALSE}
 if (!exists("factor_gender_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'factor_gender_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>factor_gender_vector</code>.");
 } else if (!isTRUE(try(all.equal(factor_gender_vector,factor(gender_vector))))){
-  DM.result = list(FALSE, "Did you assign the factor of 'gender_vector' to 'factor_gender_vector'?");
+  DM.result = list(FALSE, "Did you assign the factor of <code>gender_vector</code> to <code>factor_gender_vector</code>?");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -151,13 +151,13 @@ factor_temperature_vector = factor(temperature_vector, order=TRUE, levels=c("Low
 
 ```{r eval=FALSE}
 if (!exists("factor_animals_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'factor_animals_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>factor_animals_vector</code>.");
 } else if (!isTRUE(try(all.equal(factor_animals_vector,factor(animals_vector))))){
-  DM.result = list(FALSE, "Did you assign the factor of 'animals_vector' to 'factor_animals_vector'?");
+  DM.result = list(FALSE, "Did you assign the factor of <code>animals_vector</code> to <code>factor_animals_vector</code>?");
 } else if (!exists("factor_temperature_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'factor_temperature_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>factor_temperature_vector</code>.");
 } else if (!isTRUE(try(all.equal(factor_temperature_vector,factor(temperature_vector, order=TRUE, levels=c("Low","Medium","High")))))){
-  DM.result = list(FALSE, "Did you assign the factor of 'temperature_vector' to 'factor_temperature_vector'. Did you also make sure to order it by the correct levels?");
+  DM.result = list(FALSE, "Did you assign the factor of <code>temperature_vector</code> to <code>factor_temperature_vector</code>. Did you also make sure to order it by the correct levels?");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -212,13 +212,13 @@ factor_survey_vector
 
 ```{r eval=FALSE}
 if (!exists("factor_survey_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'factor_survey_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>factor_survey_vector</code>.");
 } else if (!isTRUE(try(all(as.numeric(factor_survey_vector) == as.numeric(factor(survey_vector)))))) {
-  DM.result = list(FALSE, "Did you assign the factor of 'survey_vector' to 'factor_survey_vector'?");
+  DM.result = list(FALSE, "Did you assign the factor of <code>survey_vector</code> to <code>factor_survey_vector</code>?");
 } else if (!isTRUE(try(all(levels(factor_survey_vector) %in% c("Male","Female"))))) {
-  DM.result = list(FALSE, "Did you assign the correct factor levels to 'factor_survey_vector'? Remember that R is case sensitive.");
+  DM.result = list(FALSE, "Did you assign the correct factor levels to <code>factor_survey_vector</code>? Remember that R is case sensitive.");
 } else if (!isTRUE(try(levels(factor_survey_vector)[1] == "Female"))) {
-  DM.result = list(FALSE, "Did you follow the correct order when assigning new factor levels to 'factor_survey_vector'?");
+  DM.result = list(FALSE, "Did you follow the correct order when assigning new factor levels to <code>factor_survey_vector</code>?");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -280,9 +280,9 @@ summary(factor_survey_vector)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("summary(survey_vector)"))))) {
-	DM.result = list(FALSE, "Did you call the summary function on the 'survey_vector'?");
+	DM.result = list(FALSE, "Did you call the summary function on the <code>survey_vector</code>?");
 } else if (!(isTRUE(try(output_contains("summary(factor_survey_vector)"))))) {
-	DM.result = list(FALSE, "Did you call the summary function on the 'factor_survey_vector'?");
+	DM.result = list(FALSE, "Did you call the summary function on the <code>factor_survey_vector</code>?");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -301,7 +301,7 @@ if (!(isTRUE(try(output_contains("summary(survey_vector)"))))) {
 > "All animals are equal, but some animals are more equal than others."
 >--George Orwell 
 
-In `factor_survey_vector` we have a factor with two levels: male and female. But how does R value these relatively to each other? In other words, who sees R to be worth more, males or females?
+In `factor_survey_vector` we have a factor with two levels: male and female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
 
 *** =instructions
 - Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
@@ -394,7 +394,7 @@ speed_vector = c("Fast","Slow","Slow","Fast","Ultra-fast")
 
 ```{r eval=FALSE}
 if (!exists("speed_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'speed_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>speed_vector</code>.");
 } else if (!isTRUE(try(all.equal(speed_vector,c("Fast","Slow","Slow","Fast","Ultra-fast"))))){
   DM.result = list(FALSE, "Make sure that you assigned the correct vector to speed_vector. Remember that R is case sensitive.");
 } else {
@@ -458,7 +458,7 @@ summary(factor_speed_vector)
 
 ```{r eval=FALSE}
 if (!exists("factor_speed_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'factor_speed_vector'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>factor_speed_vector</code>.");
 } else if (!isTRUE(try(all.equal(factor_speed_vector,factor(speed_vector, ordered=TRUE, levels=c("Slow","Fast","Ultra-fast")))))){
   DM.result = list(FALSE, "Make sure that you assigned the correct factor to factor_speed_vector. Pay attention to the correct order of the level's argument.");
 } else {
@@ -517,9 +517,9 @@ compare_them
 
 ```{r eval=FALSE}
 if (!exists("compare_them")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'compare_them'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>compare_them</code>.");
 } else if (!isTRUE(try(all.equal(compare_them,factor_speed_vector[2] > factor_speed_vector[5])))){
-  DM.result = list(FALSE, "It looks like 'compare_them' does not compare the correct data analysts. Make sure to check the indices again.");
+  DM.result = list(FALSE, "It looks like <code>compare_them</code> does not compare the correct data analysts. Make sure to check the indices again.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }

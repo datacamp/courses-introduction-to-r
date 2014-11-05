@@ -138,9 +138,9 @@ my_list = list(my_vector,my_matrix,my_df)
 
 ```{r eval=FALSE}
 if (!exists("my_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_list'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
 } else if (!isTRUE(try(all.equal(my_list,list(my_vector,my_matrix,my_df) )))){
-  DM.result = list(FALSE, "It looks like 'my_list' does not contain the correct elements.");
+  DM.result = list(FALSE, "It looks like <code>my_list</code> does not contain the correct elements.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -203,9 +203,9 @@ my_list = list(VECTOR=my_vector,MATRIX=my_matrix,DATAFRAME=my_df)
 
 ```{r eval=FALSE}
 if (!exists("my_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'my_list'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
 } else if (!isTRUE(try(all.equal(my_list,list(VECTOR=my_vector,MATRIX=my_matrix,DATAFRAME=my_df) )))){
-  DM.result = list(FALSE, "It looks like 'my_list' does not contain the correct naming for the components.");
+  DM.result = list(FALSE, "It looks like <code>my_list</code> does not contain the correct naming for the components.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -257,9 +257,9 @@ shining_list = list(moviename="The Shining", actors=actors, reviews=reviews)
 
 ```{r eval=FALSE}
 if (!exists("shining_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'shining_list'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
 } else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews) )))){
-  DM.result = list(FALSE, "It looks like 'shining_list' does not contain the correct components.");
+  DM.result = list(FALSE, "It looks like <code>shining_list</code> does not contain the correct components.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -318,13 +318,13 @@ second_review = shining_list$reviews[2,]
 
 ```{r eval=FALSE}
 if (!exists("last_actor")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'last_actor'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>last_actor</code>.");
 } else if (!isTRUE(try(all.equal(last_actor,shining_list$actors[length(shining_list$actors)] )))){
-  DM.result = list(FALSE, "Looks like 'last_actor' does not equal the last actor.");
+  DM.result = list(FALSE, "Looks like <code>last_actor</code> does not equal the last actor.");
 } else if (!exists("second_review")){
-  DM.result = list(FALSE, "Please make sure to define a variable 'second_review'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>second_review</code>.");
 } else if (!isTRUE(try(all.equal(second_review,shining_list$reviews[2,] )))){
-  DM.result = list(FALSE, "It looks like 'second_review' does not contain all the information regarding the second review.");
+  DM.result = list(FALSE, "It looks like <code>second_review</code> does not contain all the information regarding the second review.");
 } else {
 	DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
@@ -402,9 +402,9 @@ str(shining_list)
 
 ```{r eval=FALSE}
 if (!exists("shining_list")) {
-  DM.result = list(FALSE, "Please make sure to define a variable 'shining_list'.");
+  DM.result = list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
 } else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews, year=1980))))) {
-  DM.result = list(FALSE, "It looks like 'shining_list' does not contain the year item.");
+  DM.result = list(FALSE, "It looks like <code>shining_list</code> does not contain the year item.");
 } else {
   DM.result = list(TRUE, "Great! Continue to the next exercise.");
 }
