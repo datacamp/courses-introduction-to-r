@@ -1,4 +1,4 @@
-  --- 
+--- 
 title_meta  : Chapter 4
 title       : Factors
 description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
