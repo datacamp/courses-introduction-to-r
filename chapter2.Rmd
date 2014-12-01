@@ -1027,7 +1027,7 @@ if (!exists("selection_vector")){
 Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
 
 *** =instructions
-- Assign the amount that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`.
+- Assign the amounts that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`. This vector thus contains the positive winnings of `roulette_vector`.
 
 *** =hint
 Have a look at the previous exercise and do the similar analysis, this time for `roulette_vector`.
