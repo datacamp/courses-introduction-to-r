@@ -43,9 +43,9 @@ mtcars # Built-in R dataset stored in a data frame<
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("mtcars"))))) {
-	DM.result = list(FALSE, "Make sure that you output 'mtcars'.");
+	DM.result <- list(FALSE, "Make sure that you output 'mtcars'.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -92,9 +92,9 @@ head(mtcars)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("head(mtcars)"))))){
-	DM.result = list(FALSE, "Make sure that you use the <code>head()</code> function on <code>mtcars</code>.");
+	DM.result <- list(FALSE, "Make sure that you use the <code>head()</code> function on <code>mtcars</code>.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -141,9 +141,9 @@ str(mtcars)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("str(mtcars)"))))){
-	DM.result = list(FALSE, "Make sure that you use the <code>str()</code> function on <code>mtcars</code>.");
+	DM.result <- list(FALSE, "Make sure that you use the <code>str()</code> function on <code>mtcars</code>.");
 } else {
-	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Well done! Continue to the next exercise.");
 }
 ```
 
@@ -179,28 +179,28 @@ The `data.frame(col1,col2,col3,...)` function takes as arguments the vectors tha
 *** =sample_code
 
 ```{r eval=FALSE}
-planets 	= c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter 	= c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets 	<- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type 		<- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter 	<- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation 	<- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings 		<- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
 # Create the data frame:
-planets_df  =
+planets_df  <-
 
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
-planets 	= c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type 		= c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter 	= c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation 	= c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings 		= c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets 	<- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type 		<- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter 	<- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation 	<- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings 		<- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
 # Create the data frame:
-planets_df 	= data.frame(planets,type,diameter,rotation,rings)
+planets_df 	<- data.frame(planets,type,diameter,rotation,rings)
 
 ```
 
@@ -208,11 +208,11 @@ planets_df 	= data.frame(planets,type,diameter,rotation,rings)
 
 ```{r eval=FALSE}
 if (!exists("planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>planets_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>planets_df</code>.");
 } else if (!isTRUE(try(all.equal(planets_df,data.frame(planets,type,diameter,rotation,rings))))){
-  DM.result = list(FALSE, "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.");
+  DM.result <- list(FALSE, "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -251,22 +251,22 @@ str(planets_df)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("str(planets_df)"))))){
-	DM.result = list(FALSE, "Make sure that you use the <code>str()</code> function on <code>planets_df</code>.");
+	DM.result <- list(FALSE, "Make sure that you use the <code>str()</code> function on <code>planets_df</code>.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -292,9 +292,9 @@ Sometimes you want to select all elements of a row or column. To do this, you ca
 
 ```{r eval=FALSE}
 # The planets_df data frame from the previous exercise is pre-loaded
-closest_planets_df = 
+closest_planets_df <- 
 
-furthest_planets_df = 
+furthest_planets_df <- 
 
 # Have a look:
 closest_planets_df
@@ -305,9 +305,9 @@ furthest_planets_df
 
 ```{r eval=FALSE}
 # The planets_df data frame from the previous exercise is pre-loaded
-closest_planets_df = planets_df[1:3,]
+closest_planets_df <- planets_df[1:3,]
 
-furthest_planets_df = planets_df[6:8,]
+furthest_planets_df <- planets_df[6:8,]
 
 # Have a look:
 closest_planets_df
@@ -318,28 +318,28 @@ furthest_planets_df
 
 ```{r eval=FALSE}
 if (!exists("closest_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>closest_planets_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>closest_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(closest_planets_df,planets_df[1:3,])))){
-  DM.result = list(FALSE, "Did you select the first three rows of <code>planets_df</code>?");
+  DM.result <- list(FALSE, "Did you select the first three rows of <code>planets_df</code>?");
 } else if (!exists("furthest_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>furthest_planets_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>furthest_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(furthest_planets_df,planets_df[6:8,])))){
-  DM.result = list(FALSE, "Make sure that you select the last three rows of <code>planets_df</code>.");
+  DM.result <- list(FALSE, "Make sure that you select the last three rows of <code>planets_df</code>.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type  = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type  <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883);
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -361,38 +361,38 @@ You select elements of a data frame conveniently with the square brackets. Selec
 
 ```{r eval=FALSE}
 # The planets_df data frame from the previous exercise is pre-loaded: 
-furthest_planets_diameter = 
+furthest_planets_diameter <- 
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # The planets_df data frame from the previous exercise is pre-loaded:
-furthest_planets_diameter = planets_df[3:8,"diameter"]
+furthest_planets_diameter <- planets_df[3:8,"diameter"]
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("furthest_planets_diameter")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>furthest_planets_diameter</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>furthest_planets_diameter</code>.");
 } else if (!isTRUE(try(all.equal(furthest_planets_diameter,planets_df[3:8,"diameter"])))){
-  DM.result = list(FALSE, "Make sure that you select the last six rows and only the <code>diameter</code> column.");
+  DM.result <- list(FALSE, "Make sure that you select the last six rows and only the <code>diameter</code> column.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 ---
@@ -413,38 +413,38 @@ However, there is a short-cut. Use the `$`-sign to tell R that it only has to lo
 
 ```{r eval=FALSE}
 # Create the rings_vector
-rings_vector = 
+rings_vector <- 
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Create the rings_vector
-rings_vector = planets_df$rings
+rings_vector <- planets_df$rings
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("rings_vector")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>rings_vector</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>rings_vector</code>.");
 } else if (!isTRUE(try(all.equal(rings_vector,planets_df$rings)))){
-  DM.result = list(FALSE, "It looks like <code>rings_vector</code> does not contain all the element of the <code>ring</code> variable of the <code>planets_df</code>.");
+  DM.result <- list(FALSE, "It looks like <code>rings_vector</code> does not contain all the element of the <code>ring</code> variable of the <code>planets_df</code>.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -472,7 +472,7 @@ Select elements from `planets_df` by using the square brackets. The `rings_vecto
 # Note that the planets_df dataset and rings_vector are pre-loaded in your workspace
 
 # Select the information on planets with rings:
-planets_with_rings_df = 
+planets_with_rings_df <- 
 ```
 
 *** =solution
@@ -481,32 +481,32 @@ planets_with_rings_df =
 # Note that the planets_df dataset and rings_vector are pre-loaded in your workspace
 
 # Select the information on planets with rings:
-planets_with_rings_df = planets_df[rings_vector,]
+planets_with_rings_df <- planets_df[rings_vector,]
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("planets_with_rings_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>planets_with_rings_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>planets_with_rings_df</code>.");
 } else if (!isTRUE(try(all.equal(planets_with_rings_df,planets_df[rings_vector,])))){
-  DM.result = list(FALSE, "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.");
+  DM.result <- list(FALSE, "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
-rings_vector = planets_df$rings
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
+rings_vector <- planets_df$rings
 ```
 
 
@@ -517,11 +517,14 @@ rings_vector = planets_df$rings
 So what exactly did you learn in the previous exercises? You selected a subset from a data frame ( `planets_df` ) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
 
 Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
-
-`subset(data_frame_name, subset = some.condition)` 
-
+```
+subset(data_frame_name, subset = some.condition)
+``` 
 The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
-For example: `subset(planets_df, subset=(planets_df$rings == TRUE))` 
+For example: 
+```
+subset(planets_df, subset=(planets_df$rings == TRUE))
+``` 
 
 R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
 
@@ -535,38 +538,38 @@ Sorry, you are on your own here.
 
 ```{r eval=FALSE}
 # Planets that are smaller than the Earth:
-small_planets_df  = # Your code here!
+small_planets_df  <- # Your code here!
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Planets that are smaller than the Earth:
-small_planets_df  = subset(planets_df, subset = planets_df$diameter < 1)
+small_planets_df  <- subset(planets_df, subset = planets_df$diameter < 1)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("small_planets_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>small_planets_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>small_planets_df</code>.");
 } else if (!isTRUE(try(all.equal(small_planets_df,subset(planets_df, subset = planets_df$diameter < 1) )))){
-  DM.result = list(FALSE, "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.");
+  DM.result <- list(FALSE, "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 
 
@@ -578,7 +581,7 @@ Making and creating rankings is one of mankind's favorite affairs. These ranking
 
 In data analysis you will sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
 
-`order()` is a function that gives you the position of each element when it is applied on a variable. Let us look at the vector `a`: `a = c(100,9,101)`. Now `order(a)` returns 2,1,3. Since 100 is the second largest element of the vector, 9 is the smallest element and 101 is the largest element.
+`order()` is a function that gives you the position of each element when it is applied on a variable. Let us look at the vector `a`: `a <- c(100,9,101)`. Now `order(a)` returns 2,1,3. Since 100 is the second largest element of the vector, 9 is the smallest element and 101 is the largest element.
     
 Subsequently, `a[order(a)]` will give you the ordered vector 9,100,101, since it first picks the second element of a, then the first and then the last. Got it? If you are not sure, use the console to play with the `order()` function.` 
 
@@ -608,9 +611,9 @@ order(c(5,4,6,7))
 
 ```{r eval=FALSE}
 if (! (c("order") %in% called_functions())) {
-  DM.result = list(FALSE, "Make sure to use the <code>order()</code> function.");
+  DM.result <- list(FALSE, "Make sure to use the <code>order()</code> function.");
 } else {
-  DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -640,10 +643,10 @@ Alright, now that you understand the `order()` function, let us do something use
 #NOTE: The data frame planets_df has been pre-loaded
 
 # What is the correct ordering based on the planets_df$diameter variable?
-positions =  
+positions <-  
 
 # Create new "ordered" data frame:
-largest_first_df =
+largest_first_df <-
 ```
 
 *** =solution
@@ -652,37 +655,37 @@ largest_first_df =
 #NOTE: The data frame planets_df has been pre-loaded
 
 # What is the correct ordering based on the planets_df$diameter variable?
-positions = order(planets_df$diameter, decreasing=TRUE)
+positions <- order(planets_df$diameter, decreasing=TRUE)
 
 # Create new "ordered" data frame:
-largest_first_df = planets_df[positions,]
+largest_first_df <- planets_df[positions,]
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("positions")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>positions</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>positions</code>.");
 } else if (!isTRUE(try(all.equal(positions,order(planets_df$diameter, decreasing=TRUE) )))){
-  DM.result = list(FALSE, "It looks like <code>positions</code> does not contain all the correct ordering of the diameter column.");
+  DM.result <- list(FALSE, "It looks like <code>positions</code> does not contain all the correct ordering of the diameter column.");
 } else if (!exists("largest_first_df")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>largest_first_df</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>largest_first_df</code>.");
 } else if (!isTRUE(try(all.equal(largest_first_df,planets_df[positions,] )))){
-  DM.result = list(FALSE, "It looks like <code>largest_first_df</code> does not contain the positions of the ordered <code>planets_df</code>.");
+  DM.result <- list(FALSE, "It looks like <code>largest_first_df</code> does not contain the positions of the ordered <code>planets_df</code>.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-planets = c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
-type = c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
-diameter = c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
-rotation = c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
-rings = c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
+planets <- c("Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune");
+type <- c("Terrestrial planet","Terrestrial planet","Terrestrial planet","Terrestrial planet","Gas giant","Gas giant","Gas giant","Gas giant")
+diameter <- c(0.382,0.949,1,0.532,11.209,9.449,4.007,3.883); 
+rotation <- c(58.64,-243.02,1,1.03,0.41,0.43,-0.72,0.67);
+rings <- c(FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE);
 
-planets_df = data.frame(type,planets,diameter,rotation,rings)
+planets_df <- data.frame(type,planets,diameter,rotation,rings)
 ```
 

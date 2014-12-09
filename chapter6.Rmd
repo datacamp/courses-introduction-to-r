@@ -38,7 +38,7 @@ Just click the 'Submit Answer' button.
 *** =sct
 
 ```{r eval=FALSE}
-DM.result = list(TRUE, "Well done! Continue to the next exercise.");
+DM.result <- list(TRUE, "Ready, set, go! Continue to the next exercise");
 ```
 
 *** =pre_exercise_code
@@ -80,7 +80,7 @@ Click 'Submit Answer' to start the first exercise on lists.
 *** =sct
 
 ```{r eval=FALSE}
-DM.result = list(TRUE, "Great! Continue to the next exercise.");
+DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 ```
 
 *** =pre_exercise_code
@@ -96,7 +96,9 @@ DM.result = list(TRUE, "Great! Continue to the next exercise.");
 
 Let us create our first list! To construct a list you use the function `list()`: 
 
-`my_list = list(component1, component2...)`
+```
+my_list <- list(component1, component2...)
+```
 
 The arguments to the list function are the list components. Remember, these components can be a collection of matrices, vectors...` 
 
@@ -110,39 +112,39 @@ Just use the `list()` function with `my_vector`, `my_matrix` and `my_df` as argu
 
 ```{r eval=FALSE}
 # Vector with numerics from 1 up to 10
-my_vector = 1:10 
+my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
-my_matrix = matrix(1:9, ncol=3)
+my_matrix <- matrix(1:9, ncol=3)
 # First 10 elements of the built-in data frame mtcars
-my_df     = mtcars[1:10,] 
+my_df     <- mtcars[1:10,] 
 
 # Construct list with these different elements:
-my_list = 
+my_list <- 
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Vector with numerics from 1 up to 10
-my_vector = 1:10 
+my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
-my_matrix = matrix(1:9, ncol=3)
+my_matrix <- matrix(1:9, ncol=3)
 # First 10 elements of the built-in data frame mtcars
-my_df     = mtcars[1:10,] 
+my_df     <- mtcars[1:10,] 
 
 # Construct list with these different elements:
-my_list = list(my_vector,my_matrix,my_df)
+my_list <- list(my_vector,my_matrix,my_df)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("my_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
 } else if (!isTRUE(try(all.equal(my_list,list(my_vector,my_matrix,my_df) )))){
-  DM.result = list(FALSE, "It looks like <code>my_list</code> does not contain the correct elements.");
+  DM.result <- list(FALSE, "It looks like <code>my_list</code> does not contain the correct elements.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -161,7 +163,9 @@ Well done! Let us keep this train going!
 
 Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
-`list(name1=your.component1, name2=component2,?)` 
+```
+list(name1=your.component1, name2=component2,?)
+``` 
 
 This creates a list with the components `"name1"` and `"name2"` and so on.
 
@@ -175,39 +179,39 @@ No hints, you can do this!
 
 ```{r eval=FALSE}
 # Vector with numerics from 1 up to 10
-my_vector = 1:10 
+my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
-my_matrix = matrix(1:9,ncol=3)
+my_matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
-my_df     = mtcars[1:10,] 
+my_df     <- mtcars[1:10,] 
 
 # Construct list with these different elements:
-my_list = list(my_vector,my_matrix,my_df)
+my_list <- list(my_vector,my_matrix,my_df)
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Vector with numerics from 1 up to 10
-my_vector = 1:10 
+my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
-my_matrix = matrix(1:9,ncol=3)
+my_matrix <- matrix(1:9,ncol=3)
 # First 10 elements of the built-in data frame mtcars
-my_df     = mtcars[1:10,] 
+my_df     <- mtcars[1:10,] 
 
 # Construct list with these different elements:
-my_list = list(VECTOR=my_vector,MATRIX=my_matrix,DATAFRAME=my_df)
+my_list <- list(VECTOR=my_vector,MATRIX=my_matrix,DATAFRAME=my_df)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("my_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_list</code>.");
 } else if (!isTRUE(try(all.equal(my_list,list(VECTOR=my_vector,MATRIX=my_matrix,DATAFRAME=my_df) )))){
-  DM.result = list(FALSE, "It looks like <code>my_list</code> does not contain the correct naming for the components.");
+  DM.result <- list(FALSE, "It looks like <code>my_list</code> does not contain the correct naming for the components.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -242,7 +246,7 @@ No hints, you can do this!
 ```{r eval=FALSE}
 # Create the named vector shining_list
 # The actors and reviews vectors are loaded in the workspace
-shining_list = 
+shining_list <- 
 ```
 
 *** =solution
@@ -250,29 +254,29 @@ shining_list =
 ```{r eval=FALSE}
 # Create the shining_list 
 # The actors and reviews vectors are loaded in the workspace
-shining_list = list(moviename="The Shining", actors=actors, reviews=reviews)
+shining_list <- list(moviename="The Shining", actors=actors, reviews=reviews)
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("shining_list")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
 } else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews) )))){
-  DM.result = list(FALSE, "It looks like <code>shining_list</code> does not contain the correct components.");
+  DM.result <- list(FALSE, "It looks like <code>shining_list</code> does not contain the correct components.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-actors      = c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
-sources     = c("IMDb1","IMDb2","IMDB3")
-comments    = c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
-scores      = c(4.5,4,5)
-reviews     = data.frame(scores,sources,comments)
+actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDB3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+reviews     <- data.frame(scores,sources,comments)
 ```
 
 
@@ -301,8 +305,8 @@ Besides selecting components, you often need to select specific elements out of 
 ```{r eval=FALSE}
 # The shining_list is already loaded
 # Select from the shining_list:
-last_actor    = 
-second_review = 
+last_actor    <- 
+second_review <- 
 ```
 
 *** =solution
@@ -310,35 +314,35 @@ second_review =
 ```{r eval=FALSE}
 # The shining_list is already loaded
 # Select from the shining_list:
-last_actor    = shining_list$actors[length(shining_list$actors)]
-second_review = shining_list$reviews[2,]
+last_actor    <- shining_list$actors[length(shining_list$actors)]
+second_review <- shining_list$reviews[2,]
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("last_actor")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>last_actor</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>last_actor</code>.");
 } else if (!isTRUE(try(all.equal(last_actor,shining_list$actors[length(shining_list$actors)] )))){
-  DM.result = list(FALSE, "Looks like <code>last_actor</code> does not equal the last actor.");
+  DM.result <- list(FALSE, "Looks like <code>last_actor</code> does not equal the last actor.");
 } else if (!exists("second_review")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>second_review</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>second_review</code>.");
 } else if (!isTRUE(try(all.equal(second_review,shining_list$reviews[2,] )))){
-  DM.result = list(FALSE, "It looks like <code>second_review</code> does not contain all the information regarding the second review.");
+  DM.result <- list(FALSE, "It looks like <code>second_review</code> does not contain all the information regarding the second review.");
 } else {
-	DM.result = list(TRUE, "Great! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
 *** =pre_exercise_code
 
 ```{r eval=FALSE}
-actors      = c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
-sources     = c("IMDb1","IMDb2","IMDB3")
-comments    = c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
-scores      = c(4.5,4,5)
-reviews     = data.frame(scores,sources,comments)
-shining_list = list(moviename="The Shining",actors=actors, reviews=reviews )
+actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDB3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+reviews     <- data.frame(scores,sources,comments)
+shining_list <- list(moviename="The Shining",actors=actors, reviews=reviews )
 ```
 
 
@@ -350,7 +354,9 @@ Being proud of your first list, you shared it with the members of your movie hob
 
 In order to conveniently add elements to lists you use the concatenate function `c()`: 
 
-`c(list1,some.object)` 
+```
+c(list1,some.object)
+``` 
 
 If you want to give the new list item a name, you just add this to the function: `c(list1,new.item.name=some.object)`.
 
@@ -363,17 +369,17 @@ You are on your own now!
 *** =sample_code
 
 ```{r eval=FALSE}
-actors      = c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
-sources     = c("IMDb1","IMDb2","IMDB3")
-comments    = c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
-scores      = c(4.5,4,5)
-reviews     = data.frame(scores,sources,comments)
+actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDB3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+reviews     <- data.frame(scores,sources,comments)
 
 # Create named list 
-shining_list = list(moviename="The Shining", actors=actors, reviews=reviews)
+shining_list <- list(moviename="The Shining", actors=actors, reviews=reviews)
 
 # We forgot something: add the year to shining_list! Add your code below:
-shining_list = 
+shining_list <- 
 
 # Have a look at shining_list.
 str(shining_list)
@@ -382,17 +388,17 @@ str(shining_list)
 *** =solution
 
 ```{r eval=FALSE}
-actors      = c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
-sources     = c("IMDb1","IMDb2","IMDB3")
-comments    = c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
-scores      = c(4.5,4,5)
-reviews     = data.frame(scores,sources,comments)
+actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDB3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+reviews     <- data.frame(scores,sources,comments)
 
 # Create named list 
-shining_list = list(moviename="The Shining", actors=actors, reviews=reviews)
+shining_list <- list(moviename="The Shining", actors=actors, reviews=reviews)
 
 # We forgot something: add the year to shining_list!
-shining_list = c(shining_list,year=1980)
+shining_list <- c(shining_list,year=1980)
 
 # Have a look at shining_list.
 str(shining_list)
@@ -402,10 +408,10 @@ str(shining_list)
 
 ```{r eval=FALSE}
 if (!exists("shining_list")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>shining_list</code>.");
 } else if (!isTRUE(try(all.equal(shining_list,list(moviename="The Shining", actors=actors, reviews=reviews, year=1980))))) {
-  DM.result = list(FALSE, "It looks like <code>shining_list</code> does not contain the year item.");
+  DM.result <- list(FALSE, "It looks like <code>shining_list</code> does not contain the year item.");
 } else {
-  DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result <- list(TRUE, "Great! You've successfully completed the chapter on lists!");
 }
 ```

@@ -56,7 +56,7 @@ demo("graphics")
 *** =sct
 
 ```{r eval=FALSE}
-DM.result = list(TRUE, "Great! Let us get started!");
+DM.result <- list(TRUE, "Great! Let us get started!");
 ```
 
 *** =pre_exercise_code
@@ -108,12 +108,11 @@ Just follow the instructions, this should be easy ;-).
 (5+5)/2 
 
 # Exponentiation
-
 # Add your code here!
 
 # Modulo
-
 # Add your code here!
+
 ```
 
 *** =solution
@@ -133,6 +132,7 @@ Just follow the instructions, this should be easy ;-).
 
 # Exponentiation
 2^5
+
 # Modulo
 17%%4
 ```
@@ -141,11 +141,11 @@ Just follow the instructions, this should be easy ;-).
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("2^5"))))) {
-  DM.result = list(FALSE, "The exponentiation example is not correct. Make sure to read the instructions carefully.");
+  DM.result <- list(FALSE, "The exponentiation example is not correct. Make sure to read the instructions carefully.");
 } else if (!(isTRUE(try(output_contains("17%%4"))))) {
-  DM.result = list(FALSE, "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.");
+  DM.result <- list(FALSE, "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.");
 } else {
-  DM.result = list(TRUE, "Great! Continue to the next exercise.");
+  DM.result <- list(TRUE, "Great! Continue to the next exercise.");
 }
 ```
 
@@ -176,7 +176,7 @@ Look at how the value 4 was assigned to `my_variable`.
 
 ```{r eval=FALSE}
 # Assign the value 42 to x
-x = 
+x <- 
 
 # Print out the value of the variable x
 x
@@ -186,7 +186,7 @@ x
 
 ```{r eval=FALSE}
 # Assign the value 42 to x
-x = 42
+x <- 42
 
 # Print out the value of the variable x
 x
@@ -196,11 +196,11 @@ x
 
 ```{r eval=FALSE}
 if (!exists("x")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>x</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>x</code>.");
 } else if (!isTRUE(try(all.equal(x,42)))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>x</code>.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>x</code>.");
 } else {
-	DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -230,14 +230,16 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 ```{r eval=FALSE}
 # Assign the value 5 to the variable called my_apples
 
+
 # Print out the value of the variable my_apples
+
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Assign the value 5 to the variable called my_apples
-my_apples = 5
+my_apples <- 5
 
 # Print out the value of the variable my_apples
 my_apples
@@ -247,11 +249,11 @@ my_apples
 
 ```{r eval=FALSE}
 if (!exists("my_apples")){
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_apples</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_apples</code>.");
 } else if (!isTRUE(try(all.equal(my_apples,5)))){
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_apples</code>.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_apples</code>.");
 } else {
-	DM.result = list(TRUE, "Well done! Continue to the next exercise.");
+	DM.result <- list(TRUE, "Well done! Continue to the next exercise.");
 }
 ```
 
@@ -277,40 +279,42 @@ Every tasty fruit basket needs oranges, so you decide to add six oranges. As a d
 
 ```{r eval=FALSE}
 # Assign a value to the variables called my_apples and my_oranges
-my_apples = 5
+my_apples <- 5
 
 # Add these two variables together and print the result
 
+
 # Create the variable my_fruit
+
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples and my_oranges
-my_apples  = 5
-my_oranges = 6
+my_apples  <- 5
+my_oranges <- 6
 
 # Add these two variables together and print the result
 my_apples + my_oranges
 
 # Create the variable my_fruit by adding my_apples and my_oranges
-my_fruit = my_apples + my_oranges
+my_fruit <- my_apples + my_oranges
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("my_oranges")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
-  DM.result = list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
+  DM.result <- list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
 } else if (!exists("my_fruit")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
 } else {
-  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -337,16 +341,17 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples
-my_apples = 5 
+my_apples <- 5 
+
 # Print out the value of my_apples
 my_apples       
 
 # Add a character
-my_oranges = "six" 
+my_oranges <- "six" 
 my_oranges 
 
 # New variable that contains the total amount of fruit
-my_fruit   = my_apples + my_oranges 
+my_fruit   <- my_apples + my_oranges 
 my_fruit
 ```
 
@@ -354,17 +359,17 @@ my_fruit
 
 ```{r eval=FALSE}
 # Assign a value to the variable called my_apples
-my_apples = 5  
+my_apples <- 5  
 
 # Print out the value of answer
 my_apples  
 
 # Add a numeric
-my_oranges = 6
+my_oranges <- 6
 my_oranges 
 
 # New variable that contains the total amount of fruit
-my_fruit   = my_apples + my_oranges 
+my_fruit   <- my_apples + my_oranges 
 my_fruit
 ```
 
@@ -372,17 +377,17 @@ my_fruit
 
 ```{r eval=FALSE}
 if (!exists("my_oranges")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_oranges</code>.");
 } else if (!isTRUE(try(all.equal(my_oranges,6)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_oranges</code>. A string does not equal a number!");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_oranges</code>. A string does not equal a number!");
 } else if (!(isTRUE(try(output_contains("my_apples + my_oranges"))))) {
-  DM.result = list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
+  DM.result <- list(FALSE, "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.");
 } else if (!exists("my_fruit")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_fruit</code>.");
 } else if (!isTRUE(try(all.equal(my_fruit,my_apples + my_oranges)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_fruit</code>.");
 } else {
-  DM.result = list(TRUE, "Continue to the next exercise. Keep up the good work!");
+  DM.result <- list(TRUE, "Continue to the next exercise. Keep up the good work!");
 }
 ```
 
@@ -422,43 +427,43 @@ Replace the values in the editor with the values that are provided in the exerci
 
 ```{r eval=FALSE}
 # What is the answer to the universe?
-my_numeric = 42.5
+my_numeric <- 42.5
 
 # The quotation marks indicate that the variable is of type character
-my_character = "some text"
+my_character <- "some text"
 
-my_logical = TRUE
+my_logical <- TRUE
 ```
 
 *** =solution
 
 ```{r eval=FALSE}
 # What is the answer to the universe?
-my_numeric = 42
+my_numeric <- 42
 
 # The quotation marks indicate that the variable is of type character
-my_character = "forty-two"
+my_character <- "forty-two"
 
-my_logical = FALSE
+my_logical <- FALSE
 ```
 
 *** =sct
 
 ```{r eval=FALSE}
 if (!exists("my_numeric")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_numeric</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_numeric</code>.");
 } else if (!isTRUE(try(all.equal(my_numeric,42)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_numeric.</code>");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_numeric.</code>");
 } else if (!exists("my_character")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_character</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_character</code>.");
 } else if (!isTRUE(try(all.equal(my_character,"forty-two")))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_character</code>. Do not forget the quotes.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_character</code>. Do not forget the quotes.");
 } else if (!exists("my_logical")) {
-  DM.result = list(FALSE, "Please make sure to define a variable <code>my_logical</code>.");
+  DM.result <- list(FALSE, "Please make sure to define a variable <code>my_logical</code>.");
 } else if (!isTRUE(try(all.equal(my_logical,FALSE)))) {
-  DM.result = list(FALSE, "Make sure that you assign the correct value to <code>my_logical</code>.");
+  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>my_logical</code>.");
 } else {
-  DM.result = list(TRUE, "Good job! Continue to the next exercise.");
+  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
 }
 ```
 
@@ -484,9 +489,9 @@ You can find out the data type of the `my_numeric` variable for example by typin
 
 ```{r eval=FALSE}
 # Declare variables of different types
-my_numeric = 42
-my_character = "forty-two"
-my_logical = FALSE 
+my_numeric <- 42
+my_character <- "forty-two"
+my_logical <- FALSE 
 
 # Check which type these variables have:
 
@@ -496,9 +501,9 @@ my_logical = FALSE
 
 ```{r eval=FALSE}
 # Declare variables of different types:
-my_numeric = 42
-my_character = "forty-two"
-my_logical = FALSE
+my_numeric <- 42
+my_character <- "forty-two"
+my_logical <- FALSE
 
 # Check which type these variables have:
 class(my_numeric)
@@ -510,13 +515,13 @@ class(my_logical)
 
 ```{r eval=FALSE}
 if (!(isTRUE(try(output_contains("class(my_numeric)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of <code>my_numeric</code>.");
+  DM.result <- list(FALSE, "The output does not contain the class of <code>my_numeric</code>.");
 } else if (!(isTRUE(try(output_contains("class(my_character)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of <code>my_character</code>.");
+  DM.result <- list(FALSE, "The output does not contain the class of <code>my_character</code>.");
 } else if (!(isTRUE(try(output_contains("class(my_logical)"))))) {
-  DM.result = list(FALSE, "The output does not contain the class of <code>my_logical</code>.");
+  DM.result <- list(FALSE, "The output does not contain the class of <code>my_logical</code>.");
 } else {
-	DM.result = list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");
+	DM.result <- list(TRUE, "Congratulations! This was the last exercise for this chapter. Click next to go back to the overview.");
 }
 ```
 
