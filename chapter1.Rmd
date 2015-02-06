@@ -163,7 +163,7 @@ A basic concept in (statistical) programming is called a **variable**.
 
 A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
 
-You can assign a value 4 to a variable `my_variable` with the command: `my_variable = 4`. 
+You can assign a value 4 to a variable `my_variable` with the command: `my_variable <- 4`. 
 
 *** =instructions
 - Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
@@ -217,13 +217,12 @@ if (!exists("x")){
 Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
 
 *** =instructions
-- Type the following code: `my_apples = 5` to assign the value 5 to `my_apples`.
+- Type the following code: `my_apples <- 5` to assign the value 5 to `my_apples`.
 - Type: `my_apples` below the second comment.
 - Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
-
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `=`.
+Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`.
 
 *** =sample_code
 
@@ -421,7 +420,7 @@ Note that R is case sensitive!
 
 *** =hint 
 Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric = 42` assigns the value 42 to the variable `my_numeric`. 
+`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`. 
 
 *** =sample_code
 

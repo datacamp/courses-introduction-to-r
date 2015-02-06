@@ -18,7 +18,7 @@ Thanks to R and your new data-analytical skills, you will learn how to uplift yo
 - Do you still remember what you have learned in the first chapter? Assign the value `"Here we go!"` to the variable `Vegas`!
 
 *** =hint
-Type: `Vegas = "Here we go!"`. Note that R is case sensitive. 
+Type: `Vegas <- "Here we go!"`. Note that R is case sensitive. 
 
 *** =sample_code
 
@@ -59,9 +59,9 @@ Let us focus first!
 On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a  simple tool to store data. For example, your daily gains and losses in the casinos. 
 
 In R, you create a vector with the combine function `c()`. You place the vector elements separated by a comma between the brackets. For example:
-- `numeric_vector = c(1,2,3)`
-- `character_vector = c("a","b","c")`
-- `boolean_vector = c(TRUE,FALSE)`
+- `numeric_vector <- c(1,2,3)`
+- `character_vector <- c("a","b","c")`
+- `boolean_vector <- c(TRUE,FALSE)`
 
 Once you have created these vectors in R, you can use them to do calculations. 
 
@@ -461,7 +461,7 @@ if (!exists("days_vector")){
 
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a (very very very) tiny chance you have lost money over the week in total? 
 
-A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: `total_poker = sum(poker_vector)`.
+A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: `total_poker <- sum(poker_vector)`.
 
 *** =instructions
 - Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
@@ -951,7 +951,7 @@ if (!exists("selection_vector")){
 
 Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
 
-In the previous exercises you used `selection_vector = poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
 
 You can select the desired elements, by putting `selection_vector` between square brackets when selecting from `poker_vector`. This works, because R only selects those elements where `selection_vector` is `TRUE` by default. For `selection_vector` this means where `poker_vector > 0`.
 

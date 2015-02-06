@@ -221,7 +221,7 @@ The single most important thing for a movie in order to become an instant legend
 
 To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
-In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector. `sum_of_rows_vector =  rowSums(my_matrix)`.
+In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector. `sum_of_rows_vector <- rowSums(my_matrix)`.
 
 *** =instructions
 - Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
@@ -300,7 +300,7 @@ In the previous exercise you calculated the vector that contained the worldwide 
 
 You can add a column or multiple columns to a matrix with the `cbind` function, which merges matrices and/or vectors together by column. For example: 
 ```
-new_combined_matrix = cbind( matrix1, matrix2, vector1, ... )
+new_combined_matrix <- cbind( matrix1, matrix2, vector1, ... )
 ```
 
 *** =instructions
