@@ -69,7 +69,7 @@ Once you have created these vectors in R, you can use them to do calculations.
 - Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
 
 *** =hint 
-Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean_vector` with the `=` operator. 
+Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean_vector` with the `<-` operator. 
 
 *** =sample_code
 
