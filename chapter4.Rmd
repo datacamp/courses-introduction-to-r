@@ -370,15 +370,17 @@ Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R return
 
 But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R... 
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"Slow"`, `"Fast"` or `"Ultra-Fast"`, and save the results in `speed_vector`.
+Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"Slow"`, `"Fast"` or `"Ultra-fast"`, and save the results in `speed_vector`.
 
 *** =instructions
-- As a first step, assign `speed_vector` knowing that: 
-Analyst 1: Fast, 
-Analyst 2: Slow, 
-Analyst 3: Slow,
-Analyst 4: Fast and
-Analyst 5: Ultra-fast.
+As a first step, assign `speed_vector` knowing that: 
+
+- Analyst 1 is Fast, 
+- Analyst 2 is Slow, 
+- Analyst 3 is Slow,
+- Analyst 4 is Fast and
+- Analyst 5 is Ultra-fast.
+
 No need to specify these are factors yet.
 
 *** =hint
