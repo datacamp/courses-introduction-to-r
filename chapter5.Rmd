@@ -635,7 +635,11 @@ Alright, now that you understand the `order()` function, let us do something use
 - Now create the data frame `largest_first_df`, which contains the same information as `planets_df`, but with the planets in decreasing order of magnitude.
 
 *** =hint
-`order(planets_df$diameter, decreasing=TRUE)` will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data `frame planets_df` !
+```
+order(planets_df$diameter, 
+	  decreasing=TRUE)
+``` 
+will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data frame `planets_df`!
 
 *** =sample_code
 
