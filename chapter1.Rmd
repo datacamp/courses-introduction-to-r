@@ -172,19 +172,19 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 42 to x
+# Assign the value 42 to 'x'
 x <- 
 
-# Print out the value of the variable x
+# Print out the value of the variable 'x'
 x
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 42 to x
+# Assign the value 42 to 'x'
 x <- 42
 
-# Print out the value of the variable x
+# Print out the value of the variable 'x'
 x
 ```
 
@@ -215,19 +215,19 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called my_apples
+# Assign the value 5 to the variable called 'my_apples'
 
 
-# Print out the value of the variable my_apples
+# Print out the value of the variable 'my_apples'
 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called my_apples
+# Assign the value 5 to the variable called 'my_apples'
 my_apples <- 5
 
-# Print out the value of the variable my_apples
+# Print out the value of the variable 'my_apples'
 my_apples
 ```
 
@@ -264,27 +264,27 @@ my_apples + my_oranges
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign a value to the variables called my_apples and my_oranges
+# Assign a value to the variables called 'my_apples' and 'my_oranges'
 my_apples <- 5
 
 
 # Add these two variables together and print the result
 
 
-# Create the variable my_fruit
+# Create the variable 'my_fruit'
 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign a value to the variable called my_apples and my_oranges
+# Assign a value to the variables called 'my_apples' and 'my_oranges'
 my_apples  <- 5
 my_oranges <- 6
 
 # Add these two variables together and print the result
 my_apples + my_oranges
 
-# Create the variable my_fruit by adding my_apples and my_oranges
+# Create the variable 'my_fruit'
 my_fruit <- my_apples + my_oranges
 ```
 
@@ -323,13 +323,13 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign a value to the variable called my_apples
+# Assign a value to the variable called 'my_apples'
 my_apples <- 5 
 
-# Print out the value of my_apples
+# Print out the value of 'my_apples'
 my_apples       
 
-# Add a character
+# Assign a value to the variable 'my_oranges' and print it out
 my_oranges <- "six" 
 my_oranges 
 
@@ -346,7 +346,7 @@ my_apples <- 5
 # Print out the value of answer
 my_apples  
 
-# Add a numeric
+# Assign a value to the variable 'my_oranges' and print it out
 my_oranges <- 6
 my_oranges 
 
