@@ -610,9 +610,9 @@ test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("visitors",
             undefined_msg = "Please make sure to define a variable <code>visitors</code>.",
             incorrect_msg = "It looks like <code>visitors</code> does not contain the correct value. Remember that operations on matrices are element-wise.")
-test_output_contains("visitors", incorrect_msg = "Don't forget to also print the variable <code>visitors</code> to the console.")
+test_output_contains("visitors", 
+                     incorrect_msg = "Don't forget to also print the variable <code>visitors</code> to the console.")
 success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in theaters! Continue to the next exercise.");
-}
 ```
 
 ---
@@ -655,7 +655,7 @@ visitors <-
 average_us_visitors <- 
 
 # Average number of non-US visitors
-average_non_us_visitors <-
+average_non_us_visitors <- 
 ```
 
 *** =solution
@@ -689,10 +689,10 @@ test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("visitors",
             undefined_msg = "Please make sure to define a variable <code>visitors</code>.",
             incorrect_msg = "It looks like <code>visitors</code> does not contain the correct value. Remember that you can divide two matrices.")
-test_object("average_us_vistors",
+test_object("average_us_visitors",
             undefined_msg = "Please make sure to define a variable <code>average_us_visitors</code>.",
             incorrect_msg = "It looks like <code>average_us_visitors</code> does not contain the average of the US visitors.")
-test_object("average_non_us_vistors",
+test_object("average_non_us_visitors",
             undefined_msg = "Please make sure to define a variable <code>average_non_us_visitors</code>.",
             incorrect_msg = "It looks like <code>average_non_us_visitors</code> does not contain the average of the US visitors.")
 success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. The next stop on your journey through the R language: factors.")
