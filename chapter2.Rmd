@@ -613,7 +613,7 @@ test_object("total_roulette",
             undefined_msg = "Please make sure to define a variable <code>total_roulette</code>.",
             incorrect_msg = "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.")
 test_object("answer",
-            undfefined_msg = "Please make sure to define a variable <code>answer</code>.",
+            undefined_msg = "Please make sure to define a variable <code>answer</code>.",
             incorrect_msg = "It looks like the answer variable does not contain the correct answer. Make sure to read the assignment carefully.")
 success_msg("Good job! Continue to the next exercise.")
 ```
@@ -960,7 +960,7 @@ test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorre
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
             undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
-            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+            incorrect_msg = "It looks like <code>selection_vector</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
 success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without any recycling step.")
 ```
 
@@ -1033,11 +1033,11 @@ test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorre
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
             undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
-            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+            incorrect_msg = "It looks like <code>selection_vector</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
 test_object("poker_winning_days",
             undefined_msg =  "Please make sure to define a variable <code>poker_winning_days</code>.",
-            incorrect_msg =  "It looks like <code>poker_winning_days</code> does not the correct result. Remember that R uses element wise operations for vectors.");
-success_msg("Good job! Continue to the next exercise.")}
+            incorrect_msg =  "It looks like <code>poker_winning_days</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
+success_msg("Good job! Continue to the next exercise.")
 ```
 
 ---
@@ -1106,9 +1106,9 @@ test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorre
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
             undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
-            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+            incorrect_msg = "It looks like <code>selection_vector</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
 test_object("roulette_winning_days",
             undefined_msg = "Please make sure to define a variable <code>roulette_winning_days</code>.",
-            incorrect_msg = "It looks like <code>roulette_winning_days</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.")
+            incorrect_msg = "It looks like <code>roulette_winning_days</code> does not contain the correct result. Make sure that you use <code>roulette_vector</code>.")
 success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
 ```
