@@ -12,42 +12,40 @@ Feeling lucky?
 
 You better, because this chapter takes you on a trip to the City of Sins, also known as *"Statisticians Paradise"* ;-).
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next Stop, Vegas Baby...VEGAS!!!!
+Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next Stop, Vegas Baby... VEGAS!!
 
 *** =instructions
 - Do you still remember what you have learned in the first chapter? Assign the value `"Here we go!"` to the variable `Vegas`!
 
 *** =hint
-Type: `Vegas <- "Here we go!"`. Note that R is case sensitive. 
+Just type the following line in the editor:
+```
+Vegas <- "Here we go!"
+```
+Note that R is case sensitive.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
-
+# Define the variable 'Vegas'
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
+# Define the variable 'Vegas'
 Vegas <- "Here we go!"
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("Vegas")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>Vegas</code>.");
-} else if (!isTRUE(try(all.equal(Vegas,"Here we go!")))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct value to <code>Vegas</code>. Do not forget that R is case sensitive!");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
-```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
+test_object("Vegas", 
+            undefined_msg = "Please make sure to define a variable <code>Vegas</code>.",
+            incorrect_msg = "Make sure that you assign the correct value to <code>Vegas</code>. Do not forget that R is case sensitive!")
+success_msg("Great! Head over to the next exercise.")
 ```
 
 ---
@@ -56,61 +54,61 @@ if (!exists("Vegas")){
 
 Let us focus first! 
 
-On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a  simple tool to store data. For example, your daily gains and losses in the casinos. 
+On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
 
-In R, you create a vector with the combine function `c()`. You place the vector elements separated by a comma between the brackets. For example:
-- `numeric_vector <- c(1,2,3)`
-- `character_vector <- c("a","b","c")`
-- `boolean_vector <- c(TRUE,FALSE)`
+In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the brackets. For example:
 
-Once you have created these vectors in R, you can use them to do calculations. 
+```
+numeric_vector <- c(1, 2, 3)
+character_vector <- c("a", "b", "c")
+boolean_vector <- c(TRUE, FALSE)
+```
+
+Once you have created these vectors in R, you can use them to do calculations.
 
 *** =instructions 
-- Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
 
 *** =hint 
-Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean_vector` with the `<-` operator. 
+Assign `c(TRUE,FALSE,TRUE)` to the variable `boolean_vector` with the `<-` operator. You can also use the shorter notations, `T` and `F` for `TRUE` and `FALSE` respectively.
+
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
-numeric_vector <- c(1,10,49)
-character_vector <- c("a","b","c")
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+# Complete the code for 'boolean_vector'
 boolean_vector <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
-numeric_vector <- c(1,10,49)
-character_vector <- c("a","b","c")
-boolean_vector <- c(TRUE,FALSE,TRUE)
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+# Complete the code for 'boolean_vector'
+boolean_vector <- c(TRUE, FALSE, TRUE)
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("boolean_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>boolean_vector</code>.");
-} else if (!isTRUE(try(all.equal(boolean_vector,c(TRUE,FALSE,TRUE))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct values to <code>boolean_vector</code>. The order matters!");
-} else {
-	DM.result <- list(TRUE, "Perfect! Continue to the next exercise.");
-}
+test_object("numeric_vector")
+test_object("character_vector")
+test_object("boolean_vector",
+            undefined_msg = "Please make sure to define a variable <code>boolean_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct values to <code>boolean_vector</code>. The order matters!")
+success_msg("Perfect! Notice that adding a space behind the commas in the <code>c()</code> function improve the readability of your code. Let's practice some more with vector creation in the next exercise.")
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
 ## Create a vector (3)
 
-After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers. 
+After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
 
 Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
 
@@ -131,7 +129,7 @@ For `roulette_vector`:
 You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 *** =instructions
-- Assign the winnings/losses for roulette to the variable `roulette_vector`.
+Assign the winnings/losses for roulette to the variable `roulette_vector`.
 
 *** =hint
 To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
@@ -140,7 +138,7 @@ To help you with this step, the editor already contains the code for creating `p
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
 roulette_vector <-  
@@ -150,26 +148,21 @@ roulette_vector <-
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+roulette_vector <- c(-24, -50, 100, -350, 10)
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
-} else if (!isTRUE(try(all.equal(poker_vector,c(140,-50,20,-120,240))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct values to <code>poker_vector</code>.");
-} else if (!exists("roulette_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
-} else if (!isTRUE(try(all.equal(roulette_vector,c(-24,-50,100,-350,10))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct values to <code>roulette_vector</code>.");
-} else {
-	DM.result <- list(TRUE, "Very good! Continue to the next exercise.");
-}
+test_object("poker_vector",
+            undefined_msg = "Please make sure to define a variable <code>poker_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct values to <code>poker_vector</code>.")
+test_object("roulette_vector",
+            undefined_msg = "Please make sure to define a variable <code>roulette_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct values to <code>roulette_vector</code>.")
+success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
 ```
 
 --- 
@@ -180,66 +173,75 @@ As a data analyst, it is important to have a clear view on the data that you are
 
 In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
 
-You can give a name to the elements of a vector with the `names()` function. For example: `names(some_vector)`.
+You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+
+```{r}
+some_vector <- c("Johnny", "Poker Player")
+names(some_vector) <- c("Name", "Profession")
+```
+
+This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
+
+```{r, echo = FALSE}
+some_vector
+```
 
 *** =instructions
-- Go ahead and assign the days of the week as names to `poker_vector` and `roulette_vector`. In case you are not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday and Friday.
+Go ahead and assign the days of the week as names to `poker_vector` and `roulette_vector`. In case you are not sure, the days of the week are: Monday, Tuesday, Wednesday, Thursday and Friday.
 
 *** =hint
-You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by `c("Monday","Tuesday","Wednesday","Thursday","Friday")`.
+You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses and the fact that weekdays are written with a capital letter! The vector with days of the week is thus given by 
+```
+c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+```
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+roulette_vector <- c(-24, -50, 100, -350, 10)
 
 # Add your code here
 
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+roulette_vector <- c(-24, -50, 100, -350, 10)
 
 # Add your code here
-names(poker_vector) <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("poker_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(poker_vector),c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct names vector to <code>poker_vector</code>.");
-} else if (!exists("roulette_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(roulette_vector),c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct names vector to <code>roulette_vector</code>.");
-} else {
-	DM.result <- list(TRUE, "Well done! Continue to the next exercise.");
-}
+test_object("poker_vector",
+            undefined_msg = "Please make sure to define a variable <code>poker_vector</code>.",
+            incorrect_msg = "Do not change the values inside <code>poker_vector</code>; they were already coded for you.")
+test_object("roulette_vector",
+            undefined_msg = "Please make sure to define a variable <code>roulette_vector</code>.",
+            incorrect_msg = "Do not change the values inside <code>roulette_vector</code>; they were already coded for you.")
+test_object("poker_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Make sure that you assign the correct names vector to <code>poker_vector</code>.")
+test_object("roulette_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Make sure that you assign the correct names vector to <code>roulette_vector</code>.")
+success_msg("Well done! Continue to the next exercise.")
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
-
 ## Naming a vector (2)
 
 If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
@@ -255,58 +257,61 @@ Just like you did with your poker and roulette returns, you can also create a va
 *** =hint
 You can use `names(poker_vector)` to set the names of the variable `poker_vector`. Make sure not to forget the parentheses around the days of the week.
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Create the variable days_vector that contains "Monday","Tuesday","Wednesday","Thursday","Friday"
+# Create the variable 'days_vector'
 days_vector <-
  
-#Assign the names of the day to the roulette and poker_vectors
+#Assign the names of the day to 'roulette_vector' and 'poker_vector'
 names(poker_vector) <-   
 names(roulette_vector) <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Create the variable days_vector that contains "Monday","Tuesday","Wednesday","Thursday","Friday"
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+# Create the variable 'days_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-#Assign the names of the day to the roulette and poker_vectors
+#Assign the names of the day to 'roulette_vector' and 'poker_vector'
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("days_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>days_vector</code>.");
-} else if (!isTRUE(try(all.equal(days_vector,c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct vector to <code>days_vector</code>.");
-} else if (!exists("poker_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(poker_vector),days_vector)))){
-  DM.result <- list(FALSE, "Make sure that you assign the variable <code>days_vector</code> to the names of <code>poker_vector</code>.");
-} else if (!exists("roulette_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(roulette_vector),days_vector)))){
-  DM.result <- list(FALSE, "Make sure that you assign the <code>days_vector</code> to the names of <code>roulette_vector</code>.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+test_object("poker_vector",
+            undefined_msg = "Please make sure to define a variable <code>poker_vector</code>.",
+            incorrect_msg = "Do not change the values inside <code>poker_vector</code>; they were already coded for you.")
+test_object("roulette_vector",
+            undefined_msg = "Please make sure to define a variable <code>roulette_vector</code>.",
+            incorrect_msg = "Do not change the values inside <code>roulette_vector</code>; they were already coded for you.")
+test_object("days_vector",
+            undefined_msg = "Please make sure to define a variable <code>days_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct vector to <code>days_vector</code>.")
+test_object("poker_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Make sure that you assign <code>days_vector</code> to the names of <code>poker_vector</code>.")
+test_object("roulette_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Make sure that you assign <code>days_vector</code> to the names of <code>roulette_vector</code>.")
+success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
 ```
 
 ---
@@ -322,57 +327,64 @@ You want to find out the following type of information:
 
 To get the answers, you have to do arithmetic calculations on vectors. 
 
-It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example: `c(1,2,3)+c(4,5,6)` is equal to `c(1+4,2+5,3+6)` or `c(5,7,9)`. Let us try this first!
+It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+
+```
+c(1, 2, 3) + c(4, 5, 6)
+c(1 + 4, 2 + 5, 3 + 6)
+c(5, 7, 9)
+```
+
+Let us try this first!
 
 *** =instructions
 - Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
+- Inspect the result by printing `total_vector` to the console.
 
 *** =hint
 Use the `+` operator to sum `A_vector` and `B_vector`. Use `=` to assign the result to `total_vector`.
 
-*** =sample_code
-
+*** =pre_exercise_code
 ```{r eval=FALSE}
-A_vector <- c(1,2,3)
-B_vector <- c(4,5,6)
+# no pec
+```
 
-# Take the sum of A_vector and B_vector
+*** =sample_code
+```{r eval=FALSE}
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
+
+# Take the sum of 'A_vector' and 'B_vector'
 total_vector <- 
+  
+# Print 'total_vector' to the console
+total_vector
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
-A_vector <- c(1,2,3)
-B_vector <- c(4,5,6)
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
 
 # Take the sum of A_vector and B_vector
 total_vector <- A_vector + B_vector
+
+# Print 'total_vector' to the console
+total_vector
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("A_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>A_vector</code>.");
-} else if (!isTRUE(try(all.equal(A_vector,c(1,2,3))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct vector to <code>A_vector</code>.");
-} else if (!exists("B_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>B_vector</code>.");
-} else if (!isTRUE(try(all.equal(B_vector,c(4,5,6))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct vector to <code>B_vector</code>.");
-} else if (!exists("total_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_vector</code>.");
-} else if (!isTRUE(try(all.equal(total_vector,A_vector + B_vector)))){
-  DM.result <- list(FALSE, "Make sure that <code>total_vector</code> contains the sum of <code>A_vector</code> and <code>B_vector</code>.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
-```
-
-*** =pre_exercise_code
-```{r eval=FALSE}
-
+test_object("A_vector",
+            undefined_msg = "Please make sure to define a variable <code>A_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct vector to <code>A_vector</code>.")
+test_object("B_vector",
+            undefined_msg = "Please make sure to define a variable <code>B_vector</code>.",
+            incorrect_msg = "Make sure that you assign the correct vector to <code>B_vector</code>.")
+test_object("total_vector",
+            undefined_msg = "Please make sure to define a variable <code>total_vector</code>.",
+            incorrect_msg = "Make sure that <code>total_vector</code> contains the sum of <code>A_vector</code> and <code>B_vector</code>.")
+success_msg("Good job! Continue to the next exercise.")
 ```
 
 ---
@@ -383,76 +395,63 @@ Do you understand how R does arithmetic calculations with vectors?
 
 Then it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
 
-In R, this is just the sum of the `roulette_vector` and `poker_vector`.
+In R, this is just the sum of `roulette_vector` and `poker_vector`.
 
 *** =instructions
-- Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
+Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
 
 *** =hint
-Just click the 'Submit Answer' button on the right.
+Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
-poker_vector <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday:
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) <- days_vector
+# Roulette winnings from Monday to Friday:
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
 
 # Up to you now:
 total_daily <- 
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday:
-poker_vector <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday:
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(roulette_vector) <- days_vector
+# Roulette winnings from Monday to Friday:
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
 
 # Up to you now:
 total_daily <- poker_vector + roulette_vector
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("days_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>days_vector</code>.");
-} else if (!isTRUE(try(all.equal(days_vector,c("Monday","Tuesday","Wednesday","Thursday","Friday"))))){
-  DM.result <- list(FALSE, "Make sure that you assign the correct vector to <code>days_vector</code>.");
-} else if (!exists("poker_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(poker_vector),days_vector)))){
-  DM.result <- list(FALSE, "Make sure that you assign the variable <code>days_vector</code> to the names of <code>poker_vector</code>.");
-} else if (!exists("roulette_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_vector</code>.");
-} else if (!isTRUE(try(all.equal(names(roulette_vector),days_vector)))){
-  DM.result <- list(FALSE, "Make sure that you assign the <code>days_vector</code> to the names of <code>roulette_vector</code>.");
-} else if (!exists("total_daily")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_daily</code>.");
-} else if (!isTRUE(try(all.equal(total_daily,poker_vector + roulette_vector)))){
-  DM.result <- list(FALSE, "Make sure that you assign the sum of <code>poker_vector</code> and <code>roulette_vector</code> to <code>total_daily</code>.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
-```
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_daily", 
+            incorrect_msg = "Make sure that you assign the sum of <code>poker_vector</code> and <code>roulette_vector</code> to <code>total_daily</code>.")
 
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
+success_msg("Great! Continue to the next exercise.")
 ```
 
 ---
@@ -461,7 +460,11 @@ if (!exists("days_vector")){
 
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a (very very very) tiny chance you have lost money over the week in total? 
 
-A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: `total_poker <- sum(poker_vector)`.
+A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+
+```
+total_poker <- sum(poker_vector)
+```
 
 *** =instructions
 - Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
@@ -470,36 +473,42 @@ A function that helps you to answer this question is `sum()`. It calculates the 
 *** =hint
 Use the `sum` function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
+# Total winnings with poker
 total_poker <- sum(poker_vector)
 
-# Up to you now. Assign the correct values to: 
+# Up to you now:
 total_roulette <-
-total_week <-
+total_week <- 
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector    <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -511,58 +520,54 @@ total_week <- total_roulette + total_poker
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("total_poker")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_poker</code>.");
-} else if (!isTRUE(try(all.equal(total_poker,sum(poker_vector))))){
-  DM.result <- list(FALSE, "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.");
-} else if (!exists("total_roulette")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_roulette</code>.");
-} else if (!isTRUE(try(all.equal(total_roulette,sum(roulette_vector))))){
-  DM.result <- list(FALSE, "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.");
-} else if (!exists("total_week")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_week</code>.");
-} else if (!isTRUE(try(all.equal(total_week,total_roulette + total_poker)))){
-  DM.result <- list(FALSE, "Make sure that you assign to <code>total_week</code> the sum of the other two total vectors.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_poker", 
+            undefined_msg = "Please make sure to define a variable <code>total_poker</code>.",
+            incorrect_msg = "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.")
+test_object("total_roulette",
+            undefined_msg = "Please make sure to define a variable <code>total_roulette</code>.",
+            incorrect_msg = "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.")
+test_object("total_week",
+            undefined_msg = "Please make sure to define a variable <code>total_week</code>.",
+            incorrect_msg = "Make sure that you assign to <code>total_week</code> the sum of the other two total vectors.")
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
 ## Comparing total winnings
 
-Ooops, it seems like you are losing money :-s. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
 
 After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
 
 *** =instructions
-- Calculate `total_poker` and `total_roulette`.
+- Calculate `total_poker` and `total_roulette` as in the previous exercise.
 - Check if your total gains in poker are higher than for roulette by using a comparison. Assign the result of this comparison to the variable `answer`.
-(Tip: you partly calculated the answer to this question in the previous exercise). What do you conclude, should you focus on roulette or on poker?
+What do you conclude, should you focus on roulette or on poker?
 
 *** =hint
+You partly calculated the answer to this question in the previous exercise already!
 To check if 6 is larger than 5, you type `6 > 5`. This returns a variable with data type Logical (`TRUE` or `FALSE`).
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -575,15 +580,15 @@ answer <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
-# Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
+poker_vector <- c(140, -50, 20, -120, 240)
 
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -596,31 +601,22 @@ answer <- total_poker > total_roulette
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("total_poker")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_poker</code>.");
-} else if (!isTRUE(try(all.equal(total_poker,sum(poker_vector))))){
-  DM.result <- list(FALSE, "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.");
-} else if (!exists("total_roulette")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>total_roulette</code>.");
-} else if (!isTRUE(try(all.equal(total_roulette,sum(roulette_vector))))){
-  DM.result <- list(FALSE, "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.");
-} else if (!exists("answer")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>answer</code>.");
-} else if (!isTRUE(try(all.equal(answer,total_poker > total_roulette)))){
-  DM.result <- list(FALSE, "It looks like the answer variable does not contain the correct answer. Make sure to read the assignment carefully.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_poker", 
+            undefined_msg = "Please make sure to define a variable <code>total_poker</code>.",
+            incorrect_msg = "Make sure that you assign to <code>total_poker</code> the sum of the <code>poker_vector</code>.")
+test_object("total_roulette",
+            undefined_msg = "Please make sure to define a variable <code>total_roulette</code>.",
+            incorrect_msg = "Make sure that you assign to <code>total_roulette</code> the sum of the <code>roulette_vector</code>.")
+test_object("answer",
+            undfefined_msg = "Please make sure to define a variable <code>answer</code>.",
+            incorrect_msg = "It looks like the answer variable does not contain the correct answer. Make sure to read the assignment carefully.")
+success_msg("Good job! Continue to the next exercise.")
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
@@ -630,23 +626,30 @@ Your hunch seemed to be right. It appears that the poker game is more your cup o
 
 Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select: `[...elements to select..]`. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
+To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc.
 
 *** =instructions
-- Assign the poker results of Wednesday to the variable `poker_wednesday`.
+Assign the poker results of Wednesday to the variable `poker_wednesday`.
 
 *** =hint
 Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -655,14 +658,15 @@ poker_wednesday <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -671,46 +675,49 @@ poker_wednesday <- poker_vector[3]
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("poker_wednesday")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_wednesday</code>.");
-} else if (!isTRUE(try(all.equal(poker_wednesday,poker_vector[3])))){
-  DM.result <- list(FALSE, "It looks like <code>poker_wednesday</code> does not contain the correct value of the <code>poker_vector</code>.");
-} else {
-	DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
-```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_wednesday", 
+            undefined_msg = "Please make sure to define a variable <code>poker_wednesday</code>.",
+            incorrect_msg = "It looks like <code>poker_wednesday</code> does not contain the correct value of the <code>poker_vector</code>.")
+success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
 ```
 
 ---
-
 ## Vector selection: the good times (2)
 
 How about analyzing your midweek results? 
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what element should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1,5)` between the square brackets: `poker_vector[c(1,5)]`. Thus, you select here the first and the fifth element of `poker_vector`.
+To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1,5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+
+```
+poker_vector[c(1,5)]
+```
 
 *** =instructions
-- Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
 
 *** =hint
 Use the vector `c(2,3,4)` between square brackets to select the correct elements of `poker_vector`.
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+``` 
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -719,38 +726,33 @@ poker_midweek <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
 # Define a new variable based on a selection
-poker_midweek <- poker_vector[ c(2,3,4) ]
+poker_midweek <- poker_vector[c(2, 3, 4)]
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("poker_midweek")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_midweek</code>.");
-} else if (!isTRUE(try(all.equal(poker_midweek,poker_vector[ c(2,3,4) ])))){
-  DM.result <- list(FALSE, "It looks like <code>poker_midweek</code> does not contain the correct values from <code>poker_vector</code>.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_midweek", 
+            undefined_msg = "Please make sure to define a variable <code>poker_midweek</code>.",
+            incorrect_msg = "It looks like <code>poker_midweek</code> does not contain the correct values from <code>poker_vector</code>.")
+success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-``` 
 
 ---
 
@@ -761,7 +763,7 @@ Selecting multiple elements of `poker_vector` with `c(2,3,4)` is not very conven
 So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
 
 *** =instructions
-- Assign the results to `roulette_selection_vector` the results from Tuesday up to Friday by making use of `:`.
+Assign the results to `roulette_selection_vector` the results from Tuesday up to Friday by making use of `:`.
 
 *** =hint
 Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
@@ -770,11 +772,13 @@ Assign a selection of `roulette_vector` to `roulette_selection_vector` by placin
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -786,11 +790,13 @@ roulette_selection_vector <-
 
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -801,38 +807,55 @@ roulette_selection_vector <- roulette_vector[2:5]
 *** =sct
 
 ```{r eval=FALSE}
-if (!exists("roulette_selection_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_selection_vector</code>.");
-} else if (!isTRUE(try(all.equal(roulette_selection_vector,roulette_vector[2:5])))){
-  DM.result <- list(FALSE, "It looks like <code>roulette_selection_vector</code> does not contain the correct selection from <code>roulette_vector</code>. Make sure to to use the right indices.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_selection_vector", 
+            undefined_msg = "Please make sure to define a variable <code>roulette_selection_vector</code>.",
+            incorrect_msg = "It looks like <code>roulette_selection_vector</code> does not contain the correct selection from <code>roulette_vector</code>. Make sure to to use the right indices.")
+success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
 ```
 
 ---
 
 ## Vector selection: the good times (4)
 
-Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, `poker_vector["Monday"]` will select the first element of `poker_vector` since `"Monday"` is the name of that first element. 
+Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: `poker_vector[c("Monday","Tuesday")]`. 
+```
+poker_vector["Monday"]
+```
+
+will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+
+Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
+
+```
+poker_vector[c("Monday","Tuesday")]
+```
 
 *** =instructions
-- Calculate your average poker gains during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average_midweek_gain`. You can use `mean(vector_name)` to get the average of a vector.
+Calculate your average poker gains during the first three days of the week by selecting these elements with the help of the names. Assign this value to `average_midweek_gain`. You can use the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function to get the average of a vector.
 
 *** =hint
 You can use `mean(poker_vector)` to get the mean of the vector poker. You do not need the mean of all poker elements, but only of the first three days.
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker_vector and roulette_vector
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -840,38 +863,32 @@ average_midweek_gain <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
-average_midweek_gain <- mean( poker_vector[c("Monday","Tuesday","Wednesday")] )
+average_midweek_gain <- mean(poker_vector[c("Monday", "Tuesday", "Wednesday")])
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("average_midweek_gain")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>average_midweek_gain</code>.");
-} else if (!isTRUE(try(all.equal(average_midweek_gain,mean( poker_vector[c("Monday","Tuesday","Wednesday")] ))))){
-  DM.result <- list(FALSE, "It looks like <code>average_midweek_gain</code> does not contain the mean of the correct selection of <code>poker_vector</code>.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("average_midweek_gain", 
+            undefined_msg = "Please make sure to define a variable <code>average_midweek_gain</code>.",
+            incorrect_msg = "It looks like <code>average_midweek_gain</code> does not contain the mean of the correct selection of <code>poker_vector</code>.")
+DM.result <- list(TRUE, "Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
@@ -888,21 +905,29 @@ The (logical) comparison operators known to R are:
 
 As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example, the statement `c(4,5,6) > 5` returns: `FALSE FALSE TRUE`. In other words, you test for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`. Do not take our word for it! Try it in the console ;-).
 
+Behind the scenes, R *recycles* the value `5` when you execute `c(4,5,6) > 5`. R wants to do an element-wise comparison of each element in `c(4,5,6)` with each corresponding element in `5`. However, `5` is not a vector of length three. To solve this, R automatically replicates the value 5 to generate a vector of three elements, `c(5, 5, 5)` and then carries out the element-wise comparison.
+
 *** =instructions
 - Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection_vector`.
 
 *** =hint
-In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after.
+In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after. R will recycle the value `0` to generate a vector of zeros that has the same length as `some_vector`.
+
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
 *** =sample_code
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -911,14 +936,15 @@ selection_vector <-
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -927,23 +953,16 @@ selection_vector <- poker_vector > 0
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("selection_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
-} else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
-  DM.result <- list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("selection_vector", 
+            undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
+            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without any recycling step.")
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
@@ -956,69 +975,70 @@ In the previous exercises you used `selection_vector <- poker_vector > 0` to fin
 You can select the desired elements, by putting `selection_vector` between square brackets when selecting from `poker_vector`. This works, because R only selects those elements where `selection_vector` is `TRUE` by default. For `selection_vector` this means where `poker_vector > 0`.
 
 *** =instructions
-- Assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+Assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
 
 *** =hint
 Use `selection_vector` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
 
-*** =sample_code
+*** =pre_exercise_code
+```{r eval=FALSE}
+# no pec
+```
 
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
 # What days of the week did you make money on poker?
 selection_vector <- poker_vector > 0
+
 # Select from poker_vector these days
 poker_winning_days <- 
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
 # What days of the week did you make money on poker?
 selection_vector <- poker_vector > 0
+
 # Select from poker_vector these days
 poker_winning_days <- poker_vector[selection_vector]
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("selection_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
-} else if (!isTRUE(try(all.equal(selection_vector,poker_vector > 0)))){
-  DM.result <- list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.");
-} else if (!exists("poker_winning_days")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>poker_winning_days</code>.");
-} else if (!isTRUE(try(all.equal(poker_winning_days,poker_vector[selection_vector])))){
-  DM.result <- list(FALSE, "It looks like <code>poker_winning_days</code> does not the correct result. Remember that R uses element wise operations for vectors.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("selection_vector", 
+            undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
+            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+test_object("poker_winning_days",
+            undefined_msg =  "Please make sure to define a variable <code>poker_winning_days</code>.",
+            incorrect_msg =  "It looks like <code>poker_winning_days</code> does not the correct result. Remember that R uses element wise operations for vectors.");
+success_msg("Good job! Continue to the next exercise.")}
 ```
-
-*** =pre_exercise_code
-
-```{r eval=FALSE}
-
-```
-
 
 ---
 
@@ -1032,34 +1052,42 @@ Just like you did for poker, you also want to know those days where you realized
 *** =hint
 Have a look at the previous exercise and do the similar analysis, this time for `roulette_vector`.
 
-*** =sample_code
 
+*** =pre_exercise_ocde
+```{r eval=FALSE}
+# no pec
+```
+
+*** =sample_code
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
 # What days of the week did you make money on roulette?
-
+selection_vector <-
 
 # Select from roulette_vector these days
 
 ```
 
 *** =solution
-
 ```{r eval=FALSE}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140,-50,20,-120,240)
+poker_vector <- c(140, -50, 20, -120, 240)
+
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24,-50,100,-350,10)
-# Name poker and roulette
-days_vector <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Give names to both 'poker_vector' and 'roulette_vector'
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(roulette_vector) <- days_vector
 names(poker_vector) <- days_vector
 
@@ -1067,21 +1095,20 @@ names(poker_vector) <- days_vector
 selection_vector <- roulette_vector > 0
 
 # Select from roulette_vector these days
-roulette_winning_days <- roulette_vector[ selection_vector ]
+roulette_winning_days <- roulette_vector[selection_vector]
 ```
 
 *** =sct
-
 ```{r eval=FALSE}
-if (!exists("selection_vector")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>selection_vector</code>.");
-} else if (!isTRUE(try(all.equal(selection_vector,roulette_vector > 0)))){
-  DM.result <- list(FALSE, "It looks like <code>selection_vector</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.");
-} else if (!exists("roulette_winning_days")){
-  DM.result <- list(FALSE, "Please make sure to define a variable <code>roulette_winning_days</code>.");
-} else if (!isTRUE(try(all.equal(roulette_winning_days,roulette_vector[selection_vector])))){
-  DM.result <- list(FALSE, "It looks like <code>roulette_winning_days</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.");
-} else {
-  DM.result <- list(TRUE, "Good job! Continue to the next exercise.");
-}
+msg = "Do not change anything about the definition and naming of <code>poker_vector</code> and <code>roulette_vector</code>."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("selection_vector", 
+            undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
+            incorrect_msg = "It looks like <code>selection_vector</code> does not the correct result. Remember that R uses element wise operations for vectors.")
+test_object("roulette_winning_days",
+            undefined_msg = "Please make sure to define a variable <code>roulette_winning_days</code>.",
+            incorrect_msg = "It looks like <code>roulette_winning_days</code> does not the correct result. Make sure that you use <code>roulette_vector</code>.")
+success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
 ```
