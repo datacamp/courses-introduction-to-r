@@ -961,7 +961,7 @@ test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, inco
 test_object("selection_vector", 
             undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
             incorrect_msg = "It looks like <code>selection_vector</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
-success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without any recycling step.")
+success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without recycling anything.")
 ```
 
 ---
