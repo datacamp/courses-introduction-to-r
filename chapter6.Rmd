@@ -352,7 +352,7 @@ shining_list <- list(moviename="The Shining",actors=actors, reviews=reviews )
 
 Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 
 
-In order to conveniently add elements to lists you use the concatenate function `c()`: 
+In order to conveniently add elements to lists you use the concatenate function [`c()`](http://www.rdocumentation.org/packages/base/functions/c): 
 
 ```
 c(list1,some.object)
