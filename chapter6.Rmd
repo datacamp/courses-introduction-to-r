@@ -80,7 +80,7 @@ success_msg("Cool. Let's get our hands dirty!")
 ---
 ## Creating a list
 
-Let us create our first list! To construct a list you use the function [[`list()`](http://www.rdocumentation.org/packages/base/functions/list)]: 
+Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
 
 ```
 my_list <- list(component1, component2 ...)
@@ -145,18 +145,21 @@ Well done! Let us keep this train going!
 Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
 ```
-my_list <- list(name1 = your_component1, name2 = your_component2 ...)
+my_list <- list(name1 = your_comp1, 
+                name2 = your_comp2,
+                ...)
 ``` 
 
 This creates a list with the components `"name1"` and `"name2"` and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
 
 ```
-my_list <- list(your_component1, your_component2 ...)
+my_list <- list(your_comp1, your_comp2 ...)
 names(my_list) <- c("name1", "name2" ...)
 ```
 
 *** =instructions
-Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_matrix` the name `mat`, for `my_vector` `vec` and for `my_df` `df`. Look at the console output to see how R prints a list.
+- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_matrix` the name `mat`, for `my_vector` the name `vec` and for `my_df` the name `df`. 
+- Print the list to the console and inspect the output.
 
 *** =hint
 The first method of assigning names to your list components is the easiest. It starts like this: 
@@ -179,8 +182,11 @@ my_matrix <- matrix(1:9, ncol = 3)
 # First 10 elements of the built-in data frame 'mtcars'
 my_df <- mtcars[1:10,]
 
-# Construct list with these different elements:
+# Construct 'my_list' with these different elements:
 my_list <- list(my_vector, my_matrix, my_df)
+
+# Print 'my_list' to the console
+
 ```
 
 *** =solution
@@ -192,8 +198,11 @@ my_matrix <- matrix(1:9, ncol = 3)
 # First 10 elements of the built-in data frame 'mtcars'
 my_df <- mtcars[1:10,]
 
-# Construct list with these different elements:
+# Construct 'my_list' with these different elements:
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
+
+# Print 'my_list' to the console
+my_list
 ```
 
 *** =sct
@@ -207,6 +216,7 @@ test_object("my_list",
             incorrect_msg = "It looks like <code>my_list</code> does not contain the correct elements.")
 test_object("my_list", eq_condition = "equal",
             incorrect_msg = "It looks like <code>my_list</code> does not contain the correct naming for the components.");
+test_output_contains("my_list", incorrect_msg = "Don't forget to print <code>my_list</code> to the console! Simply add <code>my_list</code> on a new line in the editor.")
 success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
 ```
 
@@ -419,5 +429,5 @@ test_object("shining_list_full",
 test_object("shining_list_full", eq_condition = "equal",
             incorrect_msg = "It looks like <code>shining_list_full</code> does not contain the correct naming for all the components.");
 test_function("str", "object", incorrect_msg = "Make sure to inspect the structure of <code>shining_list_full</code>.")
-success_msg("Great! You've successfully completed the chapter on lists!")
+success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other courses and DataCamp and become a true data science expert!")
 ```

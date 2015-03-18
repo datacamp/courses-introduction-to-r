@@ -29,12 +29,12 @@ Make use of the [`factor()`](http://www.rdocumentation.org/packages/base/functio
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign to the variable theory what this chapter is about!
+# Assign to the variable 'theory' what this chapter is about!
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign to the variable theory what this chapter is about!
+# Assign to the variable 'theory' what this chapter is about!
 theory <- "R uses factors for categorical variables!"
 ```
 
@@ -284,8 +284,7 @@ success_msg("Nice! Have a look at the output. The fact that you identified <code
 ---
 ## Battle of the sexes
 
-> "All animals are equal, but some animals are more equal than others."
->--George Orwell 
+_"All animals are equal, but some animals are more equal than others." -- George Orwell_
 
 In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
 

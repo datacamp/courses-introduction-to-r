@@ -908,7 +908,7 @@ As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing 
 Behind the scenes, R *recycles* the value `5` when you execute `c(4,5,6) > 5`. R wants to do an element-wise comparison of each element in `c(4,5,6)` with each corresponding element in `5`. However, `5` is not a vector of length three. To solve this, R automatically replicates the value 5 to generate a vector of three elements, `c(5, 5, 5)` and then carries out the element-wise comparison.
 
 *** =instructions
-- Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection_vector`.
+Check if your poker winnings are positive on the different days of the week (i.e. > 0), and assign this to `selection_vector`.
 
 *** =hint
 In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after. R will recycle the value `0` to generate a vector of zeros that has the same length as `some_vector`.

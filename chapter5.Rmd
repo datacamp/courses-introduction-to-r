@@ -544,15 +544,18 @@ Making and creating rankings is one of mankind's favorite affairs. These ranking
 
 In data analysis you will sort your data according to a certain variable in the data set. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example. Let us look at the vector `a`: 
+[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example. Let us look at the vector `a`: `a <- c(100,9,101)`.
 
 ```
-a <- c(100,9,101)
-```
+order(a)
+``` 
 
-Now `order(a)` returns 2,1,3. Since 100 is the second largest element of the vector, 9 is the smallest element and 101 is the largest element.
+returns the vector {2, 1, 3} since 100 is the second largest element of the vector, 9 is the smallest element and 101 is the largest element.
     
-Subsequently, `a[order(a)]` will give you the ordered vector 9,100,101, since it first picks the second element of `a`, then the first and then the last. Got it? If you are not sure, use the console to play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function.` 
+```
+a[order(a)]
+``` 
+will thus give you the ordered vector {9, 100, 101}, since it first picks the second element of `a`, then the first and then the last. Got it? If you are not sure, use the console to play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function.` 
 
 *** =instructions
 Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Click 'Submit Answer' when you are ready to continue.

@@ -64,7 +64,7 @@ Construct a matrix with one row for each movie (thus 3 rows). The first column i
 *** =hint
 Remember that you can construct a matrix containing the numbers 1 up to 9 with
 ```
-matrix(1:9, byrow=TRUE, nrow=3)
+matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 In this case, you do not want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is
 ```
@@ -97,7 +97,7 @@ empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
 # Add your code below to Construct matrix
-star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow=3, byrow=TRUE) 
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE) 
 ```
 
 *** =sct
@@ -155,7 +155,7 @@ empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
 # Construct matrix
-star_wars_matrix <- matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE)
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
 # Add your code here such that rows and columns of star_wars_matrix have a name!
 
@@ -170,11 +170,11 @@ empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
 # Construct matrix
-star_wars_matrix <- matrix(c(new_hope,empire_strikes,return_jedi), nrow=3, byrow=TRUE)
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
 # Add your code here such that rows and columns of star_wars_matrix have a name!
-colnames(star_wars_matrix) <- c("US","non-US")
-rownames(star_wars_matrix) <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
+colnames(star_wars_matrix) <- c("US", "non-US")
+rownames(star_wars_matrix) <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 ```
 
 *** =sct
@@ -205,7 +205,7 @@ To calculate the total box office revenue for the three Star Wars movies, you ha
 
 In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
 
-``
+```
 sum_of_rows_vector <- rowSums(my_matrix)
 ```
 
@@ -227,7 +227,7 @@ The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) f
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow=3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Your code here
 worldwide_vector <- 
@@ -240,7 +240,7 @@ worldwide_vector <-
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Your code here
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -270,7 +270,7 @@ In the previous exercise you calculated the vector that contained the worldwide 
 You can add a column or multiple columns to a matrix with the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function, which merges matrices and/or vectors together by column. For example: 
 
 ```
-new_combined_matrix <- cbind(matrix1, matrix2, vector1, ...)
+big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 *** =instructions
@@ -295,7 +295,7 @@ Assign the result to `all_star_wars_matrix`.
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -311,7 +311,7 @@ all_wars_matrix <-
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -364,12 +364,12 @@ Assign the result to `all_wars_matrix`.
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Construct matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
-star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(movie_names2,col_titles))
+star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
 ```
 
 *** =sample_code
@@ -424,12 +424,12 @@ You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/fun
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Construct matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
-star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow=TRUE, dimnames=list(movie_names2,col_titles))
+star_wars_matrix2 <- matrix(box_office_all2, nrow = 3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
 
 # Combine both Star Wars trilogies in one matrix
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
@@ -500,7 +500,7 @@ You can use the function [`mean()`](http://www.rdocumentation.org/packages/base/
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Print the star_wars_matrix to the console
 star_wars_matrix 
@@ -519,7 +519,7 @@ non_us_some <-
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Print the star_wars_matrix to the console
 star_wars_matrix 
@@ -575,7 +575,7 @@ The number of visitors is the revenue (which is stored in `star_wars_matrix`) di
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Estimation of visitors
 visitors <- 
@@ -591,7 +591,7 @@ visitors <-
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
 # Estimation of visitors
 visitors <- star_wars_matrix / 5
@@ -645,8 +645,8 @@ _Those who are familiar with matrices should note that this is not the standard 
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
-ticket_prices_matrix <- matrix(c(5,5,6,6,7,7), nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles)) 
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles)) 
 
 # Estimated number of visitors
 visitors <- 
@@ -665,17 +665,17 @@ average_non_us_visitors <-
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
-star_wars_matrix <- matrix(box_office_all, nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
-ticket_prices_matrix <- matrix(c(5,5,6,6,7,7), nrow=3, byrow=TRUE, dimnames=list(movie_names,col_titles))
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7), nrow=3, byrow = TRUE, dimnames = list(movie_names,col_titles))
 
 # Estimated number of visitors
 visitors <- star_wars_matrix / ticket_prices_matrix
 
 # Average number of US visitors
-average_us_visitors <- mean(visitors[,1])
+average_us_visitors <- mean(visitors[ ,1])
 
 # Average number of non-US visitors
-average_non_us_visitors <- mean(visitors[,2])
+average_non_us_visitors <- mean(visitors[ ,2])
 ```
 
 *** =sct
