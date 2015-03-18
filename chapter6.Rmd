@@ -146,8 +146,7 @@ Just like on your to-do list, you want to avoid not knowing or remembering what 
 
 ```
 my_list <- list(name1 = your_comp1, 
-                name2 = your_comp2,
-                ...)
+                name2 = your_comp2 ...)
 ``` 
 
 This creates a list with the components `"name1"` and `"name2"` and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
