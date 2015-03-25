@@ -80,7 +80,7 @@ The last two might need some explaining:
 
 *** =instructions
 - Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `17 %% 4` to calculate 17 modulo 4.
+- Type `28 %% 6` to calculate 28 modulo 6.
 - Click 'Submit Answer' and have a look at the R output in the console.
 - Note how the `#` symbol is used to add comments on the R code.
 
@@ -131,7 +131,7 @@ Another example of the modulo operator: `9 %5 2` equals `1`.
 2^5
 
 # Modulo
-17 %% 4
+28 %% 6
 ```
 
 *** =sct
@@ -141,7 +141,7 @@ test_output_contains("5 + 5", incorrect_msg = msg)
 test_output_contains("5 - 5", incorrect_msg = msg)
 test_output_contains("(5 + 5)/2", incorrect_msg = msg)
 test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Make sure to read the instructions carefully.")
-test_output_contains("17 %% 4", incorrect_msg = "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.")
+test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.")
 success_msg("Great! Head over to the next exercise.")
 ```
 
