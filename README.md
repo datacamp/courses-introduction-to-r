@@ -11,4 +11,4 @@ Feel free to suggest improvements or contact us at teach@datacamp.com!
 
 ## Important
 
-This repository is also a good point to have an idea of course creation for the DataCamp platform. You can freely use and adapt this content to create your own interactive courses for our platform. For a full guide on course creation, check out the different manuals at teach.datacamp.com. These pages also include a full [SCT design guide](https://teach.datacamp.com/sct-design), for creating submission correctness tests.
+This repository is also a good point to have an idea of course creation for the DataCamp platform. You can freely use and adapt this content to create your own interactive courses for our platform. For a full guide on course creation, check out the different manuals at [teach.datacamp.com](teach.datacamp.com). These pages also include a full [SCT design guide](https://teach.datacamp.com/sct-design), for creating submission correctness tests.
