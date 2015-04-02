@@ -20,7 +20,7 @@ You can also execute R commands straight in the console. This is a good way to e
 - Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button.
 
 *** =hint
-Just click the 'Submit Answer' button.
+Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -47,8 +47,8 @@ Just click the 'Submit Answer' button.
 
 *** =sct
 ```{r eval=FALSE}
-test_output_contains("7", incorrect_msg = "Do not remove the line of R code that calculates the sum of 3 and 4. Instead, just add another line that calculates the sum of 5 and 12.")
-test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 5 and 12. Do not start the line with a <code>#</code>, otherwise your R code is not executed!")
+test_output_contains("7", incorrect_msg = "Do not remove the line of R code that calculates the sum of 3 and 4. Instead, just add another line that calculates the sum of 6 and 12.")
+test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 6 and 12. Do not start the line with a <code>#</code>, otherwise your R code is not executed!")
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
