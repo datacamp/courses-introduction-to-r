@@ -887,7 +887,7 @@ test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, inco
 test_object("average_midweek_gain", 
             undefined_msg = "Please make sure to define a variable <code>average_midweek_gain</code>.",
             incorrect_msg = "It looks like <code>average_midweek_gain</code> does not contain the mean of the correct selection of <code>poker_vector</code>.")
-DM.result <- list(TRUE, "Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
+success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
 ```
 
 ---
