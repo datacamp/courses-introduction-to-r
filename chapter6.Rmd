@@ -402,7 +402,7 @@ shining_list <- list(moviename="The Shining",actors=actors, reviews=reviews)
 # We forgot something; add the year to shining_list
 shining_list_full <- 
 
-# Have a look at shining_list
+# Have a look at shining_list_full
 
 ```
 
@@ -414,7 +414,7 @@ shining_list_full <-
 # We forgot something; add the year to shining_list:
 shining_list_full <- c(shining_list, year = 1980)
 
-# Have a look at shining_list.
+# Have a look at shining_list_full
 str(shining_list_full)
 ```
 
