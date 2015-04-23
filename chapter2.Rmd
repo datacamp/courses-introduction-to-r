@@ -342,7 +342,7 @@ Let us try this first!
 - Inspect the result by printing `total_vector` to the console.
 
 *** =hint
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `=` to assign the result to `total_vector`.
+Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
