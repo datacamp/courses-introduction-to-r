@@ -490,7 +490,7 @@ The first argument of [`subset()`](http://www.rdocumentation.org/packages/base/f
 
 For example: 
 ```
-subset(planets_df, subset = planets_df$rings == TRUE)
+subset(planets_df, subset = rings == TRUE)
 ``` 
 
 R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
@@ -524,7 +524,7 @@ small_planets_df  <- # Your code here!
 # 'planets_df' is pre-loaded in your workspace
 
 # Planets that are smaller than planet Earth:
-small_planets_df  <- subset(planets_df, subset = planets_df$diameter < 1)
+small_planets_df  <- subset(planets_df, subset = diameter < 1)
 ```
 
 *** =sct
