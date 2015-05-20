@@ -336,7 +336,7 @@ test_object("worldwide_vector",
 test_object("all_wars_matrix",
             undefined_msg = "Please make sure to define a variable <code>all_wars_matrix</code>.",
             incorrect_msg = "Did you use the <code>cbind()</code> function with the correct arguments?")
-success_msg("Nice job! After addign column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
 ```
 
 ---

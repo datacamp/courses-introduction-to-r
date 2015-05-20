@@ -275,7 +275,7 @@ summary(factor_survey_vector)
 msg = "Do not change anything about the first four lines that define <code>survey_vector</code> and <code>factor_survey_vector</code>."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_function("summary", "x", 
+test_function("summary", "object", 
               incorrect_msg = c("Did you call the summary function on the <code>survey_vector</code>?",
                                 "Did you call the summary function on the <code>factor_survey_vector</code>?"))
 success_msg("Nice! Have a look at the output. The fact that you identified <code>\"Male\"</code> and <code>\"Female\"</code> as factor levels in <code>factor_survey_vector</code> enables R to show the number of elements for each category.")
