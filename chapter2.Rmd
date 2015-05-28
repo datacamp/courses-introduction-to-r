@@ -4,8 +4,8 @@ title       : Vectors
 description : We take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors. 
 framework   : datacamp
 mode        : selfcontained
----
 
+--- type:NormalExercise xp:100
 ## Create a vector
 
 Feeling lucky? 
@@ -48,8 +48,10 @@ test_object("Vegas",
 success_msg("Great! Head over to the next exercise.")
 ```
 
----
+*** =skills
+1
 
+--- type:NormalExercise xp:100
 ## Create a vector (2)
 
 Let us focus first! 
@@ -104,8 +106,10 @@ test_object("boolean_vector",
 success_msg("Perfect! Notice that adding a space behind the commas in the <code>c()</code> function improve the readability of your code. Let's practice some more with vector creation in the next exercise.")
 ```
 
----
+*** =skills
+1
 
+--- type:NormalExercise xp:100
 ## Create a vector (3)
 
 After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
@@ -165,7 +169,10 @@ test_object("roulette_vector",
 success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
 ```
 
---- 
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Naming a vector
 
@@ -241,7 +248,10 @@ test_object("roulette_vector",
 success_msg("Well done! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Naming a vector (2)
 
 If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
@@ -314,7 +324,10 @@ test_object("roulette_vector",
 success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Calculating total winnings
 
@@ -387,7 +400,10 @@ test_object("total_vector",
 success_msg("Good job! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Calculating total winnings (2)
 
@@ -454,7 +470,10 @@ test_object("total_daily",
 success_msg("Great! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Calculating total winnings (3)
 
@@ -536,7 +555,10 @@ test_object("total_week",
             incorrect_msg = "Make sure that you assign to <code>total_week</code> the sum of the other two total vectors.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Comparing total winnings
 
@@ -618,7 +640,10 @@ test_object("answer",
 success_msg("Good job! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Vector selection: the good times
 
@@ -686,7 +711,10 @@ test_object("poker_wednesday",
 success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Vector selection: the good times (2)
 
 How about analyzing your midweek results? 
@@ -754,7 +782,10 @@ test_object("poker_midweek",
 success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Vector selection: the good times (3)
 
@@ -817,7 +848,10 @@ test_object("roulette_selection_vector",
 success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Vector selection: the good times (4)
 
@@ -890,7 +924,10 @@ test_object("average_midweek_gain",
 success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Selection by comparison - Step 1
 
@@ -964,7 +1001,10 @@ test_object("selection_vector",
 success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without recycling anything.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Selection by comparison - Step 2
 
@@ -1040,7 +1080,10 @@ test_object("poker_winning_days",
 success_msg("Good job! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Advanced selection
 
@@ -1112,3 +1155,6 @@ test_object("roulette_winning_days",
             incorrect_msg = "It looks like <code>roulette_winning_days</code> does not contain the correct result. Make sure that you use <code>roulette_vector</code>.")
 success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
 ```
+
+*** =skills
+1

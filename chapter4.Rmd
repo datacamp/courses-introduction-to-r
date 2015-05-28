@@ -5,7 +5,7 @@ description : Very often, data falls into a limited number of categories. For ex
 framework   : datacamp
 mode        : selfcontained
 
----
+--- type:NormalExercise xp:100
 ## What's a factor and why would you use it?
 
 In this chapter you dive into the wonderful world of **factors**. 
@@ -46,7 +46,10 @@ test_object("theory",
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## What's a factor and why would you use it? (2)
 
 To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals: 
@@ -98,7 +101,10 @@ test_object("factor_gender_vector",
 success_msg("Great! If you want to find out more about the <code>factor()</code> function, do not hesitate to type <code>?factor</code> in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## What's a factor and why would you use it? (3)
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**. 
@@ -152,7 +158,10 @@ test_output_contains("factor_temperature_vector", incorrect_msg = msg)
 success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Factor levels
 
 When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
@@ -220,7 +229,10 @@ test_object("factor_survey_vector", eq_condition = "equal",
 success_msg("Wonderful! Proceed to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Summarizing a factor
 
 After finishing this course, one of your favourite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of `some_variable`: 
@@ -281,7 +293,10 @@ test_function("summary", "object",
 success_msg("Nice! Have a look at the output. The fact that you identified <code>\"Male\"</code> and <code>\"Female\"</code> as factor levels in <code>factor_survey_vector</code> enables R to show the number of elements for each category.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Battle of the sexes
 
 _"All animals are equal, but some animals are more equal than others." -- George Orwell_
@@ -336,7 +351,10 @@ test_output_contains("factor_survey_vector[1] > factor_survey_vector[2]", incorr
 success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Ordered factors
 
 Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors. 
@@ -384,7 +402,10 @@ test_object("speed_vector",
 success_msg("A job well done! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Ordered factors (2)
 
 `speed_vector` should be converted to an ordinal factor since its categories have a natural ordening. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`. 
@@ -448,7 +469,10 @@ test_correct({
 success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the <code><</code> sign. Continue to the next exercise.");
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Comparing ordered factors
 
 Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true. 
@@ -504,3 +528,6 @@ test_object("compare_them",
             incorrect_msg = "It looks like <code>compare_them</code> does not compare the data analysts correctly. Make sure to check the indices again.");
 success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vector, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 ```
+
+*** =skills
+1

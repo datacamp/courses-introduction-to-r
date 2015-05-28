@@ -5,7 +5,7 @@ description : Lists, as opposed to vectors, can hold components of different typ
 framework   : datacamp
 mode        : selfcontained
 
----
+--- type:NormalExercise xp:100
 ## Lists, why would you need them?
 
 Congratulations! At this point in the course you are already a (semi-)expert in:
@@ -42,7 +42,10 @@ Just click the 'Submit Answer' button.
 success_msg("Ready, set, go! Continue to the next exercise")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Lists, why would you need them? (2)
 
 A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
@@ -77,7 +80,10 @@ Click 'Submit Answer' to start the first exercise on lists.
 success_msg("Cool. Let's get our hands dirty!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Creating a list
 
 Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
@@ -137,7 +143,10 @@ test_object("my_list",
 success_msg("Wonderful! Your skillset is growing at a staggering pace! Head over to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Creating a named list
 
 Well done! Let us keep this train going! 
@@ -219,7 +228,10 @@ test_output_contains("my_list", incorrect_msg = "Don't forget to print <code>my_
 success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Creating a named list (2)
 
 Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
@@ -279,7 +291,10 @@ test_object("shining_list", eq_condition = "equal",
 success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Selecting elements from a list
 
 Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
@@ -355,7 +370,10 @@ test_object("second_review",
 success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Adding more movie information to the list
 
 Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 
@@ -430,3 +448,6 @@ test_object("shining_list_full", eq_condition = "equal",
 test_function("str", "object", incorrect_msg = "Make sure to inspect the structure of <code>shining_list_full</code>.")
 success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other courses and DataCamp and become a true data science expert!")
 ```
+
+*** =skills
+1

@@ -2,8 +2,8 @@
 title_meta  : Chapter 1
 title       : Intro to basics
 description : In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let us get started!
----
 
+--- type:NormalExercise xp:100
 ## How it works
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
@@ -49,7 +49,10 @@ test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, t
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Little arithmetics with R
 
@@ -133,7 +136,10 @@ test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with
 success_msg("Great! Head over to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Variable assignment 
 
@@ -183,7 +189,10 @@ test_object("x", undefined_msg = "Make sure to define a variable <code>x</code>.
 success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assingment? <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Variable assignment (2)
 
@@ -229,7 +238,10 @@ test_output_contains("my_apples",
 success_msg("Great! Continue to the next exercise!")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Variable assignment (3)
 
@@ -292,7 +304,10 @@ test_object("my_fruit",
 success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change <code>my_apples</code> to equal 12 instead of 5 and rerun the script, <code>my_fruit</code> will automatically update as well. Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 ## Apples and oranges
 
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
@@ -357,7 +372,10 @@ test_object("my_fruit",
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## Basic data types in R
 
@@ -423,7 +441,10 @@ test_object("my_logical",
 success_msg("Great work! Continue to the next exercise.")
 ```
 
----
+*** =skills
+1
+
+--- type:NormalExercise xp:100
 
 ## What's that data type?
 
@@ -481,3 +502,6 @@ test_output_contains("class(my_logical)",
                      incorrect_msg = "The output does not contain the class of <code>my_logical</code>.")
 success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter and get immersed in the world of vectors!")
 ```
+
+*** =skills
+1
