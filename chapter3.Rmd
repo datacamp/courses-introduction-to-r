@@ -503,8 +503,8 @@ If you want to select all elements of a row or a column, no number is needed bef
 Back to Star Wars with this newly acquired knowledge!
 
 *** =instructions
-- Calculate the average Non-US revenue per movie. Assign this to the `non_us_all` variable. In other words, take the average of all elements of the second column.
-- Same question, but now only for the first two Star Wars movies. Assign the result to `non_us_some`.
+- Calculate the average Non-US revenue per movie. Assign this average to the `non_us_all` variable. In other words, take the average of all elements of the second column.
+- Same question, but now only for the first two Star Wars movies. Assign the average to `non_us_some`.
 
 *** =hint
 You can use the function [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) to calculate the average of the inputs to the function. Remember that you can select all rows of a matrix for a specific column x by typing `my_matrix[,x]`. Non-US is the second column.
