@@ -56,7 +56,7 @@ success_msg("Awesome! See how the console shows the result of the R code you sub
 
 ## Little arithmetics with R
 
-As previously stated, in its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
+In its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
 
 - Addition: `+`
 - Subtraction: `-`
@@ -76,7 +76,7 @@ The last two might need some explaining:
 - Note how the `#` symbol is used to add comments on the R code.
 
 *** =hint
-Another example of the modulo operator: `9 %5 2` equals `1`.
+Another example of the modulo operator: `9 %% 2` equals `1`.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -204,10 +204,11 @@ Suppose you have a fruit basket with five apples. As a data analyst in training,
 - Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternativy, you can use `=`, but `<-` is widely preferred in the R community.
+Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
+# no pec
 ```
 
 *** =sample_code
