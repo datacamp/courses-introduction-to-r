@@ -20,7 +20,7 @@ A good example of a categorical variable is the variable 'Gender'. A human indiv
 Assign to variable `theory` the value `"R uses factors for categorical variables!"`.
 
 *** =hint
-Make use of the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function.
+Simply assign a variable (`<-`); make sure to capitalize correctly.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
