@@ -1012,7 +1012,7 @@ Working with comparisons will make your data analytical life easier. Instead of 
 
 In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
 
-You can select the desired elements, by putting `selection_vector` between square brackets when selecting from `poker_vector`. This works, because R only selects those elements where `selection_vector` is `TRUE` by default. For `selection_vector` this means where `poker_vector > 0`.
+You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`. This works, because R only selects those elements where `selection_vector` is `TRUE` by default. For `selection_vector` this means where `poker_vector > 0`.
 
 *** =instructions
 Assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
