@@ -193,10 +193,6 @@ test_function("matrix", c("data", "nrow", "byrow"))
 test_object("star_wars_matrix",
             undefined_msg = "Please make sure to define a variable <code>star_wars_matrix</code>.",
             incorrect_msg = "Did you assign the correct matrix containing the vector that holds all three movies to <code>star_wars_matrix</code>?")
-test_function("colnames", "x", 
-              incorrect_msg = "Make sure to pass the correct argument to the <code>colnames()</code> function.")
-test_function("rownames", "x", 
-              incorrect_msg = "Make sure to pass the correct argument to the <code>rownames()</code> function.")
 test_object("star_wars_matrix", eq_condition = "equal",
             incorrect_msg = "Did you set the row and column names of <code>star_wars_matrix</code> correctly? Have another look at your code.")
 success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
