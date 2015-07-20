@@ -161,7 +161,7 @@ You construct a data frame with the [`data.frame()`](http://www.rdocumentation.o
 Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct a data frame. Call this variable `planets_df`.
 
 *** =hint
-The `data.frame(col1, col2, col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are (in this order): `planet`, `type`, `diameter`, `rotation` and `rings`.
+The `data.frame(col1, col2, col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are (in this order): `planets`, `type`, `diameter`, `rotation` and `rings`.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
