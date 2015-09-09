@@ -936,6 +936,7 @@ By making use of comparison operators, we can approach the previous question in 
 The (logical) comparison operators known to R are:
 - `<` for less than
 - `>` for greater than
+- '<=' for less than or equal to
 - `>=` for greater than or equal to
 - `==` for equal to each other
 - `!=` not equal to each other
