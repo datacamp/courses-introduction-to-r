@@ -6,4 +6,4 @@
 
 This repository contains the source files that correspond to the interactive course "Introduction to R", hosted at www.datacamp.com.
 
-Feel free to suggest improvements or contact us at teach@datacamp.com!
+Feel free to suggest improvements or contact us at support@datacamp.com!
