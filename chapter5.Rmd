@@ -633,7 +633,7 @@ Alright, now that you understand the [`order()`](http://www.rdocumentation.org/p
 ```
 order(planets_df$diameter, decreasing = TRUE)
 ``` 
-will give you the ordering of the variable diameter from largest to smallest. This is wat you should assign to positions. Use the variable positions then to select from the data frame `planets_df`!
+will give you the ordering of the variable diameter from largest to smallest. This is what you should assign to positions. Use the variable positions then to select from the data frame `planets_df`!
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
