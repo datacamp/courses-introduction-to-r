@@ -253,7 +253,8 @@ my_apples + my_oranges
 
 *** =instructions
 - Assign to `my_oranges` the value 6.
-- R allows you to combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`. Create this new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
+- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
+- Combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
 
 *** =hint
 `my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
