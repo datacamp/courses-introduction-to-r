@@ -178,24 +178,27 @@ survey_vector <- c("M","F","F","M","M")
 
 Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier. 
 
+**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in that order.
+
 *** =instructions
-- Convert the character vector `survey_vector` into a factor vector. Assign it to `factor_survey_vector`.
-- Change the factor levels of `factor_survey_vector` to `"Male"` and `"Female"`.
+- The code to make a factor vector from `survey_vector` is coded for you, check it out. You should use `factor_survey_vector` in the next instruction.
+- Change the factor levels of `factor_survey_vector` to `"Female"` and `"Male"`. Mind the order of the vector elements here.
 
 *** =hint
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed.
+Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
 # no pec
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
 ```
 
 *** =sample_code
 ```{r eval=FALSE}
+# Code to form the factor vector
 survey_vector <- c("M", "F", "F", "M", "M")
-
-# Encode survey_vector as a factor
-factor_survey_vector <- 
+factor_survey_vector <- factor(survey_vector)
 
 # Specify the levels of 'factor_survey_vector'
 levels(factor_survey_vector) <- 
@@ -205,9 +208,8 @@ factor_survey_vector
 
 *** =solution
 ```{r eval=FALSE}
+# Code to form the factor vector
 survey_vector <- c("M", "F", "F", "M", "M")
-
-# Encode survey_vector as a factor
 factor_survey_vector <- factor(survey_vector)
 
 # Specify the levels of 'factor_survey_vector'
@@ -220,10 +222,12 @@ factor_survey_vector
 ```{r eval=FALSE}
 msg = "Do not change the definition of <code>survey_vector</code>!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor","x",
-              incorrect_msg = "Did you correctly use the <code>factor()</code> function to define <code>factor_survey_vector</code>?")
+msg = "Do not change or remove the code to create the factor vector."
+test_function("factor","x",allow_extra = FALSE,
+              not_called_msg = msg,
+              incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal",
-            undefined_msg = "Please make sure to define a variable <code>factor_survey_vector</code>.",
+            undefined_msg = msg,
             incorrect_msg = paste("Did you assign the correct factor levels to <code>factor_survey_vector</code>?",
                                   "Remember that R is case sensitive. Also make sure to follow the correct order!"))
 success_msg("Wonderful! Proceed to the next exercise.")

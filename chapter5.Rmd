@@ -203,7 +203,7 @@ test_correct({
               incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.")  
 }, {
   msg = "Do not change anything about the definition of the vector. Only add code to create the <code>planets_df</code> data frame!"
-  test_object("planet", undefined_msg = msg, incorrect_msg = msg)
+  test_object("planets", undefined_msg = msg, incorrect_msg = msg)
   test_object("type", undefined_msg = msg, incorrect_msg = msg)
   test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
   test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
