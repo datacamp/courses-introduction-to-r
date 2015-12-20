@@ -14,7 +14,7 @@ The term factor refers to a statistical data type used to store categorical vari
 
 It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of intersexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
 
 *** =instructions
 Assign to variable `theory` the value `"R uses factors for categorical variables!"`.
@@ -239,7 +239,7 @@ success_msg("Wonderful! Proceed to the next exercise.")
 --- type:NormalExercise xp:100
 ## Summarizing a factor
 
-After finishing this course, one of your favourite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of `some_variable`: 
+After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of `some_variable`: 
 
 ```
 summary(some_variable)
@@ -361,7 +361,7 @@ success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to 
 --- type:NormalExercise xp:100
 ## Ordered factors
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors. 
+Since `"Male"` and `"Female"` are non-ordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors. 
 
 But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R... 
 
@@ -412,7 +412,7 @@ success_msg("A job well done! Continue to the next exercise.")
 --- type:NormalExercise xp:100
 ## Ordered factors (2)
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordening. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`. 
+`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an non-ordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`. 
 
 ```
 factor(some_vector, ordered = TRUE, levels = c("Level_1", "Level_2" ...))
@@ -481,7 +481,7 @@ success_msg("Great! Have a look at the console. It is now indicated that the Lev
 
 Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true. 
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+The fact that `factor_speed_vector` is now ordered, enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
 
 *** =instructions
 Check whether data analyst 2 is faster than data analyst 5 and assign the result to `compare_them`. Remember the `>` operator allows you to check whether one element is larger than the other.
