@@ -216,7 +216,7 @@ success_msg("Great! You're on the way of becoming an R jedi! Continue to the nex
 --- type:NormalExercise xp:100
 ## Calculating the worldwide box office 
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown, is its worldwide box office figures. 
+The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
 
 To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
