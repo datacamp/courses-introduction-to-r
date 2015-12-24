@@ -931,7 +931,7 @@ success_msg("Good job! Apart from subsetting vectors by index or by name, you ca
 
 ## Selection by comparison - Step 1
 
-By making use of comparison operators, we can approach the previous question in a more pro-active way. 
+By making use of comparison operators, we can approach the previous question in a more proactive way. 
 
 The (logical) comparison operators known to R are:
 - `<` for less than
@@ -1097,7 +1097,7 @@ Just like you did for poker, you also want to know those days where you realized
 Have a look at the previous exercise and do the similar analysis, this time for `roulette_vector`.
 
 
-*** =pre_exercise_ocde
+*** =pre_exercise_code
 ```{r eval=FALSE}
 # no pec
 ```

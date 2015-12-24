@@ -11,7 +11,7 @@ mode        : selfcontained
 You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
 
 When doing a market research survey, however, you often have questions such as:
-- 'Are your married?' or 'yes/no' questions (= boolean data type)
+- 'Are your married?' or 'yes/no' questions (= Boolean data type)
 - 'How old are you?' (= numeric data type)
 - 'What is your opinion on this product?' or other 'open-ended' questions (= character data type)
 - ...
@@ -203,7 +203,7 @@ test_correct({
               incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.")  
 }, {
   msg = "Do not change anything about the definition of the vector. Only add code to create the <code>planets_df</code> data frame!"
-  test_object("planet", undefined_msg = msg, incorrect_msg = msg)
+  test_object("planets", undefined_msg = msg, incorrect_msg = msg)
   test_object("type", undefined_msg = msg, incorrect_msg = msg)
   test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
   test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
@@ -267,14 +267,14 @@ Similar to vectors and matrices, you select elements from a data frame with the 
 - `my_data_frame[1,2]` selects from the first row in `my_data_frame` the second element.
 - `my_data_frame[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4 in `my_data_frame`.
 
-Sometimes you want to select all elements of a row or column. To do this, you can use the follwing. `my_data_frame[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Sometimes you want to select all elements of a row or column. To do this, you can use the following. `my_data_frame[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
 
 *** =instructions
 - Create the data frame `closest_planets_df` that contains all data on the first three planets.
 - Create the data frame `furthest_planets_df` that contains all data on the last three planets.
 
 *** =hint
-`planets_df[1:3,]` will select alle elements of the first three rows.
+`planets_df[1:3,]` will select all elements of the first three rows.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -443,7 +443,7 @@ success_msg("Great! Continue to the next exercise and discover yet another way o
 --- type:NormalExercise xp:100
 ## Only planets with rings (2)
 
-You probably remember from highschool that some planets in our solar system have rings and others do not. But due to other priorities at that time (read: puberty) you can not recall their names, let alone their rotation speed, etc. 
+You probably remember from high school that some planets in our solar system have rings and others do not. But due to other priorities at that time (read: puberty) you can not recall their names, let alone their rotation speed, etc. 
 
 Could R help you out? (Spoiler alert: of course it can!) 
 
@@ -459,7 +459,7 @@ This means that the first four observations (or planets) do not have a ring (`FA
 Assign to `planets_with_rings_df` all data in the `planets_df`data set for the planets with rings, that is, where `rings_vector` is `TRUE`.
 
 *** =hint
-Select elements from `planets_df` by using the square brackets. The `rings_vector` contains boolean values and R will select only those rows/columns were the vector element is `TRUE`. In this case, you want to select rows based on `rings_vector` and select all the columns.
+Select elements from `planets_df` by using the square brackets. The `rings_vector` contains Boolean values and R will select only those rows/columns were the vector element is `TRUE`. In this case, you want to select rows based on `rings_vector` and select all the columns.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -523,7 +523,7 @@ subset(planets_df, subset = rings == TRUE)
 R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
 
 *** =instructions
-Create a dataframe `small_planets_df` with planets that have a diameter smaller than the Earth (so smaller than 1, since diameter is a relative measure of the planet's diameter w.r.t that of planet Earth).
+Create a data frame `small_planets_df` with planets that have a diameter smaller than the Earth (so smaller than 1, since diameter is a relative measure of the planet's diameter w.r.t that of planet Earth).
 
 *** =hint
 Sorry, you are on your own here.
@@ -570,7 +570,7 @@ success_msg("Great! Not only is the <code>subset()</code> function more concise,
 --- type:NormalExercise xp:100
 ## Sorting
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influencial moviestars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
+Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
 
 In data analysis you will sort your data according to a certain variable in the data set. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
 

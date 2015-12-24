@@ -110,6 +110,18 @@ test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 test_function("matrix", c("data", "nrow", "byrow"))
+
+# Fix untill testwhat gets updated again
+# TODO: Fix in testwhat
+test_object("star_wars_matrix", eval = FALSE)
+test_what(
+  expect_equal(
+    dim(get("star_wars_matrix", get_solution_env())), 
+    dim(get("star_wars_matrix", .GlobalEnv))),
+  feedback_msg = 
+    paste("Be sure to use the `byrow` and `nrow` arguments of the function `matrix()`",
+          "to form a matrix of the correct dimensions: 3 rows and 2 columns."))
+
 test_object("star_wars_matrix",
             undefined_msg = "Please make sure to define a variable <code>star_wars_matrix</code>.",
             incorrect_msg = "Did you assign the correct matrix containing the vector that holds all three movies to <code>star_wars_matrix</code>?")
@@ -218,7 +230,7 @@ sum_of_rows_vector <- rowSums(my_matrix)
 Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
 
 *** =hint
-The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the brackets.
+The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the parentheses.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -289,7 +301,7 @@ Bind the `worldwide_vector` to the `star_wars_matrix` with the `cbind()` functio
 ```
 cbind( the_correct_matrix, the_correct_vector)
 ```
-Assign the result to `all_star_wars_matrix`.
+Assign the result to `all_wars_matrix`.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -341,6 +353,19 @@ test_function("rowSums", "x",
 test_object("worldwide_vector",
             undefined_msg = "Please make sure to define a variable <code>worldwide_vector</code>.",
             incorrect_msg = "Have you specified <code>worldwide_vector</code> correctly?")
+
+# Fix untill testwhat gets updated again
+# TODO: Fix in testwhat
+test_object("all_wars_matrix", eval = FALSE)
+test_what(
+  expect_equal(
+    dim(get("all_wars_matrix", get_solution_env())), 
+    dim(get("all_wars_matrix", .GlobalEnv))),
+  feedback_msg = 
+    paste("Be sure to use the the function `cbind()` with 2 arguments: `star_wars_matrix`",
+          "and `world_wide_vector`. You should end up with a matrix",
+          "of the correct dimensions: 3 rows and 3 columns."))
+
 test_object("all_wars_matrix",
             undefined_msg = "Please make sure to define a variable <code>all_wars_matrix</code>.",
             incorrect_msg = "Did you use the <code>cbind()</code> function with the correct arguments?")
@@ -412,6 +437,19 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 msg = "Do not override the variables that have been defined for you in the workspace (<code>star_wars_matrix</code> and <code>star_wars_matrix2</code>)."
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+
+# Fix untill testwhat gets updated again
+# TODO: Fix in testwhat
+test_object("all_wars_matrix", eval = FALSE)
+test_what(
+  expect_equal(
+    dim(get("all_wars_matrix", get_solution_env())), 
+    dim(get("all_wars_matrix", .GlobalEnv))),
+  feedback_msg = 
+    paste("Be sure to use the the function `rbind()` with 2 arguments: `star_wars_matrix`",
+          "and `star_wars_matrix2`. You should end up with a matrix",
+          "of the correct dimensions: 6 rows and 2 columns."))
+
 test_object("all_wars_matrix", 
             undefined_msg = "Please make sure to define a variable <code>all_wars_matrix</code>.",
             incorrect_msg = "Did you use the <code>rbind()</code> function with the correct arguments?")
@@ -632,7 +670,7 @@ test_object("visitors",
             incorrect_msg = "It looks like <code>visitors</code> does not contain the correct value. Remember that operations on matrices are element-wise.")
 test_output_contains("visitors", 
                      incorrect_msg = "Don't forget to also print the variable <code>visitors</code> to the console.")
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in theaters! Continue to the next exercise.");
+success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.");
 ```
 
 *** =skills
