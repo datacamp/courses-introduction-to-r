@@ -56,7 +56,7 @@ success_msg("Awesome! See how the console shows the result of the R code you sub
 
 ## Little arithmetics with R
 
-In its most basic form R can be used as a simple calculator. Consider the following arithmetic operators:
+In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
 
 - Addition: `+`
 - Subtraction: `-`
@@ -188,7 +188,7 @@ x
 ```{r eval=FALSE}
 test_object("x", undefined_msg = "Make sure to define a variable <code>x</code>.",
             incorrect_msg = "Make sure that you assign the correct value to <code>x</code>.") 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assingment? <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
 *** =skills
@@ -459,7 +459,7 @@ class(some_variable_name)
 ```
 
 *** =instructions
-Complete the code in the editor and print the class of `my_numeric`, `my_character` and `my_logical` to the console. 
+Complete the code in the editor and print the classes of `my_numeric`, `my_character` and `my_logical` to the console. 
 
 *** =hint
 You can find out the data type of the `my_numeric` variable for example by typing `class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 

@@ -393,7 +393,7 @@ c(list1, new_name = some_variable)
 
 *** =instructions
 - Complete the code below such that an item named `year` is added to the `shining_list` with the value 1980. Assign the result to `shining_list_full`.
-- Finally, have a look at the struture of `shining_list_full` with the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function.
+- Finally, have a look at the structure of `shining_list_full` with the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function.
 
 *** =hint
 Have a look at the example code in the exercise assignment. Maybe this can help you start:
