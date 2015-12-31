@@ -397,6 +397,7 @@ test_object("B_vector",
 test_object("total_vector",
             undefined_msg = "Please make sure to define a variable <code>total_vector</code>.",
             incorrect_msg = "Make sure that <code>total_vector</code> contains the sum of <code>A_vector</code> and <code>B_vector</code>.")
+test_output_contains("total_vector", incorrect_msg = "Don't forget to print <code>total_vector</code> to the console!")
 success_msg("Good job! Continue to the next exercise.")
 ```
 
