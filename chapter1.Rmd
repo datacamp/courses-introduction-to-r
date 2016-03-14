@@ -161,19 +161,19 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 42 to 'x'
+# Assign the value 42 to x
 x <- 
 
-# Print out the value of the variable 'x'
+# Print out the value of the variable x
 x
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 42 to 'x'
+# Assign the value 42 to x
 x <- 42
 
-# Print out the value of the variable 'x'
+# Print out the value of the variable x
 x
 ```
 
@@ -323,13 +323,13 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign a value to the variable called 'my_apples'
+# Assign a value to the variable called my_apples
 my_apples <- 5 
 
-# Print out the value of 'my_apples'
+# Print out the value of my_apples
 my_apples       
 
-# Assign a value to the variable 'my_oranges' and print it out
+# Assign a value to the variable my_oranges and print it out
 my_oranges <- "six" 
 my_oranges 
 
@@ -346,7 +346,7 @@ my_apples <- 5
 # Print out the value of answer
 my_apples  
 
-# Assign a value to the variable 'my_oranges' and print it out
+# Assign a value to the variable my_oranges and print it out
 my_oranges <- 6
 my_oranges 
 
