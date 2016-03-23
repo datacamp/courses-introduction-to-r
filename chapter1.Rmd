@@ -3,7 +3,7 @@ title_meta  : Chapter 1
 title       : Intro to basics
 description : In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let’s get started!
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## How it works
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
@@ -49,12 +49,8 @@ test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, t
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
-*** =skills
-1
-
---- type:NormalExercise xp:100
-
-## Little arithmetics with R
+--- type:NormalExercise xp:100 skills:1
+## Arithmetic with R
 
 In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
 
@@ -138,11 +134,8 @@ test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with
 success_msg("Great! Head over to the next exercise.")
 ```
 
-*** =skills
-1
 
 --- type:NormalExercise xp:100
-
 ## Variable assignment 
 
 A basic concept in (statistical) programming is called a **variable**. 
@@ -168,19 +161,19 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 42 to 'x'
+# Assign the value 42 to x
 x <- 
 
-# Print out the value of the variable 'x'
+# Print out the value of the variable x
 x
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 42 to 'x'
+# Assign the value 42 to x
 x <- 42
 
-# Print out the value of the variable 'x'
+# Print out the value of the variable x
 x
 ```
 
@@ -330,13 +323,13 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign a value to the variable called 'my_apples'
+# Assign a value to the variable called my_apples
 my_apples <- 5 
 
-# Print out the value of 'my_apples'
+# Print out the value of my_apples
 my_apples       
 
-# Assign a value to the variable 'my_oranges' and print it out
+# Assign a value to the variable my_oranges and print it out
 my_oranges <- "six" 
 my_oranges 
 
@@ -353,7 +346,7 @@ my_apples <- 5
 # Print out the value of answer
 my_apples  
 
-# Assign a value to the variable 'my_oranges' and print it out
+# Assign a value to the variable my_oranges and print it out
 my_oranges <- 6
 my_oranges 
 

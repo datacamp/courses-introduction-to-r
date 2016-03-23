@@ -166,7 +166,7 @@ names(my_list) <- c("name1", "name2" ...)
 ```
 
 *** =instructions
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_matrix` the name `mat`, for `my_vector` the name `vec` and for `my_df` the name `df`. 
+- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
 - Print the list to the console and inspect the output.
 
 *** =hint
