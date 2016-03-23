@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 5
 title       : Data frames
-description : Most data sets you will be working with will be stored as a data frame. By the end of this chapter, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables. 
+description : Most data sets you will be working with will be stored as data frames. By the end of this chapter focused on R basics, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables.
 framework   : datacamp
 mode        : selfcontained
 
@@ -495,7 +495,8 @@ test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("planets_with_rings_df",
             undefined_msg = "Please make sure to define a variable <code>planets_with_rings_df</code>.",
-            incorrect_msg = "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.");
+            incorrect_msg = "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.")
+test_student_typed("rings_vector", not_typed_msg = "Please use <code>rings_vector</code> to subset the data frame!")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
@@ -560,7 +561,8 @@ msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("small_planets_df",
             undefined_msg = "Please make sure to define a variable <code>small_planets_df</code>.",
-            incorrect_msg = "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.");
+            incorrect_msg = "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.")
+test_function("subset", incorrect_msg = "Please be sure to use the <code>subset</code> function!")
 success_msg("Great! Not only is the <code>subset()</code> function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
 ```
 
