@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 6
 title       : Lists
-description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This chapter will teach you how to create, name and subset these lists!
+description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
 framework   : datacamp
 mode        : selfcontained
 
