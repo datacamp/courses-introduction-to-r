@@ -181,7 +181,7 @@ Next, when you want to start your data analysis, your main concern is to keep a 
 **Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in that order.
 
 *** =instructions
-- The code to make a factor vector from `survey_vector` is coded for you, check it out. You should use `factor_survey_vector` in the next instruction.
+- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
 - Change the factor levels of `factor_survey_vector` to `"Female"` and `"Male"`. Mind the order of the vector elements here.
 
 *** =hint

@@ -102,7 +102,7 @@ test_object("numeric_vector")
 test_object("character_vector")
 test_object("boolean_vector",
             undefined_msg = "Please make sure to define a variable <code>boolean_vector</code>.",
-            incorrect_msg = "Make sure that you assign the correct values to <code>boolean_vector</code>. The order matters!")
+            incorrect_msg = "Make sure that you assign the correct values to <code>boolean_vector</code>. You don't need quotes around `TRUE` and `FALSE`! Also, make sure to adaopt the same order as listed in the instructions.")
 success_msg("Perfect! Notice that adding a space behind the commas in the <code>c()</code> function improve the readability of your code. Let's practice some more with vector creation in the next exercise.")
 ```
 
@@ -328,7 +328,6 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 1
 
 --- type:NormalExercise xp:100
-
 ## Calculating total winnings
 
 Now that you have the poker and roulette winnings nicely as a named vector, you can start doing some data analytical magic. 
@@ -348,7 +347,13 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-Let us try this first!
+You can also do the calculations with variables that represent vectors:
+
+```
+a <- c(1, 2, 3) 
+b <- c(4, 5, 6)
+c <- a + b
+```
 
 *** =instructions
 - Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
@@ -1000,7 +1005,7 @@ test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, inco
 test_object("selection_vector", 
             undefined_msg = "Please make sure to define a variable <code>selection_vector</code>.",
             incorrect_msg = "It looks like <code>selection_vector</code> does not contain the correct result. Remember that R uses element wise operations for vectors.")
-success_msg("Great! Instead of having R recycle the value <code>0</code> five times and then do the comparison, you can of course also compare <code>poker_vector</code> with a vector of length 5 that you've defined yourself. In that case, R will simply carry out the element-wise comparison without recycling anything.")
+success_msg("Great!")
 ```
 
 *** =skills

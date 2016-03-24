@@ -527,7 +527,7 @@ R will give you exactly the same result as you got in the previous exercise. But
 Create a data frame `small_planets_df` with planets that have a diameter smaller than the Earth (so smaller than 1, since diameter is a relative measure of the planet's diameter w.r.t that of planet Earth).
 
 *** =hint
-Sorry, you are on your own here.
+`subset(planets_df, subset = ...)` is part of the solution.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -541,17 +541,17 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 
 *** =sample_code
 ```{r eval=FALSE}
-# 'planets_df' is pre-loaded in your workspace
+# planets_df is pre-loaded in your workspace
 
-# Planets that are smaller than planet Earth:
-small_planets_df  <- # Your code here!
+# Create small_planets_df
+small_planets_df  <- 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# 'planets_df' is pre-loaded in your workspace
+# planets_df is pre-loaded in your workspace
 
-# Planets that are smaller than planet Earth:
+# Create small_planets_df
 small_planets_df  <- subset(planets_df, subset = diameter < 1)
 ```
 

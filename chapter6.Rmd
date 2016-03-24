@@ -149,7 +149,7 @@ success_msg("Wonderful! Your skillset is growing at a staggering pace! Head over
 --- type:NormalExercise xp:100
 ## Creating a named list
 
-Well done! Let us keep this train going! 
+Well done, you're on a roll!
 
 Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
