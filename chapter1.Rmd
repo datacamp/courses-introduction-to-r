@@ -288,7 +288,7 @@ test_object("my_oranges",
             undefined_msg = "Have you defined a variable `my_oranges`?",
             incorrect_msg = "Have you assigned the correct value to the variable `my_oranges`?")
 test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`. Try again")
+                     incorrect_msg = "Make sure to write `my_apples + my_oranges` on a new line; this will print out the result of the sum.")
 test_object("my_fruit",
             undefined_msg = "Please make sure to define a variable `my_fruit`.",
             incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
@@ -351,12 +351,10 @@ my_fruit
 ```{r eval=FALSE}
 test_error()
 test_object("my_oranges",
-            undefined_msg = "Please make sure to define a variable `my_oranges`.",
             incorrect_msg = "Make sure that you assign the correct value to `my_oranges`. Strings and numbers are different things!")
 test_output_contains("my_apples + my_oranges", 
                      incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`.")
-test_object("my_fruit", 
-            undefined_msg = "Please make sure to define a variable `my_fruit`.",
+test_object("my_fruit",
             incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
@@ -369,7 +367,7 @@ R works with numerous data types. Some of the most basic types to get started ar
 
 - Decimals values like `4.5` are called **numerics**.
 - Natural numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical** (`TRUE` can be abbreviated to `T` and `FALSE` to `F`).
+- Boolean values (`TRUE` or `FALSE`) are called **logical**.
 - Text (or string) values are called **characters**.
 
 Note how the quotation marks on the right indicate that "some text" is a character.
@@ -377,7 +375,7 @@ Note how the quotation marks on the right indicate that "some text" is a charact
 *** =instructions
 Change the value of the:
 - `my_numeric` variable to `42`.
-- `my_character` variable to `"forty-two"`. Note that the quotation marks indicate that `"forty-two"` is a character.
+- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
 - `my_logical` variable to `FALSE`.
 
 Note that R is case sensitive!
@@ -393,57 +391,47 @@ Replace the values in the editor with the values that are provided in the exerci
 
 *** =sample_code
 ```{r eval=FALSE}
-# What is the answer to the universe?
+# Change my_numeric to be 42
 my_numeric <- 42.5
 
-# The quotation marks indicate that the variable is of type character
+# Change my_character to be "universe"
 my_character <- "some text"
 
+# Change my_logical to be FALSE
 my_logical <- TRUE
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# What is the answer to the universe?
+# Change my_numeric to be 42
 my_numeric <- 42
 
-# The quotation marks indicate that the variable is of type character
-my_character <- "forty-two"
+# Change my_character to be "universe"
+my_character <- "universe"
 
+# Change my_logical to be FALSE
 my_logical <- FALSE
 ```
 
 *** =sct
 ```{r eval=FALSE}
-test_object("my_numeric", 
-            undefined_msg = "Please make sure to define a variable `my_numeric`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_numeric.`")
-test_object("my_character",
-            undefined_msg = "Please make sure to define a variable `my_character`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_character`. Do not forget the quotes.")
-test_object("my_logical",
-            undefined_msg = "Please make sure to define a variable `my_logical`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_logical`.") 
+test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`. Don't forget the quotes!")
+test_object("my_logical", incorrect_msg = "Have you correctly changes `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
 success_msg("Great work! Continue to the next exercise.")
 ```
-
-
 
 
 --- type:NormalExercise xp:100 skills:1
 ## What's that data type?
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this as follows:
-
-```
-class(some_variable_name)
-```
+Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
 
 *** =instructions
-Complete the code in the editor and print the classes of `my_numeric`, `my_character` and `my_logical` to the console. 
+Complete the code in the editor and also print out the classes of `my_character` and `my_logical`. 
 
 *** =hint
-You can find out the data type of the `my_numeric` variable for example by typing `class(my_numeric)`. What you should do is similar for `my_character` and `my_logical`. 
+The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`. 
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -454,10 +442,16 @@ You can find out the data type of the `my_numeric` variable for example by typin
 ```{r eval=FALSE}
 # Declare variables of different types
 my_numeric <- 42
-my_character <- "forty-two"
+my_character <- "universe"
 my_logical <- FALSE 
 
-# Check which type these variables have:
+# Check class of my_numeric
+class(my_numeric)
+
+# Check class of my_character
+
+
+# Check class of my_logical
 
 ```
 
@@ -465,27 +459,31 @@ my_logical <- FALSE
 ```{r eval=FALSE}
 # Declare variables of different types:
 my_numeric <- 42
-my_character <- "forty-two"
+my_character <- "universe"
 my_logical <- FALSE
 
-# Check which type these variables have:
+# Check class of my_numeric
 class(my_numeric)
+
+# Check class of my_character
 class(my_character)
+
+# Check class of my_logical
 class(my_logical)
 ```
 
 *** =sct
 ```{r eval=FALSE}
-test_object("my_numeric")
-test_object("my_character")
-test_object("my_logical")
+msg <- "Do not change the declaration of the variables!"
+lapply(c("my_numeric", "my_character", "my_logical"), test_object, undefined_msg = msg, incorrect_msg = msg)
+patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
 test_output_contains("class(my_numeric)",
-                     incorrect_msg = "The output does not contain the class of `my_numeric`. Try again.")
+                     incorrect_msg = "Do not remove the code that prints out the type of `my_numeric`.")
 test_output_contains("class(my_character)",
-                     incorrect_msg = "The output does not contain the class of `my_character`. Give it another try.")
+                     incorrect_msg = sprintf(patt, "my_character"))
 test_output_contains("class(my_logical)",
-                     incorrect_msg = "The output does not contain the class of `my_logical`.")
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter and get immersed in the world of vectors!")
+                     incorrect_msg = sprintf(patt, "my_logical"))
+success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
 ```
 
 
