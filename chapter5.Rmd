@@ -2,10 +2,8 @@
 title_meta  : Chapter 5
 title       : Data frames
 description : Most data sets you will be working with will be stored as data frames. By the end of this chapter focused on R basics, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables.
-framework   : datacamp
-mode        : selfcontained
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## What's a data frame?
 
 You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
@@ -47,10 +45,8 @@ test_output_contains("mtcars", incorrect_msg = "Do not change anything about the
 success_msg("Great! Continue to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Quick, have a look at your data set
 
 Wow, that is a lot of cars! 
@@ -93,10 +89,8 @@ test_output_contains("head(mtcars)",
 success_msg("Wonderful! So, what do we have in this data set? For example, <code>hp</code> for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type <code>?mtcars</code> in the console and read the help page. Continue to the next exercise!");
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Have a look at the structure
 
 Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
@@ -138,10 +132,8 @@ test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the 
 success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Creating a data frame 
 
 Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. So put your jet pack on because it is time for some good old fashioned space exploration! 
@@ -213,10 +205,8 @@ test_correct({
 success_msg("Great job! Continue to the next exercise. The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Creating a data frame (2)
 
 Make sure that you have 8 observations and 5 variables. The `planets_df` data frame has been made available in the workspace, so you can directly use it.
@@ -256,10 +246,8 @@ test_function("str", "object", incorrect_msg = "Make sure that you use the <code
 success_msg("Awesome! Now that you have a clear understanding of the <code>planets_df</code> data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Selection of data frame elements
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
@@ -329,10 +317,8 @@ test_object("furthest_planets_df",
 success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Selection of data frame elements (2)
 
 Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
@@ -381,10 +367,8 @@ test_object("furthest_planets_diameter",
 success_msg("Nice! Continue to the next exercise!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Only planets with rings
 
 You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `rings`, both `planets_df[,5]` and `planets_df[,"rings"]` do the trick.
@@ -413,7 +397,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 
 *** =sample_code
 ```{r eval=FALSE}
-# 'planets_df' is pre-loaded in your workspace
+# planets_df is pre-loaded in your workspace
 
 # Create the rings_vector
 rings_vector <- 
@@ -437,10 +421,8 @@ test_object("rings_vector",
 success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Only planets with rings (2)
 
 You probably remember from high school that some planets in our solar system have rings and others do not. But due to other priorities at that time (read: puberty) you can not recall their names, let alone their rotation speed, etc. 
@@ -500,10 +482,8 @@ test_student_typed("rings_vector", not_typed_msg = "Please use <code>rings_vecto
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Only planets with rings but shorter
 
 So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
@@ -566,10 +546,8 @@ test_function("subset", incorrect_msg = "Please be sure to use the <code>subset<
 success_msg("Great! Not only is the <code>subset()</code> function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Sorting
 
 Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
@@ -619,10 +597,8 @@ order(c(5,4,6,7))
 success_msg("Great! Now let's use the <code>order()</code> function to sort your data frame!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Sorting your data frame
 
 Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the largest planet and ends with the smallest one. A sort on the `diameter` column, as you will.
@@ -682,5 +658,4 @@ test_object("largest_first_df",
 success_msg("Wonderful! What does the resulting data frame look like? Type <code>largest_first_df</code> in the console and find out! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
 ```
 
-*** =skills
-1
+

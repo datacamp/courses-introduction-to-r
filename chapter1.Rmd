@@ -135,7 +135,7 @@ success_msg("Great! Head over to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Variable assignment 
 
 A basic concept in (statistical) programming is called a **variable**. 
@@ -184,11 +184,8 @@ test_object("x", undefined_msg = "Make sure to define a variable <code>x</code>.
 success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
-
+--- type:NormalExercise xp:100 skills:1
 ## Variable assignment (2)
 
 Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
@@ -234,11 +231,8 @@ test_output_contains("my_apples",
 success_msg("Great! Continue to the next exercise!")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
-
+--- type:NormalExercise xp:100 skills:1
 ## Variable assignment (3)
 
 Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
@@ -301,10 +295,8 @@ test_object("my_fruit",
 success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change <code>my_apples</code> to equal 12 instead of 5 and rerun the script, <code>my_fruit</code> will automatically update as well. Continue to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
+--- type:NormalExercise xp:100 skills:1
 ## Apples and oranges
 
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
@@ -369,11 +361,8 @@ test_object("my_fruit",
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
-
+--- type:NormalExercise xp:100 skills:1
 ## Basic data types in R
 
 R works with numerous data types. Some of the most basic types to get started are:
@@ -438,11 +427,10 @@ test_object("my_logical",
 success_msg("Great work! Continue to the next exercise.")
 ```
 
-*** =skills
-1
 
---- type:NormalExercise xp:100
 
+
+--- type:NormalExercise xp:100 skills:1
 ## What's that data type?
 
 Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this as follows:
@@ -500,5 +488,5 @@ test_output_contains("class(my_logical)",
 success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter and get immersed in the world of vectors!")
 ```
 
-*** =skills
-1
+
+
