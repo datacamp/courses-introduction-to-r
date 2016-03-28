@@ -222,7 +222,7 @@ sum_of_rows_vector <- rowSums(my_matrix)
 Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
 
 *** =hint
-The ['rowSums'](http://www.rdocumentation.org/packages/base/functions/colSums) function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the parentheses.
+The [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function will calculate the total box office for each row of the `star_wars_matrix`, if you supply `star_wars_matrix` as an argument to that function by putting it between the parentheses.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}

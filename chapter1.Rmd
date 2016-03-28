@@ -93,7 +93,7 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 3 * 5
 
  # A division
-(5 + 5)/2 
+(5 + 5) / 2 
 
 # Exponentiation
 
@@ -114,10 +114,10 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 3 * 5
 
  # A division
-(5 + 5)/2 
+(5 + 5) / 2 
 
 # Exponentiation
-2^5
+2 ^ 5
 
 # Modulo
 28 %% 6
@@ -142,10 +142,10 @@ A basic concept in (statistical) programming is called a **variable**.
 
 A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
 
-You can assign a value 4 to a variable `my_variable` with the command
+You can assign a value 4 to a variable `my_var` with the command
 
 ```
-my_variable <- 4
+my_var <- 4
 ```
 
 *** =instructions
@@ -205,19 +205,19 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called 'my_apples'
+# Assign the value 5 to the variable called my_apples
 
 
-# Print out the value of the variable 'my_apples'
+# Print out the value of the variable my_apples
 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called 'my_apples'
+# Assign the value 5 to the variable called my_apples
 my_apples <- 5
 
-# Print out the value of the variable 'my_apples'
+# Print out the value of the variable my_apples
 my_apples
 ```
 
@@ -255,27 +255,27 @@ my_apples + my_oranges
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign a value to the variables called 'my_apples' and 'my_oranges'
+# Assign a value to the variables called my_apples and my_oranges
 my_apples <- 5
 
 
 # Add these two variables together and print the result
 
 
-# Create the variable 'my_fruit'
+# Create the variable my_fruit
 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign a value to the variables called 'my_apples' and 'my_oranges'
+# Assign a value to the variables called my_apples and my_oranges
 my_apples  <- 5
 my_oranges <- 6
 
 # Add these two variables together and print the result
 my_apples + my_oranges
 
-# Create the variable 'my_fruit'
+# Create the variable my_fruit
 my_fruit <- my_apples + my_oranges
 ```
 

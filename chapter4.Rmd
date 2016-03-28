@@ -27,20 +27,19 @@ Simply assign a variable (`<-`); make sure to capitalize correctly.
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign to the variable 'theory' what this chapter is about!
+# Assign to the variable theory what this chapter is about!
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Assign to the variable 'theory' what this chapter is about!
+# Assign to the variable theory what this chapter is about!
 theory <- "R uses factors for categorical variables!"
 ```
 
 *** =sct
 ```{r eval=FALSE}
 test_object("theory",
-            undefined_msg = "Please make sure to define a variable <code>theory</code>.",
-            incorrect_msg = "Make sure to assign the correct sentence to 'theory'. Remember that R is case sensitive.");
+            incorrect_msg = "Make sure to assign the correct sentence to `theory`. Remember that R is case sensitive.");
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
@@ -192,7 +191,7 @@ factor_survey_vector <- factor(survey_vector)
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# Specify the levels of 'factor_survey_vector'
+# Specify the levels of factor_survey_vector
 levels(factor_survey_vector) <- 
 
 factor_survey_vector
@@ -204,7 +203,7 @@ factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# Specify the levels of 'factor_survey_vector'
+# Specify the levels of factor_survey_vector
 levels(factor_survey_vector) <- c("Female", "Male")
 
 factor_survey_vector
@@ -255,10 +254,10 @@ factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# Type your code here for 'survey_vector'
+# Type your code here for survey_vector
 
 
-# Type your code here for 'factor_survey_vector'
+# Type your code here for factor_survey_vector
 
 ```
 
@@ -269,10 +268,10 @@ factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# Type your code here for 'survey_vector'
+# Type your code here for survey_vector
 summary(survey_vector)
 
-# Type your code here for 'factor_survey_vector'
+# Type your code here for factor_survey_vector
 summary(factor_survey_vector)
 ```
 
@@ -374,13 +373,13 @@ Assign to `speed_vector` a vector containing character strings, `"Fast"`, `"Slow
 
 *** =sample_code
 ```{r eval=FALSE}
-# Create 'speed_vector'
+# Create speed_vector
 speed_vector <-
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Create 'speed_vector'
+# Create speed_vector
 speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
 ```
 
