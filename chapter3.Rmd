@@ -15,15 +15,16 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
 In the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function:
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which constructs the vector `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
+
+- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
 - The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
 - The third argument `nrow` indicates that the matrix should have three rows.
 
 *** =instructions
-Construct a matrix with 3 rows containing the numbers 1 up to 9. Click the 'Submit Answer' button and look at the output in the console.
+Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
 
 *** =hint
-Read the assignment carefully, the answer is already given ;-).
+Read the assignment carefully, the answer is already given!
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -32,20 +33,21 @@ Read the assignment carefully, the answer is already given ;-).
 
 *** =sample_code
 ```{r eval=FALSE}
-# Construction of a matrix with 3 rows that contain the numbers 1 up to 9
+# Construct a matrix with 3 rows that contain the numbers 1 up to 9
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Construction of a matrix with 3 rows that contain the numbers 1 up to 9
+# Construct a matrix with 3 rows that contain the numbers 1 up to 9
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
 *** =sct
 ```{r eval=FALSE}
-test_function("matrix", c("data","byrow", "nrow"))
+test_function("matrix", c("data","byrow", "nrow"),
+              incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
 test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "There seems to be an issue with the matrix definition.")
+                     incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
 success_msg("Great! Continue to the next exercise.")
 ```
 
@@ -57,18 +59,15 @@ It is now time to get your hands dirty. In the following exercises you will anal
 
 In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
 
+In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+
 *** =instructions
-Construct a matrix with one row for each movie (thus 3 rows). The first column is for the US box office revenue, and the second column for the non-US box office revenue. Name the matrix `star_wars_matrix`.
+- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
+- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
 
 *** =hint
-Remember that you can construct a matrix containing the numbers 1 up to 9 with
-```
-matrix(1:9, byrow = TRUE, nrow = 3)
-```
-In this case, you do not want the numbers 1 up to 9, but the elements of the 3 Star Wars movies: this means the input vector is
-```
-c(new_hope,empire_strikes,return_jedi)
-```
+- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
+- `matrix(box_office, nrow = ..., by_row ...)` is a template of the solution for the second instruction.
 
 *** =pre_exercise_code
 ```{r eval=FALSE}
@@ -77,50 +76,47 @@ c(new_hope,empire_strikes,return_jedi)
 
 *** =sample_code
 ```{r eval=FALSE}
-# Box office Star Wars: In Millions!
-# The first element: US, the second element: Non-US 
+# Box office Star Wars (in millions!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Add your code below to Construct matrix
+# Create box_office
+box_office <- 
+
+# Construct star_wars_matrix
 star_wars_matrix <- 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-# Box office Star Wars: In Millions!
-# The first element: US, Second element: Non-US 
+# Box office Star Wars (in millions!)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Add your code below to Construct matrix
-star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE) 
+# Create box_office
+box_office <- c(new_hope, empire_strikes, return_jedi)
+
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
 ```
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
-test_function("matrix", c("data", "nrow", "byrow"))
 
-# Fix untill testwhat gets updated again
-# TODO: Fix in testwhat
-test_object("star_wars_matrix", eval = FALSE)
-test_what(
-  expect_equal(
-    dim(get("star_wars_matrix", get_solution_env())), 
-    dim(get("star_wars_matrix", .GlobalEnv))),
-  feedback_msg = 
-    paste("Be sure to use the `byrow` and `nrow` arguments of the function `matrix()`",
-          "to form a matrix of the correct dimensions: 3 rows and 2 columns."))
+test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+
+test_function("matrix", c("data", "nrow", "byrow"),
+              incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
 
 test_object("star_wars_matrix",
-            undefined_msg = "Please make sure to define a variable `star_wars_matrix`.",
-            incorrect_msg = "Did you assign the correct matrix containing the vector that holds all three movies to `star_wars_matrix`?")
+            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+
 success_msg("The force is actually with you! Continue to the next exercise.")
 ```
 
