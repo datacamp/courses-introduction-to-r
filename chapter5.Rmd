@@ -9,9 +9,9 @@ description : Most data sets you will be working with will be stored as data fra
 You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
 
 When doing a market research survey, however, you often have questions such as:
-- 'Are your married?' or 'yes/no' questions (= Boolean data type)
-- 'How old are you?' (= numeric data type)
-- 'What is your opinion on this product?' or other 'open-ended' questions (= character data type)
+- 'Are your married?' or 'yes/no' questions (`logical`)
+- 'How old are you?' (`numeric`)
+- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
 - ...
 
 The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
@@ -31,17 +31,19 @@ Just click 'Submit Answer' and witness the magic!
 
 *** =sample_code
 ```{r eval=FALSE}
-mtcars # Built-in R data set stored in a data frame
+# Print out built-in R data frame
+mtcars 
 ```
 
 *** =solution
 ```{r eval=FALSE}
-mtcars # Built-in R data set stored in a data frame<
+# Print out built-in R data frame
+mtcars 
 ```
 
 *** =sct
 ```{r eval=FALSE}
-test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output <code>mtcars</code>.");
+test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.");
 success_msg("Great! Continue to the next exercise.")
 ```
 
@@ -83,10 +85,10 @@ head(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-test_function("head", "x", incorrect_msg = "Have you specified the correct parameter in the <code>head()</code> function? Make sure to pass it a data set you want to inspect, <code>mtcars</code> in this case.")
+test_function("head", "x", incorrect_msg = "Have you specified the correct parameter in the `head()` function? Make sure to pass it a data set you want to inspect, `mtcars` in this case.")
 test_output_contains("head(mtcars)", 
-                     incorrect_msg = "Make sure that you use the <code>head()</code> function on <code>mtcars</code>.")
-success_msg("Wonderful! So, what do we have in this data set? For example, <code>hp</code> for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type <code>?mtcars</code> in the console and read the help page. Continue to the next exercise!");
+                     incorrect_msg = "Make sure that you use the `head()` function on `mtcars`.")
+success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
 ```
 
 
@@ -127,8 +129,8 @@ str(mtcars)
 
 *** =sct
 ```{r eval=FALSE}
-test_function("str","object",incorrect_msg = "Make sure to check the structure of the <code>mtcars</code> data set.")
-test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the <code>str()</code> function on <code>mtcars</code>.")
+test_function("str","object",incorrect_msg = "Make sure to check the structure of the `mtcars` data set.")
+test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the `str()` function on `mtcars`.")
 success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
 ```
 
@@ -191,10 +193,10 @@ planets_df 	<- data.frame(planets,type,diameter,rotation,rings)
 
 test_correct({
   test_object("planets_df",
-              undefined_msg = "Please make sure to define a variable <code>planets_df</code>.",
-              incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame <code>planets_df</code>. The correct order is planets, type, diameter, rotation and rings.")  
+              undefined_msg = "Please make sure to define a variable `planets_df`.",
+              incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame `planets_df`. The correct order is planets, type, diameter, rotation and rings.")  
 }, {
-  msg = "Do not change anything about the definition of the vector. Only add code to create the <code>planets_df</code> data frame!"
+  msg = "Do not change anything about the definition of the vector. Only add code to create the `planets_df` data frame!"
   test_object("planets", undefined_msg = msg, incorrect_msg = msg)
   test_object("type", undefined_msg = msg, incorrect_msg = msg)
   test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
@@ -240,10 +242,10 @@ str(planets_df)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_function("str", "object", incorrect_msg = "Make sure that you use the <code>str()</code> function on <code>planets_df</code>.")
-success_msg("Awesome! Now that you have a clear understanding of the <code>planets_df</code> data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+test_function("str", "object", incorrect_msg = "Make sure that you use the `str()` function on `planets_df`.")
+success_msg("Awesome! Now that you have a clear understanding of the `planets_df` data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
 ```
 
 
@@ -306,14 +308,14 @@ furthest_planets_df
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("closest_planets_df",
-            undefined_msg = "Please make sure to define a variable <code>closest_planets_df</code>.",
-            incorrect_msg = "Did you select the first three rows of <code>planets_df</code>?")
+            undefined_msg = "Please make sure to define a variable `closest_planets_df`.",
+            incorrect_msg = "Did you select the first three rows of `planets_df`?")
 test_object("furthest_planets_df",
-            undefined_msg = "Please make sure to define a variable <code>furthest_planets_df</code>.",
-            incorrect_msg = "Make sure that you select the last three rows of <code>planets_df</code>.")
+            undefined_msg = "Please make sure to define a variable `furthest_planets_df`.",
+            incorrect_msg = "Make sure that you select the last three rows of `planets_df`.")
 success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
 ```
 
@@ -359,11 +361,11 @@ furthest_planets_diameter <- planets_df[3:8,"diameter"]
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("furthest_planets_diameter",
-            undefined_msg = "Please make sure to define a variable <code>furthest_planets_diameter</code>.",
-            incorrect_msg = "Make sure that you select the last six rows and only the <code>diameter</code> column.")
+            undefined_msg = "Please make sure to define a variable `furthest_planets_diameter`.",
+            incorrect_msg = "Make sure that you select the last six rows and only the `diameter` column.")
 success_msg("Nice! Continue to the next exercise!")
 ```
 
@@ -413,11 +415,11 @@ rings_vector <- planets_df$rings
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector",
-            undefined_msg = "Please make sure to define a variable <code>rings_vector</code>.",
-            incorrect_msg = "It looks like <code>rings_vector</code> does not contain all the element of the <code>ring</code> variable of the <code>planets_df</code>.")
+            undefined_msg = "Please make sure to define a variable `rings_vector`.",
+            incorrect_msg = "It looks like `rings_vector` does not contain all the element of the `ring` variable of the `planets_df`.")
 success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
 ```
 
@@ -472,13 +474,13 @@ planets_with_rings_df <- planets_df[rings_vector,]
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite <code>planets_df</code> or <code>rings_vector</code>!"
+msg = "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("planets_with_rings_df",
-            undefined_msg = "Please make sure to define a variable <code>planets_with_rings_df</code>.",
-            incorrect_msg = "It looks like <code>planets_with_rings_df</code> does not contain all the data of the planets with rings.")
-test_student_typed("rings_vector", not_typed_msg = "Please use <code>rings_vector</code> to subset the data frame!")
+            undefined_msg = "Please make sure to define a variable `planets_with_rings_df`.",
+            incorrect_msg = "It looks like `planets_with_rings_df` does not contain all the data of the planets with rings.")
+test_student_typed("rings_vector", not_typed_msg = "Please use `rings_vector` to subset the data frame!")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
@@ -537,13 +539,13 @@ small_planets_df  <- subset(planets_df, subset = diameter < 1)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("small_planets_df",
-            undefined_msg = "Please make sure to define a variable <code>small_planets_df</code>.",
-            incorrect_msg = "It looks like <code>small_planets_df</code> does not contain all the correct subset of planets_df.")
-test_function("subset", incorrect_msg = "Please be sure to use the <code>subset</code> function!")
-success_msg("Great! Not only is the <code>subset()</code> function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+            undefined_msg = "Please make sure to define a variable `small_planets_df`.",
+            incorrect_msg = "It looks like `small_planets_df` does not contain all the correct subset of planets_df.")
+test_function("subset", incorrect_msg = "Please be sure to use the `subset` function!")
+success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
 ```
 
 
@@ -594,7 +596,7 @@ order(c(5,4,6,7))
 
 *** =sct
 ```{r eval=FALSE}
-success_msg("Great! Now let's use the <code>order()</code> function to sort your data frame!")
+success_msg("Great! Now let's use the `order()` function to sort your data frame!")
 ```
 
 
@@ -647,15 +649,15 @@ largest_first_df <- planets_df[positions, ]
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or overwrite the <code>planets_df</code> data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("positions",
-            undefined_msg = "Please make sure to define a variable <code>positions</code>.",
-            incorrect_msg = "It looks like <code>positions</code> does not contain all the correct ordering of the diameter column.")
+            undefined_msg = "Please make sure to define a variable `positions`.",
+            incorrect_msg = "It looks like `positions` does not contain all the correct ordering of the diameter column.")
 test_object("largest_first_df",
-            undefined_msg = "Please make sure to define a variable <code>largest_first_df</code>.",
-            incorrect_msg = "It looks like <code>largest_first_df</code> does not contain the positions of the ordered <code>planets_df</code>.")
-success_msg("Wonderful! What does the resulting data frame look like? Type <code>largest_first_df</code> in the console and find out! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+            undefined_msg = "Please make sure to define a variable `largest_first_df`.",
+            incorrect_msg = "It looks like `largest_first_df` does not contain the positions of the ordered `planets_df`.")
+success_msg("Wonderful! What does the resulting data frame look like? Type `largest_first_df` in the console and find out! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
 ```
 
 

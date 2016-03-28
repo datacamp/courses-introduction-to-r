@@ -127,13 +127,13 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or change the definiton of the variables <code>my_vector</code>, <code>my_matrix</code> or <code>my_df</code>!"
+msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            undefined_msg = "Please make sure to define a variable <code>my_list</code>.",
-            incorrect_msg = "It looks like <code>my_list</code> does not contain the correct elements.")
+            undefined_msg = "Please make sure to define a variable `my_list`.",
+            incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
 success_msg("Wonderful! Your skillset is growing at a staggering pace! Head over to the next exercise.")
 ```
 
@@ -207,16 +207,16 @@ my_list
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or change the definiton of the variables <code>my_vector</code>, <code>my_matrix</code> or <code>my_df</code>!"
+msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            undefined_msg = "Please make sure to define a variable <code>my_list</code>.",
-            incorrect_msg = "It looks like <code>my_list</code> does not contain the correct elements.")
+            undefined_msg = "Please make sure to define a variable `my_list`.",
+            incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
 test_object("my_list", eq_condition = "equal",
-            incorrect_msg = "It looks like <code>my_list</code> does not contain the correct naming for the components.");
-test_output_contains("my_list", incorrect_msg = "Don't forget to print <code>my_list</code> to the console! Simply add <code>my_list</code> on a new line in the editor.")
+            incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components.");
+test_output_contains("my_list", incorrect_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
 success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
 ```
 
@@ -274,10 +274,10 @@ msg = "Do not remove or change the definiton of the pre-set variables!"
 test_object("reviews", undefined_msg = msg, incorrect_msg = msg)
 test_object("actors", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list",
-            undefined_msg = "Please make sure to define a variable <code>shining_list</code>.",
-            incorrect_msg = "It looks like <code>shining_list</code> does not contain the correct elements.")
+            undefined_msg = "Please make sure to define a variable `shining_list`.",
+            incorrect_msg = "It looks like `shining_list` does not contain the correct elements.")
 test_object("shining_list", eq_condition = "equal",
-            incorrect_msg = "It looks like <code>shining_list</code> does not contain the correct naming for the components.");
+            incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components.");
 success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
 ```
 
@@ -347,14 +347,14 @@ second_review <- shining_list$reviews[2,]
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or change the definiton of <code>shining_list</code>, which is pre-loaded in the workspace!"
+msg = "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("last_actor", 
-            undefined_msg = "Please make sure to define a variable <code>last_actor</code>.",
-            incorrect_msg = "Looks like <code>last_actor</code> does not equal the last actor.")
+            undefined_msg = "Please make sure to define a variable `last_actor`.",
+            incorrect_msg = "Looks like `last_actor` does not equal the last actor.")
 test_object("second_review",
-            undefined_msg = "Please make sure to define a variable <code>second_review</code>.",
-            incorrect_msg = "It looks like <code>second_review</code> does not contain all the information regarding the second review.")
+            undefined_msg = "Please make sure to define a variable `second_review`.",
+            incorrect_msg = "It looks like `second_review` does not contain all the information regarding the second review.")
 success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
 ```
 
@@ -424,14 +424,14 @@ str(shining_list_full)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not remove or change the definiton of <code>shining_list</code>, which is pre-loaded in the workspace!"
+msg = "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full",
-            undefined_msg = "Please make sure to define a variable <code>shining_list_full</code>.",
-            incorrect_msg = "It looks like <code>shining_list_full</code> does not contain all the correct elements. It should contain the <code>year</code> (1980) as well!")
+            undefined_msg = "Please make sure to define a variable `shining_list_full`.",
+            incorrect_msg = "It looks like `shining_list_full` does not contain all the correct elements. It should contain the `year` (1980) as well!")
 test_object("shining_list_full", eq_condition = "equal",
-            incorrect_msg = "It looks like <code>shining_list_full</code> does not contain the correct naming for all the components.");
-test_function("str", "object", incorrect_msg = "Make sure to inspect the structure of <code>shining_list_full</code>.")
+            incorrect_msg = "It looks like `shining_list_full` does not contain the correct naming for all the components.");
+test_function("str", "object", incorrect_msg = "Make sure to inspect the structure of `shining_list_full`.")
 success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other courses and DataCamp and become a true data science expert!")
 ```
 

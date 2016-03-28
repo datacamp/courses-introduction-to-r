@@ -45,7 +45,7 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 *** =sct
 ```{r eval=FALSE}
 test_output_contains("7", incorrect_msg = "Do not remove the line of R code that calculates the sum of 3 and 4. Instead, just add another line that calculates the sum of 6 and 12.")
-test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 6 and 12. Do not start the line with a <code>#</code>, otherwise your R code is not executed!")
+test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 6 and 12. Do not start the line with a `#`, otherwise your R code is not executed!")
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
@@ -179,9 +179,9 @@ x
 
 *** =sct
 ```{r eval=FALSE}
-test_object("x", undefined_msg = "Make sure to define a variable <code>x</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>x</code>.") 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? <code>x <- 42</code> did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+test_object("x", undefined_msg = "Make sure to define a variable `x`.",
+            incorrect_msg = "Make sure that you assign the correct value to `x`.") 
+success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
 
@@ -224,10 +224,10 @@ my_apples
 *** =sct
 ```{r eval=FALSE}
 test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable <code>my_apples</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_apples</code>.")
+            undefined_msg = "Please make sure to define a variable `my_apples`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
 test_output_contains("my_apples", 
-                     incorrect_msg = "Have you explicitly told R to print out the <code>my_apples</code> variable to the console?")
+                     incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
 success_msg("Great! Continue to the next exercise!")
 ```
 
@@ -282,17 +282,17 @@ my_fruit <- my_apples + my_oranges
 *** =sct
 ```{r eval=FALSE}
 test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable <code>my_apples</code>.",
-            incorrect_msg = "Do not change the assignment of the <code>my_apples</code> variable!")
+            undefined_msg = "Please make sure to define a variable `my_apples`.",
+            incorrect_msg = "Do not change the assignment of the `my_apples` variable!")
 test_object("my_oranges", 
-            undefined_msg = "Have you defined a variable <code>my_oranges</code>?",
-            incorrect_msg = "Have you assigned the correct value to the variable <code>my_oranges</code>?")
+            undefined_msg = "Have you defined a variable `my_oranges`?",
+            incorrect_msg = "Have you assigned the correct value to the variable `my_oranges`?")
 test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>. Try again")
+                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`. Try again")
 test_object("my_fruit",
-            undefined_msg = "Please make sure to define a variable <code>my_fruit</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_fruit</code>.")
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change <code>my_apples</code> to equal 12 instead of 5 and rerun the script, <code>my_fruit</code> will automatically update as well. Continue to the next exercise.")
+            undefined_msg = "Please make sure to define a variable `my_fruit`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
+success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
 ```
 
 
@@ -351,13 +351,13 @@ my_fruit
 ```{r eval=FALSE}
 test_error()
 test_object("my_oranges",
-            undefined_msg = "Please make sure to define a variable <code>my_oranges</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_oranges</code>. Strings and numbers are different things!")
+            undefined_msg = "Please make sure to define a variable `my_oranges`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_oranges`. Strings and numbers are different things!")
 test_output_contains("my_apples + my_oranges", 
-                     incorrect_msg = "The output does not contain the result of adding <code>my_apples</code> and <code>my_oranges</code>.")
+                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`.")
 test_object("my_fruit", 
-            undefined_msg = "Please make sure to define a variable <code>my_fruit</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_fruit</code>.")
+            undefined_msg = "Please make sure to define a variable `my_fruit`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
@@ -416,14 +416,14 @@ my_logical <- FALSE
 *** =sct
 ```{r eval=FALSE}
 test_object("my_numeric", 
-            undefined_msg = "Please make sure to define a variable <code>my_numeric</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_numeric.</code>")
+            undefined_msg = "Please make sure to define a variable `my_numeric`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_numeric.`")
 test_object("my_character",
-            undefined_msg = "Please make sure to define a variable <code>my_character</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_character</code>. Do not forget the quotes.")
+            undefined_msg = "Please make sure to define a variable `my_character`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_character`. Do not forget the quotes.")
 test_object("my_logical",
-            undefined_msg = "Please make sure to define a variable <code>my_logical</code>.",
-            incorrect_msg = "Make sure that you assign the correct value to <code>my_logical</code>.") 
+            undefined_msg = "Please make sure to define a variable `my_logical`.",
+            incorrect_msg = "Make sure that you assign the correct value to `my_logical`.") 
 success_msg("Great work! Continue to the next exercise.")
 ```
 
@@ -480,11 +480,11 @@ test_object("my_numeric")
 test_object("my_character")
 test_object("my_logical")
 test_output_contains("class(my_numeric)",
-                     incorrect_msg = "The output does not contain the class of <code>my_numeric</code>. Try again.")
+                     incorrect_msg = "The output does not contain the class of `my_numeric`. Try again.")
 test_output_contains("class(my_character)",
-                     incorrect_msg = "The output does not contain the class of <code>my_character</code>. Give it another try.")
+                     incorrect_msg = "The output does not contain the class of `my_character`. Give it another try.")
 test_output_contains("class(my_logical)",
-                     incorrect_msg = "The output does not contain the class of <code>my_logical</code>.")
+                     incorrect_msg = "The output does not contain the class of `my_logical`.")
 success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter and get immersed in the world of vectors!")
 ```
 

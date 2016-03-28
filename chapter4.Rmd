@@ -91,9 +91,9 @@ factor_gender_vector <- factor(gender_vector)
 *** =sct
 ```{r eval=FALSE}
 test_object("factor_gender_vector",
-            undefined_msg = "Please make sure to define a variable <code>factor_gender_vector</code>.",
-            incorrect_msg = "Did you assign the factor of <code>gender_vector</code> to <code>factor_gender_vector</code>?")
-success_msg("Great! If you want to find out more about the <code>factor()</code> function, do not hesitate to type <code>?factor</code> in the console. This will open up a help page. Continue to the next exercise.");
+            undefined_msg = "Please make sure to define a variable `factor_gender_vector`.",
+            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
+success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
 
@@ -211,7 +211,7 @@ factor_survey_vector
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change the definition of <code>survey_vector</code>!"
+msg = "Do not change the definition of `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 test_function("factor","x",allow_extra = FALSE,
@@ -219,7 +219,7 @@ test_function("factor","x",allow_extra = FALSE,
               incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal",
             undefined_msg = msg,
-            incorrect_msg = paste("Did you assign the correct factor levels to <code>factor_survey_vector</code>?",
+            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`?",
                                   "Remember that R is case sensitive. Also make sure to follow the correct order!"))
 success_msg("Wonderful! Proceed to the next exercise.")
 ```
@@ -277,13 +277,13 @@ summary(factor_survey_vector)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change anything about the first four lines that define <code>survey_vector</code> and <code>factor_survey_vector</code>."
+msg = "Do not change anything about the first four lines that define `survey_vector` and `factor_survey_vector`."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_function("summary", "object", 
-              incorrect_msg = c("Did you call the summary function on the <code>survey_vector</code>?",
-                                "Did you call the summary function on the <code>factor_survey_vector</code>?"))
-success_msg("Nice! Have a look at the output. The fact that you identified <code>\"Male\"</code> and <code>\"Female\"</code> as factor levels in <code>factor_survey_vector</code> enables R to show the number of elements for each category.")
+              incorrect_msg = c("Did you call the summary function on the `survey_vector`?",
+                                "Did you call the summary function on the `factor_survey_vector`?"))
+success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
 ```
 
 
@@ -335,7 +335,7 @@ factor_survey_vector[1] > factor_survey_vector[2]
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change anything about the first four lines that define <code>survey_vector</code> and <code>factor_survey_vector</code>."
+msg = "Do not change anything about the first four lines that define `survey_vector` and `factor_survey_vector`."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("factor_survey_vector[1] > factor_survey_vector[2]", incorrect_msg = "Do not change the final command, we want the battle of the sexes be sorted once and for all!")
@@ -386,7 +386,7 @@ speed_vector <- c("Fast", "Slow", "Slow", "Fast", "Ultra-fast")
 *** =sct
 ```{r eval=FALSE}
 test_object("speed_vector", 
-            undefined_msg = "Please make sure to define a variable <code>speed_vector</code>.",
+            undefined_msg = "Please make sure to define a variable `speed_vector`.",
             incorrect_msg = "Make sure that you assigned the correct vector to speed_vector. Remember that R is case sensitive!")
 success_msg("A job well done! Continue to the next exercise.")
 ```
@@ -444,16 +444,16 @@ summary(factor_speed_vector)
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change anything about the command that specifies the <code>speed_vector</code> variable."
+msg = "Do not change anything about the command that specifies the `speed_vector` variable."
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_correct({
   test_object("factor_speed_vector", eq_condition = "equal",
-              undefined_msg = "Please make sure to define a variable <code>factor_speed_vector</code>.",
+              undefined_msg = "Please make sure to define a variable `factor_speed_vector`.",
               incorrect_msg = "Make sure that you assigned the correct factor to factor_speed_vector. Pay attention to the correct order of the level's argument.")
 },{
   test_function("factor", c("x", "levels", "ordered"))
 })
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the <code><</code> sign. Continue to the next exercise.");
+success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.");
 ```
 
 
@@ -505,12 +505,12 @@ compare_them
 
 *** =sct
 ```{r eval=FALSE}
-msg = "Do not change anything about the commands that define <code>speed_vector</code> and <code>factor_speed_vector</code>!"
+msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("compare_them",
-            undefined_msg = "Please make sure to define a variable <code>compare_them</code>.",
-            incorrect_msg = "It looks like <code>compare_them</code> does not compare the data analysts correctly. Make sure to check the indices again.");
+            undefined_msg = "Please make sure to define a variable `compare_them`.",
+            incorrect_msg = "It looks like `compare_them` does not compare the data analysts correctly. Make sure to check the indices again.");
 success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vector, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 ```
 
