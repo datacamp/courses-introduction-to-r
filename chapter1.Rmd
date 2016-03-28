@@ -205,7 +205,7 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =sample_code
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called my_apples
+# Assign the value 5 to the variable my_apples
 
 
 # Print out the value of the variable my_apples
@@ -214,7 +214,7 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =solution
 ```{r eval=FALSE}
-# Assign the value 5 to the variable called my_apples
+# Assign the value 5 to the variable my_apples
 my_apples <- 5
 
 # Print out the value of the variable my_apples
