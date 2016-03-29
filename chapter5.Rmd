@@ -25,24 +25,24 @@ Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](
 Just click 'Submit Answer' and witness the magic!
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Print out built-in R data frame
 mtcars 
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Print out built-in R data frame
 mtcars 
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.");
 success_msg("Great! Continue to the next exercise.")
 ```
@@ -67,24 +67,24 @@ Give an overview of the [`mtcars`](http://www.rdocumentation.org/packages/datase
 Use the [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) function and ask the head of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Have a quick look at your data
 
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Have a quick look at your data
 head(mtcars)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 test_function("head", "x", incorrect_msg = "Have you specified the correct parameter in the `head()` function? Make sure to pass it a data set you want to inspect, `mtcars` in this case.")
 test_output_contains("head(mtcars)", 
                      incorrect_msg = "Make sure that you use the `head()` function on `mtcars`.")
@@ -112,23 +112,23 @@ Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/d
 Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function with [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) as input!
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Investigate the structure of the mtcars data set to get started!
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Investigate the structure of the mtcars data set to get started!
 str(mtcars)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 test_function("str","object",incorrect_msg = "Make sure to check the structure of the `mtcars` data set.")
 test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the `str()` function on `mtcars`.")
 success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
@@ -158,12 +158,12 @@ Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/fu
 The `data.frame(col1, col2, col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are (in this order): `planets`, `type`, `diameter`, `rotation` and `rings`.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -176,7 +176,7 @@ planets_df  <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -189,7 +189,7 @@ planets_df 	<- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 
 test_correct({
   test_object("planets_df",
@@ -220,7 +220,7 @@ Use the function [`str()`](http://www.rdocumentation.org/packages/utils/function
 This one is easy, no hints this time!
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -230,18 +230,18 @@ planets_df <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Check the structure of planets_df
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Check the structure of planets_df
 str(planets_df)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_function("str", "object", incorrect_msg = "Make sure that you use the `str()` function on `planets_df`.")
@@ -267,7 +267,7 @@ Sometimes you want to select all elements of a row or column. To do this, you ca
 `planets_df[1:3,]` will select all elements of the first three rows.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -277,7 +277,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
 # All data from the first three planets
@@ -292,7 +292,7 @@ furthest_planets_df
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
 # All data from the first three planets
@@ -307,7 +307,7 @@ furthest_planets_df
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("closest_planets_df",
@@ -334,7 +334,7 @@ Select for the last six rows only the diameter and assign this selection to `fur
 You select elements of a data frame conveniently with the square brackets. Select `3:8` for the rows, and `"diameter"` for the columns.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -344,7 +344,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
 # Do selection on both rows and columns
@@ -352,7 +352,7 @@ furthest_planets_diameter <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
 # Do selection on both rows and columns
@@ -360,7 +360,7 @@ furthest_planets_diameter <- planets_df[3:8,"diameter"]
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("furthest_planets_diameter",
@@ -388,7 +388,7 @@ data_frame_name$variable_name
 `data_frame_name$variable_name` is the most convenient way to select a variable from a data frame. In this case, the data frame of choice is `planets_df` and the variable of choice is `rings`.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -398,7 +398,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # Create the rings_vector
@@ -406,7 +406,7 @@ rings_vector <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # Create the rings_vector
@@ -414,7 +414,7 @@ rings_vector <- planets_df$rings
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector",
@@ -446,7 +446,7 @@ Assign to `planets_with_rings_df` all data in the `planets_df`data set for the p
 Select elements from `planets_df` by using the square brackets. The `rings_vector` contains Boolean values and R will select only those rows/columns were the vector element is `TRUE`. In this case, you want to select rows based on `rings_vector` and select all the columns.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -457,7 +457,7 @@ rings_vector <- planets_df$rings
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # planets_df and rings_vector are pre-loaded in your workspace
 
 # Select the information on planets with rings:
@@ -465,7 +465,7 @@ planets_with_rings_df <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # planets_df and rings_vector are pre-loaded in your workspace
 
 # Select the information on planets with rings:
@@ -473,7 +473,7 @@ planets_with_rings_df <- planets_df[rings_vector,]
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -512,7 +512,7 @@ Create a data frame `small_planets_df` with planets that have a diameter smaller
 `subset(planets_df, subset = ...)` is part of the solution.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -522,7 +522,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # Create small_planets_df
@@ -530,7 +530,7 @@ small_planets_df  <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # Create small_planets_df
@@ -538,7 +538,7 @@ small_planets_df  <- subset(planets_df, subset = diameter < 1)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("small_planets_df",
@@ -576,17 +576,17 @@ Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/func
 Just play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console!
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Just play around with the order function in the console to see how it works!
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Just play around with the order function in the console to see how it works!
 # Some examples:
 order(1:10)
@@ -595,7 +595,7 @@ order(c(5,4,6,7))
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 success_msg("Great! Now let's use the `order()` function to sort your data frame!")
 ```
 
@@ -616,7 +616,7 @@ order(planets_df$diameter, decreasing = TRUE)
 will give you the ordering of the variable diameter from largest to smallest. This is what you should assign to positions. Use the variable positions then to select from the data frame `planets_df`!
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
@@ -626,7 +626,7 @@ planets_df   <- data.frame(planets,type,diameter,rotation,rings)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # What is the correct ordering based on the planets_df$diameter variable?
@@ -637,7 +637,7 @@ largest_first_df <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # planets_df is pre-loaded in your workspace
 
 # What is the correct ordering based on the planets_df$diameter variable?
@@ -648,7 +648,7 @@ largest_first_df <- planets_df[positions, ]
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("positions",

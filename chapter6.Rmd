@@ -21,22 +21,22 @@ Click 'Submit Answer' to start learning everything about lists!
 Just click the 'Submit Answer' button.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Just click the 'Submit Answer' button.
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Just click the 'Submit Answer' button.
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 success_msg("Ready, set, go! Continue to the next exercise")
 ```
 
@@ -57,22 +57,22 @@ Click 'Submit Answer' to start the first exercise on lists.
 Click 'Submit Answer' to start the first exercise on lists.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Click 'Submit Answer' to start the first exercise on lists.
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Click 'Submit Answer' to start the first exercise on lists.
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 success_msg("Cool. Let's get our hands dirty!")
 ```
 
@@ -95,12 +95,12 @@ Construct a list, named `my_list`, that contains the variables `my_vector`, `my_
 Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
@@ -113,7 +113,7 @@ my_list <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
@@ -126,7 +126,7 @@ my_list <- list(my_vector, my_matrix, my_df)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
@@ -169,12 +169,12 @@ my_list <- list(vec = my_vector)
 Add the other two components in a similar fashion.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 # no pec
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
@@ -190,7 +190,7 @@ my_list <- list(my_vector, my_matrix, my_df)
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # Vector with numerics from 1 up to 10
 my_vector <- 1:10 
 # Matrix with numerics from 1 up to 9
@@ -206,7 +206,7 @@ my_list
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
@@ -244,7 +244,7 @@ shining_list <- list(moviename = "The Shining")
 Can you complete the rest? You still have to add the actors (stored in the vector `actors`) and reviews (stored in the vector `reviews`)
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
 sources     <- c("IMDb1","IMDb2","IMDb3")
 comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
@@ -253,7 +253,7 @@ reviews     <- data.frame(scores,sources,comments)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # The vectors actors and reviews are pre-loaded in the workspace
 
 # Create the list shining_list
@@ -261,7 +261,7 @@ shining_list <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # The vectors actors and reviews are pre-loaded in the workspace
 
 # Create the list shining_list
@@ -269,7 +269,7 @@ shining_list <- list(moviename = "The Shining", actors = actors, reviews = revie
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or change the definiton of the pre-set variables!"
 test_object("reviews", undefined_msg = msg, incorrect_msg = msg)
 test_object("actors", undefined_msg = msg, incorrect_msg = msg)
@@ -314,7 +314,7 @@ Besides selecting components, you often need to select specific elements out of 
 - You can select the information of the second review with `shining_list$reviews[2, ]`.
 
 *** =pre_exercise_code
-```{r eval=FALSE}
+```{r}
 actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
 sources     <- c("IMDb1","IMDb2","IMDb3")
 comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
@@ -324,7 +324,7 @@ shining_list <- list(moviename="The Shining",actors=actors, reviews=reviews)
 ```
 
 *** =sample_code
-```{r eval=FALSE}
+```{r}
 # shining_list is already pre-loaded in the workspace
 
 # Define last_actor
@@ -335,7 +335,7 @@ second_review <-
 ```
 
 *** =solution
-```{r eval=FALSE}
+```{r}
 # shining_list is already pre-loaded in the workspace
 
 # Define last_actor
@@ -346,7 +346,7 @@ second_review <- shining_list$reviews[2,]
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("last_actor", 
@@ -400,7 +400,7 @@ shining_list <- list(moviename="The Shining",actors=actors, reviews=reviews)
 
 *** =sample_code
 
-```{r eval=FALSE}
+```{r}
 # shining_list, the list containing moviename, actors and reviews, is pre-loaded in the workspace
 
 # We forgot something; add the year to shining_list
@@ -412,7 +412,7 @@ shining_list_full <-
 
 *** =solution
 
-```{r eval=FALSE}
+```{r}
 # shining_list, the list containing moviename, actors and reviews, is pre-loaded in the workspace
 
 # We forgot something; add the year to shining_list:
@@ -423,7 +423,7 @@ str(shining_list_full)
 ```
 
 *** =sct
-```{r eval=FALSE}
+```{r}
 msg = "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full",
