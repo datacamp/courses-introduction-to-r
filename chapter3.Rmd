@@ -446,8 +446,7 @@ You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/fun
 
 *** =pre_exercise_code
 ```{r}
-download.file("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.rds", "all_wars_matrix.rds")
-all_wars_matrix <- readRDS("all_wars_matrix.rds")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ```
 
 *** =sample_code
@@ -511,8 +510,7 @@ You can select the entire second column of a matrix `my_matrix` with `my_matrix[
 
 *** =pre_exercise_code
 ```{r}
-download.file("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.rds", "all_wars_matrix.rds")
-all_wars_matrix <- readRDS("all_wars_matrix.rds")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ```
 
 *** =sample_code
@@ -586,8 +584,7 @@ The number of visitors is equal to `all_wars_matrix` divided by 5.
 
 *** =pre_exercise_code
 ```{r}
-download.file("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.rds", "all_wars_matrix.rds")
-all_wars_matrix <- readRDS("all_wars_matrix.rds")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ``` 
 
 *** =sample_code
@@ -646,8 +643,7 @@ _Those who are familiar with matrices should note that this is not the standard 
 
 *** =pre_exercise_code
 ```{r}
-download.file("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.rds", "all_wars_matrix.rds")
-all_wars_matrix <- readRDS("all_wars_matrix.rds")
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi", "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 col_titles <- c("US","non-US")
 ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nrow = 6, byrow = TRUE, dimnames = list(movie_names,col_titles))

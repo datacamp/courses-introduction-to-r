@@ -43,7 +43,7 @@ mtcars
 
 *** =sct
 ```{r}
-test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.");
+test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
 success_msg("Great! Continue to the next exercise.")
 ```
 
@@ -55,16 +55,15 @@ Wow, that is a lot of cars!
 
 Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
 
-So how to do this in R?
-Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame (or any R object you pass to it). Unoriginally, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
+So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Unoriginally, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
 
 Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set.
 
 *** =instructions
-Give an overview of the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set by printing its first observations and the corresponding header.
+Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set to have a look at the header and the first observations.
 
 *** =hint
-Use the [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) function and ask the head of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+`head(mtcars)` will show the first observations of the `mtcars` data frame.
 
 *** =pre_exercise_code
 ```{r}
@@ -73,21 +72,20 @@ Use the [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) 
 
 *** =sample_code
 ```{r}
-# Have a quick look at your data
+# Call head() on mtcars
 
 ```
 
 *** =solution
 ```{r}
-# Have a quick look at your data
+# Call head() on mtcars
 head(mtcars)
 ```
 
 *** =sct
 ```{r}
-test_function("head", "x", incorrect_msg = "Have you specified the correct parameter in the `head()` function? Make sure to pass it a data set you want to inspect, `mtcars` in this case.")
-test_output_contains("head(mtcars)", 
-                     incorrect_msg = "Make sure that you use the `head()` function on `mtcars`.")
+test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
 success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
 ```
 
@@ -99,8 +97,8 @@ Another method that is often used to get a rapid overview of your data is the fu
 
 - The total number of observations (e.g. 32 car types)
 - The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. mpg, cyl ... )
-- The data type of each variable (e.g. num for car features)
+- A full list of the variables names (e.g. `mpg`, `cyl` ... )
+- The data type of each variable (e.g. `num`)
 - The first observations
 
 Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.
@@ -109,7 +107,7 @@ Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/st
 Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
 
 *** =hint
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function with [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) as input!
+Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
 
 *** =pre_exercise_code
 ```{r}
@@ -118,19 +116,18 @@ Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) fu
 
 *** =sample_code
 ```{r}
-# Investigate the structure of the mtcars data set to get started!
+# Investigate the structure of mtcars
 ```
 
 *** =solution
 ```{r}
-# Investigate the structure of the mtcars data set to get started!
+# Investigate the structure of mtcars
 str(mtcars)
 ```
 
 *** =sct
 ```{r}
-test_function("str","object",incorrect_msg = "Make sure to check the structure of the `mtcars` data set.")
-test_output_contains("str(mtcars)", incorrect_msg = "Make sure that you use the `str()` function on `mtcars`.")
+test_output_contains("str(mtcars)", incorrect_msg = "Have you correctly called `str()` on `mtcars`?")
 success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
 ```
 
@@ -138,7 +135,7 @@ success_msg("Nice work! Can you find all the information that is listed in the e
 --- type:NormalExercise xp:100 skills:1
 ## Creating a data frame 
 
-Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. So put your jet pack on because it is time for some good old fashioned space exploration! 
+Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. Put your jet pack on because it is time for some space exploration! 
 
 As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
 
@@ -147,15 +144,19 @@ As a first goal, you want to construct a data frame that describes the main char
 - The planet's rotation across the sun relative to that of the Earth.
 - If the planet has rings or not (TRUE or FALSE).
 
-After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `planets`, `type`, `diameter`, `rotation` and `rings` (see editor, note that an element of one vector is linked to the element of another vector based on its position).
+After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.
 
-You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you should provide the above mentioned vectors as input that should become the different columns of that data frame. Therefore, it is important that each vector used to construct a data frame has an equal length. But do not forget that it is possible (and likely) that they contain different types of data.
+You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
 *** =instructions
-Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct a data frame. Call this variable `planets_df`.
+Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
 
 *** =hint
-The `data.frame(col1, col2, col3,...)` function takes as arguments the vectors that will become the columns of the data frame. The columns in this case are (in this order): `planets`, `type`, `diameter`, `rotation` and `rings`.
+Your `data.frame()` call starts as follows:
+```
+data.frame(planets, type, diameter)
+```
+Can you finish it?
 
 *** =pre_exercise_code
 ```{r}
@@ -164,45 +165,44 @@ The `data.frame(col1, col2, col3,...)` function takes as arguments the vectors t
 
 *** =sample_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
+# Definition of vectors
+name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create the data frame:
-planets_df  <-
+# Create a data frame from the vectors
+planets_df <-
 
 ```
 
 *** =solution
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
+# Definition of vectors
+name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create the data frame:
-planets_df 	<- data.frame(planets,type,diameter,rotation,rings)
-
+# Create a data frame from the vectors
+planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
 *** =sct
 ```{r}
+msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+test_object("name", undefined_msg = msg, incorrect_msg = msg)
+test_object("type", undefined_msg = msg, incorrect_msg = msg)
+test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
+test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
+test_object("rings", undefined_msg = msg, incorrect_msg = msg)
 
-test_correct({
-  test_object("planets_df",
-              undefined_msg = "Please make sure to define a variable `planets_df`.",
-              incorrect_msg = "Make sure to assign the correct order of arguments to the data.frame `planets_df`. The correct order is planets, type, diameter, rotation and rings.")  
-}, {
-  msg = "Do not change anything about the definition of the vector. Only add code to create the `planets_df` data frame!"
-  test_object("planets", undefined_msg = msg, incorrect_msg = msg)
-  test_object("type", undefined_msg = msg, incorrect_msg = msg)
-  test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
-  test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
-  test_object("rings", undefined_msg = msg, incorrect_msg = msg)
-})
+test_object("planets_df",
+            incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
 
 success_msg("Great job! Continue to the next exercise. The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
 ```
@@ -211,22 +211,17 @@ success_msg("Great job! Continue to the next exercise. The logical next step, as
 --- type:NormalExercise xp:100 skills:1
 ## Creating a data frame (2)
 
-Make sure that you have 8 observations and 5 variables. The `planets_df` data frame has been made available in the workspace, so you can directly use it.
+The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
 
 *** =instructions
-Use the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
+Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
 
 *** =hint
-This one is easy, no hints this time!
+`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
@@ -242,9 +237,9 @@ str(planets_df)
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_function("str", "object", incorrect_msg = "Make sure that you use the `str()` function on `planets_df`.")
+test_output_contains("str(planets_df)", incorrect_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
 success_msg("Awesome! Now that you have a clear understanding of the `planets_df` data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
 ```
 
@@ -254,68 +249,51 @@ success_msg("Awesome! Now that you have a clear understanding of the `planets_df
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
 
-- `my_data_frame[1,2]` selects from the first row in `my_data_frame` the second element.
-- `my_data_frame[1:3,2:4]` selects rows 1,2,3 and columns 2,3,4 in `my_data_frame`.
+- `my_df[1,2]` selects the value at the first row and select element in `my_df`.
+- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
 
-Sometimes you want to select all elements of a row or column. To do this, you can use the following. `my_data_frame[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
 
 *** =instructions
-- Create the data frame `closest_planets_df` that contains all data on the first three planets.
-- Create the data frame `furthest_planets_df` that contains all data on the last three planets.
+- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
+- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
 
 *** =hint
-`planets_df[1:3,]` will select all elements of the first three rows.
+To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
-# All data from the first three planets
-closest_planets_df <- 
+# Print out diameter of of Mercury (row 1, column 3)
 
-# All data from the last three planets
-furthest_planets_df <- 
 
-# Have a look:
-closest_planets_df
-furthest_planets_df
+# Print out data for Mars (entire fourth row)
+
 ```
 
 *** =solution
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
-# All data from the first three planets
-closest_planets_df <- planets_df[1:3, ]
+# Print out diameter of of Mercury (row 1, column 3)
+planets_df[1,3]
 
-# All data from the last three planets
-furthest_planets_df <- planets_df[6:8, ]
-
-# Have a look:
-closest_planets_df
-furthest_planets_df
+# Print out data for Mars (entire fourth row)
+planets_df[4, ]
 ```
 
 *** =sct
 ```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("closest_planets_df",
-            undefined_msg = "Please make sure to define a variable `closest_planets_df`.",
-            incorrect_msg = "Did you select the first three rows of `planets_df`?")
-test_object("furthest_planets_df",
-            undefined_msg = "Please make sure to define a variable `furthest_planets_df`.",
-            incorrect_msg = "Make sure that you select the last three rows of `planets_df`.")
+test_output_contains("planets_df[1,3]", incorrect_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+test_output_contains("planets_df[4, ]", incorrect_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
 success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
 ```
 
@@ -325,47 +303,50 @@ success_msg("Great! Apart from selecting elements from your data frame by index,
 
 Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
 
-Maybe you want to select only the first 3 elements of the variable `type`. One way to do this is: `planets_df[1:3,1]`. A possible disadvantage of this approach is that you have to know (or look up) the position of the variable `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name, e.g. `planets_df[1:3,"type"]`.
+Suppose you want to select the first three elements of the `type` column. One way to do this is
+
+```
+planets_df[1:3,1]
+```
+
+A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+
+```
+planets_df[1:3,"type"]
+```
 
 *** =instructions
-Select for the last six rows only the diameter and assign this selection to `furthest_planets_diameter`.
+Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
 
 *** =hint
-You select elements of a data frame conveniently with the square brackets. Select `3:8` for the rows, and `"diameter"` for the columns.
+You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
-# Do selection on both rows and columns
-furthest_planets_diameter <- 
+# Select first 5 values of diameter column
+
 ```
 
 *** =solution
 ```{r}
 # The planets_df data frame from the previous exercise is pre-loaded
 
-# Do selection on both rows and columns
-furthest_planets_diameter <- planets_df[3:8,"diameter"]
+# Select first 5 values of diameter column
+planets_df[1:5, "diameter"]
 ```
 
 *** =sct
 ```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("furthest_planets_diameter",
-            undefined_msg = "Please make sure to define a variable `furthest_planets_diameter`.",
-            incorrect_msg = "Make sure that you select the last six rows and only the `diameter` column.")
+test_output_contains("planets_df[1:5, \"diameter\"]", incorrect_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
 success_msg("Nice! Continue to the next exercise!")
 ```
 
@@ -373,44 +354,50 @@ success_msg("Nice! Continue to the next exercise!")
 --- type:NormalExercise xp:100 skills:1
 ## Only planets with rings
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `rings`, both `planets_df[,5]` and `planets_df[,"rings"]` do the trick.
-
-However, there is a short-cut. Use the `$`-sign to tell R that it only has to look up all the elements of the variable behind the sign: 
+You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
 
 ```
-data_frame_name$variable_name
+planets_df[,3]
+planets_df[,"diameter"]
+```
+
+However, there is a short-cut. If your columns have names, you can use the `$` sign:
+
+```
+planets_df$diameter
 ```
 
 *** =instructions
-- Make use of the `$`-sign to create the variable `rings_vector` that contains all elements of the `rings` variable in the `planets_df` data frame.
+- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
+- Print out `rings_vector` to see if you got it right.
 
 *** =hint
-`data_frame_name$variable_name` is the most convenient way to select a variable from a data frame. In this case, the data frame of choice is `planets_df` and the variable of choice is `rings`.
+`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# Create the rings_vector
+# Select the rings variable from planets_df
 rings_vector <- 
+  
+# Print out rings_vector
 ```
 
 *** =solution
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# Create the rings_vector
+# Select the rings variable from planets_df
 rings_vector <- planets_df$rings
+
+# Print out rings_vector
+rings_vector
 ```
 
 *** =sct
@@ -418,8 +405,8 @@ rings_vector <- planets_df$rings
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector",
-            undefined_msg = "Please make sure to define a variable `rings_vector`.",
-            incorrect_msg = "It looks like `rings_vector` does not contain all the element of the `ring` variable of the `planets_df`.")
+            incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+test_output_contains("rings_vector", incorrect_msg = "Don't forget to print out `rings_vector` after you've created it!")
 success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
 ```
 
@@ -429,7 +416,7 @@ success_msg("Great! Continue to the next exercise and discover yet another way o
 
 You probably remember from high school that some planets in our solar system have rings and others do not. But due to other priorities at that time (read: puberty) you can not recall their names, let alone their rotation speed, etc. 
 
-Could R help you out? (Spoiler alert: of course it can!) 
+Could R help you out?
 
 If you type `rings_vector` in the console, you get:
 
@@ -437,22 +424,17 @@ If you type `rings_vector` in the console, you get:
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. As a next step, use `rings_vector` to select all the data (that is, all columns) on the four planets with rings from `planets_df`.
+This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings. 
 
 *** =instructions
-Assign to `planets_with_rings_df` all data in the `planets_df`data set for the planets with rings, that is, where `rings_vector` is `TRUE`.
+Have a look at the code on the right: it selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
 
 *** =hint
-Select elements from `planets_df` by using the square brackets. The `rings_vector` contains Boolean values and R will select only those rows/columns were the vector element is `TRUE`. In this case, you want to select rows based on `rings_vector` and select all the columns.
+Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 rings_vector <- planets_df$rings
 ```
 
@@ -460,16 +442,16 @@ rings_vector <- planets_df$rings
 ```{r}
 # planets_df and rings_vector are pre-loaded in your workspace
 
-# Select the information on planets with rings:
-planets_with_rings_df <- 
+# Adapt the code to select all columns for planets with rings
+planets_df[rings_vector, "name"]
 ```
 
 *** =solution
 ```{r}
 # planets_df and rings_vector are pre-loaded in your workspace
 
-# Select the information on planets with rings:
-planets_with_rings_df <- planets_df[rings_vector,]
+# Adapt the code to select all columns for planets with rings
+planets_df[rings_vector, ]
 ```
 
 *** =sct
@@ -477,10 +459,7 @@ planets_with_rings_df <- planets_df[rings_vector,]
 msg = "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("planets_with_rings_df",
-            undefined_msg = "Please make sure to define a variable `planets_with_rings_df`.",
-            incorrect_msg = "It looks like `planets_with_rings_df` does not contain all the data of the planets with rings.")
-test_student_typed("rings_vector", not_typed_msg = "Please use `rings_vector` to subset the data frame!")
+test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapated the code to select _all_ columns for the planets that have rings? Remember: to select all columns, you simply have to leave the columns part inside the `[ ]` empty!")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
@@ -493,58 +472,55 @@ So what exactly did you learn in the previous exercises? You selected a subset f
 Now, let us move up one level and use the function [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset). You should see the [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) function as a short-cut to do exactly the same as what you did in the previous exercises. 
 
 ```
-subset(my_data_frame, subset = some_condition)
+subset(my_df, subset = some_condition)
 ``` 
 
 The first argument of [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) specifies the data set for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
 
-For example: 
+The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+
 ```
-subset(planets_df, subset = rings == TRUE)
+subset(planets_df, subset = rings)
 ``` 
 
-R will give you exactly the same result as you got in the previous exercise. But this time without needing the `rings_vector`!
-
 *** =instructions
-Create a data frame `small_planets_df` with planets that have a diameter smaller than the Earth (so smaller than 1, since diameter is a relative measure of the planet's diameter w.r.t that of planet Earth).
+Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
 
 *** =hint
 `subset(planets_df, subset = ...)` is part of the solution.
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# Create small_planets_df
-small_planets_df  <- 
+# Select planets with diameter < 1
+
 ```
 
 *** =solution
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# Create small_planets_df
-small_planets_df  <- subset(planets_df, subset = diameter < 1)
+# Select planets with diameter < 1
+subset(planets_df, subset = diameter < 1)
 ```
 
 *** =sct
 ```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("small_planets_df",
-            undefined_msg = "Please make sure to define a variable `small_planets_df`.",
-            incorrect_msg = "It looks like `small_planets_df` does not contain all the correct subset of planets_df.")
-test_function("subset", incorrect_msg = "Please be sure to use the `subset` function!")
+test_correct({
+  test_output_contains("subset(planets_df, subset = diameter < 1)", incorrect_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+}, {
+  test_function("subset", args = "x", 
+                not_called_msg = "Make sure to use the `subset()` function to perform the selection!",
+                incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+})
 success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
 ```
 
@@ -552,22 +528,26 @@ success_msg("Great! Not only is the `subset()` function more concise, it is prob
 --- type:NormalExercise xp:100 skills:1
 ## Sorting
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like). Up to you for which purpose you want to use your R skills ;-). 
+Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
 
-In data analysis you will sort your data according to a certain variable in the data set. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
+In data analysis you can sort your data according to a certain variable in the data set. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example. Let us look at the vector `a`: `a <- c(100,9,101)`.
+[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
 
 ```
-order(a)
-``` 
+> a <- c(100, 10, 1000)
+> order(a)
+[1] 2 1 3
+```
 
-returns the vector {2, 1, 3} since 100 is the second largest element of the vector, 9 is the smallest element and 101 is the largest element.
+10, which is the second element in `a`, is the smallest elements, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+
+This means we can use the output of `order(a)` to reshuffle `a`:
     
 ```
-a[order(a)]
+> a[order(a)]
+[1]   10  100 1000
 ``` 
-will thus give you the ordered vector {9, 100, 101}, since it first picks the second element of `a`, then the first and then the last. Got it? If you are not sure, use the console to play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function.` 
 
 *** =instructions
 Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Click 'Submit Answer' when you are ready to continue.
@@ -582,16 +562,12 @@ Just play with the [`order()`](http://www.rdocumentation.org/packages/base/funct
 
 *** =sample_code
 ```{r}
-# Just play around with the order function in the console to see how it works!
+# Play around with the order function in the console
 ```
 
 *** =solution
 ```{r}
-# Just play around with the order function in the console to see how it works!
-# Some examples:
-order(1:10)
-order(2:11)
-order(c(5,4,6,7))
+# Play around with the order function in the console
 ```
 
 *** =sct
@@ -603,48 +579,41 @@ success_msg("Great! Now let's use the `order()` function to sort your data frame
 --- type:NormalExercise xp:100 skills:1
 ## Sorting your data frame
 
-Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the largest planet and ends with the smallest one. A sort on the `diameter` column, as you will.
+Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
 
 *** =instructions
-- Assign to the variable `positions` the desired ordering for the new data frame that you will create in the next step. You can use the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function for that, with the additional argument `decreasing = TRUE`.
-- Now create the data frame `largest_first_df`, which contains the same information as `planets_df`, but with the planets in decreasing order of magnitude.
+- Call `order()` on the `diameter` column of `planets_df`. Store the result as `positions`.
+- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
 
 *** =hint
-```
-order(planets_df$diameter, decreasing = TRUE)
-``` 
-will give you the ordering of the variable diameter from largest to smallest. This is what you should assign to positions. Use the variable positions then to select from the data frame `planets_df`!
+- Use `order(planets_df$diameter)` to create `positions`.
+- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
 
 *** =pre_exercise_code
 ```{r}
-planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune");
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883); 
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67);
-rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE);
-planets_df   <- data.frame(planets,type,diameter,rotation,rings)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
 ```
 
 *** =sample_code
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# What is the correct ordering based on the planets_df$diameter variable?
+# Use order() to create positions
 positions <-  
 
-# Create new "ordered" data frame:
-largest_first_df <-
+# Use positions to sort planets_df
+
 ```
 
 *** =solution
 ```{r}
 # planets_df is pre-loaded in your workspace
 
-# What is the correct ordering based on the planets_df$diameter variable?
-positions <- order(planets_df$diameter, decreasing = TRUE)
+# Use order() to create positions
+positions <- order(planets_df$diameter)
 
-# Create new "ordered" data frame:
-largest_first_df <- planets_df[positions, ]
+# Use positions to sort planets_df
+planets_df[positions, ]
 ```
 
 *** =sct
@@ -652,12 +621,10 @@ largest_first_df <- planets_df[positions, ]
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("positions",
-            undefined_msg = "Please make sure to define a variable `positions`.",
-            incorrect_msg = "It looks like `positions` does not contain all the correct ordering of the diameter column.")
-test_object("largest_first_df",
-            undefined_msg = "Please make sure to define a variable `largest_first_df`.",
-            incorrect_msg = "It looks like `largest_first_df` does not contain the positions of the ordered `planets_df`.")
-success_msg("Wonderful! What does the resulting data frame look like? Type `largest_first_df` in the console and find out! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+            incorrect_msg = "Have you correctly created `positions`? Use `planets_df$diameter`, which selects the diameter column, in combination with `order()`.")
+test_output_contains("planets_df[positions,]",
+                     incorrect_msg = "Have you correctly sorted `planets_df` and printed out the result? Use `[positions, ]`.")
+success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
 ```
 
 

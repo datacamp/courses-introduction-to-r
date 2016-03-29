@@ -491,6 +491,7 @@ The fact that `factor_speed_vector` is now ordered enables us to compare differe
 
 *** =sample_code
 ```{r}
+# Create factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
@@ -506,6 +507,7 @@ da5 <-
 
 *** =solution
 ```{r}
+# Create factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
