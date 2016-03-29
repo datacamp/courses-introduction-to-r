@@ -487,7 +487,7 @@ subset(planets_df, subset = rings)
 Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
 
 *** =hint
-`subset(planets_df, subset = ...)` is part of the solution.
+`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
 
 *** =pre_exercise_code
 ```{r}
