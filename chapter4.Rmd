@@ -501,7 +501,7 @@ da2 <-
 # Factor value for fifth data analyst
 da5 <-
 
-# Is data analyst 2 factor than data analyst 5?
+# Is data analyst 2 faster than data analyst 5?
 
 ```
 
@@ -517,7 +517,7 @@ da2 <- factor_speed_vector[2]
 # Factor value for fifth data analyst
 da5 <-factor_speed_vector[5] 
 
-# Is data analyst 2 factor than data analyst 5?
+# Is data analyst 2 faster data analyst 5?
 da2 > da5
 ```
 
