@@ -556,7 +556,7 @@ test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("non_us_all",
             incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
-test_output_contains("mean(non_us)",
+test_output_contains("mean(non_us_all)",
                      incorrect_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
 test_object("non_us_some",
             incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!");
