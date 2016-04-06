@@ -8,8 +8,8 @@ description : Lists, as opposed to vectors, can hold components of different typ
 
 Congratulations! At this point in the course you are already familiar with:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same datatype.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same datatype.
+- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
+- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
 - **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
 
 Pretty sweet for an R newbie, right? ;-)
@@ -131,7 +131,7 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
@@ -253,7 +253,7 @@ act      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers"
 sources     <- c("IMDb1","IMDb2","IMDb3")
 comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
 scores      <- c(4.5,4,5)
-rev     <- data.frame(scores,sources,comments)
+rev     <- data.frame(scores, sources, comments)
 rm(scores, sources, comments)
 ```
 
@@ -275,7 +275,7 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definiton of the pre-set variables!"
+msg = "Do not remove or change the definition of the pre-set variables!"
 lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list",
             incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
@@ -344,10 +344,10 @@ shining_list$actors[2]
 
 *** =sct
 ```{r}
-msg <- "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
-test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector reprsenting actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
 success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
 ```
 
@@ -389,7 +389,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 *** =sample_code
 
 ```{r}
-# shining_list, the list containing moviename, actors and reviews, is pre-loaded in the workspace
+# shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
 
 # We forgot something; add the year to shining_list
 shining_list_full <- 
@@ -401,7 +401,7 @@ shining_list_full <-
 *** =solution
 
 ```{r}
-# shining_list, the list containing moviename, actors and reviews, is pre-loaded in the workspace
+# shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
 
 # Use c() to add a year to shining_list
 shining_list_full <- c(shining_list, year = 1980)
@@ -412,7 +412,7 @@ str(shining_list_full)
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definiton of `shining_list`, which is pre-loaded in the workspace!"
+msg = "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full", eq_condition = "equal",
             incorrect_msg = "Have you correctly extended `shining_list` with an element named `year`, whose value is 1980?")

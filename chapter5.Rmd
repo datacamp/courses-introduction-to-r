@@ -55,7 +55,7 @@ Wow, that is a lot of cars!
 
 Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
 
-So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Unoriginally, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
+So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Similarly, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
 
 Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set.
 
@@ -459,7 +459,7 @@ planets_df[rings_vector, ]
 msg = "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapated the code to select _all_ columns for the planets that have rings? Remember: to select all columns, you simply have to leave the columns part inside the `[ ]` empty!")
+test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? Remember: to select all columns, you simply have to leave the columns part inside the `[ ]` empty!")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 

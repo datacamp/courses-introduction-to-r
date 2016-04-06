@@ -44,7 +44,7 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 
 *** =sct
 ```{r}
-test_function("matrix", c("data","byrow", "nrow"),
+test_function("matrix", c("data", "byrow", "nrow"),
               incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
 test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
                      incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
@@ -414,7 +414,7 @@ msg = "Do not override the variables that have been defined for you in the works
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-# Fix untill testwhat gets updated again
+# Fix until testwhat gets updated again
 # TODO: Fix in testwhat
 test_object("all_wars_matrix", eval = FALSE)
 test_what(
@@ -426,7 +426,7 @@ test_what(
           "and `star_wars_matrix2`. You should end up with a matrix",
           "of the correct dimensions: 6 rows and 2 columns."))
 
-test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arugments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
 
 success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
 ```
@@ -690,7 +690,7 @@ test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("visitors",
             incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
 test_object("us_visitors", incorrect_msg = "To created `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
-test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calcualte the average number of visitors in the US. Make sure to print out the result.")
+test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
 
 success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
 ```

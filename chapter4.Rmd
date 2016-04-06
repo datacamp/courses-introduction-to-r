@@ -170,7 +170,7 @@ success_msg("Can you already tell what's happening in this exercise? Awesome! Co
 When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
 
 ```
-levels(factor_vector) <- c("name1","name2",...)
+levels(factor_vector) <- c("name1", "name2",...)
 ```
     
 A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`. 
@@ -236,7 +236,7 @@ success_msg("Wonderful! Proceed to the next exercise.")
 --- type:NormalExercise xp:100 skills:1
 ## Summarizing a factor
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contens of a variable: 
+After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable: 
 
 ```
 summary(my_var)

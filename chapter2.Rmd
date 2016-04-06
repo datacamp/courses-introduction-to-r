@@ -1,7 +1,7 @@
 --- 
 title_meta  : Chapter 2
 title       : Vectors
-description : In this free R course, we’ll take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors. 
+description : "In this free R course, we'll take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors."
 
 --- type:NormalExercise xp:100 skills:1
 ## Create a vector
@@ -756,7 +756,7 @@ test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorre
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_selection_vector", 
             undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.",
-            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indices.")
+            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
 success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
 ```
 
