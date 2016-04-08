@@ -363,7 +363,7 @@ To conveniently add elements to lists you can use the [`c()`](http://www.rdocume
 ext_list <- c(my_list , my_val)
 ``` 
 
-This will simply extend the original list, `list1`, with the component `my_val`. This component gets appended to the end of the list.
+This will simply extend the original list, `my_list`, with the component `my_val`. This component gets appended to the end of the list.
 If you want to give the new list item a name, you just add the name as you did before: 
 
 ```
