@@ -621,7 +621,7 @@ planets_df[positions, ]
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("positions",
-            incorrect_msg = "Have you correctly created `positions`? Use `planets_df$diameter`, which selects the diameter column, in combination with `order()`.")
+            incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `sort()` on `planets_df$diameter`.")
 test_output_contains("planets_df[positions,]",
                      incorrect_msg = "Have you correctly sorted `planets_df` and printed out the result? Use `[positions, ]`.")
 success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
