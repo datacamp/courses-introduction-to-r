@@ -459,7 +459,7 @@ planets_df[rings_vector, ]
 msg = "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? Remember: to select all columns, you simply have to leave the columns part inside the `[ ]` empty!")
+test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? Remember: to select all columns, you simply have to leave the columns part inside the `[ ]` empty: `[rings_vector, ]`.")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
