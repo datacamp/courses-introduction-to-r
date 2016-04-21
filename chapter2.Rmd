@@ -860,7 +860,7 @@ As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing 
 This command test for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
 
 *** =instructions
-- Check if which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
+- Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
 - Print out `selection_vector` so you can inspect it. The printout tells you whether you won (`TRUE`) or lost (`FALSE`) any money for each day.
 
 *** =hint
