@@ -857,7 +857,7 @@ As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing 
 [1] FALSE FALSE TRUE
 ```
 
-This command test for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
+This command tests for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
 
 *** =instructions
 - Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
