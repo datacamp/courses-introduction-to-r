@@ -338,7 +338,7 @@ test_what(
   expect_equal(
     dim(get("all_wars_matrix", get_solution_env())), 
     dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback_msg = msg)
+  feedback = msg)
 
 test_object("all_wars_matrix", incorrect_msg = msg)
 success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
@@ -421,7 +421,7 @@ test_what(
   expect_equal(
     dim(get("all_wars_matrix", get_solution_env())), 
     dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback_msg = 
+  feedback = 
     paste("Be sure to use the the function `rbind()` with 2 arguments: `star_wars_matrix`",
           "and `star_wars_matrix2`. You should end up with a matrix",
           "of the correct dimensions: 6 rows and 2 columns."))
