@@ -415,7 +415,8 @@ str(shining_list_full)
 msg = "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full", eq_condition = "equal",
-            incorrect_msg = "Have you correctly extended `shining_list` with an element named `year`, whose value is 1980?")
+            incorrect_msg = paste("Have you correctly extended `shining_list` with an element named `year`,",
+                                  "whose value is 1980? You can use `c(shining_list, year = 1980)`"))
 test_function("str", "object", incorrect_msg = "Don't forget to display the structure of `shining_list_full` with `str()`.")
 success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
 ```
