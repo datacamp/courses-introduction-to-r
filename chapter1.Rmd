@@ -44,8 +44,7 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 *** =sct
 ```{r}
-test_output_contains("7", incorrect_msg = "Do not remove the line of R code that calculates the sum of 3 and 4. Instead, just add another line that calculates the sum of 6 and 12.")
-test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 6 and 12. Do not start the line with a `#`, otherwise your R code is not executed!")
+test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
 success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
 ```
 
@@ -126,11 +125,8 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 *** =sct
 ```{r}
 msg = "Do not remove the other arithmetic examples!"
-test_output_contains("5 + 5", incorrect_msg = msg)
-test_output_contains("5 - 5", incorrect_msg = msg)
-test_output_contains("(5 + 5)/2", incorrect_msg = msg)
-test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Make sure to read the instructions carefully.")
-test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.")
+test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
 success_msg("Great! Head over to the next exercise.")
 ```
 
@@ -226,8 +222,7 @@ my_apples
 test_object("my_apples", 
             undefined_msg = "Please make sure to define a variable `my_apples`.",
             incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
-test_output_contains("my_apples", 
-                     incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
 success_msg("Great! Continue to the next exercise!")
 ```
 
@@ -236,6 +231,7 @@ success_msg("Great! Continue to the next exercise!")
 ## Variable assignment (3)
 
 Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+
 ```
 my_apples + my_oranges
 ```
@@ -243,7 +239,7 @@ my_apples + my_oranges
 *** =instructions
 - Assign to `my_oranges` the value 6.
 - Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
+- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
 
 *** =hint
 `my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
@@ -255,11 +251,11 @@ my_apples + my_oranges
 
 *** =sample_code
 ```{r}
-# Assign a value to the variables called my_apples and my_oranges
+# Assign a value to the variables my_apples and my_oranges
 my_apples <- 5
 
 
-# Add these two variables together and print the result
+# Add these two variables together
 
 
 # Create the variable my_fruit
@@ -268,11 +264,11 @@ my_apples <- 5
 
 *** =solution
 ```{r}
-# Assign a value to the variables called my_apples and my_oranges
+# Assign a value to the variables my_apples and my_oranges
 my_apples  <- 5
 my_oranges <- 6
 
-# Add these two variables together and print the result
+# Add these two variables together
 my_apples + my_oranges
 
 # Create the variable my_fruit
@@ -281,17 +277,12 @@ my_fruit <- my_apples + my_oranges
 
 *** =sct
 ```{r}
-test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable `my_apples`.",
-            incorrect_msg = "Do not change the assignment of the `my_apples` variable!")
-test_object("my_oranges", 
-            undefined_msg = "Have you defined a variable `my_oranges`?",
-            incorrect_msg = "Have you assigned the correct value to the variable `my_oranges`?")
+test_object("my_apples", incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+test_object("my_oranges", incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
 test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "Make sure to write `my_apples + my_oranges` on a new line; this will print out the result of the sum.")
-test_object("my_fruit",
-            undefined_msg = "Please make sure to define a variable `my_fruit`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
+                     incorrect_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
+test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg)
 success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
 ```
 
@@ -315,47 +306,37 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r}
-# Assign a value to the variable called my_apples
+# Assign a value to the variable my_apples
 my_apples <- 5 
 
-# Print out the value of my_apples
-my_apples       
-
-# Assign a value to the variable my_oranges and print it out
+# Fix the assignment of my_oranges
 my_oranges <- "six" 
-my_oranges 
 
-# New variable that contains the total amount of fruit
+# Create the variable my_fruit and print it out
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =solution
 ```{r}
-# Assign a value to the variable called my_apples
+# Assign a value to the variable my_apples
 my_apples <- 5  
 
-# Print out the value of answer
-my_apples  
-
-# Assign a value to the variable my_oranges and print it out
+# Fix the assignment of my_oranges
 my_oranges <- 6
-my_oranges 
 
-# New variable that contains the total amount of fruit
+# Create the variable my_fruit and print it out
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =sct
 ```{r}
-test_error()
-test_object("my_oranges",
-            incorrect_msg = "Make sure that you assign the correct value to `my_oranges`. Strings and numbers are different things!")
-test_output_contains("my_apples + my_oranges", 
-                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`.")
-test_object("my_fruit",
-            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
+test_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+test_object("my_apples", incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+test_object("my_oranges", incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+test_object("my_fruit", incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+test_output_contains("my_fruit", incorrect_msg = "Don't remove the line that prints out `my_fruit`.")
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
@@ -416,8 +397,8 @@ my_logical <- FALSE
 *** =sct
 ```{r}
 test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
-test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`. Don't forget the quotes!")
-test_object("my_logical", incorrect_msg = "Have you correctly changes `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+test_object("my_logical", incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
 success_msg("Great work! Continue to the next exercise.")
 ```
 
