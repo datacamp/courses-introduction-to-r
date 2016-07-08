@@ -501,7 +501,7 @@ Back to Star Wars with this newly acquired knowledge! As in the previous exercis
 
 *** =instructions
 - Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us` to calculate the average non-US revenue for all movies. Simply print out the result.
+- Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
 - This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
 - Use `mean()` again to print out the average of the values in `non_us_some`.
 
