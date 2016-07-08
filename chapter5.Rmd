@@ -540,7 +540,7 @@ In data analysis you can sort your data according to a certain variable in the d
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest elements, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
 
 This means we can use the output of `order(a)` to reshuffle `a`:
     
