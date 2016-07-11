@@ -303,7 +303,7 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 --- type:NormalExercise xp:100 skills:1
 ## Calculating total winnings
 
-Now that you have the poker and roulette winnings nicely as  named vectors, you can start doing some data analytical magic. 
+Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
 
 You want to find out the following type of information:
 - How much has been your overall profit or loss per day of the week?
