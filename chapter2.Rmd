@@ -50,7 +50,7 @@ Let us focus first!
 
 On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
 
-In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the brackets. For example:
+In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the parentheses. For example:
 
 ```
 numeric_vector <- c(1, 2, 3)
@@ -303,7 +303,7 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 --- type:NormalExercise xp:100 skills:1
 ## Calculating total winnings
 
-Now that you have the poker and roulette winnings nicely as a named vector, you can start doing some data analytical magic. 
+Now that you have the poker and roulette winnings nicely as  named vectors, you can start doing some data analytical magic. 
 
 You want to find out the following type of information:
 - How much has been your overall profit or loss per day of the week?
