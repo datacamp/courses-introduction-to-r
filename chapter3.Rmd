@@ -350,7 +350,8 @@ success_msg("Nice job! After adding column to a matrix, the logical next step is
 
 Just like every action has a reaction, every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has an [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (We admit, we are pretty bad with metaphors.) 
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices: 
+Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
+
 - `star_wars_matrix` that we have used all along, with data on the first trilogy,
 - `star_wars_matrix2`, with similar data for the second trilogy. 
 
