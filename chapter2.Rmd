@@ -108,19 +108,19 @@ Before doing a first analysis, you decide to first collect all the winnings and 
 
 For `poker_vector`: 
 
-- On Monday you won \$140
-- Tuesday you lost \$50
-- Wednesday you won \$20 
-- Thursday you lost \$120
-- Friday you won \$240
+- On Monday you won $140
+- Tuesday you lost $50
+- Wednesday you won $20 
+- Thursday you lost $120
+- Friday you won $240
 
 For `roulette_vector`: 
 
-- On Monday you lost \$24
-- Tuesday you lost \$50
-- Wednesday you won \$100
-- Thursday you lost \$350
-- Friday you won \$10
+- On Monday you lost $24
+- Tuesday you lost $50
+- Wednesday you won $100
+- Thursday you lost $350
+- Friday you won $10
 
 You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
@@ -306,6 +306,7 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
 
 You want to find out the following type of information:
+
 - How much has been your overall profit or loss per day of the week?
 - Have you lost money over the week in total?
 - Are you winning/losing money on poker or on roulette?
