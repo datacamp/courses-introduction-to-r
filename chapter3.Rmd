@@ -8,7 +8,7 @@ description : In this chapter you will learn how to work with matrices in R. By 
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example: 
+You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
@@ -331,15 +331,7 @@ test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("worldwide_vector",
             incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
 
-# TODO: Fix in testwhat
 msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
-test_object("all_wars_matrix", eval = FALSE)
-test_what(
-  expect_equal(
-    dim(get("all_wars_matrix", get_solution_env())), 
-    dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback = msg)
-
 test_object("all_wars_matrix", incorrect_msg = msg)
 success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
 ```
@@ -414,19 +406,6 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-
-# Fix until testwhat gets updated again
-# TODO: Fix in testwhat
-test_object("all_wars_matrix", eval = FALSE)
-test_what(
-  expect_equal(
-    dim(get("all_wars_matrix", get_solution_env())), 
-    dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback = 
-    paste("Be sure to use the the function `rbind()` with 2 arguments: `star_wars_matrix`",
-          "and `star_wars_matrix2`. You should end up with a matrix",
-          "of the correct dimensions: 6 rows and 2 columns."))
-
 test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
 
 success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
