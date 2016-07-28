@@ -1,6 +1,7 @@
 id: 58
 title: Introduction to R
-author_field: Jonathan Cornelissen
+instructors:
+ - jonathan@datamind.org
 time_needed: 4 hours
 description: "In this introduction to R, you will master the basics of this beautiful 
   open source language, including factors, lists and data frames. With the knowledge 
