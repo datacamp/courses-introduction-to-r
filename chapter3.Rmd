@@ -8,7 +8,7 @@ description : In this chapter you will learn how to work with matrices in R. By 
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example: te
+You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
