@@ -355,6 +355,7 @@ Note how the quotation marks on the right indicate that "some text" is a charact
 
 *** =instructions
 Change the value of the:
+
 - `my_numeric` variable to `42`.
 - `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
 - `my_logical` variable to `FALSE`.
