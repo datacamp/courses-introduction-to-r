@@ -406,15 +406,6 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-
-test_object("all_wars_matrix", incorrect_msg = "Be sure to use the the function `rbind()` with 2 arguments: `star_wars_matrix` and `star_wars_matrix2`. You should end up with a matrix of the correct dimensions: 6 rows and 2 columns.")
-test_what(
-  expect_equal(
-    dim(get("all_wars_matrix", get_solution_env())), 
-    dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback = 
-    paste())
-
 test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
 
 success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
