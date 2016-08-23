@@ -137,7 +137,7 @@ We went ahead and prepared two vectors for you: `region`, and `titles`. You will
 
 *** =instructions
 - Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the columns of `star_wars_matrix` with the `titles` vector.
+- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
 - Print out `star_wars_matrix` to see the result of your work.
 
 *** =hint
