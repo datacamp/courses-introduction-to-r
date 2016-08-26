@@ -291,8 +291,8 @@ msg = "Do not change anything about the first few lines that define `survey_vect
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
-test_function("summary", index = 1, args = "object", not_called_msg = sprintf(msg, "survey_vector"), incorrect_msg = sprintf(msg, "survey_vector"))
-test_function("summary", index = 2, args = "object", not_called_msg = sprintf(msg, "factor_survey_vector"), incorrect_msg = sprintf(msg, "factor_survey_vector"))
+test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
+test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
 success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
 ```
 
@@ -461,9 +461,10 @@ summary(factor_speed_vector)
 ```{r}
 msg = "Do not change anything about the command that specifies the `speed_vector` variable."
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", "x", incorrect_msg = "The first argument you pass to `factor()` should be `speed_vector`.")
-test_function("factor", "ordered", incorrect_msg = "Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-test_function("factor", "levels", incorrect_msg = "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
+test_function("factor", args = c("x", "ordered", "levels"),
+              incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
+                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
+                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`."))
 test_object("factor_speed_vector", eq_condition = "equal",
             incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
 success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
