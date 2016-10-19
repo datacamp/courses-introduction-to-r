@@ -146,6 +146,8 @@ You can assign a value 4 to a variable `my_var` with the command
 my_var <- 4
 ```
 
+Note that variable names are case sensitive; R would consider `My_var` to be a different variable name.
+
 *** =instructions
 Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
 
