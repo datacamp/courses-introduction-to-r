@@ -8,7 +8,7 @@ description : "In this chapter, you will take your first steps with R. You will 
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
+R makes use of the `#` ("hash") sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
 
 You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
 
