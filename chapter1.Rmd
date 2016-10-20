@@ -350,12 +350,10 @@ success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 
 R works with numerous data types. Some of the most basic types to get started are:
 
-- Decimals values like `4.5` are called **numerics**.
-- Natural numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
-
-Note how the quotation marks on the right indicate that "some text" is a character.
+- Most numbers that you will encounter in R have type **numeric**.  These include numbers with decimals, like `4.5`, as well as whole numbers, like `-4`.
+- If you only need to work with whole numbers, there is another type called **integer**.  These take up less memory than numeric variables, so they are occasionally useful where this is important.  Most of the time, R takes care of how numbers are handled, so you don’t need to worry about the difference between numeric and integer.
+- The logical values `TRUE` and `FALSE` have type **logical**.  `TRUE` and `FALSE` must always be written in upper-case letters.  They are sometimes referred to as Boolean variables.
+- Text values, are sometimes known as "strings" have type **character**. They are written inside double quotes,", or single quotes, '.
 
 *** =instructions
 Change the value of the:
