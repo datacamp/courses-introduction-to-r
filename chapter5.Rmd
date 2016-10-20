@@ -10,7 +10,7 @@ You may remember from the chapter about matrices that all the elements that you 
 
 When doing a market research survey, however, you often have questions such as:
 
-- 'Are your married?' or 'yes/no' questions (`logical`)
+- 'Are you married?' or 'yes/no' questions (`logical`)
 - 'How old are you?' (`numeric`)
 - 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
 - ...
