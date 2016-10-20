@@ -153,7 +153,9 @@ my_list <- list(name1 = your_comp1,
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+This creates a list with components that are named `name1`, `name2`, and so on. Notice that you don't need to wrap the names in quotes (as long as the name is also a valid variable name &ndash; otherwise you do).
+
+If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
 
 ```
 my_list <- list(your_comp1, your_comp2)
