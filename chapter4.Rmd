@@ -236,7 +236,7 @@ success_msg("Wonderful! Proceed to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:a549f13c0644ccc89cd39a10aa48706754637ed0
 ## Summarizing a factor
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable:
+[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) is an important utility function that gives you a quick overview of the contents of a variable:
 
 ```
 summary(my_var)
