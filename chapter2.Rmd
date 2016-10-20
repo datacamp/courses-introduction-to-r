@@ -524,11 +524,11 @@ success_msg("Well done. This is pretty bad news...")
 
 Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are greater (or `>` ) than in roulette.
 
 *** =instructions
 - Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- Check if your total gains in poker are greater than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
 
 *** =hint
 - You partly calculated the answer to this question in the previous exercise already!
