@@ -17,7 +17,7 @@ When doing a market research survey, however, you often have questions such as:
 
 The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
 
-A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+A data frame has the variables of a data set as columns and the observations as rows. An R data frame is the same concept as an SQL database table, or a SAS dataset, or a MATLAB table, or an SPSS table.
 
 *** =instructions
 Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
