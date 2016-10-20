@@ -362,7 +362,7 @@ planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+However, there is a short-cut; you can use the `$` sign:
 
 ```
 planets_df$diameter
