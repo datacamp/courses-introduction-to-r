@@ -38,7 +38,25 @@ theory <- "factors for categorical variables"
 
 *** =sct
 ```{r}
-test_object("theory", incorrect_msg = "Make sure to assign the character string `\"factors for categorical variables\"` to `theory`. Remember that R is case sensitive.");
+# MC-note: ideally, we could check for commonly mistyped variable names
+#test_or({
+#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
+#    lapply(bad_names, test_object, eval=FALSE)
+#    })
+
+msg_undef <- "It looks like you haven't defined the variable `theory`."
+msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
+msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment"
+
+# If get error and theory is undefined, point out the error
+test_or(test_error(msg_err),
+        test_object("theory", eval=FALSE)
+    )
+
+test_object("theory", undefined_msg = msg_undef, eval=FALSE)
+test_object("theory", incorrect_msg = msg_incor)
+            
+
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
