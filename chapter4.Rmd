@@ -245,8 +245,16 @@ msg = "Do not change the definition of `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
+
+# MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
+
+# MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
+test_student_typed('c("Male", "Female")')
+
 test_object("factor_survey_vector", eq_condition = "equal",
             incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+
+
 success_msg("Wonderful! Proceed to the next exercise.")
 ```
 
