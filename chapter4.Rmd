@@ -428,7 +428,7 @@ speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 *** =sct
 ```{r}
 test_object("speed_vector",
-            incorrect_msg = "Make sure that you assigned the correct vector to speed_vector. Don't use capital letters; R is case sensitive!")
+            incorrect_msg = "`speed_vector` should be a vector with 5 entries, on for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
 success_msg("A job well done! Continue to the next exercise.")
 ```
 
