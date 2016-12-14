@@ -390,7 +390,7 @@ But this is not always the case! Sometimes you will also deal with factors that 
 Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
 
 *** =instructions
-As a first step, assign `speed_vector` knowing that:
+As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
 
 - Analyst 1 is fast,
 - Analyst 2 is slow,
