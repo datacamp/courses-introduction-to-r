@@ -12,5 +12,5 @@ description: "In this introduction to R, you will master the basics of this beau
   users grows by 40% and an increasing number of organizations are using it in their
   day-to-day activities. Leverage the power of R by completing this free R online
   course today!"
-from: "r-base-prod:latest"
+from: "r-base-prod:10"
 
