@@ -436,14 +436,14 @@ my_logical <- FALSE
 test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
 test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
 test_object("my_logical", incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Great work! Numbers are stored in `numeric` variables, `TRUE` and `FALSE` are stored in `logical` variables, and text is stored in `character` variables.")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:99b549229d
 ## What's that data type?
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
+Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the [`class()`](https://www.rdocumentation.org/packages/base/topics/class) function, as the code on the right shows.
 
 *** =instructions
 Complete the code in the editor and also print out the classes of `my_character` and `my_logical`. 
