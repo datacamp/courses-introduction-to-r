@@ -138,7 +138,7 @@ success_msg("Great! Head over to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:5f200ffd43
 ## Variable assignment 
 
-**Variables** let you store values so that you can later reuse them. The types of variable that can be created include vectors of numbers, matrices, and data frames &ndash; the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
+**Variables** let you store values so that you can later reuse them. The types of variable that can be created include vectors of numbers, matrices, and data frames – the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
 
 The process of storing a value in a variable is called **assignment**. The assignment operator is an arrow consisting of a less than sign (`<`), followed by a hyphen (`-`). You can assign a value 4 to a variable named `my_var` with the command
 
@@ -318,7 +318,7 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 --- type:NormalExercise xp:100 skills:1 key:915fcc7c99
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no &#x263A;? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
 
 *** =instructions
 - Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
