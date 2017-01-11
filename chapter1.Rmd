@@ -251,7 +251,7 @@ test_object("my_apples",
             incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
 test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
 test_output_contains("my_apples - 1", incorrect_msg = "Have you explicitly told R to print out `my_apples - 1` to the console?")
-success_msg("Great! Continue to the next exercise!")
+success_msg("Great! Variables can be reused by typing their name in other lines of R code.")
 ```
 
 
