@@ -148,7 +148,7 @@ my_var <- 4
 
 Note that variable names are case sensitive; R would consider `My_var` to be a different variable name since it starts with a capital `M`.
 
-To see the value that has been stored in the variable, just type its name.
+To see the value that has been stored in the variable, just type its name. The output that R produces is shown in a comment.
 
 ```{r}
 my_var
@@ -195,11 +195,21 @@ success_msg("Good job! When you did the assignment, notice that R did not print 
 --- type:NormalExercise xp:100 skills:1 key:c5944b90eb
 ## Variable assignment (2)
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
+An important feature of variables is that they can be reused. In the previous exercise, you saw how the number 4 was assigned to a variable named `my_var`. To triple this value you can use the following command
+
+```{r}
+my_var <- 4
+3 * my_var
+## [1] 12
+```
 
 *** =instructions
+
+Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+
 - Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
 - Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
+- You get hungry. Type `my_apples - 1` to print the number of apples you will have after eating one of them.
 - Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
@@ -217,6 +227,9 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 # Print out the value of the variable my_apples
 
+
+# Print the value of my_apples minus one
+
 ```
 
 *** =solution
@@ -226,6 +239,9 @@ my_apples <- 5
 
 # Print out the value of the variable my_apples
 my_apples
+
+# Print the value of my_apples minus one
+my_apples - 1
 ```
 
 *** =sct
@@ -234,6 +250,7 @@ test_object("my_apples",
             undefined_msg = "Please make sure to define a variable `my_apples`.",
             incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
 test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+test_output_contains("my_apples - 1", incorrect_msg = "Have you explicitly told R to print out `my_apples - 1` to the console?")
 success_msg("Great! Continue to the next exercise!")
 ```
 
