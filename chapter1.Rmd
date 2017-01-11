@@ -138,17 +138,22 @@ success_msg("Great! Head over to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:5f200ffd43
 ## Variable assignment 
 
-A basic concept in (statistical) programming is called a **variable**. 
+**Variables** let you store values so that you can reuse them later. The types of variable that can be created include vectors of numbers, matrices, and data frames &ndash; the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+You can **assign** a value 4 to a variable named `my_var` with the command
 
-You can assign a value 4 to a variable `my_var` with the command
-
-```
+```{r}
 my_var <- 4
 ```
 
-Note that variable names are case sensitive; R would consider `My_var` to be a different variable name.
+Note that variable names are case sensitive; R would consider `My_var` to be a different variable name since it starts with a capital `M`.
+
+To see the value that has been stored in the variable, just type its name.
+
+```{r}
+my_var
+## [1] 4
+```
 
 *** =instructions
 Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
