@@ -318,9 +318,17 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 --- type:NormalExercise xp:100 skills:1 key:915fcc7c99
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no &#x263A;? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This doesn’t make sense, so R will throw an error if you try it.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no &#x263A;? In the last exercises you added two numeric variables, `my_apples` and `my_oranges`, together. What if you tried to add a numeric and a character variable together? This doesn’t make sense, so R will throw an error if you try it.
+
+```{r}
+1 + "two"
+## Error in 1 + "two" : non-numeric argument to binary operator
+```
 
 *** =instructions
+
+The example in the editor contains a mistake: `my_oranges` has been assigned as a character variable instead of a numeric variable.
+
 - Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
 - Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
 
