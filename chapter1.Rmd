@@ -138,9 +138,9 @@ success_msg("Great! Head over to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:5f200ffd43
 ## Variable assignment 
 
-**Variables** let you store values so that you can reuse them later. The types of variable that can be created include vectors of numbers, matrices, and data frames &ndash; the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
+**Variables** let you store values so that you can later reuse them. The types of variable that can be created include vectors of numbers, matrices, and data frames &ndash; the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
 
-You can **assign** a value 4 to a variable named `my_var` with the command
+The process of storing a value in a variable is called **assignment**. The assignment operator is an arrow consisting of a less than sign (`<`), followed by a hyphen (`-`). You can assign a value 4 to a variable named `my_var` with the command
 
 ```{r}
 my_var <- 4
