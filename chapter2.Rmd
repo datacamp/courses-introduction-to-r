@@ -50,7 +50,7 @@ Let us focus first!
 
 On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
 
-In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the parentheses. For example:
+In R, the [`c()`](http://www.rdocumentation.org/packages/base/functions/c) function is used to *c*ombine values to *c*reate vectors. You place the vector elements separated by a comma between the parentheses. For example:
 
 ```
 numeric_vector <- c(1, 2, 3)
@@ -60,7 +60,10 @@ character_vector <- c("a", "b", "c")
 Once you have created these vectors in R, you can use them to do calculations.
 
 *** =instructions 
-Complete the code such that `logical_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+
+Complete the code by assigning a value to the variable named `logical_vector`.
+
+* Call the [`c()`](http://www.rdocumentation.org/packages/base/functions/c) function with values `TRUE`, `FALSE` and `TRUE` (in that order).
 
 *** =hint 
 Assign `c(TRUE, FALSE, TRUE)` to the variable `logical_vector` with the `<-` operator.
@@ -95,6 +98,7 @@ test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("logical_vector",
             incorrect_msg = "Make sure that you assign the correct values to `logical_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
+test_function("c", index = 3)
 success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
 ```
 
