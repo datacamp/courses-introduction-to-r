@@ -60,10 +60,10 @@ character_vector <- c("a", "b", "c")
 Once you have created these vectors in R, you can use them to do calculations.
 
 *** =instructions 
-Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+Complete the code such that `logical_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
 
 *** =hint 
-Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` operator.
+Assign `c(TRUE, FALSE, TRUE)` to the variable `logical_vector` with the `<-` operator.
 
 *** =pre_exercise_code
 ```{r}
@@ -75,8 +75,8 @@ Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` ope
 numeric_vector <- c(1, 10, 49)
 character_vector <- c("a", "b", "c")
 
-# Complete the code for boolean_vector
-boolean_vector <-
+# Complete the code for logical_vector
+logical_vector <-
 ```
 
 *** =solution
@@ -84,8 +84,8 @@ boolean_vector <-
 numeric_vector <- c(1, 10, 49)
 character_vector <- c("a", "b", "c")
 
-# Complete the code for boolean_vector
-boolean_vector <- c(TRUE, FALSE, TRUE)
+# Complete the code for logical_vector
+logical_vector <- c(TRUE, FALSE, TRUE)
 ```
 
 *** =sct
@@ -93,8 +93,8 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
 test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("boolean_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
+test_object("logical_vector",
+            incorrect_msg = "Make sure that you assign the correct values to `logical_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
 success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
 ```
 

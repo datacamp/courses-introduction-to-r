@@ -318,7 +318,7 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 --- type:NormalExercise xp:100 skills:1 key:915fcc7c99
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no &#x263A;? In the last exercises you added two numeric variables, `my_apples` and `my_oranges`, together. What if you tried to add a numeric and a character variable together? This doesn’t make sense, so R will throw an error if you try it.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no ☺? In the last exercises you added two numeric variables, `my_apples` and `my_oranges`, together. What if you tried to add a numeric and a character variable together? This doesn’t make sense, so R will throw an error if you try it.
 
 ```{r}
 1 + "two"
