@@ -206,7 +206,7 @@ poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, ___ = -1
 # Roulette winnings from Monday to Friday
 roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 
-# Assign days as names of roulette_vectors
+# Assign days as names of roulette_vector
 ___(roulette_vector) <- c("Monday", ___, ___, "Thursday", "Friday")
 ```
 
@@ -218,7 +218,7 @@ poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday
 # Roulette winnings from Monday to Friday
 roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 
-# Assign days as names of roulette_vectors
+# Assign days as names of roulette_vector
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
