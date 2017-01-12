@@ -170,50 +170,53 @@ As a data analyst, it is important to have a clear view on the data that you are
 
 In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
 
-You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+You can name elements of a vector using a `name = value` syntax. The names don't need to be quoted unless they include spaces or punctuation other than a `.` or `_`.  For example, 
+
+```{r}
+casinos <- c(Luxor = 1, Stratosphere = 2, "Caesars Palace" = 3)
+```
+
+You can also name the elements of a vector after it has been created with the [`names()`](https://www.rdocumentation.org/packages/base/topics/names) function. Have a look at this example:
+
+```{r}
+casinos <- c(1, 2, 3)
+names(casinos) <- c("Luxor", "Stratosphere", "Caesars Palace")
+```
+
+In both cases, the value assigned to `casinos` is the same. You can use whichever method is most convenient for you. When you print the variable to the console, the names are included. The output is shown in comments.  
 
 ```
-some_vector <- c("John Doe", "poker player")
-names(some_vector) <- c("Name", "Profession")
-```
-
-This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
-
-```
-          Name     Profession 
-    "John Doe" "poker player" 
+casinos
+##          Luxor   Stratosphere Caesars Palace 
+##              1              2              3
 ```
 
 *** =instructions
-- The code on the right names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- Complete the names of `poker_vector` with the remaining days of the week (`Thursday` and `Friday`), using `name = value` syntax. 
+- Call the [`names()`](https://www.rdocumentation.org/packages/base/topics/names) function to complete the names of `roulette_vector` to the remaining days of the week.
 
 *** =hint
 You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
-poker_vector <- c(140, -50, 20, -120, 240)
+# Poker winnings from Monday to Friday; complete the names
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, ___ = -120, ___ = 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24, -50, 100, -350, 10)
-
-# Assign days as names of poker_vector
-names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 
 # Assign days as names of roulette_vectors
+___(roulette_vector) <- c("Monday", ___, ___, "Thursday", "Friday")
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
-poker_vector <- c(140, -50, 20, -120, 240)
+# Poker winnings from Monday to Friday; complete the names
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24, -50, 100, -350, 10)
-
-# Assign days as names of poker_vector
-names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 
 # Assign days as names of roulette_vectors
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
@@ -403,7 +406,7 @@ Similar to the previous exercise, assign the sum of two vectors to a new variabl
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
 poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
@@ -416,7 +419,7 @@ total_daily <-
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
 poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
