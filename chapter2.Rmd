@@ -112,24 +112,25 @@ Before doing a first analysis, you decide to first collect all the winnings and 
 
 For `poker_vector`: 
 
-- On Monday you won $140
-- Tuesday you lost $50
-- Wednesday you won $20 
-- Thursday you lost $120
-- Friday you won $240
+- On Monday you won $140.25
+- Tuesday you lost $50.50
+- Wednesday you won $20.25
+- Thursday you lost $120.00
+- Friday you won $240.00
 
 For `roulette_vector`: 
 
-- On Monday you lost $24
-- Tuesday you lost $50
+- On Monday you lost $24.75
+- Tuesday you lost $50.25
 - Wednesday you won $100
-- Thursday you lost $350
+- Thursday you lost $350.50
 - Friday you won $10
 
 You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 *** =instructions
-Assign the winnings/losses for roulette to the variable `roulette_vector`.
+
+Assign the winnings/losses for roulette to the variable `roulette_vector`. Notice that for whole dollar values, you don't need to specify the number of cents.
 
 *** =hint
 To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
@@ -137,7 +138,7 @@ To help you with this step, the editor already contains the code for creating `p
 *** =sample_code
 ```{r}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140, -50, 20, -120, 240)
+poker_vector <- c(140.25, -50.50, 20.25, -120, 240)
 
 # Roulette winnings from Monday to Friday
 roulette_vector <-  
@@ -146,10 +147,10 @@ roulette_vector <-
 *** =solution
 ```{r}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140, -50, 20, -120, 240)
+poker_vector <- c(140.25, -50.50, 20.25, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24, -50, 100, -350, 10)
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 ```
 
 *** =sct
