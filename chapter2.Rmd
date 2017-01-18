@@ -437,10 +437,7 @@ success_msg("Yippee! Notice how the names of the inputs were copied to the total
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
 
 A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the sum of the first few Fibonacci numbers, just pass the vector of numbers to `sum()`.
-<!-- 
-Fibonacci https://oeis.org/A000045 
-Motzkin https://oeis.org/A001006
--->
+
 ```{r}
 fibonacci_numbers <- c(1, 1, 2, 3, 5, 8, 13, 21)
 total_numbers <- sum(fibonacci_numbers)
@@ -511,7 +508,6 @@ total_week
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_poker", 
