@@ -436,13 +436,28 @@ success_msg("Yippee! Notice how the names of the inputs were copied to the total
 
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
 
-A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
-
+A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the sum of the first few Fibonacci numbers, just pass the vector of numbers to `sum()`.
+<!-- 
+Fibonacci https://oeis.org/A000045 
+Motzkin https://oeis.org/A001006
+-->
+```{r}
+fibonacci_numbers <- c(1, 1, 2, 3, 5, 8, 13, 21)
+total_numbers <- sum(fibonacci_numbers)
 ```
-total_poker <- sum(poker_vector)
+
+`sum()` also lets you pass in several vectors. In this case, it will calculate the sum of all the elements in all the vectors that you pass in.
+
+```{r}
+fibonacci_numbers <- c(1, 1, 2, 3, 5, 8, 13, 21)
+motzkin_numbers <- c(1, 1, 2, 4, 9, 21, 51, 127)
+total_numbers <- sum(fibonacci_numbers, motzkin_numbers)
 ```
 
 *** =instructions
+
+The code to calculate the total winnings over thewhole week for poker is shown in the script.
+
 - Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
 - Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
 - Print out `total_week`.
@@ -457,12 +472,9 @@ Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) fun
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+# Poker and roulette winnings from Monday to Friday
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Total winnings with poker
 total_poker <- sum(poker_vector)
@@ -479,12 +491,9 @@ total_week <-
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+# Poker and roulette winnings from Monday to Friday
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Total winnings with poker
 total_poker <- sum(poker_vector)
@@ -493,7 +502,7 @@ total_poker <- sum(poker_vector)
 total_roulette <-  sum(roulette_vector)
 
 # Total winnings overall
-total_week <- total_roulette + total_poker
+total_week <- sum(poker_vector, roulette_vector)
 
 # Print out total_week
 total_week
