@@ -527,7 +527,36 @@ success_msg("Well done. This is pretty bad news...")
 
 Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. This makes you wonder if your total gains in poker are greater than in roulette.
+
+R has six ways of comparing numbers, using **comparison operators**. Just like the arithmetic operators (`+`) that you saw previously, they operate elementwise on vectors.
+
+`x > y` returns `TRUE` whenever the element of `x` is **greater than** the corresponding element of `y`. Similarly
+
+- `x < y` means `x` is **less than** `y`.
+- `x >= y` means `x` is **greater than or equal to** `y`.
+- `x >= y` means `x` is **less than or equal to** `y`.
+- `x == y` means `x` is **equal to** `y`.
+- `x != y` means `x` is **not equal to** `y`.
+
+Here is an example of each of the six situations, with the result shown in comments.
+
+```{r}
+x <- c(0, 3, 6)
+y <- c(1, 3, 5)
+x > y
+## [1] FALSE FALSE  TRUE
+x < y
+## [1]  TRUE FALSE FALSE
+x >= y
+## [1] FALSE  TRUE  TRUE
+x <= y
+## [1]  TRUE  TRUE FALSE
+x == y
+## [1] FALSE  TRUE FALSE
+x != y
+## [1]  TRUE FALSE  TRUE
+```
 
 *** =instructions
 - Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
@@ -545,11 +574,8 @@ After a short brainstorm in your hotel's jacuzzi, you realize that a possible ex
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Calculate total gains for poker and roulette
 total_poker <-
@@ -562,11 +588,8 @@ total_roulette <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Calculate total gains for poker and roulette
 total_poker <- sum(poker_vector)
@@ -579,7 +602,6 @@ total_poker > total_roulette
 *** =sct
 ```{r}
 msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
@@ -589,7 +611,7 @@ test_object("total_roulette",
             incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
 test_output_contains("total_poker > total_roulette",
                      incorrect_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
-success_msg("Good job! Continue to the next exercise.")
+success_msg("Good job! Comparison operators work on each element of the vectors, just like arithmetic operators.")
 ```
 
 
