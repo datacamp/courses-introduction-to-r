@@ -241,7 +241,7 @@ success_msg("Well done! Continue to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:6858c65a4a
 ## Naming a vector (2)
 
-If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
+If you want to become a good statistician, you have to become lazy. (If you are already lazy, the chances are high that you are one of those exceptional, natural-born statistical talents.)
 
 In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
 
@@ -249,7 +249,7 @@ Just like you did with your poker and roulette returns, you can also create a va
 
 *** =instructions
 - A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- Use `days_vector` to set the [`names()`](https://www.rdocumentation.org/packages/base/topics/names) of `poker_vector` and `roulette_vector`.
 
 *** =hint
 You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
@@ -262,17 +262,17 @@ You can use `names(poker_vector) <- days_vector` to set the names of the element
 *** =sample_code
 ```{r}
 # Poker winnings from Monday to Friday
-poker_vector <- c(140, -50, 20, -120, 240)
+poker_vector <- c(140.25, -50.50, 20.25, -120, 240)
 
 # Roulette winnings from Monday to Friday
-roulette_vector <- c(-24, -50, 100, -350, 10)
+roulette_vector <- c(-24.75, -50.25, 100, -350.50, 10)
 
 # The variable days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
  
 # Assign the names of the day to roulette_vector and poker_vector
-names(poker_vector) <-   
-names(roulette_vector) <-
+___(poker_vector) <-   
+___(roulette_vector) <-
 ```
 
 *** =solution
