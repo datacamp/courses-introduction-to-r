@@ -313,15 +313,9 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 
 Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
 
-You want to find out the following type of information:
+Suppose you want to calculate your total winnings for each day of the week. You could calculate the total winnings for Monday, then for Tuesday, and so on throughout the week. That sounds like a lot of effort, and as you learned in the last exercise, laziness is an important skill!
 
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
-
-To get the answers, you have to do arithmetic calculations on vectors. 
-
-It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+Fortunately, R makes it easy to do arithmetic calculations on vectors. If you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -332,17 +326,19 @@ c(5, 7, 9)
 You can also do the calculations with variables that represent vectors:
 
 ```
-a <- c(1, 2, 3) 
-b <- c(4, 5, 6)
-c <- a + b
+first <- c(1, 2, 3) 
+second <- c(4, 5, 6)
+total <- a + b
 ```
 
+This means that to do all your calculations, you only need one line of code.
+
 *** =instructions
-- Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
+- Take the sum of the variables `square_numbers` and `triangular_numbers` and it assign to `total_vector`.
 - Inspect the result by printing out `total_vector`.
 
 *** =hint
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+Use the `+` operator to sum `square_numbers` and `triangular_numbers`. Use `<-` to assign the result to `total_vector`.
 
 *** =pre_exercise_code
 ```{r}
@@ -351,10 +347,10 @@ Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the re
 
 *** =sample_code
 ```{r}
-A_vector <- c(1, 2, 3)
-B_vector <- c(4, 5, 6)
+square_numbers <- c(1, 4, 9, 16, 25, 36)
+triangular_numbers <- c(1, 3, 6, 10, 15, 21)
 
-# Take the sum of A_vector and B_vector
+# Take the sum of square_numbers and triangular_numbers
 total_vector <- 
   
 # Print out total_vector
@@ -363,11 +359,11 @@ total_vector <-
 
 *** =solution
 ```{r}
-A_vector <- c(1, 2, 3)
-B_vector <- c(4, 5, 6)
+square_numbers <- c(1, 2, 3)
+triangular_numbers <- c(4, 5, 6)
 
-# Take the sum of A_vector and B_vector
-total_vector <- A_vector + B_vector
+# Take the sum of square_numbers and triangular_numbers
+total_vector <- square_numbers + triangular_numbers
 
 # Print out total_vector
 total_vector
@@ -375,10 +371,10 @@ total_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
-test_object("A_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("B_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
+msg <- "Do not change the contents of `square_numbers` or `triangular_numbers`!"
+test_object("square_numbers", undefined_msg = msg, incorrect_msg = msg)
+test_object("triangular_numbers", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `square_numbers` and `triangular_numbers`.")
 test_output_contains("total_vector", incorrect_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
 success_msg("Good job! Continue to the next exercise.")
 ```
