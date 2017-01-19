@@ -8,23 +8,39 @@ description : In this chapter you will learn how to work with matrices in R. By 
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
+You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. This takes a vector, and the number of rows (`nrow`) or the number of columns (`ncol`). In either of the following examples, the result is the same. The output is shown in comments.
 
 ```
-matrix(1:9, byrow = TRUE, nrow = 3)
+matrix(1:12, nrow = 3)
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+matrix(1:12, ncol = 4)
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
 ```
 
-In the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function:
+Notice that the values are filled in by column. Occasionally it is easier to fill the values by row; you can do this with `byrow = TRUE`.
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+```
+matrix(1:12, nrow = 3, byrow = TRUE)
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12
+```
 
 *** =instructions
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+* Construct a matrix with 3 rows containing the numbers 1 up to 15 by column.
+* Create another matrix containing 1 to 15, this time filled by row.
 
 *** =hint
-Read the assignment carefully, the answer is already given!
+
+* In both cases, the first two arguments to `matrix()` are `1:15` and `nrow = 3`.
+* To specify the values should be filled by row, pass `byrow = TRUE`.
 
 *** =pre_exercise_code
 ```{r}
@@ -33,22 +49,29 @@ Read the assignment carefully, the answer is already given!
 
 *** =sample_code
 ```{r}
-# Construct a matrix with 3 rows that contain the numbers 1 up to 9
+# Construct a matrix with 3 rows containing 1 to 15 by column
+matrix(___, nrow = ___)
+
+# Construct a matrix with 3 rows containing 1 to 15 by row
+
 ```
 
 *** =solution
 ```{r}
-# Construct a matrix with 3 rows that contain the numbers 1 up to 9
-matrix(1:9, byrow = TRUE, nrow = 3)
+# Construct a matrix with 3 rows that contain the numbers 1 up to 15
+matrix(1:15, nrow = 3)
+matrix(1:15, nrow = 3, byrow = TRUE)
 ```
 
 *** =sct
 ```{r}
-test_function("matrix", c("data", "byrow", "nrow"),
+test_function("matrix", c("data", "nrow", "byrow"),
               incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
-success_msg("Great! Continue to the next exercise.")
+test_output_contains("matrix(1:15, nrow = 3)",
+                     incorrect_msg = "Did you define `matrix(1:15, nrow = 3)`?")
+test_output_contains("matrix(1:15, nrow = 3, byrow = TRUE)",
+                     incorrect_msg = "Did you define `matrix(1:15, nrow = 3, byrow = TRUE)`?")
+success_msg("Great! The `matrix` type is an important way of storing data that has rows and columns.")
 ```
 
 
@@ -57,17 +80,41 @@ success_msg("Great! Continue to the next exercise.")
 
 It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+Another way to create a matrix is to take several vectors and bind them together by column, using [`cbind()`](https://www.rdocumentation.org/packages/base/topics/cbind).
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+For example, here are the side-lengths of four right-angled triangles.
+
+```{r}
+triangle1 <- c(3, 4, 5)
+triangle2 <- c(5, 12, 13)
+triangle3 <- c(7, 24, 25)
+triangle4 <- c(8, 15, 17)
+cbind(triangle1, triangle2, triangle3, triangle4)
+##      triangle1 triangle2 triangle3 triangle4
+## [1,]         3         5         7         8
+## [2,]         4        12        24        15
+## [3,]         5        13        25        17
+```
+
+Similarly, you can bind the vectors into a matrix by row using [`rbind()`](https://www.rdocumentation.org/packages/base/topics/rbind).
+
+```{r}
+rbind(triangle1, triangle2, triangle3, triangle4)
+##           [,1] [,2] [,3]
+## triangle1    3    4    5
+## triangle2    5   12   13
+## triangle3    7   24   25
+## triangle4    8   15   17
+```
 
 *** =instructions
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+
+The box office revenues for the three original Star Wars movies, in millions of USD are defined in the vectors `new_hope`, `empire_strikes`, and `return_jedi`.
+
+- Use `rbind()` to bind the box office results for the three Star Wars movies into a matrix with 3 rows, where each row represents a movie. Name the resulting matrix `star_wars_matrix`.
 
 *** =hint
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., by_row ...)` is a template for the solution to the second instruction.
+rbind(movie1, movie2, movie3)` is a template for the solution.
 
 *** =pre_exercise_code
 ```{r}
@@ -76,30 +123,24 @@ In this exercise, you'll combine all these figures into a single vector. Next, y
 
 *** =sample_code
 ```{r}
-# Box office Star Wars (in millions!)
+# Box office Star Wars (in millions of USD)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create box_office
-box_office <- 
-
-# Construct star_wars_matrix
+# Construct star_wars_matrix using rbind()
 star_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# Box office Star Wars (in millions!)
+# Box office Star Wars (in millions of USD)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create box_office
-box_office <- c(new_hope, empire_strikes, return_jedi)
-
-# Construct star_wars_matrix
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
+# Construct star_wars_matrix using rbind()
+star_wars_matrix <- rbind(new_hope, empire_strikes, return_jedi) 
 ```
 
 *** =sct
@@ -109,15 +150,13 @@ test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
-
-test_function("matrix", c("data", "nrow", "byrow"),
+test_function("rbind",
               incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
 
 test_object("star_wars_matrix",
-            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+            incorrect_msg = "Did you call `rbind(new_hope, empire_strikes, return_jedi)`?")
 
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("The force is actually with you! To create a `matrix` from vectors, use `cbind()` or `rbind()`.")
 ```
 
 
