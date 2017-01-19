@@ -943,25 +943,32 @@ success_msg("Great!")
 
 
 --- type:NormalExercise xp:100 skills:1 key:2754fc5cd4
-## Selection by comparison - Step 2
+## Selection by comparison
 
-Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+So far, you've used positive integers, negative integers, and names to select elements from a vector. The fourth (and final) way of accessing elements from a vector is to use **logical** values.
 
-In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+A common scenario is to use the comparison operators that you saw in the Calculating Total Winnings exercise to select values.  For example, you can ignore all your losses and ask R to return only those days where you realized a positive return for poker (the output is shown in comments).
 
-You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`:
-
+```{r}
+poker_vector > 0
+##    Monday   Tuesday Wednesday  Thursday    Friday 
+##      TRUE     FALSE      TRUE     FALSE      TRUE
+poker_vector[poker_vector > 0]
+##    Monday Wednesday    Friday 
+##    140.25     20.25    240.00
 ```
-poker_vector[selection_vector]
-```
 
-R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to `TRUE` in `selection_vector`.
+As you may have spotted in the example, when you use a logcial vector for selection, R selects the elements that are `TRUE`.
 
 *** =instructions
-Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+
+* Use a comparison operator to create a logical vector that is `TRUE` when `roulette_vector` is greater than zero, and assign the result to `selection_vector`.
+* Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `roulette_winning_days`.
 
 *** =hint
-Use `poker_vector[selection_vector]` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
+
+* Use `roulette_vector > 0` to create a logical vector that is `TRUE` when `roulette_vector` is greater than zero.
+* Use `roulette_vector[selection_vector]` to select the desired elements from `roulette_vector`, and assign the result to `roulette_winning_days`.
 
 *** =pre_exercise_code
 ```{r}
@@ -970,28 +977,28 @@ Use `poker_vector[selection_vector]` to select the desired elements from `poker_
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# Poker and roulette winnings from Monday to Friday
 poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
-# Which days did you make money on poker?
-selection_vector <- poker_vector > 0
+# Which days did you make money on roulette?
+selection_vector <- 
 
-# Select from poker_vector these days
-poker_winning_days <- 
+# Select these days from roulette_vector
+roulette_winning_days <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# Poker and roulette winnings from Monday to Friday
 poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
-# Which days did you make money on poker?
-selection_vector <- poker_vector > 0
+# Which days did you make money on roulette?
+selection_vector <- roulette_vector > 0
 
-# Select from poker_vector these days
-poker_winning_days <- poker_vector[selection_vector]
+# Select these days from roulette_vector
+roulette_winning_days <- roulette_vector[selection_vector]
 ```
 
 *** =sct
