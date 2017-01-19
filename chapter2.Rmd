@@ -742,12 +742,22 @@ success_msg("Well done! Continue to the next exercise to specialize in vector se
 --- type:NormalExercise xp:100 skills:1 key:27976b79f4
 ## Vector selection: the good times (3)
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+Sometimes rather than specifying the elements that you want to select, it is easier to specify the elements that you **don't want** to select. In this case, rather than writing a vector of positive numbers inside the square brackets, you write a vector of **negative numbers**.
 
-So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
+For example, since `poker_vector` has five elements, both these lines of code will drop the first two elements.
+
+```{r}
+poker_vector[-1:-2]
+## Wednesday  Thursday    Friday 
+##     20.25   -120.00    240.00
+poker_vector[3:5]
+## Wednesday  Thursday    Friday 
+##     20.25   -120.00    240.00
+```
 
 *** =instructions
-Assign to `roulette_selection_vector` the roulette results from Tuesday up to Friday; make use of `:` if it makes things easier for you.
+
+Thursday was a bad day for roulette. Ignore Thursday by using negative indexing to drop the fourth day's result.
 
 *** =hint
 Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
@@ -759,7 +769,7 @@ poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
-roulette_selection_vector <- 
+roulette_ignoring_thursday <- 
 ```
 
 *** =solution
@@ -769,7 +779,7 @@ poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
-roulette_selection_vector <- roulette_vector[2:5]
+roulette_ignoring_thursday <- roulette_vector[-4]
 ```
 
 *** =sct
@@ -778,9 +788,9 @@ roulette_selection_vector <- roulette_vector[2:5]
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("roulette_selection_vector", 
+test_object("roulette_ignoring_thursday", 
             undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.",
-            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
+            incorrect_msg = "It looks like `roulette_ignoring_thursday` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
 success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
 ```
 
@@ -788,27 +798,33 @@ success_msg("Awesome! The colon operator is extremely useful and very often used
 --- type:NormalExercise xp:100 skills:1 key:e6c263ddee
 ## Vector selection: the good times (4)
 
-Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
+If you have a named vector, you can also select elements of a vector using its names. This often makes your code easier to read (at the cost of a little more typing).
 
+For example, both these piece of code select the poker elements for Tuesday and Thursday, but using names makes the code easier to understand. (The output is shown in comments.)
+
+```{r}
+poker_vector[c(2, 4)]
+##  Tuesday Thursday 
+##    -50.5   -120.0
+poker_vector[c("Tuesday", "Thursday")]
+##  Tuesday Thursday 
+##    -50.5   -120.0
 ```
-poker_vector["Monday"]
-```
 
-will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+The (arithmetic) **mean** is a very common type of average. It is calculated by adding up all the numbers in the vector, then dividing by the length of that vector. You can calculate it using the [`mean()`](https://www.rdocumentation.org/packages/base/topics/mean) function.  For example
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
-
-```
-poker_vector[c("Monday","Tuesday")]
+```{r}
+mean(c(4, 6, 7, 3, 5))
+## [1] 5
 ```
 
 *** =instructions
-- Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function. Simply print out the result so you can inspect it.
+- Select the first three elements in `roulette_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `roulette_start`.
+- Calculate the average of the values in `roulette_start` with the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function. Simply print out the result so you can inspect it.
 
 *** =hint
-- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
-- You can use `mean(poker_start)` to get the mean of the elements in `poker_start`. You do not need the mean of all poker elements, but only of the first three days.
+- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `roulette_vector` appropriately.
+- You can use `mean(roulette_start)` to get the mean of the elements in `roulette_start`. You do not need the mean of all roulette elements, but only of the first three days.
 
 *** =pre_exercise_code
 ```{r}
@@ -821,10 +837,10 @@ poker_vector[c("Monday","Tuesday")]
 poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
-# Select poker results for Monday, Tuesday and Wednesday
-poker_start <- 
+# Select roulette results for Monday, Tuesday and Wednesday
+roulette_start <- 
   
-# Calculate the average of the elements in poker_start
+# Calculate the average of the elements in roulette_start
 
 ```
 
@@ -834,11 +850,11 @@ poker_start <-
 poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
 roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
-# Select poker results for Monday, Tuesday and Wednesday
-poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
+# Select roulette results for Monday, Tuesday and Wednesday
+roulette_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
   
-# Calculate the average of the elements in poker_start
-mean(poker_start)
+# Calculate the average of the elements in roulette_start
+mean(roulette_start)
 ```
 
 *** =sct
@@ -846,9 +862,9 @@ mean(poker_start)
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("poker_start", 
-            incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
-test_output_contains("mean(poker_start)", incorrect_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
+test_object("roulette_start", 
+            incorrect_msg = "It looks like `poker_start` does not contain the first three values of `roulette_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
+test_output_contains("mean(roulette_start)", incorrect_msg = "Have you correctly calculated the average of the values in `roulette_start` and printed it out? Use `mean(roulette_start)`.")
 success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
 ```
 
