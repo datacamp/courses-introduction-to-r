@@ -755,11 +755,8 @@ Assign a selection of `roulette_vector` to `roulette_selection_vector` by placin
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
 roulette_selection_vector <- 
@@ -768,11 +765,8 @@ roulette_selection_vector <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
 roulette_selection_vector <- roulette_vector[2:5]
@@ -782,7 +776,6 @@ roulette_selection_vector <- roulette_vector[2:5]
 
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_selection_vector", 
@@ -825,11 +818,8 @@ poker_vector[c("Monday","Tuesday")]
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Select poker results for Monday, Tuesday and Wednesday
 poker_start <- 
@@ -841,11 +831,8 @@ poker_start <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Select poker results for Monday, Tuesday and Wednesday
 poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
@@ -857,7 +844,6 @@ mean(poker_start)
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_start", 
@@ -905,11 +891,8 @@ In order to check for which days your poker gains are positive, R should check f
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on poker?
 selection_vector <- 
@@ -921,11 +904,8 @@ selection_vector <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on poker?
 selection_vector <- poker_vector > 0
@@ -937,7 +917,6 @@ selection_vector
 *** =sct
 ```{r}
 msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
@@ -976,11 +955,8 @@ Use `poker_vector[selection_vector]` to select the desired elements from `poker_
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on poker?
 selection_vector <- poker_vector > 0
@@ -992,11 +968,8 @@ poker_winning_days <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on poker?
 selection_vector <- poker_vector > 0
@@ -1008,7 +981,6 @@ poker_winning_days <- poker_vector[selection_vector]
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", incorrect_msg = "Don't change the way `selection_vector` is calculated.")
@@ -1038,11 +1010,8 @@ Once you've correctly calculated `selection_vector`, you can again use `roulette
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on roulette?
 selection_vector <-
@@ -1054,11 +1023,8 @@ roulette_winning_days <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Which days did you make money on roulette?
 selection_vector <- roulette_vector > 0
@@ -1070,7 +1036,6 @@ roulette_winning_days <- roulette_vector[selection_vector]
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
