@@ -622,7 +622,7 @@ Your hunch seemed to be right. It appears that the poker game is more your cup o
 
 Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use **square brackets**. Between the square brackets, you indicate what elements to select by passing a **positive integer** denoting the position of the element that you want to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
 
 *** =instructions
 Assign the poker results of Wednesday to the variable `poker_wednesday`.
@@ -637,12 +637,9 @@ Wednesday is the third element of `poker_vector`, and can thus be selected with 
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+# Poker and roulette winnings from Monday to Friday
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
 poker_wednesday <- 
@@ -650,12 +647,9 @@ poker_wednesday <-
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+# Poker and roulette winnings from Monday to Friday
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
 
 # Define a new variable based on a selection
 poker_wednesday <- poker_vector[3]
@@ -664,7 +658,6 @@ poker_wednesday <- poker_vector[3]
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_wednesday", 
@@ -677,19 +670,32 @@ success_msg("Great! R also makes it possible to select multiple elements from a 
 --- type:NormalExercise xp:100 skills:1 key:1351521670
 ## Vector selection: the good times (2)
 
-How about analyzing your midweek results? 
+How about analyzing several days at once? 
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`. That is, the results from Monday and Friday.
 
-```
+```{r}
 poker_vector[c(1, 5)]
 ```
 
+For consecutive elements, there is a shortcut: you can write `a:b` rather than `c(a, a + 1, a + 2, ..., b)`. For example, these two statements are the same. (The output is shown in comments.)
+
+```{r}
+2:7
+## [1] 2 3 4 5 6 7
+c(2, 3, 4, 5, 6, 7)
+## [1] 2 3 4 5 6 7
+```
+
 *** =instructions
-Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+
+* Create a sequence of numbers from the position of Tuesday (2) to Thursday (4), and assign the result to `index_midweek`.
+* Use the index variable to select the poker results of Tuesday, Wednesday and Thursday, and assign the result to `poker_midweek`.
 
 *** =hint
-Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
+
+* The index can be created with `c(2, 3, 4)`, or its shortcut using the colon operator, `2:4`.
+* Use square brackets, `[`, to select the correct elements of `poker_vector`.
 
 *** =pre_exercise_code
 ```{r}
@@ -699,11 +705,11 @@ Use the vector `c(2, 3, 4)` between square brackets to select the correct elemen
 *** =sample_code
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
+
+# Create a sequence from 2 to 4
+index_midweek <- 
 
 # Define a new variable based on a selection
 poker_midweek <- 
@@ -712,20 +718,19 @@ poker_midweek <-
 *** =solution
 ```{r}
 # Poker and roulette winnings from Monday to Friday:
-poker_vector <- c(140, -50, 20, -120, 240)
-roulette_vector <- c(-24, -50, 100, -350, 10)
-days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
-names(poker_vector) <- days_vector
-names(roulette_vector) <- days_vector
+poker_vector <- c(Monday = 140.25, Tuesday = -50.50, Wednesday = 20.25, Thursday = -120, Friday = 240)
+roulette_vector <- c(Monday = -24.75, Tuesday = -50.25, Wednesday = 100, Thursday = -350.50, Friday = 10)
+
+# Create a sequence from 2 to 4
+index_midweek <- 2:4
 
 # Define a new variable based on a selection
-poker_midweek <- poker_vector[c(2, 3, 4)]
+poker_midweek <- poker_vector[index_midweek]
 ```
 
 *** =sct
 ```{r}
 msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
-test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_midweek", 
