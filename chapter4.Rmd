@@ -38,7 +38,20 @@ theory <- "factors for categorical variables"
 
 *** =sct
 ```{r}
-test_object("theory", incorrect_msg = "Make sure to assign the character string `\"factors for categorical variables\"` to `theory`. Remember that R is case sensitive.");
+# MC-note: ideally, we could check for commonly mistyped variable names
+#test_or({
+#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
+#    lapply(bad_names, test_object, eval=FALSE)
+#    })
+
+msg_undef <- "It looks like you haven't defined the variable `theory`."
+msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
+msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+
+# If get error and theory is undefined, point out the error
+test_or(test_error(msg_err), test_object("theory", eval = FALSE))
+
+test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
@@ -227,8 +240,16 @@ msg = "Do not change the definition of `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
+
+# MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
+
+# MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
+# test_student_typed('c("Male", "Female")')
+
 test_object("factor_survey_vector", eq_condition = "equal",
             incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+
+
 success_msg("Wonderful! Proceed to the next exercise.")
 ```
 
@@ -369,7 +390,7 @@ But this is not always the case! Sometimes you will also deal with factors that 
 Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
 
 *** =instructions
-As a first step, assign `speed_vector` knowing that:
+As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
 
 - Analyst 1 is fast,
 - Analyst 2 is slow,
@@ -402,7 +423,7 @@ speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 *** =sct
 ```{r}
 test_object("speed_vector",
-            incorrect_msg = "Make sure that you assigned the correct vector to speed_vector. Don't use capital letters; R is case sensitive!")
+            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
 success_msg("A job well done! Continue to the next exercise.")
 ```
 

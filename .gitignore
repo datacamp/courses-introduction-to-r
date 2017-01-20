@@ -6,3 +6,4 @@
 .Rproj.user
 !datasets/
 !datasets/*
+!requirements.r

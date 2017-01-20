@@ -4,19 +4,13 @@ instructors:
  - jonathan+author@datacamp.com
 time_needed: 4 hours
 difficulty_level: 1
-description: "In this introduction to R, you will master the basics of this beautiful 
-  open source language, including factors, lists and data frames. With the knowledge 
-  gained in this course, you will be ready to undertake your first very own data 
-  analysis. With over 2 million users worldwide R is rapidly becoming the leading 
-  programming language in statistics and data science. Every year, the number of R 
-  users grows by 40% and an increasing number of organizations are using it in their 
-  day-to-day activities. Leverage the power of R by completing this free R online 
+description: "In this introduction to R, you will master the basics of this beautiful
+  open source language, including factors, lists and data frames. With the knowledge
+  gained in this course, you will be ready to undertake your first very own data
+  analysis. With over 2 million users worldwide R is rapidly becoming the leading
+  programming language in statistics and data science. Every year, the number of R
+  users grows by 40% and an increasing number of organizations are using it in their
+  day-to-day activities. Leverage the power of R by completing this free R online
   course today!"
-chapters:
-  chapter1.Rmd: 316
-  chapter2.Rmd: 317
-  chapter3.Rmd: 318
-  chapter4.Rmd: 319
-  chapter5.Rmd: 320
-  chapter6.Rmd: 321
+from: "r-base-prod:10"
 
