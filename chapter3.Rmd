@@ -6,17 +6,13 @@ description : In this chapter you will learn how to work with matrices in R. By 
 --- type:NormalExercise xp:100 skills:1 key:d61aeba84c
 ## What's a matrix?
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are working with rows and columns, a matrix is called two-dimensional. 
 
 You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. This takes a vector, and the number of rows (`nrow`) or the number of columns (`ncol`). In either of the following examples, the result is the same. The output is shown in comments.
 
 ```
 matrix(1:12, nrow = 3)
-##      [,1] [,2] [,3] [,4]
-## [1,]    1    4    7   10
-## [2,]    2    5    8   11
-## [3,]    3    6    9   12
-matrix(1:12, ncol = 4)
+matrix(1:12, ncol = 4) # same
 ##      [,1] [,2] [,3] [,4]
 ## [1,]    1    4    7   10
 ## [2,]    2    5    8   11
@@ -58,15 +54,43 @@ matrix(___, nrow = ___)
 
 *** =solution
 ```{r}
-# Construct a matrix with 3 rows that contain the numbers 1 up to 15
+# Construct a matrix with 3 rows containing 1 to 15 by column
 matrix(1:15, nrow = 3)
+
+# Construct a matrix with 3 rows containing 1 to 15 by row
 matrix(1:15, nrow = 3, byrow = TRUE)
 ```
 
 *** =sct
 ```{r}
-test_function("matrix", c("data", "nrow", "byrow"),
-              incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+test_or(
+    test_function(
+      "matrix", 
+      args = c("data", "nrow"),
+      index = 1,
+      incorrect_msg = "Did you call `matrix(1:15, nrow = 3)`?"
+    ),
+    test_function(
+      "matrix", 
+      args = c("data", "ncol"),
+      index = 1,
+      incorrect_msg = "Did you call `matrix(1:15, ncol = 5)`?"
+    )
+)
+test_or(
+    test_function(
+      "matrix", 
+      args = c("data", "nrow", "byrow"),
+      index = 2,
+      incorrect_msg = "Did you call `matrix(1:15, nrow = 3, byrow = TRUE)`?"
+    ),
+    test_function(
+      "matrix", 
+      args = c("data", "ncol", "byrow"),
+      index = 2,
+      incorrect_msg = "Did you call `matrix(1:15, ncol = 5, byrow = TRUE)`?"
+    )    
+)
 test_output_contains("matrix(1:15, nrow = 3)",
                      incorrect_msg = "Did you define `matrix(1:15, nrow = 3)`?")
 test_output_contains("matrix(1:15, nrow = 3, byrow = TRUE)",
