@@ -13,13 +13,11 @@ By contrast, if a variable should be limited to a **finite number of values**, i
 
 A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals or intersex people, but you will always have a finite number of categories.)
 
-In some cases, whether you treat a variable as continuous or categorical depends upon what you are trying to do. for example, if you want to compare revenues in February versus revenues in January, then you should consider the month of the year as categorical. If you want plot a time series of revenue, you must consider the date as continuous.
+In some cases, whether you treat a variable as continuous or categorical depends upon what you are trying to do. For example, if you want to compare revenues in February versus revenues in January, then you should consider the month of the year as categorical. If you want plot a time series of revenue, you must consider the date as continuous.
 
-
+Which of the following variables is **not** categorical?
 
 *** =instructions
-
-Which of the following variables is not categorical?
 
 - The names of members of 1970s pop group The Jackson 5.
 - The heights of a herd of giraffes.
