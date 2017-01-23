@@ -63,38 +63,14 @@ matrix(1:15, nrow = 3, byrow = TRUE)
 
 *** =sct
 ```{r}
-test_or(
-    test_function(
-      "matrix", 
-      args = c("data", "nrow"),
-      index = 1,
-      incorrect_msg = "Did you call `matrix(1:15, nrow = 3)`?"
-    ),
-    test_function(
-      "matrix", 
-      args = c("data", "ncol"),
-      index = 1,
-      incorrect_msg = "Did you call `matrix(1:15, ncol = 5)`?"
-    )
+
+test_output_contains(
+  "matrix(1:15, nrow = 3)",
+  incorrect_msg = "Did you call `matrix()` with `data = 1:15` and `nrow = 3`?"
 )
-test_or(
-    test_function(
-      "matrix", 
-      args = c("data", "nrow", "byrow"),
-      index = 2,
-      incorrect_msg = "Did you call `matrix(1:15, nrow = 3, byrow = TRUE)`?"
-    ),
-    test_function(
-      "matrix", 
-      args = c("data", "ncol", "byrow"),
-      index = 2,
-      incorrect_msg = "Did you call `matrix(1:15, ncol = 5, byrow = TRUE)`?"
-    )    
-)
-test_output_contains("matrix(1:15, nrow = 3)",
-                     incorrect_msg = "Did you define `matrix(1:15, nrow = 3)`?")
 test_output_contains("matrix(1:15, nrow = 3, byrow = TRUE)",
-                     incorrect_msg = "Did you define `matrix(1:15, nrow = 3, byrow = TRUE)`?")
+  incorrect_msg = "Did you call `matrix()` with `data = 1:15`, `nrow = 3`, and `byrow = TRUE`?"
+)
 success_msg("Great! The `matrix` type is an important way of storing data that has rows and columns.")
 ```
 
