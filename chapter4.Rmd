@@ -1,58 +1,55 @@
 ---
 title_meta  : Chapter 4
 title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : Very often, data falls into a limited number of categories. For example, sex can often be limited to either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
---- type:NormalExercise xp:100 skills:1 key:05273321916d99bb9c0deadf75c6834d25a47244
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:f3bd05b027
 ## What's a factor and why would you use it?
 
-In this chapter you dive into the wonderful world of **factors**.
+The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values (though technically it is not infinite, since computers cannot represent an infinite number of different numbers).
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+By contrast, if a variable should be limited to a **finite number of values**, it is called a **categorical** variable. Categorical variables are stored using the [`factor()`](http://www.rdocumentation.org/packages/base/topics/factor) data type, which will be discussed in the next few exercises.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals or intersex people, but you will always have a finite number of categories.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+In some cases, whether you treat a variable as continuous or categorical depends upon what you are trying to do. for example, if you want to compare revenues in February versus revenues in January, then you should consider the month of the year as categorical. If you want plot a time series of revenue, you must consider the date as continuous.
+
+
 
 *** =instructions
-Assign to variable `theory` the value `"factors for categorical variables"`.
+
+Which of the following variables is not categorical?
+
+- The names of members of 1970s pop group The Jackson 5.
+- The heights of a herd of giraffes.
+- The suits in a deck of cards (that brought you such rotten luck in Las Vegas).
+- The models of Ferrari (that you failed to win on your trip to Las Vegas).
 
 *** =hint
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+
+One of these variables can take a range of values. This variable is continuous.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
-```
 
-*** =sample_code
-```{r}
-# Assign to the variable theory what this chapter is about!
-```
-
-*** =solution
-```{r}
-# Assign to the variable theory what this chapter is about!
-theory <- "factors for categorical variables"
 ```
 
 *** =sct
 ```{r}
-# MC-note: ideally, we could check for commonly mistyped variable names
-#test_or({
-#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
-#    lapply(bad_names, test_object, eval=FALSE)
-#    })
-
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
-
-# If get error and theory is undefined, point out the error
-test_or(test_error(msg_err), test_object("theory", eval = FALSE))
-
-test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+msgs <- list(
+  bad_jacko   = "There were a finite number of people in the Jackson 5.",
+  success     = "Your R skills are reaching new heights! Giraffes have a range of heights, so that variable is continuous.",
+  bad_cards   = "There are a finite number of suits in a deck of cards.",
+  bad_ferrari = "Ferrari make a finite number of models."
+)
+with(
+  msgs,
+  test_mc(
+    2,
+    feedback_msgs = c(bad_jacko, success, bad_cards, bad_ferrari)
+  )
+)
 ```
 
 
