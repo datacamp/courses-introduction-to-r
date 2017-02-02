@@ -1,7 +1,7 @@
 ---
 title_meta  : Chapter 4
 title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : Very often, data falls into a limited number of categories. For example, humans identify as masculine or feminine (or non-binary). In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
 --- type:NormalExercise xp:100 skills:1 key:05273321916d99bb9c0deadf75c6834d25a47244
 ## What's a factor and why would you use it?
@@ -12,7 +12,7 @@ The term factor refers to a statistical data type used to store categorical vari
 
 It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Masculine" or "Feminine", making abstraction of inter-sexes. So here "Masculine" and "Feminine" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Masculine" of "Feminine".
 
 *** =instructions
 Assign to variable `theory` the value `"factors for categorical variables"`.
@@ -62,10 +62,10 @@ success_msg("Good job! Ready to start? Continue to the next exercise!")
 To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
 
 ```
-gender_vector <- c("Male","Female","Female","Male","Male")
+gender_vector <- c("Masculine","Feminine","Feminine","Masculine","Masculine")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
+It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Masculine" and "Feminine".
 
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
@@ -88,7 +88,7 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 *** =sample_code
 ```{r}
 # Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+gender_vector <- c("Masculine", "Feminine", "Feminine", "Masculine", "Masculine")
 
 # Convert gender_vector to a factor
 factor_gender_vector <-
@@ -100,7 +100,7 @@ factor_gender_vector <-
 *** =solution
 ```{r}
 # Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+gender_vector <- c("Masculine", "Feminine", "Feminine", "Masculine", "Masculine")
 
 # Convert gender_vector to a factor
 factor_gender_vector <- factor(gender_vector)
@@ -192,13 +192,13 @@ A good illustration is the raw data that is provided to you by a survey. A stand
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier.
+Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Masculine"` and `"Feminine"` instead of `"M"` and `"F"` to make your life easier.
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order order.
+**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Feminine"` and `"M"` to `"Masculine"`, the levels should be set to `c("Feminine", "Masculine")`, in this order order.
 
 *** =instructions
 - Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- Change the factor levels of `factor_survey_vector` to `c("Feminine", "Masculine")`. Mind the order of the vector elements here.
 
 *** =hint
 Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
@@ -229,7 +229,7 @@ survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
 # Specify the levels of factor_survey_vector
-levels(factor_survey_vector) <- c("Female", "Male")
+levels(factor_survey_vector) <- c("Feminine", "Masculine")
 
 factor_survey_vector
 ```
@@ -244,10 +244,10 @@ test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
 
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
-# test_student_typed('c("Male", "Female")')
+# test_student_typed('c("Masculine", "Feminine")')
 
 test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Feminine\", \"Masculine\")`. Remember that R is case sensitive!"))
 
 
 success_msg("Wonderful! Proceed to the next exercise.")
@@ -263,7 +263,7 @@ After finishing this course, one of your favorite functions in R will be [`summa
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+Going back to our survey, you would like to know how many `"Masculine"` responses you have in your study, and how many `"Feminine"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
 
 *** =instructions
 Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
@@ -281,7 +281,7 @@ Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/sum
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+levels(factor_survey_vector) <- c("Feminine", "Masculine")
 factor_survey_vector
 
 # Generate summary for survey_vector
@@ -296,7 +296,7 @@ factor_survey_vector
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+levels(factor_survey_vector) <- c("Feminine", "Masculine")
 factor_survey_vector
 
 # Generate summary for survey_vector
@@ -314,17 +314,17 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
 test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
 test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("Nice! Have a look at the output. The fact that you identified `\"Masculine\"` and `\"Feminine\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ## Battle of the sexes
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+In `factor_survey_vector` we have a factor with two levels: Masculine and Feminine. But how does R value these relatively to each other? In other words, what does R think is better, masculine or feminine?
 
 *** =instructions
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+Read the code in the editor and click 'Submit Answer' to see whether those identifying as masculine are worth more than those who identify as feminine.
 
 *** =hint
 Just click 'Submit Answer' and have a look at output that gets printed to the console.
@@ -339,16 +339,16 @@ Just click 'Submit Answer' and have a look at output that gets printed to the co
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+levels(factor_survey_vector) <- c("Feminine", "Masculine")
 
-# Male
-male <- factor_survey_vector[1]
+# Masculine
+masculine <- factor_survey_vector[1]
 
-# Female
-female <- factor_survey_vector[2]
+# Feminine
+feminine <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
-male > female
+# Battle of the genders: Masculine 'larger' than feminine?
+masculine > feminine
 ```
 
 *** =solution
@@ -356,16 +356,16 @@ male > female
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+levels(factor_survey_vector) <- c("Feminine", "Masculine")
 
-# Male
-male <- factor_survey_vector[1]
+# Masculine
+masculine <- factor_survey_vector[1]
 
-# Female
-female <- factor_survey_vector[2]
+# Feminine
+feminine <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
-male > female
+# Battle of the genders: Masculine 'larger' than feminine?
+masculine > feminine
 ```
 
 *** =sct
@@ -373,9 +373,9 @@ male > female
 msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("male", undefined_msg = msg, incorrect_msg = msg)
-test_object("female", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("male > female", incorrect_msg = msg)
+test_object("masculine", undefined_msg = msg, incorrect_msg = msg)
+test_object("feminine", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("masculine > feminine", incorrect_msg = msg)
 success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
 ```
 
@@ -383,7 +383,7 @@ success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to 
 --- type:NormalExercise xp:100 skills:1 key:9ab0928916bf84ab225713a9a1ce40d9e322c6a0
 ## Ordered factors
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+Since `"Masculine"` and `"Feminine"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
 
 But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
 
