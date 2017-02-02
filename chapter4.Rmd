@@ -12,7 +12,7 @@ The term factor refers to a statistical data type used to store categorical vari
 
 It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Masculine" or "Feminine", making abstraction of inter-sexes. So here "Masculine" and "Feminine" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Masculine" of "Feminine".
+A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Masculine" or "Feminine", making abstraction of those who do not identify as either of these binary options. So here "Masculine" and "Feminine" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Masculine" of "Feminine".
 
 *** =instructions
 Assign to variable `theory` the value `"factors for categorical variables"`.
@@ -59,7 +59,7 @@ success_msg("Good job! Ready to start? Continue to the next exercise!")
 --- type:NormalExercise xp:100 skills:1 key:6cc21c842b075347926bb1b244782213df32e370
 ## What's a factor and why would you use it? (2)
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the gender of 5 different individuals:
 
 ```
 gender_vector <- c("Masculine","Feminine","Feminine","Masculine","Masculine")
@@ -319,7 +319,7 @@ success_msg("Nice! Have a look at the output. The fact that you identified `\"Ma
 
 
 --- type:NormalExercise xp:100 skills:1 key:90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
-## Battle of the sexes
+## Battle of the genders
 
 In `factor_survey_vector` we have a factor with two levels: Masculine and Feminine. But how does R value these relatively to each other? In other words, what does R think is better, masculine or feminine?
 
