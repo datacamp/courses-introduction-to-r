@@ -14,8 +14,8 @@ You can also execute R commands straight in the console. This is a good way to e
 
 *** =instructions
 - In the editor on the right there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Select `3 + 4` in the editor, then press <kbd>CTRL</kbd> + <kbd>ENTER</kbd> to run the selection (<kbd>CMD</kbd> + <kbd>ENTER</kbd> on macOS).
-- Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button or press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ENTER</kbd> to run all your code and test the result (<kbd>CMD</kbd> + <kbd>SHIFT</kbd> + <kbd>ENTER</kbd> on macOS).
+- Select `3 + 4` in the editor, then press `CTRL` + `ENTER` to run the selection (`CMD` + `ENTER` on macOS).
+- Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button or press `CTRL` + `SHIFT` + `ENTER` to run all your code and test the result (`CTRL` + `SHIFT` + `ENTER` on macOS).
 
 *** =hint
 Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
