@@ -238,7 +238,7 @@ test_object("titles", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", eq_condition = "equal",
             incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
 test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
-success_msg("Great! You're on the way of becoming an R Jedi! Continue to the next exercise.")
+success_msg("Laugh it up, fuzzball! You're on the way of becoming an R Jedi! Continue to the next exercise.")
 ```
 
 
@@ -576,7 +576,7 @@ test_object("non_us_some",
             incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
 test_output_contains("mean(non_us_some)",
                      incorrect_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
-success_msg("Nice one! Continue to the next exercise.")
+success_msg("You are nearly at the end of the chapter. Stay on target!")
 ```
 
 
@@ -706,7 +706,7 @@ test_object("visitors",
 test_object("us_visitors", incorrect_msg = "To created `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
 test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
 
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("This exercise concludes the chapter on matrices. Only at the end do you realize the power of the Dark Side! Next stop on your journey through the R language: factors.")
 ```
 
 
