@@ -320,7 +320,7 @@ dim(star_wars_matrix)
 msg <- "Do not change anything about the preset variable `star_wars_matrix`!"
 ex() %>% {
   check_object(., "star_wars_matrix", undefined_msg = msg) %>%
-    check_equal(., "star_wars_matrix", incorrect_msg = msg)
+    check_equal(., incorrect_msg = msg)
   check_output_expr(., "nrow(star_wars_matrix)")
   check_output_expr(., "ncol(star_wars_matrix)")
   check_output_expr(., "dim(star_wars_matrix)")
@@ -420,13 +420,13 @@ rowsum_msg <- "Call `rowSums()` on `all_wars_matrix` and store the result in `wo
 
 ex() %>% {
   check_object(., "star_wars_matrix", undefined_msg = predef_msg) %>%
-    check_equal(., "star_wars_matrix", incorrect_msg = predef_msg)
+    check_equal(., incorrect_msg = predef_msg)
   check_object(., "star_wars_prequels_matrix", undefined_msg = predef_msg) %>%
-    check_equal(., "star_wars_prequels_matrix", incorrect_msg = predef_msg)
+    check_equal(., incorrect_msg = predef_msg)
   check_object(., "all_wars_matrix", undefined_msg = rbind_msg) %>%
-    check_equal(., "all_wars_matrix", incorrect_msg = rbind_msg)
+    check_equal(., incorrect_msg = rbind_msg)
   check_object(., "worldwide_vector", undefined_msg = rowsum_msg) %>%
-    check_equal(., "worldwide_vector", incorrect_msg = rowsum_msg)
+    check_equal(., incorrect_msg = rowsum_msg)
   check_output_expr(., "worldwide_vector")
 }
 success_msg("Great, kid. Don't get cocky! `rowSums()` calculates the sum of each row of a matrix.")
@@ -681,7 +681,7 @@ all_wars_matrix["The Empire Strikes Back", "US"]
 predef_msg <- "Do not change anything about the preset variable `all_wars_matrix`!"
 ex() %>% {
   check_object(., "all_wars_matrix", undefined_msg = predef_msg) %>%
-    check_equal(., "all_wars_matrix", incorrect_msg = predef_msg)
+    check_equal(., incorrect_msg = predef_msg)
   check_output_expr(., "all_wars_matrix[-3, ]")
   check_output_expr(., "all_wars_matrix[, c(FALSE, TRUE)]")
   check_output_expr(., 'all_wars_matrix["The Empire Strikes Back", "US"]')
