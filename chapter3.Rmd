@@ -507,19 +507,24 @@ success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetti
 --- type:NormalExercise xp:100 skills:1 key:41d9d69713
 ## Selection of matrix elements
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate that what to select from the rows from that what you want to select from the columns. For example: 
+Similar to vectors, you can use the square brackets, `[ ]`, to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. This means that inside the square brackets you should pass two indexing vectors; these should be separated by a comma.
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+For example: 
+
+- `my_matrix[1, 2]` selects the element at the first row and second column.
+- `my_matrix[1:3, 2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
 
 If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[, 1]` selects all elements of the first column.
+- `my_matrix[c(1, 3), ]` selects all elements of the first and third rows.
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+Back to Star Wars with this newly acquired knowledge!
 
 *** =instructions
+
+`all_wars_matrix` has been pre-defined in your workspace.
+
 - Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
 - Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
 - This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
@@ -530,7 +535,18 @@ You can select the entire second column of a matrix `my_matrix` with `my_matrix[
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+all_wars_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5, 461, 314.4, 290.5, 247.9, 309.3, 165.8),
+  nrow = 6, 
+  byrow = TRUE,
+  dimnames = list(
+    c(
+      "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith",
+      "A New Hope","The Empire Strikes Back","Return of the Jedi"
+    ), 
+    c("US", "non-US")
+  )
+)
 ```
 
 *** =sample_code
@@ -557,13 +573,13 @@ non_us_some <-
 all_wars_matrix
 
 # Select the non-US revenue for all movies
-non_us_all <- all_wars_matrix[,2]
+non_us_all <- all_wars_matrix[, 2]
   
 # Average non-US revenue
 mean(non_us_all)
   
 # Select the non-US revenue for first two movies
-non_us_some <- all_wars_matrix[1:2,2]
+non_us_some <- all_wars_matrix[1:2, 2]
   
 # Average non-US revenue for first two movies
 mean(non_us_some)
