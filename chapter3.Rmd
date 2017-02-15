@@ -699,15 +699,30 @@ For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
 As a newly-hired data analyst for Lucasfilm, it is your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
 
 *** =instructions
+
+`all_wars_matrix` has been pre-defined in your workspace.
+
 - Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
 - Print out `visitors` so you can have a look.
 
 *** =hint
+
 The number of visitors is equal to `all_wars_matrix` divided by 5.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+all_wars_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5, 461, 314.4, 290.5, 247.9, 309.3, 165.8),
+  nrow = 6, 
+  byrow = TRUE,
+  dimnames = list(
+    c(
+      "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith",
+      "A New Hope","The Empire Strikes Back","Return of the Jedi"
+    ), 
+    c("US", "non-US")
+  )
+)
 ``` 
 
 *** =sample_code
@@ -749,16 +764,28 @@ success_msg("Great! What do these results tell you? A staggering 92 million peop
 --- type:NormalExercise xp:100 skills:1 key:1e0b39d6e9
 ## A little arithmetic with matrices (2) 
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. For example,
+
+```{r}
+matrix1 <- matrix(1:6, nrow = 2)
+matrix2 <- matrix(7:12, nrow = 2)
+matrix1 * matrix2
+## [,1] [,2] [,3]
+## [1,]    7   27   55
+## [2,]   16   40   72
+```
 
 After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
 
 _Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
 
 *** =instructions
+
+`all_wars_matrix` and `ticket_prices_matrix` have been pre-defined in your workspace.
+
 - Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
 - From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- Calculate the mean number of US visitors per movie; print out the result.
 
 *** =hint
 - You can use the function `mean()` to calculate the average of the inputs to the function.
@@ -766,10 +793,24 @@ _Those who are familiar with matrices should note that this is not the standard 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
-movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi", "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
-col_titles <- c("US","non-US")
-ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nrow = 6, byrow = TRUE, dimnames = list(movie_names,col_titles))
+all_wars_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5, 461, 314.4, 290.5, 247.9, 309.3, 165.8),
+  nrow = 6, 
+  byrow = TRUE,
+  dimnames = list(
+    c(
+      "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith",
+      "A New Hope","The Empire Strikes Back","Return of the Jedi"
+    ), 
+    c("US", "non-US")
+  )
+)
+ticket_prices_matrix <- matrix(
+  c(4, 4, 4.5, 4.5, 4.9, 4.9, 5, 5, 6, 6, 7, 7), 
+  nrow = 6, 
+  byrow = TRUE, 
+  dimnames = list(rownames(all_wars_matrix), colnames(all_wars_matrix))
+)
 ```
 
 *** =sample_code
