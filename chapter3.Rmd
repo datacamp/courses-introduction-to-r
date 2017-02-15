@@ -473,6 +473,9 @@ success_msg("Wonderful! Continue with the next exercise and see how you can comb
 Just like every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has a [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), every [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has a [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
 
 *** =instructions
+
+`all_wars_matrix` has been pre-defined in your workspace.
+
 - Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function.
 - Print out `total_revenue_vector` to have a look at the results.
 
@@ -481,7 +484,20 @@ You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/fun
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+# all_wars_matrix is stored as a dataset, but it is 1e4 times faster to create it from scratch rather than downloading.
+# "http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"
+all_wars_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5, 461, 314.4, 290.5, 247.9, 309.3, 165.8),
+  nrow = 6, 
+  byrow = TRUE,
+  dimnames = list(
+    c(
+      "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith",
+      "A New Hope","The Empire Strikes Back","Return of the Jedi"
+    ), 
+    c("US", "non-US")
+  )
+)
 ```
 
 *** =sample_code
