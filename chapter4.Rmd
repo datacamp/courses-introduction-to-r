@@ -119,15 +119,24 @@ success_msg("Great! If you want to find out more about the `factor()` function, 
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree ;-) ).
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` is greater than `"Low"`, and `"High"` is greater than `"Medium"`.
+
+You've already seen that nominal categorical variables are create with [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). To create ordinal categorical variables, you use [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor).
+
+In R terminology, "factor" usually refers to an unordered factor, that is, a nominal categorical variable. Ordinal categorical variables are called "ordered factors".
 
 *** =instructions
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+
+* Create an unordered factor from `animal_vector`, assigning the result to `factor_animals_vector`.
+* Create an ordered factor from `temperature_vector` assigning the result to `factor_temperature_vector`.
+* Notice the trick of wrapping an assignment in parentheses, `( )`, to assign and print in one line!
 
 *** =hint
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+
+* Call `factor()` with `animal_vector` to create the unordered factor.
+* Call `ordered()` with `temperature_vector` to create the ordered factor.
 
 *** =pre_exercise_code
 ```{r}
@@ -136,28 +145,24 @@ Just click the 'Submit Answer' button and look at the console. Notice how R indi
 
 *** =sample_code
 ```{r}
-# Animals
+# Create an unordered factor of animals
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+(factor_animals_vector <- ___(___))
 
-# Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+# Create an ordered factor of temperatures
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ___(___, levels = c("Low", "Medium", "High")))
 ```
 
 *** =solution
 ```{r}
 # Animals
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+(factor_animals_vector <- factor(animals_vector))
 
 # Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ordered(temperature_vector, levels = c("Low", "Medium", "High")))
 ```
 
 *** =sct
