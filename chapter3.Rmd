@@ -588,7 +588,7 @@ success_msg("Nice one! Continue to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:c81c656f06
 ## A little arithmetic with matrices
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+The standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. This is the same behavior that you already saw with vectors.
 
 For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
 
