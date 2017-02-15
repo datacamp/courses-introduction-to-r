@@ -54,13 +54,13 @@ with(
 --- type:NormalExercise xp:100 skills:1 key:6cc21c842b075347926bb1b244782213df32e370
 ## What's a factor and why would you use it? (2)
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+To create vectors of categorical variables in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). This takes a character vector as an input, and it should have a limited number of distinct values. For example, `sex_vector` contains the sex of 5 different individuals:
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R terminology **factor levels**, at work here: "Male" and "Female".
+It is clear that there are two categories here: "Male" and "Female". In R terminology, these are called **factor levels**.
 
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
@@ -69,6 +69,7 @@ factor_sex_vector <- factor(sex_vector)
 ```
 
 *** =instructions
+
 - Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
 - Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
