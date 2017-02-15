@@ -175,6 +175,9 @@ colnames(my_matrix) <- col_names_vector
 We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
 
 *** =instructions
+
+`star_wars_matrix` has been predefined for you without any row or column names.
+
 - Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
 - Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
 - Print out `star_wars_matrix` to see the result of your work.
@@ -184,18 +187,14 @@ You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+# Construct matrix
+star_wars_matrix <- rbind(c(460.998, 314.4), c(290.475, 247.900), c(309.306, 165.8))
 ```
 
 *** =sample_code
 ```{r}
-# Box office Star Wars (in millions!)
-new_hope <- c(460.998, 314.4)
-empire_strikes <- c(290.475, 247.900)
-return_jedi <- c(309.306, 165.8)
-
-# Construct matrix
-star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
+# Print out star_wars_matrix
+star_wars_matrix
 
 # Vectors region and titles, used for naming
 region <- c("US", "non-US")
@@ -212,13 +211,8 @@ titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
 *** =solution
 ```{r}
-# Box office Star Wars (in millions!)
-new_hope <- c(460.998, 314.4)
-empire_strikes <- c(290.475, 247.900)
-return_jedi <- c(309.306, 165.8)
-
-# Construct matrix
-star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
+# Print out star_wars_matrix
+star_wars_matrix
 
 # Vectors region and titles, used for naming
 region <- c("US", "non-US")
@@ -230,16 +224,12 @@ colnames(star_wars_matrix) <- region
 # Name the rows with titles
 rownames(star_wars_matrix) <- titles
 
-# Print out star_wars_matrix
+# Print out the updated star_wars_matrix
 star_wars_matrix
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
-test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
-test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
-test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
 test_object("star_wars_matrix", incorrect_msg = msg)
 msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
@@ -248,7 +238,7 @@ test_object("titles", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", eq_condition = "equal",
             incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
 test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+success_msg("Great! You're on the way of becoming an R Jedi! Continue to the next exercise.")
 ```
 
 
