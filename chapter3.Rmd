@@ -317,7 +317,7 @@ dim(star_wars_matrix)
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variable `star_wars_marix`!"
+msg <- "Do not change anything about the preset variable `star_wars_matrix`!"
 ex() %>% {
   check_object(., "star_wars_matrix", undefined_msg = msg) %>%
     check_equal(., "star_wars_matrix", incorrect_msg = msg)
@@ -333,9 +333,9 @@ success_msg("I never doubted you! Wonderful!");
 --- type:NormalExercise xp:100 skills:1 key:3fd7499a12
 ## Calculating the worldwide box office 
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+The single most important thing for a movie to become legendary in Tinseltown is its worldwide box office figures. 
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+To calculate the total box office revenue for each of the Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
 In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
 
@@ -343,18 +343,23 @@ In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/fun
 rowSums(my_matrix)
 ```
 
+Apologies if you tried hard to forget them, but this exercise introduces the Star Wars prequels.
+
 *** =instructions
 
-`star_wars_matrix` has been pre-defined for you.
+`star_wars_matrix` and `star_wars_prequels_matrix` have been pre-defined for you.
 
-* Use `rowSums()` to calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+* Use `rbind()` to combine the data for the two trilogies. Put the prequels on top, and the original movies in the rows underneath.
+* Use `rowSums()` to calculate the worldwide box office figures for the six movies and put these in the vector named `worldwide_vector`.
 
 *** =hint
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+
+* `rbind(first_matrix, second_matrix)` is a pattern to combine two matrices by row. 
+* `rowSums(a_matrix)` will calculate the sum of every row of a matrix.
 
 *** =pre_exercise_code
 ```{r}
-# Construct star_wars_matrix
+# Construct star wars matrices
 star_wars_matrix <- matrix(
   c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8), 
   nrow = 3, 
@@ -364,32 +369,67 @@ star_wars_matrix <- matrix(
     c("US", "non-US")
   )
 )
+star_wars_prequels_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5), 
+  nrow = 3, 
+  byrow = TRUE,
+  dimnames = list(
+    c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith"), 
+    c("US", "non-US")
+  )
+)
 ```
 
 *** =sample_code
 ```{r}
-# Print out star_wars_matrix
+# Matrices have been defined for each Star Wars trilogy
+star_wars_prequels_matrix
 star_wars_matrix
+
+# Combine the data for each trilogy
+all_wars_matrix <- 
 
 # Calculate worldwide box office figures
 worldwide_vector <- 
+
+# Print the worldwide box office figures
+
 ```
 
 *** =solution
 ```{r}
-# Print out star_wars_matrix
+# Matrices have been defined for each Star Wars trilogy
 star_wars_matrix
+star_wars_prequels_matrix
+
+# Combine the data for each trilogy
+all_wars_matrix <- rbind(star_wars_prequels_matrix, star_wars_matrix)
 
 # Calculate worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
+
+# Print the worldwide box office figures
+worldwide_vector
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variable `star_wars_marix`!"
-test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
-success_msg("Great, kid. Don't get cocky!.")
+predef_msg <- "Do not change anything about the preset variables `star_wars_matrix` and `star_wars_prequels_matrix`!"
+rbind_msg <- "Call `rbind()` on `star_wars_prequels_matrix` and `star_wars_matrix` and store the result in `all_wars_matrix`."
+rowsum_msg <- "Call `rowSums()` on `all_wars_matrix` and store the result in `worldwide_vector`."
+
+ex() %>% {
+  check_object(., "star_wars_matrix", undefined_msg = predef_msg) %>%
+    check_equal(., "star_wars_matrix", incorrect_msg = predef_msg)
+  check_object(., "star_wars_prequels_matrix", undefined_msg = predef_msg) %>%
+    check_equal(., "star_wars_prequels_matrix", incorrect_msg = predef_msg)
+  check_object(., "all_wars_matrix", undefined_msg = rbind_msg) %>%
+    check_equal(., "all_wars_matrix", incorrect_msg = rbind_msg)
+  check_object(., "worldwide_vector", undefined_msg = rowsum_msg) %>%
+    check_equal(., "worldwide_vector", incorrect_msg = rowsum_msg)
+  check_output_expr(., "worldwide_vector")
+}
+success_msg("Great, kid. Don't get cocky! `rowSums()` calculates the sum of each row of a matrix.")
 ```
 
 
