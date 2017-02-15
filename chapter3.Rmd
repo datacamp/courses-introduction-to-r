@@ -435,9 +435,11 @@ success_msg("Great, kid. Don't get cocky! `rowSums()` calculates the sum of each
 
 
 --- type:NormalExercise xp:100 skills:1 key:1bfe5ae096
-## The total box office revenue for the entire saga
+## Calculating the box office for the entire saga
 
-Just like every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has a [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), every [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has a [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+Just like every [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has a [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), every [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has a [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). 
+
+Let's now calculate the box office revenue over the entire saga for each region.
 
 *** =instructions
 
@@ -447,7 +449,7 @@ Just like every [`cbind()`](http://www.rdocumentation.org/packages/base/function
 - Print out `total_revenue_vector` to have a look at the results.
 
 *** =hint
-You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function with `star_wars_matrix` as the argument to find the total box office per region.
+You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function with `all_wars_matrix` as the argument to find the total box office per region.
 
 *** =pre_exercise_code
 ```{r}
