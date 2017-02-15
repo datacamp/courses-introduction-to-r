@@ -54,10 +54,10 @@ with(
 --- type:NormalExercise xp:100 skills:1 key:6cc21c842b075347926bb1b244782213df32e370
 ## What's a factor and why would you use it? (2)
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
 
 ```
-gender_vector <- c("Male","Female","Female","Male","Male")
+sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
 It is clear that there are two categories, or in R terminology **factor levels**, at work here: "Male" and "Female".
@@ -65,15 +65,15 @@ It is clear that there are two categories, or in R terminology **factor levels**
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
 ```
-factor_gender_vector <- factor(gender_vector)
+factor_sex_vector <- factor(sex_vector)
 ```
 
 *** =instructions
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
+- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
 *** =hint
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
 
 *** =pre_exercise_code
 ```{r}
@@ -83,32 +83,32 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 *** =sample_code
 ```{r}
 # Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <-
+# Convert sex_vector to a factor
+factor_sex_vector <-
 
-# Print out factor_gender_vector
+# Print out factor_sex_vector
 
 ```
 
 *** =solution
 ```{r}
 # Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <- factor(gender_vector)
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
 
-# Print out factor_gender_vector
-factor_gender_vector
+# Print out factor_sex_vector
+factor_sex_vector
 ```
 
 *** =sct
 ```{r}
-test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
+test_object("factor_sex_vector",
+            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
 success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
@@ -181,7 +181,7 @@ When you first get a data set, you will often notice that it contains factors wi
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the sex of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -342,7 +342,7 @@ male <- factor_survey_vector[1]
 # Female
 female <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
+# Battle of the sexes: is male greater than female?
 male > female
 ```
 
@@ -359,7 +359,7 @@ male <- factor_survey_vector[1]
 # Female
 female <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
+# Battle of the sexes: is male greater than female?
 male > female
 ```
 
@@ -371,7 +371,7 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+success_msg("Phew, it seems that R is not a sexist language.")
 ```
 
 
