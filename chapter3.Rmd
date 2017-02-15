@@ -114,7 +114,7 @@ The box office revenues for the three original Star Wars movies, in millions of 
 - Use `rbind()` to bind the box office results for the three Star Wars movies into a matrix with 3 rows, where each row represents a movie. Name the resulting matrix `star_wars_matrix`.
 
 *** =hint
-rbind(movie1, movie2, movie3)` is a template for the solution.
+`rbind(movie1, movie2, movie3)` is a template for the solution.
 
 *** =pre_exercise_code
 ```{r}
