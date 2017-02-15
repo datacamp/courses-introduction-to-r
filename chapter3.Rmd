@@ -256,23 +256,32 @@ rowSums(my_matrix)
 ```
 
 *** =instructions
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+
+`star_wars_matrix` has been predefined for you.
+
+* Use `rowSums()` to calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
 
 *** =hint
 `rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(
+  c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8), 
+  nrow = 3, 
+  byrow = TRUE,
+  dimnames = list(
+    c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+    c("US", "non-US")
+  )
+)
 ```
 
 *** =sample_code
 ```{r}
-# Construct star_wars_matrix
-box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+# Print out star_wars_matrix
+star_wars_matrix
 
 # Calculate worldwide box office figures
 worldwide_vector <- 
@@ -280,11 +289,8 @@ worldwide_vector <-
 
 *** =solution
 ```{r}
-# Construct star_wars_matrix
-box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+# Print out star_wars_matrix
+star_wars_matrix
 
 # Calculate worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -292,11 +298,10 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
-test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
+msg <- "Do not change anything about the preset variable `star_wars_marix`!"
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
-success_msg("Well done! Continue to the next exercise.")
+success_msg("Great, kid. Don't get cocky!.")
 ```
 
 
