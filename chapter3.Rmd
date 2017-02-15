@@ -602,6 +602,93 @@ success_msg("You are nearly at the end of the chapter. Stay on target!")
 ```
 
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:bf53de0964
+## Selection of matrix elements (2)
+
+For vectors, you learned about three other methods of indexing.
+
+- A vector of negative numbers selects elements to leave out.
+- A logical vector returns the elements where the index is `TRUE`.
+- A character vector returns elements where the element name matches the index.
+
+These indexing methods can also be used with vectors. This time you need two of them, and you can mix and match.
+
+```{r}
+a_matrix[-1, c(2, 4)] # everything except the first row, 2nd and 4th columns
+a_matrix[, c(FALSE, TRUE)] # every second column
+a_matrix[c("lightsaber", "blaster"), ] # rows named "lightsaber" and "blaster", all columns
+```
+
+*** =instructions
+
+`all_wars_matrix` has been pre-defined in your workspace.
+
+* Use negative indexing to select everything except the third row of `all_wars_matrix`.
+* Use logical indexing to select the whole of the second column of `all_wars_matrix`.
+* Use name indexing to select the row for `The Empire Strikes Back` and the column for the `US` revenues.
+
+*** =hint
+
+* All answers take the form `all_wars_matrix[?, ?]`.
+* You can select everything but the _n_th row using `all_wars_matrix[-n, ]`.
+* When using logical indexing on columns, the logical vector should (usually) be as long as the number of columns.
+* Pass strings to select values by name, for example `all_wars_matrix["a movie", "a region"]`.
+* Matching by name is case sensitive.
+
+*** =pre_exercise_code
+```{r}
+all_wars_matrix <- matrix(
+  c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5, 461, 314.4, 290.5, 247.9, 309.3, 165.8),
+  nrow = 6, 
+  byrow = TRUE,
+  dimnames = list(
+    c(
+      "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith",
+      "A New Hope","The Empire Strikes Back","Return of the Jedi"
+    ), 
+    c("US", "non-US")
+  )
+)
+```
+
+*** =sample_code
+```{r}
+# Select by negative indexing everything except the third row
+all_wars_matrix[___, ]
+
+# Select by logical indexing the second column
+all_wars_matrix[, ___]
+
+# Select by names the US box office revenue for The Empire Strikes Back
+
+```
+
+*** =solution
+```{r}
+# Select by negative indexing everything except the third row
+all_wars_matrix[-3, ]
+
+# Select by logical indexing the second column
+all_wars_matrix[, c(FALSE, TRUE)]
+
+# Select by names the US box office revenue for The Empire Strikes Back
+all_wars_matrix["The Empire Strikes Back", "US"]
+```
+
+*** =sct
+```{r}
+predef_msg <- "Do not change anything about the preset variable `all_wars_matrix`!"
+ex() %>% {
+  check_object(., "all_wars_matrix", undefined_msg = predef_msg) %>%
+    check_equal(., "all_wars_matrix", incorrect_msg = predef_msg)
+  check_output_expr(., "all_wars_matrix[-3, ]")
+  check_output_expr(., "all_wars_matrix[, c(FALSE, TRUE)]")
+  check_output_expr(., 'all_wars_matrix["The Empire Strikes Back", "US"]')
+}
+success_msg("You do have your moments. Not many, but you have them.")
+```
+
 --- type:NormalExercise xp:100 skills:1 key:c81c656f06
 ## A little arithmetic with matrices
 
