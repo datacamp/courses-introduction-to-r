@@ -293,7 +293,7 @@ names(roulette_vector) <- days_vector
 
 *** =sct
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- "Do not changes the pre-defined variables `poker_vector`, `roulette_vector` or `days_vector`."
 test_object("poker_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)

@@ -176,7 +176,7 @@ We went ahead and prepared two vectors for you: `region`, and `titles`. You will
 
 *** =instructions
 
-`star_wars_matrix` has been predefined for you without any row or column names.
+`star_wars_matrix` has been pre-defined for you without any row or column names.
 
 - Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
 - Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
@@ -257,7 +257,7 @@ rowSums(my_matrix)
 
 *** =instructions
 
-`star_wars_matrix` has been predefined for you.
+`star_wars_matrix` has been pre-defined for you.
 
 * Use `rowSums()` to calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
 
@@ -306,68 +306,89 @@ success_msg("Great, kid. Don't get cocky!.")
 
 
 --- type:NormalExercise xp:100 skills:1 key:86b87a8545
-## Adding a column for the Worldwide box office 
+## How big is the matrix?
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+It is often useful to know how big your matrix is.  You can determine the number of rows of a matrix using [`nrow()`](http://www.rdocumentation.org/packages/base/functions/nrow).  Similarly, `ncol()` returns the number of columns of a matrix.  [`dim()`](http://www.rdocumentation.org/packages/base/functions/dim) returns a vector of length two, containing the dimension sizes of the matrix.  That is, the number of rows followed by the number of columns. 
 
-You can add a column or multiple columns to a matrix with the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function, which merges matrices and/or vectors together by column. For example: 
+In the following example, output is shown in comments.
 
 ```
-big_matrix <- cbind(matrix1, matrix2, vector1 ...)
+month_matrix <- matrix(month.name, nrow = 3)
+nrow(month_matrix)
+## [1] 3
+ncol(month_matrix)
+## [1] 4
+dim(month_matrix)
+## [1] 3 4
 ```
 
 *** =instructions
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function.
+`star_wars_matrix` has been pre-defined for you.
+
+* Print the number of rows of `star_wars_matrix`.
+* Print the number of columns of `star_wars_matrix`.
+* Print the dimension sizes of `star_wars_matrix`.
 
 *** =hint
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+
+* Use `nrow(star_wars_matrix)` to get the number of rows.
+* `ncol()` and `dim()` should be called in a similar way to get the number of columns and dimension sizes respectively.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(
+  c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8), 
+  nrow = 3, 
+  byrow = TRUE,
+  dimnames = list(
+    c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+    c("US", "non-US")
+  )
+)
 ```
 
 *** =sample_code
 ```{r}
-# Construct star_wars_matrix
-box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+# Print out star_wars_matrix
+star_wars_matrix
 
-# The worldwide box office figures
-worldwide_vector <- rowSums(star_wars_matrix)
+# Print the number of rows of star_wars_matrix
 
-# Bind the new variable worldwide_vector as a column to star_wars_matrix
-all_wars_matrix <- 
+
+# Print the number of columns of star_wars_matrix
+
+
+# Print the dimension sizes of star_wars_matrix
+
 ```
 
 *** =solution
 ```{r}
-# Construct star_wars_matrix
-box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+# Print out star_wars_matrix
+star_wars_matrix
 
-# The worldwide box office figures
-worldwide_vector <- rowSums(star_wars_matrix)
+# Print the number of rows of star_wars_matrix
+nrow(star_wars_matrix)
 
-# Bind the new variable worldwide_vector as a column to star_wars_matrix
-all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
+# Print the number of columns of star_wars_matrix
+ncol(star_wars_matrix)
+
+# Print the dimension sizes of star_wars_matrix
+dim(star_wars_matrix)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
-test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector",
-            incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
-
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
-test_object("all_wars_matrix", incorrect_msg = msg)
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+msg <- "Do not change anything about the preset variable `star_wars_marix`!"
+ex() %>% {
+  check_object("star_wars_matrix", undefined_msg = msg) %>%
+    check_equal("star_wars_matrix", incorrect_msg = msg)
+  check_output_expr("nrow(star_wars_matrix)")
+  check_output_expr("ncol(star_wars_matrix)")
+  check_output_expr("dim(star_wars_matrix)")
+}
+success_msg("I never doubted you! Wonderful!");
 ```
 
 
