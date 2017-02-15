@@ -382,11 +382,11 @@ dim(star_wars_matrix)
 ```{r}
 msg <- "Do not change anything about the preset variable `star_wars_marix`!"
 ex() %>% {
-  check_object("star_wars_matrix", undefined_msg = msg) %>%
-    check_equal("star_wars_matrix", incorrect_msg = msg)
-  check_output_expr("nrow(star_wars_matrix)")
-  check_output_expr("ncol(star_wars_matrix)")
-  check_output_expr("dim(star_wars_matrix)")
+  check_object(., "star_wars_matrix", undefined_msg = msg) %>%
+    check_equal(., "star_wars_matrix", incorrect_msg = msg)
+  check_output_expr(., "nrow(star_wars_matrix)")
+  check_output_expr(., "ncol(star_wars_matrix)")
+  check_output_expr(., "dim(star_wars_matrix)")
 }
 success_msg("I never doubted you! Wonderful!");
 ```
