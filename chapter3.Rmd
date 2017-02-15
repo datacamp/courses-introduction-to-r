@@ -242,69 +242,6 @@ success_msg("Laugh it up, fuzzball! You're on the way of becoming an R Jedi! Con
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:3fd7499a12
-## Calculating the worldwide box office 
-
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
-
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
-
-In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
-
-```
-rowSums(my_matrix)
-```
-
-*** =instructions
-
-`star_wars_matrix` has been pre-defined for you.
-
-* Use `rowSums()` to calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
-
-*** =hint
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
-
-*** =pre_exercise_code
-```{r}
-# Construct star_wars_matrix
-star_wars_matrix <- matrix(
-  c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8), 
-  nrow = 3, 
-  byrow = TRUE,
-  dimnames = list(
-    c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-    c("US", "non-US")
-  )
-)
-```
-
-*** =sample_code
-```{r}
-# Print out star_wars_matrix
-star_wars_matrix
-
-# Calculate worldwide box office figures
-worldwide_vector <- 
-```
-
-*** =solution
-```{r}
-# Print out star_wars_matrix
-star_wars_matrix
-
-# Calculate worldwide box office figures
-worldwide_vector <- rowSums(star_wars_matrix)
-```
-
-*** =sct
-```{r}
-msg <- "Do not change anything about the preset variable `star_wars_marix`!"
-test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
-success_msg("Great, kid. Don't get cocky!.")
-```
-
-
 --- type:NormalExercise xp:100 skills:1 key:86b87a8545
 ## How big is the matrix?
 
@@ -391,6 +328,69 @@ ex() %>% {
 success_msg("I never doubted you! Wonderful!");
 ```
 
+
+
+--- type:NormalExercise xp:100 skills:1 key:3fd7499a12
+## Calculating the worldwide box office 
+
+The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+
+To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+
+In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+
+```
+rowSums(my_matrix)
+```
+
+*** =instructions
+
+`star_wars_matrix` has been pre-defined for you.
+
+* Use `rowSums()` to calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+
+*** =hint
+`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+
+*** =pre_exercise_code
+```{r}
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(
+  c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8), 
+  nrow = 3, 
+  byrow = TRUE,
+  dimnames = list(
+    c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+    c("US", "non-US")
+  )
+)
+```
+
+*** =sample_code
+```{r}
+# Print out star_wars_matrix
+star_wars_matrix
+
+# Calculate worldwide box office figures
+worldwide_vector <- 
+```
+
+*** =solution
+```{r}
+# Print out star_wars_matrix
+star_wars_matrix
+
+# Calculate worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+```
+
+*** =sct
+```{r}
+msg <- "Do not change anything about the preset variable `star_wars_marix`!"
+test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+success_msg("Great, kid. Don't get cocky!.")
+```
 
 
 
