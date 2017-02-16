@@ -283,66 +283,75 @@ success_msg("You've leveled up! The `levels()` function and the `level` argument
 
 
 --- type:NormalExercise xp:100 skills:1 key:a549f13c0644ccc89cd39a10aa48706754637ed0
-## Summarizing a factor
+## On the table
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable:
+It is often useful to count how many times each level occurs in a factor.  To do this, you can use the [`table()`](http://www.rdocumentation.org/packages/base/functions/table) function. ([`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) performs a similar task for factors.)
 
 ```
-summary(my_var)
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+factor_animals_vector <- factor(animals_vector)
+table(factor_animals_vector)
+## factor_animals_vector
+##   Donkey Elephant  Giraffe    Horse 
+##        3        1        2        2
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses.
 
 *** =instructions
-Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+
+`factor_sex_vector` has been predefined in your workspace.
+
+* Use `table()` to count the number of `Male`s and `Female`s in `factor_sex_vector`.
+* Do the same thing again, this time using `summary()`.
 
 *** =hint
-Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+
+* Call [`table()`](http://www.rdocumentation.org/packages/base/functions/table), passing `factor_sex_vector`.
+* Then call [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) in the same way.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+factor_sex_vector <- factor(c("Male", "Female", "Female", "Male", "Male"))
 ```
 
 *** =sample_code
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
-factor_survey_vector
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
-# Generate summary for survey_vector
+# Count the number of males and females in `factor_sex_vector`
 
 
-# Generate summary for factor_survey_vector
+# Same again, using summary()
 
 ```
 
 *** =solution
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
-factor_survey_vector
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
-# Generate summary for survey_vector
-summary(survey_vector)
+# Count the number of males and females in `factor_sex_vector`
+table(factor_sex_vector)
 
-# Generate summary for factor_survey_vector
-summary(factor_survey_vector)
+# Same again, using summary()
+summary(factor_sex_vector)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
-test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
-test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+predef_msg = "Do not change anything about the pre-defined variable `factor_survey_vector`."
+ex() %>% {
+  check_object(., "factor_sex_vector", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_output_expr(., "table(factor_sex_vector)")
+  check_output_expr(., "summary(factor_sex_vector)")
+}
+success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_sex_vector` enables R to show the number of elements for each category.")
 ```
 
 
