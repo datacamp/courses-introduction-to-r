@@ -358,48 +358,63 @@ success_msg("Nice! Have a look at the output. The fact that you identified `\"Ma
 --- type:NormalExercise xp:100 skills:1 key:90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ## Battle of the sexes
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+Previously you learned that for ordered factors, you can talk about levels being greater than or less than each other. For example, recall the temperatures data from a few exercises back.
+
+```{r}
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+factor_temperature_vector <- ordered(
+  temperature_vector, 
+  levels = c("Low", "Medium", "High")
+)
+factor_temperature_vector <= "Medium"
+## [1] FALSE  TRUE FALSE  TRUE  TRUE
+```
+
+You might wonder what happens when you try to compare elements of an unordered factor.  In `factor_sex_vector` you have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is greater, males or females?
 
 *** =instructions
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+
+`factor_sex_vector` has been predefined in your workspace. The first value of `factor_sex_vector` is a male, and the second value is a female.
+
+* Select the first value of `factor_sex_vector` and assign the results to `male`.
+* Select the second value of `factor_sex_vector` and assign the results to `female`.
+* Compare the two genders, testing if `male` is greater than (`>`) `female`.
 
 *** =hint
-Just click 'Submit Answer' and have a look at output that gets printed to the console.
+
+* Use `factor_sex_vector[i]` to select the `i`th element of `factor_sex_vector`.
+* Use `male > female` to compare the sexes.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+factor_sex_vector <- factor(c("Male", "Female", "Female", "Male", "Male"))
 ```
 
 *** =sample_code
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
 # Male
-male <- factor_survey_vector[1]
+male <- 
 
 # Female
-female <- factor_survey_vector[2]
+female <- 
 
 # Battle of the sexes: is male greater than female?
-male > female
+
 ```
 
 *** =solution
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
 # Male
-male <- factor_survey_vector[1]
+male <- factor_sex_vector[1]
 
 # Female
-female <- factor_survey_vector[2]
+female <- factor_sex_vector[2]
 
 # Battle of the sexes: is male greater than female?
 male > female
@@ -407,12 +422,17 @@ male > female
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("male", undefined_msg = msg, incorrect_msg = msg)
-test_object("female", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("male > female", incorrect_msg = msg)
+predef_msg = "Do not change anything about the pre-defined variable `factor_survey_vector`."
+ex() %>% {
+  check_object(., "factor_sex_vector", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_object(., "male") %>%
+    check_equal()
+  check_object(., "female") %>%
+    check_equal()
+  check_output_expr(., "male > female")
+  check_output(., "not meaningful for factors", fixed = TRUE)
+}
 success_msg("Phew, it seems that R is not a sexist language.")
 ```
 
