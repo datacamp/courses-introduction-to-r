@@ -777,7 +777,7 @@ matrix1 * matrix2
 
 After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use [`%*%`](https://www.rdocumentation.org/packages/base/topics/matmult) in R._
 
 *** =instructions
 
