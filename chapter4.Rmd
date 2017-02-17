@@ -87,7 +87,7 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 # Convert sex_vector to a factor
-factor_sex_vector <-
+factor_sex_vector <- ___(___)
 
 # Print out factor_sex_vector
 
@@ -440,25 +440,28 @@ success_msg("Phew, it seems that R is not a sexist language.")
 --- type:NormalExercise xp:100 skills:1 key:9ab0928916bf84ab225713a9a1ce40d9e322c6a0
 ## Ordered factors
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+In the previous exercise, since `"Male"` and `"Female"` were unordered (or nominal) factor levels, R returned a warning message, telling you that the greater than operator was not meaningful. But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories.
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
-
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
+Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
 
 *** =instructions
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
 
-- Analyst 1 is fast,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is fast and
-- Analyst 5 is insane.
+* Use [`c()`](https://www.rdocumentation.org/packages/base/topics/c) to create a character vector, named `speed_vector`, with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
 
-No need to specify these are factors yet.
+    - Analyst 1 is medium,
+    - Analyst 2 is slow,
+    - Analyst 3 is slow,
+    - Analyst 4 is medium and
+    - Analyst 5 is fast.
+
+* Use [`ordered()`](https://www.rdocumentation.org/packages/base/topics/factor) to create an ordered factor from `speed_vector` and assign it to `factor_speed_vector`. The factor levels should be `"slow"`, `"medium"`, and `"fast"`.
 
 *** =hint
-Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
+
+* Use `c()` to create a character vector.
+* Each of the elements of `speed_vector` should be `"slow"`, `"medium"`, or `"fast"`.
+* Use `ordered()` to create an ordered factor.
+* The `levels` of the factor should be a character vector of `"slow"`, `"medium"`, and `"fast"`.
 
 *** =pre_exercise_code
 ```{r}
@@ -468,19 +471,38 @@ Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow
 *** =sample_code
 ```{r}
 # Create speed_vector
-speed_vector <-
+speed_vector <- ___("medium", ___, ___, ___, ___)
+
+# Convert it to a factor
+factor_speed_vector <- ___(___, levels = c("slow", ___, ___))
 ```
 
 *** =solution
 ```{r}
 # Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+# Convert it to a factor
+factor_speed_vector <- ordered(speed_vector, levels = c("slow", "medium", "fast"))
 ```
 
 *** =sct
 ```{r}
-test_object("speed_vector",
-            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+speed_vec_msg <- "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!"
+ex() %>% {
+  check_object(.,  "speed_vector", undefined_msg = speed_vec_msg) %>%
+    check_equal(incorrect_msg = speed_vec_msg)
+  check_object(.,  "factor_speed_vector")
+  check_expr(.,  "class(factor_speed_vector)") %>%
+    check_result() %>%
+    check_equal(incorrect_msg = "`factor_speed_vector` should be an ordered factor, but is not.")
+  check_expr(.,  "levels(factor_speed_vector)") %>%
+    check_result() %>%
+    check_equal(incorrect_msg = 'The levels of `factor_speed_vector` should be `c("slow", "medium", "fast")`.')  
+  check_expr(.,  "as.character(factor_speed_vector)") %>%
+    check_result() %>%
+    check_equal(incorrect_msg = 'The values of `factor_speed_vector` should be `c("medium", "slow", "slow", "medium", "fast")`.')
+}
 success_msg("A job well done! Continue to the next exercise.")
 ```
 
