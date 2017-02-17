@@ -212,9 +212,9 @@ You are given the results of a survey to analyze. One of the questions asked the
 
 `sex_vector` has been predefined in your workspace.
 
-* Create an unordered factor from `sex_vector` and store it in `factor_survey_vector_fm`.
+* Create an unordered factor from `sex_vector` and store it in `factor_sex_vector_fm`.
 * Print the levels of this factor, observing that they are alphabetically sorted.
-* Recreate the factor, using the `levels` argument to `factor()` to specify `"Male"` as the first level and `"Female"` as the second level. Store this in `factor_survey_vector_mf`.
+* Recreate the factor, using the `levels` argument to `factor()` to specify `"Male"` as the first level and `"Female"` as the second level. Store this in `factor_sex_vector_mf`.
 * Print the levels of this factor, observing that this time `"Male"` comes first.
 
 *** =hint
@@ -234,15 +234,15 @@ sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 sex_vector
 
 # Create an unordered factor of sexes
-factor_survey_vector_fm <- ___(___)
+factor_sex_vector_fm <- ___(___)
 
-# Print the levels of factor_survey_vector_fm
-___(factor_survey_vector_fm) 
+# Print the levels of factor_sex_vector_fm
+___(factor_sex_vector_fm) 
 
 # Recreate the factor with "Male" as the first factor level
-factor_survey_vector_mf <- ___(___, levels = ___)
+factor_sex_vector_mf <- ___(___, levels = ___)
 
-# Print the levels of factor_survey_vector_mf
+# Print the levels of factor_sex_vector_mf
 ___(___)
 ```
 
@@ -252,16 +252,16 @@ ___(___)
 sex_vector
 
 # Create an unordered factor of sexes
-factor_survey_vector_fm <- factor(sex_vector)
+factor_sex_vector_fm <- factor(sex_vector)
 
-# Print the levels of factor_survey_vector_fm
-levels(factor_survey_vector_fm) 
+# Print the levels of factor_sex_vector_fm
+levels(factor_sex_vector_fm) 
 
 # Recreate the factor with "Male" as the first factor level
-factor_survey_vector_mf <- factor(sex_vector, levels = c("Male", "Female"))
+factor_sex_vector_mf <- factor(sex_vector, levels = c("Male", "Female"))
 
-# Print the levels of factor_survey_vector_mf
-levels(factor_survey_vector_mf) 
+# Print the levels of factor_sex_vector_mf
+levels(factor_sex_vector_mf) 
 ```
 
 *** =sct
@@ -270,17 +270,74 @@ predef_msg = "Do not change the definition of pre-defined `sex_vector`!"
 ex() %>% {
   check_object(., "sex_vector", undefined_msg = predef_msg) %>% 
     check_equal(., incorrect_msg = predef_msg)
-  check_object(., "factor_survey_vector_fm") %>% 
+  check_object(., "factor_sex_vector_fm") %>% 
     check_equal(.)
-  check_output_expr(., "levels(factor_survey_vector_fm)")
-  check_object(., "factor_survey_vector_mf") %>% 
+  check_output_expr(., "levels(factor_sex_vector_fm)")
+  check_object(., "factor_sex_vector_mf") %>% 
     check_equal(.)
-  check_output_expr(., "levels(factor_survey_vector_mf)")
+  check_output_expr(., "levels(factor_sex_vector_mf)")
 }
 
 success_msg("You've leveled up! The `levels()` function and the `level` argument to `factor()` let you control the levels.")
 ```
 
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:ceea1dd405
+## How many levels?
+
+It can be useful to know how many category levels a factor has. This can be done using the [`nlevels()`](https://www.rdocumentation.org/packages/base/topics/nlevels) function.
+
+For example, consider the factor of animals discussed in the previous exercise, containing donkeys, horses, giraffes, and elephants.
+
+```{r}
+nlevels(factor_animals_vector)
+## [1] 4
+```
+
+*** =instructions
+
+`factor_sex_vector` has been pre-defined in your workspace.
+
+* Count the number of sex categories in `factor_sex_vector`.
+
+*** =hint
+
+Call [`nlevels()`](https://www.rdocumentation.org/packages/base/topics/nlevels) with `factor_sex_vector`.
+
+*** =pre_exercise_code
+```{r}
+factor_sex_vector <- factor(c("Male", "Female", "Female", "Male", "Male"))
+```
+
+*** =sample_code
+```{r}
+# factor_sex_vector has been pre-defined
+factor_sex_vector
+
+# Count the number of sexes
+___(___)
+```
+
+*** =solution
+```{r}
+# factor_sex_vector has been pre-defined
+factor_sex_vector
+
+# Count the number of sexes
+nlevels(factor_sex_vector)
+```
+
+*** =sct
+```{r}
+predef_msg = "Do not change anything about the pre-defined variable `factor_sex_vector`."
+ex() %>% {
+  check_object(., "factor_sex_vector", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_output_expr(., "nlevels(factor_sex_vector)")
+}
+success_msg("Your code has reached a new level! `nlevels()` will return the total number of levels in a factor, even if there are no instances of some levels.")
+```
 
 --- type:NormalExercise xp:100 skills:1 key:a549f13c0644ccc89cd39a10aa48706754637ed0
 ## On the table
@@ -344,7 +401,7 @@ summary(factor_sex_vector)
 
 *** =sct
 ```{r}
-predef_msg = "Do not change anything about the pre-defined variable `factor_survey_vector`."
+predef_msg = "Do not change anything about the pre-defined variable `factor_sex_vector`."
 ex() %>% {
   check_object(., "factor_sex_vector", undefined_msg = predef_msg) %>%
     check_equal(incorrect_msg = predef_msg)
@@ -422,7 +479,7 @@ male > female
 
 *** =sct
 ```{r}
-predef_msg = "Do not change anything about the pre-defined variable `factor_survey_vector`."
+predef_msg = "Do not change anything about the pre-defined variable `factor_sex_vector`."
 ex() %>% {
   check_object(., "factor_sex_vector", undefined_msg = predef_msg) %>%
     check_equal(incorrect_msg = predef_msg)
