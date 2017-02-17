@@ -129,13 +129,13 @@ In R terminology, "factor" usually refers to an unordered factor, that is, a nom
 
 *** =instructions
 
-* Create an unordered factor from `animal_vector`, assigning the result to `factor_animals_vector`.
+* Create an unordered factor from `animals_vector`, assigning the result to `factor_animals_vector`.
 * Create an ordered factor from `temperature_vector` assigning the result to `factor_temperature_vector`.
 * Notice the trick of wrapping an assignment in parentheses, `( )`, to assign and print in one line!
 
 *** =hint
 
-* Call `factor()` with `animal_vector` to create the unordered factor.
+* Call `factor()` with `animals_vector` to create the unordered factor.
 * Call `ordered()` with `temperature_vector` to create the ordered factor.
 
 *** =pre_exercise_code
@@ -161,7 +161,8 @@ temperature_vector <- c("High", "Low", "High", "Low", "Medium")
 ```{r}
 # Animals
 animals_vector <- c(
-  "Elephant", "Giraffe", "Donkey", "Giraffe", "Horse", "Donkey", "Donkey", "Horse"
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
 )
 (factor_animals_vector <- factor(animals_vector))
 
@@ -172,14 +173,18 @@ temperature_vector <- c("High", "Low", "High", "Low", "Medium")
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
-test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_animals_vector", incorrect_msg = msg)
-test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_temperature_vector", incorrect_msg = msg)
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+prespec_msg <- "Do not change anything about the pre-specified variables `animals_vector` and `temperature_vector`!"
+ex() %>% {
+  check_object(., "animals_vector", undefined_msg = prespec_msg) %>%
+    check_equal(incorrect_msg = prespec_msg)
+  check_object(., "temperature_vector", undefined_msg = prespec_msg) %>%
+    check_equal(incorrect_msg = prespec_msg)
+  check_object(., "factor_animals_vector") %>%
+    check_equal()
+  check_object(., "factor_temperature_vector") %>%
+    check_equal()
+}
+success_msg("Your code is of the highest order! You can also create ordered factors by calling `factor()` with `ordered = TRUE`.")
 ```
 
 
