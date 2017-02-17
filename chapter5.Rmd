@@ -23,12 +23,13 @@ Data frames appear in many data analysis environments, but sometimes have differ
 
 *** =instructions
 
-In this chapter you will work with the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+In this chapter you will work with the built-in example data frame [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph).
 
-* Type `mtcars` to print the contents of that data frame.
+* Type `esoph` to print the contents of that data frame.
 
 *** =hint
-Just click 'Submit Answer' and witness the magic!
+
+Just type `esoph`.
 
 *** =pre_exercise_code
 ```{r}
@@ -44,12 +45,12 @@ Just click 'Submit Answer' and witness the magic!
 *** =solution
 ```{r}
 # Print out built-in R data frame
-mtcars 
+esoph 
 ```
 
 *** =sct
 ```{r}
-test_output_contains("mtcars", incorrect_msg = "You did not print `mtcars`. Make sure that you output `mtcars`.")
+test_output_contains("esoph", incorrect_msg = "You did not print `esoph`. Make sure that you output `esoph`.")
 success_msg("Great! Continue to the next exercise.")
 ```
 
