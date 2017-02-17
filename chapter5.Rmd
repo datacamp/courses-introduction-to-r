@@ -8,19 +8,24 @@ description : Most data sets you will be working with will be stored as data fra
 
 You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
 
-When doing a market research survey, however, you often have questions such as:
+When doing a market research survey, however, you often have different types of question.  For example
 
-- 'Are your married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
-- ...
+- 'Are you married?' has a 'yes/no' response, so you should store the answer in a `logical` vector.
+- 'How old are you?' has a numeric response, so you should store the answer in a `numeric` vector.
+- 'What is your opinion on this product?' is an open-ended question, that has a text response, so you should store the answer in a `character` vector.
 
-The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
+Rather than having separate vector variables for the response to each question, it would be useful to have a single variable where each column contains the response to a question. This is exactly what a data frame is for! Like a matrix, a data frame is a rectangular block of data.  This time, each column can contain a different data type.
 
-A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+- The columns of a data frames are sometimes called **fields**.
+- The rows of a data frame are sometimes called **observations**.
+
+Data frames appear in many data analysis environments, but sometimes have different names. They are the same thing as database tables or MATLAB tables. In SAS, Stata, and SPSS, they are called "datasets". Worksheets in a spreadsheet are similar, but have less rules on how they are structured.
 
 *** =instructions
-Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
+
+In this chapter you will work with the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+
+* Type `mtcars` to print the contents of that data frame.
 
 *** =hint
 Just click 'Submit Answer' and witness the magic!
@@ -33,7 +38,7 @@ Just click 'Submit Answer' and witness the magic!
 *** =sample_code
 ```{r}
 # Print out built-in R data frame
-mtcars 
+
 ```
 
 *** =solution
@@ -44,7 +49,7 @@ mtcars
 
 *** =sct
 ```{r}
-test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+test_output_contains("mtcars", incorrect_msg = "You did not print `mtcars`. Make sure that you output `mtcars`.")
 success_msg("Great! Continue to the next exercise.")
 ```
 
