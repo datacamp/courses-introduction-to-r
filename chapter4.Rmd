@@ -515,9 +515,11 @@ Having a bad day at work, 'data analyst number two' enters your office and start
 The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
 
 *** =instructions
+`factor_speed_vector` has been pre-defined in your workspace.
+
 - Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
 - Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is greater than the other.
 
 *** =hint
 - To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
@@ -525,17 +527,19 @@ The fact that `factor_speed_vector` is now ordered enables us to compare differe
 
 *** =pre_exercise_code
 ```{r}
-# no pec
+factor_speed_vector <- ordered(
+  c("medium", "slow", "slow", "medium", "fast"),
+  levels = c("slow", "medium", "fast")
+)
 ```
 
 *** =sample_code
 ```{r}
-# Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# factor_speed_vector has been pre-defined for you
+factor_speed_vector
 
 # Factor value for second data analyst
-da2 <-
+da2 <- 
 
 # Factor value for fifth data analyst
 da5 <-
@@ -546,9 +550,8 @@ da5 <-
 
 *** =solution
 ```{r}
-# Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# factor_speed_vector has been pre-defined for you
+factor_speed_vector
 
 # Factor value for second data analyst
 da2 <- factor_speed_vector[2]
@@ -562,8 +565,7 @@ da2 > da5
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
+msg = "Do not change anything about the commands that define `factor_speed_vector`!"
 test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
 msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
