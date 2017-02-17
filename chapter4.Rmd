@@ -438,7 +438,7 @@ success_msg("Phew, it seems that R is not a sexist language.")
 
 
 --- type:NormalExercise xp:100 skills:1 key:9ab0928916bf84ab225713a9a1ce40d9e322c6a0
-## Ordered factors
+## Comparing ordered factors (1)
 
 In the previous exercise, since `"Male"` and `"Female"` were unordered (or nominal) factor levels, R returned a warning message, telling you that the greater than operator was not meaningful. But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories.
 
@@ -508,7 +508,7 @@ success_msg("A job well done! Continue to the next exercise.")
 
 
 --- type:NormalExercise xp:100 skills:1 key:db16e69805625bcfde227743a8cbc985f8482a37
-## Comparing ordered factors
+## Comparing ordered factors (2)
 
 Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
 
