@@ -16,7 +16,7 @@ When doing a market research survey, however, you often have different types of 
 
 Rather than having separate vector variables for the response to each question, it would be useful to have a single variable where each column contains the response to a question. This is exactly what a data frame is for! Like a matrix, a data frame is a rectangular block of data.  This time, each column can contain a different data type.
 
-- The columns of a data frames are sometimes called **fields**.
+- The columns of a data frames are sometimes called **fields** or ** variables**.
 - The rows of a data frame are sometimes called **observations**.
 
 Data frames appear in many data analysis environments, but sometimes have different names. They are the same thing as database tables or MATLAB tables. In SAS, Stata, and SPSS, they are called "datasets". Worksheets in a spreadsheet are similar, but have less rules on how they are structured.
@@ -120,21 +120,41 @@ success_msg("Wonderful! Using `head()` or `tail()` lets you explore a data frame
 --- type:NormalExercise xp:100 skills:1 key:f4d5b1a2c4aef31645fc7e3505e699fb6e48f3e6
 ## Have a look at the structure
 
-Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
+Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. 
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+For example, this is the structure of the `sleep` data frame.
+
+```{r}
+str(sleep)
+##  $ extra: num  0.7 -1.6 -0.2 -1.2 -0.1 ...
+##  $ group: Factor w/ 2 levels "1","2": 1 1 1 1 1 ...
+##  $ ID   : Factor w/ 10 levels "1","2","3","4",..: 1 2 3 4 5 ...
+```
+
+For a data frame it tells you:
+
+- The total number of rows (or "observations"), in this case 20.
+- The total number of columns (or "variables"), in this case 3.
+- The name of each column (`extra`, `group`, and `ID`).
+- The data type of each variable. For example, the `numeric` column `extra` is denoted `num`.
+- The first observations in each column.
 
 Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.
 
 *** =instructions
-Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
+
+* Investigate the structure of [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph).
+* Read the output! Can you find these things?
+    * How many rows and columns are there?
+    * What are the two types of column?
 
 *** =hint
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+
+* Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph).
+* The number of rows is printed in the first line of the output as `m obs.`.
+* The number of columns is also printed in the first line as `... of n variables`.
+* `Ord.factor` is an abbreviation for an oredered factor column.
+* `num` is an abbreviation for a `numeric` column.
 
 *** =pre_exercise_code
 ```{r}
@@ -143,19 +163,20 @@ Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) fu
 
 *** =sample_code
 ```{r}
-# Investigate the structure of mtcars
+# Investigate the structure of esoph
+
 ```
 
 *** =solution
 ```{r}
-# Investigate the structure of mtcars
-str(mtcars)
+# Investigate the structure of esoph
+str(esoph)
 ```
 
 *** =sct
 ```{r}
-test_output_contains("str(mtcars)", incorrect_msg = "Have you correctly called `str()` on `mtcars`?")
-success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+test_output_contains("str(esoph)", incorrect_msg = "Have you correctly called `str()` on `esophv`?")
+success_msg("Nice work! There are 88 rows and 5 columns in the `esoph` data frame. All columns are either ordered factors or numeric.")
 ```
 
 
