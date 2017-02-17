@@ -51,26 +51,38 @@ esoph
 *** =sct
 ```{r}
 test_output_contains("esoph", incorrect_msg = "You did not print `esoph`. Make sure that you output `esoph`.")
-success_msg("Great! Continue to the next exercise.")
+success_msg("Great! Notice how the data frame contains some categorical columns and some numeric columns.")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3d0e64ecf5f69521ee538ecc713caa02b8b0ec46
 ## Quick, have a look at your data set
 
-Wow, that is a lot of cars! 
+The [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph) data frame takes up several screens worth of output. (Unless you have a *really* big monitor and a *really* small font size.)
 
 Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
 
 So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Similarly, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
 
-Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set.
+Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set. To use them, pass the name of the data frame, and optionally the number of rows to return.  For example, the following code looks at the first two rows from the built-in [`sleep`](http://www.rdocumentation.org/packages/datasets/functions/sleep) data frame.
+
+```{r}
+head(sleep, n = 2)
+##   extra group ID
+## 1   0.7     1  1
+## 2  -1.6     1  2
+```
+
+If you don't specify the `n` argument, six rows of data will be returned.
 
 *** =instructions
-Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set to have a look at the header and the first observations.
+
+* Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph) data frame to see the first six rows of data.
+* Call [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`esoph`](http://www.rdocumentation.org/packages/datasets/functions/esoph) data frame, with the argument `n = 3`, to see the last three rows of data.
 
 *** =hint
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+* `head(x)` will show the first six observations of a data frame named `x`.
+* `tail(x, n = 10)` will show the last ten observations of a data frame named `x`.
 
 *** =pre_exercise_code
 ```{r}
@@ -79,21 +91,29 @@ Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on 
 
 *** =sample_code
 ```{r}
-# Call head() on mtcars
+# Call head() on esoph
+
+
+# Call tail() on esoph with n = 3
 
 ```
 
 *** =solution
 ```{r}
-# Call head() on mtcars
-head(mtcars)
+# Call head() on esoph
+head(esoph)
+
+# Call tail() on esoph with n = 3
+tail(esoph, n = 3)
 ```
 
 *** =sct
 ```{r}
-test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
-test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
-success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+ex() %>% {
+  check_output_expr(., "head(esoph)")
+  check_output_expr(., "tail(esoph, n = 3)")
+}
+success_msg("Wonderful! Using `head()` or `tail()` lets you explore a data frame by looking at a few rows. Another way is to look at the columns of the data frame.");
 ```
 
 
