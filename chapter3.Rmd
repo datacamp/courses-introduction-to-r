@@ -849,6 +849,7 @@ mean(us_visitors)
 ```{r}
 msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+msg <- "Do not change the contents of `ticket_prices_matrix`; this matrix has already been created for you in the workspace."
 test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
