@@ -247,7 +247,7 @@ success_msg("Great! Not only do you know how to construct lists now, you can als
 --- type:NormalExercise xp:100 skills:1 key:19fd17cc792ef870c1558b3a9bae08c1d1e3acae
 ## Creating a named list (2)
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Being a huge movie fan (remember your job at Disney), you decide to start storing information on good movies with the help of lists. 
 
 Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
 
