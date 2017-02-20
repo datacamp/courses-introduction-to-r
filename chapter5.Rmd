@@ -262,7 +262,11 @@ success_msg("Great job! Continue to the next exercise. The logical next step, as
 The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
 
 *** =instructions
-Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
+
+* Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
+* See if you can find the following pieces of information in the output from `str()`.
+    * How many rows and columns are there?
+    * What are variable type does each column have?
 
 *** =hint
 `planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
