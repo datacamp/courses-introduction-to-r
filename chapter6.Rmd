@@ -90,19 +90,23 @@ test_mc(
 ```
 
 
+
 --- type:NormalExercise xp:100 skills:1 key:4beee9cb532c889903218b49b83ab5ef133eac83
 ## Creating a list
 
-Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
+Time to create your first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list). You use it in the same way that you used [`c()`](http://www.rdocumentation.org/packages/base/functions/c) to create `numeric`, `logical`, and `character` vectors.
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+The arguments to the list function are the list components. Remember, these components can be any varaible types that you like, including matrices, vectors, or other lists.
 
 *** =instructions
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+
+The variables `my_vector`, `my_matrix` and `my_df` are shown in your script.
+
+* Construct a list, named `my_list`, that contains `my_vector`, `my_matrix` and `my_df` as list components, in that order.
 
 *** =hint
 Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
@@ -121,7 +125,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Construct list with these different elements:
 my_list <- 
@@ -136,7 +140,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Construct list with these different elements:
 my_list <- list(my_vector, my_matrix, my_df)
@@ -150,7 +154,7 @@ test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
             incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Wonderful! Each element of the list is passed to `list()` separated by commas.")
 ```
 
 
