@@ -163,7 +163,7 @@ success_msg("Wonderful! Each element of the list is passed to `list()` separated
 
 Well done, you're on a roll!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+You want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
 ```
 my_list <- list(name1 = your_comp1, 
@@ -202,7 +202,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Adapt list() call to give the components names
 my_list <- list(my_vector, my_matrix, my_df)
@@ -220,7 +220,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Adapt list() call to give the components names
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
