@@ -623,13 +623,13 @@ success_msg("Great! Not only is the `subset()` function more concise, it is prob
 
 
 --- type:NormalExercise xp:100 skills:1 key:6a6fe74d3917c37380f7ac616ce084aa7814fb8a
-## Sorting
+## Sorting (1)
 
 Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
 
-In data analysis you can sort your data according to a certain variable in the data set. In R, this is done with the help of two functions: [`sort()`](http://www.rdocumentation.org/packages/base/functions/sort) and [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
+In data analysis it is often helpful to see your data sorted from smallest to largest, or largest to smallest. In R, this is done with the help of two functions: [`sort()`](http://www.rdocumentation.org/packages/base/functions/sort) and [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
 
-[`sort()`](http://www.rdocumentation.org/packages/base/functions/sort) does the obvious thing: it sorts the elements of a vector from smallest to largest.
+[`sort()`](http://www.rdocumentation.org/packages/base/functions/sort) is the easiest to understand, so let's consider it first. If you pass a vector to sort, it returns the values from smallest to largest.
 
 ```{r}
 a <- c(100, 10, 1000)
@@ -637,31 +637,15 @@ sort(a)
 ## [1]   10  100 1000
 ```
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
-
-```{r}
-order(a)
-## [1] 2 1 3
-```
-
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
-
-This means we can use the output of `order(a)` to reshuffle `a`:
-    
-```{r}
-> a[order(a)]
-[1]   10  100 1000
-``` 
-
 *** =instructions
-Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Click 'Submit Answer' when you are ready to continue.
-
-*** =hint
 
 `diameter` is shown in your script.
 
 * Use `sort()` to sort the planet diameters from smallest to largest.
-* Use `order()` to sort the planet diameters from smallest to largest.
+
+*** =hint
+
+Call `sort()`, passing `diameter` as the argument.
 
 *** =pre_exercise_code
 ```{r}
@@ -675,6 +659,67 @@ diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 
 # Sort the planets using sort()
 
+```
+
+*** =solution
+```{r}
+# Planet diameters
+diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
+
+# Sort the planets using sort()
+sort(diameter)
+```
+
+*** =sct
+```{r}
+ex() %>% {
+  check_output_expr(., "sort(diameter)")
+}
+success_msg("Great! Now let's use the `order()` function to sort your vector!")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:1f8a6b7824
+## Sorting (2)
+
+The other function to sort data is [`order()`](http://www.rdocumentation.org/packages/base/functions/order). This is a little trickier to understand, but it is useful because it can sort data frames.  (Unlike `sort()`, which can only sort vectors.)
+
+[`order()`](http://www.rdocumentation.org/packages/base/functions/order) gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+
+```{r}
+a <- c(100, 10, 1000)
+order(a)
+## [1] 2 1 3
+```
+
+10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+
+This means we can use the output of `order(a)` to reshuffle `a`:
+    
+```{r}
+a[order(a)]
+## [1]   10  100 1000
+``` 
+
+*** =instructions
+
+`diameter` is shown in your script.
+
+* Use `order()` to sort the planet diameters from smallest to largest.
+
+*** =hint
+
+* Call `diameter`, with square brackets to select elements.
+* Inside the square brackets, call `order()` with `diameter` as an argument.
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+# Planet diameters
+diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 
 # Sort the planets using order()
 
@@ -685,9 +730,6 @@ diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 # Planet diameters
 diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 
-# Sort the planets using sort()
-sort(diameter)
-
 # Sort the planets using order()
 diameter[order(diameter)]
 ```
@@ -695,13 +737,10 @@ diameter[order(diameter)]
 *** =sct
 ```{r}
 ex() %>% {
-  check_output_expr(., "sort(diameter)")
   check_output_expr(., "diameter[order(diameter)]")
 }
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Marvellous! `order()` is more flexible than `sort()` because it can also sort your data frame.")
 ```
-
-
 --- type:NormalExercise xp:100 skills:1 key:fa88b58bf2cf62e0c181dfdcbdd2e1ddeac66807
 ## Sorting your data frame
 
