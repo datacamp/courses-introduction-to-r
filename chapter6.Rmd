@@ -7,7 +7,7 @@ description : Lists, as opposed to vectors, can hold components of different typ
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
-## Lists, why would you need them?
+## You know lots of things already
 
 Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? 😉
 
@@ -39,39 +39,54 @@ test_mc(
   feedback_msgs = c(rep.int(not_wrong_msg, 3), correct_msg, not_wrong_msg)
 )
 ```
---- type:NormalExercise xp:100 skills:1 key:68f93c5c504616bd18876da52cd123277d56fc8b
-## Lists, why would you need them? (2)
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:09c072ea7a
+## What are lists?
+
+Between numeric, character and logical variables, matrices, factors, and data frames, that is six variables types that you understand. In total, R has about twenty variables types, so you know about a good portion of the language already.
+
+Restricting R to only twenty data types makes the language easier to work with. However, sometimes you need more flexibility, and this is where lists become useful.
+
+Lists are a container variable.  That is, they are a special type of vector that can store other variable types.  Each element of a list can be a vector, a data frame, or any other variable type. Lists can even contain other lists!
+
+The twenty data types are like Lego bricks. In the smae way that Lego bricks can be combinined into an infinite number of shapes, by combining R variables together using lists, you can make an infinite number of different data structures.
+
+Which one of the following statements is true?
 
 *** =instructions
-Click 'Submit Answer' to start the first exercise on lists.
+
+* Lists let you combine other variable types into one variable.
+* Lists can contain any other data type except other lists.
+* R has hundreds of data types to provide flexibility.
+* Lists are a type of matrix.
 
 *** =hint
-Click 'Submit Answer' to start the first exercise on lists.
+
+* Lists can contain lists.
+* R has around 20 data types,
+* Lists are vectors, but not matrices.
 
 *** =pre_exercise_code
 ```{r}
-# no pec
-```
 
-*** =sample_code
-```{r}
-# Click 'Submit Answer' to start the first exercise on lists.
-```
-
-*** =solution
-```{r}
-# Click 'Submit Answer' to start the first exercise on lists.
 ```
 
 *** =sct
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+msgs <- list(
+  correct = "Marvellous! Lists are used to combine other variables into a single variable.",
+  contains = "Lists can contain other lists.",
+  hundreds = "R only has around 20 data types.",
+  matrix = "Lists are a type of vector, but not a type of matrix."
+)
+
+test_mc(
+  1,
+  feedback_msgs = with(msgs, c(correct, contains, hundreds, matrix))
+)
 ```
 
 
