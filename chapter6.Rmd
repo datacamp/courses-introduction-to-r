@@ -9,7 +9,7 @@ description : Lists, as opposed to vectors, can hold components of different typ
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
 ## You know lots of things already
 
-Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? 😉
+Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? ;-)
 
 Before you start learning about lists, let's make sure you've understood these variable types. Which one of the following statements is false?
 
