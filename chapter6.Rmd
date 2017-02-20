@@ -100,7 +100,7 @@ Time to create your first list! To construct a list you use the function [`list(
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be any varaible types that you like, including matrices, vectors, or other lists.
+The arguments to the list function are the list components. Remember, these components can be any variable types that you like, including matrices, vectors, or other lists.
 
 *** =instructions
 
@@ -420,6 +420,9 @@ The variable `shining_list` has been pre-defined for you. In each of the followi
 
 *** =hint
 
+* To select the contents of the fifth element of a list using positive number indexing, you would use `[[5]]`.
+* To select the contents of the `"bravo"` element of a list using character indexing, you would use `[["bravo"]]`.
+
 *** =pre_exercise_code
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
@@ -461,6 +464,72 @@ ex() %>% {
 success_msg("Magnificent! Selecting an element from a list with double square brackets returns the contents of that list element.")
 ```
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:ec42b8889a
+## Selecting elements from a list (3)
+
+All these exercises selecting elements are making you hungry.  This time you want to select some almonds!  To do this, you need to chain your selections together.  This is easier than it might sound.  All you have to do is to write the square brackets one after the other.  For example, to select the second "vector" of almonds, you used
+
+```{r}
+jar[[2]]
+```
+
+Now to select a portion of the first five almonds from that "vector", you could use the following code.
+
+```{r}
+jar[[2]][1:5]
+```
+
+![five almonds]()
+
+To recap what happened, you used double square brackets to access the vector stored in the list, then you followed it with single square brackets to access the elements in the vector.
+
+*** =instructions
+
+The variable `shining_list`, containing data about the movie "The Shining", has been pre-defined for you.
+
+* Select the first, third, and fifth actors from `shining_list`.
+* Select all of the first row of the reviews from `shining_list`. 
+
+*** =hint
+
+* To select the contents of the first element of a list, you would use `[[1]]`.
+* To select the second and fourth elements of a vector, you would use `[c(2, 4)]`.
+* To select the fifth row of a data frame you would use `[5, ]`.
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
+```
+
+*** =sample_code
+```{r}
+# shining_list is already pre-loaded in the workspace
+shining_list
+
+# Select the 1st, 3rd, and 5th actors
+shining_list[[]][]
+
+# Select the first review
+
+```
+
+*** =solution
+```{r}
+# shining_list is already pre-loaded in the workspace
+shining_list
+
+# Select the 1st, 3rd, and 5th actors
+shining_list[["actors"]][c(1, 3, 5)]
+
+# Select the first review
+shining_list[["reviews"]][1, ]
+```
+
+*** =sct
+```{r}
+
+```
 --- type:NormalExercise xp:100 skills:1 key:ca3f7b71504ff93940cf65889d406a58c5b0019c
 ## Adding more movie information to the list
 
