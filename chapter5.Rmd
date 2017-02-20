@@ -309,7 +309,7 @@ success_msg("Awesome! Notice that the `character` columns were automaticlly conv
 
 Data frames can make use of all the same techniques to select elements that you learned about with matrices. As before, you use square brackets, `[ ]`, and a comma to separate what you want to select from the rows and the columns respectively. For example:
 
-- `my_df[1, 2]` selects the value at the first row and select element in `my_df`.
+- `my_df[1, 2]` selects the value at the first row and select column in `my_df`.
 - `my_df[1:3, 2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
 
 Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
@@ -435,7 +435,7 @@ planets_df[, 3]
 planets_df[, "diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+However, there is a short-cut. You can use the `$` sign:
 
 ```
 planets_df$diameter
