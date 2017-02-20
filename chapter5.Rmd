@@ -292,7 +292,7 @@ str(planets_df)
 msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("str(planets_df)", incorrect_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Awesome! Notice that the `character` columns were automaticlly converted to `factor`s when you put them inside a `data.frame`. ou can change this behavoir using the `stringsAsFactors` argument.")
 ```
 
 
@@ -307,7 +307,7 @@ Data frames can make use of all the same techniques to select elements that you 
 Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
 
 *** =instructions
-- From `planets_df`, select the diameter of Mercury: this is the value in the first row and the third column. Simply print out the result.
+- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
 - From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
 
 *** =hint
