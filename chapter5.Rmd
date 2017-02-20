@@ -431,8 +431,8 @@ success_msg("Nice! Continue to the next exercise!")
 You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
 
 ```
-planets_df[,3]
-planets_df[,"diameter"]
+planets_df[, 3]
+planets_df[, "diameter"]
 ```
 
 However, there is a short-cut. If your columns have names, you can use the `$` sign:
@@ -442,11 +442,11 @@ planets_df$diameter
 ```
 
 *** =instructions
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Use the `$` sign to select the `has_rings` variable from `planets_df`. Store the vector that results as `has_rings_vector`.
+- Print out `has_rings_vector` to see if you got it right.
 
 *** =hint
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `has_rings` column then?
 
 *** =pre_exercise_code
 ```{r}
@@ -477,7 +477,7 @@ rings_vector <-
 planets_df
 
 # Select the rings variable from planets_df
-rings_vector <- planets_df$rings
+rings_vector <- planets_df$has_rings
 
 # Print out rings_vector
 rings_vector
@@ -487,9 +487,9 @@ rings_vector
 ```{r}
 msg = "Do not remove or overwrite the `planets_df` data frame!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("rings_vector",
-            incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
-test_output_contains("rings_vector", incorrect_msg = "Don't forget to print out `rings_vector` after you've created it!")
+test_object("has_rings_vector",
+            incorrect_msg = "Have you correctly selected the `has_rings` variable from `planets_df`? Use `$has_rings`. Store the result as `has_rings_vector`.")
+test_output_contains("has_rings_vector", incorrect_msg = "Don't forget to print out `has_rings_vector` after you've created it!")
 success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
 ```
 
@@ -513,7 +513,7 @@ This means that the first four observations (or planets) do not have a ring (`FA
 The code on the right selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
 
 *** =hint
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[has_rings_vector, ]`.
 
 *** =pre_exercise_code
 ```{r}
@@ -530,7 +530,7 @@ has_rings_vector <- planets_df$has_rings
 
 *** =sample_code
 ```{r}
-# planets_df and rings_vector are pre-loaded in your workspace
+# planets_df and has_rings_vector are pre-loaded in your workspace
 
 # Adapt the code to select all columns for planets with rings
 planets_df[has_rings_vector, "name"]
@@ -567,10 +567,10 @@ subset(my_df, subset = some_condition)
 
 The first argument of [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) specifies the data set for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `has_rings_vector`!
 
 ```
-subset(planets_df, subset = rings)
+subset(planets_df, subset = has_rings)
 ``` 
 
 *** =instructions
