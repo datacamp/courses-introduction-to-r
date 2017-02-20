@@ -318,32 +318,34 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 --- type:NormalExercise xp:100 skills:1 key:1ef3278944562caef64b9927dd2ddb6ee52334cd
 ## Selecting elements from a list
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+You've seen how to use square brackets to select elements from vectors, matrices, and data frames. Now take a look at how you can use them to select elements from lists.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Consider this "list": a jar containing three "vectors" of almonds. 
 
+![a jar containing three bags of almonds]()
+
+If you use square brackets to select the second element, you get another jar, containing one vector of almonds.  That is, using square bracket indexing will always return another list.
+
+```{r}
+jar[2]
 ```
-shining_list[[1]]
-```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+![a jar containing one bag of almonds]()
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
-
-```
-shining_list[["reviews"]]
-shining_list$reviews
-``` 
-
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names.
 
 *** =instructions
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+
+The variable `shining_list`, containing data about the movie "The Shining", has been pre-defined for you. In each of the following exercises, use square bracket indexing, `[`.
+
+- Use positive number indexing to select the second and third elements from `shining_list`.
+- Use negative number indexing to select everything but the third element of `shining_list`.
+- Use character indexing to select the `"moviename"` element of `shining_list`.
 
 *** =hint
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- To select the elements using positive indexing, use code like `[c(1, 3, 5)]`.
+- To select the elements using negative indexing, use code like `[c(-1, -3, -5)]`.
+- To select the elements using character indexing, use code like `[c("alpha", "charlie", "echo")]`.
 
 *** =pre_exercise_code
 ```{r}
@@ -353,34 +355,111 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 *** =sample_code
 ```{r}
 # shining_list is already pre-loaded in the workspace
+shining_list
 
-# Print out the vector representing the actors
+# Select 2nd and 3rd element using +ve indexing
+shining_list[]
+
+# Select everything except 3rd element using -ve indexing
 
 
-# Print the second element of the vector representing the actors
+# Select moviename element using character indexing
 
 ```
 
 *** =solution
 ```{r}
 # shining_list is already pre-loaded in the workspace
+shining_list
 
-# Print out the vector representing the actors
-shining_list$actors
+# Select 2nd and 3rd element using +ve indexing
+shining_list[2:3]
 
-# Print the second element of the vector representing the actors
-shining_list$actors[2]
+# Select everything except 3rd element using -ve indexing
+shining_list[-3]
+
+# Select moviename element using character indexing
+shining_list["moviename"]
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
-test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
-test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+ex() %>% {
+  check_object(., "shining_list", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_output_expr(., "shining_list[2:3]")
+  check_output_expr(., "shining_list[-3]")
+  check_output_expr(., 'shining_list["moviename"]')
+}
+success_msg("Great! Selecting elements from lists with square brackets always returns another list.")
 ```
 
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:d355af51a9
+## Selecting elements from a list (2)
+
+Sometimes, rather than wanting another list, you want to select the contents of one element of your list. For example, rather than wanting a jar containing a bag of almonds, you just want a bag of almonds.  To do this, you use double square brackets, `[[ ]]`.
+
+```{r}
+jar[[2]]
+```
+
+![a bag of almonds]()
+
+For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element.
+
+*** =instructions
+
+The variable `shining_list` has been pre-defined for you. In each of the following exercises, use double square bracket indexing, `[[`.
+
+- Use positive number indexing to select the third element from `shining_list`.
+- Use character indexing to select the `"actors"` element of `shining_list`.
+
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
+```
+
+*** =sample_code
+```{r}
+# shining_list is already pre-loaded in the workspace
+shining_list
+
+# Select 3rd element using +ve indexing
+shining_list[[]]
+
+# Select actors element using character indexing
+
+```
+
+*** =solution
+```{r}
+# shining_list is already pre-loaded in the workspace
+shining_list
+
+# Select 3rd element using +ve indexing
+shining_list[[3]]
+
+# Select actors element using character indexing
+shining_list[["actors"]]
+```
+
+*** =sct
+```{r}
+predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+ex() %>% {
+  check_object(., "shining_list", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_output_expr(., "shining_listv")
+  check_output_expr(., 'shining_list[["actors"]]')
+}
+success_msg("Magnificent! Selecting an element from a list with double square brackets returns the contents of that list element.")
+```
 
 --- type:NormalExercise xp:100 skills:1 key:ca3f7b71504ff93940cf65889d406a58c5b0019c
 ## Adding more movie information to the list
