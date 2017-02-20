@@ -273,7 +273,15 @@ The `planets_df` data frame should have 8 observations and 5 variables. It has b
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+# Quicker to define from scratch
+# load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
@@ -315,7 +323,14 @@ To select the diameter for Venus (the second row), you would need: `planets_df[2
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
@@ -375,7 +390,14 @@ You can select the first five values with `planets_df[1:5, ...]`. Can you fill i
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
@@ -428,12 +450,20 @@ planets_df$diameter
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
 ```{r}
 # planets_df is pre-loaded in your workspace
+planets_df
 
 # Select the rings variable from planets_df
 rings_vector <- 
@@ -444,6 +474,7 @@ rings_vector <-
 *** =solution
 ```{r}
 # planets_df is pre-loaded in your workspace
+planets_df
 
 # Select the rings variable from planets_df
 rings_vector <- planets_df$rings
@@ -470,7 +501,7 @@ You probably remember from high school that some planets in our solar system hav
 
 Could R help you out?
 
-If you type `rings_vector` in the console, you get:
+If you type `has_rings_vector` in the console, you get:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
@@ -486,8 +517,15 @@ Remember that to select _all_ columns, you simply have to leave the columns part
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
-rings_vector <- planets_df$rings
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
+has_rings_vector <- planets_df$has_rings
 ```
 
 *** =sample_code
@@ -495,7 +533,7 @@ rings_vector <- planets_df$rings
 # planets_df and rings_vector are pre-loaded in your workspace
 
 # Adapt the code to select all columns for planets with rings
-planets_df[rings_vector, "name"]
+planets_df[has_rings_vector, "name"]
 ```
 
 *** =solution
@@ -503,15 +541,15 @@ planets_df[rings_vector, "name"]
 # planets_df and rings_vector are pre-loaded in your workspace
 
 # Adapt the code to select all columns for planets with rings
-planets_df[rings_vector, ]
+planets_df[has_rings_vector, ]
 ```
 
 *** =sct
 ```{r}
 msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+test_object("has_rings_vector", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains('planets_df[has_rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[has_rings_vector, ]`. Make sure to include the comma here, it's crucial!")
 success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
 ```
 
@@ -543,7 +581,14 @@ Use `subset()` on `planets_df` to select planets that have a diameter smaller th
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
@@ -643,7 +688,14 @@ Alright, now that you understand the [`order()`](http://www.rdocumentation.org/p
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+#load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+planets_df <- data.frame(
+  name = c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"), 
+  type = rep(c("Terrestrial planet", "Gas giant"), each = 4), 
+  diameter = c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88), 
+  rotation = c(58.8, -244, 1, 1.030, 0.415, 0.445, -0.720, 0.673), 
+  has_rings = rep(c(FALSE, TRUE), each = 4)
+)
 ```
 
 *** =sample_code
