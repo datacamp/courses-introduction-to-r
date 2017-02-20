@@ -3,44 +3,42 @@ title_meta  : Chapter 6
 title       : Lists
 description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
 
---- type:NormalExercise xp:100 skills:1 key:2afcdb6a76ec91bf266de9b2ac295d844d7bb004
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
 ## Lists, why would you need them?
 
-Congratulations! At this point in the course you are already familiar with:
+Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? 😉
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
-
-Pretty sweet for an R newbie, right? ;-)
+Before you start learning about lists, let's make sure you've understood these variable types. Which one of the following statements is false?
 
 *** =instructions
-Click 'Submit Answer' to start learning everything about lists!
+
+* Vectors are one dimensional variables that can hold numeric, character or logical values.
+* The elements in a vector or matrix must all have the same data type.
+* Factors are one dimentional variables that hold categorical data.
+* Within a row of a data frame, each element must have the same data type.
+* Matrices and data frames are both two dimensional variables.
 
 *** =hint
-Just click the 'Submit Answer' button.
+
+What are the restrictions on the data that can be stored in data frames?
 
 *** =pre_exercise_code
 ```{r}
-# no pec
-```
 
-*** =sample_code
-```{r}
-# Just click the 'Submit Answer' button.
-```
-
-*** =solution
-```{r}
-# Just click the 'Submit Answer' button.
 ```
 
 *** =sct
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+not_wrong_msg <- "Sorry, that statement is true."
+correct_msg <- "Very insightful! A data frame can have different data types within a row, but must have the same data type within a column."
+test_mc(
+  4,
+  feedback_msgs = c(rep.int(not_wrong_msg, 3), correct_msg, not_wrong_msg)
+)
 ```
-
-
 --- type:NormalExercise xp:100 skills:1 key:68f93c5c504616bd18876da52cd123277d56fc8b
 ## Lists, why would you need them? (2)
 
