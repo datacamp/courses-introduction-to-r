@@ -8,13 +8,14 @@ description : "In this chapter, you will take your first steps with R. You will 
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
+R makes use of the `#` ("hash") sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
 
 You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
 
 *** =instructions
 - In the editor on the right there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button.
+- Select `3 + 4` in the editor, then press `CTRL` + `ENTER` to run the selection (`CMD` + `ENTER` on macOS).
+- Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button or press `CTRL` + `SHIFT` + `ENTER` to run all your code and test the result (`CTRL` + `SHIFT` + `ENTER` on macOS).
 
 *** =hint
 Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
@@ -59,11 +60,13 @@ In its most basic form, R can be used as a simple calculator. Consider the follo
 - Division: `/`
 - Exponentiation: `^`
 - Modulo: `%%`
+- Integer division: `%/%`
 
-The last two might need some explaining:
+The last three might need some explaining:
 
 - The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
 - The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Integer division performs division, ignoring any fractional part in the answer, for example `7 %/% 3` is 2.
 
 With this knowledge, follow the instructions below to complete the exercise.
 
@@ -135,21 +138,28 @@ success_msg("Great! Head over to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:5f200ffd43
 ## Variable assignment 
 
-A basic concept in (statistical) programming is called a **variable**. 
+**Variables** let you store values so that you can later reuse them. The types of variable that can be created include vectors of numbers, matrices, and data frames – the latter are for storing spreadsheet-like data. You'll see some of the different types of variable throughout this course.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+The process of storing a value in a variable is called **assignment**. The assignment operator is an arrow consisting of a less than sign (`<`), followed by a hyphen (`-`). You can assign a value 4 to a variable named `my_var` with the command
 
-You can assign a value 4 to a variable `my_var` with the command
-
-```
+```{r}
 my_var <- 4
+```
+
+Note that variable names are case sensitive; R would consider `My_var` to be a different variable name since it starts with a capital `M`.
+
+To see the value that has been stored in the variable, just type its name. The output that R produces is shown in a comment.
+
+```{r}
+my_var
+## [1] 4
 ```
 
 *** =instructions
 Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
 
 *** =hint
-Look at how the value 4 was assigned to `my_variable` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
 
 *** =pre_exercise_code
 ```{r}
@@ -178,18 +188,28 @@ x
 ```{r}
 test_object("x", undefined_msg = "Make sure to define a variable `x`.",
             incorrect_msg = "Make sure that you assign the correct value to `x`.") 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Good job! When you did the assignment, notice that R did not print the value of the variable to the console. `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:c5944b90eb
 ## Variable assignment (2)
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
+An important feature of variables is that they can be reused. In the previous exercise, you saw how the number 4 was assigned to a variable named `my_var`. To triple this value you can use the following command
+
+```{r}
+my_var <- 4
+3 * my_var
+## [1] 12
+```
 
 *** =instructions
+
+Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+
 - Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
 - Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
+- You get hungry. Type `my_apples - 1` to print the number of apples you will have after eating one of them.
 - Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 *** =hint
@@ -207,6 +227,9 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 # Print out the value of the variable my_apples
 
+
+# Print the value of my_apples minus one
+
 ```
 
 *** =solution
@@ -216,6 +239,9 @@ my_apples <- 5
 
 # Print out the value of the variable my_apples
 my_apples
+
+# Print the value of my_apples minus one
+my_apples - 1
 ```
 
 *** =sct
@@ -224,7 +250,8 @@ test_object("my_apples",
             undefined_msg = "Please make sure to define a variable `my_apples`.",
             incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
 test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
-success_msg("Great! Continue to the next exercise!")
+test_output_contains("my_apples - 1", incorrect_msg = "Have you explicitly told R to print out `my_apples - 1` to the console?")
+success_msg("Great! Variables can be reused by typing their name in other lines of R code.")
 ```
 
 
@@ -291,9 +318,17 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 --- type:NormalExercise xp:100 skills:1 key:915fcc7c99
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no ☺? In the last exercises you added two numeric variables, `my_apples` and `my_oranges`, together. What if you tried to add a numeric and a character variable together? This doesn’t make sense, so R will throw an error if you try it.
+
+```{r}
+1 + "two"
+## Error in 1 + "two" : non-numeric argument to binary operator
+```
 
 *** =instructions
+
+The example in the editor contains a mistake: `my_oranges` has been assigned as a character variable instead of a numeric variable.
+
 - Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
 - Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
 
@@ -347,10 +382,10 @@ success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 
 R works with numerous data types. Some of the most basic types to get started are:
 
-- Decimals values like `4.5` are called **numerics**.
-- Natural numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Most numbers that you will encounter in R have type **numeric**.  These include numbers with decimals, like 4.5, as well as whole numbers, like -4.
+- If you only need to work with whole numbers, there is another type called **integer**.  These take up less memory than numeric variables, so they are occasionally useful where this is important.  Most of the time, R takes care of how numbers are handled, so you don’t need to worry about the difference between numeric and integer.
+- The logical values `TRUE` and `FALSE` have type **logical**.  `TRUE` and `FALSE` must always be written in upper-case letters.  They are sometimes referred to as Boolean variables.
+- Text values, sometimes known as "strings" have type **character**. They are written inside double quotes,`"`, or single quotes, `'`.
 
 Note how the quotation marks on the right indicate that "some text" is a character.
 
@@ -401,14 +436,14 @@ my_logical <- FALSE
 test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
 test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
 test_object("my_logical", incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Great work! Numbers are stored in `numeric` variables, `TRUE` and `FALSE` are stored in `logical` variables, and text is stored in `character` variables.")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:99b549229d
 ## What's that data type?
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
+Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the [`class()`](https://www.rdocumentation.org/packages/base/topics/class) function, as the code on the right shows.
 
 *** =instructions
 Complete the code in the editor and also print out the classes of `my_character` and `my_logical`. 
