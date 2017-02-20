@@ -266,17 +266,25 @@ Do not forget to name the list components accordingly (names are moviename, acto
 *** =pre_exercise_code
 ```{r}
 mov <- "The Shining"
-act      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
-sources     <- c("IMDb1","IMDb2","IMDb3")
-comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
-scores      <- c(4.5,4,5)
-rev     <- data.frame(scores, sources, comments)
+act <- c("Jack Nicholson", "Shelley Duvall", "Danny Lloyd", "Scatman Crothers", "Barry Nelson")
+rev <- data.frame(
+  scores = c(4.5,4,5), 
+  sources = c("IMDb1","IMDb2","IMDb3"), 
+  comments = c(
+    "Best Horror Film I Have Ever Seen", 
+    "A truly brilliant and scary film from Stanley Kubrick", 
+    "A masterpiece of psychological horror"
+  )
+)
 rm(scores, sources, comments)
 ```
 
 *** =sample_code
 ```{r}
 # The variables mov, act and rev are available
+mov
+act
+rev
 
 # Finish the code to build shining_list
 shining_list <- list(moviename = mov)
@@ -285,6 +293,9 @@ shining_list <- list(moviename = mov)
 *** =solution
 ```{r}
 # The variables mov, act and rev are available
+mov
+act
+rev
 
 # Finish the code to build shining_list
 shining_list <- list(moviename = mov, actors = act, reviews = rev)
