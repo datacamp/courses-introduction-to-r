@@ -458,7 +458,7 @@ predef_msg <- "Do not remove or change the definition of `shining_list`, which i
 ex() %>% {
   check_object(., "shining_list", undefined_msg = predef_msg) %>%
     check_equal(incorrect_msg = predef_msg)
-  check_output_expr(., "shining_listv")
+  check_output_expr(., "shining_list[[3]]")
   check_output_expr(., 'shining_list[["actors"]]')
 }
 success_msg("Magnificent! Selecting an element from a list with double square brackets returns the contents of that list element.")
@@ -528,7 +528,14 @@ shining_list[["reviews"]][1, ]
 
 *** =sct
 ```{r}
-
+predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+ex() %>% {
+  check_object(., "shining_list", undefined_msg = predef_msg) %>%
+    check_equal(incorrect_msg = predef_msg)
+  check_output_expr(., 'shining_list[["actors"]][c(1, 3, 5)]')
+  check_output_expr(., 'shining_list[["reviews"]][1, ]')
+}
+success_msg("You superstar! Square brackets can be chained together to select elements inside other elements.")
 ```
 --- type:NormalExercise xp:100 skills:1 key:ca3f7b71504ff93940cf65889d406a58c5b0019c
 ## Adding more movie information to the list
