@@ -696,7 +696,8 @@ order(a)
 This means we can use the output of `order(a)` to reshuffle `a`:
     
 ```{r}
-a[order(a)]
+positions <- order(a)
+a[positions]
 ## [1]   10  100 1000
 ``` 
 
@@ -704,12 +705,13 @@ a[order(a)]
 
 `diameter` is shown in your script.
 
-* Use `order()` to sort the planet diameters from smallest to largest.
+* Use `order()` to get the positions of planets from smallest to largest and assign the result to `positions`.
+* Use square brackets to select `positions` from `diameter`.
 
 *** =hint
 
-* Call `diameter`, with square brackets to select elements.
-* Inside the square brackets, call `order()` with `diameter` as an argument.
+* Call `order()` with `diameter` as an argument, and assign the result to `positions`.
+* Call `diameter`, with `positions` inside square brackets to reshuffle by selecting elements.
 
 *** =pre_exercise_code
 ```{r}
@@ -721,6 +723,9 @@ a[order(a)]
 # Planet diameters
 diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 
+# Use order() to create positions
+positions <- 
+
 # Sort the planets using order()
 
 ```
@@ -730,13 +735,18 @@ diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 # Planet diameters
 diameter <- c(0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88)
 
+# Use order() to create positions
+positions <- order(diameter)
+
 # Sort the planets using order()
-diameter[order(diameter)]
+diameter[positions]
 ```
 
 *** =sct
 ```{r}
 ex() %>% {
+  check_object(., "positions") %>%
+    check_equal()
   check_output_expr(., "diameter[order(diameter)]")
 }
 success_msg("Marvellous! `order()` is more flexible than `sort()` because it can also sort your data frame.")
