@@ -466,9 +466,9 @@ planets_df <- data.frame(
 planets_df
 
 # Select the rings variable from planets_df
-rings_vector <- 
+has_rings_vector <- 
   
-# Print out rings_vector
+# Print out has_rings_vector
 ```
 
 *** =solution
@@ -477,10 +477,10 @@ rings_vector <-
 planets_df
 
 # Select the rings variable from planets_df
-rings_vector <- planets_df$has_rings
+has_rings_vector <- planets_df$has_rings
 
-# Print out rings_vector
-rings_vector
+# Print out has_rings_vector
+has_rings_vector
 ```
 
 *** =sct
