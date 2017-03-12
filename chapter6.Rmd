@@ -322,7 +322,7 @@ You've seen how to use square brackets to select elements from vectors, matrices
 
 Consider this "list": a jar containing three "vectors" of almonds. 
 
-![a jar containing three bags of almonds]()
+![a jar containing three bags of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-complete-list.jpg)
 
 If you use square brackets to select the second element, you get another jar, containing one vector of almonds.  That is, using square bracket indexing will always return another list.
 
@@ -330,7 +330,7 @@ If you use square brackets to select the second element, you get another jar, co
 jar[2]
 ```
 
-![a jar containing one bag of almonds]()
+![a jar containing one bag of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-single-square-bracket.jpg)
 
 Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names.
 
@@ -406,7 +406,7 @@ Sometimes, rather than wanting another list, you want to select the contents of 
 jar[[2]]
 ```
 
-![a bag of almonds]()
+![a bag of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-double-square-bracket.jpg)
 
 For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element.
 
@@ -480,7 +480,7 @@ Now to select a portion of the first five almonds from that "vector", you could 
 jar[[2]][1:5]
 ```
 
-![five almonds]()
+![five almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-chained-indexing.jpg)
 
 To recap what happened, you used double square brackets to access the vector stored in the list, then you followed it with single square brackets to access the elements in the vector.
 
