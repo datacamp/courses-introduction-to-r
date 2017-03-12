@@ -334,7 +334,7 @@ total <- a + b
 This means that to do all your calculations, you only need one line of code.
 
 *** =instructions
-- Take the sum of the variables `square_numbers` and `triangular_numbers` and it assign to `total_vector`.
+- Take the sum of the variables `square_numbers` and `triangular_numbers` and assign it to `total_vector`.
 - Inspect the result by printing out `total_vector`.
 
 *** =hint
