@@ -52,7 +52,7 @@ Restricting R to only twenty data types makes the language easier to work with. 
 
 Lists are a container variable.  That is, they are a special type of vector that can store other variable types.  Each element of a list can be a vector, a data frame, or any other variable type. Lists can even contain other lists!
 
-The twenty data types are like Lego bricks. In the smae way that Lego bricks can be combinined into an infinite number of shapes, by combining R variables together using lists, you can make an infinite number of different data structures.
+The twenty data types are like Lego bricks. In the same way that Lego bricks can be combined into an infinite number of shapes, by combining R variables together using lists, you can make an infinite number of different data structures.
 
 Which one of the following statements is true?
 
