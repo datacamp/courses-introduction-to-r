@@ -46,7 +46,7 @@ test_mc(
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:09c072ea7a
 ## What are lists?
 
-Between numeric, character and logical variables, matrices, factors, and data frames, that is six variables types that you understand. In total, R has about twenty variables types, so you know about a good portion of the language already.
+Between numeric, character and logical variables, matrices, factors, and data frames, that is six variable types that you understand. In total, R has about twenty variable types, so you know about a good portion of the language already.
 
 Restricting R to only twenty data types makes the language easier to work with. However, sometimes you need more flexibility, and this is where lists become useful.
 
