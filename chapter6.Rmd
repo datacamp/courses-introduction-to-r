@@ -433,7 +433,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 # shining_list is already pre-loaded in the workspace
 shining_list
 
-# Select 3rd element using +ve indexing
+# Select 3rd element using positive indexing
 shining_list[[]]
 
 # Select actors element using character indexing
@@ -445,7 +445,7 @@ shining_list[[]]
 # shining_list is already pre-loaded in the workspace
 shining_list
 
-# Select 3rd element using +ve indexing
+# Select 3rd element using positive indexing
 shining_list[[3]]
 
 # Select actors element using character indexing
