@@ -453,7 +453,7 @@ total_numbers <- sum(fibonacci_numbers, motzkin_numbers)
 
 *** =instructions
 
-The code to calculate the total winnings over thewhole week for poker is shown in the script.
+The code to calculate the total winnings over the whole week for poker is shown in the script.
 
 - Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
 - Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
