@@ -300,7 +300,7 @@ str(planets_df)
 msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("str(planets_df)", incorrect_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
-success_msg("Awesome! Notice that the `character` columns were automaticlly converted to `factor`s when you put them inside a `data.frame`. ou can change this behavoir using the `stringsAsFactors` argument.")
+success_msg("Awesome! Notice that the `character` columns were automatically converted to `factor`s when you put them inside a `data.frame`. You can change this behavior using the `stringsAsFactors` argument.")
 ```
 
 
