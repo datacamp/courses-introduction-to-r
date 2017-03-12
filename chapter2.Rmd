@@ -875,7 +875,7 @@ success_msg("Good job! Apart from subsetting vectors by index or by name, you ca
 
 So far, you've used positive integers, negative integers, and names to select elements from a vector. The fourth (and final) way of accessing elements from a vector is to use **logical** values.
 
-A common scenario is to use the comparison operators that you saw in the Calculating Total Winnings exercise to select values.  For example, you can ignore all your losses and ask R to return only those days where you realized a positive return for poker (the output is shown in comments).
+A common scenario is to use the comparison operators that you saw in the *Calculating Total Winnings* exercise to select values.  For example, you can ignore all your losses and ask R to return only those days where you realized a positive return for poker (the output is shown in comments).
 
 ```{r}
 poker_vector > 0
