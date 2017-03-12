@@ -192,7 +192,7 @@ As a first goal, you want to construct a data frame that describes the main char
 - The planet's rotation across the sun relative to that of the Earth.
 - If the planet has rings or not (`TRUE` or `FALSE`).
 
-After doing some high-quality research on [NASA](http://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.
+After doing some high-quality research on [NASA](http://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
 
 You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
