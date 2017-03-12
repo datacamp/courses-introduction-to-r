@@ -206,7 +206,7 @@ titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 # Name the rows with titles
 
 
-# Print out star_wars_matrix
+# Print out the updated star_wars_matrix
 ```
 
 *** =solution
