@@ -641,7 +641,7 @@ sort(a)
 
 `diameter` is shown in your script.
 
-* Use `sort()` to sort the planet diameters from smallest to largest.
+Use `sort()` to sort the planet diameters from smallest to largest.
 
 *** =hint
 
