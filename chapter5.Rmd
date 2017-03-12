@@ -16,7 +16,7 @@ When doing a market research survey, however, you often have different types of 
 
 Rather than having separate vector variables for the response to each question, it would be useful to have a single variable where each column contains the response to a question. This is exactly what a data frame is for! Like a matrix, a data frame is a rectangular block of data.  This time, each column can contain a different data type.
 
-- The columns of a data frames are sometimes called **fields** or ** variables**.
+- The columns of a data frames are sometimes called **fields** or **variables**.
 - The rows of a data frame are sometimes called **observations**.
 
 Data frames appear in many data analysis environments, but sometimes have different names. They are the same thing as database tables or MATLAB tables. In SAS, Stata, and SPSS, they are called "datasets". Worksheets in a spreadsheet are similar, but have less rules on how they are structured.
