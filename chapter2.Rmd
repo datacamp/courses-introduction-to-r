@@ -359,8 +359,8 @@ total_vector <-
 
 *** =solution
 ```{r}
-square_numbers <- c(1, 2, 3)
-triangular_numbers <- c(4, 5, 6)
+square_numbers <- c(1, 4, 9, 16, 25, 36)
+triangular_numbers <- c(1, 3, 6, 10, 15, 21)
 
 # Take the sum of square_numbers and triangular_numbers
 total_vector <- square_numbers + triangular_numbers
