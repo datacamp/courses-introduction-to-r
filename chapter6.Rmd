@@ -17,7 +17,7 @@ Before you start learning about lists, let's make sure you've understood these v
 
 * Vectors are one dimensional variables that can hold numeric, character or logical values.
 * The elements in a vector or matrix must all have the same data type.
-* Factors are one dimentional variables that hold categorical data.
+* Factors are one dimensional variables that hold categorical data.
 * Within a row of a data frame, each element must have the same data type.
 * Matrices and data frames are both two dimensional variables.
 
