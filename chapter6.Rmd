@@ -66,7 +66,7 @@ Which one of the following statements is true?
 *** =hint
 
 * Lists can contain lists.
-* R has around 20 data types,
+* R has around 20 data types.
 * Lists are vectors, but not matrices.
 
 *** =pre_exercise_code
