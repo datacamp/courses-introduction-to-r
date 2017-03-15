@@ -10,14 +10,14 @@ You may remember from the chapter about matrices that all the elements that you 
 
 When doing a market research survey, however, you often have questions such as:
 
-- 'Are your married?' or 'yes/no' questions (`logical`)
+- 'Are you married?' or 'yes/no' questions (`logical`)
 - 'How old are you?' (`numeric`)
 - 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
 - ...
 
 The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
 
-A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+A data frame has the variables of a data set as columns and the observations as rows. An R data frame is the same concept as an SQL database table, or a SAS dataset, or a MATLAB table, or an SPSS table.
 
 *** =instructions
 Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
@@ -362,7 +362,7 @@ planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+However, there is a short-cut; you can use the `$` sign:
 
 ```
 planets_df$diameter

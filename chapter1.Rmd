@@ -8,9 +8,9 @@ description : "In this chapter, you will take your first steps with R. You will 
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
+R makes use of the `#` ("hash") sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.  If you prefer to use keyboard shortcuts, you can run code by selecting it and pressing <kbd>CTRL</kbd>+<kbd>ENTER</kbd> (<kbd>CMD</kbd>+<kbd>ENTER</kbd> on MacOS).  You can submit your exercise using <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>ENTER</kbd> (<kbd>CMD</kbd>+<kbd>SHIFT</kbd>+<kbd>ENTER</kbd> on MacOS).
 
 *** =instructions
 - In the editor on the right there is already some sample code. Can you see which lines are actual R code and which are comments?
@@ -59,11 +59,13 @@ In its most basic form, R can be used as a simple calculator. Consider the follo
 - Division: `/`
 - Exponentiation: `^`
 - Modulo: `%%`
+- Integer division: `%/%`
 
-The last two might need some explaining:
+The last three might need some explaining:
 
 - The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
 - The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Integer division performs division, ignoring any fractional part in the answer, for example `7 %/% 3` is 2.
 
 With this knowledge, follow the instructions below to complete the exercise.
 
@@ -144,6 +146,8 @@ You can assign a value 4 to a variable `my_var` with the command
 ```
 my_var <- 4
 ```
+
+Note that variable names are case sensitive; R would consider `My_var` to be a different variable name.
 
 *** =instructions
 Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
@@ -291,7 +295,7 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 --- type:NormalExercise xp:100 skills:1 key:915fcc7c99
 ## Apples and oranges
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This doesn’t make sense, so R will throw an error if you try it.
 
 *** =instructions
 - Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
@@ -347,12 +351,10 @@ success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 
 R works with numerous data types. Some of the most basic types to get started are:
 
-- Decimals values like `4.5` are called **numerics**.
-- Natural numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
-
-Note how the quotation marks on the right indicate that "some text" is a character.
+- Most numbers that you will encounter in R have type **numeric**.  These include numbers with decimals, like `4.5`, as well as whole numbers, like `-4`.
+- If you only need to work with whole numbers, there is another type called **integer**.  These take up less memory than numeric variables, so they are occasionally useful where this is important.  Most of the time, R takes care of how numbers are handled, so you don’t need to worry about the difference between numeric and integer.
+- The logical values `TRUE` and `FALSE` have type **logical**.  `TRUE` and `FALSE` must always be written in upper-case letters.  They are sometimes referred to as Boolean variables.
+- Text values, are sometimes known as "strings" have type **character**. They are written inside double quotes,", or single quotes, '.
 
 *** =instructions
 Change the value of the:

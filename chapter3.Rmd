@@ -6,7 +6,7 @@ description : In this chapter you will learn how to work with matrices in R. By 
 --- type:NormalExercise xp:100 skills:1 key:d61aeba84c
 ## What's a matrix?
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are working with rows and columns, a matrix is called two-dimensional. 
 
 You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
 
@@ -549,11 +549,11 @@ success_msg("Nice one! Continue to the next exercise.")
 --- type:NormalExercise xp:100 skills:1 key:c81c656f06
 ## A little arithmetic with matrices
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Similar to what you have learned with vectors, the arithmetic operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
 
 For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
 
-As a newly-hired data analyst for Lucasfilm, it is your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+As a newly-hired data analyst for Disney, it is your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
 
 *** =instructions
 - Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.

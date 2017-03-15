@@ -524,11 +524,11 @@ success_msg("Well done. This is pretty bad news...")
 
 Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are greater (or `>` ) than in roulette.
 
 *** =instructions
 - Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- Check if your total gains in poker are greater than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
 
 *** =hint
 - You partly calculated the answer to this question in the previous exercise already!
@@ -654,7 +654,7 @@ success_msg("Great! R also makes it possible to select multiple elements from a 
 
 How about analyzing your midweek results? 
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+Indexing by position also lets you select multiple elements from the vector.  To do this, simply place a vector of positive whole numbers inside the square brackets.  All the values should be between one and the length of the vector. For example, suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. The code below selects the first and fifth element of `poker_vector`:
 
 ```
 poker_vector[c(1, 5)]
@@ -712,7 +712,7 @@ success_msg("Well done! Continue to the next exercise to specialize in vector se
 --- type:NormalExercise xp:100 skills:1 key:27976b79f4
 ## Vector selection: the good times (3)
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. However, R is designed to make you more productive when analysing data, and one of the ways it does this is to save you some typing for common operations. In this case, there is an easier way to create the indexing vector: `c(2, 3, 4)` can be abbreviated to `2:4`, which generates a vector with a sequence of whole numbers from 2 up to 4.
 
 So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
 
