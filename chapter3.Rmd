@@ -615,12 +615,12 @@ For vectors, you learned about three other methods of indexing.
 These indexing methods can also be used with vectors. This time you need two of them, and you can mix and match.
 
 ```{r}
-# everything except the 1st row, 2nd and 4th columns
+# Everything except the 1st row, 2nd and 4th columns
 a_matrix[-1, c(2, 4)] 
-# every second column
+# Every second column
 a_matrix[, c(FALSE, TRUE)] 
-# rows named "lightsaber" and "blaster", all columns
-a_matrix[c("lightsaber", "blaster"), ] 
+# Rows named "lightsaber" and "blaster", all columns
+a_matrix[c("lightsaber", "blaster"), ]
 ```
 
 *** =instructions
