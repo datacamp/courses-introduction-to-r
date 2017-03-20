@@ -320,17 +320,23 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 
 You've seen how to use square brackets to select elements from vectors, matrices, and data frames. Now take a look at how you can use them to select elements from lists.
 
-Consider this "list": a jar containing three "vectors" of almonds. 
-
-![a jar containing three bags of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-complete-list.jpg)
-
-If you use square brackets to select the second element, you get another jar, containing one vector of almonds.  That is, using square bracket indexing will always return another list.
+Lists are container objects. That is, their purpose is to contain other variables. They can even contain other lists! Consider this example of your packed lunch box.
 
 ```{r}
-jar[2]
+packed_lunch <- list(
+  sandwiches = c("cheese & cucumber", "egg & cress"),
+  bag_of_peanuts = rep("peanut", 20),
+  fruit = list("apple", "banana")
+)
 ```
 
-![a jar containing one bag of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-single-square-bracket.jpg)
+If you use square brackets to select the first element, you get another list, containing one vector of sandwiches.  That is, using square bracket indexing on a list will always return another list.
+
+```{r}
+packed_lunch[1]
+## $sandwiches
+## [1] "cheese & cucumber" "egg & cress" 
+```
 
 Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names.
 
@@ -400,13 +406,22 @@ success_msg("Great! Selecting elements from lists with square brackets always re
 --- type:NormalExercise lang:r xp:100 skills:1 key:d355af51a9
 ## Selecting elements from a list (2)
 
-Sometimes, rather than wanting another list, you want to select the contents of one element of your list. For example, rather than wanting a jar containing a bag of almonds, you just want a bag of almonds.  To do this, you use double square brackets, `[[ ]]`.
+Recall your packed lunch.
 
 ```{r}
-jar[[2]]
+packed_lunch <- list(
+  sandwiches = c("cheese & cucumber", "egg & cress"),
+  bag_of_peanuts = rep("peanut", 20),
+  fruit = list("apple", "banana")
+)
 ```
 
-![a bag of almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-double-square-bracket.jpg)
+Sometimes, rather than wanting another list, you want to select the contents of one element of your list. For example, rather than wanting a container of sandwiches, you just want the sandwiches.  To do this, you use double square brackets, `[[ ]]`.
+
+```{r}
+packed_lunch[[1]]
+## [1] "cheese & cucumber" "egg & cress"
+```
 
 For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element.
 
@@ -468,21 +483,29 @@ success_msg("Magnificent! Selecting an element from a list with double square br
 --- type:NormalExercise lang:r xp:100 skills:1 key:ec42b8889a
 ## Selecting elements from a list (3)
 
-All these exercises selecting elements are making you hungry.  This time you want to select some almonds!  To do this, you need to chain your selections together.  This is easier than it might sound.  All you have to do is to write the square brackets one after the other.  For example, to select the second "vector" of almonds, you used
+Here is your packed lunch again.
 
 ```{r}
-jar[[2]]
+packed_lunch <- list(
+  sandwiches = c("cheese & cucumber", "egg & cress"),
+  bag_of_peanuts = rep("peanut", 20),
+  fruit = list("apple", "banana")
+)
 ```
 
-Now to select a portion of the first five almonds from that "vector", you could use the following code.
+All these exercises selecting elements are making you hungry.  This time you want to choose a sandwich to eat!  To do this, you need to chain your selections together.  This is easier than it might sound.  All you have to do is to write the square brackets one after the other.  For example, to select the vectors of sandwiches, you used `packed_lunch[[1]]`. Now to select the egg and cress sandwich from that "vector", you could use the following code.
 
 ```{r}
-jar[[2]][1:5]
+packed_lunch[[1]][2]
+## [1] "egg & cress"
 ```
 
-![five almonds](http://s3.amazonaws.com/assets.datacamp.com/production/course_2977/datasets/intro-to-r-list-indexing-chained-indexing.jpg)
+To recap what happened, you used double square brackets to access the vector stored in the list, then you followed it with single square brackets to access the elements in the vector. You can also chain double square brackets together to access elements within nested lists. For example, to access the apple, you could use this.
 
-To recap what happened, you used double square brackets to access the vector stored in the list, then you followed it with single square brackets to access the elements in the vector.
+```{r}
+packed_lunch[[3]][[1]]
+# [1] "apple"
+```
 
 *** =instructions
 
