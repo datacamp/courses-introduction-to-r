@@ -318,9 +318,7 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 --- type:NormalExercise xp:100 skills:1 key:1ef3278944562caef64b9927dd2ddb6ee52334cd
 ## Selecting elements from a list
 
-You've seen how to use square brackets to select elements from vectors, matrices, and data frames. Now take a look at how you can use them to select elements from lists.
-
-Lists are container objects. That is, their purpose is to contain other variables. They can even contain other lists! Consider this example of your packed lunch box.
+You've seen how to use square brackets to select elements from vectors, matrices, and data frames. Now take a look at how you can use them to select elements from lists. Consider this example of your packed lunch box.
 
 ```{r}
 packed_lunch <- list(
@@ -338,7 +336,7 @@ packed_lunch[1]
 ## [1] "cheese & cucumber" "egg & cress" 
 ```
 
-Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names.
+Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names. Time to use your new list indexing skills to select elements of your movie data.
 
 *** =instructions
 
@@ -423,7 +421,7 @@ packed_lunch[[1]]
 ## [1] "cheese & cucumber" "egg & cress"
 ```
 
-For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element.
+For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element. Now apply this technique to the movie list.
 
 *** =instructions
 
@@ -506,6 +504,8 @@ To recap what happened, you used double square brackets to access the vector sto
 packed_lunch[[3]][[1]]
 # [1] "apple"
 ```
+
+Now that you've eaten, it's time to work on your movie list.
 
 *** =instructions
 
