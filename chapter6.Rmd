@@ -6,10 +6,10 @@ description : Lists, as opposed to vectors, can hold components of different typ
 
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
+--- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
 ## You know lots of things already
 
-Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? ;-)
+Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? 😉
 
 Before you start learning about lists, let's make sure you've understood these variable types. Which one of the following statements is false?
 
@@ -43,7 +43,7 @@ test_mc(
 
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:09c072ea7a
+--- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:09c072ea7a
 ## What are lists?
 
 Between numeric, character and logical variables, matrices, factors, and data frames, that is six variable types that you understand. In total, R has about twenty variable types, so you know about a good portion of the language already.
@@ -77,7 +77,7 @@ Which one of the following statements is true?
 *** =sct
 ```{r}
 msgs <- list(
-  correct = "Marvellous! Lists are used to combine other variables into a single variable.",
+  correct = "Marvelous! Lists are used to combine other variables into a single variable.",
   contains = "Lists can contain other lists.",
   hundreds = "R only has around 20 data types.",
   matrix = "Lists are a type of vector, but not a type of matrix."

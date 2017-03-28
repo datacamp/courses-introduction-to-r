@@ -113,7 +113,7 @@ ex() %>% {
   check_output_expr(., "head(esoph)")
   check_output_expr(., "tail(esoph, n = 3)")
 }
-success_msg("Wonderful! Using `head()` or `tail()` lets you explore a data frame by looking at a few rows. Another way is to look at the columns of the data frame.");
+success_msg("Wonderful! Using `head()` or `tail()` lets you explore a data frame by looking at a few rows. Another way is to look at the columns of the data frame.")
 ```
 
 
@@ -266,7 +266,7 @@ The `planets_df` data frame should have 8 observations and 5 variables. It has b
 * Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
 * See if you can find the following pieces of information in the output from `str()`.
     * How many rows and columns are there?
-    * What are variable type does each column have?
+    * What variable type does each column have?
 
 *** =hint
 `planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
@@ -557,7 +557,7 @@ success_msg("Wonderful! This is a rather tedious solution. The next exercise wil
 --- type:NormalExercise xp:100 skills:1 key:a4a8b72a74097196eb2f8a28b056987aae834565
 ## Only planets with rings but shorter
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV 😉. 
 
 Now, let us move up one level and use the function [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset). You should see the [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) function as a short-cut to do exactly the same as what you did in the previous exercises. 
 
@@ -749,7 +749,7 @@ ex() %>% {
     check_equal()
   check_output_expr(., "diameter[order(diameter)]")
 }
-success_msg("Marvellous! `order()` is more flexible than `sort()` because it can also sort your data frame.")
+success_msg("Marvelous! `order()` is more flexible than `sort()` because it can also sort your data frame.")
 ```
 --- type:NormalExercise xp:100 skills:1 key:fa88b58bf2cf62e0c181dfdcbdd2e1ddeac66807
 ## Sorting your data frame

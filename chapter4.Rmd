@@ -4,7 +4,7 @@ title       : Factors
 description : Very often, data falls into a limited number of categories. For example, sex can often be limited to either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:f3bd05b027
+--- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:f3bd05b027
 ## What's a factor and why would you use it?
 
 The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values (though technically it is not infinite, since computers cannot represent an infinite number of different numbers).
@@ -119,7 +119,7 @@ success_msg("Great! If you want to find out more about the `factor()` function, 
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree ;-) ).
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree 😉).
 
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` is greater than `"Low"`, and `"High"` is greater than `"Medium"`.
 
@@ -215,7 +215,7 @@ You are given the results of a survey to analyze. One of the questions asked the
 
 *** =instructions
 
-`sex_vector` has been predefined in your workspace.
+`sex_vector` has been pre-defined in your workspace.
 
 * Create an unordered factor from `sex_vector` and store it in `factor_sex_vector_fm`.
 * Print the levels of this factor, observing that they are alphabetically sorted.
@@ -235,7 +235,7 @@ sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 *** =sample_code
 ```{r}
-# sex_vector has been pre-defined.
+# sex_vector has been pre-defined
 sex_vector
 
 # Create an unordered factor of sexes
@@ -253,7 +253,7 @@ ___(___)
 
 *** =solution
 ```{r}
-# sex_vector has been pre-defined.
+# sex_vector has been pre-defined
 sex_vector
 
 # Create an unordered factor of sexes
@@ -365,7 +365,7 @@ Going back to our survey, you would like to know how many `"Male"` responses you
 
 *** =instructions
 
-`factor_sex_vector` has been predefined in your workspace.
+`factor_sex_vector` has been pre-defined in your workspace.
 
 * Use `table()` to count the number of `Male`s and `Female`s in `factor_sex_vector`.
 * Do the same thing again, this time using `summary()`.
@@ -436,7 +436,7 @@ You might wonder what happens when you try to compare elements of an unordered f
 
 *** =instructions
 
-`factor_sex_vector` has been predefined in your workspace. The first value of `factor_sex_vector` is a male, and the second value is a female.
+`factor_sex_vector` has been pre-defined in your workspace. The first value of `factor_sex_vector` is a male, and the second value is a female.
 
 * Select the first value of `factor_sex_vector` and assign the results to `male`.
 * Select the second value of `factor_sex_vector` and assign the results to `female`.

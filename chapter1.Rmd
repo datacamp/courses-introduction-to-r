@@ -73,6 +73,7 @@ With this knowledge, follow the instructions below to complete the exercise.
 *** =instructions
 - Type `2^5` in the editor to calculate 2 to the power 5.
 - Type `28 %% 6` to calculate 28 modulo 6.
+- Type `20918 %/% 11` to see how many times 11 goes into 20918 without going over.
 - Click 'Submit Answer' and have a look at the R output in the console.
 - Note how the `#` symbol is used to add comments on the R code.
 
@@ -103,6 +104,9 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 # Modulo
 
+
+# Integer division
+
 ```
 
 *** =solution
@@ -124,6 +128,9 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 # Modulo
 28 %% 6
+
+# Integer division
+20918 %/% 11
 ```
 
 *** =sct
@@ -131,6 +138,7 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 msg = "Do not remove the other arithmetic examples!"
 test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
 test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
+test_output_contains("20918 %/% 11", incorrect_msg = "Did you try out the integer division example? Type `20918 %/% 11` on a new line.")
 success_msg("Great! Head over to the next exercise.")
 ```
 

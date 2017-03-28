@@ -351,6 +351,7 @@ Apologies if you tried hard to forget them, but this exercise introduces the Sta
 
 * Use `rbind()` to combine the data for the two trilogies. Put the prequels on top, and the original movies in the rows underneath.
 * Use `rowSums()` to calculate the worldwide box office figures for the six movies and put these in the vector named `worldwide_vector`.
+* Print `worldwide_vector` to the console.
 
 *** =hint
 
@@ -525,7 +526,7 @@ Back to Star Wars with this newly acquired knowledge!
 
 `all_wars_matrix` has been pre-defined in your workspace.
 
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
+- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`). Store the result as `non_us_all`.
 - Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
 - This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
 - Use `mean()` again to print out the average of the values in `non_us_some`.
