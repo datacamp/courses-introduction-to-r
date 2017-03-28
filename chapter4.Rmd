@@ -28,11 +28,6 @@ Which of the following variables is **not** categorical?
 
 One of these variables can take a range of values. This variable is continuous.
 
-*** =pre_exercise_code
-```{r}
-
-```
-
 *** =sct
 ```{r}
 msgs <- list(
@@ -119,7 +114,7 @@ success_msg("Great! If you want to find out more about the `factor()` function, 
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree 😉).
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree ;-)).
 
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` is greater than `"Low"`, and `"High"` is greater than `"Medium"`.
 

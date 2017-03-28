@@ -9,7 +9,7 @@ description : Lists, as opposed to vectors, can hold components of different typ
 --- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
 ## You know lots of things already
 
-Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? 😉
+Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? ;-)
 
 Before you start learning about lists, let's make sure you've understood these variable types. Which one of the following statements is false?
 
@@ -24,11 +24,6 @@ Before you start learning about lists, let's make sure you've understood these v
 *** =hint
 
 What are the restrictions on the data that can be stored in data frames?
-
-*** =pre_exercise_code
-```{r}
-
-```
 
 *** =sct
 ```{r}
@@ -68,11 +63,6 @@ Which one of the following statements is true?
 * Lists can contain lists.
 * R has around 20 data types.
 * Lists are vectors, but not matrices.
-
-*** =pre_exercise_code
-```{r}
-
-```
 
 *** =sct
 ```{r}
