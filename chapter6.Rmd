@@ -3,100 +3,93 @@ title_meta  : Chapter 6
 title       : Lists
 description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
 
+--- type:NormalExercise xp:100 skills:1 key:2afcdb6a76ec91bf266de9b2ac295d844d7bb004
+## Lists, why would you need them?
 
+Congratulations! At this point in the course you are already familiar with:
 
+- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
+- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
+- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
 
---- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:aafcdee5a9
-## You know lots of things already
-
-Congratulations! At this point in the course you are already familiar with vectors, factors, matrices, and data frames. Pretty sweet for an R newbie, right? ;-)
-
-Before you start learning about lists, let's make sure you've understood these variable types. Which one of the following statements is false?
+Pretty sweet for an R newbie, right? ;-)
 
 *** =instructions
-
-* Vectors are one dimensional variables that can hold numeric, character or logical values.
-* The elements in a vector or matrix must all have the same data type.
-* Factors are one dimensional variables that hold categorical data.
-* Within a row of a data frame, each element must have the same data type.
-* Matrices and data frames are both two dimensional variables.
+Click 'Submit Answer' to start learning everything about lists!
 
 *** =hint
+Just click the 'Submit Answer' button.
 
-What are the restrictions on the data that can be stored in data frames?
+*** =pre_exercise_code
+```{r}
+# no pec
+```
+
+*** =sample_code
+```{r}
+# Just click the 'Submit Answer' button.
+```
+
+*** =solution
+```{r}
+# Just click the 'Submit Answer' button.
+```
 
 *** =sct
 ```{r}
-not_wrong_msg <- "Sorry, that statement is true."
-correct_msg <- "Very insightful! A data frame can have different data types within a row, but must have the same data type within a column."
-test_mc(
-  4,
-  feedback_msgs = c(rep.int(not_wrong_msg, 3), correct_msg, not_wrong_msg)
-)
+success_msg("Ready, set, go! Continue to the next exercise.")
 ```
 
 
+--- type:NormalExercise xp:100 skills:1 key:68f93c5c504616bd18876da52cd123277d56fc8b
+## Lists, why would you need them? (2)
 
+A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
 
---- type:PlainMultipleChoiceExercise lang:r xp:50 skills:1 key:09c072ea7a
-## What are lists?
+A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
 
-Between numeric, character and logical variables, matrices, factors, and data frames, that is six variable types that you understand. In total, R has about twenty variable types, so you know about a good portion of the language already.
-
-Restricting R to only twenty data types makes the language easier to work with. However, sometimes you need more flexibility, and this is where lists become useful.
-
-Lists are a container variable.  That is, they are a special type of vector that can store other variable types.  Each element of a list can be a vector, a data frame, or any other variable type. Lists can even contain other lists!
-
-The twenty data types are like Lego bricks. In the same way that Lego bricks can be combined into an infinite number of shapes, by combining R variables together using lists, you can make an infinite number of different data structures.
-
-Which one of the following statements is true?
+You could say that a list is some kind super data type: you can store practically any piece of information in it!
 
 *** =instructions
-
-* Lists let you combine other variable types into one variable.
-* Lists can contain any other data type except other lists.
-* R has hundreds of data types to provide flexibility.
-* Lists are a type of matrix.
+Click 'Submit Answer' to start the first exercise on lists.
 
 *** =hint
+Click 'Submit Answer' to start the first exercise on lists.
 
-* Lists can contain lists.
-* R has around 20 data types.
-* Lists are vectors, but not matrices.
+*** =pre_exercise_code
+```{r}
+# no pec
+```
+
+*** =sample_code
+```{r}
+# Click 'Submit Answer' to start the first exercise on lists.
+```
+
+*** =solution
+```{r}
+# Click 'Submit Answer' to start the first exercise on lists.
+```
 
 *** =sct
 ```{r}
-msgs <- list(
-  correct = "Marvelous! Lists are used to combine other variables into a single variable.",
-  contains = "Lists can contain other lists.",
-  hundreds = "R only has around 20 data types.",
-  matrix = "Lists are a type of vector, but not a type of matrix."
-)
-
-test_mc(
-  1,
-  feedback_msgs = with(msgs, c(correct, contains, hundreds, matrix))
-)
+success_msg("Cool. Let's get our hands dirty!")
 ```
-
 
 
 --- type:NormalExercise xp:100 skills:1 key:4beee9cb532c889903218b49b83ab5ef133eac83
 ## Creating a list
 
-Time to create your first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list). You use it in the same way that you used [`c()`](http://www.rdocumentation.org/packages/base/functions/c) to create `numeric`, `logical`, and `character` vectors.
+Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be any variable types that you like, including matrices, vectors, or other lists.
+The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
 
 *** =instructions
-
-The variables `my_vector`, `my_matrix` and `my_df` are shown in your script.
-
-* Construct a list, named `my_list`, that contains `my_vector`, `my_matrix` and `my_df` as list components, in that order.
+Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
 
 *** =hint
 Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
@@ -115,7 +108,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10, ]
+my_df <- mtcars[1:10,]
 
 # Construct list with these different elements:
 my_list <- 
@@ -130,7 +123,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10, ]
+my_df <- mtcars[1:10,]
 
 # Construct list with these different elements:
 my_list <- list(my_vector, my_matrix, my_df)
@@ -144,7 +137,7 @@ test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
             incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
-success_msg("Wonderful! Each element of the list is passed to `list()` separated by commas.")
+success_msg("Wonderful! Head over to the next exercise.")
 ```
 
 
@@ -153,7 +146,7 @@ success_msg("Wonderful! Each element of the list is passed to `list()` separated
 
 Well done, you're on a roll!
 
-You want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
 
 ```
 my_list <- list(name1 = your_comp1, 
@@ -192,7 +185,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10, ]
+my_df <- mtcars[1:10,]
 
 # Adapt list() call to give the components names
 my_list <- list(my_vector, my_matrix, my_df)
@@ -210,7 +203,7 @@ my_vector <- 1:10
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10, ]
+my_df <- mtcars[1:10,]
 
 # Adapt list() call to give the components names
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
@@ -237,18 +230,16 @@ success_msg("Great! Not only do you know how to construct lists now, you can als
 --- type:NormalExercise xp:100 skills:1 key:19fd17cc792ef870c1558b3a9bae08c1d1e3acae
 ## Creating a named list (2)
 
-Being a huge movie fan (remember your job at Disney), you decide to start storing information on good movies with the help of lists. 
+Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
 
-Start by creating a list for the movie "The Shining".
+Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
 
 *** =instructions
+Complete the code on the right to create `shining_list`; it contains three elements:
 
-The variables `mov`, `act` and `rev` have been pre-defined in your R workspace.
-
-* Complete the code on the right to create `shining_list`; it should contain three elements:
-    - moviename: a character string with the movie title (stored in `mov`)
-    - actors: a vector with the main actors' names (stored in `act`)
-    - reviews: a data frame that contains some reviews (stored in `rev`)
+- moviename: a character string with the movie title (stored in `mov`)
+- actors: a vector with the main actors' names (stored in `act`)
+- reviews: a data frame that contains some reviews (stored in `rev`)
 
 Do not forget to name the list components accordingly (names are moviename, actors and reviews).
 
@@ -258,36 +249,25 @@ Do not forget to name the list components accordingly (names are moviename, acto
 *** =pre_exercise_code
 ```{r}
 mov <- "The Shining"
-act <- c("Jack Nicholson", "Shelley Duvall", "Danny Lloyd", "Scatman Crothers", "Barry Nelson")
-rev <- data.frame(
-  scores = c(4.5,4,5), 
-  sources = c("IMDb1","IMDb2","IMDb3"), 
-  comments = c(
-    "Best Horror Film I Have Ever Seen", 
-    "A truly brilliant and scary film from Stanley Kubrick", 
-    "A masterpiece of psychological horror"
-  )
-)
+act      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDb3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+rev     <- data.frame(scores, sources, comments)
 rm(scores, sources, comments)
 ```
 
 *** =sample_code
 ```{r}
 # The variables mov, act and rev are available
-mov
-act
-rev
 
 # Finish the code to build shining_list
-shining_list <- list(moviename = mov, ___ = ___, ___ = ___)
+shining_list <- list(moviename = mov)
 ```
 
 *** =solution
 ```{r}
 # The variables mov, act and rev are available
-mov
-act
-rev
 
 # Finish the code to build shining_list
 shining_list <- list(moviename = mov, actors = act, reviews = rev)
@@ -308,38 +288,32 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 --- type:NormalExercise xp:100 skills:1 key:1ef3278944562caef64b9927dd2ddb6ee52334cd
 ## Selecting elements from a list
 
-You've seen how to use square brackets to select elements from vectors, matrices, and data frames. Now take a look at how you can use them to select elements from lists. Consider this example of your packed lunch box.
+Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
 
-```{r}
-packed_lunch <- list(
-  sandwiches = c("cheese & cucumber", "egg & cress"),
-  bag_of_peanuts = rep("peanut", 20),
-  fruit = list("apple", "banana")
-)
+One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+
+```
+shining_list[[1]]
 ```
 
-If you use square brackets to select the first element, you get another list, containing one vector of sandwiches.  That is, using square bracket indexing on a list will always return another list.
+A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
 
-```{r}
-packed_lunch[1]
-## $sandwiches
-## [1] "cheese & cucumber" "egg & cress" 
+You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+
 ```
+shining_list[["reviews"]]
+shining_list$reviews
+``` 
 
-Just as with other vectors, you can use positive numbers to select elements to keep, negative numbers to select elements to remove, or a logical vector to keep elements where that vector is `TRUE`.  If the elements of your list are named, you can also select elements by those names. Time to use your new list indexing skills to select elements of your movie data.
+Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
 
 *** =instructions
-
-The variable `shining_list`, containing data about the movie "The Shining", has been pre-defined for you. In each of the following exercises, use square bracket indexing, `[`.
-
-- Use positive number indexing to select the second and third elements from `shining_list`.
-- Use negative number indexing to select everything but the third element of `shining_list`.
-- Use character indexing to select the `"moviename"` element of `shining_list`.
+- Select from `shining_list` the vector representing the actors. Simply print out this vector.
+- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
 
 *** =hint
-- To select the elements using positive indexing, use code like `[c(1, 3, 5)]`.
-- To select the elements using negative indexing, use code like `[c(-1, -3, -5)]`.
-- To select the elements using character indexing, use code like `[c("alpha", "charlie", "echo")]`.
+- To select the vector representing the actors, you can use `$actors`.
+- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
 
 *** =pre_exercise_code
 ```{r}
@@ -349,207 +323,35 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 *** =sample_code
 ```{r}
 # shining_list is already pre-loaded in the workspace
-shining_list
 
-# Select 2nd and 3rd element using positive indexing
-shining_list[]
-
-# Select all but 3rd element using negative indexing
+# Print out the vector representing the actors
 
 
-# Select moviename element using character indexing
+# Print the second element of the vector representing the actors
 
 ```
 
 *** =solution
 ```{r}
 # shining_list is already pre-loaded in the workspace
-shining_list
 
-# Select 2nd and 3rd element using positive indexing
-shining_list[2:3]
+# Print out the vector representing the actors
+shining_list$actors
 
-# Select all but 3rd element using negative indexing
-shining_list[-3]
-
-# Select moviename element using character indexing
-shining_list["moviename"]
+# Print the second element of the vector representing the actors
+shining_list$actors[2]
 ```
 
 *** =sct
 ```{r}
-predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
-ex() %>% {
-  check_object(., "shining_list", undefined_msg = predef_msg) %>%
-    check_equal(incorrect_msg = predef_msg)
-  check_output_expr(., "shining_list[2:3]")
-  check_output_expr(., "shining_list[-3]")
-  check_output_expr(., 'shining_list["moviename"]')
-}
-success_msg("Great! Selecting elements from lists with square brackets always returns another list.")
+msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
 ```
 
 
-
---- type:NormalExercise lang:r xp:100 skills:1 key:d355af51a9
-## Selecting elements from a list (2)
-
-Recall your packed lunch.
-
-```{r}
-packed_lunch <- list(
-  sandwiches = c("cheese & cucumber", "egg & cress"),
-  bag_of_peanuts = rep("peanut", 20),
-  fruit = list("apple", "banana")
-)
-```
-
-Sometimes, rather than wanting another list, you want to select the contents of one element of your list. For example, rather than wanting a container of sandwiches, you just want the sandwiches.  To do this, you use double square brackets, `[[ ]]`.
-
-```{r}
-packed_lunch[[1]]
-## [1] "cheese & cucumber" "egg & cress"
-```
-
-For double square bracket indexing, you can only select a single element from the list, so the value in between the brackets must be a single positive number, or a single string naming an element. Now apply this technique to the movie list.
-
-*** =instructions
-
-The variable `shining_list` has been pre-defined for you. In each of the following exercises, use double square bracket indexing, `[[`.
-
-- Use positive number indexing to select the third element from `shining_list`.
-- Use character indexing to select the `"actors"` element of `shining_list`.
-
-
-*** =hint
-
-* To select the contents of the fifth element of a list using positive number indexing, you would use `[[5]]`.
-* To select the contents of the `"bravo"` element of a list using character indexing, you would use `[["bravo"]]`.
-
-*** =pre_exercise_code
-```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
-```
-
-*** =sample_code
-```{r}
-# shining_list is already pre-loaded in the workspace
-shining_list
-
-# Select 3rd element using positive indexing
-shining_list[[]]
-
-# Select actors element using character indexing
-
-```
-
-*** =solution
-```{r}
-# shining_list is already pre-loaded in the workspace
-shining_list
-
-# Select 3rd element using positive indexing
-shining_list[[3]]
-
-# Select actors element using character indexing
-shining_list[["actors"]]
-```
-
-*** =sct
-```{r}
-predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
-ex() %>% {
-  check_object(., "shining_list", undefined_msg = predef_msg) %>%
-    check_equal(incorrect_msg = predef_msg)
-  check_output_expr(., "shining_list[[3]]")
-  check_output_expr(., 'shining_list[["actors"]]')
-}
-success_msg("Magnificent! Selecting an element from a list with double square brackets returns the contents of that list element.")
-```
-
-
---- type:NormalExercise lang:r xp:100 skills:1 key:ec42b8889a
-## Selecting elements from a list (3)
-
-Here is your packed lunch again.
-
-```{r}
-packed_lunch <- list(
-  sandwiches = c("cheese & cucumber", "egg & cress"),
-  bag_of_peanuts = rep("peanut", 20),
-  fruit = list("apple", "banana")
-)
-```
-
-All these exercises selecting elements are making you hungry.  This time you want to choose a sandwich to eat!  To do this, you need to chain your selections together.  This is easier than it might sound.  All you have to do is to write the square brackets one after the other.  For example, to select the vectors of sandwiches, you used `packed_lunch[[1]]`. Now to select the egg and cress sandwich from that "vector", you could use the following code.
-
-```{r}
-packed_lunch[[1]][2]
-## [1] "egg & cress"
-```
-
-To recap what happened, you used double square brackets to access the vector stored in the list, then you followed it with single square brackets to access the elements in the vector. You can also chain double square brackets together to access elements within nested lists. For example, to access the apple, you could use this.
-
-```{r}
-packed_lunch[[3]][[1]]
-# [1] "apple"
-```
-
-Now that you've eaten, it's time to work on your movie list.
-
-*** =instructions
-
-The variable `shining_list`, containing data about the movie "The Shining", has been pre-defined for you.
-
-* Select the first, third, and fifth actors from `shining_list`.
-* Select all of the first row of the reviews from `shining_list`. 
-
-*** =hint
-
-* To select the contents of the first element of a list, you would use `[[1]]`.
-* To select the second and fourth elements of a vector, you would use `[c(2, 4)]`.
-* To select the fifth row of a data frame you would use `[5, ]`.
-
-*** =pre_exercise_code
-```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
-```
-
-*** =sample_code
-```{r}
-# shining_list is already pre-loaded in the workspace
-shining_list
-
-# Select the 1st, 3rd, and 5th actors
-shining_list[[]][]
-
-# Select the first review
-
-```
-
-*** =solution
-```{r}
-# shining_list is already pre-loaded in the workspace
-shining_list
-
-# Select the 1st, 3rd, and 5th actors
-shining_list[["actors"]][c(1, 3, 5)]
-
-# Select the first review
-shining_list[["reviews"]][1, ]
-```
-
-*** =sct
-```{r}
-predef_msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
-ex() %>% {
-  check_object(., "shining_list", undefined_msg = predef_msg) %>%
-    check_equal(incorrect_msg = predef_msg)
-  check_output_expr(., 'shining_list[["actors"]][c(1, 3, 5)]')
-  check_output_expr(., 'shining_list[["reviews"]][1, ]')
-}
-success_msg("You superstar! Square brackets can be chained together to select elements inside other elements.")
-```
 --- type:NormalExercise xp:100 skills:1 key:ca3f7b71504ff93940cf65889d406a58c5b0019c
 ## Adding more movie information to the list
 
