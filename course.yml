@@ -14,4 +14,5 @@ description: "In this introduction to R, you will master the basics of this beau
   day-to-day activities. Leverage the power of R by completing this free R online
   course today!"
 from: "r-base-prod:27"
+runtime_config: minimal
 practice_pool_id: 106
