@@ -3,8 +3,15 @@ title_meta  : Chapter 6
 title       : Lists
 description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
 
---- type:NormalExercise xp:100 skills:1 key:2afcdb6a76ec91bf266de9b2ac295d844d7bb004
+---
 ## Lists, why would you need them?
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 2afcdb6a76ec91bf266de9b2ac295d844d7bb004
+```
 
 Congratulations! At this point in the course you are already familiar with:
 
@@ -41,8 +48,15 @@ success_msg("Ready, set, go! Continue to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:68f93c5c504616bd18876da52cd123277d56fc8b
+---
 ## Lists, why would you need them? (2)
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 68f93c5c504616bd18876da52cd123277d56fc8b
+```
 
 A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
 
@@ -77,8 +91,15 @@ success_msg("Cool. Let's get our hands dirty!")
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:4beee9cb532c889903218b49b83ab5ef133eac83
+---
 ## Creating a list
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 4beee9cb532c889903218b49b83ab5ef133eac83
+```
 
 Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
 
@@ -141,8 +162,15 @@ success_msg("Wonderful! Head over to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:89dd0126568b1ff5a84033c571907a8a282245e4
+---
 ## Creating a named list
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 89dd0126568b1ff5a84033c571907a8a282245e4
+```
 
 Well done, you're on a roll!
 
@@ -227,8 +255,15 @@ success_msg("Great! Not only do you know how to construct lists now, you can als
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:19fd17cc792ef870c1558b3a9bae08c1d1e3acae
+---
 ## Creating a named list (2)
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 19fd17cc792ef870c1558b3a9bae08c1d1e3acae
+```
 
 Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
 
@@ -285,8 +320,15 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:1ef3278944562caef64b9927dd2ddb6ee52334cd
+---
 ## Selecting elements from a list
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 1ef3278944562caef64b9927dd2ddb6ee52334cd
+```
 
 Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
 
@@ -352,8 +394,15 @@ success_msg("Great! Selecting elements from lists is rather easy isn't it? Conti
 ```
 
 
---- type:NormalExercise xp:100 skills:1 key:ca3f7b71504ff93940cf65889d406a58c5b0019c
+---
 ## Adding more movie information to the list
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: ca3f7b71504ff93940cf65889d406a58c5b0019c
+```
 
 Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 
 
