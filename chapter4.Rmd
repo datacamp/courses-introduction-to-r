@@ -14,29 +14,29 @@ It is important that R knows whether it is dealing with a continuous or a catego
 
 A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
 
-*** =instructions
+`@instructions`
 Assign to variable `theory` the value `"factors for categorical variables"`.
 
-*** =hint
+`@hint`
 Simply assign a variable (`<-`); make sure to capitalize correctly.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Assign to the variable theory what this chapter is about!
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Assign to the variable theory what this chapter is about!
 theory <- "factors for categorical variables"
 ```
 
-*** =sct
+`@sct`
 ```{r}
 # MC-note: ideally, we could check for commonly mistyped variable names
 #test_or({
@@ -73,19 +73,19 @@ The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/
 factor_gender_vector <- factor(gender_vector)
 ```
 
-*** =instructions
+`@instructions`
 - Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
 - Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
 
-*** =hint
+`@hint`
 Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Gender vector
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
@@ -97,7 +97,7 @@ factor_gender_vector <-
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Gender vector
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
@@ -109,7 +109,7 @@ factor_gender_vector <- factor(gender_vector)
 factor_gender_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_object("factor_gender_vector",
             incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
@@ -127,18 +127,18 @@ A nominal variable is a categorical variable without an implied order. This mean
 
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
-*** =instructions
+`@instructions`
 Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
 
-*** =hint
+`@hint`
 Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Animals
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
@@ -151,7 +151,7 @@ factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c
 factor_temperature_vector
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Animals
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
@@ -164,7 +164,7 @@ factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c
 factor_temperature_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
 test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -196,21 +196,21 @@ Next, when you want to start your data analysis, your main concern is to keep a 
 
 **Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order order.
 
-*** =instructions
+`@instructions`
 - Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
 - Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
 
-*** =hint
+`@hint`
 Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Code to build factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -222,7 +222,7 @@ levels(factor_survey_vector) <-
 factor_survey_vector
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Code to build factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -234,7 +234,7 @@ levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Do not change the definition of `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -265,18 +265,18 @@ summary(my_var)
 
 Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
 
-*** =instructions
+`@instructions`
 Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
 
-*** =hint
+`@hint`
 Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -291,7 +291,7 @@ factor_survey_vector
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -306,7 +306,7 @@ summary(survey_vector)
 summary(factor_survey_vector)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -323,18 +323,18 @@ success_msg("Nice! Have a look at the output. The fact that you identified `\"Ma
 
 In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
 
-*** =instructions
+`@instructions`
 Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
 
-*** =hint
+`@hint`
 Just click 'Submit Answer' and have a look at output that gets printed to the console.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -351,7 +351,7 @@ female <- factor_survey_vector[2]
 male > female
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Build factor_survey_vector with clean levels
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -368,7 +368,7 @@ female <- factor_survey_vector[2]
 male > female
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -389,7 +389,7 @@ But this is not always the case! Sometimes you will also deal with factors that 
 
 Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
 
-*** =instructions
+`@instructions`
 As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
 
 - Analyst 1 is fast,
@@ -400,27 +400,27 @@ As a first step, assign `speed_vector` a vector with 5 entries, one for each ana
 
 No need to specify these are factors yet.
 
-*** =hint
+`@hint`
 Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create speed_vector
 speed_vector <-
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Create speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_object("speed_vector",
             incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
@@ -441,18 +441,18 @@ factor(some_vector,
 
 By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
 
-*** =instructions
+`@instructions`
 From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
 
-*** =hint
+`@hint`
 Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -465,7 +465,7 @@ factor_speed_vector
 summary(factor_speed_vector)
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Create speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -478,7 +478,7 @@ factor_speed_vector
 summary(factor_speed_vector)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Do not change anything about the command that specifies the `speed_vector` variable."
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
@@ -499,21 +499,21 @@ Having a bad day at work, 'data analyst number two' enters your office and start
 
 The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
 
-*** =instructions
+`@instructions`
 - Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
 - Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
 - Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
 
-*** =hint
+`@hint`
 - To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
 - To compare two values, you can use `>`. For example: `da3 > da4`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -529,7 +529,7 @@ da5 <-
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Create factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
@@ -545,7 +545,7 @@ da5 <- factor_speed_vector[5]
 da2 > da5
 ```
 
-*** =sct
+`@sct`
 ```{r}
 msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
