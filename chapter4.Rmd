@@ -220,77 +220,92 @@ skills: 1
 key: 1aa698978d32d1a0befa4700d7da85a648e1d69e
 ```
 
-When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
+The categories of a factor are known as **levels**. You can access them using the [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels) function. By default, [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) assigns the levels in alphabetical order.
 
 ```
-levels(factor_vector) <- c("name1", "name2",...)
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+factor_animals_vector <- factor(animals_vector)
+levels(factor_animals_vector)
+## [1] "Donkey"   "Elephant" "Giraffe"  "Horse"
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+If you want to control the order of the levels, you can pass the `levels` argument to `factor()`. For example, to order the levels by typical height of animal, you can write
 
 ```
-survey_vector <- c("M", "F", "F", "M", "M")
+actor_animals_vector2 <- factor(animals_vector, levels = c("Donkey", "Horse", "Elephant", "Giraffe"))
+levels(factor_animals_vector2)
+## [1] "Donkey"   "Horse"    "Elephant" "Giraffe"
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier.
-
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+You are given the results of a survey to analyze. One of the questions asked the sex of the respondent.
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+
+`sex_vector` has been pre-defined in your workspace.
+
+* Create an unordered factor from `sex_vector` and store it in `factor_sex_vector_fm`.
+* Print the levels of this factor, observing that they are alphabetically sorted.
+* Recreate the factor, using the `levels` argument to `factor()` to specify `"Male"` as the first level and `"Female"` as the second level. Store this in `factor_sex_vector_mf`.
+* Print the levels of this factor, observing that this time `"Male"` comes first.
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+
+* Call `factor()` with `sex_vector` to create the first factor.
+* Use `levels(x)` to get the levels of a factor named `x`.
+* Call `factor()` with `sex_vector` and `levels = c("Male", "Female")` to enforce `"Male"` being the first level.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 ```
 
 `@sample_code`
 ```{r}
-# Code to build factor_survey_vector
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+# sex_vector has been pre-defined
+sex_vector
+ 
+# Create an unordered factor of sexes
+factor_sex_vector_fm <- ___(___)
+ 
+# Print the levels of factor_sex_vector_fm
+___(factor_sex_vector_fm) 
 
-# Specify the levels of factor_survey_vector
-levels(factor_survey_vector) <-
+# Recreate the factor with "Male" as the first factor level
+factor_sex_vector_mf <- ___(___, levels = ___)
 
-factor_survey_vector
+# Print the levels of factor_sex_vector_mf
+___(___)
 ```
 
 `@solution`
 ```{r}
-# Code to build factor_survey_vector
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+# sex_vector has been pre-defined
+sex_vector
 
-# Specify the levels of factor_survey_vector
-levels(factor_survey_vector) <- c("Female", "Male")
+# Create an unordered factor of sexes
+factor_sex_vector_fm <- factor(sex_vector)
 
-factor_survey_vector
+# Print the levels of factor_sex_vector_fm
+levels(factor_sex_vector_fm) 
+ 
+# Recreate the factor with "Male" as the first factor level
+factor_sex_vector_mf <- factor(sex_vector, levels = c("Male", "Female"))
+ 
+# Print the levels of factor_sex_vector_mf
+levels(factor_sex_vector_mf)
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
-test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
-
-# MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
-
-# MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
-# test_student_typed('c("Male", "Female")')
-
-test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
-
-
-success_msg("Wonderful! Proceed to the next exercise.")
+predef_msg <- "Do not change the definition of pre-defined `sex_vector`!"
+test_object("factor_sex_vector_fm", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_output_contains("levels(factor_sex_vector_fm)")
+test_object("factor_sex_vector_mf", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_output_contains("levels(factor_sex_vector_mf)")
+success_msg("You've leveled up! The `levels()` function and the `level` argument to `factor()` let you control the levels.")
 ```
 
 
