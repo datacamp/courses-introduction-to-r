@@ -13,13 +13,13 @@ skills: 1
 key: 05273321916d99bb9c0deadf75c6834d25a47244
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values (though technically it is not infinite, since computers cannot represent an infinite number of different numbers).
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+By contrast, if a variable should be limited to a **finite number of values**, it is called a **categorical** variable. Categorical variables are stored using the [`factor()`](http://www.rdocumentation.org/packages/base/topics/factor) data type, which will be discussed in the next few exercises.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals or intersex people, but you will always have a finite number of categories.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+In some cases, whether you treat a variable as continuous or categorical depends upon what you are trying to do. For example, if you want to compare revenues in February versus revenues in January, then you should consider the month of the year as categorical. If you want plot a time series of revenue, you must consider the date as continuous.
 
 `@instructions`
 Assign to variable `theory` the value `"factors for categorical variables"`.
