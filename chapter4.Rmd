@@ -152,10 +152,15 @@ You've already seen that nominal categorical variables are create with [`factor(
 In R terminology, "factor" usually refers to an unordered factor, that is, a nominal categorical variable. Ordinal categorical variables are called "ordered factors".
 
 `@instructions`
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+
+* Create an unordered factor from `animals_vector`, assigning the result to `factor_animals_vector`.
+* Create an ordered factor from `temperature_vector` assigning the result to `factor_temperature_vector`.
+* Notice the trick of wrapping an assignment in parentheses, `( )`, to assign and print in one line!
 
 `@hint`
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+
+* Call `factor()` with `animals_vector` to create the unordered factor.
+* Call `ordered()` with `temperature_vector` to create the ordered factor.
 
 `@pre_exercise_code`
 ```{r}
@@ -165,39 +170,43 @@ Just click the 'Submit Answer' button and look at the console. Notice how R indi
 `@sample_code`
 ```{r}
 # Animals
-animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+(factor_animals_vector <- ___(___))
 
-# Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+ # Temperature
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ___(___, levels = c("Low", "Medium", "High")))
 ```
 
 `@solution`
 ```{r}
 # Animals
-animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+(factor_animals_vector <- factor(animals_vector))
 
-# Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+ # Temperature
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ordered(temperature_vector, levels = c("Low", "Medium", "High")))
 ```
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
-test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_animals_vector", incorrect_msg = msg)
-test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_temperature_vector", incorrect_msg = msg)
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+prespec_msg <- "Do not change anything about the pre-specified variables `animals_vector` and `temperature_vector`!"
+test_object("animals_vector", undefined_msg = prespec_msg, incorrect_msg = prespec_msg)
+test_object("temperature_vector", undefined_msg = prespec_msg, incorrect_msg = prespec_msg)
+animals_msg <- "Did you call `factor()` on `animals_vector`?"
+test_object("factor_animals_vector", undefined_msg = animals_msg, incorrect_msg = animals_msg)
+test_output_contains("factor_animals_vector")
+temperature_msg <- "Did you call `ordered()` on `temperature_vector`?"
+test_object("factor_temperature_vector", undefined_msg = temperature_msg, incorrect_msg = temperature_msg)
+test_output_contains("factor_temperature_vector")
+success_msg("Your code is of the highest order! You can also create ordered factors by calling `factor()` with `ordered = TRUE`.")
 ```
 
 
