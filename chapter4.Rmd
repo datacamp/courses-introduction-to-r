@@ -22,43 +22,39 @@ A good example of a categorical variable is sex. In many circumstances you can l
 In some cases, whether you treat a variable as continuous or categorical depends upon what you are trying to do. For example, if you want to compare revenues in February versus revenues in January, then you should consider the month of the year as categorical. If you want plot a time series of revenue, you must consider the date as continuous.
 
 `@instructions`
-Assign to variable `theory` the value `"factors for categorical variables"`.
+
+A factor created from a character vector of animals has been pre-defined as `factor_animals_vector`.
+
+Print the factor and examine the output.
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+
+Type the name of the variable, `factor_animals_vector` to print it.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+factor_animals_vector <- factor(c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+))
 ```
 
 `@sample_code`
 ```{r}
-# Assign to the variable theory what this chapter is about!
+# A factor created from a vector of animals has been pre-defined
+factor_animals_vector
 ```
 
 `@solution`
 ```{r}
-# Assign to the variable theory what this chapter is about!
-theory <- "factors for categorical variables"
+# A factor created from a vector of animals has been pre-defined
+factor_animals_vector
 ```
 
 `@sct`
 ```{r}
-# MC-note: ideally, we could check for commonly mistyped variable names
-#test_or({
-#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
-#    lapply(bad_names, test_object, eval=FALSE)
-#    })
-
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
-
-# If get error and theory is undefined, point out the error
-test_or(test_error(msg_err), test_object("theory", eval = FALSE))
-
-test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
+predef_msg <- "Do not change the definition of pre-defined `factor_animals_vector`!"
+test_object("factor_animals_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
