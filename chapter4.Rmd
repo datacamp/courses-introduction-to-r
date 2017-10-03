@@ -229,7 +229,7 @@ levels(factor_animals_vector)
 If you want to control the order of the levels, you can pass the `levels` argument to `factor()`. For example, to order the levels by typical height of animal, you can write
 
 ```
-actor_animals_vector2 <- factor(animals_vector, levels = c("Donkey", "Horse", "Elephant", "Giraffe"))
+factor_animals_vector2 <- factor(animals_vector, levels = c("Donkey", "Horse", "Elephant", "Giraffe"))
 levels(factor_animals_vector2)
 ## [1] "Donkey"   "Horse"    "Elephant" "Giraffe"
 ```
