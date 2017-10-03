@@ -73,26 +73,25 @@ skills: 1
 key: 6cc21c842b075347926bb1b244782213df32e370
 ```
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+To create vectors of categorical variables in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). This takes a character vector as an input, and it should have a limited number of distinct values. For example, `sex_vector` contains the sex of 5 different individuals:
 
 ```
-gender_vector <- c("Male","Female","Female","Male","Male")
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
-
+It is clear that there are two categories here: "Male" and "Female". In R terminology, these are called **factor levels**.
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
-```
-factor_gender_vector <- factor(gender_vector)
+```{r}
+factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
+- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
 `@hint`
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
 
 `@pre_exercise_code`
 ```{r}
@@ -101,33 +100,33 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 
 `@sample_code`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <-
+# Convert sex_vector to a factor
+factor_gender_vector <- ___(___)
 
 # Print out factor_gender_vector
-
+___
 ```
 
 `@solution`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <- factor(gender_vector)
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
 
-# Print out factor_gender_vector
-factor_gender_vector
+# Print out factor_sex_vector
+factor_sex_vector
 ```
 
 `@sct`
 ```{r}
-test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
+test_object("factor_sex_vector",
+            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
 success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
