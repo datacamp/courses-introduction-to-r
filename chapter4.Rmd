@@ -482,7 +482,7 @@ skills: 1
 key: 9ab0928916bf84ab225713a9a1ce40d9e322c6a0
 ```
 
-n the previous exercise, since `"Male"` and `"Female"` were unordered (or nominal) factor levels, R returned a warning message, telling you that the greater than operator was not meaningful. But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories.
+In the previous exercise, since `"Male"` and `"Female"` were unordered (or nominal) factor levels, R returned a warning message, telling you that the greater than operator was not meaningful. But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between their categories.
 
 Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
 
