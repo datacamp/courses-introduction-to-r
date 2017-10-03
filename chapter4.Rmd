@@ -75,7 +75,7 @@ key: 6cc21c842b075347926bb1b244782213df32e370
 
 To create vectors of categorical variables in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). This takes a character vector as an input, and it should have a limited number of distinct values. For example, `sex_vector` contains the sex of 5 different individuals:
 
-```
+```r
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 ```
 
@@ -548,64 +548,61 @@ skills: 1
 key: 279077d10248ce03d5f972939ef8576430a16683
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+So far, you've created ordered factors using the [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor) function. There is another way. You can also call the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function and pass the argument `ordered = TRUE`.
 
-```
-factor(some_vector,
-       ordered = TRUE,
-       levels = c("lev1", "lev2" ...))
+```r
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+factor(sex_vector, ordered = TRUE)
 ```
 
-By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+As before, you can optionally pass the argument `levels` to set the order of the factor levels.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
+
+`speed_vector` has been pre-defined in your workspace.
+
+From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
+
+- Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_vector`. 
+- The argument `ordered` should be set to `TRUE` since there is a natural ordering. 
+- Don't change the argument `levels = c("slow", "medium", "fast"")`.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 ```
 
 `@sample_code`
 ```{r}
-# Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-
 # Convert speed_vector to ordered factor vector
-factor_speed_vector <-
+factor_speed_vector <- ___(___, levels = c("slow", "medium", "fast"), ___ = ___)
 
 # Print factor_speed_vector
 factor_speed_vector
-summary(factor_speed_vector)
 ```
 
 `@solution`
 ```{r}
-# Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-
-# Add your code below
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# Convert speed_vector to ordered factor vector
+factor_speed_vector <- factor(speed_vector, levels = c("slow", "medium", "fast"), ordered = TRUE)
 
 # Print factor_speed_vector
 factor_speed_vector
-summary(factor_speed_vector)
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", args = c("x", "ordered", "levels"),
+predef_msg <- "Do not change the definition of pre-defined `speed_vector`!"
+test_object("speed_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_function("factor", args = c("x", "levels", "ordered"),
               incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
-                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
-                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`."))
+                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.",
+                                "Make sure to set `ordered = TRUE` inside your call of `factor()`."))
 test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+            incorrect_msg = "There's something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `levels = c(\"slow\", \"fast\", \"insane\")`, and `ordered = TRUE` inside your call to `factor()`.")
+success_msg("Great! Have a look at the console. It is now indicated that the levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
 ```
 
 
