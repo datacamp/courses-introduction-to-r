@@ -375,6 +375,7 @@ table(factor_sex_vector)
  
 # Same again, using summary()
 summary(factor_sex_vector)
+```
 
 `@sct`
 ```{r}
@@ -397,7 +398,17 @@ skills: 1
 key: 90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ```
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+Previously you learned that for ordered factors, you can talk about levels being greater than or less than each other. For example, recall the temperatures data from a few exercises back.
+
+```{r}
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+factor_temperature_vector <- ordered(
+  temperature_vector, 
+  levels = c("Low", "Medium", "High")
+)
+factor_temperature_vector <= "Medium"
+## [1] FALSE  TRUE FALSE  TRUE  TRUE
+```
 
 `@instructions`
 Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
