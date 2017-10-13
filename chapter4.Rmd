@@ -141,7 +141,7 @@ A nominal variable is a categorical variable without an implied order. This mean
 
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` is greater than `"Low"`, and `"High"` is greater than `"Medium"`.
 
-You've already seen that nominal categorical variables are create with [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). To create ordinal categorical variables, you use [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor).
+You've already seen that nominal categorical variables are created with [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). To create ordinal categorical variables, you use [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor).
 
 In R terminology, "factor" usually refers to an unordered factor, that is, a nominal categorical variable. Ordinal categorical variables are called "ordered factors".
 
