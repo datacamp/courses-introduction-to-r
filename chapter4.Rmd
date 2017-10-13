@@ -411,7 +411,7 @@ You might wonder what happens when you try to compare elements of an unordered f
 
 * Select the first value of `factor_sex_vector` and assign the results to `male`.
 * Select the second value of `factor_sex_vector` and assign the results to `female`.
-* Compare the two genders, testing if `male` is greater than (`>`) `female`.
+* Compare the two sexes, testing if `male` is greater than (`>`) `female`.
 
 `@hint`
 
