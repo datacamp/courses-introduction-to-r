@@ -13,7 +13,7 @@ skills: 1
 key: 05273321916d99bb9c0deadf75c6834d25a47244
 ```
 
-The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values (though technically it is not infinite, since computers cannot represent an infinite number of different numbers).
+The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values.
 
 By contrast, if a variable should be limited to a **finite number of values**, it is called a **categorical** variable. Categorical variables are stored using the [`factor()`](http://www.rdocumentation.org/packages/base/topics/factor) data type, which will be discussed in the next few exercises.
 
