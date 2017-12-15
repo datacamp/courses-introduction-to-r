@@ -17,7 +17,7 @@ The `numeric` vectors that you worked with in the previous chapters are used to 
 
 By contrast, if a variable should be limited to a **finite number of values**, it is called a **categorical** variable. Categorical variables are stored using the [`factor()`](http://www.rdocumentation.org/packages/base/topics/factor) data type, which will be discussed in the next few exercises.
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals or intersex people, but you will always have a finite number of categories.)
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals, but you will always have a finite number of categories.)
 
 `@instructions`
 
