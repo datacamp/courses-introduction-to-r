@@ -1,7 +1,7 @@
 ---
 title_meta  : Chapter 4
 title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : Very often, data falls into a limited number of categories. For example, sex can often be limited to either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
 ---
 ## What's a factor and why would you use it?
@@ -13,52 +13,46 @@ skills: 1
 key: 05273321916d99bb9c0deadf75c6834d25a47244
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+The `numeric` vectors that you worked with in the previous chapters are used to store **continuous** variables. For continuous variables, it makes sense to talk about ranges of values, and you can compare values: for example you can talk about `x` being less than `y`. You also have an essentially infinite number of possible values.
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+By contrast, if a variable should be limited to a **finite number of values**, it is called a **categorical** variable. Categorical variables are stored using the [`factor()`](http://www.rdocumentation.org/packages/base/topics/factor) data type, which will be discussed in the next few exercises.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
-
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals, but you will always have a finite number of categories.)
 
 `@instructions`
-Assign to variable `theory` the value `"factors for categorical variables"`.
+
+A factor created from a character vector of animals has been pre-defined as `factor_animals_vector`.
+
+Print the factor and examine the output.
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+
+Type the name of the variable, `factor_animals_vector` to print it.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+factor_animals_vector <- factor(c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+))
 ```
 
 `@sample_code`
 ```{r}
-# Assign to the variable theory what this chapter is about!
+# A factor created from a vector of animals has been pre-defined
+factor_animals_vector
 ```
 
 `@solution`
 ```{r}
-# Assign to the variable theory what this chapter is about!
-theory <- "factors for categorical variables"
+# A factor created from a vector of animals has been pre-defined
+factor_animals_vector
 ```
 
 `@sct`
 ```{r}
-# MC-note: ideally, we could check for commonly mistyped variable names
-#test_or({
-#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
-#    lapply(bad_names, test_object, eval=FALSE)
-#    })
-
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
-
-# If get error and theory is undefined, point out the error
-test_or(test_error(msg_err), test_object("theory", eval = FALSE))
-
-test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
+predef_msg <- "Do not change the definition of pre-defined `factor_animals_vector`!"
+test_object("factor_animals_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
@@ -73,26 +67,25 @@ skills: 1
 key: 6cc21c842b075347926bb1b244782213df32e370
 ```
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+To create vectors of categorical variables in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). This takes a character vector as an input, and it should have a limited number of distinct values. For example, `sex_vector` contains the sex of 5 different individuals:
 
+```r
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 ```
-gender_vector <- c("Male","Female","Female","Male","Male")
-```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
-
+It is clear that there are two categories here: "Male" and "Female". In R terminology, these are called **factor levels**.
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
-```
-factor_gender_vector <- factor(gender_vector)
+```{r}
+factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
+- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
 `@hint`
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
 
 `@pre_exercise_code`
 ```{r}
@@ -101,33 +94,33 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 
 `@sample_code`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <-
+# Convert sex_vector to a factor
+factor_sex_vector <- ___(___)
 
-# Print out factor_gender_vector
-
+# Print out factor_sex_vector
+___
 ```
 
 `@solution`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <- factor(gender_vector)
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
 
-# Print out factor_gender_vector
-factor_gender_vector
+# Print out factor_sex_vector
+factor_sex_vector
 ```
 
 `@sct`
 ```{r}
-test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
+test_object("factor_sex_vector",
+            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
 success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
@@ -144,15 +137,24 @@ key: 5bd4f50afc2c2dbc881e16b8ca94ca56960dff42
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one is greater than or less than the other. (Note that some of you might disagree ;-)).
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` is greater than `"Low"`, and `"High"` is greater than `"Medium"`.
+
+You've already seen that nominal categorical variables are created with [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). To create ordinal categorical variables, you use [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor).
+
+In R terminology, "factor" usually refers to an unordered factor, that is, a nominal categorical variable. Ordinal categorical variables are called "ordered factors".
 
 `@instructions`
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+
+* Create an unordered factor from `animals_vector`, assigning the result to `factor_animals_vector`.
+* Create an ordered factor from `temperature_vector` assigning the result to `factor_temperature_vector`.
+* Notice the trick of wrapping an assignment in parentheses, `( )`, to assign and print in one line!
 
 `@hint`
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+
+* Call `factor()` with `animals_vector` to create the unordered factor.
+* Call `ordered()` with `temperature_vector` to create the ordered factor.
 
 `@pre_exercise_code`
 ```{r}
@@ -162,39 +164,43 @@ Just click the 'Submit Answer' button and look at the console. Notice how R indi
 `@sample_code`
 ```{r}
 # Animals
-animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+(factor_animals_vector <- ___(___))
 
-# Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+ # Temperature
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ___(___, levels = c("Low", "Medium", "High")))
 ```
 
 `@solution`
 ```{r}
 # Animals
-animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
-factor_animals_vector <- factor(animals_vector)
-factor_animals_vector
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+(factor_animals_vector <- factor(animals_vector))
 
-# Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
-factor_temperature_vector
+ # Temperature
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+(factor_temperature_vector <- ordered(temperature_vector, levels = c("Low", "Medium", "High")))
 ```
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
-test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_animals_vector", incorrect_msg = msg)
-test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_temperature_vector", incorrect_msg = msg)
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+prespec_msg <- "Do not change anything about the pre-specified variables `animals_vector` and `temperature_vector`!"
+test_object("animals_vector", undefined_msg = prespec_msg, incorrect_msg = prespec_msg)
+test_object("temperature_vector", undefined_msg = prespec_msg, incorrect_msg = prespec_msg)
+animals_msg <- "Did you call `factor()` on `animals_vector`?"
+test_object("factor_animals_vector", undefined_msg = animals_msg, incorrect_msg = animals_msg)
+test_output_contains("factor_animals_vector")
+temperature_msg <- "Did you call `ordered()` on `temperature_vector`?"
+test_object("factor_temperature_vector", undefined_msg = temperature_msg, incorrect_msg = temperature_msg)
+test_output_contains("factor_temperature_vector")
+success_msg("Your code is of the highest order! You can also create ordered factors by calling `factor()` with `ordered = TRUE`.")
 ```
 
 
@@ -208,77 +214,92 @@ skills: 1
 key: 1aa698978d32d1a0befa4700d7da85a648e1d69e
 ```
 
-When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
+The categories of a factor are known as **levels**. You can access them using the [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels) function. By default, [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) assigns the levels in alphabetical order.
 
 ```
-levels(factor_vector) <- c("name1", "name2",...)
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+factor_animals_vector <- factor(animals_vector)
+levels(factor_animals_vector)
+## [1] "Donkey"   "Elephant" "Giraffe"  "Horse"
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+If you want to control the order of the levels, you can pass the `levels` argument to `factor()`. For example, to order the levels by typical height of animal, you can write
 
 ```
-survey_vector <- c("M", "F", "F", "M", "M")
+factor_animals_vector2 <- factor(animals_vector, levels = c("Donkey", "Horse", "Elephant", "Giraffe"))
+levels(factor_animals_vector2)
+## [1] "Donkey"   "Horse"    "Elephant" "Giraffe"
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier.
-
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+You are given the results of a survey to analyze. One of the questions asked the sex of the respondent.
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+
+`sex_vector` has been pre-defined in your workspace.
+
+* Create an unordered factor from `sex_vector` and store it in `factor_sex_vector_fm`.
+* Print the levels of this factor, observing that they are alphabetically sorted.
+* Recreate the factor, using the `levels` argument to `factor()` to specify `"Male"` as the first level and `"Female"` as the second level. Store this in `factor_sex_vector_mf`.
+* Print the levels of this factor, observing that this time `"Male"` comes first.
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+
+* Call `factor()` with `sex_vector` to create the first factor.
+* Use `levels(x)` to get the levels of a factor named `x`.
+* Call `factor()` with `sex_vector` and `levels = c("Male", "Female")` to enforce `"Male"` being the first level.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 ```
 
 `@sample_code`
 ```{r}
-# Code to build factor_survey_vector
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+# sex_vector has been pre-defined
+sex_vector
+ 
+# Create an unordered factor of sexes
+factor_sex_vector_fm <- ___(___)
+ 
+# Print the levels of factor_sex_vector_fm
+___(factor_sex_vector_fm) 
 
-# Specify the levels of factor_survey_vector
-levels(factor_survey_vector) <-
+# Recreate the factor with "Male" as the first factor level
+factor_sex_vector_mf <- ___(___, levels = ___)
 
-factor_survey_vector
+# Print the levels of factor_sex_vector_mf
+___(___)
 ```
 
 `@solution`
 ```{r}
-# Code to build factor_survey_vector
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
+# sex_vector has been pre-defined
+sex_vector
 
-# Specify the levels of factor_survey_vector
-levels(factor_survey_vector) <- c("Female", "Male")
+# Create an unordered factor of sexes
+factor_sex_vector_fm <- factor(sex_vector)
 
-factor_survey_vector
+# Print the levels of factor_sex_vector_fm
+levels(factor_sex_vector_fm) 
+ 
+# Recreate the factor with "Male" as the first factor level
+factor_sex_vector_mf <- factor(sex_vector, levels = c("Male", "Female"))
+ 
+# Print the levels of factor_sex_vector_mf
+levels(factor_sex_vector_mf)
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
-test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
-
-# MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
-
-# MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
-# test_student_typed('c("Male", "Female")')
-
-test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
-
-
-success_msg("Wonderful! Proceed to the next exercise.")
+predef_msg <- "Do not change the definition of pre-defined `sex_vector`!"
+test_object("factor_sex_vector_fm", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_output_contains("levels(factor_sex_vector_fm)")
+test_object("factor_sex_vector_mf", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_output_contains("levels(factor_sex_vector_mf)")
+success_msg("You've leveled up! The `levels()` function and the `level` argument to `factor()` let you control the levels.")
 ```
 
 
@@ -292,64 +313,71 @@ skills: 1
 key: a549f13c0644ccc89cd39a10aa48706754637ed0
 ```
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable:
+It is often useful to count how many times each level occurs in a factor.  To do this, you can use the [`table()`](http://www.rdocumentation.org/packages/base/functions/table) function. ([`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) performs a similar task for factors.)
 
 ```
-summary(my_var)
+animals_vector <- c(
+  "Elephant", "Giraffe", "Donkey", "Giraffe", 
+  "Horse", "Donkey", "Donkey", "Horse"
+)
+factor_animals_vector <- factor(animals_vector)
+table(factor_animals_vector)
+## factor_animals_vector
+##   Donkey Elephant  Giraffe    Horse 
+##        3        1        2        2
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses.
 
 `@instructions`
-Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+
+`factor_sex_vector` has been pre-defined in your workspace.
+
+* Use `table()` to count the number of `Male`s and `Female`s in `factor_sex_vector`.
+* Do the same thing again, this time using `summary()`.
 
 `@hint`
-Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+
+* Call [`table()`](http://www.rdocumentation.org/packages/base/functions/table), passing `factor_sex_vector`.
+* Then call [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) in the same way.
+
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+factor_sex_vector <- factor(c("Male", "Female", "Female", "Male", "Male"))
 ```
 
 `@sample_code`
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
-factor_survey_vector
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
-# Generate summary for survey_vector
-
-
-# Generate summary for factor_survey_vector
-
+# Count the number of males and females in `factor_sex_vector`
+___(___)
+ 
+# Same again, using summary()
+___(___)
 ```
 
 `@solution`
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
-factor_survey_vector
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
-# Generate summary for survey_vector
-summary(survey_vector)
-
-# Generate summary for factor_survey_vector
-summary(factor_survey_vector)
+# Count the number of males and females in `factor_sex_vector`
+table(factor_sex_vector)
+ 
+# Same again, using summary()
+summary(factor_sex_vector)
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
-test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
-test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+predef_msg <- "Do not change the definition of pre-defined `sex_vector`!"
+test_object("factor_sex_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_output_contains("table(factor_sex_vector)")
+test_output_contains("summary(factor_sex_vector)")
+success_msg("Nice! Have a look at the output. The fact that `\"Male\"` and `\"Female\"` were specified as factor levels in `factor_sex_vector` enables R to show the number of elements for each category.")
 ```
 
 
@@ -363,62 +391,78 @@ skills: 1
 key: 90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ```
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+Previously you learned that for ordered factors, you can talk about levels being greater than or less than each other. For example, recall the temperatures data from a few exercises back.
+
+```r
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+factor_temperature_vector <- ordered(
+  temperature_vector, 
+  levels = c("Low", "Medium", "High")
+)
+factor_temperature_vector <= "Medium"
+## [1] FALSE  TRUE FALSE  TRUE  TRUE
+```
+
+You might wonder what happens when you try to compare elements of an unordered factor.  In `factor_sex_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relatively to each other? In other words, who does R think is greater, males or females?
 
 `@instructions`
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+
+`factor_sex_vector` has been pre-defined in your workspace. The first value of `factor_sex_vector` is a male, and the second value is a female.
+
+* Select the first value of `factor_sex_vector` and assign the results to `male`.
+* Select the second value of `factor_sex_vector` and assign the results to `female`.
+* Compare the two sexes, testing if `male` is greater than (`>`) `female`.
 
 `@hint`
-Just click 'Submit Answer' and have a look at output that gets printed to the console.
+
+* Use `factor_sex_vector[i]` to select the `i`th element of `factor_sex_vector`.
+* Use `male > female` to compare the sexes.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+factor_sex_vector <- factor(c("Male", "Female", "Female", "Male", "Male"))
 ```
 
 `@sample_code`
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
 # Male
-male <- factor_survey_vector[1]
+male <- factor_sex_vector[1]
 
 # Female
-female <- factor_survey_vector[2]
+female <- ___
 
-# Battle of the sexes: Male 'larger' than female?
-male > female
+# Battle of the sexes: is male greater than female?
+male ___ female
 ```
 
 `@solution`
 ```{r}
-# Build factor_survey_vector with clean levels
-survey_vector <- c("M", "F", "F", "M", "M")
-factor_survey_vector <- factor(survey_vector)
-levels(factor_survey_vector) <- c("Female", "Male")
+# factor_sex_vector has been pre-defined
+factor_sex_vector
 
 # Male
-male <- factor_survey_vector[1]
+male <- factor_sex_vector[1]
 
 # Female
-female <- factor_survey_vector[2]
+female <- factor_sex_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
+# Battle of the sexes: is male greater than female?
 male > female
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("male", undefined_msg = msg, incorrect_msg = msg)
-test_object("female", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+predef_msg <- "Do not change the definition of pre-defined `sex_vector`!"
+test_object("factor_sex_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+male_msg <- "Do not change the code to define `male`."
+test_object("male", undefined_msg = male_msg, incorrect_msg = male_msg)
+female_msg <- "Define `female` as `factor_sex_vector[2]`."
+test_object("female", undefined_msg = female_msg, incorrect_msg = female_msg)
+test_output_contains("male > female")
+success_msg("Phew, it seems that R is not a sexist language.")
 ```
 
 
@@ -432,25 +476,28 @@ skills: 1
 key: 9ab0928916bf84ab225713a9a1ce40d9e322c6a0
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+In the previous exercise, since `"Male"` and `"Female"` were unordered (or nominal) factor levels, R returned a warning message, telling you that the greater than operator was not meaningful. But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between their categories.
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
-
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
+Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
 
-- Analyst 1 is fast,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is fast and
-- Analyst 5 is insane.
+* Use [`c()`](https://www.rdocumentation.org/packages/base/topics/c) to create a character vector, named `speed_vector`, with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
 
-No need to specify these are factors yet.
+    - Analyst 1 is medium,
+    - Analyst 2 is slow,
+    - Analyst 3 is slow,
+    - Analyst 4 is medium and
+    - Analyst 5 is fast.
+
+* Use [`ordered()`](https://www.rdocumentation.org/packages/base/topics/factor) to create an ordered factor from `speed_vector` and assign it to `factor_speed_vector`. The factor levels should be `"slow"`, `"medium"`, and `"fast"`.
 
 `@hint`
-Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
+
+* Use `c()` to create a character vector.
+* Each of the elements of `speed_vector` should be `"slow"`, `"medium"`, or `"fast"`.
+* Use `ordered()` to create an ordered factor.
+* The `levels` of the factor should be a character vector of `"slow"`, `"medium"`, and `"fast"`.
 
 `@pre_exercise_code`
 ```{r}
@@ -460,19 +507,27 @@ Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow
 `@sample_code`
 ```{r}
 # Create speed_vector
-speed_vector <-
+speed_vector <- c("medium", ___, ___, ___, ___)
+ 
+# Convert it to a factor
+factor_speed_vector <- ___(___, levels = c("slow", "medium", "fast"))
 ```
 
 `@solution`
 ```{r}
 # Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+ 
+# Convert it to a factor
+factor_speed_vector <- ordered(speed_vector, levels = c("slow", "medium", "fast"))
 ```
 
 `@sct`
 ```{r}
-test_object("speed_vector",
-            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+speed_vec_msg <- "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!"
+test_object("speed_vector", undefined_msg = speed_vec_msg, incorrect_msg = speed_vec_msg)
+factor_speed_vec_msg <- 'Did you call `ordered()`, passing `speed_vector`, and `levels = c("slow", "medium", "fast")`?'
+test_object("factor_speed_vector", undefined_msg = factor_speed_vec_msg, incorrect_msg = factor_speed_vec_msg)
 success_msg("A job well done! Continue to the next exercise.")
 ```
 
@@ -487,64 +542,61 @@ skills: 1
 key: 279077d10248ce03d5f972939ef8576430a16683
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+So far, you've created ordered factors using the [`ordered()`](http://www.rdocumentation.org/packages/base/functions/factor) function. There is another way. You can also call the [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) function and pass the argument `ordered = TRUE`.
 
-```
-factor(some_vector,
-       ordered = TRUE,
-       levels = c("lev1", "lev2" ...))
+```r
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+factor(sex_vector, ordered = TRUE)
 ```
 
-By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+As before, you can optionally pass the argument `levels` to set the order of the factor levels.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
+
+`speed_vector` has been pre-defined in your workspace.
+
+From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
+
+- Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_vector`. 
+- The argument `ordered` should be set to `TRUE` since there is a natural ordering. 
+- Don't change the argument `levels = c("slow", "medium", "fast"")`.
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 ```
 
 `@sample_code`
 ```{r}
-# Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-
 # Convert speed_vector to ordered factor vector
-factor_speed_vector <-
+factor_speed_vector <- ___(___, levels = c("slow", "medium", "fast"), ___ = ___)
 
 # Print factor_speed_vector
 factor_speed_vector
-summary(factor_speed_vector)
 ```
 
 `@solution`
 ```{r}
-# Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-
-# Add your code below
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# Convert speed_vector to ordered factor vector
+factor_speed_vector <- factor(speed_vector, levels = c("slow", "medium", "fast"), ordered = TRUE)
 
 # Print factor_speed_vector
 factor_speed_vector
-summary(factor_speed_vector)
 ```
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", args = c("x", "ordered", "levels"),
+predef_msg <- "Do not change the definition of pre-defined `speed_vector`!"
+test_object("speed_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
+test_function("factor", args = c("x", "levels", "ordered"),
               incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
-                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
-                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`."))
+                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.",
+                                "Make sure to set `ordered = TRUE` inside your call of `factor()`."))
 test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+            incorrect_msg = "There's something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `levels = c(\"slow\", \"fast\", \"insane\")`, and `ordered = TRUE` inside your call to `factor()`.")
+success_msg("Great! Have a look at the console. It is now indicated that the levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
 ```
 
 
@@ -563,9 +615,12 @@ Having a bad day at work, 'data analyst number two' enters your office and start
 The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
 
 `@instructions`
+
+`factor_speed_vector` has been pre-defined in your workspace.
+
 - Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
 - Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is greater than the other.
 
 `@hint`
 - To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
@@ -573,30 +628,31 @@ The fact that `factor_speed_vector` is now ordered enables us to compare differe
 
 `@pre_exercise_code`
 ```{r}
-# no pec
+factor_speed_vector <- ordered(
+  c("medium", "slow", "slow", "medium", "fast"),
+  levels = c("slow", "medium", "fast")
+)
 ```
 
 `@sample_code`
 ```{r}
-# Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# factor_speed_vector has been pre-defined for you
+factor_speed_vector
 
 # Factor value for second data analyst
-da2 <-
+da2 <- factor_speed_vector[___]
 
 # Factor value for fifth data analyst
-da5 <-
+da5 <- ___
 
 # Is data analyst 2 faster than data analyst 5?
-
+___
 ```
 
 `@solution`
 ```{r}
-# Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+# factor_speed_vector has been pre-defined for you
+factor_speed_vector
 
 # Factor value for second data analyst
 da2 <- factor_speed_vector[2]
@@ -610,16 +666,15 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+predef_msg <- "Do not change the definition of pre-defined `factor_speed_vector`!"
+test_object("factor_speed_vector", undefined_msg = predef_msg, incorrect_msg = predef_msg)
 
 msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
 test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second", "2"))
 test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
 test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
 
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 ```
 
 
