@@ -98,9 +98,9 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 # Convert sex_vector to a factor
-factor_gender_vector <- ___(___)
+factor_sex_vector <- ___(___)
 
-# Print out factor_gender_vector
+# Print out factor_sex_vector
 ___
 ```
 
