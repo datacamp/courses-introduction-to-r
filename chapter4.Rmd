@@ -19,7 +19,7 @@ The term factor refers to a statistical data type used to store categorical vari
 
 It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation or hermaphroditic animals, but you will always have a finite number of categories.)
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
 
 `@instructions`
 Assign to variable `theory` the value `"factors for categorical variables"`.
