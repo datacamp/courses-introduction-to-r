@@ -45,12 +45,6 @@ theory <- "factors for categorical variables"
 
 `@sct`
 ```{r}
-# MC-note: ideally, we could check for commonly mistyped variable names
-#test_or({
-#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
-#    lapply(bad_names, test_object, eval=FALSE)
-#    })
-
 msg_undef <- "It looks like you haven't defined the variable `theory`."
 msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
 msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
@@ -101,7 +95,7 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 
 `@sample_code`
 ```{r}
-# Gender vector
+# Sex vector
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 # Convert sex_vector to a factor
@@ -113,7 +107,7 @@ factor_sex_vector <-
 
 `@solution`
 ```{r}
-# Gender vector
+# Sex vector
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
 # Convert sex_vector to a factor
@@ -214,7 +208,7 @@ When you first get a data set, you will often notice that it contains factors wi
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the sex of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
@@ -418,7 +412,7 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+success_msg("Phew, it seems that R is not a sexist language.")
 ```
 
 
