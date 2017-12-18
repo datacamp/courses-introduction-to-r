@@ -357,10 +357,10 @@ skills: 1
 key: 90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ```
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relatively to each other? In other words, who does R think is greater, males or females?
 
 `@instructions`
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+Read the code in the editor and click 'Submit Answer' to test if `male` is greater than (`>`) `female`.
 
 `@hint`
 Just click 'Submit Answer' and have a look at output that gets printed to the console.
