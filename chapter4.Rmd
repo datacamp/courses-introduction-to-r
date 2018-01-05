@@ -436,21 +436,21 @@ Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R return
 
 But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
+Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"fast"`, or `"insane"`. Use the list below:
+As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
 
-- Analyst 1 is fast,
+- Analyst 1 is medium,
 - Analyst 2 is slow,
 - Analyst 3 is slow,
-- Analyst 4 is fast and
-- Analyst 5 is insane.
+- Analyst 4 is medium and
+- Analyst 5 is fast.
 
 No need to specify these are factors yet.
 
 `@hint`
-Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
+Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
 
 `@pre_exercise_code`
 ```{r}
@@ -466,7 +466,7 @@ speed_vector <-
 `@solution`
 ```{r}
 # Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 ```
 
 `@sct`
@@ -498,10 +498,10 @@ factor(some_vector,
 By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
+From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
+Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
 
 `@pre_exercise_code`
 ```{r}
@@ -511,7 +511,7 @@ Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functi
 `@sample_code`
 ```{r}
 # Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 # Convert speed_vector to ordered factor vector
 factor_speed_vector <-
@@ -524,10 +524,10 @@ summary(factor_speed_vector)
 `@solution`
 ```{r}
 # Create speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 # Add your code below
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
 
 # Print factor_speed_vector
 factor_speed_vector
@@ -541,9 +541,9 @@ test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_function("factor", args = c("x", "ordered", "levels"),
               incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
                                 "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
-                                "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`."))
+                                "Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`."))
 test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
+            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
 success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
 ```
 
@@ -579,8 +579,8 @@ The fact that `factor_speed_vector` is now ordered enables us to compare differe
 `@sample_code`
 ```{r}
 # Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
 
 # Factor value for second data analyst
 da2 <-
@@ -595,8 +595,8 @@ da5 <-
 `@solution`
 ```{r}
 # Create factor_speed_vector
-speed_vector <- c("fast", "slow", "slow", "fast", "insane")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
 
 # Factor value for second data analyst
 da2 <- factor_speed_vector[2]
