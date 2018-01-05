@@ -1,7 +1,7 @@
 ---
 title_meta  : Chapter 4
 title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+description : Very often, data falls into a limited number of categories. For example, human hair color can be categorized as black/brown/blonde/red/grey/white (and perhaps a few more options for people who dye it). In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
 ---
 ## What's a factor and why would you use it?
@@ -19,7 +19,7 @@ The term factor refers to a statistical data type used to store categorical vari
 
 It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
 
 `@instructions`
 Assign to variable `theory` the value `"factors for categorical variables"`.
@@ -45,12 +45,6 @@ theory <- "factors for categorical variables"
 
 `@sct`
 ```{r}
-# MC-note: ideally, we could check for commonly mistyped variable names
-#test_or({
-#    bad_names <- c('Theory', "teory", "thoery", "theroy", "theiory", 'gender', 'value')
-#    lapply(bad_names, test_object, eval=FALSE)
-#    })
-
 msg_undef <- "It looks like you haven't defined the variable `theory`."
 msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
 msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
@@ -73,10 +67,10 @@ skills: 1
 key: 6cc21c842b075347926bb1b244782213df32e370
 ```
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals:
+To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
 
 ```
-gender_vector <- c("Male","Female","Female","Male","Male")
+sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
 It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
@@ -84,15 +78,15 @@ It is clear that there are two categories, or in R-terms **'factor levels'**, at
 The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
 
 ```
-factor_gender_vector <- factor(gender_vector)
+factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
+- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
 `@hint`
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
 
 `@pre_exercise_code`
 ```{r}
@@ -101,33 +95,33 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 
 `@sample_code`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <-
+# Convert sex_vector to a factor
+factor_sex_vector <-
 
-# Print out factor_gender_vector
+# Print out factor_sex_vector
 
 ```
 
 `@solution`
 ```{r}
-# Gender vector
-gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
-factor_gender_vector <- factor(gender_vector)
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
 
-# Print out factor_gender_vector
-factor_gender_vector
+# Print out factor_sex_vector
+factor_sex_vector
 ```
 
 `@sct`
 ```{r}
-test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
+test_object("factor_sex_vector",
+            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
 success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
@@ -214,13 +208,13 @@ When you first get a data set, you will often notice that it contains factors wi
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`.
+A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier.
+Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
 
 **Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
 
@@ -363,10 +357,10 @@ skills: 1
 key: 90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 ```
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
 
 `@instructions`
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+Read the code in the editor and click 'Submit Answer' to test if `male` is greater than (`>`) `female`.
 
 `@hint`
 Just click 'Submit Answer' and have a look at output that gets printed to the console.
@@ -418,7 +412,7 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
 ```
 
 
@@ -619,7 +613,7 @@ test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second"
 test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
 test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
 
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 ```
 
 
