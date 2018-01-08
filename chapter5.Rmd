@@ -293,7 +293,7 @@ key: 8c664726b8a173cda730cbb20a52ac1795d9a0e9
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
 
-- `my_df[1,2]` selects the value at the first row and select element in `my_df`.
+- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
 - `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
 
 Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
