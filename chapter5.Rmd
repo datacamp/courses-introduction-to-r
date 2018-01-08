@@ -481,8 +481,6 @@ key: 1581bf4667477f274188f4f637ec7fdc73659651
 
 You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
 
-Could R help you out?
-
 If you type `rings_vector` in the console, you get:
 
 ```
