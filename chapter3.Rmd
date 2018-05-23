@@ -60,7 +60,7 @@ success_msg("Great! Continue to the next exercise.")
 
 
 ---
-## Analyzing matrices, you shall
+## Analyze matrices, you shall
 
 ```yaml
 type: NormalExercise
