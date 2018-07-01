@@ -741,7 +741,7 @@ test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
             incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
-test_object("us_visitors", incorrect_msg = "To created `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+test_object("us_visitors", incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
 test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
 
 success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
