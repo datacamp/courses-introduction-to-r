@@ -386,8 +386,8 @@ Just like every action has a reaction, every [`cbind()`](http://www.rdocumentati
 
 Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
 
-- `star_wars_matrix` that we have used all along, with data on the first trilogy,
-- `star_wars_matrix2`, with similar data for the second trilogy. 
+- `star_wars_matrix` that we have used all along, with data on the original trilogy,
+- `star_wars_matrix2`, with similar data for the prequels trilogy. 
 
 Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
 
