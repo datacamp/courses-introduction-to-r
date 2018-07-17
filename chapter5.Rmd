@@ -18,7 +18,7 @@ You may remember from the chapter about matrices that all the elements that you 
 
 When doing a market research survey, however, you often have questions such as:
 
-- 'Are your married?' or 'yes/no' questions (`logical`)
+- 'Are you married?' or 'yes/no' questions (`logical`)
 - 'How old are you?' (`numeric`)
 - 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
 - ...
@@ -102,7 +102,7 @@ head(mtcars)
 ```{r}
 test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
 test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
-success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Wonderful! So, what do we have in this data set? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
 ```
 
 

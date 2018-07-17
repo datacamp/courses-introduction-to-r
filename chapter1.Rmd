@@ -396,7 +396,7 @@ key: 0f23107394
 
 R works with numerous data types. Some of the most basic types to get started are:
 
-- Decimals values like `4.5` are called **numerics**.
+- Decimal values like `4.5` are called **numerics**.
 - Natural numbers like `4` are called **integers**. Integers are also numerics.
 - Boolean values (`TRUE` or `FALSE`) are called **logical**.
 - Text (or string) values are called **characters**.

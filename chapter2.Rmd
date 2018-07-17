@@ -224,7 +224,8 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 # Assign days as names of poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Assign days as names of roulette_vectors
+# Assign days as names of roulette_vector
+
 ```
 
 `@solution`
@@ -238,7 +239,7 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 # Assign days as names of poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Assign days as names of roulette_vectors
+# Assign days as names of roulette_vector
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
@@ -372,7 +373,7 @@ c <- a + b
 ```
 
 `@instructions`
-- Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
+- Take the sum of the variables `A_vector` and `B_vector` and assign it to `total_vector`.
 - Inspect the result by printing out `total_vector`.
 
 `@hint`
