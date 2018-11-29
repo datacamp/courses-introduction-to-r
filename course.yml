@@ -11,7 +11,7 @@ description: "In this introduction to R, you will master the basics of this beau
   analysis. With over 2 million users worldwide R is rapidly becoming the leading
   programming language in statistics and data science. Every year, the number of R
   users grows by 40% and an increasing number of organizations are using it in their
-  day-to-day activities. Leverage the power of R by completing this free R online
+  day-to-day activities. Leverage the power of R by completing this R online
   course today!"
 from: "r-base-prod:v1.0.0"
 runtime_config: minimal
