@@ -81,7 +81,7 @@ In this exercise, you'll combine all these figures into a single vector. Next, y
 
 `@hint`
 - `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., by_row ...)` is a template for the solution to the second instruction.
+- `matrix(box_office, nrow = ..., byrow =  ...)` is a template for the solution to the second instruction.
 
 `@pre_exercise_code`
 ```{r}
