@@ -1,16 +1,17 @@
---- 
-title_meta  : Chapter 1
-title       : Intro to basics
-description : "In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let's get started!"
-
 ---
+title_meta: 'Chapter 1'
+title: 'Intro to basics'
+description: 'In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let''s get started!'
+free_preview: true
+---
+
 ## How it works
 
 ```yaml
 type: NormalExercise
+key: 15d729634a
 xp: 100
 skills: 1
-key: 15d729634a
 ```
 
 In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
@@ -56,13 +57,14 @@ success_msg("Awesome! See how the console shows the result of the R code you sub
 ```
 
 ---
+
 ## Arithmetic with R
 
 ```yaml
 type: NormalExercise
+key: 720745eda5
 xp: 100
 skills: 1
-key: 720745eda5
 ```
 
 In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
@@ -145,15 +147,15 @@ test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with
 success_msg("Great! Head over to the next exercise.")
 ```
 
-
 ---
-## Variable assignment 
+
+## Variable assignment
 
 ```yaml
 type: NormalExercise
+key: 5f200ffd43
 xp: 100
 skills: 1
-key: 5f200ffd43
 ```
 
 A basic concept in (statistical) programming is called a **variable**. 
@@ -202,18 +204,18 @@ test_object("x", undefined_msg = "Make sure to define a variable `x`.",
 success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
 ```
 
-
 ---
+
 ## Variable assignment (2)
 
 ```yaml
 type: NormalExercise
+key: c5944b90eb
 xp: 100
 skills: 1
-key: c5944b90eb
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
+Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
 
 `@instructions`
 - Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
@@ -255,15 +257,15 @@ test_output_contains("my_apples", incorrect_msg = "Have you explicitly told R to
 success_msg("Great! Continue to the next exercise!")
 ```
 
-
 ---
+
 ## Variable assignment (3)
 
 ```yaml
 type: NormalExercise
+key: 1c1bd25045
 xp: 100
 skills: 1
-key: 1c1bd25045
 ```
 
 Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
@@ -322,15 +324,15 @@ test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg)
 success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
 ```
 
-
 ---
+
 ## Apples and oranges
 
 ```yaml
 type: NormalExercise
+key: 915fcc7c99
 xp: 100
 skills: 1
-key: 915fcc7c99
 ```
 
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
@@ -383,15 +385,15 @@ test_output_contains("my_fruit", incorrect_msg = "Don't remove the line that pri
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
-
 ---
+
 ## Basic data types in R
 
 ```yaml
 type: NormalExercise
+key: 0f23107394
 xp: 100
 skills: 1
-key: 0f23107394
 ```
 
 R works with numerous data types. Some of the most basic types to get started are:
@@ -414,7 +416,7 @@ Note that R is case sensitive!
 
 `@hint`
 Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`. 
+`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -453,24 +455,24 @@ test_object("my_logical", incorrect_msg = "Have you correctly changed `my_logica
 success_msg("Great work! Continue to the next exercise.")
 ```
 
-
 ---
+
 ## What's that data type?
 
 ```yaml
 type: NormalExercise
+key: 99b549229d
 xp: 100
 skills: 1
-key: 99b549229d
 ```
 
 Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`. 
+Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`. 
+The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -524,6 +526,3 @@ test_output_contains("class(my_logical)",
                      incorrect_msg = sprintf(patt, "my_logical"))
 success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
 ```
-
-
-
