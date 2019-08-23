@@ -1,7 +1,7 @@
 ---
 title_meta: 'Chapter 4'
 title: Factors
-description: 'Very often, data falls into a limited number of categories. For example, human hair color can be categorized as black/brown/blonde/red/grey/white (and perhaps a few more options for people who dye it). In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!'
+description: 'Data often falls into a limited number of categories. For example, human hair color can be categorized as black, brown, blond, red, grey, or white—and perhaps a few more options for people who color their hair. In R, categorical data is stored in factors. Factors are very important in data analysis, so start learning how to create, subset, and compare them now.'
 ---
 
 ## What's a factor and why would you use it?
