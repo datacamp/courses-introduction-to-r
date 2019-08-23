@@ -1,7 +1,7 @@
 ---
 title_meta: 'Chapter 6'
 title: Lists
-description: 'Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.'
+description: 'As opposed to vectors, lists can hold components of different types, just as your to-do lists can contain different categories of tasks. This chapter will teach you how to create, name, and subset these lists.'
 ---
 
 ## Lists, why would you need them?
