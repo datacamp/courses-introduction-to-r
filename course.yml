@@ -1,9 +1,5 @@
 id: 58
 title: Introduction to R
-instructors:
-  - jonathan+author@datacamp.com
-time_needed: 4 hours
-difficulty_level: 0
 programming_language: r
 description: >-
   In  Introduction to R, you will master the basics of this widely used open
