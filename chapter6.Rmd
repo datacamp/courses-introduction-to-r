@@ -464,3 +464,150 @@ test_object("shining_list_full", eq_condition = "equal",
 test_function("str", "object", incorrect_msg = "Don't forget to display the structure of `shining_list_full` with `str()`.")
 success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
 ```
+
+---
+
+## Insert exercise title here
+
+```yaml
+type: TabExercise
+key: 177dbf51f7
+xp: 100
+```
+
+Earlier in the chapter, you created a list using various sources. Now, you'd like to add more information to the data frame that is part of that list to add other reviews of the movie and gain more insights into what viewers thought of it. 
+
+`@pre_exercise_code`
+```{r}
+moviename <- "The Shining"
+actors      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDb3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+reviews     <- data.frame(scores, sources, comments)
+rm(scores, sources, comments)
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 33ef80f178
+xp: 25
+```
+
+`@instructions`
+- Create a vector that corresponds to each review shown in the table.
+
+`@hint`
+- This is an example hint.
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+
+```
+
+`@sct`
+```{r}
+# Examples of good success messages: https://instructor-support.datacamp.com/en/articles/2299773-exercise-success-messages.
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 811485d430
+xp: 25
+```
+
+`@instructions`
+- Add the vectors containing the new reviews to the existing `reviews` data frame and call it `extra_reviews`.
+
+`@hint`
+- This is an example hint.
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+
+```
+
+`@sct`
+```{r}
+# Examples of good success messages: https://instructor-support.datacamp.com/en/articles/2299773-exercise-success-messages.
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 79cb8002fc
+xp: 25
+```
+
+`@instructions`
+- Use the reviews that are part of your list to calculate the average rating viewers gave the movie.
+
+`@hint`
+<!-- Examples of good hints: https://instructor-support.datacamp.com/en/articles/2379164-hints-best-practices. -->
+- This is an example hint.
+- This is an example hint.
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+# reviews_scores <- extra_reviews$scores
+# avg_review <- mean(reviews_scores)
+```
+
+`@sct`
+```{r}
+success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: d75fed89e6
+xp: 25
+```
+
+`@instructions`
+- Create the `shining_list_full` object, that contains
+
+`@hint`
+<!-- Examples of good hints: https://instructor-support.datacamp.com/en/articles/2379164-hints-best-practices. -->
+- This is an example hint.
+- This is an example hint.
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+# reviews_scores <- extra_reviews$scores
+# avg_review <- mean(reviews_scores)
+
+# shining_list_full <- list(moviename, actors, extra_reviews, avg_review)
+```
+
+`@sct`
+```{r}
+success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
+```
