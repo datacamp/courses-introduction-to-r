@@ -475,7 +475,7 @@ key: 177dbf51f7
 xp: 100
 ```
 
-Earlier in the chapter, you created a list using various sources. Now, you'd like to add more information to the data frame that is part of that list to add other reviews of the movie and gain more insights into what viewers thought of it. 
+Earlier in the chapter, you created a list using various sources. Now, you'd like to add more information to the data frame that is part of that list to add other reviews of the movie and gain more insights into what viewers thought of it.
 
 `@pre_exercise_code`
 ```{r}
