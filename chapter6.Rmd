@@ -467,7 +467,7 @@ success_msg("Great! This was the last exercise on R lists! You now have a solid 
 
 ---
 
-## Insert exercise title here
+## Creating a new list for another movie
 
 ```yaml
 type: NormalExercise
@@ -475,21 +475,22 @@ key: ce10c83e5b
 xp: 100
 ```
 
-Earlier in the chapter, you created a list using various sources. Now, you'd like to add more information to the data frame that is part of that list to add other reviews of the movie and gain more insights into what viewers thought of it.
+You found reviews of another, more recent Jack Nicholson movie: The Departed! You want to create a list, similar to the list you created earlier in the chapter, that contains different pieces of information about the movie. You'd like to start by creating a data frame of the reviews in the table below. 
 
-You found reviews of another movie! You want to create a list, similar to the list you used earlier in the chapter, that contains the movie name, the main actors in the movie, and a data frame containing reviews of the movie.  a more recent movie - the departed 
+![movie-reviews.png](https://assets.datacamp.com/production/repositories/446/datasets/5f228473da325c872eb63d90ae09040fdfb29111/Movie%20reviews.png)
 
-The `movie_title` and `movie_actors` have been preloaded for you. 
-Names are clear from instructions
+The `movie_title` and `movie_actors` objects have been preloaded for you and contain the name of the movie and a list of the actors in the movie. 
 
 `@instructions`
-- Create a vector that corresponds to each review shown in the table.
-- Add the vectors containing the new reviews to the existing `departed_reviews` data frame. 
-- Use the reviews that are part of your list to calculate the average rating viewers gave the movie.
-- Create and print a list
+- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
+- Find the mean of the `scores` vector and save it as `avg_review`. 
+- Combine the `comments` and `scores` vectors into a data frame called `reviews_df`. 
+- Create a list, called `departed_list`, that contains the movie name, reviews data frame, and the average review, and print it.
 
 `@hint`
-- This is an example hint.
+- You'll use the `c()` function to create the vectors. 
+- To find the mean of a vector, pass the name of the vector to the `mean()` function. 
+- Use the `data.frame()` function to create the `reviews_df` data frame.
 
 `@pre_exercise_code`
 ```{r}
@@ -499,38 +500,39 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 
 `@sample_code`
 ```{r}
-# Add the reviews to the vectors below
+# Use the table of reviews to create the comments and scores vectors
 
 
-# Save the mean of the scores vector as avg_review 
+
+# Save the mean of the scores vector as avg_review  
 
 
-# Combine scores and comments into the reviews_df data frame
+# Combine comments and scores into the reviews_df data frame
 
 
-# Create a list of the movie name, reviews data frame, and the average review and print it
+# Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
 
 
 ```
 
 `@solution`
 ```{r}
-# Add the reviews to the vectors below
-comments <- c("I would watch it again", "Amazing!", "A bit violent, but I liked it", "Leonardo DiCaprio's best movie", "Great plot")
+# Use the table of reviews to create the comments and scores vectors
 scores <- c(4.6, 5, 4.8, 5, 4.2)
+comments <- c("I would watch it again", "Amazing!", "A bit violent, but I liked it", "Leonardo DiCaprio's best movie", "Great plot")
 
 # Save the mean of the scores vector as avg_review 
 avg_review <- mean(scores)
 
-# Combine scores and comments into the reviews_df data frame
+# Combine comments and scores into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
-# Create a list of the movie name, reviews data frame, and the average review and print it
+# Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
 departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
 print(departed_list)
 ```
 
 `@sct`
 ```{r}
-success_msg("Great!")
+success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
 ```
