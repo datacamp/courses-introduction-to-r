@@ -410,7 +410,7 @@ The `movie_title` and `movie_actors` objects have been preloaded for you and con
 `@instructions`
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
 - Find the mean of the `scores` vector and save it as `avg_review`. 
-- Combine the `comments` and `scores` vectors into a data frame called `reviews_df`. 
+- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
 - Create a list, called `departed_list`, that contains the movie name, reviews data frame, and the average review, and print it.
 
 `@hint`
@@ -433,7 +433,7 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 # Save the mean of the scores vector as avg_review  
 
 
-# Combine comments and scores into the reviews_df data frame
+# Combine scores and comments into the reviews_df data frame
 
 
 # Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
@@ -445,12 +445,12 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 ```{r}
 # Use the table of reviews to create the comments and scores vectors
 scores <- c(4.6, 5, 4.8, 5, 4.2)
-comments <- c("I would watch it again", "Amazing!", "A bit violent, but I liked it", "Leonardo DiCaprio's best movie", "Great plot")
+comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
 # Save the mean of the scores vector as avg_review 
 avg_review <- mean(scores)
 
-# Combine comments and scores into the reviews_df data frame
+# Combine scores and comments into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
 # Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
@@ -460,5 +460,16 @@ print(departed_list)
 
 `@sct`
 ```{r}
+msg <- "Do not change or remove the preloaded objects."
+
+test_object("movie_title", eq_condition = "equal", incorrect_msg = msg)
+test_object("movie_actors", eq_condition = "equal", incorrect_msg = msg)
+test_object("scores", eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
+test_object("comments", eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+test_object("avg_review", eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?")
+test_object("reviews_df", eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?")
+test_object("departed_list", eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?")
+test_output_contains("print(departed_list)", incorrect_msg = "Did you print the `departed_list`?")
+
 success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
 ```
