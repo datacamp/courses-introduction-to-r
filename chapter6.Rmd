@@ -480,7 +480,7 @@ Earlier in the chapter, you created a list using various sources. Now, you'd lik
 You found reviews of another movie! You want to create a list, similar to the list you used earlier in the chapter, that contains the movie name, the main actors in the movie, and a data frame containing reviews of the movie.  a more recent movie - the departed 
 
 The `movie_title` and `movie_actors` have been preloaded for you. 
-Names are clear from instructions 
+Names are clear from instructions
 
 `@instructions`
 - Create a vector that corresponds to each review shown in the table.
