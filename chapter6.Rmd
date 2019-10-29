@@ -401,7 +401,8 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent Jack Nicholson movie: The Departed! You want to create a list, similar to the list you created earlier in the chapter, that contains different pieces of information about the movie. You'd like to start by creating a data frame of the reviews in the table below. 
+You found reviews of another, more recent Jack Nicholson movie: The Departed! You want to create a list, similar to the list you created earlier in the chapter, that contains different pieces of information about the movie.
+You'd like to start by creating a data frame of the reviews in the table below. 
 
 ![movie-reviews.png](https://assets.datacamp.com/production/repositories/446/datasets/5f228473da325c872eb63d90ae09040fdfb29111/Movie%20reviews.png)
 
