@@ -405,7 +405,7 @@ You found reviews of another, more recent Jack Nicholson movie: The Departed! Yo
 
 ![movie-reviews.png](https://assets.datacamp.com/production/repositories/446/datasets/5f228473da325c872eb63d90ae09040fdfb29111/Movie%20reviews.png)
 
-The `movie_title` and `movie_actors` objects have been preloaded for you and contain the name of the movie and a list of the actors in the movie. 
+The `movie_title` and `movie_actors` objects have been preloaded for you and contain the name of the movie and a list of the actors in the movie.
 
 `@instructions`
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
