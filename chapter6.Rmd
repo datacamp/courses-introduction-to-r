@@ -406,13 +406,13 @@ You'd like to start by creating a data frame of the reviews in the table below.
 
 ![movie-reviews.png](https://assets.datacamp.com/production/repositories/446/datasets/5f228473da325c872eb63d90ae09040fdfb29111/Movie%20reviews.png)
 
-The `movie_title` and `movie_actors` objects have been preloaded for you and contain the name of the movie and a list of the actors in the movie.
+The `movie_title` and `movie_actors` objects have been preloaded for you and contain the title of the movie and a list of the actors in the movie.
 
 `@instructions`
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
 - Find the mean of the `scores` vector and save it as `avg_review`. 
 - Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the movie name, reviews data frame, and the average review, and print it.
+- Create a list, called `departed_list`, that contains the movie title, reviews data frame, and the average review score, and print it.
 
 `@hint`
 - You'll use the `c()` function to create the vectors. 
@@ -433,7 +433,7 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 
 # Combine scores and comments into the reviews_df data frame
 
-# Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
+# Create and print a list of the movie title, movie actors, reviews data frame, and average review score, called departed_list
 
 ```
 
@@ -449,7 +449,7 @@ avg_review <- mean(scores)
 # Combine scores and comments into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
-# Create and print a list of the movie name, actors, reviews_df, and avg_review, called departed_list
+# Create and print a list of the movie title, movie actors, reviews data frame, and average review score, called departed_list
 departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
 print(departed_list)
 ```
