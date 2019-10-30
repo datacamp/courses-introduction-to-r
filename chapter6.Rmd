@@ -429,6 +429,7 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 ```{r}
 # Use the table of reviews to create the comments and scores vectors
 
+
 # Save the mean of the scores vector as avg_review  
 
 # Combine scores and comments into the reviews_df data frame
