@@ -427,12 +427,14 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 
 `@sample_code`
 ```{r}
-# Use the table of reviews to create the comments and scores vectors
+# Use the table of reviews from exercise description to create the comments and scores vectors
 
 
 # Save the mean of the scores vector as avg_review  
 
+
 # Combine scores and comments into the reviews_df data frame
+
 
 # Create and print a list of the movie title, movie actors, reviews data frame, and average review score, called departed_list
 
@@ -440,7 +442,7 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 
 `@solution`
 ```{r}
-# Use the table of reviews to create the comments and scores vectors
+# Use the table of reviews from exercise description to create the comments and scores vectors
 scores <- c(4.6, 5, 4.8, 5, 4.2)
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
