@@ -170,7 +170,7 @@ As a first goal, you want to construct a data frame that describes the main char
 
 - The type of planet (Terrestrial or Gas Giant).
 - The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
+- The planet's period of rotation (day length) relative to that of the Earth. Negative numbers indicate spinning in the opposite direction to the Earth.
 - If the planet has rings or not (TRUE or FALSE).
 
 After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors corresponds to the first observation.
