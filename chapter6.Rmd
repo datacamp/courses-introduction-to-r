@@ -406,6 +406,14 @@ You'd like to start by creating a data frame of the reviews in the table below.
 
 ![movie-reviews.png](https://assets.datacamp.com/production/repositories/446/datasets/5f228473da325c872eb63d90ae09040fdfb29111/Movie%20reviews.png)
 
+| Scores | Comments               |
+|--------|------------------------|
+| 4.6    | I would watch it again |
+| 5      | Amazing!               |
+| 4.8    | I liked it             |
+| 5      | One of the best movies |
+| 4.2    | Fascinating plot       |
+
 The `movie_title` and `movie_actors` objects have been preloaded for you and contain the title of the movie and a list of the actors in the movie.
 
 `@instructions`
