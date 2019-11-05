@@ -416,13 +416,13 @@ The `movie_title` and `movie_actors` objects have been preloaded for you and con
 
 `@instructions`
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the mean of the `scores` vector and save it as `avg_review`. 
+- Find the average of the `scores` vector and save it as `avg_review`. 
 - Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_fd`, and the average review score as `avg_review`, and print it.
+- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it.
 
 `@hint`
 - You'll use the `c()` function to create the vectors. 
-- To find the mean of a vector, pass the name of the vector to the `mean()` function. 
+- To find the average of a vector, pass the name of the vector to the `mean()` function. 
 - Use the `data.frame()` function to create the `reviews_df` data frame.
 
 `@pre_exercise_code`
@@ -437,7 +437,7 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 scores <- c(4.6, 5, 4.8, 5, ...
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", ... 
 
-# Save the mean of the scores vector as avg_review  
+# Save the average of the scores vector as avg_review  
 
 
 # Combine scores and comments into the reviews_df data frame
@@ -453,7 +453,7 @@ comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the be
 scores <- c(4.6, 5, 4.8, 5, 4.2)
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
-# Save the mean of the scores vector as avg_review 
+# Save the average of the scores vector as avg_review 
 avg_review <- mean(scores)
 
 # Combine scores and comments into the reviews_df data frame
