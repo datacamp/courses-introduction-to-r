@@ -418,7 +418,7 @@ The `movie_title` and `movie_actors` objects have been preloaded for you and con
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
 - Find the mean of the `scores` vector and save it as `avg_review`. 
 - Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the movie title, reviews data frame, and the average review score, and print it.
+- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_fd`, and the average review score as `avg_review`, and print it.
 
 `@hint`
 - You'll use the `c()` function to create the vectors. 
@@ -433,8 +433,9 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 
 `@sample_code`
 ```{r}
-# Use the table of reviews from exercise description to create the comments and scores vectors
-
+# Use the table from exercise description to define the comments and scores vectors
+scores <- c(4.6, 5, 4.8, 5, ...
+comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", ... 
 
 # Save the mean of the scores vector as avg_review  
 
@@ -442,13 +443,13 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 # Combine scores and comments into the reviews_df data frame
 
 
-# Create and print a list of the movie title, movie actors, reviews data frame, and average review score, called departed_list
+# Create and print a list, called `departed_list`
 
 ```
 
 `@solution`
 ```{r}
-# Use the table of reviews from exercise description to create the comments and scores vectors
+# Use the table from exercise description to define the comments and scores vectors
 scores <- c(4.6, 5, 4.8, 5, 4.2)
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
@@ -458,7 +459,7 @@ avg_review <- mean(scores)
 # Combine scores and comments into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
-# Create and print a list of the movie title, movie actors, reviews data frame, and average review score, called departed_list
+# Create and print a list, called `departed_list`
 departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
 print(departed_list)
 ```
