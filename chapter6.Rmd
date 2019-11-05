@@ -434,8 +434,8 @@ movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahl
 `@sample_code`
 ```{r}
 # Use the table from the exercise to define the comments and scores vectors
-scores <- c(4.6, 5, 4.8, 5, ...
-comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", ... 
+scores <- c(4.6, 5, 4.8, 5, ___
+comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", ___ 
 
 # Save the average of the scores vector as avg_review  
 
