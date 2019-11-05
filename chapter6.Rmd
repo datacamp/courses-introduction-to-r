@@ -402,6 +402,7 @@ xp: 100
 ```
 
 You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+
 | Scores | Comments               |
 |--------|------------------------|
 | 4.6    | I would watch it again |
@@ -409,6 +410,7 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 4.8    | I liked it             |
 | 5      | One of the best movies |
 | 4.2    | Fascinating plot       |
+
 It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
 `movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
 
