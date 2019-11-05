@@ -401,9 +401,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent Jack Nicholson movie: The Departed! You want to create a list, similar to the list you created earlier in the chapter, that contains different pieces of information about the movie.
-You'd like to start by creating a data frame of the reviews in the table below. 
-
+You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | Scores | Comments               |
 |--------|------------------------|
 | 4.6    | I would watch it again |
@@ -411,8 +409,8 @@ You'd like to start by creating a data frame of the reviews in the table below.
 | 4.8    | I liked it             |
 | 5      | One of the best movies |
 | 4.2    | Fascinating plot       |
-
-The `movie_title` and `movie_actors` objects have been preloaded for you and contain the title of the movie and a list of the actors in the movie.
+It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
 
 `@instructions`
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
@@ -428,7 +426,7 @@ The `movie_title` and `movie_actors` objects have been preloaded for you and con
 `@pre_exercise_code`
 ```{r}
 movie_title <- "The Departed"
-movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahlberg","Martin Sheen")
+movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahlberg","Vera Farmiga", "Martin Sheen")
 ```
 
 `@sample_code`
@@ -443,7 +441,7 @@ comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the be
 # Combine scores and comments into the reviews_df data frame
 
 
-# Create and print a list, called `departed_list`
+# Create and print a list, called 'departed_list'
 
 ```
 
@@ -459,7 +457,7 @@ avg_review <- mean(scores)
 # Combine scores and comments into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
-# Create and print a list, called `departed_list`
+# Create and print a list, called 'departed_list'
 departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
 print(departed_list)
 ```
