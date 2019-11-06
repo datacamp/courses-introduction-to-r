@@ -419,7 +419,7 @@ It would be useful to collect together all the pieces of information about the m
 - Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
 - Find the average of the `scores` vector and save it as `avg_review`. 
 - Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it.
+- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
 
 `@hint`
 - You'll use the `c()` function to create the vectors. 
@@ -444,7 +444,7 @@ comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the be
 # Combine scores and comments into the reviews_df data frame
 
 
-# Create and print a list, called 'departed_list'
+# Create and print out a list, called 'departed_list'
 
 ```
 
@@ -460,9 +460,9 @@ avg_review <- mean(scores)
 # Combine scores and comments into the reviews_df data frame
 reviews_df <- data.frame(scores, comments)
 
-# Create and print a list, called 'departed_list'
+# Create and print out a list, called 'departed_list'
 departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
-print(departed_list)
+departed_list
 ```
 
 `@sct`
@@ -476,7 +476,7 @@ test_object("comments", eq_condition = "equal", incorrect_msg = "Did you create 
 test_object("avg_review", eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?")
 test_object("reviews_df", eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?")
 test_object("departed_list", eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?")
-test_output_contains("print(departed_list)", incorrect_msg = "Did you print the `departed_list`?")
+test_output_contains("departed_list", incorrect_msg = "Did you print the `departed_list`?")
 
 success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
 ```
