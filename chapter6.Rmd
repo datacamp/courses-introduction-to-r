@@ -469,14 +469,31 @@ departed_list
 ```{r}
 msg <- "Do not change or remove the preloaded objects."
 
-test_object("movie_title", eq_condition = "equal", incorrect_msg = msg)
-test_object("movie_actors", eq_condition = "equal", incorrect_msg = msg)
-test_object("scores", eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-test_object("comments", eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
-test_object("avg_review", eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?")
-test_object("reviews_df", eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?")
-test_object("departed_list", eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?")
-test_output_contains("departed_list", incorrect_msg = "Did you print the `departed_list`?")
+ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_correct(
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_function(.,"mean") %>% check_arg("x") %>% check_equal()
+)
+ex() %>% check_correct(
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_function(.,"data.frame") %>% {
+    check_arg(.,"..1") %>% check_equal()
+    check_arg(.,"..2") %>% check_equal()
+  }
+)
+ex() %>% check_correct(
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_function(.,"list") %>% {
+    check_arg(.,"..1") %>% check_equal()
+    check_arg(.,"..2") %>% check_equal()
+    check_arg(.,"..3") %>% check_equal()
+    check_arg(.,"..4") %>% check_equal()
+  }
+)
+ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
 
 success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
 ```
