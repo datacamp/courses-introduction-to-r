@@ -381,7 +381,13 @@ test_error(incorrect_msg = "You can do this by setting the `my_oranges` variable
 test_object("my_apples", incorrect_msg = "Make sure that `my_apples` still contains `5`.")
 test_object("my_oranges", incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
 test_object("my_fruit", incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit")%>% check_or(
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+ )
 test_output_contains("my_fruit", incorrect_msg = "Don't remove the line that prints out `my_fruit`.")
+
+
 success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
