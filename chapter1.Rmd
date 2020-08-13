@@ -467,7 +467,7 @@ my_logical <- FALSE
 ```{r}
 ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `"universe"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
 
 ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
 
