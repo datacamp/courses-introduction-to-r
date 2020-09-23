@@ -50,9 +50,9 @@ msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the 
 msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
 
 # If get error and theory is undefined, point out the error
-test_or(test_error(msg_err), test_object("theory", eval = FALSE))
+ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
-test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
+check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
 success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
@@ -119,9 +119,9 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-test_object("factor_sex_vector",
-            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+
 success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
 ```
 
@@ -182,12 +182,20 @@ factor_temperature_vector
 `@sct`
 ```{r}
 msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
-test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_animals_vector", incorrect_msg = msg)
-test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("factor_temperature_vector", incorrect_msg = msg)
+
+ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("temperature_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("factor_animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_output_expr("factor_animals_vector", missing_msg = msg)
+
+ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
+
+
 success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
 ```
 
@@ -261,15 +269,14 @@ factor_survey_vector
 msg = "Do not change the definition of `survey_vector`!"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
-test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
+ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
 
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
 
 
 success_msg("Wonderful! Proceed to the next exercise.")
@@ -338,11 +345,17 @@ summary(factor_survey_vector)
 `@sct`
 ```{r}
 msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+
+ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
+
 msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
-test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
-test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
+
+ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
+
+ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
+
 success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
 ```
 
@@ -407,11 +420,18 @@ male > female
 `@sct`
 ```{r}
 msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("male", undefined_msg = msg, incorrect_msg = msg)
-test_object("female", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("male > female", incorrect_msg = msg)
+
+ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("factor_survey_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+
+ex() %>% check_object("male", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_output_expr("male > female", missing_msg = msg)
+
+
 success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
 ```
 
@@ -465,8 +485,8 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-test_object("speed_vector",
-            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+
 success_msg("A job well done! Continue to the next exercise.")
 ```
 
@@ -531,13 +551,19 @@ summary(factor_speed_vector)
 `@sct`
 ```{r}
 msg = "Do not change anything about the command that specifies the `speed_vector` variable."
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", args = c("x", "ordered", "levels"),
-              incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
-                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
-                                "Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`."))
-test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+
+ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_function("factor") %>% {
+	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	}
+
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+
+                      
+                      
 success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
 ```
 
@@ -605,13 +631,18 @@ da2 > da5
 `@sct`
 ```{r}
 msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+
 
 msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second", "2"))
-test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
-test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
 
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
+
+ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+
+
+success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 ```

@@ -51,10 +51,14 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 
 `@sct`
 ```{r}
-test_function("matrix", c("data", "byrow", "nrow"),
-              incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+ex() %>% check_function("matrix") %>% {
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	}
+
+ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+
 success_msg("Great! Continue to the next exercise.")
 ```
 
@@ -119,17 +123,23 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 `@sct`
 ```{r}
 msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
-test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
-test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
-test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+ex() %>% check_object("new_hope", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-test_function("matrix", c("data", "nrow", "byrow"),
-              incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+ex() %>% check_object("empire_strikes", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-test_object("star_wars_matrix",
-            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+ex() %>% check_object("return_jedi", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+
+ex() %>% check_function("matrix") %>% {
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	}
+
+ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+
 
 success_msg("The force is actually with you! Continue to the next exercise.")
 ```
@@ -219,17 +229,26 @@ star_wars_matrix
 `@sct`
 ```{r}
 msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
-test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
-test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
-test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
+
+ex()  %>% check_object("new_hope", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
+
+ex()  %>% check_object("empire_strikes", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
+
+ex()  %>% check_object("return_jedi", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
+
 msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
-test_object("star_wars_matrix", incorrect_msg = msg)
+
+ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
+
 msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
-test_object("region", undefined_msg = msg, incorrect_msg = msg)
-test_object("titles", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix", eq_condition = "equal",
-            incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
-test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+
+ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
+ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
+
+ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
+
+ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+
 success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
 ```
 
@@ -292,9 +311,13 @@ worldwide_vector <- rowSums(star_wars_matrix)
 `@sct`
 ```{r}
 msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
-test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+
+ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+
 success_msg("Well done! Continue to the next exercise.")
 ```
 
@@ -361,13 +384,17 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 `@sct`
 ```{r}
 msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
-test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector",
-            incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
+
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+
 
 msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
-test_object("all_wars_matrix", incorrect_msg = msg)
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
+
+
 success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
 ```
 
@@ -445,9 +472,12 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 `@sct`
 ```{r}
 msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
-test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
+
+ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
+
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+
 
 success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
 ```
@@ -503,11 +533,14 @@ total_revenue_vector
 `@sct`
 ```{r}
 msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
-test_object("all_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_function("colSums", "x", incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
-test_object("total_revenue_vector",
-            incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
-test_output_contains("total_revenue_vector", incorrect_msg = "Don't forget to print out `total_revenue_vector`!")
+ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+
+ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+
+ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+
+ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Don't forget to print out `total_revenue_vector`!")
+
 success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
 ```
 
@@ -587,16 +620,17 @@ mean(non_us_some)
 `@sct`
 ```{r}
 msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
-test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("non_us_all",
-            incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
-test_output_contains("mean(non_us_all)",
-                     incorrect_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
-test_object("non_us_some",
-            incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
-test_output_contains("mean(non_us_some)",
-                     incorrect_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+
+ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+
 success_msg("Nice one! Continue to the next exercise.")
 ```
 
@@ -656,11 +690,14 @@ visitors
 `@sct`
 ```{r}
 msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
-test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("visitors",
-            incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
-test_output_contains("visitors", incorrect_msg = "Don't forget to also print out `visitors` so you can have a look.")
+ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+
+ex() %>% check_output_expr("visitors", missing_msg = "Don't forget to also print out `visitors` so you can have a look.")
+
+
 success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
 ```
 
@@ -733,14 +770,16 @@ mean(us_visitors)
 `@sct`
 ```{r}
 msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
-test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Do not change the contents of `ticket_prices_matrix`; this matrix has already been created for you in the workspace."
-test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
+ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-test_object("visitors",
-            incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
-test_object("us_visitors", incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
-test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
+
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+
+ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+
 
 success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
 ```
