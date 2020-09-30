@@ -661,7 +661,7 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Submit answer when you are ready to continue.
+Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Submit the answer when you are ready to continue.
 
 `@hint`
 Just play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console!

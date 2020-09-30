@@ -181,7 +181,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
+msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -419,7 +419,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
+msg = "Do not change anything about the code; simply submit the answer and look at the result."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
