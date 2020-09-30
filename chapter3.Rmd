@@ -288,9 +288,13 @@ Calculate the worldwide box office figures for the three movies and put these in
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+titles <- list(c("A New Hope", 
+                 "The Empire Strikes Back", 
+                 "Return of the Jedi")
+               
+star_wars_matrix <- matrix(box_office, 
+                      nrow = 3, byrow = TRUE,
+                      dimnames = list(titles, region))
 
 # Calculate worldwide box office figures
 worldwide_vector <- 
@@ -300,9 +304,14 @@ worldwide_vector <-
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+region <- c("US", "non-US")
+titles <- c("A New Hope", 
+            "The Empire Strikes Back", 
+            "Return of the Jedi")
+               
+star_wars_matrix <- matrix(box_office, 
+                      nrow = 3, byrow = TRUE,
+                      dimnames = list(titles, region))
 
 # Calculate worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -355,9 +364,14 @@ In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix`
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+region <- c("US", "non-US")
+titles <- c("A New Hope", 
+            "The Empire Strikes Back", 
+            "Return of the Jedi")
+               
+star_wars_matrix <- matrix(box_office, 
+                      nrow = 3, byrow = TRUE,
+                      dimnames = list(titles, region))
 
 # The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -370,9 +384,14 @@ all_wars_matrix <-
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+region <- c("US", "non-US")
+titles <- c("A New Hope", 
+            "The Empire Strikes Back", 
+            "Return of the Jedi")
+               
+star_wars_matrix <- matrix(box_office, 
+                      nrow = 3, byrow = TRUE,
+                      dimnames = list(titles, region))
 
 # The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -416,7 +435,7 @@ Your R workspace, where all variables you defined 'live' ([check out what a work
 - `star_wars_matrix` that we have used all along, with data on the original trilogy,
 - `star_wars_matrix2`, with similar data for the prequels trilogy. 
 
-Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+Explore these matrices in the console if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
 
 `@instructions`
 Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
