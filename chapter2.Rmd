@@ -150,7 +150,7 @@ For `roulette_vector`:
 You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 `@instructions`
-Assign the winnings/losses for roulette to the variable `roulette_vector`.
+Assign the winnings/losses for roulette to the variable `roulette_vector`. You won $140, then lost $50, won $20, lost $120, and won $240.
 
 `@hint`
 To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
@@ -217,7 +217,7 @@ This code first creates a vector `some_vector` and then gives the two elements a
 ```
 
 `@instructions`
-- The code on the right names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- The code in the editor names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
 
 `@hint`
 You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
@@ -995,7 +995,7 @@ The (logical) comparison operators known to R are:
 As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example:
 
 ```
-> c(4, 5, 6) > 5
+c(4, 5, 6) > 5
 [1] FALSE FALSE TRUE
 ```
 

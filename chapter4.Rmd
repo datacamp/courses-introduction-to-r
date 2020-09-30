@@ -22,7 +22,7 @@ It is important that R knows whether it is dealing with a continuous or a catego
 A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
 
 `@instructions`
-Assign to variable `theory` the value `"factors for categorical variables"`.
+Assign to variable `theory` the value `"factors"`.
 
 `@hint`
 Simply assign a variable (`<-`); make sure to capitalize correctly.
@@ -40,13 +40,13 @@ Simply assign a variable (`<-`); make sure to capitalize correctly.
 `@solution`
 ```{r}
 # Assign to the variable theory what this chapter is about!
-theory <- "factors for categorical variables"
+theory <- "factors"
 ```
 
 `@sct`
 ```{r}
 msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
+msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
 msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
 
 # If get error and theory is undefined, point out the error
@@ -143,10 +143,10 @@ A nominal variable is a categorical variable without an implied order. This mean
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
 
 `@instructions`
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
 
 `@hint`
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
 
 `@pre_exercise_code`
 ```{r}
@@ -373,10 +373,10 @@ skills: 1
 You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
 
 `@instructions`
-Read the code in the editor and click 'Submit Answer' to test if `male` is greater than (`>`) `female`.
+Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
 
 `@hint`
-Just click 'Submit Answer' and have a look at output that gets printed to the console.
+Just submit the answer and have a look at output that gets printed to the console.
 
 `@pre_exercise_code`
 ```{r}

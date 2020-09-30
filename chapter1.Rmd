@@ -82,12 +82,12 @@ The last two might need some explaining:
 - The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
 - The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
 
-With this knowledge, follow the instructions below to complete the exercise.
+With this knowledge, follow the instructions to complete the exercise.
 
 `@instructions`
 - Type `2^5` in the editor to calculate 2 to the power 5.
 - Type `28 %% 6` to calculate 28 modulo 6.
-- Click 'Submit Answer' and have a look at the R output in the console.
+- Submit the answer and have a look at the R output in the console.
 - Note how the `#` symbol is used to add comments on the R code.
 
 `@hint`
@@ -171,7 +171,7 @@ my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
+Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
 
 `@hint`
 Look at how the value 4 was assigned to `my_variable` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
@@ -222,7 +222,7 @@ Suppose you have a fruit basket with five apples. As a data analyst in training,
 `@instructions`
 - Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
 - Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
 
 `@hint`
 Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
@@ -415,11 +415,11 @@ skills: 1
 R works with numerous data types. Some of the most basic types to get started are:
 
 - Decimal values like `4.5` are called **numerics**.
-- Natural numbers like `4` are called **integers**. Integers are also numerics.
+- Whole numbers like `4` are called **integers**. Integers are also numerics.
 - Boolean values (`TRUE` or `FALSE`) are called **logical**.
 - Text (or string) values are called **characters**.
 
-Note how the quotation marks on the right indicate that "some text" is a character.
+Note how the quotation marks in the editor indicate that `"some text"` is a string.
 
 `@instructions`
 Change the value of the:
@@ -485,7 +485,7 @@ xp: 100
 skills: 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
+Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
 
 `@instructions`
 Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.

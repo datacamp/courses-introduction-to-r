@@ -27,10 +27,10 @@ The output, namely the respondents' answers to the questions formulated above, i
 A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
 
 `@instructions`
-Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
+Submit the answer. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
 
 `@hint`
-Just click 'Submit Answer' and witness the magic!
+Just submit the answer and witness the magic!
 
 `@pre_exercise_code`
 ```{r}
@@ -177,7 +177,7 @@ As a first goal, you want to construct a data frame that describes the main char
 - The planet's rotation across the sun relative to that of the Earth.
 - If the planet has rings or not (TRUE or FALSE).
 
-After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.
+After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
 
 You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
@@ -199,11 +199,18 @@ Can you finish it?
 `@sample_code`
 ```{r}
 # Definition of vectors
-name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
-          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+name <- c("Mercury", "Venus", "Earth", 
+          "Mars", "Jupiter", "Saturn", 
+          "Uranus", "Neptune")
+type <- c("Terrestrial planet", 
+          "Terrestrial planet", 
+          "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", 
+          "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 
+              11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -214,11 +221,18 @@ planets_df <-
 `@solution`
 ```{r}
 # Definition of vectors
-name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
-          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
-diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
-rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+name <- c("Mercury", "Venus", "Earth", 
+          "Mars", "Jupiter", "Saturn", 
+          "Uranus", "Neptune")
+type <- c("Terrestrial planet", 
+          "Terrestrial planet", 
+          "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", 
+          "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 
+              11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03,
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -506,7 +520,7 @@ If you type `rings_vector` in the console, you get:
 This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
 
 `@instructions`
-The code on the right selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
 
 `@hint`
 Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
@@ -632,8 +646,8 @@ In data analysis you can sort your data according to a certain variable in the d
 [`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
 
 ```
-> a <- c(100, 10, 1000)
-> order(a)
+a <- c(100, 10, 1000)
+order(a)
 [1] 2 1 3
 ```
 
@@ -642,12 +656,12 @@ In data analysis you can sort your data according to a certain variable in the d
 This means we can use the output of `order(a)` to reshuffle `a`:
     
 ```
-> a[order(a)]
+a[order(a)]
 [1]   10  100 1000
 ```
 
 `@instructions`
-Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Click 'Submit Answer' when you are ready to continue.
+Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Submit answer when you are ready to continue.
 
 `@hint`
 Just play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console!
