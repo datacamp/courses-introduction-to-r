@@ -288,7 +288,8 @@ Calculate the worldwide box office figures for the three movies and put these in
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-titles <- list(c("A New Hope", 
+region <- c("US", "non-US")
+titles <- c("A New Hope", 
                  "The Empire Strikes Back", 
                  "Return of the Jedi")
                
