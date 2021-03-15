@@ -1,7 +1,11 @@
 ---
-title_meta: 'Chapter 2'
+title_meta: Chapter 2
 title: Vectors
-description: 'We take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R. After completing this chapter, you will be able to create vectors in R, name them, select elements from them, and compare different vectors.'
+description: >-
+  We take you on a trip to Vegas, where you will learn how to analyze your
+  gambling results using vectors in R. After completing this chapter, you will
+  be able to create vectors in R, name them, select elements from them, and
+  compare different vectors.
 ---
 
 ## Create a vector
@@ -10,7 +14,8 @@ description: 'We take you on a trip to Vegas, where you will learn how to analyz
 type: NormalExercise
 key: d9b453dbdd
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
@@ -58,7 +63,8 @@ success_msg("Great! Head over to the next exercise.")
 type: NormalExercise
 key: fd427db76f
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Let us focus first! 
@@ -124,7 +130,8 @@ success_msg("Perfect! Notice that adding a space behind the commas in the `c()` 
 type: NormalExercise
 key: 9f41229dbc
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
@@ -195,7 +202,8 @@ success_msg("Very good! To check out the contents of your vectors, remember that
 type: NormalExercise
 key: 3b0b80b192
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. 
@@ -279,7 +287,8 @@ success_msg("Well done! Continue to the next exercise.")
 type: NormalExercise
 key: 6858c65a4a
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
@@ -358,7 +367,8 @@ success_msg("Nice one! A word of advice: try to avoid code duplication at all ti
 type: NormalExercise
 key: da995f099f
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
@@ -445,7 +455,8 @@ success_msg("Good job! Continue to the next exercise.")
 type: NormalExercise
 key: 2969d8ed65
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now you understand how R does arithmetic with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
@@ -512,7 +523,8 @@ success_msg("Great! Continue to the next exercise.")
 type: NormalExercise
 key: e66a56b9f0
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
@@ -608,7 +620,8 @@ success_msg("Well done. This is pretty bad news...")
 type: NormalExercise
 key: f532f5332d
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
@@ -687,7 +700,8 @@ success_msg("Good job! Continue to the next exercise.")
 type: NormalExercise
 key: 8d78be44e9
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
@@ -754,9 +768,10 @@ success_msg("Great! R also makes it possible to select multiple elements from a 
 
 ```yaml
 type: NormalExercise
-key: 1351521670
+key: '1351521670'
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 How about analyzing your midweek results? 
@@ -826,7 +841,8 @@ success_msg("Well done! Continue to the next exercise to specialize in vector se
 type: NormalExercise
 key: 27976b79f4
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
@@ -892,7 +908,8 @@ success_msg("Awesome! The colon operator is extremely useful and very often used
 type: NormalExercise
 key: e6c263ddee
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
@@ -978,7 +995,8 @@ success_msg("Good job! Apart from subsetting vectors by index or by name, you ca
 type: NormalExercise
 key: f0f619c901
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 By making use of comparison operators, we can approach the previous question in a more proactive way. 
@@ -1069,7 +1087,8 @@ success_msg("Great!")
 type: NormalExercise
 key: 2754fc5cd4
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
@@ -1151,7 +1170,8 @@ success_msg("Good job! Continue to the next exercise.")
 type: NormalExercise
 key: 59e8dcbbd5
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
