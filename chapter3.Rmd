@@ -1,7 +1,12 @@
 ---
-title_meta: 'Chapter 3'
+title_meta: Chapter 3
 title: Matrices
-description: 'In this chapter, you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices and understand how to do basic computations with them. You will analyze the box office numbers of the Star Wars movies and learn how to use matrices in R. May the force be with you!'
+description: >-
+  In this chapter, you will learn how to work with matrices in R. By the end of
+  the chapter, you will be able to create matrices and understand how to do
+  basic computations with them. You will analyze the box office numbers of the
+  Star Wars movies and learn how to use matrices in R. May the force be with
+  you!
 ---
 
 ## What's a matrix?
@@ -10,7 +15,8 @@ description: 'In this chapter, you will learn how to work with matrices in R. By
 type: NormalExercise
 key: d61aeba84c
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
@@ -70,7 +76,8 @@ success_msg("Great! Continue to the next exercise.")
 type: NormalExercise
 key: effc2fb945
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
@@ -152,7 +159,8 @@ success_msg("The force is actually with you! Continue to the next exercise.")
 type: NormalExercise
 key: f734e8bf74
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
@@ -260,7 +268,8 @@ success_msg("Great! You're on the way of becoming an R jedi! Continue to the nex
 type: NormalExercise
 key: 3fd7499a12
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
@@ -339,7 +348,8 @@ success_msg("Well done! Continue to the next exercise.")
 type: NormalExercise
 key: 86b87a8545
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
@@ -426,7 +436,8 @@ success_msg("Nice job! After adding column to a matrix, the logical next step is
 type: NormalExercise
 key: bcadb29139
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Just like every action has a reaction, every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has an [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (We admit, we are pretty bad with metaphors.) 
@@ -510,7 +521,8 @@ success_msg("Wonderful! Continue with the next exercise and see how you can comb
 type: NormalExercise
 key: 1bfe5ae096
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Just like [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has  [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
@@ -572,7 +584,8 @@ success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetti
 type: NormalExercise
 key: 41d9d69713
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns. For example: 
@@ -662,7 +675,8 @@ success_msg("Nice one! Continue to the next exercise.")
 type: NormalExercise
 key: c81c656f06
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
@@ -729,7 +743,8 @@ success_msg("Great! What do these results tell you? A staggering 92 million peop
 type: NormalExercise
 key: 1e0b39d6e9
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
