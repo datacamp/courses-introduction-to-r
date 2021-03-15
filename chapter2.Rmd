@@ -157,7 +157,7 @@ For `roulette_vector`:
 You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
 
 `@instructions`
-Assign the winnings/losses for roulette to the variable `roulette_vector`. You won $140, then lost $50, won $20, lost $120, and won $240.
+Assign the winnings/losses for roulette to the variable `roulette_vector`. You lost $24, then lost $50, won $100, lost $350, and won $10.
 
 `@hint`
 To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
