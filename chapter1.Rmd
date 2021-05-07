@@ -1,7 +1,10 @@
 ---
-title_meta: 'Chapter 1'
-title: 'Intro to basics'
-description: 'Take your first steps with R. In this chapter, you will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let''s get started.'
+title_meta: Chapter 1
+title: Intro to basics
+description: >-
+  Take your first steps with R. In this chapter, you will learn how to use the
+  console as a calculator and how to assign variables. You will also get to know
+  the basic data types in R. Let's get started.
 free_preview: true
 ---
 
@@ -11,7 +14,8 @@ free_preview: true
 type: NormalExercise
 key: 15d729634a
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You will use the **Code** tab at the top of your screen to type R code to solve the exercises. When you hit the **Submit** button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the **Shell** tab.
@@ -65,7 +69,8 @@ success_msg("Awesome! See how the **Shell** shows the result of the R code you s
 type: NormalExercise
 key: 720745eda5
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
@@ -157,7 +162,8 @@ success_msg("Great! Head over to the next exercise.")
 type: NormalExercise
 key: 5f200ffd43
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 A basic concept in (statistical) programming is called a **variable**. 
@@ -214,7 +220,8 @@ success_msg("Good job! Have you noticed that R does not print the value of a var
 type: NormalExercise
 key: c5944b90eb
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
@@ -267,7 +274,8 @@ success_msg("Great! Continue to the next exercise!")
 type: NormalExercise
 key: 1c1bd25045
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
@@ -337,7 +345,8 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 type: NormalExercise
 key: 915fcc7c99
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
@@ -409,7 +418,8 @@ success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 type: NormalExercise
 key: 0f23107394
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 R works with numerous data types. Some of the most basic types to get started are:
@@ -482,7 +492,8 @@ success_msg("Great work! Continue to the next exercise.")
 type: NormalExercise
 key: 99b549229d
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.

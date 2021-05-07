@@ -1,7 +1,11 @@
 ---
-title_meta: 'Chapter 5'
-title: 'Data frames'
-description: 'Most datasets you will be working with will be stored as data frames. By the end of this chapter, you will be able to create a data frame, select interesting parts of a data frame, and order a data frame according to certain variables.'
+title_meta: Chapter 5
+title: Data frames
+description: >-
+  Most datasets you will be working with will be stored as data frames. By the
+  end of this chapter, you will be able to create a data frame, select
+  interesting parts of a data frame, and order a data frame according to certain
+  variables.
 ---
 
 ## What's a data frame?
@@ -10,7 +14,8 @@ description: 'Most datasets you will be working with will be stored as data fram
 type: NormalExercise
 key: 7f95849020a2563168920409022ce7bed20835b5
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
@@ -64,7 +69,8 @@ success_msg("Great! Continue to the next exercise.")
 type: NormalExercise
 key: 3d0e64ecf5f69521ee538ecc713caa02b8b0ec46
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Wow, that is a lot of cars! 
@@ -115,7 +121,8 @@ success_msg("Wonderful! So, what do we have in this data set? For example, `hp` 
 type: NormalExercise
 key: f4d5b1a2c4aef31645fc7e3505e699fb6e48f3e6
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
@@ -165,7 +172,8 @@ success_msg("Nice work! Can you find all the information that is listed in the e
 type: NormalExercise
 key: df0b89706d90526b3c0bbe15e400b74cbd900704
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. Put your jet pack on because it is time for some space exploration! 
@@ -266,7 +274,8 @@ success_msg("Great job! Continue to the next exercise. The logical next step, as
 type: NormalExercise
 key: c13ea421dd078030a225f49e53a8927ce8fefbe0
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
@@ -311,7 +320,8 @@ success_msg("Awesome! Now that you have a clear understanding of the `planets_df
 type: NormalExercise
 key: 8c664726b8a173cda730cbb20a52ac1795d9a0e9
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
@@ -375,7 +385,8 @@ success_msg("Great! Apart from selecting elements from your data frame by index,
 type: NormalExercise
 key: faf104fb0c605fd89f048648a4a588200bc89c76
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
@@ -437,7 +448,8 @@ success_msg("Nice! Continue to the next exercise!")
 type: NormalExercise
 key: e550ecb6ec45b856e6160ddfbb3d7875998e8365
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
@@ -506,7 +518,8 @@ success_msg("Great! Continue to the next exercise and discover yet another way o
 type: NormalExercise
 key: 1581bf4667477f274188f4f637ec7fdc73659651
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
@@ -567,7 +580,8 @@ success_msg("Wonderful! This is a rather tedious solution. The next exercise wil
 type: NormalExercise
 key: a4a8b72a74097196eb2f8a28b056987aae834565
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
@@ -636,7 +650,8 @@ success_msg("Great! Not only is the `subset()` function more concise, it is prob
 type: NormalExercise
 key: 6a6fe74d3917c37380f7ac616ce084aa7814fb8a
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
@@ -694,7 +709,8 @@ success_msg("Great! Now let's use the `order()` function to sort your data frame
 type: NormalExercise
 key: fa88b58bf2cf62e0c181dfdcbdd2e1ddeac66807
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
