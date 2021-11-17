@@ -34,7 +34,6 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 `@pre_exercise_code`
 ```{r}
 # no pec
-
 ```
 
 `@sample_code`
