@@ -149,6 +149,7 @@ Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) fu
 `@sample_code`
 ```{r}
 # Investigate the structure of mtcars
+
 ```
 
 `@solution`
