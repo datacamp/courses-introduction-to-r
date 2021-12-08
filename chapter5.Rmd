@@ -35,7 +35,7 @@ A data frame has the variables of a dataset as columns and the observations as r
 Submit the answer. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
 
 `@hint`
-Just submit the answer and witness the magic!
+Submit the answer and witness the magic!
 
 `@pre_exercise_code`
 ```{r}
@@ -162,7 +162,7 @@ str(mtcars)
 ```{r}
 ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
 
-success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset? Continue to the next exercise.")
 ```
 
 ---
@@ -264,7 +264,7 @@ ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_ms
 ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
 
 
-success_msg("Great job! Continue to the next exercise. The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
 ```
 
 ---
