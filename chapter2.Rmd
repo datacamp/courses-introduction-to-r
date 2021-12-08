@@ -654,7 +654,7 @@ names(roulette_vector) <- days_vector
 total_poker <-
 total_roulette <-
 
-# Check if you realized higher total gains in poker than in roulette 
+# Check if you realized higher total gains in poker than in roulette
 
 ```
 
