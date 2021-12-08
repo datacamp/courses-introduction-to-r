@@ -162,7 +162,7 @@ str(mtcars)
 ```{r}
 ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset? Continue to the next exercise.")
+success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
 ```
 
 ---
