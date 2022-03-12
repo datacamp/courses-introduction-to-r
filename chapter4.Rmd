@@ -276,7 +276,7 @@ factor_survey_vector
 `@sct`
 ```{r}
 msg = "Do not change the definition of `survey_vector`!"
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
+ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
