@@ -276,7 +276,7 @@ factor_survey_vector
 `@sct`
 ```{r}
 msg = "Do not change the definition of `survey_vector`!"
-test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
+ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 msg = "Do not change or remove the code to create the factor vector."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
@@ -553,7 +553,7 @@ summary(factor_speed_vector)
 # Create speed_vector
 speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
-# Add your code below
+# Convert speed_vector to ordered factor vector
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
 
 # Print factor_speed_vector

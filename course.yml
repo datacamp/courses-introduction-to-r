@@ -10,6 +10,6 @@ description: >-
   year, the number of R users grows by about 40%, and an increasing number of
   organizations are using it in their day-to-day activities. Begin your journey
   to learn R with us today!
-from: 'r-base-prod:v1.0.0'
+from: 'r-base-prod:v2.0.1'
 runtime_config: minimal
 practice_pool_id: 106
