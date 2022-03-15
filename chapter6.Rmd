@@ -335,7 +335,7 @@ ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks 
 
 ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
+success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
 ```
 
 ---
