@@ -2,14 +2,13 @@ id: 58
 title: Introduction to R
 programming_language: r
 description: >-
-  In  Introduction to R, you will master the basics of this widely used open
-  source language, including factors, lists, and data frames. With the knowledge
-  gained in this course, you will be ready to undertake your first very own data
-  analysis. Oracle estimated over 2 million R users worldwide in 2012, cementing
-  R as a leading programming language in statistics and data science. Every
-  year, the number of R users grows by about 40%, and an increasing number of
-  organizations are using it in their day-to-day activities. Begin your journey
-  to learn R with us today!
+  In this introduction to R course, you'll master the basics of this widely used
+  open source language&mdash;including vectors, factors, lists, and data frames.
+  With the coding skills you'll gain in this course, you'll be ready to
+  undertake your own data analysis in R. There are millions of R users
+  worldwide, cementing it as a leading programming language in statistics and
+  data science. More and more organizations are using R, so begin your coding
+  journey in one of DataCamp's most popular courses today!
 from: 'r-base-prod:v2.0.1'
 runtime_config: minimal
 practice_pool_id: 106
