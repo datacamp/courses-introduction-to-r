@@ -6,6 +6,11 @@ description: >-
   console as a calculator and how to assign variables. You will also get to know
   the basic data types in R. Let's get started.
 free_preview: true
+lessons:
+  - nb_of_exercises: 5
+    title: Variables
+  - nb_of_exercises: 3
+    title: Types
 ---
 
 ## How it works

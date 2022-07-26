@@ -7,6 +7,13 @@ description: >-
   perhaps a few more options for people who color their hair. In R, categorical
   data is stored in factors. Factors are very important in data analysis, so
   start learning how to create, subset, and compare them now.
+lessons:
+  - nb_of_exercises: 3
+    title: Factors
+  - nb_of_exercises: 3
+    title: Working with factors
+  - nb_of_exercises: 3
+    title: Ordered factors
 ---
 
 ## What's a factor and why would you use it?

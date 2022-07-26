@@ -6,6 +6,13 @@ description: >-
   end of this chapter, you will be able to create a data frame, select
   interesting parts of a data frame, and order a data frame according to certain
   variables.
+lessons:
+  - nb_of_exercises: 5
+    title: Data frames
+  - nb_of_exercises: 5
+    title: Subsetting data frames
+  - nb_of_exercises: 2
+    title: Sorting data frames
 ---
 
 ## What's a data frame?

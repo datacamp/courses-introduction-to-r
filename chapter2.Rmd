@@ -6,6 +6,15 @@ description: >-
   gambling results using vectors in R. After completing this chapter, you will
   be able to create vectors in R, name them, select elements from them, and
   compare different vectors.
+lessons:
+  - nb_of_exercises: 5
+    title: Vectors
+  - nb_of_exercises: 4
+    title: Manipulating vectors
+  - nb_of_exercises: 4
+    title: Vector selection
+  - nb_of_exercises: 3
+    title: Advanced selection
 ---
 
 ## Create a vector

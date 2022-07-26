@@ -7,6 +7,13 @@ description: >-
   basic computations with them. You will analyze the box office numbers of the
   Star Wars movies and learn how to use matrices in R. May the force be with
   you!
+lessons:
+  - nb_of_exercises: 3
+    title: Matrices
+  - nb_of_exercises: 4
+    title: Manipulating matrices
+  - nb_of_exercises: 3
+    title: Arithmetic with matrices
 ---
 
 ## What's a matrix?
