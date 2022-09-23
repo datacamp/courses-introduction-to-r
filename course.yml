@@ -2,8 +2,6 @@ id: 58
 title: Introduction to R
 programming_language: r
 description: >-
-  <h2>Learn R Programming</h2>
-
   R is the most popular programming language in the data industry thanks to its
   use of vectors and its variety of pre-processed packages. It’s in high demand
   for Data Scientists, Analysts, and Statisticians alike and is capable of
@@ -17,8 +15,6 @@ description: >-
 
   <br><br>
 
-  <h2>Gain an Introduction to R</h2>
-
   You’ll get started with basic operations, like using the console as a
   calculator and understanding basic data types in R. Once you’ve had a chance
   to practice, you’ll move on to creating vectors and try out your new R skills
@@ -28,18 +24,17 @@ description: >-
 
   Next, you’ll learn how to work with matrices in R, learning how to create
   them, and perform calculations with them. You’ll also examine how R uses
-  factors to store categorical data. Finally,  you’ll explore how to work with R
+  factors to store categorical data. Finally, you’ll explore how to work with R
   data frames and lists.
 
   <br><br>
 
-  <h2>Master the R Basics for Data Analysis</h2>
-
   By the time you’ve completed our Introduction to R course, you’ll be able to
-  use R for your own data analysis. These sought-after skills can help you
-  progress in your career and set you up for further learning. This course is
-  part of several tracks, including Data Analyst with R, Data Scientist with R,
-  and R Programming, all of which can help you develop your knowledge.
+  use the R basics for your own data analysis. These sought-after skills can
+  help you progress in your career and set you up for further learning. This
+  course is part of several tracks, including Data Analyst with R, Data
+  Scientist with R, and R Programming, all of which can help you develop your
+  knowledge.
 from: 'r-base-prod:v2.0.1'
 runtime_config: minimal
 practice_pool_id: 106
