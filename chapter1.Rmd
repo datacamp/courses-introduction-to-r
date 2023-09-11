@@ -113,7 +113,7 @@ Otro ejemplo del operador módulo: `9 %% 2` es igual a `1`.
 # Una multiplicación
 3 * 5
 
- \# Una división
+# Una división
 (5 + 5) / 2 
 
 # Exponenciación
@@ -134,7 +134,7 @@ Otro ejemplo del operador módulo: `9 %% 2` es igual a `1`.
 # Una multiplicación
 3 * 5
 
- \# Una división
+# Una división
 (5 + 5) / 2 
 
 # Exponenciación
@@ -147,7 +147,7 @@ Otro ejemplo del operador módulo: `9 %% 2` es igual a `1`.
 `@sct`
 ```{r}
 msg = "¡No elimines los otros ejemplos aritméticos!"
-ex() %>% check_output_expr("2^5", missing_msg = "El ejemplo de exponenciación no es correcto. Escribe `2 ^ 5` en una línea nueva.").
+ex() %>% check_output_expr("2^5", missing_msg = "El ejemplo de exponenciación no es correcto. Escribe `2 ^ 5` en una línea nueva.")
 
 ex() %>% check_output_expr("28 %% 6",missing_msg = "Parece que hay un problema con el ejemplo del módulo. Escribe `28 %% 6` en una línea nueva.")
 success_msg("¡Genial! Dirígete al siguiente ejercicio.")
@@ -333,7 +333,7 @@ ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Mantener la
 ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Asegúrate de imprimir el resultado de agregar `my_apples` y `my_oranges`. ¡El ejemplo de código en la descripción ya revela la respuesta a esta instrucción!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-success_msg("¡Muy bien! La gran ventaja de hacer cálculos con variables es la reutilización. Si simplemente cambias `my_apples` para que sea igual a 12 en lugar de 5 y vuelves a ejecutar el script, `my_fruit` también se actualizará automáticamente. Continúa con el siguiente ejercicio").
+success_msg("¡Muy bien! La gran ventaja de hacer cálculos con variables es la reutilización. Si simplemente cambias `my_apples` para que sea igual a 12 en lugar de 5 y vuelves a ejecutar el script, `my_fruit` también se actualizará automáticamente. Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -402,11 +402,11 @@ ex() %>% check_object("my_fruit")%>% check_or(
   check_code(."my_fruit\\s\*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F),
   check_code(."my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s\*my_apples", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "No elimines la línea que imprime `my_fruit`").
+ex() %>% check_output_expr("my_fruit", missing_msg = "No elimines la línea que imprime `my_fruit`.")
 
 
 
-success_msg("Excelente, sigue así! Continúa con el siguiente ejercicio").
+success_msg("Excelente, sigue así! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -480,7 +480,7 @@ ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "¿Has cam
 
 ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "¿Ha cambiado correctamente `my_logical` a `FALSE`? ¡Todas las letras de `FALSE` deben estar en mayúscula!")
 
-success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio").
+success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio.")
 ```
 
 ---

@@ -569,7 +569,7 @@ ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "�
 
 ex() %>% check_output_expr("total_revenue_vector", missing_msg = "¡No olvides imprimir `total_revenue_vector`!")
 
-success_msg("¡Bellissimo! Dirígete al siguiente ejercicio para aprender a crear subconjuntos matriciales").
+success_msg("¡Bellissimo! Dirígete al siguiente ejercicio para aprender a crear subconjuntos matriciales.")
 ```
 
 ---
@@ -654,11 +654,11 @@ ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "¿Asignaste a `non_us_all` toda la segunda columna de `all_wars_matrix`? ¡Puedes usar `[, 2]` para hacer esto!")
 
-ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "¿Has calculado el promedio de los valores de `non_us_all` llamando a `mean(non_us_all)`? Simplemente imprime el resultado").
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "¿Has calculado el promedio de los valores de `non_us_all` llamando a `mean(non_us_all)`? Simplemente imprime el resultado.")
 
 ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "¿Asignaste a `non_us_some` los ingresos no estadounidenses de las dos primeras películas? ¡Puedes usar `[1:2,2]` para hacer esto!")
 
-ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "¿Has calculado el promedio de los valores de ` llamando a `mean(non_us_some)`? Simplemente imprime el resultado").
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "¿Has calculado el promedio de los valores de ` llamando a `mean(non_us_some)`? Simplemente imprime el resultado.")
 
 success_msg("¡Bien! Continúa con el siguiente ejercicio.")
 ```
@@ -725,7 +725,7 @@ ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Parece que `visitors` no es correcto. Simplemente divide `all_wars_matrix` entre 5 y guarda la matriz resultante como `visitors`.")
 
-ex() %>% check_output_expr("visitors", missing_msg = "No olvides imprimir `visitors` para que puedas echarle un vistazo").
+ex() %>% check_output_expr("visitors", missing_msg = "No olvides imprimir `visitors` para que puedas echarle un vistazo.")
 
 
 success_msg("¡Buen trabajo! ¿Qué te dicen estos resultados? ¡La asombrosa cifra de 92 millones de personas fueron a ver A New Hope en los cines estadounidenses! Continúa con el siguiente ejercicio.")
@@ -805,12 +805,12 @@ ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "¿Has creado correctamente la matriz `visitors`? Debes dividir `all_wars_matrix` por `ticket_prices_matrix` para llegar hasta allí").
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "¿Has creado correctamente la matriz `visitors`? Debes dividir `all_wars_matrix` por `ticket_prices_matrix` para llegar hasta allí.")
 
 ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "Para crear `us_visitors`, debes seleccionar correctamente toda la primera columna de `visitors`. ¡Puedes usar `[,1]` para esto!")
 
-ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Una vez que hayas creado `us_visitors`, puedes usar `mean()` para calcular el número promedio de visitantes en EE. UU. Asegúrate de imprimir el resultado").
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Una vez que hayas creado `us_visitors`, puedes usar `mean()` para calcular el número promedio de visitantes en EE. UU. Asegúrate de imprimir el resultado.")
 
 
-success_msg("Es un hecho: ¡la fuerza de R está contigo! Este ejercicio concluye el capítulo sobre matrices. Próxima parada en tu viaje por el lenguaje R: los factores").
+success_msg("Es un hecho: ¡la fuerza de R está contigo! Este ejercicio concluye el capítulo sobre matrices. Próxima parada en tu viaje por el lenguaje R: los factores.")
 ```

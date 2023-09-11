@@ -284,7 +284,7 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("¿Asignaste los niveles de factores correctos a `factor_survey_vector`? Usa `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. ¡Recuerda que R distingue entre mayúsculas y minúsculas!"))
 
 
-success_msg("¡Maravilloso! Continúa con el siguiente ejercicio").
+success_msg("¡Maravilloso! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -495,7 +495,7 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 ```{r}
 ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` debe ser un vector con 5 entradas, una para la calificación de su velocidad por parte de cada analista. No utilices mayúsculas; ¡R distingue entre mayúsculas y minúsculas!")
 
-success_msg ("¡Un trabajo bien hecho! Continúa con el siguiente ejercicio").
+success_msg ("¡Un trabajo bien hecho! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -573,7 +573,7 @@ ex () %>% check_object ("factor_speed_vector") %>% check_equal (eq_condition = "
 
                       
                       
-success_msg = "¡Buen trabajo! Echa un vistazo a la consola. Ahora se indica que los niveles tienen un orden asociado, con el signo `<`. Continúa con el siguiente ejercicio").
+success_msg = "¡Buen trabajo! Echa un vistazo a la consola. Ahora se indica que los niveles tienen un orden asociado, con el signo `<`. Continúa con el siguiente ejercicio.")
 ```
 
 ---

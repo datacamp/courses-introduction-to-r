@@ -55,7 +55,7 @@ mtcars
 ```{r}
 ex() %>% check_output_expr("mtcars", missing_msg = "No cambies nada del código, asegúrate de imprimir `mtcars`.")
 
-success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio").
+success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -159,7 +159,7 @@ str(mtcars)
 ```{r}
 ex() %>% check_output_expr("str(mtcars)", missing_msg = "Has llamado correctamente a `str()` en `mtcars`?")
 
-success_msg ("¡Buen trabajo! Puedes encontrar mucha información al ver el `str()` de un conjunto de datos. Continúa con el siguiente ejercicio").
+success_msg ("¡Buen trabajo! Puedes encontrar mucha información al ver el `str()` de un conjunto de datos. Continúa con el siguiente ejercicio.")
 ```
 
 ---
