@@ -30,23 +30,23 @@ Bastante bonito para un novato en R, ¿verdad? ;-)
 ¡Solo tienes que enviar la respuesta!
 
 `@pre_exercise_code`
-\`\`\`{r}
+```{r}
 # no pec
-\`\`\`
+```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Solo tienes que enviar la respuesta
-\`\`\`
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Solo tiene que enviar la respuesta.
-\`\`\`
+```
 
 `@sct`
 ```{r}
-success\_msg("Preparados, listos, ¡ya! Continúa con el siguiente ejercicio»).
+success_msg("Preparados, listos, ¡ya! Continúa con el siguiente ejercicio»).
 ```
 
 ---
@@ -74,23 +74,23 @@ Envía la respuesta para iniciar el primer ejercicio de las listas.
 Envía la respuesta para iniciar el primer ejercicio de las listas.
 
 `@pre_exercise_code`
-\`\`\`{r}
+```{r}
 # no pec
-\`\`\`
+```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Envía la respuesta para iniciar el primer ejercicio de las listas.
-\`\`\`
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Envía la respuesta para iniciar el primer ejercicio de las listas.
-\`\`\`
+```
 
 `@sct`
 ```{r}
-success\_msg("Bien. ¡Vamos a ensuciarnos las manos!")
+success_msg("Bien. ¡Vamos a ensuciarnos las manos!")
 ```
 
 ---
@@ -108,7 +108,7 @@ skills:
 ¡Vamos a crear nuestra primera lista! Para construir una lista, usa la función [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
 
 ```
-my\_list <- list(comp1, comp2 ...)
+my_list <- list(comp1, comp2 ...)
 ```
 
 Los argumentos de la función de lista son los componentes de la lista. Recuerde, estos componentes pueden ser matrices, vectores, otras listas,...
@@ -120,53 +120,53 @@ Construye una lista, denominada `my_list`, que contenga las variables `my_vector
 Utiliza la función [`list()`](http://www.rdocumentation.org/packages/base/functions/list) con `my_vector`, `my_matrix` y `my_df` como argumentos separados por una coma.
 
 `@pre_exercise_code`
-\`\`\`{r}
+```{r}
 # no pec
-\`\`\`
+```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Vector con números del 1 al 10
-my\_vector <- 1:10 
+my_vector <- 1:10 
 
 # Matriz con números del 1 al 9
-my\_matrix <- matrix(1:9, ncol = 3)
+my_matrix <- matrix(1:9, ncol = 3)
 
 # Primeros 10 elementos del data frame (incluido) mtcars
-my\_df <- mtcars\[1:10,]
+my_df <- mtcars[1:10,]
 
 # Construye una lista con estos diferentes elements:
-my\_list <-
-\`\`\`
+my_list <-
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Vector con números del 1 al 10
-my\_vector <- 1:10 
+my_vector <- 1:10 
 
 # Matriz con números del 1 al 9
-my\_matrix <- matrix(1:9, ncol = 3)
+my_matrix <- matrix(1:9, ncol = 3)
 
 # Primeros 10 elementos del data frame (incluido) mtcars
-my\_df <- mtcars\[1:10,]
+my_df <- mtcars[1:10,]
 
 # Construye una lista con estos diferentes elements:
-my\_list <- list(my\_vector, my\_matrix, my\_df)
-\`\`\`
+my_list <- list(my_vector, my_matrix, my_df)
+```
 
 `@sct`
-\`\`\`{r}
-msg = "¡No elimines ni cambies la definición de las variables my\_vector`, `my\_matrix` o `my\_df`!"
-ex() %>% check\_object("my\_vector", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+```{r}
+msg = "¡No elimines ni cambies la definición de las variables my_vector`, `my_matrix` o `my_df`!"
+ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_matrix", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_df", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_list") %>% check\_equal(incorrect\_msg = "Parece que `my_list` no contiene los elementos correctos. Asegúrate de pasar las variables  `my_vector`, `my_matrix` y `my_df` a la función `list()`, separadas por comas, en este orden.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Parece que `my_list` no contiene los elementos correctos. Asegúrate de pasar las variables  `my_vector`, `my_matrix` y `my_df` a la función `list()`, separadas por comas, en este orden.")
 
-success\_msg("¡Maravilloso! Vamos al siguiente ejercicio.")
-\`\`\`
+success_msg("¡Maravilloso! Vamos al siguiente ejercicio.")
+```
 
 ---
 
@@ -185,15 +185,15 @@ skills:
 Al igual que en tu lista de tareas pendientes, debes evitar no saber o recordar lo que significan los componentes de tu lista. Es por eso que debes darles nombres 
 
 ```
-my\_list <- list(name1 = your\_comp1, 
-name2 = your\_comp2)
+my_list <- list(name1 = your_comp1, 
+name2 = your_comp2)
 ``` 
 
 Esto crea una lista con los componentes que se denominan `name1`, `name2`, etc. Si quieres nombrar tus listas después de haberlas creado, puedes usar la función `names()` como lo hiciste con los vectores. Los siguientes comandos son totalmente equivalentes a la asignación above:
 
 ```
-my\_list <- list(your\_comp1, your\_comp2)
-names(my\_list) <- c("name1", "name2")
+my_list <- list(your_comp1, your_comp2)
+names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
@@ -202,67 +202,67 @@ names(my\_list) <- c("name1", "name2")
 
 `@hint`
 El primer método para asignar nombres a los componentes de la lista es el más sencillo. Empieza con
-my\_list <- list(vec = my\_vector)
+my_list <- list(vec = my_vector)
 ```
 Añade los otros dos componentes de forma similar.
 
 `@pre_exercise_code`
-\`\`\`{r}
+```{r}
 # no pec
-\`\`\`
+```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Vector con números del 1 al 10
-my\_vector <- 1:10 
+my_vector <- 1:10 
 
 # Matriz con números del 1 al 9
-my\_matrix <- matrix(1:9, ncol = 3)
+my_matrix <- matrix(1:9, ncol = 3)
 
 # Primeros 10 elementos del data frame (incluido) mtcars
-my\_df <- mtcars\[1:10,]
+my_df <- mtcars[1:10,]
 
 # Adapta la llamada list () para dar los nombres de los componentes
-my\_list <- list(my\_vector, my\_matrix, my\_df)
+my_list <- list(my_vector, my_matrix, my_df)
 
-# Imprime my\_list
-\`\`\`
+# Imprime my_list
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Vector con números del 1 al 10
-my\_vector <- 1:10 
+my_vector <- 1:10 
 
 # Matriz con números del 1 al 9
-my\_matrix <- matrix(1:9, ncol = 3)
+my_matrix <- matrix(1:9, ncol = 3)
 
 # Primeros 10 elementos del data frame (incluido) mtcars
-my\_df <- mtcars\[1:10,]
+my_df <- mtcars[1:10,]
 
 # Adapta la llamada list () para dar los nombres de los componentes
-my\_list <- list(vec = my\_vector, mat = my\_matrix, df = my\_df)
+my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
-# Imprime my\_list
-my\_list
-\`\`\`
+# Imprime my_list
+my_list
+```
 
 `@sct`
-\`\`\`{r}
+```{r}
 msg = "¡No elimines ni cambies la definición de las variables `my_vector`, `my_matrix` o `my_df`!"
-ex() %>% check\_object("my\_vector", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_matrix", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_df", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("my\_list") %>% check\_equal(incorrect\_msg = "Parece que `my_list` no contiene los elementos correctos.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Parece que `my_list` no contiene los elementos correctos.")
 
-ex() %>% check\_object("my\_list") %>% check\_equal(eq\_condition = "equal",incorrect\_msg = "Parece que `my_list` no contiene el nombre correcto para los componentes. Asegúrese de utilizar los nombres `vec`, `mat` y `df`, respectivamente. Echa un vistazo a la pista si tienes dificultades.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Parece que `my_list` no contiene el nombre correcto para los componentes. Asegúrese de utilizar los nombres `vec`, `mat` y `df`, respectivamente. Echa un vistazo a la pista si tienes dificultades.")
 
-ex() %>% check\_output\_expr("my\_list", missing\_msg = "¡No olvides imprimir `my_list` en la consola! Simplemente añade `my_list` en una nueva línea del editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "¡No olvides imprimir `my_list` en la consola! Simplemente añade `my_list` en una nueva línea del editor.")
 
-success\_msg = "¡Buen trabajo! Ahora no solo sabes cómo crear listas, sino que también puedes ponerles nombre; una habilidad que te resultará muy útil en la práctica. Continúa con el siguiente ejercicio»).
-\`\`\`
+success_msg = "¡Buen trabajo! Ahora no solo sabes cómo crear listas, sino que también puedes ponerles nombre; una habilidad que te resultará muy útil en la práctica. Continúa con el siguiente ejercicio»).
+```
 
 ---
 
@@ -281,7 +281,7 @@ Como un gran aficionado al cine (recuerda tu trabajo en LucasFilms), decides emp
 Empieza por crear una lista para la película «The Shining». Ya hemos creado las variables `mov`, `act` and `rev` en tu R workspace. No dudes en echarles un vistazo en la consola.
 
 `@instructions`
-Completa el código en el editor para crear shining\_list; contiene tres elements:
+Completa el código en el editor para crear shining_list; contiene tres elements:
 
 - `moviename`: una cadena de caracteres con el título de la película (almacenada en `mov`)
 - `actors`: un vector con los nombres de los actores principales (almacenados en act`)
@@ -304,36 +304,36 @@ rm(scores, sources, comments)
 ```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Las variables mov, act y rev están disponibles
 
-# Termina el código para construir shining\_list
-shining\_list <- list(moviename = mov)
-\`\`\`
+# Termina el código para construir shining_list
+shining_list <- list(moviename = mov)
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Las variables mov, act y rev están disponibles
 
-# Termina el código para construir shining\_list
-shining\_list <- list(moviename = mov, actors = act, reviews = rev)
-\`\`\`
+# Termina el código para construir shining_list
+shining_list <- list(moviename = mov, actors = act, reviews = rev)
+```
 
 `@sct`
-\`\`\`{r}
+```{r}
 msg = "¡No elimine ni cambie la definición de las variables preestablecidas!"
-ex()  %>% check\_object("mov", undefined\_msg = msg)  %>% check\_equal(incorrect\_msg = msg)
+ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex()  %>% check\_object("rev", undefined\_msg = msg)  %>% check\_equal(incorrect\_msg = msg)
+ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex()  %>% check\_object("act", undefined\_msg = msg)  %>% check\_equal(incorrect\_msg = msg)
+ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_object("shining\_list") %>% check\_equal(incorrect\_msg = "Parece que `shining_list` no contiene los elementos correctos: el primer elemento debería ser `mov`, el segundo elemento `act` y el tercer `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Parece que `shining_list` no contiene los elementos correctos: el primer elemento debería ser `mov`, el segundo elemento `act` y el tercer `rev`.")
 
-ex() %>% check\_object("shining\_list") %>% check\_equal(eq\_condition = "equal",incorrect\_msg = "Parece que las componentes de`shining_list` no tienen el nombre correcto: nombra al primer elemento `moviename`, al segundo elemento `actors` y al tercer elemento `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Parece que las componentes de`shining_list` no tienen el nombre correcto: nombra al primer elemento `moviename`, al segundo elemento `actors` y al tercer elemento `reviews`.")
 
-success\_msg("¡Maravilloso! Ahora sabes cómo crear y nombrar listas. Como en los capítulos anteriores, veamos cómo seleccionar elementos para las listas. Vamos al siguiente ejercicio.")
-\`\`\`
+success_msg("¡Maravilloso! Ahora sabes cómo crear y nombrar listas. Como en los capítulos anteriores, veamos cómo seleccionar elementos para las listas. Vamos al siguiente ejercicio.")
+```
 
 ---
 
@@ -352,7 +352,7 @@ Una lista a menudo se construirá a partir de numerosos elementos y componentes.
 Una forma de seleccionar un componente es utilizar la posición numerada de ese componente. Por ejemplo, para «tomar» el primer componente de `shining_list`, escribe 
 
 ```
-shining\_list\[\[1]]
+shining_list[[1]]
 ```
 
 Una forma rápida de comprobarlo es escribiéndolo en la consola. Es importante recordar que para seleccionar elementos de vectores, debes utilizar un solo cuadrado brackets: `[ ]`. ¡No los confundas!
@@ -360,8 +360,8 @@ Una forma rápida de comprobarlo es escribiéndolo en la consola. Es importante 
 También puede hacer referencia a los nombres de los componentes con`[[ ]]` o con el signo `$`. Ambos seleccionarán el data frame que representa las reviews: 
 
 ```
-shining\_list\[\["reviews"]]
-shining\_list$reviews
+shining_list[["reviews"]]
+shining_list$reviews
 ``` 
 
 Además de seleccionar componentes, a menudo es necesario seleccionar elementos específicos de estos componentes. Por ejemplo, con `shining_list[[2]][1]` se selecciona del segundo componente, `actors` (`shining_list[[2]]`) y el primer elemento (`[1]`). Cuando escribas esto en la consola, verás que la respuesta es Jack Nicholson.
@@ -376,41 +376,41 @@ Además de seleccionar componentes, a menudo es necesario seleccionar elementos 
 
 `@pre_exercise_code`
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro\_to\_r/shining\_list.RData"))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
 ```
 
 `@sample_code`
-\`\`\`{r}
-# shining\_list ya está precargado en el espacio de trabajo
+```{r}
+# shining_list ya está precargado en el espacio de trabajo
 
 # Imprime el vector que representa a los actores
 
 
 # Imprime el segundo elemento del vector que representa a los actores
-\`\`\`
+```
 
 `@solution`
-\`\`\`{r}
-# shining\_list ya está precargado en el espacio de trabajo
+```{r}
+# shining_list ya está precargado en el espacio de trabajo
 
 # Imprime el vector que representa a los actores
-shining\_list$actors
+shining_list$actors
 
 # Imprime el segundo elemento del vector que representa a los actores
-shining\_list$actors\[2]
-\`\`\`
+shining_list$actors[2]
+```
 
 `@sct`
-\`\`\`{r}
+```{r}
 msg <- "¡No elimines ni cambies la definición de `shining_list`, que está precargada en el workspace!"
-ex() %>% check\_object("shining\_list", undefined\_msg = msg) %>% check\_equal(incorrect\_msg = msg)
+ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check\_output\_expr("shining\_list$actors", missing\_msg = "¿Has seleccionado e impreso correctamente el vector que representa a los actores? Puedes usar `shining_list$actors`, por ejemplo.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "¿Has seleccionado e impreso correctamente el vector que representa a los actores? Puedes usar `shining_list$actors`, por ejemplo.")
 
-ex() %>% check\_output\_expr("shining\_list$actors\[2]", missing\_msg = "Para seleccionar el segundo actor del vector que representa a los actores, debes encadenar selections: `shining_list$actors` que representa a los actores, de modo que puedas añadir un `[2]` para seleccionar el segundo elemento")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Para seleccionar el segundo actor del vector que representa a los actores, debes encadenar selections: `shining_list$actors` que representa a los actores, de modo que puedas añadir un `[2]` para seleccionar el segundo elemento")
 
-success\_msg = "¡Buen trabajo! Seleccionar elementos de las listas es bastante fácil, ¿no? Continúa con el siguiente ejercicio»).
-\`\`\`
+success_msg = "¡Buen trabajo! Seleccionar elementos de las listas es bastante fácil, ¿no? Continúa con el siguiente ejercicio»).
+```
 
 ---
 
@@ -449,73 +449,73 @@ Sería útil reunir toda la información sobre la película, como el título, lo
 
 `@pre_exercise_code`
 ```{r}
-movie\_title <- "The Departed"
-movie\_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahlberg","Vera Farmiga", "Martin Sheen")
+movie_title <- "The Departed"
+movie_actors <- c("Leonardo DiCaprio", "Matt Damon", "Jack Nicholson","Mark Wahlberg","Vera Farmiga", "Martin Sheen")
 ```
 
 `@sample_code`
-\`\`\`{r}
+```{r}
 # Utiliza la tabla del ejercicio para definir los vectores de comentarios y puntuaciones
-scores <- c(4.6, 5, 4.8, 5, \_\_\_
-comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", \_\_\_ 
+scores <- c(4.6, 5, 4.8, 5, ___
+comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", ___ 
 
-# Guarda el promedio del vector de puntuaciones como avg\_review
-
-
-# Combina puntuaciones y comentarios en el data frame reviews\_df
+# Guarda el promedio del vector de puntuaciones como avg_review
 
 
-# Crea e imprime una lista, llamada departed\_list
+# Combina puntuaciones y comentarios en el data frame reviews_df
 
 
-\`\`\`
+# Crea e imprime una lista, llamada departed_list
+
+
+```
 
 `@solution`
-\`\`\`{r}
+```{r}
 # Utiliza la tabla del ejercicio para definir los vectores de comentarios y puntuaciones
 scores <- c(4.6, 5, 4.8, 5, 4.2)
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
-# Guarda el promedio del vector de puntuaciones como avg\_review
-avg\_review <- mean(scores)
+# Guarda el promedio del vector de puntuaciones como avg_review
+avg_review <- mean(scores)
 
-# Combina puntuaciones y comentarios en el data frame reviews\_df
-reviews\_df <- data.frame(scores, comments)
+# Combina puntuaciones y comentarios en el data frame reviews_df
+reviews_df <- data.frame(scores, comments)
 
-# Crea e imprime una lista, llamada departed\_list
-departed\_list <- list(movie\_title, movie\_actors, reviews\_df, avg\_review)
-departed\_list
-\`\`\`
+# Crea e imprime una lista, llamada departed_list
+departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
+departed_list
+```
 
 `@sct`
-\`\`\`{r}
+```{r}
 msg <- "No cambies ni elimines los objetos precargados."
 
-ex() %>% check\_object("movie\_title") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = msg)
-ex() %>% check\_object("movie\_actors")  %>% check\_equal(eq\_condition = "equal", incorrect\_msg = msg)
-ex() %>% check\_object("scores") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = "¿Creaste el vector `scores` correctamente?")
-ex() %>% check\_object("comments") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = "¿Creaste el vector de comentarios correctamente?")
-ex() %>% check\_correct(
-  check\_object(.,"avg\_review") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = "¿Creaste el objeto `avg_review` correctamente?"),
-  check\_function(.,"mean") %>% check\_arg("x") %>% check\_equal()
+ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "¿Creaste el vector `scores` correctamente?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "¿Creaste el vector de comentarios correctamente?")
+ex() %>% check_correct(
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "¿Creaste el objeto `avg_review` correctamente?"),
+  check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
-ex() %>% check\_correct(
-  check\_object(.,"reviews\_df") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = "¿Creaste `reviews_df` correctamente?"),
-  check\_function(.,"data.frame") %>% {
-    check\_arg(.,"..1") %>% check\_equal()
-    check\_arg(.,"..2") %>% check\_equal()
+ex() %>% check_correct(
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "¿Creaste `reviews_df` correctamente?"),
+  check_function(.,"data.frame") %>% {
+    check_arg(.,"..1") %>% check_equal()
+    check_arg(.,"..2") %>% check_equal()
   }
 )
-ex() %>% check\_correct(
-  check\_object(.,"departed\_list") %>% check\_equal(eq\_condition = "equal", incorrect\_msg = "¿Creaste `departed_list` correctamente?"),
-  check\_function(.,"list") %>% {
-    check\_arg(.,"..1") %>% check\_equal()
-    check\_arg(.,"..2") %>% check\_equal()
-    check\_arg(.,"..3") %>% check\_equal()
-    check\_arg(.,"..4") %>% check\_equal()
+ex() %>% check_correct(
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "¿Creaste `departed_list` correctamente?"),
+  check_function(.,"list") %>% {
+    check_arg(.,"..1") %>% check_equal()
+    check_arg(.,"..2") %>% check_equal()
+    check_arg(.,"..3") %>% check_equal()
+    check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check\_output\_expr("departed\_list", missing\_msg = "¿Imprimiste `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "¿Imprimiste `departed_list`?")
 
-success\_msg("¡Buen trabajo! Creaste correctamente otra lista de información de películas y combinaste diferentes componentes en una sola lista. ¡Enhorabuena por terminar el curso!")
-\`\`\`
+success_msg("¡Buen trabajo! Creaste correctamente otra lista de información de películas y combinaste diferentes componentes en una sola lista. ¡Enhorabuena por terminar el curso!")
+```
