@@ -59,7 +59,7 @@ ex() %>% check_function("matrix") %>% {
 	check_arg (., 'nrow') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
 	}
 
-ex () %>% check_output_expr ("matrix (1:9, byrow=TRUE, nrow=3)", missing_msg = "Parece que hay un problema con la definición de la matriz. Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
+ex() %>% check_output_expr ("matrix (1:9, byrow=TRUE, nrow=3)", missing_msg = "Parece que hay un problema con la definición de la matriz. Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
 
 success_msg("¡Buen trabajo! Continúe con el siguiente ejercicio.")
 ```
@@ -421,7 +421,7 @@ msg <- "¿Has usado `cbind()` correctamente para añadir `worldwide_vector` a `s
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
 
-success_msg("¡Buen trabajo! Después de añadir una columna a una matriz, el siguiente paso lógico es añadir filas. Descubre cómo hacerlo en el siguiente ejercicio.");
+success_msg("¡Buen trabajo! Después de añadir una columna a una matriz, el siguiente paso lógico es añadir filas. Descubre cómo hacerlo en el siguiente ejercicio.")
 ```
 
 ---

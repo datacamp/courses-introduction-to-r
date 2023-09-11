@@ -125,7 +125,7 @@ factor_sex_vector
 ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "¿Asignaste el factor de `sex_vector` a `factor_sex_vector`?")
 ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "¡No olvides imprimir `factor_sex_vector`!")
 
-success_msg = "¡Buen trabajo! Si desea obtener más información sobre la función `factor()`, ¿no dudes en escribir `?factor` en la consola. Se abrirá una página de ayuda. Continúa con el siguiente ejercicio. ");
+success_msg("¡Buen trabajo! Si desea obtener más información sobre la función `factor()`, ¿no dudes en escribir `?factor` en la consola. Se abrirá una página de ayuda. Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -569,11 +569,11 @@ ex() %>% check_function("factor") %>% {
 	check_arg (., 'levels') %>% check_equal (incorrect_msg="Asegúrate de establecer `levels = c(\"slow\", \"medium\", \"fast\")` cuando utilices `factor()`.")
 	}
 
-ex () %>% check_object ("factor_speed_vector") %>% check_equal (eq_condition = "equal", incorrect_msg="Todavía hay algún problema con `factor_speed_vector`; asegúrate de pasar solo `speed_vector`, `ordered = TRUE` y `levels = c(\"slow\", \"medium\", \"fast\")` dentro de la llamada de `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal (eq_condition = "equal", incorrect_msg="Todavía hay algún problema con `factor_speed_vector`; asegúrate de pasar solo `speed_vector`, `ordered = TRUE` y `levels = c(\"slow\", \"medium\", \"fast\")` dentro de la llamada de `factor()`.")
 
                       
                       
-success_msg = "¡Buen trabajo! Echa un vistazo a la consola. Ahora se indica que los niveles tienen un orden asociado, con el signo `<`. Continúa con el siguiente ejercicio.")
+success_msg("¡Buen trabajo! Echa un vistazo a la consola. Ahora se indica que los niveles tienen un orden asociado, con el signo `<`. Continúa con el siguiente ejercicio.")
 ```
 
 ---

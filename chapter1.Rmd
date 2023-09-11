@@ -355,7 +355,7 @@ El conocimiento común te dice que no agregues manzanas y naranjas. Pero bueno, 
 - Ajusta el código para que R sepa que tienes 6 naranjas y por lo tanto una canasta de frutas con 11 piezas de fruta.
 
 `@hint`
-Debes asignar el valor numérico `6` a la variable `my_oranges` en lugar del valor de carácter `"seis"`. Observa cómo se utilizan las comillas para indicar que `"seis"` es un carácter.
+Debes asignar el valor numérico `6` a la variable `my_oranges` en lugar del valor de carácter `"six"`. Observa cómo se utilizan las comillas para indicar que `"six"` es un carácter.
 
 `@pre_exercise_code`
 ```{r}
@@ -368,7 +368,7 @@ Debes asignar el valor numérico `6` a la variable `my_oranges` en lugar del val
 my_apples <- 5 
 
 # Correge la asignación de my_oranges
-my_oranges <- "seis" 
+my_oranges <- "six" 
 
 # Crea la variable my_fruit e imprímala
 my_fruit <- my_apples + my_oranges
@@ -390,7 +390,7 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "¡Puedes hacer esto configurando la variable `my_oranges` en un valor numérico, no como string!"
+ex() %>% check_error(incorrect_msg = "¡Puedes hacer esto configurando la variable `my_oranges` en un valor numérico, no como string!")
 
 ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Asegúrate de que `my_apples` aún contenga `5`.")
 
@@ -399,8 +399,8 @@ ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Asegúrate 
 ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "El valor de `my_fruit` no es correcto. Debería ser 11, la suma de `my_apples` y `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(."my_fruit\\s\*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F),
-  check_code(."my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s\*my_apples", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "¿Creaste `my_fruit` como la suma de las variables `my_apples` y `my_oranges`?", append=F)
  )
 ex() %>% check_output_expr("my_fruit", missing_msg = "No elimines la línea que imprime `my_fruit`.")
 
@@ -495,7 +495,7 @@ skills:
 - 1
 ```
 
-¿Recuerdas que cuando agregaste `5 + "seis"`, obtuviste un error debido a una falta de coincidencia en los tipos de datos? Puedes evitar situaciones tan embarazosas comprobando de antemano el tipo de datos de una variable. Puede hacer esto con la función `class()` , como muestra el código en el editor.
+¿Recuerdas que cuando agregaste `5 + "six"`, obtuviste un error debido a una falta de coincidencia en los tipos de datos? Puedes evitar situaciones tan embarazosas comprobando de antemano el tipo de datos de una variable. Puede hacer esto con la función `class()` , como muestra el código en el editor.
 
 `@instructions`
 Completa el código en el editor y también imprime las clases de `my_character` y `my_logical`.
@@ -552,7 +552,7 @@ ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(in
 ex() %>% check_object("my_logical", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 patt <- "¿Has incluido `class(%1$s)` para imprimir el tipo de datos de `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "No elimines el código que imprime el tipo de `my_numeric`".)
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "No elimines el código que imprime el tipo de `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 

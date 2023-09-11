@@ -261,7 +261,7 @@ ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_ms
 ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "¿Has llamado correctamente a `data.frame()` para crear `planets_df`. Dentro de `data.frame()`, asegúrate de pasar todos los vectores order: `name`, `type`, `diameter`, `rotation` and finally `rings` correctamente.")
 
 
-success_msg = "¡Buen trabajo! El siguiente paso lógico, como ya sabes, es inspeccionar el dataframe que acabas de crear. Vamos al siguiente ejercicio.");
+success_msg("¡Buen trabajo! El siguiente paso lógico, como ya sabes, es inspeccionar el dataframe que acabas de crear. Vamos al siguiente ejercicio.")
 ```
 
 ---
@@ -734,7 +734,7 @@ ex()  %>% check_correct({
   ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "El primer argumento que pases a `subset()` debe ser `planets_df`.")
 
 })
-success_msg("¡Buen trabajo! La función `subset()` no solo es más concisa, sino que probablemente también sea más comprensible para las personas que leen tu código. Continúa con el siguiente ejercicio.");
+success_msg("¡Buen trabajo! La función `subset()` no solo es más concisa, sino que probablemente también sea más comprensible para las personas que leen tu código. Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -756,7 +756,7 @@ En el análisis de datos, puedes ordenar los datos según una determinada variab
 [`order()`](http://www.rdocumentation.org/packages/base/functions/order) es una función que te proporciona la posición clasificada de cada elemento cuando se aplica a una variable, como un vector por example:
 
 ```
-a <- c (100, 10, 1000)
+a <- c(100, 10, 1000)
 order(a)
 [1] 2 1 3
 ```
