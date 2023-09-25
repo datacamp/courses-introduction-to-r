@@ -563,7 +563,7 @@ total_revenue_vector
 
 `@sct`
 ```{r}
-msg = "No cambies el contenido de `all_wars_matrix`; se creó para ti en el espacio de trabajo".
+msg = "No cambies el contenido de `all_wars_matrix`; se creó para ti en el espacio de trabajo."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "¿Usaste la función `colSums()` en la matriz all_wars_matrix?")
