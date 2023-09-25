@@ -432,7 +432,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "No cambies nada del código; simplemente envía la respuesta y mira el resultado".
+msg = "No cambies nada del código; simplemente envía la respuesta y mira el resultado."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
