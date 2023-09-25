@@ -247,7 +247,7 @@ msg <- "No cambies el contenido de `star_wars_matrix`; ¡solo los nombres de las
 
 ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-msg <- "No cambies nada de los vectores de región y títulos que se han definido para ti".
+msg <- "No cambies nada de los vectores de región y títulos que se han definido para ti."
 
 ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
