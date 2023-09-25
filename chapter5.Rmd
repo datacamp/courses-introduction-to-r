@@ -484,7 +484,7 @@ planets_df[1:5, "diameter"]
 msg = "¡No elimines ni sobrescribas el data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \\"diameter\\"]", missing_msg = "¿Has seleccionado correctamente los primeros cinco valores de la columna de diámetro y los has impreso? Puedes usar `[1:5, \"diameter\"]` aquí.")
+ex() %>% check_output_expr('planets_df[1:5, \"diameter\"]', missing_msg = "¿Has seleccionado correctamente los primeros cinco valores de la columna de diámetro y los has impreso? Puedes usar `[1:5, \"diameter\"]` aquí.")
 
 success_msg("¡Bien! ¡Continúa con el siguiente ejercicio!")
 ```
