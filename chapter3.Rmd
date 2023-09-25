@@ -792,10 +792,10 @@ all_wars_matrix
 ticket_prices_matrix
 
 # Número estimado de visitantes
-visitantes <- all_wars_matrix/ ticket_prices_matrix
+visitors <- all_wars_matrix/ ticket_prices_matrix
 
 # Visitantes en EE. UU.
-us_visitors <- visitantes [,1]
+us_visitors <- visitors [,1]
 
 # Número promedio de visitantes en EE. UU.
 mean(us_visitors)
