@@ -190,7 +190,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "No cambies nada del código de muestra. ¡Simplemente envía la respuesta y revisa la solución!»
+msg <- "No cambies nada del código de muestra. ¡Simplemente envía la respuesta y revisa la solución!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
