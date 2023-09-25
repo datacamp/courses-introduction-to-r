@@ -278,7 +278,8 @@ factor_survey_vector
 ```{r}
 msg = "¡No cambies la definición de `survey_vector`!"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "No cambies ni elimines el código para crear el vector de factores".
+
+msg = "No cambies ni elimines el código para crear el vector de factores."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-Note: lo ideal sería probar asignar el operador `<-` y hacer que resalte toda la línea.
