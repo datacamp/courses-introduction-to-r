@@ -420,7 +420,7 @@ ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(,
 ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Guarda el resultado de `rowSums(star_wars_matrix)` en `worldwide_vector`.")
 
 
-msg <- "¿Has usado `cbind()` correctamente para añadir `worldwide_vector` a `star_wars_matrix`? Deberías pasar `star_wars_matrix` y `world_wide_vector` a `cbind()`, en este orden. La matriz resultante, `all_wars_matrix`, debe constar de tres filas y tres columnas".
+msg <- "¿Has usado `cbind()` correctamente para añadir `worldwide_vector` a `star_wars_matrix`? Deberías pasar `star_wars_matrix` y `world_wide_vector` a `cbind()`, en este orden. La matriz resultante, `all_wars_matrix`, debe constar de tres filas y tres columnas."
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
 
