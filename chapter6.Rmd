@@ -264,7 +264,7 @@ ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrec
 
 ex() %>% check_output_expr("my_list", missing_msg = "¡No olvides imprimir `my_list` en la consola! Simplemente añade `my_list` en una nueva línea del editor.")
 
-success_msg("¡Buen trabajo! Ahora no solo sabes cómo crear listas, sino que también puedes ponerles nombre; una habilidad que te resultará muy útil en la práctica. Continúa con el siguiente ejercicio»).
+success_msg("¡Buen trabajo! Ahora no solo sabes cómo crear listas, sino que también puedes ponerles nombre; una habilidad que te resultará muy útil en la práctica. Continúa con el siguiente ejercicio.")
 ```
 
 ---
