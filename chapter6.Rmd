@@ -2,7 +2,10 @@
 title_meta: Capítulo 6
 title: Listas
 description: >-
-  A diferencia de los vectores, las listas pueden contener componentes de diferentes tipos, del mismo modo que las listas de tareas pendientes pueden contener diferentes categorías de tareas. Este capítulo te enseñará cómo crear, nombrar y crear subconjuntos de estas listas.
+  A diferencia de los vectores, las listas pueden contener componentes de
+  diferentes tipos, del mismo modo que las listas de tareas pendientes pueden
+  contener diferentes categorías de tareas. Este capítulo te enseñará cómo
+  crear, nombrar y crear subconjuntos de estas listas.
 ---
 
 ## Listas, ¿para qué las necesitarías?
@@ -12,7 +15,7 @@ type: NormalExercise
 key: 2afcdb6a76ec91bf266de9b2ac295d844d7bb004
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¡Felicidades! En este punto del curso ya estás familiarizado con:
@@ -58,7 +61,7 @@ type: NormalExercise
 key: 68f93c5c504616bd18876da52cd123277d56fc8b
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Una **lista** en R es similar a la lista de tareas pendientes del trabajo o la escuela: lo más probable es que los diferentes elementos de esa lista difieran en longitud, características y tipo de actividad que se debe realizar. 
@@ -102,7 +105,7 @@ type: NormalExercise
 key: 4beee9cb532c889903218b49b83ab5ef133eac83
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¡Vamos a crear nuestra primera lista! Para construir una lista, usa la función [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
@@ -177,7 +180,7 @@ type: NormalExercise
 key: 89dd0126568b1ff5a84033c571907a8a282245e4
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¡Bien hecho, estás en racha!
@@ -273,7 +276,7 @@ type: NormalExercise
 key: 19fd17cc792ef870c1558b3a9bae08c1d1e3acae
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Como un gran aficionado al cine (recuerda tu trabajo en LucasFilms), decides empezar a almacenar información sobre buenas películas con la ayuda de listas. 
@@ -344,7 +347,7 @@ type: NormalExercise
 key: 1ef3278944562caef64b9927dd2ddb6ee52334cd
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Una lista a menudo se construirá a partir de numerosos elementos y componentes. Por lo tanto, obtener un solo elemento, varios elementos o un componente no siempre es sencillo. 

@@ -2,7 +2,9 @@
 title_meta: Capítulo 1
 title: Introducción a lo básico
 description: >-
-  Da tus primeros pasos con R. En este capítulo aprenderás a utilizar la consola como calculadora y a asignar variables. También conocerás los tipos de datos básicos en R. Comencemos.
+  Da tus primeros pasos con R. En este capítulo aprenderás a utilizar la consola
+  como calculadora y a asignar variables. También conocerás los tipos de datos
+  básicos en R. Comencemos.
 free_preview: true
 ---
 
@@ -13,7 +15,7 @@ type: NormalExercise
 key: 15d729634a
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En el editor de la derecha debes escribir código R para resolver los ejercicios. Cuando presiones el botón 'Enviar respuesta', R interpreta y ejecuta cada línea de código y recibes un mensaje explicando si tu código es correcto o no. La salida de tu código R se muestra en la consola en la esquina inferior derecha.
@@ -69,7 +71,7 @@ type: NormalExercise
 key: 720745eda5
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En su forma más básica, R puede usarse como una calculadora simple. Considera los siguientes operadores aritméticos:
@@ -162,7 +164,7 @@ type: NormalExercise
 key: 5f200ffd43
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Un concepto básico en la programación (estadística) se llama **variable**. 
@@ -220,7 +222,7 @@ type: NormalExercise
 key: c5944b90eb
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Supón que tienes una canasta de frutas con cinco manzanas. Como analista de datos en formación deseas almacenar la cantidad de manzanas en una variable con el nombre `my_apples`.
@@ -274,7 +276,7 @@ type: NormalExercise
 key: 1c1bd25045
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Toda cesta de frutas que se precie necesita naranjas, así que decides añadir seis naranjas. Como analista de datos, tu reflejo es crear inmediatamente la variable `my_oranges` y asignarle el valor 6. A continuación, deseas calcular cuántas piezas de fruta tiene en total. Dado que has dado nombres significativos a estos valores, ahora puedes codificar esto de manera clara: 
@@ -345,7 +347,7 @@ type: NormalExercise
 key: 915fcc7c99
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 El conocimiento común te dice que no agregues manzanas y naranjas. Pero bueno, eso es lo que acabas de hacer, ¿no? :-) Las variables `my_apples` y `my_oranges` contenían un número en el ejercicio anterior. El operador `+` funciona con variables numéricas en R. Si realmente intentara agregar "manzanas" y "naranjas", y asignara un valor de texto a la variable `my_oranges` (ve el editor), estarías tratando de asignar la adición de un valor numérico y una variable de carácter a la variable `my_fruit`. Esto no es posible.
@@ -418,7 +420,7 @@ type: NormalExercise
 key: 0f23107394
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 R funciona con numerosos tipos de datos. Algunos de los tipos más básicos son:
@@ -492,7 +494,7 @@ type: NormalExercise
 key: 99b549229d
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¿Recuerdas que cuando agregaste `5 + "six"`, obtuviste un error debido a una falta de coincidencia en los tipos de datos? Puedes evitar situaciones tan embarazosas comprobando de antemano el tipo de datos de una variable. Puede hacer esto con la función `class()` , como muestra el código en el editor.

@@ -2,7 +2,10 @@
 title_meta: Capítulo 3
 title: Matrices
 description: >-
-  En este capítulo, aprenderás cómo trabajar con matrices en R. Al final del capítulo, podrás crear matrices y entender cómo hacer cálculos básicos con ellas. Analizarás los números de taquilla de las películas de Star Wars y aprenderás a usar matrices en R. ¡Que la fuerza te acompañe!
+  En este capítulo, aprenderás cómo trabajar con matrices en R. Al final del
+  capítulo, podrás crear matrices y entender cómo hacer cálculos básicos con
+  ellas. Analizarás los números de taquilla de las películas de Star Wars y
+  aprenderás a usar matrices en R. ¡Que la fuerza te acompañe!
 ---
 
 ## ¿Qué es una matriz?
@@ -12,7 +15,7 @@ type: NormalExercise
 key: d61aeba84c
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En R, una matriz es una colección de elementos del mismo tipo de datos (numéricos, de caracteres o lógicos) organizados en un número fijo de filas y columnas. Como solo trabaja con filas y columnas, una matriz se denomina bidimensional. 
@@ -73,7 +76,7 @@ type: NormalExercise
 key: effc2fb945
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Ha llegado el momento de ensuciarse las manos. En los siguientes ejercicios analizarás los números de taquilla de la franquicia de Star Wars. ¡Que la fuerza te acompañe! 
@@ -156,7 +159,7 @@ type: NormalExercise
 key: f734e8bf74
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Para ayudarte a recordar lo que está almacenado en `star_wars_matrix`, te gustaría añadir los nombres de las películas a las filas. Esto no solo te ayuda a leer los datos, sino que también es útil para seleccionar ciertos elementos de la matriz. 
@@ -265,7 +268,7 @@ type: NormalExercise
 key: 3fd7499a12
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Lo más importante para que una película se convierta en una leyenda instantánea en Tinseltown son sus cifras de taquilla en todo el mundo. 
@@ -345,7 +348,7 @@ type: NormalExercise
 key: 86b87a8545
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En el ejercicio anterior calculaste el vector que contenía los ingresos de taquilla en todo el mundo de cada una de las tres películas de Star Wars. Sin embargo, este vector aún no forma parte de `star_wars_matrix`.
@@ -433,7 +436,7 @@ type: NormalExercise
 key: bcadb29139
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que cada acción tiene una reacción, cada c[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) tiene un [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (Admitimos que se nos dan muy mal las metáforas). 
@@ -518,7 +521,7 @@ type: NormalExercise
 key: 1bfe5ae096
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) tiene  [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) tiene [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) Tu R workspace ya contiene la matriz `all_wars_matrix`que creaste en el ejercicio anterior; escribe `all_wars_matrix` para verla de otra manera. Calculemos ahora los ingresos totales de taquilla de toda la saga.
@@ -581,7 +584,7 @@ type: NormalExercise
 key: 41d9d69713
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que con los vectores, puedes utilizar los corchetes `[ ]` para seleccionar uno o varios elementos de una matriz. Mientras que los vectores tienen una dimensión, las matrices tienen dos dimensiones. Por lo tanto, debes usar una coma para separar las filas que quieres seleccionar de las columnas. Por example: 
@@ -672,7 +675,7 @@ type: NormalExercise
 key: c81c656f06
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 De manera similar a lo que ha aprendido con los vectores, los operadores estándar como `+`, `-`, `/`, `*`, etc. funcionan de forma elemental en las matrices de R. 
@@ -740,7 +743,7 @@ type: NormalExercise
 key: 1e0b39d6e9
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que `2 * my_matrix` multiplica cada elemento de `my_matrix` por dos, `my_matrix1 * my_matrix2` crea una matriz en la que cada elemento es el producto de los elementos correspondientes en `my_matrix1` y `my_matrix2`. 
