@@ -2,7 +2,10 @@
 title_meta: Capítulo 5
 title: Data frames
 description: >-
-  La mayoría de los conjuntos de datos con los que trabajará se almacenarán como data frames. Al final de este capítulo, podrás crear un data frame, seleccionar las partes que te interesen y ordenarlo de acuerdo con ciertas variables.
+  La mayoría de los conjuntos de datos con los que trabajará se almacenarán como
+  data frames. Al final de este capítulo, podrás crear un data frame,
+  seleccionar las partes que te interesen y ordenarlo de acuerdo con ciertas
+  variables.
 ---
 
 ## ¿Qué es un data frame?
@@ -12,7 +15,7 @@ type: NormalExercise
 key: 7f95849020a2563168920409022ce7bed20835b5
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Puedes recordar del capítulo sobre matrices que todos los elementos que se colocan en una matriz deben ser del mismo tipo. En aquel entonces, tu conjunto de datos de Star Wars solo contenía elementos numéricos. 
@@ -67,7 +70,7 @@ type: NormalExercise
 key: 3d0e64ecf5f69521ee538ecc713caa02b8b0ec46
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¡Vaya, son muchos coches! 
@@ -119,7 +122,7 @@ type: NormalExercise
 key: f4d5b1a2c4aef31645fc7e3505e699fb6e48f3e6
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Otro método que se utiliza a menudo para obtener una visión general rápida de los datos es la función [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). La función [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) te muestra la estructura de tu dataset. Para un data frame, dice:
@@ -171,7 +174,7 @@ type: NormalExercise
 key: df0b89706d90526b3c0bbe15e400b74cbd900704
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Dado que usar datasets integrados no es ni la mitad de divertido que crear tus propios datasets, el resto de este capítulo se basa en un dataset desarrollado personalmente. ¡Montate en el cohete porque es hora de explorar el espacio! 
@@ -216,7 +219,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -238,7 +241,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -273,7 +276,7 @@ type: NormalExercise
 key: c13ea421dd078030a225f49e53a8927ce8fefbe0
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 El data frame `planets_df` debe tener 8 observaciones y 5 variables. Se ha puesto a disposición en el workspace, por lo que puedes utilizarla directamente.
@@ -298,7 +301,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -335,7 +338,7 @@ type: NormalExercise
 key: 8c664726b8a173cda730cbb20a52ac1795d9a0e9
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que en los vectores y las matrices, los elementos de un marco de datos se seleccionan con la ayuda de corchetes`[ ]`. Al usar una coma, puedes indicar qué seleccionar de las filas y las columnas respectivamente. Por example:
@@ -366,7 +369,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -416,7 +419,7 @@ type: NormalExercise
 key: faf104fb0c605fd89f048648a4a588200bc89c76
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En lugar de utilizar números para seleccionar los elementos de un data frame, también puede utilizar los nombres de las variables para seleccionar las columnas de un marco de datos. 
@@ -453,7 +456,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -481,7 +484,7 @@ planets_df[1:5, "diameter"]
 msg = "¡No elimines ni sobrescribas el data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \\"diameter\\"]", missing_msg = "¿Has seleccionado correctamente los primeros cinco valores de la columna de diámetro y los has impreso? Puedes usar `[1:5, \"diameter\"]` aquí.")
+ex() %>% check_output_expr('planets_df[1:5, \"diameter\"]', missing_msg = "¿Has seleccionado correctamente los primeros cinco valores de la columna de diámetro y los has impreso? Puedes usar `[1:5, \"diameter\"]` aquí.")
 
 success_msg("¡Bien! ¡Continúa con el siguiente ejercicio!")
 ```
@@ -495,7 +498,7 @@ type: NormalExercise
 key: e550ecb6ec45b856e6160ddfbb3d7875998e8365
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 A menudo querrás seleccionar una columna completa, es decir, una variable específica de un data frame. Si deseas seleccionar todos los elementos de la variable `diameter`, por ejemplo, ambos trucos funcionarán
@@ -532,7 +535,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -581,7 +584,7 @@ type: NormalExercise
 key: 1581bf4667477f274188f4f637ec7fdc73659651
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Probablemente recuerdes del instituto que algunos planetas de nuestro sistema solar tienen anillos y otros no. Lamentablemente no puedes recordar sus nombres. ¿Podría ayudarte R?
@@ -614,7 +617,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -660,7 +663,7 @@ type: NormalExercise
 key: a4a8b72a74097196eb2f8a28b056987aae834565
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Entonces, ¿qué aprendiste exactamente en los ejercicios anteriores? Seleccionaste un subconjunto de un data frame (`planets_df`) en función de si una determinada condición era verdadera o no (anillos o no), y lograste extraer todos los datos relevantes. ¡Bastante impresionante! A estas alturas, la NASA probablemente ya esté coqueteando con tu currículum ;-). 
@@ -699,7 +702,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Create a data frame from the vectors
@@ -746,7 +749,7 @@ type: NormalExercise
 key: 6a6fe74d3917c37380f7ac616ce084aa7814fb8a
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Hacer y crear clasificaciones es una de las actividades favoritas de la humanidad. Estas clasificaciones pueden ser útiles (las mejores universidades del mundo), entretenidas (las estrellas de cine más influyentes) o inútiles (los mejores imitadores de 007).
@@ -805,7 +808,7 @@ type: NormalExercise
 key: fa88b58bf2cf62e0c181dfdcbdd2e1ddeac66807
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Muy bien, ahora que entiendes la función [`order()`](http://www.rdocumentation.org/packages/base/functions/order), hagamos algo útil con ella. Te gustaría reorganizar tu data frame de manera que comience con el planeta más pequeño y termine con el más grande. Una clasificación en la columna `diameter`.
@@ -832,7 +835,7 @@ type <- c("Terrestrial planet",
 diameter <- c(0.382, 0.949, 1, 0.532,
               11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03,
-              0,41, 0,43, -0,72, 0,67)
+              0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 # Crea un data frame de los vectores

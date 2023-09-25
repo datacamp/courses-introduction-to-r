@@ -2,7 +2,12 @@
 title_meta: Capítulo 4
 title: Factores
 description: >-
-  Los datos suelen clasificarse en un número limitado de categorías. Por ejemplo, el color del cabello humano se puede clasificar en negro, marrón, rubio, rojo, gris o blanco, y quizás algunas opciones más para las personas que se tiñen el pelo. En R los datos categóricos se almacenan en factores. Los factores son muy importantes en el análisis de datos, así que empieza ahora a aprender cómo crearlos, crear subconjuntos y compararlos.
+  Los datos suelen clasificarse en un número limitado de categorías. Por
+  ejemplo, el color del cabello humano se puede clasificar en negro, marrón,
+  rubio, rojo, gris o blanco, y quizás algunas opciones más para las personas
+  que se tiñen el pelo. En R los datos categóricos se almacenan en factores. Los
+  factores son muy importantes en el análisis de datos, así que empieza ahora a
+  aprender cómo crearlos, crear subconjuntos y compararlos.
 ---
 
 ## ¿Qué es un factor y por qué lo usarías?
@@ -12,7 +17,7 @@ type: NormalExercise
 key: 05273321916d99bb9c0deadf75c6834d25a47244
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 En este capítulo te sumerges en el maravilloso mundo de los **factores**.
@@ -67,7 +72,7 @@ type: NormalExercise
 key: 6cc21c842b075347926bb1b244782213df32e370
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Para crear factores en R, se utiliza la función [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). Lo primero que tienes que hacer es crear un vector que contenga todas las observaciones que pertenecen a un número limitado de categorías. Por ejemplo, `sex_vector` contiene el sexo de 5 individuals: diferentes
@@ -137,14 +142,14 @@ type: NormalExercise
 key: 5bd4f50afc2c2dbc881e16b8ca94ca56960dff42
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Hay dos tipos de variables categóricas: una **variable categórica nominal** y una **variable categórica ordinal**.
 
 Una variable nominal es una variable categórica sin un orden implícito. Esto significa que es imposible decir que "uno vale más que el otro". Por ejemplo, piense en la variable categórica `animals_vector` con las categorías `"Elephant"`, `"Giraffe"`, `"Donkey"` y `"Horse"` Aquí es imposible decir que uno está por encima o por debajo del otro. (Ten en cuenta que algunos de vosotros podéis estar en desacuerdo ;-) ).
 
-Por el contrario, las variables ordinales tienen un orden natural. Considere, por ejemplo, la variable categórica `temperature_vector` con los valores categories: `"Low"`, `"Medium"` y `"High"`. Aquí es obvio que `"Medium"` está por encima de `"Low"`, y `"High"` por encima de `"Medium"`. 
+Por el contrario, las variables ordinales tienen un orden natural. Considere, por ejemplo, la variable categórica `temperature_vector` con los valores categories: `"Low"`, `"Medium"` y `"High"`. Aquí es obvio que `"Medium"` está por encima de `"Low"`, y `"High"` por encima de `"Medium"`.
 
 `@instructions`
 Envía la respuesta para comprobar cómo R construye e imprime las variables nominales y ordinales. No te preocupes si aún no entiendes todo el código, nos ocuparemos de eso.
@@ -185,7 +190,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "No cambies nada del código de muestra. ¡Simplemente envía la respuesta y revisa la solución!»
+msg <- "No cambies nada del código de muestra. ¡Simplemente envía la respuesta y revisa la solución!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -212,7 +217,7 @@ type: NormalExercise
 key: 1aa698978d32d1a0befa4700d7da85a648e1d69e
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Cuando obtienes un conjunto de datos por primera vez, a menudo observarás que contiene factor levels específicos. Sin embargo, a veces querrás cambiar los nombres de estos niveles por mayor claridad u otros motivos. R te permite hacer esto con los function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
@@ -273,7 +278,8 @@ factor_survey_vector
 ```{r}
 msg = "¡No cambies la definición de `survey_vector`!"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "No cambies ni elimines el código para crear el vector de factores".
+
+msg = "No cambies ni elimines el código para crear el vector de factores."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-Note: lo ideal sería probar asignar el operador `<-` y hacer que resalte toda la línea.
@@ -296,7 +302,7 @@ type: NormalExercise
 key: a549f13c0644ccc89cd39a10aa48706754637ed0
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Después de terminar este curso, una de tus funciones favoritas en R será [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). Esto te proporcionará una visión general rápida del contenido de una variable:
@@ -374,7 +380,7 @@ type: NormalExercise
 key: 90ecc160d1ebf2f75bf53f9c3843fc1632bdd0a5
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Quizás te preguntes qué sucede cuando intentas comparar los elementos de un factor.  En `factor_survey_vector` tienes un factor con dos levels: `"Male"` y `"Female"`. Pero, ¿cómo valora R estos valores en relación con los demás?
@@ -426,7 +432,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "No cambies nada del código; simplemente envía la respuesta y mira el resultado".
+msg = "No cambies nada del código; simplemente envía la respuesta y mira el resultado."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -451,7 +457,7 @@ type: NormalExercise
 key: 9ab0928916bf84ab225713a9a1ce40d9e322c6a0
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Dado que `"Male"` y `"Female"` son factor levels desordenados (o nominales), R devuelve un mensaje de advertencia en el que se indica que el operador mayor que no tiene sentido. Como se ha visto anteriormente, R asigna un valor igual a los niveles de dichos factores.
@@ -507,7 +513,7 @@ type: NormalExercise
 key: 279077d10248ce03d5f972939ef8576430a16683
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 `speed_vector` debe convertirse en un factor ordinal ya que sus categorías tienen un orden natural. De forma predeterminada, la función [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforma `speed_vector` en un factor desordenado. Para crear un factor ordenado, hay que añadir dos arguments: más:`ordered` y `levels`.
@@ -585,7 +591,7 @@ type: NormalExercise
 key: db16e69805625bcfde227743a8cbc985f8482a37
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al tener un mal día de trabajo, el «analista de datos número dos» entra en su oficina y comienza a quejarse de que el «analista de datos número cinco» está ralentizando todo el proyecto. Como sabes que el «analista de datos número dos» tiene la reputación de ser un sabelotodo, primero decide comprobar si su afirmación es cierta.

@@ -2,7 +2,10 @@
 title_meta: Capítulo 2
 title: Vectores
 description: >-
-  Te llevaremos de viaje a Las Vegas, donde aprenderás cómo analizar los resultados de tus apuestas utilizando vectores en R. Después de completar este capítulo podrás crear vectores en R, nombrarlos, seleccionar elementos de ellos y comparar diferentes vectores.
+  Te llevaremos de viaje a Las Vegas, donde aprenderás cómo analizar los
+  resultados de tus apuestas utilizando vectores en R. Después de completar este
+  capítulo podrás crear vectores en R, nombrarlos, seleccionar elementos de
+  ellos y comparar diferentes vectores.
 ---
 
 ## Crear un vector
@@ -12,7 +15,7 @@ type: NormalExercise
 key: d9b453dbdd
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¿Te sientes afortunado? Más te vale, porque este capítulo te lleva de viaje a la Ciudad de los Pecados, ¡también conocida como el Paraíso de los Estadísticos!
@@ -61,7 +64,7 @@ type: NormalExercise
 key: fd427db76f
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¡Centrémonos primero! 
@@ -128,7 +131,7 @@ type: NormalExercise
 key: 9f41229dbc
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Tras una semana en Las Vegas y todavía sin un Ferrari en tu garaje, decides que es hora de empezar a utilizar tus superpoderes de análisis de datos.
@@ -200,7 +203,7 @@ type: NormalExercise
 key: 3b0b80b192
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Como analista de datos, es importante tener una visión clara de los datos que utilizas. Por lo tanto, entender a qué se refiere cada elemento es fundamental. 
@@ -285,7 +288,7 @@ type: NormalExercise
 key: 6858c65a4a
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Si quieres convertirte en un buen estadístico, tienes que volverte vago. (Si ya eres vago, es muy probable que seas uno de esos talentos estadísticos excepcionales y natos).
@@ -348,7 +351,7 @@ ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `poker_vector`. ", eq_condition = "igual",)
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `poker_vector`. ", eq_condition = "equal",)
 
 ex() %>% check_object("roulette_vector") %>% check_equal (eq_condition = "equal", incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `roulette_vector`.")
 
@@ -365,7 +368,7 @@ type: NormalExercise
 key: da995f099f
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Ahora que tienes las ganancias del póker y la ruleta como vectores con nombre, puedes empezar a hacer magia analítica de datos. 
@@ -453,7 +456,7 @@ type: NormalExercise
 key: 2969d8ed65
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Ahora que entiendes cómo R hace aritmética con vectores, ¡es hora de tener esos Ferrari en tu garaje! Primero, debes comprender cuál fue la ganancia o pérdida total por día de la semana. La ganancia diaria total es la suma de las ganancias/pérdidas que obtuviste en el póker por día y las ganancias/pérdidas que obtuviste en la ruleta por día. 
@@ -521,7 +524,7 @@ type: NormalExercise
 key: e66a56b9f0
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Según el análisis anterior, parece que tuviste una mezcla de días buenos y malos. Esto no es lo que tu ego esperaba, y te preguntas si hay una posibilidad muy pequeña de que hayas perdido dinero durante la semana en total. 
@@ -618,7 +621,7 @@ type: NormalExercise
 key: f532f5332d
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Vaya, parece que estás perdiendo dinero. ¡Es hora de repensar y adaptar tu estrategia! Esto requerirá un análisis más profundo... 
@@ -698,7 +701,7 @@ type: NormalExercise
 key: 8d78be44e9
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Tu presentimiento parecía correcto. Parece que el póquer es más para ti que la ruleta. 
@@ -768,7 +771,7 @@ type: NormalExercise
 key: '1351521670'
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 ¿Quieres analizar tus resultados de mitad de semana? 
@@ -839,7 +842,7 @@ type: NormalExercise
 key: 27976b79f4
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 La selección de varios elementos de `poker_vector` con `c(2, 3, 4)` no es muy conveniente. Muchos estadísticos son perezosos por naturaleza, así que crearon una forma más sencilla de hacerlo: `c(2, 3, 4)` se puede abreviar a `2:4`, lo que genera un vector con todos los números naturales del 2 al 4.
@@ -906,7 +909,7 @@ type: NormalExercise
 key: e6c263ddee
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Otra forma de abordar el ejercicio anterior es utilizar los nombres de los elementos vectoriales (lunes, martes,...) en lugar de sus posiciones numéricas. Por ejemplo, 
@@ -993,7 +996,7 @@ type: NormalExercise
 key: f0f619c901
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al utilizar operadores de comparación podemos abordar la pregunta anterior de una manera más proactiva. 
@@ -1085,7 +1088,7 @@ type: NormalExercise
 key: 2754fc5cd4
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Trabajar con comparaciones le facilitará la vida en la analítica de datos. En lugar de seleccionar un subconjunto de días para investigarlo (como antes), simplemente puedes pedirle a R que devuelva solo aquellos días en los que obtuviste un saldo positivo en el póquer. 
@@ -1168,7 +1171,7 @@ type: NormalExercise
 key: 59e8dcbbd5
 xp: 100
 skills:
-- 1
+  - 1
 ```
 
 Al igual que hiciste con el póker, también querrás saber aquellos días en los que obtuviste un saldo positivo para la ruleta.
