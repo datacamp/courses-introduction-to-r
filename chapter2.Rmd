@@ -351,7 +351,7 @@ ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `poker_vector`. ", eq_condition = "igual",)
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `poker_vector`. ", eq_condition = "equal",)
 
 ex() %>% check_object("roulette_vector") %>% check_equal (eq_condition = "equal", incorrect_msg = "Asegúrate de asignar `days_vector` a los nombres de `roulette_vector`.")
 
