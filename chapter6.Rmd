@@ -412,7 +412,7 @@ ex() %>% check_output_expr("shining_list$actors", missing_msg = "¿Has seleccion
 
 ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Para seleccionar el segundo actor del vector que representa a los actores, debes encadenar selections: `shining_list$actors` que representa a los actores, de modo que puedas añadir un `[2]` para seleccionar el segundo elemento")
 
-success_msg("¡Buen trabajo! Seleccionar elementos de las listas es bastante fácil, ¿no? Continúa con el siguiente ejercicio»).
+success_msg("¡Buen trabajo! Seleccionar elementos de las listas es bastante fácil, ¿no? Continúa con el siguiente ejercicio.")
 ```
 
 ---
