@@ -49,7 +49,7 @@ Bastante bonito para un novato en R, ¿verdad? ;-)
 
 `@sct`
 ```{r}
-success_msg("Preparados, listos, ¡ya! Continúa con el siguiente ejercicio»).
+success_msg("Preparados, listos, ¡ya! Continúa con el siguiente ejercicio.")
 ```
 
 ---
