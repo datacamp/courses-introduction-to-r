@@ -264,7 +264,7 @@ ex() %>% check_object("my_apples", undefined_msg = "Asegúrate de definir una va
 
 ex() %>% check_output_expr("my_apples", missing_msg = "¿Le has dicho explícitamente a R que imprima la variable `my_apples` en la consola?")
 
-exito_msg("¡Genial! ¡Continúa con el siguiente ejercicio!")
+success_msg("¡Genial! ¡Continúa con el siguiente ejercicio!")
 ```
 
 ---
