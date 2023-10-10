@@ -179,14 +179,14 @@ skills:
 
 Dado que usar datasets integrados no es ni la mitad de divertido que crear tus propios datasets, el resto de este capítulo se basa en un dataset desarrollado personalmente. ¡Montate en el cohete porque es hora de explorar el espacio! 
 
-Como primer objetivo, quieres construir un data frame que describa las características principales de ocho planetas de nuestro sistema solar. Según tu buen amigo Buzz, las principales características de un planeta are:
+Como primer objetivo, quieres construir un data frame que describa las características principales de ocho planetas de nuestro sistema solar. Según tu buen amigo Buzz, las principales características de un planeta son:
 
 - El tipo de planeta (terrestre o gigante gaseoso).
 - El diámetro del planeta en relación con el diámetro de la Tierra.
 - La rotación del planeta a través del Sol en relación con la de la Tierra.
 - Si el planeta tiene anillos o no (TRUE o FALSE).
 
-Después de realizar una investigación de alta calidad en [Wikipedia](https://en.wikipedia.org/wiki/Planet), te sientes lo suficientemente seguro como para crear los vectores necesariosvectors: `name`, `type`, `diameter`, `rotation` and `rings`; estos ya están codificados en el editor. El primer elemento de cada uno de estos vectores corresponde a la primera observación.
+Después de realizar una investigación de alta calidad en [Wikipedia](https://en.wikipedia.org/wiki/Planet), te sientes lo suficientemente seguro como para crear los vectores necesarios: `name`, `type`, `diameter`, `rotation` y `rings`; estos ya están codificados en el editor. El primer elemento de cada uno de estos vectores corresponde a la primera observación.
 
 Se construye un data frame con la función [`data.frame()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame). Como argumentos, pasa los vectores de antes: se convertirán en las diferentes columnas de su marco de datos. Como todas las columnas tienen la misma longitud, los vectores que pases también deberían tener la misma longitud. Pero no olvides que es posible (y probable) que contengan diferentes tipos de datos.
 
@@ -194,7 +194,7 @@ Se construye un data frame con la función [`data.frame()`](https://www.rdocumen
 Utiliza la función [`data.frame()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame) para construir un data frame. Pasa los vectores `name`, `type`, `diameter`, `rotation` y `rings` como argumentos a `data.frame()`, en este orden. Llama al data frame resultante `planets_df`.
 
 `@hint`
-Tu llamada a `data.frame()` comienza como follows:
+Tu llamada a `data.frame()` comienza como sigue:
 ```
 data.frame(planets, type, diameter)
 ```
@@ -222,7 +222,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <-
 
 ```
@@ -244,7 +244,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -261,7 +261,7 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "¿Has llamado correctamente a `data.frame()` para crear `planets_df`. Dentro de `data.frame()`, asegúrate de pasar todos los vectores order: `name`, `type`, `diameter`, `rotation` and finally `rings` correctamente.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "¿Has llamado correctamente a `data.frame()` para crear `planets_df`. Dentro de `data.frame()`, asegúrate de pasar todos los vectores order: `name`, `type`, `diameter`, `rotation` y finalmente `rings` correctamente.")
 
 
 success_msg("¡Buen trabajo! El siguiente paso lógico, como ya sabes, es inspeccionar el dataframe que acabas de crear. Vamos al siguiente ejercicio.")
@@ -279,7 +279,7 @@ skills:
   - 1
 ```
 
-El data frame `planets_df` debe tener 8 observaciones y 5 variables. Se ha puesto a disposición en el workspace, por lo que puedes utilizarla directamente.
+El data frame `planets_df` debe tener 8 observaciones y 5 variables. Se ha puesto a disposición en el workspace, por lo que puedes utilizarlo directamente.
 
 `@instructions`
 Usa [`str()` para investigar la estructura de la nueva variable `planets_df`.
@@ -304,7 +304,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -341,7 +341,7 @@ skills:
   - 1
 ```
 
-Al igual que en los vectores y las matrices, los elementos de un marco de datos se seleccionan con la ayuda de corchetes`[ ]`. Al usar una coma, puedes indicar qué seleccionar de las filas y las columnas respectivamente. Por example:
+Al igual que en los vectores y las matrices, los elementos de un marco de datos se seleccionan con la ayuda de corchetes`[ ]`. Al usar una coma, puedes indicar qué seleccionar de las filas y las columnas respectivamente. Por ejemplo:
 
 - `my_df[1,2]` selecciona el valor de la primera fila y la segunda columna de `my_df`.
 - `my_df[1:3,2:4]` selecciona las filas 1, 2, 3 y las columnas 2, 3 y 4 en `my_df`.
@@ -372,7 +372,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -380,10 +380,10 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```{r}
 # El data frame planets_df del ejercicio anterior está precargado
 
-# Imprima el diámetro de Mercurio (fila 1, columna 3)
+# Imprime el diámetro de Mercurio (fila 1, columna 3)
 
 
-# Imprima los datos de Marte (cuarta fila completa)
+# Imprime los datos de Marte (cuarta fila completa)
 
 ```
 
@@ -391,10 +391,10 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```{r}
 # El data frame planets_df del ejercicio anterior está precargado
 
-# Imprima el diámetro de Mercurio (fila 1, columna 3)
+# Imprime el diámetro de Mercurio (fila 1, columna 3)
 planets_df[1,3]
 
-# Imprima los datos de Marte (cuarta fila completa)
+# Imprime los datos de Marte (cuarta fila completa)
 planets_df[4, ]
 ```
 
@@ -440,7 +440,7 @@ planets_df[1:3,"type"]
 Selecciona e imprime los primeros 5 valores de la columna `"diameter"` de `planets_df`.
 
 `@hint`
-Puedes seleccionar los cinco primeros valores con `planets_df[1:5, ...]`. ¿Puedes completar en `...` el cófigo para seleccionar solo la columna `"diameter"`?
+Puedes seleccionar los cinco primeros valores con `planets_df[1:5, ...]`. ¿Puedes completar en `...` el código para seleccionar solo la columna `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -459,7 +459,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -515,7 +515,7 @@ planets_df$diameter
 ```
 
 `@instructions`
-- Usa el signo `$` para seleccionar la variable `rings` de `planets_df`. Almacene el vector resultante como `rings_vector`.
+- Usa el signo `$` para seleccionar la variable `rings` de `planets_df`. Almacena el vector resultante como `rings_vector`.
 - Imprime `rings_vector` para ver si lo has hecho bien.
 
 `@hint`
@@ -538,7 +538,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -589,7 +589,7 @@ skills:
 
 Probablemente recuerdes del instituto que algunos planetas de nuestro sistema solar tienen anillos y otros no. Lamentablemente no puedes recordar sus nombres. ¿Podría ayudarte R?
 
-Si escribes `rings_vector` en la consola, get:
+Si escribes `rings_vector` en la consola, recibirás:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
@@ -620,7 +620,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 rings_vector <- planets_df$rings
@@ -705,7 +705,7 @@ rotation <- c(58.64, -243.02, 1, 1.03,
               0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# Crea un data frame de los vectores
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
@@ -756,7 +756,7 @@ Hacer y crear clasificaciones es una de las actividades favoritas de la humanida
 
 En el análisis de datos, puedes ordenar los datos según una determinada variable del conjunto de datos. En R, esto se hace con la ayuda de la función [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) es una función que te proporciona la posición clasificada de cada elemento cuando se aplica a una variable, como un vector por example:
+[`order()`](http://www.rdocumentation.org/packages/base/functions/order) es una función que te proporciona la posición clasificada de cada elemento cuando se aplica a una variable, como un vector. Por ejemplo:
 
 ```
 a <- c(100, 10, 1000)
@@ -849,7 +849,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 # Usa order () para crear positions
 positions <-  
 
-# Use positions to sort planets_df
+# Usa positions para ordenar planets_df
 
 ```
 
@@ -860,7 +860,7 @@ positions <-
 # Usa order () para crear positions
 positions <- order(planets_df$diameter)
 
-# Use positions to sort planets_df
+# Usa positions para ordenar planets_df
 planets_df[positions, ]
 ```
 
