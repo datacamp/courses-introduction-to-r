@@ -547,6 +547,7 @@ all_wars_matrix
 total_revenue_vector <- 
   
 # Imprime total_revenue_vector
+
 ```
 
 `@solution`
@@ -680,9 +681,9 @@ skills:
 
 De manera similar a lo que has aprendido con los vectores, los operadores estándar como `+`, `-`, `/`, `*`, etc. funcionan de forma elemental en las matrices de R. 
 
-Por ejemplo, `2 * my_matrix` multiplica cada elemento de my_matrix` por dos.
+Por ejemplo, `2 * my_matrix` multiplica cada elemento de `my_matrix` por dos.
 
-Como analista de datos recién contratado para Lucasfilm, tu trabajo es averiguar cuántos visitantes acudieron a cada película en cada área geográfica. Ya tienes las cifras de ingresos totales en `all_wars_matrix`.. Supongamos que el precio de una entrada era de 5 dólares. Simplemente dividiendo los números de taquilla por el precio de esta entrada, obtendrás el número de visitantes.
+Como analista de datos recién contratado para Lucasfilm, tu trabajo es averiguar cuántos visitantes acudieron a cada película en cada área geográfica. Ya tienes las cifras de ingresos totales en `all_wars_matrix`. Supongamos que el precio de una entrada era de 5 dólares. Simplemente dividiendo los números de taquilla por el precio de esta entrada, obtendrás el número de visitantes.
 
 `@instructions`
 - Divide `all_wars_matrix` entre 5 y obtendrás el número de visitantes en millones. Asigna la matriz resultante a los `visitors`.
