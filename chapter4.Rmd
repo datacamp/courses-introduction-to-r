@@ -387,7 +387,7 @@ skills:
 Quizás te preguntes qué sucede cuando intentas comparar los elementos de un factor. En `factor_survey_vector` tienes un factor con dos levels: `"Male"` y `"Female"`. Pero, ¿cómo valora R estos valores en relación con los demás?
 
 `@instructions`
-Lee el código en el editor y envía la respuesta para comprobar si `male` es mayor que (`>`)` female `.
+Lee el código en el editor y envía la respuesta para comprobar si `male` es mayor que (`>`) `female`.
 
 `@hint`
 Simplemente envía la respuesta y echa un vistazo al resultado que se imprime en la consola.
