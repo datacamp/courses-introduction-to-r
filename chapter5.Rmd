@@ -846,7 +846,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```{r}
 # planets_df está precargado en tu workspace
 
-# Usa order () para crear positions
+# Usa order() para crear positions
 positions <-  
 
 # Usa positions para ordenar planets_df
@@ -857,7 +857,7 @@ positions <-
 ```{r}
 # planets_df está precargado en tu workspace
 
-# Usa order () para crear positions
+# Usa order() para crear positions
 positions <- order(planets_df$diameter)
 
 # Usa positions para ordenar planets_df
