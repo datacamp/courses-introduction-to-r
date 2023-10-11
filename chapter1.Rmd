@@ -171,7 +171,7 @@ Un concepto básico en la programación (estadística) se llama **variable**.
 
 Una variable te permite almacenar un valor (p. ej., 4) o un objeto (p. ej., una descripción de función) en R. Luego puedes usar el nombre de esta variable para acceder fácilmente al valor o al objeto que está almacenado en la variable. 
 
-Puedes asignar un valor 4 a una variable `my_var` con el comando
+Puedes asignar un valor 4 a una variable `my_var` con el comando:
 
 ```
 my_var <- 4
@@ -328,9 +328,9 @@ my_fruit <- my_apples + my_oranges
 ```{r}
 
 msg <- "¿Has usado `my_fruit <- my_apples + my_oranges` para crear la variable `my_fruit`?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Manten la línea que asigna 5 a `my_apples`")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Manten la línea que asigna 5 a `my_apples`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Manten la línea que asigna 6 a `my_oranges`")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Manten la línea que asigna 6 a `my_oranges`.")
 
 ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Asegúrate de imprimir el resultado de agregar `my_apples` y `my_oranges`. ¡El ejemplo de código en la descripción ya revela la respuesta a esta instrucción!")
 
