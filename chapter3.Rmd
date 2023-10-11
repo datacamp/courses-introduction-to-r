@@ -760,7 +760,7 @@ _Quienes estén familiarizados con las matrices deben tener en cuenta que esta n
 
 `@hint`
 - Puedes usar la función `mean()` para calcular el promedio de las entradas de la función.
-- Para obtener el número de visitantes en EE. UU., selecciona la primera columna de `visitors` usando `visitors[ ,1]`.
+- Para obtener el número de visitantes en EE. UU., selecciona la primera columna de `visitors` usando `visitors[,1]`.
 
 `@pre_exercise_code`
 ```{r}
