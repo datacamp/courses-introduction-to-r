@@ -407,7 +407,7 @@ ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "¿Has seleccionado 
 
 ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "¿Has seleccionado e impreso correctamente todos los datos de Marte? Puedes usar `[4,]`.")
 
-success_msg("¡Buen trabajo! Además de seleccionar los elementos del data frame por índice, también puedes utilizar los nombres de las columnas. Para aprender cómo hacerlo, pasa al siguiente ejercicio")
+success_msg("¡Buen trabajo! Además de seleccionar los elementos del data frame por índice, también puedes utilizar los nombres de las columnas. Para aprender cómo hacerlo, pasa al siguiente ejercicio.")
 ```
 
 ---
