@@ -42,6 +42,7 @@ Simplemente asigna una variable (`<-`); asegúrate de escribir correctamente las
 `@sample_code`
 ```{r}
 # ¡Asigna a la teoría de variables de qué trata este capítulo!
+
 ```
 
 `@solution`
