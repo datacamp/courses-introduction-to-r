@@ -205,6 +205,7 @@ names(my_list) <- c("name1", "name2")
 
 `@hint`
 El primer método para asignar nombres a los componentes de la lista es el más sencillo. Empieza con
+```
 my_list <- list(vec = my_vector)
 ```
 Añade los otros dos componentes de forma similar.
@@ -225,7 +226,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # Primeros 10 elementos del data frame (incluido) mtcars
 my_df <- mtcars[1:10,]
 
-# Adapta la llamada list () para dar los nombres de los componentes
+# Adapta la llamada list() para dar los nombres de los componentes
 my_list <- list(my_vector, my_matrix, my_df)
 
 # Imprime my_list
@@ -242,7 +243,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # Primeros 10 elementos del data frame (incluido) mtcars
 my_df <- mtcars[1:10,]
 
-# Adapta la llamada list () para dar los nombres de los componentes
+# Adapta la llamada list() para dar los nombres de los componentes
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
 # Imprime my_list
