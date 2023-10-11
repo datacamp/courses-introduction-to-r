@@ -94,13 +94,13 @@ Utiliza [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) 
 
 `@sample_code`
 ```{r}
-# Utliza head () en mtcars
+# Utliza head() en mtcars
 
 ```
 
 `@solution`
 ```{r}
-# Utliza head () en mtcars
+# Utliza head() en mtcars
 head(mtcars)
 ```
 
