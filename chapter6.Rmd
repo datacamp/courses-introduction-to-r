@@ -44,7 +44,7 @@ Bastante bonito para un novato en R, ¿verdad? ;-)
 
 `@solution`
 ```{r}
-# Solo tiene que enviar la respuesta.
+# Solo tienes que enviar la respuesta
 ```
 
 `@sct`
