@@ -57,7 +57,7 @@ Simplemente agrega una línea de código de R que calcule la suma de 6 y 12, ¡t
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18",missing_msg = "Asegúrese de agregar `6 + 12` en una nueva línea. ¡No comiences la línea con un `#`, de lo contrario su código R no se ejecutará!")
+ex() %>% check_output_expr("18",missing_msg = "Asegúrate de agregar `6 + 12` en una nueva línea. ¡No comiences la línea con un `#`, de lo contrario tu código R no se ejecutará!")
 
 success_msg("¡Impresionante! ¿Ves cómo la consola muestra el resultado del código R que enviaste? Ahora que estás familiarizado con la interfaz, ¡vamos al tema con R!")
 ```
@@ -169,16 +169,16 @@ skills:
 
 Un concepto básico en la programación (estadística) se llama **variable**. 
 
-Una variable le permite almacenar un valor (p. ej., 4) o un objeto (p. ej., una descripción de función) en R. Luego puedes usar el nombre de esta variable para acceder fácilmente al valor o al objeto que está almacenado en la variable. 
+Una variable te permite almacenar un valor (p. ej., 4) o un objeto (p. ej., una descripción de función) en R. Luego puedes usar el nombre de esta variable para acceder fácilmente al valor o al objeto que está almacenado en la variable. 
 
-Puedes asignar un valor 4 a una variable `my_var` con el comando
+Puedes asignar un valor 4 a una variable `my_var` con el comando:
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-En tus manos: comprueba el código en el editor de modo que asigne el valor 42 a la variable `x`. Envía la respuesta. Observa que cuando le pide a R que imprima `x`, aparece el valor 42.
+En tus manos: comprueba el código en el editor de modo que asigne el valor 42 a la variable `x`. Envía la respuesta. Observa que cuando le pides a R que imprima `x`, aparece el valor 42.
 
 `@hint`
 Mira cómo se asignó el valor 4 a `my_variable` en la asignación del ejercicio. Haz exactamente lo mismo en el editor, pero ahora asigna 42 a la variable `x`.
@@ -230,7 +230,7 @@ Supón que tienes una canasta de frutas con cinco manzanas. Como analista de dat
 `@instructions`
 - Escribe el siguiente código en el editor: `my_apples <- 5`. Esto asignará el valor 5 a `my_apples`.
 - Escribe: `my_apples` debajo del segundo comentario. Esto imprimirá el valor de `my_apples`.
-- Envía tu respuesta, y mira el output: you ves que el número 5 está impreso. Entonces R ahora vincula la variable `my_apples` al valor 5.
+- Envía tu respuesta, y mira el output: ves que el número 5 está impreso. Entonces R ahora vincula la variable `my_apples` al valor 5.
 
 `@hint`
 Recuerda que si quieres asignar un número o un objeto a una variable en R, puedes usar el operador de asignación `<-`. Alternativamente, puede usar `=`, pero `<-` es ampliamente preferido en la comunidad de R.
@@ -291,7 +291,7 @@ my_apples + my_oranges
 - Asigna el resultado de agregar `my_apples` y `my_oranges` a una nueva variable `my_fruit`.
 
 `@hint`
-`mi_fruta` es solo la suma de `mis_manzanas` y `mis_naranjas`. Puede usar el operador `+` para sumar los dos y `<-` para asignar ese valor a la variable `my_fruit`.
+`my_fruit` es solo la suma de `mis_manzanas` y `mis_naranjas`. Puede usar el operador `+` para sumar los dos y `<-` para asignar ese valor a la variable `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -328,9 +328,9 @@ my_fruit <- my_apples + my_oranges
 ```{r}
 
 msg <- "¿Has usado `my_fruit <- my_apples + my_oranges` para crear la variable `my_fruit`?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Mantener la línea que asigna 5 a `my_apples`")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Manten la línea que asigna 5 a `my_apples`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Mantener la línea que asigna 6 a `my_oranges`")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Manten la línea que asigna 6 a `my_oranges`.")
 
 ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Asegúrate de imprimir el resultado de agregar `my_apples` y `my_oranges`. ¡El ejemplo de código en la descripción ya revela la respuesta a esta instrucción!")
 
@@ -350,7 +350,7 @@ skills:
   - 1
 ```
 
-El conocimiento común te dice que no agregues manzanas y naranjas. Pero bueno, eso es lo que acabas de hacer, ¿no? :-) Las variables `my_apples` y `my_oranges` contenían un número en el ejercicio anterior. El operador `+` funciona con variables numéricas en R. Si realmente intentara agregar "manzanas" y "naranjas", y asignara un valor de texto a la variable `my_oranges` (ve el editor), estarías tratando de asignar la adición de un valor numérico y una variable de carácter a la variable `my_fruit`. Esto no es posible.
+El conocimiento común te dice que no agregues manzanas y naranjas. Pero bueno, eso es lo que acabas de hacer, ¿no? :-) Las variables `my_apples` y `my_oranges` contenían un número en el ejercicio anterior. El operador `+` funciona con variables numéricas en R. Si realmente intentaras agregar "manzanas" y "naranjas", y asignarás un valor de texto a la variable `my_oranges` (ve el editor), estarías tratando de asignar la adición de un valor numérico y una variable de carácter a la variable `my_fruit`. Esto no es posible.
 
 `@instructions`
 - Envía la respuesta y lee el mensaje de error. Asegúrate de entender por qué esto no funcionó.
@@ -369,10 +369,10 @@ Debes asignar el valor numérico `6` a la variable `my_oranges` en lugar del val
 # Asigna un valor a la variable my_apples
 my_apples <- 5 
 
-# Correge la asignación de my_oranges
+# Corrige la asignación de my_oranges
 my_oranges <- "six" 
 
-# Crea la variable my_fruit e imprímala
+# Crea la variable my_fruit e imprímela
 my_fruit <- my_apples + my_oranges
 my_fruit
 ```
@@ -382,10 +382,10 @@ my_fruit
 # Asigna un valor a la variable my_apples
 my_apples <- 5  
 
-# Correge la asignación de my_oranges
+# Corrige la asignación de my_oranges
 my_oranges <- 6
 
-# Crea la variable my_fruit e imprímala
+# Crea la variable my_fruit e imprímela
 my_fruit <- my_apples + my_oranges
 my_fruit
 ```
@@ -408,7 +408,7 @@ ex() %>% check_output_expr("my_fruit", missing_msg = "No elimines la línea que 
 
 
 
-success_msg("Excelente, sigue así! Continúa con el siguiente ejercicio.")
+success_msg("Excelente, ¡sigue así! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -425,7 +425,7 @@ skills:
 
 R funciona con numerosos tipos de datos. Algunos de los tipos más básicos son:
 
-- Los valores decimales como `4,5` se denominan **numerics**.
+- Los valores decimales como `4.5` se denominan **numerics**.
 - Los números enteros como `el 4` se llaman **integers**. Los integers también son numerics.
 - Los valores booleanos (`TRUE` o `FALSE`) se denominan **logical**.
 - Los valores de texto (o string) se denominan **characters**.
@@ -455,7 +455,7 @@ Reemplaza los valores en el editor con los valores que se proporcionan en el eje
 # Cambia my_numeric para que sea 42
 my_numeric <- 42.5
 
-# Cambiar my_character para que sea "universe"
+# Cambia my_character para que sea "universe"
 my_character <- "some text"
 
 # Cambia my_logical para que sea FALSE
@@ -467,7 +467,7 @@ my_logical <- TRUE
 # Cambia my_numeric para que sea 42
 my_numeric <- 42
 
-# Cambiar my_character para que sea "universe"
+# Cambia my_character para que sea "universe"
 my_character <- "universe"
 
 # Cambia my_logical para que sea FALSE
@@ -480,7 +480,7 @@ ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "¿Has cambi
 
 ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "¿Has cambiado correctamente `my_character` a `\"universe\"`? ¡No olvides las comillas!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "¿Ha cambiado correctamente `my_logical` a `FALSE`? ¡Todas las letras de `FALSE` deben estar en mayúscula!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "¿Has cambiado correctamente `my_logical` a `FALSE`? ¡Todas las letras de `FALSE` deben estar en mayúscula!")
 
 success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio.")
 ```
@@ -497,7 +497,7 @@ skills:
   - 1
 ```
 
-¿Recuerdas que cuando agregaste `5 + "six"`, obtuviste un error debido a una falta de coincidencia en los tipos de datos? Puedes evitar situaciones tan embarazosas comprobando de antemano el tipo de datos de una variable. Puede hacer esto con la función `class()` , como muestra el código en el editor.
+¿Recuerdas que cuando agregaste `5 + "six"`, obtuviste un error debido a una falta de coincidencia en los tipos de datos? Puedes evitar situaciones tan embarazosas comprobando de antemano el tipo de datos de una variable. Puedes hacer esto con la función `class()` , como muestra el código en el editor.
 
 `@instructions`
 Completa el código en el editor y también imprime las clases de `my_character` y `my_logical`.
@@ -512,7 +512,7 @@ El código que imprime el tipo de datos de `my_numeric` ya está incluido; haz c
 
 `@sample_code`
 ```{r}
-# Declarar variables de diferentes tipos
+# Declara variables de diferentes tipos
 my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE 
@@ -529,7 +529,7 @@ class(my_numeric)
 
 `@solution`
 ```{r}
-# Declarar variables de diferentes tipos:
+# Declara variables de diferentes tipos:
 my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE

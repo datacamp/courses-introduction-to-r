@@ -44,7 +44,7 @@ Bastante bonito para un novato en R, ¿verdad? ;-)
 
 `@solution`
 ```{r}
-# Solo tiene que enviar la respuesta.
+# Solo tienes que enviar la respuesta
 ```
 
 `@sct`
@@ -66,7 +66,7 @@ skills:
 
 Una **lista** en R es similar a la lista de tareas pendientes del trabajo o la escuela: lo más probable es que los diferentes elementos de esa lista difieran en longitud, características y tipo de actividad que se debe realizar. 
 
-Una lista en R le permite reunir una variedad de objetos bajo un nombre (es decir, el nombre de la lista) de forma ordenada. Estos objetos pueden ser matrices, vectores, marcos de datos, incluso otras listas, etc. Ni siquiera se requiere que estos objetos estén relacionados entre sí de ninguna manera.
+Una lista en R te permite reunir una variedad de objetos bajo un nombre (es decir, el nombre de la lista) de forma ordenada. Estos objetos pueden ser matrices, vectores, marcos de datos, incluso otras listas, etc. Ni siquiera se requiere que estos objetos estén relacionados entre sí de ninguna manera.
 
 Se podría decir que una lista es una especie de supertipo de datos: ¡puedes almacenar prácticamente cualquier dato en ella!
 
@@ -114,7 +114,7 @@ skills:
 my_list <- list(comp1, comp2 ...)
 ```
 
-Los argumentos de la función de lista son los componentes de la lista. Recuerde, estos componentes pueden ser matrices, vectores, otras listas,...
+Los argumentos de la función de lista son los componentes de la lista. Recuerda, estos componentes pueden ser matrices, vectores, otras listas,...
 
 `@instructions`
 Construye una lista, denominada `my_list`, que contenga las variables `my_vector`, `my_matrix` y `my_df` como componentes de la lista.
@@ -192,7 +192,7 @@ my_list <- list(name1 = your_comp1,
 name2 = your_comp2)
 ``` 
 
-Esto crea una lista con los componentes que se denominan `name1`, `name2`, etc. Si quieres nombrar tus listas después de haberlas creado, puedes usar la función `names()` como lo hiciste con los vectores. Los siguientes comandos son totalmente equivalentes a la asignación above:
+Esto crea una lista con los componentes que se denominan `name1`, `name2`, etc. Si quieres nombrar tus listas después de haberlas creado, puedes usar la función `names()` como lo hiciste con los vectores. Los siguientes comandos son totalmente equivalentes a la asignación anterior:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -205,6 +205,7 @@ names(my_list) <- c("name1", "name2")
 
 `@hint`
 El primer método para asignar nombres a los componentes de la lista es el más sencillo. Empieza con
+```
 my_list <- list(vec = my_vector)
 ```
 Añade los otros dos componentes de forma similar.
@@ -225,7 +226,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # Primeros 10 elementos del data frame (incluido) mtcars
 my_df <- mtcars[1:10,]
 
-# Adapta la llamada list () para dar los nombres de los componentes
+# Adapta la llamada list() para dar los nombres de los componentes
 my_list <- list(my_vector, my_matrix, my_df)
 
 # Imprime my_list
@@ -242,7 +243,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # Primeros 10 elementos del data frame (incluido) mtcars
 my_df <- mtcars[1:10,]
 
-# Adapta la llamada list () para dar los nombres de los componentes
+# Adapta la llamada list() para dar los nombres de los componentes
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
 # Imprime my_list
@@ -260,7 +261,7 @@ ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_ms
 
 ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Parece que `my_list` no contiene los elementos correctos.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Parece que `my_list` no contiene el nombre correcto para los componentes. Asegúrese de utilizar los nombres `vec`, `mat` y `df`, respectivamente. Echa un vistazo a la pista si tienes dificultades.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Parece que `my_list` no contiene el nombre correcto para los componentes. Asegúrate de utilizar los nombres `vec`, `mat` y `df`, respectivamente. Echa un vistazo a la pista si tienes dificultades.")
 
 ex() %>% check_output_expr("my_list", missing_msg = "¡No olvides imprimir `my_list` en la consola! Simplemente añade `my_list` en una nueva línea del editor.")
 
@@ -284,7 +285,7 @@ Como un gran aficionado al cine (recuerda tu trabajo en LucasFilms), decides emp
 Empieza por crear una lista para la película «The Shining». Ya hemos creado las variables `mov`, `act` and `rev` en tu R workspace. No dudes en echarles un vistazo en la consola.
 
 `@instructions`
-Completa el código en el editor para crear shining_list; contiene tres elements:
+Completa el código en el editor para crear shining_list; contiene tres elementos:
 
 - `moviename`: una cadena de caracteres con el título de la película (almacenada en `mov`)
 - `actors`: un vector con los nombres de los actores principales (almacenados en act`)
@@ -358,7 +359,7 @@ Una forma de seleccionar un componente es utilizar la posición numerada de ese 
 shining_list[[1]]
 ```
 
-Una forma rápida de comprobarlo es escribiéndolo en la consola. Es importante recordar que para seleccionar elementos de vectores, debes utilizar un solo cuadrado brackets: `[ ]`. ¡No los confundas!
+Una forma rápida de comprobarlo es escribiéndolo en la consola. Es importante recordar que para seleccionar elementos de vectores, debes utilizar un solo corchete cuadrado: `[ ]`. ¡No los confundas!
 
 También puede hacer referencia a los nombres de los componentes con`[[ ]]` o con el signo `$`. Ambos seleccionarán el data frame que representa las reviews: 
 
@@ -390,6 +391,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 
 
 # Imprime el segundo elemento del vector que representa a los actores
+
 ```
 
 `@solution`
@@ -410,7 +412,7 @@ ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incor
 
 ex() %>% check_output_expr("shining_list$actors", missing_msg = "¿Has seleccionado e impreso correctamente el vector que representa a los actores? Puedes usar `shining_list$actors`, por ejemplo.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Para seleccionar el segundo actor del vector que representa a los actores, debes encadenar selections: `shining_list$actors` que representa a los actores, de modo que puedas añadir un `[2]` para seleccionar el segundo elemento")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Para seleccionar el segundo actor del vector que representa a los actores, debes encadenar selecciones: `shining_list$actors` que representa a los actores, de modo que puedas añadir un `[2]` para seleccionar el segundo elemento")
 
 success_msg("¡Buen trabajo! Seleccionar elementos de las listas es bastante fácil, ¿no? Continúa con el siguiente ejercicio.")
 ```

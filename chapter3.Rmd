@@ -20,7 +20,7 @@ skills:
 
 En R, una matriz es una colección de elementos del mismo tipo de datos (numéricos, de caracteres o lógicos) organizados en un número fijo de filas y columnas. Como solo trabaja con filas y columnas, una matriz se denomina bidimensional. 
 
-Puedes construir una matriz en R con la función [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix). Considera el siguiente example:
+Puedes construir una matriz en R con la función [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix). Considera el siguiente ejemplo:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
@@ -57,14 +57,14 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 `@sct`
 ```{r}
 ex() %>% check_function("matrix") %>% {
-	check_arg (., 'data') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
-	check_arg (., 'byrow') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
-	check_arg (., 'nrow') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
+	check_arg (., 'data') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Echa un vistazo a la tarea, ¡la respuesta ya está dada!")
+	check_arg (., 'byrow') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Echa un vistazo a la tarea, ¡la respuesta ya está dada!")
+	check_arg (., 'nrow') %>% check_equal (incorrect_msg = "¿Has creado correctamente la matriz? Echa un vistazo a la tarea, ¡la respuesta ya está dada!")
 	}
 
-ex() %>% check_output_expr ("matrix (1:9, byrow=TRUE, nrow=3)", missing_msg = "Parece que hay un problema con la definición de la matriz. Eche un vistazo a la tarea, ¡la respuesta ya está dada!")
+ex() %>% check_output_expr ("matrix (1:9, byrow=TRUE, nrow=3)", missing_msg = "Parece que hay un problema con la definición de la matriz. Echa un vistazo a la tarea, ¡la respuesta ya está dada!")
 
-success_msg("¡Buen trabajo! Continúe con el siguiente ejercicio.")
+success_msg("¡Buen trabajo! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -81,7 +81,7 @@ skills:
 
 Ha llegado el momento de ensuciarse las manos. En los siguientes ejercicios analizarás los números de taquilla de la franquicia de Star Wars. ¡Que la fuerza te acompañe! 
 
-En el editor se definen tres vectores. Cada uno representa los números de taquilla de las tres primeras películas de Star Wars. El primer elemento de cada vector indica los ingresos de la taquilla estadounidense, el segundo elemento se refiere a la taquilla no estadounidense (source: Wikipedia).
+En el editor se definen tres vectores. Cada uno representa los números de taquilla de las tres primeras películas de Star Wars. El primer elemento de cada vector indica los ingresos de la taquilla estadounidense, el segundo elemento se refiere a la taquilla no estadounidense (fuente: Wikipedia).
 
 En este ejercicio, combinarás todas estas figuras en un solo vector. A continuación, construirás una matriz a partir de este vector.
 
@@ -256,7 +256,7 @@ ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal"
 
 ex() %>% check_output_expr("star_wars_matrix", missing_msg = "No olvides imprimir `star_wars_matrix` después de nombrar las filas y las columnas.")
 
-success_msg("¡Buen trabajo! ¡Estás en camino de convertirte en un Jedi de R! Continúe con el siguiente ejercicio.")
+success_msg("¡Buen trabajo! ¡Estás en camino de convertirte en un Jedi de R! Continúa con el siguiente ejercicio.")
 ```
 
 ---
@@ -305,7 +305,7 @@ star_wars_matrix <- matrix(box_office,
                       nrow = 3, byrow = TRUE,
                       dimnames = list(titles, region))
 
-# Calcule las cifras de taquilla mundial
+# Calcula las cifras de taquilla mundial
 worldwide_vector <-
 ```
 
@@ -322,7 +322,7 @@ star_wars_matrix <- matrix(box_office,
                       nrow = 3, byrow = TRUE,
                       dimnames = list(titles, region))
 
-# Calcule las cifras de taquilla mundial
+# Calcula las cifras de taquilla mundial
 worldwide_vector <- rowSums(star_wars_matrix)
 ```
 
@@ -353,7 +353,7 @@ skills:
 
 En el ejercicio anterior calculaste el vector que contenía los ingresos de taquilla en todo el mundo de cada una de las tres películas de Star Wars. Sin embargo, este vector aún no forma parte de `star_wars_matrix`.
 
-Puedes añadir una columna o varias columnas a una matriz con la función [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), que fusiona matrices y/o vectores por columna. Por example: 
+Puedes añadir una columna o varias columnas a una matriz con la función [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), que fusiona matrices y/o vectores por columna. Por ejemplo: 
 
 ```
 big_matrix <- cbind (matrix1, matrix2, vector1...)
@@ -460,18 +460,18 @@ Asigna el resultado a `all_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
-# Construye matriz
+# Construye la matriz
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
-# Construir matrix2
+# Construye matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
 
-# eliminar todo excepto all_wars_matrix
+# Elimina todo excepto all_wars_matrix
 rm(box_office_all)
 rm(movie_names)
 rm(col_titles)
@@ -547,6 +547,7 @@ all_wars_matrix
 total_revenue_vector <- 
   
 # Imprime total_revenue_vector
+
 ```
 
 `@solution`
@@ -587,12 +588,12 @@ skills:
   - 1
 ```
 
-Al igual que con los vectores, puedes utilizar los corchetes `[ ]` para seleccionar uno o varios elementos de una matriz. Mientras que los vectores tienen una dimensión, las matrices tienen dos dimensiones. Por lo tanto, debes usar una coma para separar las filas que quieres seleccionar de las columnas. Por example: 
+Al igual que con los vectores, puedes utilizar los corchetes `[ ]` para seleccionar uno o varios elementos de una matriz. Mientras que los vectores tienen una dimensión, las matrices tienen dos dimensiones. Por lo tanto, debes usar una coma para separar las filas que quieres seleccionar de las columnas. Por ejemplo: 
 
 - `my_matrix[1,2]` selecciona el elemento de la primera fila y la segunda columna.
 - `my_matrix[1:3,2:4]` da como resultado una matriz con los datos de las filas 1, 2, 3 y las columnas 2, 3 y 4.
 
-Si quieres seleccionar todos los elementos de una fila o columna, no se necesita ningún número antes o después de la coma, respectively:
+Si quieres seleccionar todos los elementos de una fila o columna, no se necesita ningún número antes o después de la coma, respectivamente:
 
 - `my_matrix[,1]` selecciona todos los elementos de la primera columna.
 - `my_matrix[,1]` selecciona todos los elementos de la primera fila.
@@ -678,11 +679,11 @@ skills:
   - 1
 ```
 
-De manera similar a lo que ha aprendido con los vectores, los operadores estándar como `+`, `-`, `/`, `*`, etc. funcionan de forma elemental en las matrices de R. 
+De manera similar a lo que has aprendido con los vectores, los operadores estándar como `+`, `-`, `/`, `*`, etc. funcionan de forma elemental en las matrices de R. 
 
-Por ejemplo, `2 * my_matrix` multiplica cada elemento de my_matrix` por dos.
+Por ejemplo, `2 * my_matrix` multiplica cada elemento de `my_matrix` por dos.
 
-Como analista de datos recién contratado para Lucasfilm, tu trabajo es averiguar cuántos visitantes acudieron a cada película en cada área geográfica. Ya tienes las cifras de ingresos totales en `all_wars_matrix`.. Supongamos que el precio de una entrada era de 5 dólares. Simplemente dividiendo los números de taquilla por el precio de esta entrada, obtendrá el número de visitantes.
+Como analista de datos recién contratado para Lucasfilm, tu trabajo es averiguar cuántos visitantes acudieron a cada película en cada área geográfica. Ya tienes las cifras de ingresos totales en `all_wars_matrix`. Supongamos que el precio de una entrada era de 5 dólares. Simplemente dividiendo los números de taquilla por el precio de esta entrada, obtendrás el número de visitantes.
 
 `@instructions`
 - Divide `all_wars_matrix` entre 5 y obtendrás el número de visitantes en millones. Asigna la matriz resultante a los `visitors`.
@@ -753,13 +754,13 @@ Tras analizar el resultado del ejercicio anterior, el gran jefe Lucas señala qu
 _Quienes estén familiarizados con las matrices deben tener en cuenta que esta no es la multiplicación de matrices estándar para la que se debe usar `%*%` en R._
 
 `@instructions`
-- Divide `all_wars_matrix` por `ticket_prices_matrix` para obtener el número estimado de visitantes dentro y fuera de EE. UU. para las seis películas. Asigne el resultado a `visitors`.
+- Divide `all_wars_matrix` por `ticket_prices_matrix` para obtener el número estimado de visitantes dentro y fuera de EE. UU. para las seis películas. Asigna el resultado a `visitors`.
 - En la matriz `visitors`, selecciona toda la primera columna, que representa el número de visitantes en EE. UU. Guarda esta selección como us_visitors.
 - Calcula el número promedio de visitantes de EE. UU.; imprime el resultado.
 
 `@hint`
 - Puedes usar la función `mean()` para calcular el promedio de las entradas de la función.
-- Para obtener el número de visitantes en EE. UU., selecciona la primera columna de `visitors` usando `visitors[ ,1]`.
+- Para obtener el número de visitantes en EE. UU., selecciona la primera columna de `visitors` usando `visitors[,1]`.
 
 `@pre_exercise_code`
 ```{r}
