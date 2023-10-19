@@ -282,7 +282,7 @@ skills:
 El data frame `planets_df` debe tener 8 observaciones y 5 variables. Se ha puesto a disposición en el workspace, por lo que puedes utilizarlo directamente.
 
 `@instructions`
-Usa [`str()` para investigar la estructura de la nueva variable `planets_df`.
+Usa [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) para investigar la estructura de la nueva variable `planets_df`.
 
 `@hint`
 `planets_df` ya está disponible en tu workspace, así que `str(planets_df)` te servirá.

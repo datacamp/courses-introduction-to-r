@@ -157,7 +157,7 @@ Para `roulette_vector`:
 Solo jugabas al póquer y a la ruleta, ya que había una delegación de médiums que ocupaban las mesas de dados. Para poder usar estos datos en R decides crear las variables `poker_vector` y `roulette_vector`.
 
 `@instructions`
-Asigna las ganancias/pérdidas de la ruleta a la variable `roulette_vector`. Perdiste 24$, luego perdiste 50$, ganaste 100$, perdiste 350$ y ganaste 10$.
+Asigna las ganancias/pérdidas de la ruleta a la variable `roulette_vector`. Perdiste $24, luego perdiste $50, ganaste $100, perdiste $350 y ganaste $10.
 
 `@hint`
 Para ayudarte con este paso, el editor ya contiene el código para crear `poker_vector`. Asigna los valores correctos a `roulette_vector` en función de los números de la tarea. No hay que olvidar que las pérdidas son números negativos.
@@ -246,7 +246,7 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 # Asigna días como nombres (en inglés) de poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Asignar días como nombres (en inglés) de roulette_vector
+# Asigna días como (en inglés) nombres de roulette_vector
 
 ```
 
@@ -261,7 +261,7 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 # Asigna días como nombres (en inglés) de poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Asignaa días como (en inglés) nombres de roulette_vector
+# Asigna días como (en inglés) nombres de roulette_vector
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
