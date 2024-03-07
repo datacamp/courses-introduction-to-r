@@ -439,7 +439,7 @@ skills:
   - 1
 ```
 
-Al igual que cada acción tiene una reacción, cada c[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) tiene un [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (Admitimos que se nos dan muy mal las metáforas). 
+Al igual que cada acción tiene una reacción, cada [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) tiene un [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (Admitimos que se nos dan muy mal las metáforas). 
 
 Tu R workspace, donde  «viven» todas las variables que definiste (comprueba qué es un workspace), ya se ha inicializado y contiene dos matrices:
 
