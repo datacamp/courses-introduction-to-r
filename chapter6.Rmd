@@ -379,7 +379,7 @@ Besides selecting components, you often need to select specific elements out of 
 
 `@pre_exercise_code`
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
+load(url("http://assets.datacamp.com/course/intro_to_r/shining_list.RData"))
 ```
 
 `@sample_code`
