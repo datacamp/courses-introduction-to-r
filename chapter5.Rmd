@@ -32,7 +32,7 @@ The output, namely the respondents' answers to the questions formulated above, i
 A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
+Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
 
 `@hint`
 Submit the answer and witness the magic!
@@ -77,12 +77,12 @@ Wow, that is a lot of cars!
 
 Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
 
-So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Similarly, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your dataset.
+So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
 
-Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your dataset.
+Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
 
 `@instructions`
-Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) dataset to have a look at the header and the first observations.
+Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
 
 `@hint`
 `head(mtcars)` will show the first observations of the `mtcars` data frame.
@@ -125,7 +125,7 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your dataset. For a data frame it tells you:
+Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
 
 - The total number of observations (e.g. 32 car types)
 - The total number of variables (e.g. 11 car features)
@@ -133,13 +133,13 @@ Another method that is often used to get a rapid overview of your data is the fu
 - The data type of each variable (e.g. `num`)
 - The first observations
 
-Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
 
 `@instructions`
-Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
+Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
 
 `@hint`
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+Use the `str()` function on `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -188,10 +188,10 @@ As a first goal, you want to construct a data frame that describes the main char
 
 After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
 
-You construct a data frame with the [`data.frame()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
 `@instructions`
-Use the function [`data.frame()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame) to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
 
 `@hint`
 Your `data.frame()` call starts as follows:
@@ -282,7 +282,7 @@ skills:
 The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
 
 `@instructions`
-Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
+Use `str()` to investigate the structure of the new `planets_df` variable.
 
 `@hint`
 `planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
@@ -668,13 +668,13 @@ skills:
 
 So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
 
-Now, let us move up one level and use the function [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset). You should see the [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
 
 The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
 
@@ -754,9 +754,9 @@ skills:
 
 Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
+In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
 
 ```
 a <- c(100, 10, 1000)
@@ -774,10 +774,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Submit the answer when you are ready to continue.
+Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
 
 `@hint`
-Just play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console!
+Just play with the `order()` function in the console!
 
 `@pre_exercise_code`
 ```{r}
@@ -811,7 +811,7 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
 
 `@instructions`
 - Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.

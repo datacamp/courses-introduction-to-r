@@ -74,7 +74,7 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
@@ -82,7 +82,7 @@ sex_vector <- c("Male","Female","Female","Male","Male")
 
 It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
 
-The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor:
+The function `factor()` will encode the vector as a factor:
 
 ```
 factor_sex_vector <- factor(sex_vector)
@@ -93,7 +93,7 @@ factor_sex_vector <- factor(sex_vector)
 - Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
 
 `@hint`
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
 
 `@pre_exercise_code`
 ```{r}
@@ -219,7 +219,7 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
+When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
@@ -303,19 +303,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable:
+After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
 
 `@instructions`
-Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
 
 `@hint`
-Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
 
 `@pre_exercise_code`
 ```{r}
@@ -514,7 +514,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
 
 ```
 factor(some_vector,
@@ -522,13 +522,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
 
 `@instructions`
 From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
 
 `@pre_exercise_code`
 ```{r}

@@ -21,13 +21,13 @@ skills:
 
 In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example:
+You can construct a matrix in R with the `matrix()` function. Consider the following example:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function:
+In the `matrix()` function:
 
 - The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
 - The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
@@ -276,7 +276,7 @@ The single most important thing for a movie in order to become an instant legend
 
 To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
 
-In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector:
 
 ```
 rowSums(my_matrix)
@@ -354,14 +354,14 @@ skills:
 
 In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
 
-You can add a column or multiple columns to a matrix with the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function, which merges matrices and/or vectors together by column. For example: 
+You can add a column or multiple columns to a matrix with the `cbind()` function, which merges matrices and/or vectors together by column. For example: 
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 `@instructions`
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function.
+Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the `cbind()` function.
 
 `@hint`
 In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
@@ -440,7 +440,7 @@ skills:
   - 1
 ```
 
-Just like every action has a reaction, every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has an [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (We admit, we are pretty bad with metaphors.) 
+Just like every action has a reaction, every `cbind()` has an `rbind()`. (We admit, we are pretty bad with metaphors.) 
 
 Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
 
@@ -525,18 +525,18 @@ skills:
   - 1
 ```
 
-Just like [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has  [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+Just like `cbind()` has  `rbind()`, `colSums()` has `rowSums()`. Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
 
 `@instructions`
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function.
+- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()`function.
 - Print out `total_revenue_vector` to have a look at the results.
 
 `@hint`
-You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function with `star_wars_matrix` as the argument to find the total box office per region.
+You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
 
 `@pre_exercise_code`
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+load(url("https://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
 ```
 
 `@sample_code`
