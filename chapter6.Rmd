@@ -107,7 +107,7 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
+Let us create our first list! To construct a list you use the function `list()`: 
 
 ```
 my_list <- list(comp1, comp2 ...)
@@ -119,7 +119,7 @@ The arguments to the list function are the list components. Remember, these comp
 Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
 
 `@hint`
-Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
 
 `@pre_exercise_code`
 ```{r}
@@ -379,7 +379,7 @@ Besides selecting components, you often need to select specific elements out of 
 
 `@pre_exercise_code`
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
+load(url("https://assets.datacamp.com/course/intro_to_r/shining_list.RData"))
 ```
 
 `@sample_code`

@@ -71,7 +71,7 @@ Let us focus first!
 
 On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
 
-In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the parentheses. For example:
+In R, you create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example:
 
 ```
 numeric_vector <- c(1, 2, 3)
@@ -529,7 +529,7 @@ skills:
 
 Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
 
-A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
 
 ```
 total_poker <- sum(poker_vector)
@@ -541,7 +541,7 @@ total_poker <- sum(poker_vector)
 - Print out `total_week`.
 
 `@hint`
-Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
+Use the `sum()` function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
 
 `@pre_exercise_code`
 ```{r}
@@ -928,7 +928,7 @@ poker_vector[c("Monday","Tuesday")]
 
 `@instructions`
 - Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function. Simply print out the result so you can inspect it.
+- Calculate the average of the values in `poker_start` with the `mean()` function. Simply print out the result so you can inspect it.
 
 `@hint`
 - You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
