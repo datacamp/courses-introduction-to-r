@@ -429,11 +429,11 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 
 | Scores | Comments               |
 |--------|------------------------|
-| 4.6    | I would watch it again |
-| 5      | Amazing!               |
-| 4.8    | I liked it             |
-| 5      | One of the best movies |
-| 4.2    | Fascinating plot       |
+| 4.6    | <span translate="no">I would watch it again</span> |
+| 5      | <span translate="no">Amazing!</span>               |
+| 4.8    | <span translate="no">I liked it</span>             |
+| 5      | <span translate="no">One of the best movies</span> |
+| 4.2    | <span translate="no">Fascinating plot</span>       |
 
 It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
 
