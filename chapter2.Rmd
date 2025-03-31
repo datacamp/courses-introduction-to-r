@@ -711,7 +711,7 @@ Another possible route for investigation is your performance at the beginning of
 To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
 
 `@instructions`
-Assign the poker results of Wednesday to the variable `poker_wednesday`.
+Assign the poker results of <span translate="no">Wednesday</span> to the variable `poker_wednesday`.
 
 `@hint`
 Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
