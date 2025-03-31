@@ -783,7 +783,7 @@ poker_vector[c(1, 5)]
 ```
 
 `@instructions`
-Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+Assign the poker results of <span translate="no">Tuesday, Wednesday</span> and <span translate="no">Thursday</span> to the variable `poker_midweek`.
 
 `@hint`
 Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
