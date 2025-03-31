@@ -850,7 +850,7 @@ Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very conv
 So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
 
 `@instructions`
-Assign to `roulette_selection_vector` the roulette results from Tuesday up to Friday; make use of `:` if it makes things easier for you.
+Assign to `roulette_selection_vector` the roulette results from <span translate="no">Tuesday</span> up to <span translate="no">Friday</span>; make use of `:` if it makes things easier for you.
 
 `@hint`
 Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
