@@ -80,7 +80,7 @@ To create factors in R, you make use of the function `factor()`. First thing tha
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female".
+It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
 
 The function `factor()` will encode the vector as a factor:
 
