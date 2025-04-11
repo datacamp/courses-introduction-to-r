@@ -711,7 +711,7 @@ Another possible route for investigation is your performance at the beginning of
 To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
 
 `@instructions`
-Assign the poker results of Wednesday to the variable `poker_wednesday`.
+Assign the poker results of <span translate="no">Wednesday</span> to the variable `poker_wednesday`.
 
 `@hint`
 Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
@@ -783,7 +783,7 @@ poker_vector[c(1, 5)]
 ```
 
 `@instructions`
-Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+Assign the poker results of <span translate="no">Tuesday, Wednesday</span> and <span translate="no">Thursday</span> to the variable `poker_midweek`.
 
 `@hint`
 Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
@@ -850,7 +850,7 @@ Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very conv
 So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
 
 `@instructions`
-Assign to `roulette_selection_vector` the roulette results from Tuesday up to Friday; make use of `:` if it makes things easier for you.
+Assign to `roulette_selection_vector` the roulette results from <span translate="no">Tuesday</span> up to <span translate="no">Friday</span>; make use of `:` if it makes things easier for you.
 
 `@hint`
 Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
@@ -912,7 +912,7 @@ skills:
   - 1
 ```
 
-Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
+Another way to tackle the previous exercise is by using the names of the vector elements (<span translate="no">Monday, Tuesday,</span> ...) instead of their numeric positions. For example, 
 
 ```
 poker_vector["Monday"]

@@ -20,7 +20,7 @@ skills:
 
 In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor is a comment.
+R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
 
 You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
 
@@ -350,7 +350,7 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
 
 `@instructions`
 - Submit the answer and read the error message. Make sure to understand why this did not work.
