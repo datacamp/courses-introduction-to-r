@@ -541,7 +541,7 @@ total_poker <- sum(poker_vector)
 - Print out `total_week`.
 
 `@hint`
-Use the `sum()` function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
+Use the `sum()` function to get the total of the `roulette_vector`. `total_week` is then the sum of `total_roulette` and `total_poker`.
 
 `@pre_exercise_code`
 ```{r}
