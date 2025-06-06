@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Bölüm 5
+title: Veri çerçeveleri
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Birlikte çalışacağınız veri kümelerinin birçoğu veri çerçeveleri olarak
+  depolanır. Bu bölümün sonunda bir veri çerçevesi oluşturabilecek, bir veri
+  çerçevesinin ilgi çekici kısımlarını seçebilecek ve bir veri çerçevesini
+  belirli değişkenlere göre sıralayabileceksiniz.
 ---
 
-## What's a data frame?
+## Veri çerçevesi nedir?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +18,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Matrislerle ilgili bölümden hatırlayabileceğiniz gibi, bir matrise koyduğunuz tüm elemanların aynı tipte olması gerekir. Orada Star Wars hakkındaki veri kümeniz yalnızca sayısal elemanlar içeriyordu. 
 
-When doing a market research survey, however, you often have questions such as:
+Buna karşılık, bir pazar araştırması anketi yaparken genellikle şu gibi sorularla karşılaşırsınız:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- "Evli misiniz?" veya "Evet/Hayır" soruları (`logical`).
+- "Kaç yaşındasınız?" (`numeric`).
+- "Bu ürün hakkında ne düşünüyorsunuz?" veya diğer "açık uçlu" sorular (`character`).
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Çıktı, yani katılımcıların yukarıda formüle edilen sorulara verdikleri yanıtlar, farklı veri türlerinden oluşan bir veri kümesidir. Kendinizi sık sık tek bir veri türü yerine farklı veri türleri içeren veri kümeleriyle çalışırken bulacaksınız. 
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Veri çerçevesi, bir veri kümesinin değişkenlerini sütunlar, gözlemleri ise satırlar halinde içerir. Bu, SAS veya SPSS gibi farklı istatistiksel yazılım paketlerinden gelenler için tanıdık bir kavram olacaktır.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Yanıtı gönderin. `mtcars` adlı yerleşik örnek veri çerçevesinden alınan veriler konsola yazdırılır.
 
 `@hint`
-Submit the answer and witness the magic!
+Yanıtı gönderin ve sihre tanık olun!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +56,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Kod hakkında hiçbir şeyi değiştirmeyin, `mtcars` çıktısını verdiğinizden emin olun.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Harika! Bir sonraki alıştırmaya devam edin.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Veri kümenize hızlıca bakma
 
 ```yaml
 type: NormalExercise
@@ -73,19 +73,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Vay be, ne kadar çok araba var! 
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Büyük veri kümeleriyle çalışmak veri analizinde alışılmadık bir durum değildir. (Aşırı) büyük veri kümeleri ve veri çerçeveleri ile çalışırken veri analisti olarak ilk göreviniz, yapısını ve ana elemanlarını net bir şekilde anlamaktır. Bu nedenle, tüm veri kümesinin yalnızca küçük bir bölümünü göstermek genellikle yararlıdır. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Peki R’de bu nasıl yapılır? `head()` fonksiyonu, bir veri çerçevesinin ilk gözlemlerini göstermenizi sağlar. Benzer şekilde `tail()` fonksiyonu ise veri kümenizdeki son gözlemleri yazdırır.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Hem `head()` hem de `tail()`, veri kümenizdeki farklı değişkenlerin adlarını içeren “başlık” adlı bir üst satır yazdırır.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Başlığa ve ilk gözlemlere bakmak için `mtcars` veri kümesinde `head()` fonksiyonunu çağırın.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)`, `mtcars` veri çerçevesinin ilk gözlemlerini gösterir.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +106,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Doğru bir şekilde `mtcars`'ı `head()` fonksiyonuna geçirdiniz mi?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Sadece `head()` çağrısının sonucunu yazdırın, yeni bir değişkene atamanıza gerek yok.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Harika! Peki, bu veri setinde neler var? Örneğin, `hp` aracın beygir gücünü temsil eder; Datsun, gösterilen 6 araba arasında en düşük beygir gücüne sahiptir. Değişkenlerin anlamının tam bir özetini görmek için konsola `?mtcars` yazın ve yardım sayfasını okuyun. Bir sonraki alıştırmaya devam edin!");
 ```
 
 ---
 
-## Have a look at the structure
+## Yapıya göz atma
 
 ```yaml
 type: NormalExercise
@@ -125,21 +125,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Verilerinize hızlı bir genel bakış elde etmek için sıklıkla kullanılan bir başka yöntem de `str()` fonksiyonudur. `str()` fonksiyonu size veri kümenizin yapısını gösterir. Bir veri çerçevesi için size şunları söyler:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Toplam gözlem sayısı (ör. 32 araç türü)
+- Toplam değişken sayısı (ör. 11 araç özelliği)
+- Değişken adlarının tam listesi (ör. `mpg`, `cyl`...)
+- Her bir değişkenin veri türü (ör. `num`)
+- İlk gözlemler
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+`str()`] fonksiyonunu uygulamak, genellikle yeni bir veri kümesi veya veri çerçevesi aldığınızda yapacağınız ilk şey olacaktır. Bunu yapmak, gerçek analize geçmeden önce veri kümeniz hakkında daha fazla bilgi edinmek için harika bir yoldur.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+`mtcars` veri kümesinin yapısını araştırın. Yukarıda belirtildiği gibi aynı sayıları, değişkenleri ve veri türlerini gördüğünüzden emin olun.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+`str()` fonksiyonunu `mtcars` üzerinde kullanın.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +160,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "`str()` fonksiyonunu `mtcars` üzerinde doğru şekilde çağırdınız mı?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Güzel iş! Bir veri kümesinin `str()` fonksiyonunu görüntüleyerek birçok bilgi bulabilirsiniz. Bir sonraki alıştırmaya devam edin.")
 ```
 
 ---
 
-## Creating a data frame
+## Veri çerçevesi oluşturma
 
 ```yaml
 type: NormalExercise
@@ -177,28 +177,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Yerleşik veri kümelerini kullanmak kendi veri kümelerinizi oluşturmanın yarısı kadar bile eğlenceli olmadığından, bu bölümün geri kalanı kişisel olarak geliştirdiğiniz veri kümesini temel alacak. Sırt roketinizi takın çünkü uzayı keşfe çıkıyoruz! 
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+İlk hedef olarak, güneş sistemimizdeki sekiz gezegenin temel özelliklerini tanımlayan bir veri çerçevesi oluşturmak istiyorsunuz. Yakın arkadaşınız Buzz'a göre bir gezegenin temel özellikleri şunlardır:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Gezegenin türü (Karasal veya Gaz Bulutu).
+- Dünya’nın çapına göre gezegenin çapı.
+- Dünya'nınkine göre gezegenin Güneş etrafındaki dönüşü.
+- Gezegenin halkalarının olup olmadığı (TRUE veya FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+[Wikipedia](https://en.wikipedia.org/wiki/Planet)’da kaliteli bir araştırma yaptıktan sonra, gerekli vektörleri oluşturacak kadar kendinize güveniyorsunuz: `name`, `type`, `diameter`, `rotation` ve `rings`. Bu vektörler editörde zaten kodlandı. Bu vektörlerin her birindeki ilk eleman ilk gözleme karşılık gelir.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+`data.frame()` fonksiyonu ile bir veri çerçevesi oluşturun. Bağımsız değişken olarak, daha önceki vektörleri geçirin: Bunlar veri çerçevenizin farklı sütunları haline gelecektir. Her sütun aynı uzunlukta olduğundan, geçirdiğiniz vektörlerin de aynı uzunlukta olması gerekir. Ancak bunların farklı veri türleri içermesinin mümkün (ve muhtemel) olduğunu unutmayın.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Bir veri çerçevesi oluşturmak için `data.frame()` fonksiyonunu kullanın. Sırasıyla `name`, `type`, `diameter`, `rotation` ve `rings` vektörlerini `data.frame()` çerçevesine bağımsız değişken olarak geçirin. Ortaya çıkan veri çerçevesini `planets_df` olarak adlandırın.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+`data.frame()` çağrınız aşağıdaki gibi başlar:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Tamamlayabilir misiniz?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +250,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Vektörlerin tanımında hiçbir şeyi değiştirmeyin. Sadece `planets_df` oluşturmak için bir `data.frame()` çağrısı ekleyin."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +261,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Doğru bir şekilde `data.frame()` çağrısı yaparak `planets_df` oluşturduğunuzdan emin misiniz? `data.frame()` içinde tüm vektörleri doğru sırayla geçirdiğinizden emin olun: `name`, `type`, `diameter`, `rotation` ve son olarak `rings`.")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Harika iş! Bildiğiniz gibi, bir sonraki mantıklı adım, az önce oluşturduğunuz veri çerçevesini incelemektir. Bir sonraki alıştırmaya geçin.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Veri çerçevesi oluşturma (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+`planets_df` veri çerçevesi 8 gözlem ve 5 değişkene sahip olmalıdır. Doğrudan kullanabilmeniz için çalışma alanında kullanılabilir hale getirilmiştir.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Yeni `planets_df` değişkeninin yapısını araştırmak için `str()` fonksiyonunu kullanın.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` çalışma alanınızda zaten mevcuttur, bu nedenle `str(planets_df)` işinizi görecektir.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Çalışma alanında zaten mevcut olan `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "`planets_df` yapısını doğru bir şekilde görüntülediniz mi? Bunu yapmak için `str()` kullanın!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Harika! Artık `planets_df` veri kümesini net bir şekilde anladığınıza göre, ondan nasıl eleman seçeceğinizi görme zamanı. Bir sonraki alıştırmalarda bununla ilgili her şeyi öğrenin!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Veri çerçevesi elemanlarını seçme
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Vektörler ve matrislerde olduğu gibi, bir veri çerçevesindeki elemanları köşeli parantezler `[ ]` yardımıyla seçersiniz. Virgül kullanarak, satırlardan ve sütunlardan ayrı ayrı nelerin seçileceğini belirtebilirsiniz. Örneğin:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]`, `my_df` içindeki birinci satırda ve ikinci sütunda bulunan değeri seçer.
+- `my_df[1:3,2:4]`, `my_df` içindeki 1, 2, 3. satırları ve 2, 3, 4. sütunları seçer.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Bazen bir satırın veya sütunun tüm elemanlarını seçmek istersiniz. Örneğin `my_df[1, ]`, birinci satırın tüm öğelerini seçer. Şimdi bu tekniği `planets_df` üzerinde uygulayalım!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- `planets_df` veri çerçevesinden Merkür’ün çapını seçin: Birinci satır ve üçüncü sütundaki değerdir. Sonucu yazdırın.
+- `planets_df` veri çerçevesinden Mars ile ilgili tüm verileri seçin (dördüncü satır). Sonucu yazdırın.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Venüs’ün çapını seçmek için (ikinci satır) şuna ihtiyacınız olacaktır: `planets_df[2,3]`. O zaman Merkür için neye ihtiyacınız olur?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Lütfen `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Merkür'ün çapını doğru bir şekilde seçip yazdırdınız mı? `[1,3]` kullanabilirsiniz.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Mars için tüm verileri doğru bir şekilde seçip yazdırdınız mı? `[4,]` kullanabilirsiniz.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Harika! Veri çerçevenizden elemanları indeksle seçmenin yanı sıra, sütun adlarını da kullanabilirsiniz. Nasıl yapıldığını öğrenmek için bir sonraki alıştırmaya geçin.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Veri çerçevesi elemanlarını seçme (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Bir veri çerçevesinin elemanlarını seçmek için sayıları kullanmak yerine, değişken adlarını kullanarak veri çerçevesinin sütunlarını da seçebilirsiniz. 
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+`type` sütununun ilk üç öğesini seçmek istediğinizi varsayalım. Bunu yapmanın bir yolu şudur:
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Bu yaklaşımın olası bir dezavantajı, `type` sütun numarasını bilmenizin (veya aramanızın) zorunlu olmasıdır. Çok sayıda değişkeniniz varsa bunu yapmak zorlaşır. Genellikle sadece değişken adını kullanmak daha kolaydır:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+`planets_df` veri çerçevesinin `"diameter"` sütunundaki ilk 5 değeri seçin ve yazdırın.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+`planets_df[1:5, ...]` ile ilk beş değeri seçebilirsiniz. Yalnızca `"diameter"` sütununu seçmek için `...` bitini doldurabilir misiniz?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Lütfen `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Çap sütunundan ilk beş değeri doğru bir şekilde seçip yazdırdınız mı? Burada `[1:5, \"diameter\"]` kullanabilirsiniz.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Güzel! Bir sonraki alıştırmaya devam edin!")
 ```
 
 ---
 
-## Only planets with rings
+## Sadece halkalı gezegenler
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Genellikle bir veri çerçevesinden tam bir sütunu, yani belirli bir değişkeni seçmek istersiniz. Örneğin, `diameter` değişkeninin tüm öğelerini seçmek istiyorsanız şunların her ikisi de işinizi görecektir:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Ancak kestirme bir yol var. Sütunlarınızın adları varsa `$` işaretini kullanabilirsiniz:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- `planets_df` veri çerçevesinden `rings` değişkenini seçmek için `$` işaretini kullanın. Ortaya çıkan vektörü `rings_vector` olarak depolayın.
+- Doğru yapıp yapmadığınızı görmek için `rings_vector` sonucunun çıktısını alın.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` fonksiyonu, `planets_df` içinden `diameter` sütununu seçer. O zaman `rings` sütununu seçmek için neye ihtiyacınız vardır?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Lütfen `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "`rings` değişkenini `planets_df`'den doğru bir şekilde seçtiniz mi? `$rings` kullanın. Sonucu `rings_vector` olarak saklayın.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "`rings_vector`'ü oluşturduktan sonra yazdırmayı unutmayın!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Harika! Bir sonraki alıştırmaya devam edin ve alt kümeleme için başka bir yol keşfedin!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Sadece halkalı gezegenler (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Güneş sistemimizdeki bazı gezegenlerin halkaları olduğunu, bazılarının ise olmadığını muhtemelen liseden hatırlıyorsunuz. Ne yazık ki isimlerini hatırlayamıyorsunuz. R size yardım edebilir mi?
 
-If you type `rings_vector` in the console, you get:
+Konsola `rings_vector` yazarsanız şunu elde edersiniz:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Yani ilk dört gözlemin (veya gezegenin) bir halkası yok (`FALSE`) ancak diğer dördünün var (`TRUE`). Buna karşılık, bu gezegenlerin isimleri, çapları vb. hakkında güzel bir genel bakış elde edemezsiniz. Halkalı dört gezegenin verilerini seçmek için `rings_vector` değişkenini kullanmayı deneyelim.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Editördeki kod, halkaları olan tüm gezegenlerin `name` sütununu seçer. Kodu, yalnızca `name` sütunu yerine halkaları olan gezegenlerin _tüm_ sütunları seçilecek şekilde uyarlayın.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+_Tüm_ sütunları seçmek için `[ ]` içindeki sütunlar kısmını boş bırakmanız gerektiğini unutmayın! Yani `[rings_vector, ]` gerekli olacak.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Lütfen `planets_df` veya `rings_vector`'ı kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Kodunuzu, halkaları olan gezegenler için _tüm_ sütunları seçmek üzere doğru şekilde uyarladınız mı? `planets_df[rings_vector, ]` kullanabilirsiniz. Burada virgülü eklediğinizden emin olun, bu çok önemlidir!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Harika! Bu oldukça sıkıcı bir çözümdür. Bir sonraki alıştırma size bunu daha özlü bir şekilde nasıl yapacağınızı öğretecek.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Sadece halkalı gezegenler ama kestirme yol
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Peki önceki egzersizlerde tam olarak ne öğrendiniz? Bir veri çerçevesinden (`planets_df`) belirli bir koşulun doğru olup olmamasına göre (halkalı veya halkasız) bir alt küme seçtiniz ve ilgili tüm verileri çıkarmayı başardınız. Oldukça iyi! Şimdiye kadar NASA muhtemelen CV'nizle flört etmeye başlamıştır bile ;-). 
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Şimdi bir seviye yukarı çıkalım ve `subset()` fonksiyonunu kullanalım. `subset()` fonksiyonunu, önceki egzersizlerde yaptığınızın aynısını yapmak için bir kestirme yol olarak görmelisiniz. 
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+`subset()` fonksiyonunun ilk bağımsız değişkeni, alt kümesini istediğiniz veri kümesini belirtir. İkinci bağımsız değişkeni ekleyerek R’ye doğru alt kümeyi seçmesi için gerekli bilgi ve koşulları vermiş olursunuz. 
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Aşağıdaki kod, bir önceki egzersizde elde ettiğiniz sonucun aynısını verecektir ancak bu sefer `rings_vector` gerekli değil!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Dünya’dan daha küçük çapa sahip gezegenleri seçmek için `planets_df` veri çerçevesinde `subset()` fonksiyonunu kullanın. `diameter` değişkeni, gezegenin çapının Dünya gezegenine göre göreceli bir ölçüsü olduğundan `diameter < 1` koşulunuzdur.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` problemi çözdü denebilir. Peki `...` boşluğunu doldurabilir misiniz?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Lütfen `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "`subset()` içinde `subset = ...` kısmını doğru bir şekilde belirttiniz mi? Bu durumda koşul `diameter < 1` olmalıdır. Sonucu basitçe yazdırın.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "`subset()` fonksiyonuna geçirdiğiniz ilk argüman `planets_df` olmalıdır.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Harika! `subset()` fonksiyonu sadece daha özlü değil, aynı zamanda kodunuzu okuyan insanlar için muhtemelen daha anlaşılırdır. Bir sonraki alıştırmaya devam edin.");
 ```
 
 ---
 
-## Sorting
+## Sıralama
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Sıralamalar yapmak ve oluşturmak, insanların en sevdiği işlerden biridir. Bu sıralamalar faydalı (dünyanın en iyi üniversiteleri), eğlenceli (en etkili film yıldızları) veya anlamsız (en iyi 007 benzeri) olabilir.
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+Veri analizinde verilerinizi veri kümesindeki belirli bir değişkene göre sıralayabilirsiniz. R’de bu işlem `order()` fonksiyonunun yardımıyla yapılır. 
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()`, mesela a vektörü gibi bir değişkene uygulandığında, size her bir elemanın sıralı konumunu veren bir fonksiyondur:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,20 +763,22 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+`a` vektöründeki ikinci eleman olan 10 en küçük elemandır, bu nedenle 2 değeri, `order(a)` çıktısında ilk sırada yer alır. `a` vektöründeki ilk eleman olan 100, ikinci en küçük elemandır, bu nedenle 1 değeri, `order(a)` çıktısında ikinci sırada gelir.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+`order(a)` çıktısını kullanarak `a` vektörünü yeniden karıştırabiliriz:
+
     
+
 ```
 a[order(a)]
 [1]   10  100 1000
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Konsoldaki `order()` fonksiyonuyla denemeler yapın. Devam etmeye hazır olduğunuzda yanıtı gönderin.
 
 `@hint`
-Just play with the `order()` function in the console!
+Konsoldaki `order()` fonksiyonuyla biraz oynayın!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +797,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Harika! Şimdi veri çerçevenizi sıralamak için `order()` fonksiyonunu kullanalım!")
 ```
 
 ---
 
-## Sorting your data frame
+## Veri çerçevenizi sıralama
 
 ```yaml
 type: NormalExercise
@@ -811,15 +812,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Artık `order()` fonksiyonunu anladığınıza göre onunla yararlı bir şeyler yapalım. Veri çerçevenizi en küçük gezegenle başlayıp en büyük gezegenle bitecek şekilde yeniden düzenlemek istiyorsunuz. `diameter` sütununda bir sıralama yapacaksınız.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- `planets_df$diameter` üzerinde (`planets_df` `diameter` sütunu) `order()` çağrısı yapın. Sonucu `positions` olarak depolayın.
+- Şimdi `planets_df` sıralamasını `positions` vektörü ile köşeli parantezler içinde satır dizinleri olarak yeniden karıştırın. Tüm sütunları tutun. Sonucu yazdırın.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- `positions` oluşturmak için `order(planets_df$diameter)` değişkenini kullanın.
+- Şimdi `positions` değerini köşeli parantez içinde kullanabilirsiniz: `planets_df[...]`; peki `...` değerini doldurabilir misiniz?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +867,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Lütfen `planets_df` veri çerçevesini kaldırmayın veya üzerine yazmayın!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = " `positions` değişkenini doğru bir şekilde hesapladınız mı? `order(planets_df$diameter)` kullanabilirsiniz.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "`planets_df`'yi sıralamak için `planets_df[positions, ]` kullanın; köşeli parantez içindeki virgül çok önemlidir!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Harika! Bu alıştırma, veri çerçeveleri konusundaki bölümü tamamlıyor. Veri çerçevelerinin R'de son derece önemli olduğunu unutmayın, onlara her zaman ihtiyacınız olacak. Çok sık kullanılan bir diğer veri yapısı ise listedir. Bu, bir sonraki bölümün konusu olacak!")
 ```
