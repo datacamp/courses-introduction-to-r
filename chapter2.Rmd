@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 2
-title: Vectors
+title_meta: Capítulo 2
+title: Vetores
 description: >-
-  We take you on a trip to Vegas, where you will learn how to analyze your
-  gambling results using vectors in R. After completing this chapter, you will
-  be able to create vectors in R, name them, select elements from them, and
-  compare different vectors.
+  Vamos levá-lo a uma viagem a Las Vegas, em que você vai aprender a analisar os
+  resultados de suas apostas usando vetores no R. Após concluir este capítulo,
+  você será capaz de criar vetores no R, nomeá-los, selecionar elementos deles e
+  comparar diferentes vetores.
 ---
 
-## Create a vector
+## Criação de um vetor
 
 ```yaml
 type: NormalExercise
@@ -18,15 +18,15 @@ skills:
   - 1
 ```
 
-Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
+Está com sorte hoje? É bom que esteja, pois este capítulo o levará a uma viagem à Cidade dos Pecados, também conhecida como *Paraíso dos Estatísticos*!
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next stop, Vegas Baby... VEGAS!!
+Graças ao R e às suas novas habilidades de análise de dados, você aprenderá como melhorar seu desempenho nas mesas e iniciar sua carreira como apostador profissional. Este capítulo mostrará como você pode acompanhar facilmente o progresso de suas apostas e como fazer algumas análises simples de ações passadas. Próxima parada, Las Vegas! LAS VEGAS!!
 
 `@instructions`
-- Do you still remember what you have learned in the first chapter? Assign the value `"Go!"` to the variable `vegas`. Remember: R is case sensitive!
+- Você ainda se lembra do que aprendeu no primeiro capítulo? Atribua o valor `"Go!"` à variável `vegas`. Lembre-se: o R diferencia maiúsculas de minúsculas!
 
 `@hint`
-Just type the following line in the editor:
+Basta digitar a seguinte linha no editor:
 ```
 vegas <- "Go!"
 ```
@@ -50,14 +50,14 @@ vegas <- "Go!"
 
 `@sct`
 ```{r}
-ex() %>% check_object("vegas") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `vegas`. Do not forget that R is case sensitive!")
+ex() %>% check_object("vegas") %>% check_equal(incorrect_msg = "Certifique-se de que você atribuiu o valor correto a `vegas`. Não se esqueça de que R diferencia maiúsculas de minúsculas!")
 
-success_msg("Great! Head over to the next exercise.")
+success_msg("Ótimo! Vá para o próximo exercício.")
 ```
 
 ---
 
-## Create a vector (2)
+## Criação de um vetor (2)
 
 ```yaml
 type: NormalExercise
@@ -67,24 +67,24 @@ skills:
   - 1
 ```
 
-Let us focus first! 
+Primeiro vamos nos concentrar! 
 
-On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
+Em seu caminho da pobreza à riqueza, você fará uso intenso de vetores. Os vetores são matrizes unidimensionais que podem conter dados numéricos, cadeias de caracteres ou dados lógicos. Em outras palavras, um vetor é uma ferramenta simples para armazenar dados. Por exemplo: você pode armazenar seus ganhos e perdas diários nos cassinos. 
 
-In R, you create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example:
+No R, um vetor é criado com a função combine, `c()`. Os elementos vetoriais são separados por vírgula e ficam entre parênteses. Por exemplo:
 
 ```
 numeric_vector <- c(1, 2, 3)
 character_vector <- c("a", "b", "c")
 ```
 
-Once you have created these vectors in R, you can use them to do calculations.
+Depois de criar esses vetores no R, podemos usá-los para fazer cálculos.
 
 `@instructions`
-Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order).
+Complete o código de forma que `boolean_vector` contenha os três elementos: `TRUE`, `FALSE` e `TRUE` (nessa ordem).
 
 `@hint`
-Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` operator.
+Atribua `c(TRUE, FALSE, TRUE)` à variável `boolean_vector` com o operador `<-`.
 
 `@pre_exercise_code`
 ```{r}
@@ -111,20 +111,19 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
+msg <- "Não altere o código que definiu `numeric_vector` e `character_vector`!"
 ex() %>% check_object("numeric_vector", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
 ex() %>% check_object("character_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("boolean_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
+ex() %>% check_object("boolean_vector") %>% check_equal(incorrect_msg = "Certifique-se de atribuir os valores corretos a `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Não coloque aspas em torno de `TRUE` e `FALSE`! Além disso, certifique-se de adotar a mesma ordem listada nas instruções.")
 
-
-success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
+success_msg("Perfeito! Note que adicionar um espaço atrás das vírgulas na função `c()` melhora a legibilidade do seu código. Vamos praticar mais com a criação de vetores no próximo exercício.")
 ```
 
 ---
 
-## Create a vector (3)
+## Criação de um vetor (3)
 
 ```yaml
 type: NormalExercise
@@ -134,33 +133,33 @@ skills:
   - 1
 ```
 
-After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
+Depois de uma semana em Las Vegas e ainda sem nenhuma Ferrari na garagem, você decide que é hora de começar a usar seus superpoderes de análise de dados.
 
-Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
+Antes de fazer a primeira análise, você decide coletar todos os ganhos e perdas da última semana: 
 
-For `poker_vector`: 
+Em `poker_vector`: 
 
-- On Monday you won $140
-- Tuesday you lost $50
-- Wednesday you won $20 
-- Thursday you lost $120
-- Friday you won $240
+- Na segunda-feira, você ganhou $140
+- Na terça-feira, você perdeu $50
+- Na quarta-feira, você ganhou $20 
+- Na quinta-feira, você perdeu $120
+- Na sexta-feira, você ganhou $240
 
-For `roulette_vector`: 
+Em `roulette_vector`: 
 
-- On Monday you lost $24
-- Tuesday you lost $50
-- Wednesday you won $100
-- Thursday you lost $350
-- Friday you won $10
+- Na segunda-feira, você perdeu $24
+- Na terça-feira, você perdeu $50
+- Na quarta-feira, você ganhou $100
+- Na quinta-feira, você perdeu $350
+- Na sexta-feira, você ganhou $10
 
-You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+Você só jogou pôquer e roleta, já que havia uma delegação de médiuns ocupando as mesas de dados. Para conseguir usar esses dados no R, você decide criar as variáveis `poker_vector` e `roulette_vector`.
 
 `@instructions`
-Assign the winnings/losses for roulette to the variable `roulette_vector`. You lost $24, then lost $50, won $100, lost $350, and won $10.
+Atribua os ganhos/perdas da roleta à variável `roulette_vector`. Você perdeu US$ 24, depois perdeu US$ 50, ganhou US$ 100, perdeu US$ 350 e ganhou US$ 10.
 
 `@hint`
-To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
+Para ajudá-lo nessa etapa, o editor já contém o código para criar `poker_vector`. Atribua os valores corretos a `roulette_vector` com base nos números da atribuição. Não se esqueça de que as perdas são números negativos.
 
 `@pre_exercise_code`
 ```{r}
@@ -187,16 +186,16 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 
 `@sct`
 ```{r}
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `poker_vector`.")
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Certifique-se de que você atribuiu os valores corretos a `poker_vector`.")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `roulette_vector`. Make sure to adopt the correct order!")
+ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Certifique-se de que você atribuiu os valores corretos a `roulette_vector`. Certifique-se de adotar a ordem correta!")
 
-success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
+success_msg("Muito bom! Para verificar o conteúdo dos seus vetores, lembre-se de que você sempre pode simplesmente digitar a variável no console e pressionar Enter. Prossiga para o próximo exercício!")
 ```
 
 ---
 
-## Naming a vector
+## Como dar nome a um vetor
 
 ```yaml
 type: NormalExercise
@@ -206,29 +205,32 @@ skills:
   - 1
 ```
 
-As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. 
+Como analista de dados, é importante ter uma visão clara dos dados que você está usando. Portanto, é essencial entender a que cada elemento se refere. 
 
-In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
+No exercício anterior, criamos um vetor com seus ganhos ao longo da semana. Cada elemento do vetor se refere a um dia da semana, mas é difícil saber qual elemento diz respeito a qual dia. Seria bom poder indicar isso no próprio vetor. 
 
-You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+É possível dar um nome aos elementos de um vetor com a função `names()`. Dê uma olhada neste exemplo:
 
 ```
 some_vector <- c("John Doe", "poker player")
 names(some_vector) <- c("Name", "Profession")
 ```
 
-This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
+Esse código primeiro cria um vetor `some_vector` e, em seguida, dá um nome aos dois elementos. O primeiro elemento é chamado de `Name`, enquanto o segundo elemento é identificado como `Profession`. A impressão do conteúdo do console gera a seguinte saída:
 
 ```
+
           Name     Profession 
+
     "John Doe" "poker player" 
+
 ```
 
 `@instructions`
-- The code in the editor names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- No código do editor, os elementos de `poker_vector` recebem como nome os dias da semana. Adicione um código para fazer o mesmo com `roulette_vector`.
 
 `@hint`
-You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
+Você pode usar `names(roulette_vector)` para definir os nomes da variável `roulette_vector`. É importante usar o mesmo vetor com os dias da semana como nomes. Lembre-se de que o R diferencia maiúsculas de minúsculas!
 
 `@pre_exercise_code`
 ```{r}
@@ -267,21 +269,21 @@ names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 
 `@sct`
 ```{r}
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Do not change the values inside `poker_vector`; they were already coded for you.")
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Não altere os valores dentro de `poker_vector`; eles já foram codificados para você.")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Do not change the values inside `roulette_vector`; they were already coded for you.")
+ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Não altere os valores dentro de `roulette_vector`; eles já foram codificados para você.")
 
-ex() %>% check_object("poker_vector") %>% check_equal(eq_condition = 'equal', incorrect_msg = "Do not change the code that names the elements in `poker_vector`; focus on `roulette_vector`!")
+ex() %>% check_object("poker_vector") %>% check_equal(eq_condition = 'equal', incorrect_msg = "Não altere o código que nomeia os elementos em `poker_vector`; concentre-se em `roulette_vector`!")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = 'equal',incorrect_msg = "Make sure that you assign the correct names vector to `roulette_vector`. Use the exact same vector as the one that was used to name `poker_vector`.")
+ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = 'equal',incorrect_msg = "Certifique-se de atribuir o vetor de nomes correto a `roulette_vector`. Use exatamente o mesmo vetor que foi usado para nomear `poker_vector`.")
 
 
-success_msg("Well done! Continue to the next exercise.")
+success_msg("Muito bem! Continue para o próximo exercício.")
 ```
 
 ---
 
-## Naming a vector (2)
+## Como dar nome a um vetor (2)
 
 ```yaml
 type: NormalExercise
@@ -291,18 +293,18 @@ skills:
   - 1
 ```
 
-If you want to become a good statistician, you have to become efficient.
+Se você quiser se tornar um bom estatístico, terá que ser eficiente.
 
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
+Nos exercícios anteriores, você deve ter percebido que é chato e frustrante digitar e redigitar informações como os dias da semana. No entanto, quando você olha para isso de uma perspectiva mais ampla, há uma maneira mais eficiente de fazer isso: atribuir o vetor de dias da semana a uma **variável**! 
 
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+Assim como fez com os ganhos do pôquer e da roleta, você também pode criar uma variável que contenha os dias da semana. Dessa forma, você pode usá-la e reutilizá-la.
 
 `@instructions`
-- A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- Uma variável chamada `days_vector` que contém os dias da semana já foi criada para você.
+- Use `days_vector` para definir os nomes de `poker_vector` e `roulette_vector`.
 
 `@hint`
-You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
+Você pode usar `names(poker_vector) <- days_vector` para definir os nomes dos elementos de `poker_vector`. Faça algo parecido com `roulette_vector`.
 
 `@pre_exercise_code`
 ```{r}
@@ -343,7 +345,7 @@ names(roulette_vector) <- days_vector
 
 `@sct`
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- "Não altere as variáveis predefinidas `poker_vector`, `roulette_vector` ou `days_vector`."
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -351,17 +353,17 @@ ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Make sure that you assign `days_vector` to the names of `poker_vector`.", eq_condition = "equal",)
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Certifique-se de que você atribui `days_vector` aos nomes de `poker_vector`.", eq_condition = "equal",)
 
-ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = "Make sure that you assign `days_vector` to the names of `roulette_vector`.")
+ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = "Certifique-se de que você atribui `days_vector` aos nomes de `roulette_vector`.")
 
 
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
+success_msg("Mandou bem! Um conselho: tente evitar a duplicação de código sempre que possível. Continue para o próximo exercício e aprenda como fazer aritmética com vetores!")
 ```
 
 ---
 
-## Calculating total winnings
+## Cálculo do total de ganhos
 
 ```yaml
 type: NormalExercise
@@ -371,17 +373,17 @@ skills:
   - 1
 ```
 
-Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
+Agora que você tem os ganhos do pôquer e da roleta na forma de vetores com nomes, pode começar a fazer mágica nas análises de dados. 
 
-You want to find out the following type of information:
+Você deseja descobrir o seguinte tipo de informação:
 
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
+- Quanto foi seu lucro ou prejuízo total por dia da semana?
+- No total, você perdeu dinheiro durante a semana?
+- Está ganhando/perdendo dinheiro no pôquer ou na roleta?
 
-To get the answers, you have to do arithmetic calculations on vectors. 
+Para obter as respostas, é preciso fazer cálculos aritméticos com vetores. 
 
-It is important to know that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+É importante saber que, se você somar dois vetores no R, a soma será feita por elementos. Como exemplo, as três instruções a seguir são totalmente equivalentes:
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -389,7 +391,7 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-You can also do the calculations with variables that represent vectors:
+Você também pode fazer os cálculos com variáveis que representam vetores:
 
 ```
 a <- c(1, 2, 3) 
@@ -398,11 +400,11 @@ c <- a + b
 ```
 
 `@instructions`
-- Take the sum of the variables `A_vector` and `B_vector` and assign it to `total_vector`.
-- Inspect the result by printing out `total_vector`.
+- Pegue a soma das variáveis `A_vector` e `B_vector` e atribua-a a `total_vector`.
+- Verifique o resultado imprimindo `total_vector`.
 
 `@hint`
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+Use o operador `+` para somar `A_vector` e `B_vector`. Use `<-` para atribuir o resultado a `total_vector`.
 
 `@pre_exercise_code`
 ```{r}
@@ -435,21 +437,21 @@ total_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+msg <- "Não altere o conteúdo de `A_vector` ou `B_vector`!"
 ex() %>% check_object("A_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("B_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("total_vector") %>% check_equal(incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
+ex() %>% check_object("total_vector") %>% check_equal(incorrect_msg = "Certifique-se de que `total_vector` contém a soma de `A_vector` e `B_vector`.")
 
-ex() %>% check_output_expr("total_vector", missing_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
+ex() %>% check_output_expr("total_vector", missing_msg = "Não se esqueça de imprimir `total_vector`! Basta escrever `total_vector` em uma nova linha.")
 
-success_msg("Good job! Continue to the next exercise.")
+success_msg("Bom trabalho! Continue para o próximo exercício.")
 ```
 
 ---
 
-## Calculating total winnings (2)
+## Cálculo do total de ganhos (2)
 
 ```yaml
 type: NormalExercise
@@ -459,15 +461,15 @@ skills:
   - 1
 ```
 
-Now you understand how R does arithmetic with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+Agora que você já sabe como o R faz aritmética com vetores, é hora de colocar as Ferraris na garagem! Primeiro, você precisa entender qual foi o lucro ou prejuízo geral por dia da semana. O lucro diário total é a soma do lucro/prejuízo que você obteve no pôquer por dia e do lucro/prejuízo que você obteve na roleta por dia. 
 
-In R, this is just the sum of `roulette_vector` and `poker_vector`.
+No R, é apenas a soma de `roulette_vector` e `poker_vector`.
 
 `@instructions`
-Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
+Atribua à variável `total_daily` o valor total que você ganhou ou perdeu em cada dia (pôquer e roleta combinados).
 
 `@hint`
-Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+Assim como no exercício anterior, atribua a soma de dois vetores a uma nova variável, `total_daily`.
 
 `@pre_exercise_code`
 ```{r}
@@ -502,22 +504,21 @@ total_daily <- poker_vector + roulette_vector
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_object("total_daily") %>% check_equal(incorrect_msg = "Make sure that you assign the sum of `poker_vector` and `roulette_vector` to `total_daily`.")
+ex() %>% check_object("total_daily") %>% check_equal(incorrect_msg = "Certifique-se de que você atribui a soma de `poker_vector` e `roulette_vector` a `total_daily`.")
 
-
-success_msg("Great! Continue to the next exercise.")
+success_msg("Ótimo! Continue para o próximo exercício.")
 ```
 
 ---
 
-## Calculating total winnings (3)
+## Cálculo do total de ganhos (3)
 
 ```yaml
 type: NormalExercise
@@ -527,21 +528,21 @@ skills:
   - 1
 ```
 
-Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
+Com base na análise anterior, parece que você teve uma mistura de dias bons e ruins. Não é o que o seu ego esperava, e você se pergunta se não há uma pequena chance de ter perdido dinheiro durante a semana no total. 
 
-A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+Uma função que ajuda a responder a essa pergunta é `sum()`. Ela calcula a soma de todos os elementos de um vetor. Por exemplo, para calcular o total de dinheiro que você perdeu/ganhou no pôquer, faça isso: 
 
 ```
 total_poker <- sum(poker_vector)
 ```
 
 `@instructions`
-- Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
-- Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
-- Print out `total_week`.
+- Calcule o total de dinheiro que você ganhou/perdeu na roleta e atribua à variável `total_roulette`.
+- Agora que você tem os totais da roleta e do pôquer, pode calcular facilmente `total_week` (que é a soma de todos os ganhos e perdas da semana).
+- Imprima `total_week`.
 
 `@hint`
-Use the `sum()` function to get the total of the `roulette_vector`. `total_week` is then the sum of `total_roulette` and `total_poker`.
+Use a função `sum()` para obter o total de `roulette_vector`. `total_week` é a soma de `total_roulette` e `total_poker`.
 
 `@pre_exercise_code`
 ```{r}
@@ -594,27 +595,27 @@ total_week
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex()  %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 ex() %>% check_object("poker_vector",  undefined_msg = msg, ) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 
-ex() %>% check_object("total_poker") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
+ex() %>% check_object("total_poker") %>% check_equal(incorrect_msg = "Certifique-se de que você atribui a `total_poker` a soma do `poker_vector`.")
 
-ex() %>% check_object("total_roulette") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
+ex() %>% check_object("total_roulette") %>% check_equal(incorrect_msg = "Certifique-se de que você atribui a `total_roulette` a soma do `roulette_vector`.")
 
-ex() %>% check_object("total_week") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_week` the sum of the other two total vectors: `total_roulette` and `total_poker`.")
+ex() %>% check_object("total_week") %>% check_equal(incorrect_msg = "Certifique-se de que você atribui a `total_week` a soma dos outros dois vetores totais: `total_roulette` e `total_poker`.")
 
-ex() %>% check_output_expr("total_week", missing_msg = "Don't forget to write `total_week` on a new line to print out the variable.")
+ex() %>% check_output_expr("total_week", missing_msg = "Não se esqueça de escrever `total_week` em uma nova linha para imprimir a variável.")
 
-success_msg("Well done. This is pretty bad news...")
+success_msg("Muito bem. Isso é uma notícia bem ruim...")
 ```
 
 ---
 
-## Comparing total winnings
+## Comparação do total de ganhos
 
 ```yaml
 type: NormalExercise
@@ -624,17 +625,17 @@ skills:
   - 1
 ```
 
-Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+Opa, parece que você está perdendo dinheiro. É hora de repensar e adaptar sua estratégia! Isso exigirá uma análise mais detalhada... 
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+Depois de pensar um pouco na jacuzzi do hotel, você percebe que uma possível explicação talvez seja o fato de suas habilidades na roleta não serem tão desenvolvidas quanto as suas habilidades no pôquer. Portanto, talvez seus ganhos totais no pôquer sejam maiores (ou `>` ) do que na roleta.
 
 `@instructions`
-- Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- Calcule `total_poker` e `total_roulette` como no exercício anterior. Use a função `sum()` duas vezes.
+- Verifique se os seus ganhos totais no pôquer são maiores do que na roleta usando uma comparação. Basta imprimir o resultado dessa comparação. Qual é a sua conclusão: você deve se concentrar na roleta ou no pôquer?
 
 `@hint`
-- You partly calculated the answer to this question in the previous exercise already!
-- To check if 6 is larger than 5, you type `6 > 5`. This returns a logical value (`TRUE` or `FALSE`).
+- Você já calculou parcialmente a resposta a essa pergunta no exercício anterior!
+- Para verificar se 6 é maior que 5, digite `6 > 5`. Isso retorna um valor lógico (`TRUE` ou `FALSE`).
 
 `@pre_exercise_code`
 ```{r}
@@ -677,24 +678,23 @@ total_poker > total_roulette
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex()  %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg)  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
+ex()  %>% check_object("total_poker")  %>% check_equal(incorrect_msg = "Certifique-se de que você atribuiu a `total_poker` a soma do `poker_vector`. Use `sum()`.")
+ex()  %>% check_object("total_roulette")  %>% check_equal(incorrect_msg = "Certifique-se de que você atribuiu a `total_roulette` a soma do `roulette_vector`. Use `sum()`.")
+ex() %>% check_output_expr("total_poker > total_roulette",missing_msg = "Você realizou a comparação corretamente? Para verificar se `total_poker` é maior que `total_roulette`, você pode usar `total_poker > total_roulette`.")
 
-ex()  %>% check_object("total_poker")  %>% check_equal(incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`. Use `sum()`.")
-ex()  %>% check_object("total_roulette")  %>% check_equal(incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
-ex() %>% check_output_expr("total_poker > total_roulette",missing_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
-
-success_msg("Good job! Continue to the next exercise.")
+success_msg("Bom trabalho! Continue para o próximo exercício.")
 ```
 
 ---
 
-## Vector selection: the good times
+## Seleção de vetores: os bons tempos
 
 ```yaml
 type: NormalExercise
@@ -704,17 +704,17 @@ skills:
   - 1
 ```
 
-Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
+Seu palpite parece estar certo. Aparentemente, o jogo de pôquer é mais a sua praia do que a roleta. 
 
-Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
+Outro caminho possível para investigação é seu desempenho no início da semana de trabalho em comparação com o final dela. Você tomou alguns coquetéis de Margarita no final da semana... 
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+Para responder a essa pergunta, você quer se concentrar apenas em uma seleção de `total_vector`. Em outras palavras, o objetivo é selecionar elementos específicos do vetor. Para selecionar elementos de um vetor (e posteriormente matrizes, quadros de dados, etc.), você pode usar colchetes. Entre os colchetes, você indica quais elementos devem ser selecionados. Por exemplo: para selecionar o primeiro elemento do vetor, digite `poker_vector[1]`. Para selecionar o segundo elemento do vetor, digite `poker_vector[2]`, etc. Observe que o primeiro elemento de um vetor tem índice 1, e não 0, como em muitas outras linguagens de programação.
 
 `@instructions`
-Assign the poker results of <span translate="no">Wednesday</span> to the variable `poker_wednesday`.
+Atribua os resultados do pôquer de quarta-feira (<span translate="no">Wednesday</span>) à variável `poker_wednesday`.
 
 `@hint`
-Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+Wednesday é o terceiro elemento de `poker_vector` e, portanto, pode ser selecionado com `poker_vector[3]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -749,22 +749,21 @@ poker_wednesday <- poker_vector[3]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_wednesday", undefined_msg = "Please make sure to define a variable `poker_wednesday`.") %>% check_equal(incorrect_msg = "It looks like `poker_wednesday` does not contain the correct value of the `poker_vector`.")
+ex() %>% check_object("poker_wednesday", undefined_msg = "Por favor, certifique-se de definir uma variável `poker_wednesday`.") %>% check_equal(incorrect_msg = "Parece que `poker_wednesday` não contém o valor correto de `poker_vector`.")
 
-
-success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
+success_msg("Ótimo! R também permite selecionar vários elementos de um vetor de uma vez. Aprenda como no próximo exercício!")
 ```
 
 ---
 
-## Vector selection: the good times (2)
+## Seleção de vetores: os bons tempos (2)
 
 ```yaml
 type: NormalExercise
@@ -774,19 +773,19 @@ skills:
   - 1
 ```
 
-How about analyzing your midweek results? 
+Que tal analisar os resultados do meio da semana? 
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+Para selecionar vários elementos de um vetor, você pode adicionar colchetes no final dele. Você pode indicar entre colchetes quais elementos devem ser selecionados. Como exemplo, suponha que você queira selecionar o primeiro e o quinto dias da semana: use o vetor `c(1, 5)` entre colchetes. O código abaixo, por exemplo, seleciona o primeiro e o quinto elementos de `poker_vector`:
 
 ```
 poker_vector[c(1, 5)]
 ```
 
 `@instructions`
-Assign the poker results of <span translate="no">Tuesday, Wednesday</span> and <span translate="no">Thursday</span> to the variable `poker_midweek`.
+Atribua os resultados do pôquer de <span translate="no">Tuesday, Wednesday</span> e <span translate="no">Thursday</span> à variável `poker_midweek`.
 
 `@hint`
-Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
+Use o vetor `c(2, 3, 4)` entre colchetes para selecionar os elementos corretos de `poker_vector`.
 
 `@pre_exercise_code`
 ```{r}
@@ -821,21 +820,21 @@ poker_midweek <- poker_vector[c(2, 3, 4)]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_midweek") %>% check_equal(incorrect_msg = "It looks like `poker_midweek` does not contain the correct values from `poker_vector`. You can use the vector `c(2, 3, 4)` inside square brackets.")
+ex() %>% check_object("poker_midweek") %>% check_equal(incorrect_msg = "Parece que `poker_midweek` não contém os valores corretos de `poker_vector`. Você pode usar o vetor `c(2, 3, 4)` dentro de colchetes.")
 
-success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
+success_msg("Muito bem! Continue para o próximo exercício para se especializar ainda mais na seleção de vetores!");
 ```
 
 ---
 
-## Vector selection: the good times (3)
+## Seleção de vetores: os bons tempos (3)
 
 ```yaml
 type: NormalExercise
@@ -845,15 +844,15 @@ skills:
   - 1
 ```
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Statisticians created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+Selecionar vários elementos de `poker_vector` com `c(2, 3, 4)` não é muito conveniente. Os estatísticos criaram uma maneira mais fácil de fazer isso: `c(2, 3, 4)` pode ser abreviado como`2:4`, que gera um vetor com todos os números naturais de 2 a 4.
 
-So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
+Portanto, outra maneira de encontrar os resultados do meio da semana é `poker_vector[2:4]`. Observe que o vetor `2:4` é colocado entre colchetes para selecionar o elemento 2 até o 4.
 
 `@instructions`
-Assign to `roulette_selection_vector` the roulette results from <span translate="no">Tuesday</span> up to <span translate="no">Friday</span>; make use of `:` if it makes things easier for you.
+Atribua a `roulette_selection_vector` os resultados da roleta de <span translate="no">Tuesday</span> a <span translate="no">Friday</span>; use `:` se isso facilitar as coisas para você.
 
 `@hint`
-Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
+Atribua uma seleção de `roulette_vector` a `roulette_selection_vector` colocando `2:5` entre colchetes.
 
 `@pre_exercise_code`
 ```{r}
@@ -888,21 +887,21 @@ roulette_selection_vector <- roulette_vector[2:5]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal( eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("roulette_selection_vector", undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.") %>% check_equal(incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
+ex() %>% check_object("roulette_selection_vector", undefined_msg = "Por favor, certifique-se de definir uma variável `roulette_selection_vector`.") %>% check_equal(incorrect_msg = "Parece que `roulette_selection_vector` não contém a seleção correta de `roulette_vector`. Certifique-se de usar os índices corretos.")
 
-success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
+success_msg("Incrível! O operador de dois pontos é extremamente útil e muito usado na programação em R, então lembre-se bem dele. Prossiga para o próximo exercício.")
 ```
 
 ---
 
-## Vector selection: the good times (4)
+## Seleção de vetores: os bons tempos (4)
 
 ```yaml
 type: NormalExercise
@@ -912,27 +911,27 @@ skills:
   - 1
 ```
 
-Another way to tackle the previous exercise is by using the names of the vector elements (<span translate="no">Monday, Tuesday,</span> ...) instead of their numeric positions. For example, 
+Outra maneira de resolver o exercício anterior é usar os nomes dos elementos do vetor (<span translate="no">Monday, Tuesday,</span> ...) em vez de suas posições numéricas. Por exemplo: 
 
 ```
 poker_vector["Monday"]
 ```
 
-will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+seleciona o primeiro elemento de `poker_vector`, pois `"Monday"` é o nome do primeiro elemento.
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
+Assim como fez no exercício anterior com os números, você também pode usar os nomes dos elementos para selecionar vários elementos, por exemplo: 
 
 ```
 poker_vector[c("Monday","Tuesday")]
 ```
 
 `@instructions`
-- Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the `mean()` function. Simply print out the result so you can inspect it.
+- Selecione os três primeiros elementos de `poker_vector` usando seus nomes: `"Monday"`, `"Tuesday"` e `"Wednesday"`. Atribua o resultado da seleção a `poker_start`.
+- Calcule a média dos valores de `poker_start` com a função `mean()`. Basta imprimir o resultado para poder inspecioná-lo.
 
 `@hint`
-- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
-- You can use `mean(poker_start)` to get the mean of the elements in `poker_start`. You do not need the mean of all poker elements, but only of the first three days.
+- Você pode usar `c("Monday", "Tuesday", "Wednesday")` entre colchetes para criar um subconjunto de `poker_vector` corretamente.
+- Você pode usar `mean(poker_start)` para obter a média dos elementos de `poker_start`. Você não precisa da média de todos os elementos do pôquer, somente dos três primeiros dias.
 
 `@pre_exercise_code`
 ```{r}
@@ -973,23 +972,23 @@ mean(poker_start)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_start") %>% check_equal(incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
+ex() %>% check_object("poker_start") %>% check_equal(incorrect_msg = "Parece que `poker_start` não contém os primeiros três valores de `poker_vector`. Você pode usar `c(\"Monday\", \"Tuesday\", \"Wednesday\")` dentro de colchetes para fazer isso.")
 
-ex() %>% check_output_expr("mean(poker_start)", missing_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
+ex() %>% check_output_expr("mean(poker_start)", missing_msg = "Você calculou corretamente a média dos valores em `poker_start` e a imprimiu? Use `mean(poker_start)`.")
 
-success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!")
+success_msg("Bom trabalho! Além de subdefinir vetores por índice ou por nome, você também pode subdefinir vetores por comparação. Os próximos exercícios vão te mostrar como!")
 ```
 
 ---
 
-## Selection by comparison - Step 1
+## Seleção por comparação – Etapa 1
 
 ```yaml
 type: NormalExercise
@@ -999,32 +998,32 @@ skills:
   - 1
 ```
 
-By making use of comparison operators, we can approach the previous question in a more proactive way. 
+Com o uso de operadores de comparação, podemos abordar a questão anterior de forma mais proativa. 
 
-The (logical) comparison operators known to R are:
+Os operadores de comparação (lógica) conhecidos pelo R são:
 
-- `<` for less than
-- `>` for greater than
-- `<=` for less than or equal to
-- `>=` for greater than or equal to
-- `==` for equal to each other
-- `!=` not equal to each other
+- `<`: menor que
+- `>`: maior que
+- `<=`: menor ou igual a
+- `>=`: maior ou igual a
+- `==`: igual a
+- `!=`: não é igual a
 
-As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example:
+Como visto no capítulo anterior, a instrução `6 > 5` retorna `TRUE`. A vantagem do R é que esses operadores de comparação também podem ser usados com vetores. Por exemplo:
 
 ```
 c(4, 5, 6) > 5
 [1] FALSE FALSE TRUE
 ```
 
-This command tests for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
+Em cada elemento do vetor, esse comando testa se a condição indicada pelo operador de comparação é `TRUE` ou `FALSE`.
 
 `@instructions`
-- Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
-- Print out `selection_vector` so you can inspect it. The printout tells you whether you won (`TRUE`) or lost (`FALSE`) any money for each day.
+- Verifique quais elementos de `poker_vector` são positivos (ou seja, > 0) e atribua o resultado a `selection_vector`. 
+- Imprima `selection_vector` para poder inspecioná-lo. A impressão informa se você ganhou (`TRUE`) ou perdeu (`FALSE`) dinheiro em cada dia.
 
 `@hint`
-In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after.
+Para verificar em quais dias seus ganhos no pôquer são positivos, o R deve verificar se cada elemento de `poker_vector` é maior que zero. `some_vector > 0` é a maneira de dizer ao R o que você deseja.
 
 `@pre_exercise_code`
 ```{r}
@@ -1065,23 +1064,23 @@ selection_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "Não mude nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Remember that R uses element wise operations for vectors.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "Parece que `selection_vector` não contém o resultado correto. Lembre-se de que o R usa operações elemento a elemento para vetores.")
 
-ex() %>% check_output_expr("selection_vector", missing_msg = "Don't forget to print out `selection_vector` by writing the variable name on a new line.")
+ex() %>% check_output_expr("selection_vector", missing_msg = "Não se esqueça de imprimir `selection_vector` escrevendo o nome da variável em uma nova linha.")
 
-success_msg("Great!")
+success_msg("Ótimo!")
 ```
 
 ---
 
-## Selection by comparison - Step 2
+## Seleção por comparação – Etapa 2
 
 ```yaml
 type: NormalExercise
@@ -1091,23 +1090,23 @@ skills:
   - 1
 ```
 
-Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+Trabalhar com comparações facilita a vida nas análises de dados. Em vez de selecionar um subconjunto de dias para investigar por conta própria (como antes), basta pedir ao R que retorne apenas os dias em que você obteve um retorno positivo no pôquer. 
 
-In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+Nos exercícios anteriores, você usou `selection_vector <- poker_vector > 0` para descobrir os dias em que teve um retorno positivo no pôquer. Agora, você gostaria de saber não apenas os dias em que ganhou, mas também quanto ganhou nesses dias. 
 
-You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`:
+Você pode selecionar os elementos desejados colocando `selection_vector` entre os colchetes após `poker_vector`:
 
 ```
 poker_vector[selection_vector]
 ```
 
-R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to `TRUE` in `selection_vector`.
+O R sabe o que fazer quando você passa um vetor lógico entre colchetes: ele seleciona apenas os elementos que correspondem a `TRUE` em `selection_vector`.
 
 `@instructions`
-Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+Use `selection_vector` entre colchetes para atribuir os valores que você ganhou nos dias lucrativos à variável `poker_winning_days`.
 
 `@hint`
-Use `poker_vector[selection_vector]` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
+Use `poker_vector[selection_vector]` para selecionar os elementos desejados de `poker_vector` e atribua o resultado a `poker_winning_days`.
 
 `@pre_exercise_code`
 ```{r}
@@ -1148,23 +1147,23 @@ poker_winning_days <- poker_vector[selection_vector]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "Don't change the way `selection_vector` is calculated.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "Não mude a forma como `selection_vector` é calculado.")
 
-ex() %>% check_object("poker_winning_days") %>% check_equal(incorrect_msg = "It looks like `poker_winning_days` does not contain the correct result. Use `poker_vector[selection_vector]`.")
+ex() %>% check_object("poker_winning_days") %>% check_equal(incorrect_msg = "Parece que `poker_winning_days` não contém o resultado correto. Use `poker_vector[selection_vector]`.")
 
-success_msg("Good job! Continue to the next exercise.")
+success_msg("Bom trabalho! Continue para o próximo exercício.")
 ```
 
 ---
 
-## Advanced selection
+## Seleção avançada
 
 ```yaml
 type: NormalExercise
@@ -1174,14 +1173,14 @@ skills:
   - 1
 ```
 
-Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
+Assim como fez com o pôquer, você também quer saber os dias em que obteve um retorno positivo na roleta.
 
 `@instructions`
-- Create the variable `selection_vector`, this time to see if you made profit with roulette for different days.
-- Assign the amounts that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`. This vector thus contains the positive winnings of `roulette_vector`.
+- Crie a variável `selection_vector`, desta vez para ver se você teve lucro com a roleta em dias diferentes.
+- Atribua à variável `roulette_winning_days` os valores que você ganhou nos dias em que a roleta terminou com resultado positivo. Esse vetor contém, portanto, os rendimentos positivos de `roulette_vector`.
 
 `@hint`
-Once you've correctly calculated `selection_vector`, you can again use `roulette_vector[selection_vector]` to select the positive results from `roulette_vector`.
+Depois de calcular corretamente `selection_vector`, você pode usar `roulette_vector[selection_vector]` de novo para selecionar os resultados positivos de `roulette_vector`.
 
 `@pre_exercise_code`
 ```{r}
@@ -1222,7 +1221,7 @@ roulette_winning_days <- roulette_vector[selection_vector]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "Não altere nada na definição e nomeação de `poker_vector` e `roulette_vector`."
 
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -1230,10 +1229,10 @@ ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_co
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Use `roulette_vector > 0`.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "Parece que `selection_vector` não contém o resultado correto. Use `roulette_vector > 0`.")
 
-ex() %>% check_object("roulette_winning_days") %>% check_equal(incorrect_msg = "It looks like `roulette_winning_days` does not contain the correct result. Use `roulette_vector[selection_vector]`.")
+ex() %>% check_object("roulette_winning_days") %>% check_equal(incorrect_msg = "Parece que `roulette_winning_days` não contém o resultado correto. Use `roulette_vector[selection_vector]`.")
 
 
-success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
+success_msg("Ótimo! Este exercício conclui o capítulo sobre vetores. O próximo capítulo irá te apresentar à versão bidimensional dos vetores: matrizes.")
 ```
