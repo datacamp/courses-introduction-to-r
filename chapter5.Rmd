@@ -1,14 +1,15 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Chapitre 5
+title: Trames de données
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  La plupart des ensembles de données avec lesquels vous travaillerez seront
+  stockés sous forme de trames de données. À la fin de ce chapitre, vous serez
+  en mesure de créer une trame de données, de sélectionner des parties
+  intéressantes d'une trame de données et de classer une trame de données en
+  fonction de certaines variables.
 ---
 
-## What's a data frame?
+## Qu'est-ce qu'une trame de données ?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +19,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Vous vous souvenez peut-être depuis le chapitre sur les matrices que tous les éléments que vous placez dans une matrice doivent être du même type. À l'époque, votre ensemble de données sur Star Wars ne contenait que des éléments numériques. 
 
-When doing a market research survey, however, you often have questions such as:
+Cependant, lors de la réalisation d’une étude de marché, vous êtes souvent confronté à des questions telles que celles-ci :
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- Questions « Êtes-vous marié(e) ? » ou « oui/non » (`logical`)
+- Quel âge avez-vous ? » (`numeric`)
+- « Quelle est votre opinion sur ce produit ? » Ou d'autres questions « ouvertes » (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Le résultat, à savoir les réponses des répondants aux questions formulées ci-dessus, est un ensemble de données de différents types. Vous aurez souvent l’occasion de travailler avec des ensembles de données qui contiennent différents types de données au lieu d'un seul. 
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Une trame de données présente les variables d'un ensemble de données sous forme de colonnes et les observations sous forme de lignes. Il s'agit d'un concept familier pour ceux qui utilisent d'autres logiciels statistiques tels que SAS ou SPSS.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Exécutez le code. Les données de la trame de données de l'exemple intégré `mtcars` seront affichées sur la console.
 
 `@hint`
-Submit the answer and witness the magic!
+Exécutez le code et assistez à la magie !
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +57,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Ne modifiez rien dans le code, assurez-vous d'afficher `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Super ! Continuez à l'exercice suivant.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Rapidement, jetez un coup d'œil à votre jeu de données
 
 ```yaml
 type: NormalExercise
@@ -73,19 +74,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Cela fait beaucoup de voitures ! 
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Dans l'analyse de données, il n'est pas rare de travailler avec de grands ensembles de données. Lorsque vous travaillez avec des ensembles de données et des trames de données (extrêmement) volumineux, votre première tâche en tant qu'analyste de données est d'acquérir une compréhension claire de leur structure et de leurs principaux éléments. Il est donc souvent utile de ne montrer qu'une petite partie de l'ensemble des données. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Comment faire cela dans R ? La fonction `head()` vous permet d'afficher les premières observations d'une trame de données. De même, la fonction `tail()` affiche les dernières observations de votre ensemble de données.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+`head()` et `tail()` affichent tous deux une ligne supérieure appelée « header », qui contient les noms des différentes variables de votre ensemble de données.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Appelez `head()` sur le jeu de données `mtcars` pour voir l'en-tête et les premières observations.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` affichera les premières observations de la base de données `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +107,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Avez-vous correctement passé `mtcars` à la fonction `head()` ?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Affichez simplement le résultat de l'appel `head()`, il n'est pas nécessaire de l'assigner à une nouvelle variable.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Merveilleux ! Alors, que trouvons-nous dans cet ensemble de données ? Par exemple, `hp` représente la puissance de la voiture ; la Datsun a la plus faible puissance parmi les 6 voitures affichées. Pour un aperçu complet de la signification des variables, tapez `?mtcars` dans la console et lisez la page d'aide. Continuez à l'exercice suivant !");
 ```
 
 ---
 
-## Have a look at the structure
+## Jetez un coup d'œil à la structure
 
 ```yaml
 type: NormalExercise
@@ -125,21 +126,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Une autre méthode souvent utilisée pour obtenir un aperçu rapide de vos données est la fonction `str()`. La fonction `str()` vous montre la structure de votre ensemble de données. Pour une trame de données, il vous indique :
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Le nombre total d'observations (par exemple, 32 types de voitures)
+- Le nombre total de variables (par exemple, 11 caractéristiques de la voiture)
+- Une liste complète des noms des variables (par exemple `mpg`, `cyl`… )
+- Le type de données de chaque variable (par exemple `num`)
+- Les premières observations
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Appliquer la fonction `str()`] est souvent la première chose à faire lorsque vous recevez un nouvel ensemble de données ou une nouvelle base de données. C'est un excellent moyen d'obtenir une meilleure compréhension de votre ensemble de données avant de passer à l'analyse proprement dite.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Étudiez la structure de `mtcars`. Assurez-vous que vous voyez les mêmes nombres, variables et types de données que ceux mentionnés ci-dessus.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Utilisez la fonction `str()` sur `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +161,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Avez-vous correctement appelé `str()` sur `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Bon travail! Vous pouvez trouver beaucoup d'informations en visualisant le `str()` d'un ensemble de données. Continuez à l'exercice suivant.")
 ```
 
 ---
 
-## Creating a data frame
+## Création d'une trame de données
 
 ```yaml
 type: NormalExercise
@@ -177,28 +178,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Étant donné que l'utilisation des ensembles de données intégrés ne représente même pas la moitié du plaisir que procure la création de vos propres ensembles de données, le reste de ce chapitre est basé sur votre propre ensemble de données. Mettez votre jet pack car il est temps d'explorer l'espace ! 
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Dans un premier temps, vous souhaitez construire une trame de données décrivant les principales caractéristiques de huit planètes de notre système solaire. Selon votre ami Buzz, les principales caractéristiques d'une planète sont les suivantes :
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Le type de planète (rocheuse ou géante gazeuse).
+- Diamètre de la planète par rapport au diamètre de la Terre.
+- La rotation de la planète autour du soleil par rapport à celle de la Terre.
+- Si la planète a des anneaux ou non (TRUE ou FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Après avoir effectué des recherches de qualité sur [Wikipedia](https://en.wikipedia.org/wiki/Planet), vous vous sentez suffisamment en confiance pour créer les vecteurs nécessaires : `name`, `type`, `diameter`, `rotation` et `rings` ; ces vecteurs ont déjà été codés dans l'éditeur. Le premier élément de chacun de ces vecteurs correspond à la première observation.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Vous construisez une trame de données avec la fonction `data.frame()`. Comme arguments, vous passez les vecteurs cités précédemment : ils deviendront les différentes colonnes de votre trame de données. Comme chaque colonne a la même longueur, les vecteurs que vous passez doivent également avoir la même longueur. Toutefois, n'oubliez pas qu'il est possible (et probable) qu'ils contiennent des types de données différents.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Utilisez la fonction `data.frame()` pour construire une trame de données. Passez les vecteurs `name`, `type`, `diameter`, `rotation` et `rings` comme arguments à `data.frame()`, dans cet ordre. Appelez la trame de données résultant `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Votre appel de `data.frame()` commence comme suit :
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Pouvez-vous le terminer ?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +251,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Ne changez rien à la définition des vecteurs. Ajoutez seulement un appel à `data.frame()` pour créer `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +262,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Avez-vous correctement appelé `data.frame()` pour créer `planets_df` ? À l'intérieur de `data.frame()`, assurez-vous de passer tous les vecteurs dans le bon ordre : `name`, `type`, `diameter`, `rotation` et enfin `rings`.")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Bon travail ! La prochaine étape logique, comme vous le savez maintenant, est d'inspecter le tableau de données que vous venez de créer. Passez à l'exercice suivant.")
 ```
 
 ---
 
-## Creating a data frame (2)
+## Création d'une trame de données (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +279,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+La base de données `planets_df` doit comporter 8 observations et 5 variables. Il a été mis à disposition dans l'espace de travail, pour que vous puissiez l'utiliser directement.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Utilisez `str()` pour étudier la structure de la nouvelle variable `planets_df`.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` est déjà disponible dans votre espace de travail. `str(planets_df)` fera l'affaire.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +321,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Ne supprimez pas et ne remplacez pas le cadre de données `planets_df` qui est déjà disponible dans l'espace de travail !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Avez-vous correctement affiché la structure de `planets_df` ? Utilisez `str()` pour le faire !")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Génial ! Maintenant que vous avez une compréhension claire du jeu de données `planets_df`, il est temps de voir comment vous pouvez sélectionner des éléments à partir de celui-ci. Apprenez tout à ce sujet dans les prochains exercices !")
 ```
 
 ---
 
-## Selection of data frame elements
+## Sélection des éléments de la trame de données
 
 ```yaml
 type: NormalExercise
@@ -341,19 +341,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Comme pour les vecteurs et les matrices, vous sélectionnez des éléments dans une trame de données à l'aide de crochets `[ ]`. En utilisant une virgule, vous pouvez indiquer ce qu'il faut sélectionner dans les lignes et les colonnes respectivement. Par exemple :
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` sélectionne la valeur de la première ligne et de la deuxième colonne de `my_df`.
+- `my_df[1:3,2:4]` sélectionne les lignes 1, 2, 3 et les colonnes 2, 3, 4 dans `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Vous souhaitez parfois sélectionner tous les éléments d'une ligne ou d'une colonne. Par exemple, `my_df[1, ]` sélectionne tous les éléments de la première ligne. Appliquons maintenant cette technique à `planets_df`.
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Dans `planets_df`, sélectionnez le diamètre de Mercure : c'est la valeur à la première ligne et à la troisième colonne. Il suffit d'afficher le résultat.
+- Dans `planets_df`, sélectionnez toutes les données relatives à Mars (quatrième ligne). Il suffit d'afficher le résultat.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Pour sélectionner le diamètre de Vénus (deuxième rangée), vous aurez besoin de : `planets_df[2,3]`. De quoi avez-vous besoin pour Mercure ?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +400,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ne supprimez pas et ne remplacez pas la trame de données `planets_df` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Avez-vous correctement sélectionné et imprimé le diamètre de Mercure ? Vous pouvez utiliser `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Avez-vous correctement sélectionné et imprimé toutes les données pour Mars ? Vous pouvez utiliser `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Super ! En plus de sélectionner des éléments de votre trame de données par index, vous pouvez également utiliser les noms de colonnes. Pour apprendre comment, passez à l'exercice suivant.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Sélection des éléments de la trame de données (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +422,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Au lieu d'utiliser des chiffres pour sélectionner des éléments d'une trame de données, vous pouvez également utiliser les noms de variables pour sélectionner des colonnes d'une trame de données. 
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Supposons que vous souhaitiez sélectionner les trois premiers éléments de la colonne `type`. Pour ce faire, vous pouvez notamment écrire
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Cette approche présente un inconvénient : il faut connaître (ou rechercher) le numéro de colonne de `type`, ce qui devient difficile si vous avez beaucoup de variables. Il est souvent plus facile d'utiliser le nom de la variable :
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Sélectionnez et affichez les 5 premières valeurs de la colonne `"diameter"` de `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Vous pouvez sélectionner les cinq premières valeurs à l'aide de `planets_df[1:5, ...]`. Pouvez-vous compléter la partie `...` pour ne sélectionner que la colonne `"diameter"` ?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +481,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ne supprimez pas et ne remplacez pas la trame de données `planets_df` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Avez-vous correctement sélectionné les cinq premières valeurs de la colonne diamètre et les avez-vous imprimées ? Vous pouvez utiliser `[1:5, \"diameter\"]` ici.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Bien joué ! Continuez à l'exercice suivant !")
 ```
 
 ---
 
-## Only planets with rings
+## Seulement les planètes avec des anneaux
 
 ```yaml
 type: NormalExercise
@@ -501,25 +501,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Vous souhaiterez souvent sélectionner une colonne entière, à savoir une variable spécifique d'une trame de données. Si vous souhaitez sélectionner tous les éléments de la variable `diameter`, par exemple, les deux méthodes feront l'affaire :
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Il existe cependant un raccourci. Si vos colonnes ont des noms, vous pouvez utiliser le signe `$` :
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Utilisez le signe `$` pour sélectionner la variable `rings` à partir de `planets_df`. Enregistrez le vecteur qui en résulte dans `rings_vector`.
+- Affichez `rings_vector` pour voir si vous avez bien compris.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` sélectionne la colonne `diameter` à partir de `planets_df` ; que faut-il alors pour sélectionner la colonne `rings` ?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +565,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ne supprimez pas et ne remplacez pas le cadre de données `planets_df` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Avez-vous correctement sélectionné la variable `rings` de `planets_df` ? Utilisez `$rings`. Stockez le résultat sous `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "N'oubliez pas d'imprimer `rings_vector` après l'avoir créé !")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Super ! Continuez à l'exercice suivant et découvrez une autre façon de sous-ensemble !")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Seulement les planètes avec des anneaux (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +587,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Vous vous souvenez probablement depuis le lycée que certaines planètes de notre système solaire ont des anneaux et d'autres non. Malheureusement, vous ne vous souvenez pas de leurs noms. R. pourrait-il vous aider ?
 
-If you type `rings_vector` in the console, you get:
+Si vous tapez `rings_vector` dans la console, vous obtenez :
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Cela signifie que les quatre premières observations (ou planètes) n'ont pas d'anneaux (`FALSE`), mais que les quatre autres en ont (`TRUE`). Cependant, vous ne disposez pas d'une vue d'ensemble des noms de ces planètes, de leur diamètre, etc. Essayons d'utiliser `rings_vector` pour sélectionner les données des quatre planètes à anneaux.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Le code dans l'éditeur sélectionne la colonne `name` de toutes les planètes qui ont des anneaux. Adaptez le code de manière à ce que _toutes les_ colonnes des planètes ayant des anneaux soient sélectionnées au lieu de la seule colonne `name`.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+N'oubliez pas que pour sélectionner _toutes_ les colonnes, il vous suffit de laisser vide la partie « colonnes » à l'intérieur de `[ ]`. Cela signifie que vous aurez besoin de `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +644,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Ne supprimez pas et ne remplacez pas `planets_df` ou `rings_vector` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Avez-vous correctement adapté le code pour sélectionner _toutes_ les colonnes pour les planètes qui ont des anneaux ? Vous pouvez utiliser `planets_df[rings_vector, ]`. Assurez-vous d'inclure la virgule ici, c'est crucial !")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Merveilleux ! C'est une solution plutôt fastidieuse. Le prochain exercice vous apprendra comment le faire de manière plus concise.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Seulement les planètes avec des anneaux mais en plus court
 
 ```yaml
 type: NormalExercise
@@ -666,27 +666,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Qu'avez-vous appris exactement dans les exercices précédents ? Vous avez sélectionné un sous-ensemble d'une trame de données (`planets_df`) en fonction de l'existence ou non d'une certaine condition (anneaux ou pas anneaux), et vous avez réussi à extraire toutes les données pertinentes. Plutôt impressionnant ! A l'heure actuelle, la NASA est probablement déjà en train de flirter avec votre CV ;-). 
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Passons maintenant au niveau supérieur et utilisons la fonction `subset()`. Vous devriez voir la fonction `subset()` comme un raccourci pour faire exactement la même chose que ce que vous avez fait dans les exercices précédents. 
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Le premier argument de `subset()` spécifie l'ensemble de données pour lequel vous souhaitez obtenir un sous-ensemble. En ajoutant le deuxième argument, vous donnez à R les informations et les conditions nécessaires pour sélectionner le bon sous-ensemble. 
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Le code ci-dessous donnera exactement le même résultat que celui obtenu dans l'exercice précédent, mais cette fois-ci, vous n'avez pas besoin de `rings_vector`.
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Utilisez `subset()` sur `planets_df` pour sélectionner les planètes dont le diamètre est inférieur à celui de la Terre. Comme la variable `diameter` est une mesure relative du diamètre de la planète par rapport à celui de la Terre, votre condition est `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` résout presque le problème ; pouvez-vous compléter les `...` ?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +727,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ne supprimez pas et ne remplacez pas le data frame `planets_df` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Avez-vous correctement spécifié la partie `subset = ...` à l'intérieur de `subset()`. La condition dans ce cas est `diameter < 1`. Imprimez simplement le résultat.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Le premier argument que vous passez à `subset()` doit être `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Super ! Non seulement la fonction `subset()` est plus concise, mais elle est probablement aussi plus compréhensible pour les personnes qui lisent votre code. Continuez à l'exercice suivant.");
 ```
 
 ---
 
-## Sorting
+## Tri
 
 ```yaml
 type: NormalExercise
@@ -752,11 +752,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Faire et créer des classements est l'une des activités préférées de l'être humain. Ces classements peuvent être utiles (les meilleures universités du monde), divertissants (les stars de cinéma les plus influentes) ou inutiles (le meilleur sosie de 007).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+Dans l'analyse des données, vous pouvez trier vos données en fonction d'une certaine variable de l'ensemble de données. Dans R, cela se fait à l'aide de la fonction `order()`. 
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` est une fonction qui vous donne la position classée de chaque élément lorsqu'elle est appliquée sur une variable, comme un vecteur par exemple :
 
 ```
 a <- c(100, 10, 1000)
@@ -764,20 +764,22 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10, qui est le deuxième élément dans `a`, est le plus petit élément, donc 2 vient en premier dans la sortie de `order(a)`. 100, qui est le premier élément de `a`, est le deuxième plus petit élément, de sorte que 1 vient en deuxième position dans la sortie de `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Cela signifie que nous pouvons utiliser la sortie de `order(a)` pour remanier `a` :
+
     
+
 ```
 a[order(a)]
 [1]   10  100 1000
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Expérimentez la fonction `order()` dans la console. Envoyez la réponse lorsque vous voulez continuer.
 
 `@hint`
-Just play with the `order()` function in the console!
+Il suffit de jouer avec la fonction `order()` de la console !
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +798,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Super ! Utilisons maintenant la fonction `order()` pour trier votre data frame !")
 ```
 
 ---
 
-## Sorting your data frame
+## Trier votre trame de données
 
 ```yaml
 type: NormalExercise
@@ -811,15 +813,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Très bien, maintenant que vous comprenez la fonction `order()`, faisons quelque chose d'utile avec elle. Vous souhaitez réorganiser votre trame de données de manière à ce qu'elle commence par la plus petite planète et se termine par la plus grande. Un tri sur la colonne `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Appelez `order()` sur `planets_df$diameter` (la colonne `diameter` de `planets_df`). Enregistrez le résultat en tant que `positions`.
+- Maintenant, remélangez `planets_df` avec le vecteur `positions` en tant qu'index de ligne entre crochets. Conservez toutes les colonnes. Il suffit d'afficher le résultat.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Utilisez `order(planets_df$diameter)` pour créer `positions`.
+- Vous pouvez maintenant utiliser `positions` entre crochets : `planets_df[...]`; pouvez-vous compléter les `...` ?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +868,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ne supprimez pas et ne remplacez pas la trame de données `planets_df` !"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Avez-vous correctement calculé la variable `positions` ? Vous pouvez utiliser `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Utilisez `planets_df[positions, ]` pour trier `planets_df` ; la virgule à l'intérieur des crochets est cruciale !")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Magnifique ! Cet exercice conclut le chapitre sur les trames de données. Rappelez-vous que les trames de données sont extrêmement importantes en R, vous en aurez besoin tout le temps. Une autre structure de données très souvent utilisée est la liste. Ce sera le sujet du prochain chapitre !")
 ```

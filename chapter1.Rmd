@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: "Chapitre\_1"
+title: Introduction aux principes de base
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Faites vos premiers pas avec R. Dans ce chapitre, vous apprendrez à utiliser
+  la console comme une calculatrice et à affecter des variables. Vous apprendrez
+  également à connaître les types de données de base dans R. Commençons.
 free_preview: true
 ---
 
-## How it works
+## Comment cela fonctionne-t-il ?
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+Dans l'éditeur, vous devez taper le code R pour résoudre les exercices. Lorsque vous exécutez votre code, chaque ligne de code est interprétée et exécutée par R et vous recevez un message indiquant si votre code était correct ou non. La sortie de votre code R est affichée dans la console.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R utilise le signe `#` pour ajouter des commentaires, afin que vous et d'autres personnes puissiez comprendre le contenu du code R. Comme sur Twitter ! Les commentaires ne sont pas exécutés en tant que code R, ils n'influenceront donc pas votre résultat. Par exemple, dans l'éditeur, <span translate="no">_Calculate 3 + 4_</span> est un commentaire.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Vous pouvez également exécuter des commandes R directement dans la console. C'est un bon moyen d'expérimenter le code R, car l'exactitude de ce que vous envoyez n'est pas vérifiée.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- L'éditeur contient déjà un exemple de code. Pouvez-vous voir quelles lignes sont du code R et lesquelles sont des commentaires ?
+- Ajoutez une ligne de code qui calcule la somme de 6 et 12, et exécutez votre code.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Il suffit d'ajouter une ligne de code R qui calcule la somme de 6 et de 12, comme dans l'exemple de code !
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Assurez-vous d'ajouter `6 + 12` sur une nouvelle ligne. Ne commencez pas la ligne par un `#`, sinon votre code R ne sera pas exécuté !")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Génial ! Voyez-vous comment la console affiche le résultat du code R que vous avez soumis ? Maintenant que vous êtes familiarisé avec l'interface, passons aux choses sérieuses avec R !")
 ```
 
 ---
 
-## Arithmetic with R
+## Arithmétique avec R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+Dans sa forme la plus élémentaire, R peut être utilisé comme une simple calculatrice. Considérez les opérateurs arithmétiques suivants :
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- Addition : `+`
+- Soustraction : `-`
+- Multiplication : `*`
+- Division : `/`
+- Exponentiation : `^`
+- Modulo : `%%`
 
-The last two might need some explaining:
+Les deux derniers points nécessiteront peut-être quelques explications :
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- L'opérateur `^` élève le nombre à sa gauche à la puissance du nombre à sa droite : par exemple `3^2` vaut 9.
+- Le modulo renvoie le reste de la division du nombre à gauche par le nombre à droite, par exemple 5 modulo 3 ou `5 %% 3` est 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+Avec ces connaissances, suivez les instructions pour réaliser l'exercice.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Tapez `2^5` dans l'éditeur pour calculer 2 à la puissance 5.
+- Tapez `28 %% 6` pour calculer 28 modulo 6.
+- Exécutez le code et regardez la sortie R dans la console.
+- Notez que le symbole `#` est utilisé pour ajouter des commentaires au code R.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Autre exemple de l'opérateur modulo : `9 %% 2` est égal à `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Ne supprimez pas les autres exemples arithmétiques !"
+ex() %>% check_output_expr("2^5", missing_msg = "L'exemple d'exponentiation n'est pas correct. Écrivez `2 ^ 5` sur une nouvelle ligne.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Il semble y avoir un problème avec l'exemple de modulo. Écrivez `28 %% 6` sur une nouvelle ligne.")
+success_msg("Super ! Passez à l'exercice suivant.")
 ```
 
 ---
 
-## Variable assignment
+## Affectation des variables
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Le concept de base de la programmation (statistique) s'appelle une **variable**. 
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Une variable vous permet de stocker une valeur (par exemple 4) ou un objet (par exemple une description de fonction) dans R. Vous pouvez ensuite utiliser le nom de cette variable pour accéder facilement à la valeur ou à l'objet qui est stocké dans cette variable. 
 
-You can assign a value 4 to a variable `my_var` with the command
+Vous pouvez attribuer la valeur 4 à la variable `my_var` avec la commande
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+A vous de jouer : complétez le code dans l'éditeur de façon à ce qu'il affecte la valeur 42 à la variable `x`. Exécutez le code. Remarquez que lorsque vous demandez à R d'afficher `x`, la valeur 42 apparaît.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Regardez comment la valeur 4 a été attribuée à `my_var` dans l'exemple de l'exercice. Faites exactement la même chose dans l'éditeur, mais affectez maintenant 42 à la variable `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Assurez-vous de définir une variable `x`.")  %>% check_equal(incorrect_msg = "Assurez-vous d\'attribuer la valeur correcte à `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Bon travail ! Avez-vous remarqué que R n\'imprime pas la valeur d\'une variable dans la console lorsque vous avez fait l\'affectation ? `x <- 42` n\'a généré aucune sortie, car R suppose que vous aurez besoin de cette variable à l\'avenir. Sinon, vous n\'auriez pas stocké la valeur dans une variable en premier lieu, n\'est-ce pas ? Passez à l\'exercice suivant !")
 ```
 
 ---
 
-## Variable assignment (2)
+## Affectation des variables (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Supposons que vous ayez une corbeille de fruits contenant cinq pommes. En tant qu'analyste de données en formation, vous souhaitez stocker le nombre de pommes dans une variable portant le nom `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Tapez le code suivant dans l'éditeur : `my_apples <- 5`. La valeur 5 est ainsi attribuée à `my_apples`.
+- Tapez : `my_apples` sous le deuxième commentaire. Cette opération permet d'afficher la valeur de `my_apples`.
+- Exécutez le code et regardez la sortie : vous voyez que le nombre 5 est affiché. R relie donc la variable `my_apples` à la valeur 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Rappelez-vous que si vous voulez affecter un nombre ou un objet à une variable dans R, vous pouvez utiliser l'opérateur d'affectation `<-`. Vous pouvez également utiliser `=`, mais `<-` est largement préféré par la communauté R.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Veuillez vous assurer de définir une variable `my_apples`.") %>% check_equal(incorrect_msg = "Assurez-vous d'assigner la valeur correcte à `my_apples`.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Avez-vous explicitement demandé à R d'afficher la variable `my_apples` dans la console ?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Super ! Continuez à l'exercice suivant !")
 ```
 
 ---
 
-## Variable assignment (3)
+## Affectation des variables (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+Il faut des oranges pour faire une bonne corbeille de fruits, vous décidez donc d'en ajouter six. En tant qu'analyste de données, votre réflexe est de créer immédiatement la variable `my_oranges` et de lui attribuer la valeur 6. Ensuite, vous devez calculer le nombre de fruits que vous avez au total. Puisque vous avez donné des noms significatifs à ces valeurs, vous pouvez maintenant coder de manière claire : 
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Attribuez à `my_oranges` la valeur 6.
+- Ajoutez les variables `my_apples` et `my_oranges` et demandez à R d'afficher simplement le résultat.
+- Affectez le résultat de l'addition de `my_apples` et `my_oranges` à une nouvelle variable `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` est simplement la somme de `my_apples` et `my_oranges`. Vous pouvez utiliser l'opérateur `+` pour faire la somme des deux et `<-` pour affecter cette valeur à la variable `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Avez-vous utilisé `my_fruit <- my_apples + my_oranges` pour créer la variable `my_fruit` ?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Conservez la ligne qui assigne 5 à `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Conservez la ligne qui assigne 6 à `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Assurez-vous d'imprimer le résultat de l'addition de `my_apples` et `my_oranges`. L'exemple de code dans la description donne déjà la réponse à cette instruction !")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Bien joué ! Le grand avantage de faire des calculs avec des variables est la réutilisabilité. Si vous changez simplement `my_apples` pour qu'il soit égal à 12 au lieu de 5 et relancez le script, `my_fruit` se mettra automatiquement à jour également. Continuez à l'exercice suivant.")
 ```
 
 ---
 
-## Apples and oranges
+## Pommes et oranges
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Il est communément admis qu'il ne faut pas additionner des pommes et des oranges. Mais bon, c'est ce que vous venez de faire, non :-) ? Les variables `my_apples` et `my_oranges` contenaient toutes deux un nombre dans l'exercice précédent. L'opérateur `+` fonctionne avec des variables numériques dans R. Si vous aviez vraiment essayé d'additionner des pommes (<span translate="no">"apples"</span>) et des oranges (<span translate="no">"oranges"</span>) en ayant affecté une valeur texte à la variable `my_oranges` (voir l'éditeur), vous auriez tenté d'affecter l'addition d'une variable numérique et d'une variable textuelle à la variable `my_fruit`. Ce n'est pas possible.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Exécutez le code et lisez le message d'erreur. Assurez-vous de bien comprendre pourquoi cela n'a pas fonctionné.
+- Ajustez le code pour que R sache que vous avez 6 oranges et donc une corbeille de fruits avec 11 fruits.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Vous devez affecter la valeur numérique `6` à la variable `my_oranges` au lieu de la chaîne de caractères `"six"`. Notez que les guillemets sont utilisés pour indiquer que `"six"` est une chaîne de caractères.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,28 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Vous pouvez le faire en définissant la variable `my_oranges` à une valeur numérique, pas une chaîne de caractères !")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Assurez-vous que `my_apples` contient toujours `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Assurez-vous que `my_oranges` est égal à `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "La valeur de `my_fruit` n'est pas correcte. Elle devrait être 11, la somme de `my_apples` et `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Avez-vous créé `my_fruit` comme la somme des variables `my_apples` et `my_oranges` ?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Avez-vous créé `my_fruit` comme la somme des variables `my_apples` et `my_oranges` ?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Ne supprimez pas la ligne qui affiche `my_fruit`.")
 
 
 
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Génial, continuez votre bon travail ! Passez à l'exercice suivant.")
 ```
 
 ---
 
-## Basic data types in R
+## Types de données de base dans R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +422,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R fonctionne avec de nombreux types de données. Voici quelques-uns des types de données les plus élémentaires pour commencer :
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Les valeurs décimales telles que `4.5` sont appelées des **valeurs numériques**.
+- Les nombres entiers comme `4` sont appelés **entiers**. Les entiers sont également des valeurs numériques.
+- Les opérateurs booléens (`TRUE` (vrai) ou `FALSE` (faux)) sont appelées **valeurs logiques**.
+- Les valeurs de texte (« string » en anglais) sont appelées **chaînes de caractères**.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Notez que les guillemets de l'éditeur indiquent que `"some text"` est une chaîne de caractères.
 
 `@instructions`
-Change the value of the:
+Modifiez la valeur des variables :
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- `my_numeric` à `42`.
+- `my_character` à `"universe"`. Notez que les guillemets indiquent que `"universe"` est une chaîne de caractères.
+- `my_logical` à `FALSE`.
 
-Note that R is case sensitive!
+Notez que R est sensible à la casse.
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Remplacez les valeurs de l'éditeur par les valeurs fournies dans l'exercice. Par exemple :
+`my_numeric <- 42` affecte la valeur 42 à la variable `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +475,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Avez-vous correctement modifié la déclaration de `my_numeric` pour qu'elle contienne la valeur 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Avez-vous correctement modifié `my_character` en `\"universe\"`? N'oubliez pas les guillemets!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Avez-vous correctement modifié `my_logical` en `FALSE`? Toutes les lettres de `FALSE` doivent être en majuscules!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Bon travail! Continuez avec l'exercice suivant.")
 ```
 
 ---
 
-## What's that data type?
+## Quel est ce type de données ?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +496,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Vous souvenez-vous que lorsque vous avez ajouté `5 + "six"`, vous avez obtenu une erreur due à une incompatibilité entre les types de données ? Vous pouvez éviter ces situations embarrassantes en vérifiant au préalable le type de données d'une variable. Vous pouvez le faire avec la fonction `class()`, comme le montre le code dans l'éditeur.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Complétez le code dans l'éditeur et affichez également les classes de `my_character` et `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Le code qui affiche le type de données de `my_numeric` est déjà inclus ; faites de même pour `my_character` et `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +545,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Ne modifiez pas la déclaration des variables !"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Avez-vous inclus `class(%1$s)` pour afficher le type de données de `%1$s` ?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Ne supprimez pas le code qui affiche le type de `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Félicitations ! C'était le dernier exercice de ce chapitre. Passez au chapitre suivant pour vous plonger dans le monde des vecteurs !")
 ```
