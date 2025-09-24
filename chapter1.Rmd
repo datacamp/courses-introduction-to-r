@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Bölüm 1
+title: Temel bilgilere giriş
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  R ile ilk adımlarınızı atın. Bu bölümde, konsolu bir hesap makinesi gibi nasıl
+  kullanacağınızı ve nasıl değişken atayacağınızı öğreneceksiniz. Ayrıca R'deki
+  temel veri türlerini tanıyacaksınız. Hadi başlayalım.
 free_preview: true
 ---
 
-## How it works
+## İşleyişi
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+Editörde, egzersizleri çözmek için R kodu yazmalısınız. Kodunuzu gönderdiğinizde her kod satırı R tarafından yorumlanıp yürütülür ve kodunuzun doğru olup olmadığına dair bir mesaj alırsınız. R kodunuzun çıktısı konsolda gösterilir.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R, yorum eklemek için `#` işaretini kullanır, böylece hem siz hem de başkaları R kodunun ne hakkında olduğunu anlayabilirsiniz. Tıpkı Twitter gibi! Yorumlar R kodu olarak çalıştırılmaz, bu nedenle sonucunuzu etkilemezler. Örneğin, editörde <span translate="no">_Calculate 3 + 4_</span> bir yorumdur.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+R komutlarını doğrudan konsolda da yürütebilirsiniz. Gönderinizin doğruluğu kontrol edilmediği için bu, R kodunu denemek için iyi bir yoldur.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- Editörde bazı örnek kodlar bulunuyor. Hangi satırların gerçek R kodu, hangilerinin yorum olduğunu görebiliyor musunuz?
+- 6 ve 12’nin toplamını hesaplayan bir kod satırı ekleyin ve kodunuzu gönderin.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Örnek koddaki gibi 6 ve 12’nin toplamını hesaplayan bir R kodu satırı eklemeniz yeterlidir!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Yeni bir satıra `6 + 12` eklediğinizden emin olun. Satıra `#` ile başlamayın, aksi takdirde R kodunuz çalıştırılmaz!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Harika! Konsolun gönderdiğiniz R kodunun sonucunu nasıl gösterdiğini görüyor musunuz? Artık arayüze aşina olduğunuza göre, R işine başlayalım!")
 ```
 
 ---
 
-## Arithmetic with R
+## R ile aritmetik
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+En temel haliyle R, basit bir hesap makinesi olarak kullanılabilir. Aşağıdaki aritmetik işleçleri göz önünde bulundurun:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
+- Toplama: `+`
+- Çıkarma: `-`
+- Çarpma: `*`
+- Bölme: `/`
+- Üst alma: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+Son ikisini biraz açıklamak gerekebilir:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- `^` işleci, solundaki sayıyı sağındaki sayının kuvvetine yükseltir: Örneğin `3^2` işlemi 9 sonucunu verir.
+- Modulo (mod alma), soldaki sayının sağındaki sayıya bölümünden kalanı verir, örneğin 5 modulo 3 veya `5 %% 3` işleminin sonucu 2’dir.
 
-With this knowledge, follow the instructions to complete the exercise.
+Bu bilgiyle, egzersizi tamamlamak için talimatları izleyin.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- 2’nin 5 kuvvetini hesaplamak için editörde `2^5` yazın.
+- 28 modulo 6’yı hesaplamak için `28 %% 6` yazın.
+- Yanıtı gönderin ve konsoldaki R çıktısına göz atın.
+- R koduna yorum eklemek için `#` sembolünün nasıl kullanıldığına dikkat edin.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Modulo işlecinin bir başka örneği: `9 %% 2` eşittir `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Diğer aritmetik örnekleri kaldırmayın!"
+ex() %>% check_output_expr("2^5", missing_msg = "Üs alma örneği doğru değil. Yeni bir satıra `2 ^ 5` yazın.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Modül örneğinde bir sorun var gibi görünüyor. Yeni bir satıra `28 %% 6` yazın.")
+success_msg("Harika! Bir sonraki alıştırmaya geçin.")
 ```
 
 ---
 
-## Variable assignment
+## Değişken atama
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+**Değişken**, (istatistiksel) programlamada temel bir kavramdır. 
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Değişken, bir değeri (örneğin 4) veya bir nesneyi (örneğin bir fonksiyon açıklaması) R'de depolamanızı sağlar. Daha sonra bu değişkende depolanan değere veya nesneye kolayca erişmek için bu değişkenin adını kullanabilirsiniz. 
 
-You can assign a value 4 to a variable `my_var` with the command
+`my_var` değişkenine 4 değerini şu komutla atayabilirsiniz:
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Sıra sizde: Kodu editörde `x` değişkenine 42 değerini atayacak şekilde tamamlayın. Yanıtı gönderin. R'den `x` değişkenini yazdırmasını istediğinizde 42 değerinin göründüğüne dikkat edin.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Egzersizin atamasında 4 değerinin `my_var` değişkenine nasıl atandığına bakın. Aynı şeyi editörde yapın ancak şimdi `x` değişkenine 42 atayın.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Bir `x` değişkeni tanımladığınızdan emin olun.")  %>% check_equal(incorrect_msg = "`x`'e doğru değeri atadığınızdan emin olun.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Tebrikler! R'nin atama yaptığınızda bir değişkenin değerini konsola yazdırmadığını fark ettiniz mi? `x <- 42` herhangi bir çıktı üretmedi, çünkü R bu değişkene gelecekte ihtiyacınız olacağını varsayıyor. Aksi takdirde, değeri bir değişkende saklamazdınız, değil mi? Bir sonraki alıştırmaya geçin!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Değişken atama (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Diyelim ki içinde beş elma olan bir meyve sepetiniz var. Eğitim gören bir veri analisti olarak, elma sayısını `my_apples` adlı bir değişkende depolamak istiyorsunuz.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Editörde şu kodu yazın: `my_apples <- 5`. `my_apples` değişkenine 5 değeri atanır.
+- İkinci yorumun altına `my_apples` yazın. `my_apples` değeri yazdırılır.
+- Yanıtınızı gönderin ve çıktıya bakın: 5 sayısının yazdırıldığını göreceksiniz. Yani R artık `my_apples` değişkenini 5 değerine bağladı.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+R'de bir değişkene sayı veya nesne atamak isterseniz `<-` atama işlecini kullanabileceğinizi unutmayın. Alternatif olarak `=` işlecini de kullanabilirsiniz ancak R topluluğunda yaygın olarak `<-` tercih edilir.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Lütfen `my_apples` değişkenini tanımladığınızdan emin olun.") %>% check_equal(incorrect_msg = "`my_apples` değişkenine doğru değeri atadığınızdan emin olun.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "`my_apples` değişkenini konsola yazdırması için R'ye açıkça talimat verdiniz mi?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Harika! Bir sonraki alıştırmaya devam edin!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Değişken atama (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+Her lezzetli meyve sepetinin portakala ihtiyacı vardır, bu yüzden altı portakal eklemeye karar veriyorsunuz. Bir veri analisti olarak refleksiniz hemen `my_oranges` değişkenini oluşturmak ve ona 6 değerini atamaktır. Ardından, toplamda kaç adet meyveniz olduğunu hesaplamak istiyorsunuz. Bu değerlere anlamlı adlar verdiğiniz için artık bunu net bir şekilde kodlayabilirsiniz: 
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- `my_oranges` değişkenine 6 değerini atayın.
+- `my_apples` ve `my_oranges` değişkenlerini ekleyin ve R ile sonucu yazdırın.
+- `my_apples` ve `my_oranges` değişkenlerinin toplama sonucunu, yeni bir değişken olan `my_fruit` değişkenine atayın.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` değeri `my_apples` ve `my_oranges` toplamıdır. İkisini toplamak için `+` işlecini, bu değeri `my_fruit` değişkenine atamak için de `<-` işlecini kullanabilirsiniz.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "`my_fruit` değişkenini oluşturmak için `my_fruit <- my_apples + my_oranges` ifadesini kullandınız mı?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples`'a 5 atayan satırı koruyun.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges`'a 6 atayan satırı koruyun.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "`my_apples` ve `my_oranges`'ın toplamını yazdırdığınızdan emin olun. Açıklamadaki kod örneği bu talimatın cevabını zaten veriyor!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Güzel! Değişkenlerle hesaplama yapmanın büyük avantajı yeniden kullanılabilirliktir. Eğer `my_apples`'ı 5 yerine 12 olarak değiştirir ve script'i yeniden çalıştırırsanız, `my_fruit` da otomatik olarak güncellenecektir. Bir sonraki alıştırmaya devam edin.")
 ```
 
 ---
 
-## Apples and oranges
+## Elmalar ve portakallar
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Geleneksel bilgi size elmalarla portakalların toplanamayacağını söyler. Ama hey, az önce yaptığınız şey bu değil miydi :-)? Önceki egzersizde `my_apples` ve `my_oranges` değişkenlerinin her ikisi de bir sayı içeriyordu. R’de `+` işleci, sayısal değişkenlerle çalışır. <span translate="no">"apples"</span> ve <span translate="no">"oranges"</span> ile birlikte `my_oranges` değişkenine bir metin değeri atasaydınız (editöre bakın), `my_fruit` değişkenine bir sayısal değişken ve bir karakter değişkeninin toplamını atamaya çalışıyor olurdunuz. Bu mümkün değildir.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Yanıtı gönderin ve hata mesajını okuyun. Bunun neden işe yaramadığını anladığınızdan emin olun.
+- R'nin 6 portakalınız olduğunu ve dolayısıyla 11 adet meyve içeren bir meyve sepetiniz olduğunu bileceği şekilde kodu ayarlayın.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+`"six"` karakter değeri yerine `6` sayısal değerini `my_oranges` değişkenine atamanız gerekir. `"six"` değerinin bir karakter olduğunu belirtmek için tırnak işaretlerinin nasıl kullanıldığına dikkat edin.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "`my_oranges` değişkenini bir metin değil, sayısal bir değere ayarlayarak bunu yapabilirsiniz!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples`'in hala `5` içerdiğinden emin olun.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges`'in `6`'ya eşit olduğundan emin olun.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "`my_fruit`'in değeri doğru değil. `my_apples` ve `my_oranges`'in toplamı olan 11 olmalıdır.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "`my_fruit`'i `my_apples` ve `my_oranges` değişkenlerinin toplamı olarak oluşturdunuz mu?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "`my_fruit`'i `my_apples` ve `my_oranges` değişkenlerinin toplamı olarak oluşturdunuz mu?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "`my_fruit`'i yazdıran satırı kaldırmayın.")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Harika, iyi iş çıkardınız! Bir sonraki alıştırmaya devam edin.")
 ```
 
 ---
 
-## Basic data types in R
+## R’de temel veri türleri
 
 ```yaml
 type: NormalExercise
@@ -423,27 +420,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R çeşitli veri türleri ile çalışır. Başlangıç olarak en temel türlerden bazıları şunlardır:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- `4.5` gibi ondalık değerler **sayısal** olarak adlandırılır.
+- `4` gibi doğal sayılar, **tamsayı** olarak adlandırılır. Tamsayılar aynı zamanda sayısal değerlerdir.
+- Boole değerleri (`TRUE` veya `FALSE`), **mantıksal** olarak adlandırılır.
+- Metin (veya dize) değerlerine **karakter** adı verilir.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Editördeki tırnak işaretleri, `"some text"` değişkeninin bir dize olduğunu gösterir.
 
 `@instructions`
-Change the value of the:
+Değerleri şu şekilde değiştirin:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- `my_numeric` değişkenini `42` ile.
+- `my_character` değişkenini `"universe"` ile. Tırnak işaretleri, `"universe"` değişkeninin bir karakter olduğunu gösterir.
+- `my_logical` değişkenini `FALSE` ile.
 
-Note that R is case sensitive!
+R’nin büyük/küçük harfe duyarlı olduğunu unutmayın!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Editördeki değerleri egzersizde verilen değerlerle değiştirin. Örneğin:
+`my_numeric <- 42`, `my_numeric` değişkenine 42 değerini atar.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +473,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "`my_numeric` değişkeninin değerini 42 olacak şekilde doğru bir şekilde değiştirdiniz mi?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "`my_character` değişkenini doğru bir şekilde `\"universe\"` olarak değiştirdiniz mi? Tırnak işaretlerini unutmayın!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "`my_logical` değişkenini doğru bir şekilde `FALSE` olarak değiştirdiniz mi? `FALSE` kelimesinin tüm harfleri büyük olmalıdır!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Harika iş! Bir sonraki alıştırmaya devam edin.")
 ```
 
 ---
 
-## What's that data type?
+## Hangi veri türü?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +494,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+`5 + "six"` toplama işlemini yaptığınızda veri türlerinde uyuşmazlık nedeniyle hata aldığınızı hatırlıyor musunuz? Bir değişkenin veri türünü önceden kontrol ederek bu tür utanç verici durumlardan kaçınabilirsiniz. Editördeki kodda gösterildiği gibi bunu `class()` fonksiyonuyla yapabilirsiniz.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Kodu editörde tamamlayın ve ayrıca `my_character` ile `my_logical` sınıflarının çıktısını alın.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+`my_numeric` veri türünü yazdıran kod zaten dahil edildi. Benzer şeyleri `my_character` ve `my_logical` için de yapın.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,7 +543,7 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Değişkenlerin tanımını değiştirmeyin!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
@@ -559,5 +556,5 @@ ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Tebrikler! Bu bölümün son alıştırmasını tamamladınız. Vektörler dünyasına dalmak için bir sonraki bölüme geçin!")
 ```
