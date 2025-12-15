@@ -9,6 +9,16 @@ description: >-
   worldwide, cementing it as a leading programming language in statistics and
   data science. Begin your coding journey in one of DataCamp's most popular
   courses today!
+
+
+  The videos contain live transcripts you can reveal by clicking "Show
+  transcript" at the bottom left of the videos.
+
+  The course glossary can be found on the right in the resources section.
+
+  To obtain CPE credits you need to complete the course and reach a score of 70%
+  on the qualified assessment. You can navigate to the assessment by clicking on
+  the CPE credits callout on the right.
 from: 'r-base-prod:v2.0.1'
 runtime_config: minimal
 practice_pool_id: 106
