@@ -12,3 +12,5 @@ description: >-
 from: 'r-base-prod:v2.0.1'
 runtime_config: minimal
 practice_pool_id: 106
+datasets:
+  Introduction to R.pdf: Course Glossary
