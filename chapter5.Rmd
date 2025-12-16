@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Bab 5
+title: Data frame
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Sebagian besar kumpulan data yang akan Anda gunakan disimpan sebagai data
+  frame. Di akhir bab ini, Anda akan dapat membuat data frame, memilih
+  bagian-bagian menarik dari sebuah data frame, dan mengurutkan data frame
+  berdasarkan variabel tertentu.
 ---
 
-## What's a data frame?
+## Apa itu data frame?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +18,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Anda mungkin ingat dari bab tentang matriks bahwa semua elemen dalam sebuah matriks harus memiliki tipe yang sama. Saat itu, kumpulan data Star Wars Anda hanya berisi elemen numerik.
 
-When doing a market research survey, however, you often have questions such as:
+Namun, saat melakukan survei riset pasar, Anda sering memiliki pertanyaan seperti:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- 'Apakah Anda sudah menikah?' atau pertanyaan 'ya/tidak' (`logical`)
+- 'Berapa usia Anda?' (`numeric`)
+- 'Apa pendapat Anda tentang produk ini?' atau pertanyaan 'terbuka' lainnya (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Output, yaitu jawaban responden atas pertanyaan-pertanyaan di atas, merupakan kumpulan data dengan berbagai tipe data. Anda akan sering bekerja dengan himpunan data yang berisi beragam tipe data, bukan hanya satu tipe saja.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Sebuah data frame memiliki variabel-variabel dari suatu himpunan data sebagai kolom dan observasinya sebagai baris. Konsep ini akan terasa familier bagi Anda yang datang dari perangkat lunak statistik lain seperti SAS atau SPSS.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Kirim jawaban. Data dari data frame contoh bawaan `mtcars` akan dicetak ke konsol.
 
 `@hint`
-Submit the answer and witness the magic!
+Kirim jawabannya dan lihat hasilnya!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +56,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Jangan mengubah apapun dari kode tersebut, Pastikan Anda mengeluarkan `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Bagus! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Cepat, lihat kumpulan data Anda
 
 ```yaml
 type: NormalExercise
@@ -73,19 +73,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Wah, banyak sekali mobilnya!
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Bekerja dengan kumpulan data besar adalah hal yang umum dalam analisis data. Saat Anda bekerja dengan kumpulan data dan data frame yang (sangat) besar, tugas pertama Anda sebagai analis data adalah memahami struktur dan elemen utamanya dengan jelas. Karena itu, sering kali berguna untuk menampilkan hanya sebagian kecil dari keseluruhan kumpulan data.
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Lalu, bagaimana cara melakukannya di R? Fungsi `head()` memungkinkan Anda menampilkan observasi pertama dari sebuah data frame. Demikian pula, fungsi `tail()` mencetak observasi terakhir dalam kumpulan data Anda.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Baik `head()` maupun `tail()` mencetak baris teratas yang disebut 'header', yang berisi nama-nama variabel berbeda dalam kumpulan data Anda.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Panggil `head()` pada kumpulan data `mtcars` untuk melihat header dan observasi pertama.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` akan menampilkan observasi pertama dari data frame `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +106,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Apakah Anda sudah benar-benar memasukkan `mtcars` ke dalam fungsi `head()`?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Cukup cetak hasil dari pemanggilan `head()`, tidak perlu menetapkannya ke variabel baru.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Luar biasa! Jadi, apa yang kita miliki dalam dataset ini? Sebagai contoh, `hp` mewakili tenaga kuda mobil; Datsun memiliki tenaga kuda terendah dari 6 mobil yang ditampilkan. Untuk gambaran lengkap tentang arti variabel, ketik `?mtcars` di konsol dan baca halaman bantuan. Lanjutkan ke latihan berikutnya!");
 ```
 
 ---
 
-## Have a look at the structure
+## Lihat struktur datanya
 
 ```yaml
 type: NormalExercise
@@ -125,21 +125,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Metode lain yang sering digunakan untuk mendapatkan gambaran cepat atas data Anda adalah fungsi `str()`. Fungsi `str()` menampilkan struktur himpunan data Anda. Untuk sebuah data frame, fungsi ini memberi tahu Anda:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Jumlah total observasi (misalnya 32 jenis mobil)
+- Jumlah total variabel (misalnya 11 fitur mobil)
+- Daftar lengkap nama variabel (misalnya `mpg`, `cyl` ...)
+- Tipe data setiap variabel (misalnya `num`)
+- Beberapa observasi pertama
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Menerapkan fungsi `str()` sering kali menjadi hal pertama yang Anda lakukan ketika menerima himpunan data atau data frame baru. Ini adalah cara yang sangat baik untuk memperoleh pemahaman awal tentang kumpulan data Anda sebelum melakukan analisis yang sesungguhnya.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Teliti struktur `mtcars`. Pastikan Anda melihat jumlah, variabel, dan tipe data yang sama seperti disebutkan di atas.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Gunakan fungsi `str()` pada `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +160,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Apakah Anda sudah benar memanggil `str()` pada `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Kerja bagus! Anda dapat menemukan banyak informasi dengan melihat `str()` dari sebuah dataset. Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Creating a data frame
+## Membuat data frame
 
 ```yaml
 type: NormalExercise
@@ -177,28 +177,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Karena menggunakan himpunan data bawaan tidak  sebanding dengan keseruan  membuat kumpulan data sendiri, sisa bab ini akan didasarkan pada kumpulan data yang Anda kembangkan sendiri. Kenakan jet pack Anda karena saatnya menjelajah ruang angkasa!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Sebagai tujuan pertama, Anda ingin menyusun sebuah data frame yang menggambarkan karakteristik utama delapan planet di tata surya kita. Menurut sahabat Anda, Buzz, fitur utama sebuah planet adalah:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Tipe planet (Terrestrial atau Gas Giant).
+- Diameter planet relatif terhadap diameter Bumi.
+- Periode rotasi planet mengelilingi matahari relatif terhadap Bumi.
+- Apakah planet tersebut memiliki cincin atau tidak (TRUE atau FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Setelah melakukan riset berkualitas di [Wikipedia](https://en.wikipedia.org/wiki/Planet), Anda cukup yakin untuk membuat vektor yang diperlukan: `name`, `type`, `diameter`, `rotation`, dan `rings`, vektor-vektor ini sudah dituliskan di editor. Elemen pertama pada masing-masing vektor sesuai dengan observasi pertama.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Anda menyusun sebuah data frame dengan fungsi `data.frame()`. Sebagai argumen, Anda meneruskan vektor-vektor tadi, vektor tersebut akan menjadi kolom-kolom yang berbeda pada data frame Anda. Karena setiap kolom memiliki panjang yang sama, vektor yang Anda berikan juga harus memiliki panjang yang sama. Namun ingat bahwa mungkin (dan besar kemungkinan) tipe datanya berbeda-beda.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Gunakan fungsi `data.frame()` untuk menyusun sebuah data frame. Teruskan vektor `name`, `type`, `diameter`, `rotation`, dan `rings` sebagai argumen ke `data.frame()` dalam urutan tersebut. Beri nama data frame yang dihasilkan `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Pemanggilan `data.frame()` Anda dimulai seperti berikut:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Apakah Anda dapat menyelesaikannya?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +250,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Jangan mengubah apapun tentang definisi vektor. Hanya tambahkan panggilan `data.frame()` untuk membuat `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +261,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Apakah Anda telah memanggil `data.frame()` dengan benar untuk membuat `planets_df`. Di dalam `data.frame()`, pastikan untuk memasukkan semua vektor dalam urutan yang benar: `name`, `type`, `diameter`, `rotation`, dan terakhir `rings`.")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Kerja bagus! Langkah logis berikutnya, seperti yang Anda ketahui sekarang, adalah memeriksa kerangka data yang baru saja Anda buat. Lanjutkan ke latihan berikutnya.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Membuat data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Data frame `planets_df` seharusnya memiliki 8 observasi dan 5 variabel. Data ini telah tersedia di workspace, sehingga Anda dapat langsung menggunakannya.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Gunakan `str()` untuk menelusuri struktur variabel `planets_df` yang baru.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` sudah tersedia di workspace Anda, jadi `str(planets_df)` akan menyelesaikannya.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Jangan hapus atau timpa data frame `planets_df` yang sudah tersedia di ruang kerja!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Apakah Anda sudah menampilkan struktur `planets_df` dengan benar? Gunakan `str()` untuk melakukannya!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Hebat! Sekarang setelah Anda memiliki pemahaman yang jelas tentang dataset `planets_df`, saatnya untuk melihat bagaimana Anda dapat memilih elemen darinya. Pelajari semuanya di latihan berikutnya!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Seleksi elemen data frame
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Serupa dengan vektor dan matriks, Anda memilih elemen dari sebuah data frame dengan menggunakan tanda kurung siku `[ ]`. Dengan menggunakan koma, Anda dapat menyatakan apa yang dipilih dari baris dan kolom secara berurutan. Contohnya:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` memilih nilai pada baris pertama dan kolom kedua di `my_df`.
+- `my_df[1:3,2:4]` memilih baris 1, 2, 3 dan kolom 2, 3, 4 di `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Terkadang Anda ingin memilih semua elemen dari suatu baris atau kolom. Misalnya, `my_df[1, ]` memilih semua elemen pada baris pertama. Sekarang mari terapkan teknik ini pada `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Dari `planets_df`, pilih diameter Merkurius: ini adalah nilai pada baris pertama dan kolom ketiga. Tampilkan saja hasilnya.
+- Dari `planets_df`, pilih semua data tentang Mars (baris keempat). Tampilkan saja hasilnya.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Untuk memilih diameter Venus (baris kedua), Anda akan membutuhkan: `planets_df[2,3]`. Lalu, apa yang Anda perlukan untuk Merkurius?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Jangan hapus atau timpa data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Apakah Anda telah memilih dan mencetak diameter untuk Merkurius dengan benar? Anda dapat menggunakan `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Apakah Anda telah memilih dan mencetak semua data untuk Mars dengan benar? Anda dapat menggunakan `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Bagus! Selain memilih elemen dari data frame Anda berdasarkan indeks, Anda juga dapat menggunakan nama kolom. Untuk mempelajari caranya, lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Seleksi elemen data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Alih-alih menggunakan angka untuk memilih elemen dari sebuah data frame, Anda juga dapat menggunakan nama variabel untuk memilih kolom dari data frame.
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Misalkan Anda ingin memilih tiga elemen pertama dari kolom `type`. Salah satu caranya adalah
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Salah satu kekurangan pendekatan ini adalah Anda harus mengetahui (atau mencari) nomor kolom dari `type`, yang bisa menyulitkan jika Anda memiliki banyak variabel. Sering kali lebih mudah untuk menggunakan nama variabel secara langsung:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Pilih dan cetak 5 nilai pertama pada kolom `"diameter"` dari `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Anda dapat memilih lima nilai pertama dengan `planets_df[1:5, ...]`. Apakah Anda dapat melengkapi bagian `...` untuk hanya memilih kolom `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Jangan hapus atau timpa data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Apakah Anda telah memilih lima nilai pertama dari kolom diameter dan mencetaknya? Anda dapat menggunakan `[1:5, \"diameter\"]` di sini.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Bagus! Lanjutkan ke latihan berikutnya!")
 ```
 
 ---
 
-## Only planets with rings
+## Hanya planet dengan cincin
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Sering kali Anda ingin memilih seluruh kolom, yaitu satu variabel tertentu dari sebuah data frame. Jika Anda ingin memilih semua elemen dari variabel `diameter`, misalnya, kedua cara berikut dapat digunakan:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Namun, ada jalan pintas. Jika kolom Anda memiliki nama, Anda dapat menggunakan tanda `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Gunakan tanda `$` untuk memilih variabel `rings` dari `planets_df`. Simpan vektor hasilnya sebagai `rings_vector`.
+- Cetak `rings_vector` untuk memeriksa apakah hasilnya sudah benar.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` memilih kolom `diameter` dari `planets_df`, lalu apa yang Anda perlukan untuk memilih kolom `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Jangan hapus atau timpa data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Apakah Anda telah memilih variabel `rings` dari `planets_df` dengan benar? Gunakan `$rings`. Simpan hasilnya sebagai `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Jangan lupa untuk mencetak `rings_vector` setelah Anda membuatnya!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Bagus! Lanjutkan ke latihan berikutnya dan temukan cara lain untuk melakukan subsetting!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Hanya planet dengan cincin (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Anda mungkin ingat dari pelajaran sekolah menengah bahwa beberapa planet di tata surya kita memiliki cincin dan sebagian lainnya tidak. Sayangnya Anda tidak ingat namanya. Apakah R dapat membantu Anda?
 
-If you type `rings_vector` in the console, you get:
+Jika Anda mengetik `rings_vector` di konsol, Anda akan mendapatkan:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Ini berarti empat pengamatan pertama (atau planet) tidak memiliki cincin (`FALSE`), sementara empat lainnya memiliki (`TRUE`). Namun, Anda belum mendapat ringkasan yang jelas tentang nama-nama planet tersebut, diameternya, dan sebagainya. Mari coba gunakan `rings_vector` untuk memilih data bagi empat planet yang memiliki cincin.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Kode di editor memilih kolom `name` dari semua planet yang memiliki cincin. Mengubah kodenya agar alih-alih hanya  `name` column, pilih _all_ columns untuk planet yang memiliki cincin.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Ingat bahwa untuk memilih _semua_ kolom, Anda cukup membiarkan bagian kolom di dalam tanda `[ ]` kosong! Artinya, Anda memerlukan `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Jangan hapus atau timpa `planets_df` atau `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Apakah Anda telah menyesuaikan kode dengan benar untuk memilih _semua_ kolom untuk planet yang memiliki cincin? Anda dapat menggunakan `planets_df[rings_vector, ]`. Pastikan untuk menyertakan koma di sini, ini sangat penting!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Luar biasa! Ini adalah solusi yang agak membosankan. Latihan berikutnya akan mengajarkan Anda cara melakukannya dengan cara yang lebih ringkas.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Hanya planet dengan cincin tetapi lebih pendek
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Jadi, apa yang sebenarnya Anda pelajari pada latihan sebelumnya? Anda memilih suatu subset dari data frame (`planets_df`) berdasarkan apakah suatu kondisi bernilai benar (memiliki cincin atau tidak), dan Anda berhasil mengambil semua data yang relevan. Keren sekali! Pada titik ini, NASA mungkin sudah melirik CV Anda ;-). 
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Sekarang, mari naik satu tingkat dan gunakan fungsi `subset()`. Anda dapat menganggap fungsi `subset()` sebagai jalan pintas untuk melakukan hal yang sama persis seperti yang Anda lakukan pada latihan sebelumnya. 
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Argumen pertama `subset()` menentukan himpunan data yang ingin Anda ambil subset-nya. Dengan menambahkan argumen kedua, Anda memberikan R informasi dan kondisi yang diperlukan untuk memilih subset yang benar. 
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Kode di bawah ini akan memberikan hasil yang persis sama seperti yang Anda peroleh pada latihan sebelumnya, tetapi kali ini, Anda tidak memerlukan `rings_vector`!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Gunakan `subset()` pada `planets_df` untuk memilih planet yang memiliki diameter lebih kecil daripada Bumi. Karena variabel `diameter` adalah ukuran relatif terhadap diameter planet Bumi, kondisi Anda adalah `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` hampir menyelesaikannya; dapatkah Anda melengkapi bagian `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Jangan hapus atau timpa kerangka data `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Apakah Anda telah menentukan bagian `subset = ...` dengan benar di dalam `subset()`. Kondisi dalam kasus ini adalah `diameter < 1`. Cukup cetak hasilnya.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Argumen pertama yang Anda berikan ke `subset()` haruslah `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Bagus! Fungsi `subset()` tidak hanya lebih ringkas, tetapi mungkin juga lebih mudah dipahami oleh orang yang membaca kode Anda. Lanjutkan ke latihan berikutnya.");
 ```
 
 ---
 
-## Sorting
+## Pengurutan
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Membuat dan menyusun peringkat adalah salah satu hal favorit umat manusia. Peringkat ini bisa bermanfaat (universitas terbaik di dunia), menghibur (bintang film paling berpengaruh), atau tidak penting (peniru 007 terbaik).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+Dalam analisis data, Anda dapat mengurutkan data menurut suatu variabel dalam himpunan data. Di R, hal ini dilakukan dengan bantuan fungsi `order()`. 
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` adalah fungsi yang memberikan posisi peringkat dari setiap elemen ketika diterapkan pada suatu variabel, misalnya sebuah vektor:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +763,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+Angka 10, yang merupakan elemen kedua dalam `a`, adalah elemen terkecil, sehingga 2 muncul pertama pada keluaran `order(a)`. Angka 100, yang merupakan elemen pertama dalam `a`, adalah elemen terkecil kedua, sehingga 1 muncul kedua pada keluaran `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Ini berarti kita dapat menggunakan keluaran `order(a)` untuk menata ulang `a`:
     
 ```
 a[order(a)]
@@ -774,10 +773,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Bereksperimenlah dengan fungsi `order()` di konsol. Kirim jawabannya ketika Anda siap melanjutkan.
 
 `@hint`
-Just play with the `order()` function in the console!
+Coba-coba gunakan fungsi `order()` di konsol!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +795,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Bagus! Sekarang mari kita gunakan fungsi `order()` untuk mengurutkan data frame Anda!")
 ```
 
 ---
 
-## Sorting your data frame
+## Mengurutkan data frame Anda
 
 ```yaml
 type: NormalExercise
@@ -811,15 +810,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Baik, sekarang setelah Anda memahami fungsi `order()`, mari kita melakukan sesuatu yang bermanfaat dengannya. Anda ingin menyusun ulang data frame sehingga dimulai dari planet terkecil hingga yang terbesar. Lakukan pengurutan pada kolom `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Panggil `order()` pada `planets_df$diameter` (kolom `diameter` dari `planets_df`). Simpan hasilnya sebagai `positions`.
+- Sekarang susun ulang `planets_df` dengan vektor `positions` sebagai indeks baris di dalam tanda kurung siku. Pertahankan semua kolom. Cetak saja hasilnya.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Gunakan `order(planets_df$diameter)` untuk membuat `positions`.
+- Sekarang, Anda dapat menggunakan `positions` di dalam tanda kurung siku: `planets_df[...]`; dapatkah Anda melengkapi bagian `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +865,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Jangan hapus atau timpa data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Apakah Anda telah menghitung variabel `positions` dengan benar? Anda dapat menggunakan `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Gunakan `planets_df[positions, ]` untuk mengurutkan `planets_df`; koma di dalam tanda kurung siku sangat penting!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Luar biasa! Latihan ini mengakhiri bab tentang data frame. Ingatlah bahwa data frame sangat penting dalam R, Anda akan membutuhkannya sepanjang waktu. Struktur data lain yang sangat sering digunakan adalah daftar. Ini akan menjadi subjek bab berikutnya!")
 ```

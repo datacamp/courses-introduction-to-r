@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Bab 1
+title: Pengantar dasar-dasar
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Ambil langkah pertama Anda dengan R. Pada bab ini, Anda akan belajar
+  menggunakan konsol sebagai kalkulator dan cara menetapkan variabel. Anda juga
+  akan mengenal tipe data dasar di R. Mari kita mulai.
 free_preview: true
 ---
 
-## How it works
+## Cara kerjanya
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+Di editor, Anda harus mengetik kode R untuk menyelesaikan latihan. Saat Anda mengirimkan kode, setiap baris kode diinterpretasikan dan dijalankan oleh R dan Anda akan mendapatkan pesan apakah kode Anda sudah benar atau belum. Hasil output dari kode R Anda ditampilkan di konsol.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R menggunakan tanda `#` untuk menambahkan komentar, agar Anda dan orang lain dapat memahami maksud kode R tersebut. Mirip seperti Twitter! Komentar tidak dijalankan sebagai kode R, sehingga tidak akan memengaruhi hasil Anda. Sebagai contoh, <span translate="no">_Calculate 3 + 4_</span> di editor adalah sebuah komentar.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Anda juga dapat mengeksekusi perintah R langsung di konsol. Ini adalah cara yang baik untuk bereksperimen dengan kode R, karena kiriman Anda tidak diperiksa kebenarannya.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- Di editor sudah tersedia beberapa kode contoh. Apakah Anda dapat melihat baris mana yang merupakan kode R dan mana yang merupakan komentar?
+- Tambahkan satu baris kode yang menghitung jumlah 6 dan 12, lalu kirimkan kode Anda.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Tambahkan saja satu baris kode R yang menghitung jumlah 6 dan 12, seperti contoh pada kode contoh!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Pastikan untuk menambahkan `6 + 12` pada baris baru. Jangan memulai baris dengan `#`, jika tidak, kode R Anda tidak akan dieksekusi!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Hebat! Lihat bagaimana konsol menampilkan hasil dari kode R yang Anda kirimkan? Sekarang setelah Anda terbiasa dengan antarmuka, mari kita mulai dengan bisnis R!")
 ```
 
 ---
 
-## Arithmetic with R
+## Aritmatika dengan R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+Dalam bentuk paling dasar, R dapat digunakan sebagai kalkulator sederhana. Perhatikan operator aritmetika berikut:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
+- Penjumlahan: `+`
+- Pengurangan: `-`
+- Perkalian: `*`
+- Pembagian: `/`
+- Perpangkatan: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+Dua yang terakhir mungkin perlu penjelasan:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Operator `^` menaikkan angka di sebelah kiri ke pangkat angka di sebelah kanan: misalnya `3^2` adalah 9.
+- Modulo mengembalikan sisa pembagian angka di sebelah kiri oleh angka di sebelah kanan, misalnya 5 modulo 3 atau `5 %% 3` adalah 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+Dengan pengetahuan ini, ikuti instruksi untuk menyelesaikan latihan.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Ketik `2^5` di editor untuk menghitung 2 pangkat 5.
+- Ketik `28 %% 6` untuk menghitung 28 modulo 6.
+- Kirim jawabannya dan lihat keluaran R di konsol.
+- Perhatikan bagaimana simbol `#` digunakan untuk menambahkan komentar pada kode R.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Contoh lain operator modulo: `9 %% 2` bernilai `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Jangan hapus contoh aritmatika lainnya!"
+ex() %>% check_output_expr("2^5", missing_msg = "Contoh eksponensiasi tidak benar. Tulis `2 ^ 5` pada baris baru.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Sepertinya ada masalah dengan contoh modulo. Tulis `28 %% 6` pada baris baru.")
+success_msg("Bagus! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Variable assignment
+## Penetapan variabel
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Konsep dasar dalam pemrograman (statistik) disebut **variabel**.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Variabel memungkinkan Anda menyimpan sebuah nilai (misalnya 4) atau sebuah objek (misalnya deskripsi fungsi) di R. Anda kemudian dapat menggunakan nama variabel ini untuk dengan mudah mengakses nilai atau objek yang tersimpan di dalam variabel tersebut.
 
-You can assign a value 4 to a variable `my_var` with the command
+Anda dapat menetapkan nilai 4 ke variabel `my_var` dengan perintah
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Sekarang giliran Anda: lengkapi kode di editor sehingga memberikan nilai 42 ke variabel `x` di editor. Kirim jawaban. Perhatikan bahwa ketika Anda meminta R untuk mencetak `x`, nilai 42 akan muncul.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Perhatikan bagaimana nilai 4 diberikan ke `my_var` pada penugasan latihan. Lakukan hal yang sama persis di editor, tetapi sekarang berikan nilai 42 ke variabel `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Pastikan untuk mendefinisikan variabel `x`.")  %>% check_equal(incorrect_msg = "Pastikan bahwa Anda menetapkan nilai yang benar ke `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Kerja bagus! Apakah Anda memperhatikan bahwa R tidak mencetak nilai variabel ke konsol ketika Anda melakukan penugasan? `x <- 42` tidak menghasilkan output apa pun, karena R menganggap bahwa Anda akan membutuhkan variabel ini di masa depan. Jika tidak, Anda tidak akan menyimpan nilainya dalam variabel sejak awal, bukan? Lanjutkan ke latihan berikutnya!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Penetapan variabel (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Misalkan Anda memiliki keranjang buah dengan lima apel. Sebagai analis data yang sedang belajar, Anda ingin menyimpan jumlah apel tersebut dalam variabel bernama `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Ketik kode berikut di editor: `my_apples <- 5`. Ini akan menetapkan nilai 5 ke `my_apples`.
+- Ketik: `my_apples` di bawah komentar kedua. Ini akan menampilkan nilai `my_apples`.
+- Kirim jawaban Anda, lalu perhatikan outputnya: Anda akan melihat angka 5 tercetak. Jadi R sekarang mengaitkan variabel `my_apples` dengan nilai 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Ingat bahwa jika Anda ingin menetapkan sebuah angka atau objek ke sebuah variabel di R, Anda dapat menggunakan operator penetapan `<-`. Sebagai alternatif, Anda bisa menggunakan `=`, tetapi `<-` lebih umum digunakan di komunitas R.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Silakan pastikan untuk mendefinisikan variabel `my_apples`.") %>% check_equal(incorrect_msg = "Pastikan bahwa Anda menetapkan nilai yang benar ke `my_apples`.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Apakah Anda sudah secara eksplisit memberi tahu R untuk mencetak variabel `my_apples` ke konsol?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Bagus! Lanjutkan ke latihan berikutnya!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Penetapan variabel (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+Setiap keranjang buah yang lezat perlu jeruk, jadi Anda memutuskan untuk menambahkan enam jeruk. Sebagai analis data, refleks Anda adalah segera membuat variabel `my_oranges` dan menetapkan nilai 6 padanya. Selanjutnya, Anda ingin menghitung berapa banyak buah yang Anda miliki secara total. Karena Anda telah memberikan nama yang bermakna pada nilai-nilai ini, sekarang Anda dapat menuliskannya dengan jelas:
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Tetapkan nilai 6 ke `my_oranges`.
+- Menjumlahkan variabel `my_apples` dan `my_oranges` dan biarkan R mencetak hasilnya saja.
+- Tetapkan hasil penjumlahan `my_apples` dan `my_oranges` ke variabel baru `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` hanyalah penjumlahan dari `my_apples` dan `my_oranges`. Anda dapat menggunakan operator `+` untuk menjumlahkan keduanya dan `<-` untuk menetapkan nilai tersebut ke variabel `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Apakah Anda telah menggunakan `my_fruit <- my_apples + my_oranges` untuk membuat variabel `my_fruit`?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Pertahankan baris yang menetapkan 5 ke `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Pertahankan baris yang menetapkan 6 ke `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Pastikan untuk mencetak hasil penjumlahan `my_apples` dan `my_oranges`. Contoh kode dalam deskripsi sudah memberikan jawaban untuk instruksi ini!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Bagus sekali! Keuntungan besar dari melakukan perhitungan dengan variabel adalah kegunaannya yang berulang. Jika Anda hanya mengubah `my_apples` menjadi 12 alih-alih 5 dan menjalankan ulang skrip, `my_fruit` akan otomatis diperbarui juga. Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Apples and oranges
+## Apel dan jeruk
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Pengetahuan umum mengatakan Anda tidak boleh menjumlahkan apel dan jeruk. Namun, itulah yang baru saja Anda lakukan, bukan :-)? Variabel `my_apples` dan `my_oranges` sama-sama berisi angka pada latihan sebelumnya. Operator `+` berfungsi dengan variabel numerik di R. Jika Anda benar-benar mencoba menjumlahkan <span translate="no">"apples"</span> dan <span translate="no">"oranges"</span>, dan menetapkan nilai teks ke variabel `my_oranges` (lihat editor), Anda akan mencoba menetapkan penjumlahan variabel numerik dan variabel karakter ke variabel `my_fruit`. Hal ini tidak memungkinkan.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Kirim jawabannya dan baca pesan error. Pastikan Anda memahami mengapa ini tidak berhasil.
+- Sesuaikan kodenya agar R tahu Anda memiliki 6 jeruk dan dengan demikian sebuah keranjang buah dengan 11 buah.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Anda harus menetapkan nilai numerik `6` ke variabel `my_oranges`, bukan nilai karakter `"six"`. Perhatikan bagaimana tanda kutip digunakan untuk menunjukkan bahwa `"six"` adalah sebuah karakter.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Anda dapat melakukannya dengan mengatur variabel `my_oranges` ke nilai numerik, bukan string!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Pastikan bahwa `my_apples` masih berisi `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Pastikan bahwa `my_oranges` sama dengan `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "Nilai dari `my_fruit` tidak benar. Seharusnya 11, jumlah dari `my_apples` dan `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Apakah Anda membuat `my_fruit` sebagai jumlah dari variabel `my_apples` dan `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Apakah Anda membuat `my_fruit` sebagai jumlah dari variabel `my_apples` dan `my_oranges`?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Jangan hapus baris yang mencetak `my_fruit`.")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Hebat, teruskan kerja bagus ini! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Basic data types in R
+## Tipe data dasar di R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +420,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R bekerja dengan berbagai tipe data. Beberapa tipe paling dasar untuk memulai adalah:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Nilai desimal seperti `4.5` disebut **numeric**.
+- Bilangan bulat seperti `4` disebut **integer**. Integer juga termasuk numeric.
+- Nilai boolean (`TRUE` atau `FALSE`) disebut **logical**.
+- Nilai teks (atau string) disebut **character**.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Perhatikan bagaimana tanda kutip di editor menunjukkan bahwa `"some text"` adalah sebuah string.
 
 `@instructions`
-Change the value of the:
+Ubah nilai dari:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- variabel `my_numeric` menjadi `42`.
+- variabel `my_character` menjadi `"universe"`. Perhatikan bahwa tanda kutip menunjukkan bahwa `"universe"` adalah sebuah character.
+- variabel `my_logical` menjadi `FALSE`.
 
-Note that R is case sensitive!
+Perhatikan bahwa R peka huruf besar/kecil!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Ganti nilai di editor dengan nilai yang disediakan dalam latihan. Contohnya: 
+`my_numeric <- 42` menetapkan nilai 42 ke variabel `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +473,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Apakah Anda sudah benar-benar mengubah deklarasi `my_numeric` sehingga berisi nilai 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Apakah Anda sudah benar-benar mengubah `my_character` menjadi `\"universe\"`? Jangan lupa tanda kutipnya!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Apakah Anda sudah benar-benar mengubah `my_logical` menjadi `FALSE`? Semua huruf pada `FALSE` harus menggunakan huruf kapital!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Kerja bagus! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## What's that data type?
+## Apa tipe datanya?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +494,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Ingatkah Anda saat menambahkan `5 + "six"`, Anda mendapatkan error karena ketidaksesuaian tipe data? Anda dapat menghindari situasi seperti itu dengan memeriksa tipe data variabel terlebih dahulu. Anda bisa melakukannya dengan fungsi `class()`, seperti yang ditunjukkan oleh kode di editor.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Lengkapi kode di editor dan cetak juga kelas dari `my_character` dan `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Kode yang mencetak tipe data `my_numeric` sudah disertakan; lakukan hal serupa untuk `my_character` dan `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +543,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Jangan mengubah deklarasi variabel!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Apakah Anda sudah menyertakan `class(%1$s)` untuk mencetak tipe data dari `%1$s`?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Jangan hapus kode yang mencetak tipe dari `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Selamat! Ini adalah latihan terakhir untuk bab ini. Lanjutkan ke bab berikutnya untuk lebih mendalami dunia vektor!")
 ```

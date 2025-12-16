@@ -1,13 +1,14 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Bab 6
+title: Daftar
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  Berbeda dengan vektor, daftar dapat memuat komponen dengan tipe yang berbeda,
+  sebagaimana daftar tugas Anda dapat berisi berbagai kategori tugas. Bab ini
+  akan mengajarkan Anda cara membuat, menamai, dan melakukan subset pada list
+  tersebut.
 ---
 
-## Lists, why would you need them?
+## Daftar, mengapa Anda membutuhkannya?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +18,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Selamat! Pada tahap ini di kursus, Anda sudah memahami:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vektor** (larik satu dimensi): dapat berisi nilai numerik, karakter, atau logika. Elemen dalam sebuah vektor memiliki tipe data yang sama.
+- **Matriks** (larik dua dimensi): dapat berisi nilai numerik, karakter, atau logika. Elemen dalam sebuah matriks memiliki tipe data yang sama.
+- **Data frame** (objek dua dimensi): dapat berisi nilai numerik, karakter, atau logika. Dalam satu kolom, semua elemennya memiliki tipe data yang sama, tetapi kolom yang berbeda bisa memiliki tipe data yang berbeda.
 
-Pretty sweet for an R newbie, right? ;-)
+Cukup keren untuk seorang pemula R, bukan? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Kirim jawaban untuk mulai mempelajari segala hal tentang daftar!
 
 `@hint`
-Just submit the answer!
+Kirim saja jawabannya!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +49,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("Siap, mulai! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Daftar, mengapa Anda membutuhkannya? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +64,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+Sebuah **list** di R mirip dengan daftar tugas Anda di kantor atau sekolah: berbagai item dalam daftar tersebut kemungkinan besar berbeda dalam panjang, karakteristik, dan jenis aktivitas yang harus dilakukan.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+Daftar di R memungkinkan Anda mengumpulkan beragam objek di bawah satu nama (yaitu nama daftar) secara berurutan. Objek-objek ini dapat berupa matriks, vektor, data frame, bahkan daftar lainnya, dan sebagainya. Objek-objek ini bahkan tidak perlu saling berhubungan satu sama lain.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Dapat dikatakan bahwa daftar adalah semacam tipe data super: Anda dapat menyimpan hampir semua potongan informasi di dalamnya!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Kirim saja jawabannya untuk memulai latihan pertama tentang daftar.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Kirim jawabannya untuk memulai latihan pertama tentang daftar.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +93,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Keren. Mari kita mulai bekerja!")
 ```
 
 ---
 
-## Creating a list
+## Membuat daftar
 
 ```yaml
 type: NormalExercise
@@ -107,19 +108,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Mari kita membuat daftar pertama kita! Untuk membangun sebuah daftar, Anda menggunakan fungsi `list()`: 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Argumen untuk fungsi daftar adalah komponen-komponen daftar. Ingat, komponen ini bisa berupa matriks, vektor, daftar lainnya, ...
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Buatlah sebuah daftar bernama `my_list` yang berisi variabel `my_vector`, `my_matrix`, dan `my_df` sebagai komponen daftar.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Gunakan fungsi `list()` dengan `my_vector`, `my_matrix`, dan `my_df` sebagai argumen yang dipisahkan dengan koma.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +159,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Jangan hapus atau ubah definisi variabel `my_vector`, `my_matrix`, atau `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Sepertinya `my_list` tidak mengandung elemen yang benar. Pastikan untuk memasukkan variabel `my_vector`, `my_matrix`, dan `my_df` ke dalam fungsi `list()`, dipisahkan dengan koma, dalam urutan ini.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Luar biasa! Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Creating a named list
+## Membuat daftar bernama
 
 ```yaml
 type: NormalExercise
@@ -182,16 +183,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Bagus sekali, Anda sedang berada dalam alur yang baik!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Sama seperti pada daftar tugas Anda, Anda ingin menghindari ketidaktahuan atau mengingat mengenai arti setiap komponen dalam daftar. Karena itu, sebaiknya Anda memberi nama pada komponen-komponen tersebut:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
-``` 
+```
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Ini akan membuat daftar dengan komponen yang dinamai `name1`, `name2`, dan seterusnya. Jika Anda ingin memberi nama pada daftar setelah daftar dibuat, Anda dapat menggunakan fungsi `names()` seperti yang Anda lakukan pada vektor. Perintah berikut sepenuhnya setara dengan penugasan di atas:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +200,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Ubah kode dari latihan sebelumnya (lihat editor) dengan menambahkan nama pada komponen. Gunakan untuk `my_vector` nama `vec`, untuk `my_matrix` nama `mat`, dan untuk `my_df` nama `df`.
+- Cetak `my_list` agar Anda dapat memeriksa hasilnya.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+Metode pertama untuk memberikan nama pada komponen daftar Anda adalah yang paling mudah. Mulailah seperti ini:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Tambahkan dua komponen lainnya dengan cara yang sama.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +252,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Jangan hapus atau ubah definisi variabel `my_vector`, `my_matrix`, atau `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Sepertinya `my_list` tidak mengandung elemen yang benar.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Sepertinya `my_list` tidak mengandung penamaan yang benar untuk komponen-komponennya. Pastikan Anda menggunakan nama `vec`, `mat`, dan `df`, masing-masing. Lihat petunjuk jika Anda kesulitan.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Jangan lupa untuk mencetak `my_list` ke konsol! Cukup tambahkan `my_list` pada baris baru di editor.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Bagus! Sekarang Anda tidak hanya tahu cara membuat daftar, tetapi Anda juga bisa menamainya; keterampilan yang akan sangat berguna dalam praktik. Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Membuat daftar bernama (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +280,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Sebagai penggemar film berat (ingat pekerjaan Anda di LucasFilms), Anda memutuskan untuk mulai menyimpan informasi tentang film-film bagus dengan bantuan daftar.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Mulailah dengan membuat daftar untuk film "The Shining". Kami sudah membuat variabel `mov`, `act`, dan `rev` di ruang kerja R Anda. Silakan periksa di konsol.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Lengkapi kode di editor untuk membuat `shining_list`, daftar ini berisi tiga elemen:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: string karakter berisi judul film (disimpan dalam `mov`)
+- `actors`: vektor berisi nama aktor utama (disimpan dalam `act`)
+- `reviews`: data frame yang memuat beberapa ulasan (disimpan dalam `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Jangan lupa menamai komponen daftar sesuai ketentuan (namanya `moviename`, `actors`, dan `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` baru sebagian dari solusi; tugas Anda adalah menambahkan `act` dan `rev` ke dalam daftar, dengan nama yang sesuai.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +325,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Jangan hapus atau ubah definisi variabel yang telah ditetapkan!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Sepertinya `shining_list` tidak mengandung elemen yang benar: elemen pertama harus `mov`, elemen kedua `act`, dan elemen ketiga `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Sepertinya `shining_list` tidak mengandung penamaan yang benar untuk komponen: beri nama elemen pertama `moviename`, elemen kedua `actors`, dan elemen ketiga `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Luar biasa! Anda sekarang tahu cara membangun dan memberi nama daftar. Seperti pada bab sebelumnya, mari kita lihat bagaimana memilih elemen untuk daftar. Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Memilih elemen dari sebuah daftar
 
 ```yaml
 type: NormalExercise
@@ -350,32 +351,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+Daftar Anda sering kali dibangun dari banyak elemen dan komponen. Oleh karena itu, mengambil satu elemen, beberapa elemen, atau satu komponen darinya tidak selalu mudah.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Salah satu cara untuk memilih komponen adalah menggunakan posisi bernomor dari komponen tersebut. Misalnya, untuk “mengambil” komponen pertama dari `shining_list` Anda mengetik
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Cara cepat untuk memeriksanya adalah dengan mengetiknya di konsol. Hal penting untuk diingat: untuk memilih elemen dari vektor, Anda menggunakan tanda kurung siku tunggal: `[ ]`. Jangan tertukar!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Anda juga dapat merujuk ke nama komponen, dengan `[[ ]]` atau dengan tanda `$`. Keduanya akan memilih data frame yang merepresentasikan ulasan:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Selain memilih komponen, Anda sering perlu memilih elemen tertentu dari komponen tersebut. Misalnya, dengan `shining_list[[2]][1]` Anda memilih dari komponen kedua, `actors` (`shining_list[[2]]`), elemen pertama (`[1]`). Saat Anda mengetik ini di konsol, Anda akan melihat jawabannya adalah Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Pilih dari `shining_list` vektor yang merepresentasikan para aktor. Cetak saja vektor ini.
+- Pilih dari `shining_list` elemen kedua dalam vektor yang merepresentasikan para aktor. Lakukan pencetakan seperti sebelumnya.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- Untuk memilih vektor yang merepresentasikan para aktor, Anda dapat menggunakan `$actors`.
+- Untuk memilih elemen ketiga dalam vektor yang merepresentasikan para aktor, Anda menggunakan `shining_list$actors[3]`. Apa yang perlu diubah untuk memilih elemen kedua?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +406,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Jangan hapus atau ubah definisi `shining_list`, yang sudah dimuat sebelumnya di ruang kerja!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Apakah Anda sudah benar-benar memilih dan mencetak vektor yang mewakili aktor? Anda dapat menggunakan `shining_list$actors`, misalnya.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Untuk memilih aktor kedua dari vektor yang mewakili aktor, Anda harus menggabungkan pilihan Anda: `shining_list$actors` mewakili aktor, jadi Anda dapat menambahkan `[2]` untuk memilih elemen kedua.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Bagus! Memilih elemen dari daftar cukup mudah bukan? Lanjutkan ke latihan berikutnya.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Membuat daftar baru untuk film lainnya
 
 ```yaml
 type: NormalExercise
@@ -425,7 +426,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Anda menemukan ulasan untuk film Jack Nicholson yang lain dan lebih baru: The Departed!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +436,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Akan bermanfaat jika semua informasi tentang film, seperti judul, aktor, dan ulasan dikumpulkan dalam satu variabel. Oleh karena potongan data ini memiliki bentuk yang berbeda, wajar untuk menggabungkannya dalam sebuah variabel daftar.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`, yang memuat judul film, dan `movie_actors`, yang memuat nama beberapa aktor dalam film, tersedia di ruang kerja Anda.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Buat dua vektor bernama `scores` dan `comments` yang memuat informasi ulasan seperti pada tabel.
+- Cari nilai rata-rata dari vektor `scores` dan simpan sebagai `avg_review`. 
+- Gabungkan vektor `scores` dan `comments` menjadi sebuah data frame bernama `reviews_df`. 
+- Buat sebuah daftar bernama `departed_list` yang berisi `movie_title`, `movie_actors`, data frame ulasan sebagai `reviews_df`, dan skor ulasan rata-rata sebagai `avg_review`, lalu cetak hasilnya.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Anda akan menggunakan fungsi `c()` untuk membuat vektor. 
+- Untuk mencari rata-rata dari sebuah vektor, berikan nama vektor tersebut ke fungsi `mean()`. 
+- Gunakan fungsi `data.frame()` untuk membuat data frame `reviews_df`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +493,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Jangan mengubah atau menghapus objek yang sudah dimuat sebelumnya."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Apakah Anda membuat vektor `scores` dengan benar?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Apakah Anda membuat vektor `comments` dengan benar?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Apakah Anda membuat objek `avg_review` dengan benar?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Apakah Anda membuat `reviews_df` dengan benar?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Apakah Anda membuat `departed_list` dengan benar?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +519,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Apakah Anda mencetak `departed_list`?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Kerja bagus! Anda berhasil membuat daftar informasi film lainnya, dan menggabungkan berbagai komponen menjadi satu daftar. Selamat telah menyelesaikan kursus!")
 ```

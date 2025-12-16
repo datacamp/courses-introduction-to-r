@@ -1,14 +1,14 @@
 id: 58
-title: Introduction to R
+title: Pengantar R
 programming_language: r
 description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
-from: 'r-base-prod:v2.0.1'
+  Dalam kursus pengantar R ini, Anda akan menguasai dasar-dasar bahasa sumber
+  terbuka yang banyak digunakan ini—termasuk vektor, faktor, daftar, dan data
+  frame. Dengan keterampilan pemrograman yang Anda peroleh di kursus ini, Anda
+  siap melakukan analisis data Anda sendiri di R. Ada jutaan pengguna R di
+  seluruh dunia, mengukuhkannya sebagai salah satu bahasa pemrograman terdepan
+  dalam statistika dan data sains. Mulailah perjalanan pemrograman Anda di salah
+  satu kursus paling populer di DataCamp hari ini!
+from: r-base-prod:v2.0.1
 runtime_config: minimal
 practice_pool_id: 106
