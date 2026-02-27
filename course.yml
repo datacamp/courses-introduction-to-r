@@ -1,23 +1,23 @@
 datasets:
   Introduction to R.pdf: Course Glossary
 description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
+  Dalam kursus pengantar R ini, Anda akan menguasai dasar-dasar bahasa open
+  source yang banyak digunakan ini—termasuk vector, factor, list, dan data
+  frame. Dengan keterampilan pengodean yang Anda peroleh di kursus ini, Anda
+  akan siap melakukan analisis data sendiri di R. Ada jutaan pengguna R di
+  seluruh dunia, menegaskan posisinya sebagai salah satu bahasa pemrograman
+  terdepan dalam statistik dan data science. Mulai perjalanan ngoding Anda di
+  salah satu kursus paling populer di DataCamp hari ini!
 
 
-  The course glossary can be found on the right in the resources section.
+  Glosarium kursus dapat ditemukan di sebelah kanan pada bagian sumber daya.
 
-  To obtain CPE credits you need to complete the course and reach a score of 70%
-  on the qualified assessment. You can navigate to the assessment by clicking on
-  the CPE credits callout on the right.
-from: 'r-base-prod:v3.0.0'
+  Untuk memperoleh kredit CPE, Anda harus menyelesaikan kursus dan mencapai skor
+  70% pada asesmen yang memenuhi syarat. Anda dapat menuju ke asesmen dengan
+  mengeklik pengumuman kredit CPE di sebelah kanan.
+from: r-base-prod:v3.0.0
 id: 58
 practice_pool_id: 106
 programming_language: r
 runtime_config: minimal
-title: Introduction to R
+title: Pengantar R
