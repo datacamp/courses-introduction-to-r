@@ -1,23 +1,9 @@
 datasets:
   Introduction to R.pdf: Course Glossary
-description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
-
-
-  The course glossary can be found on the right in the resources section.
-
-  To obtain CPE credits you need to complete the course and reach a score of 70%
-  on the qualified assessment. You can navigate to the assessment by clicking on
-  the CPE credits callout on the right.
-from: 'r-base-prod:v3.0.0'
+description: "En este curso de introducción a R, dominarás los fundamentos de este lenguaje de código abierto ampliamente utilizado, incluidos vectores, factores, listas y marcos de datos. Con las habilidades de codificación que adquirirás en este curso, estarás preparado para emprender tus propios análisis de datos en R. Hay millones de usuarios de R en todo el mundo, lo que lo consolida como un lenguaje de programación líder en estadística y ciencia de datos. Comienza hoy mismo tu viaje por la programación en uno de los cursos más populares de DataCamp.\n\nEl glosario del curso se encuentra a la derecha, en la sección de recursos.\nPara obtener créditos CPE, debes completar el curso y alcanzar una puntuación del 70\_% en la evaluación cualificada. Puedes acceder a la evaluación haciendo clic en la llamada de créditos CPE situada a la derecha."
+from: r-base-prod:v3.0.0
 id: 58
 practice_pool_id: 106
 programming_language: r
 runtime_config: minimal
-title: Introduction to R
+title: Introducción a R
