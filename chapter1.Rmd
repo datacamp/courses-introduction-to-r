@@ -1,14 +1,15 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Chương 1
+title: Giới thiệu các kiến thức cơ bản
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Hãy bắt đầu những bước đầu tiên trên hành trình tìm hiểu R! Ở chương này, bạn
+  sẽ học cách dùng giao diện điều khiển (console) như dùng một máy tính và cách
+  gán giá trị cho biến, đồng thời làm quen với các kiểu dữ liệu trong R. Bắt đầu
+  nào!
 free_preview: true
 ---
 
-## How it works
+## R hoạt động như thế nào
 
 ```yaml
 type: NormalExercise
@@ -18,18 +19,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+Trong trình soạn thảo, bạn cần viết code để giải bài tập. Khi bạn gửi câu trả lời, mỗi dòng code sẽ được R diễn giải và thực thi. Sau đó, bạn sẽ nhận được thông báo cho biết code có đúng hay không. Kết quả chạy code sẽ hiển thị ở console.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R dùng ký hiệu `#` để thêm chú thích, giúp chúng ta hiểu đoạn code đó để làm gì. Giống như trên Twitter vậy! Chú thích không được chạy như code, nên chúng không ảnh hưởng đến kết quả. Ví dụ, dòng <span translate="no">_Calculate 3 + 4_</span> trong trình soạn thảo là một chú thích.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Bạn cũng có thể chạy lệnh R trực tiếp trong console. Đây là cách hay để chạy thử code, vì đáp án của bạn sẽ không bị tính đúng hay sai.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- Trong trình soạn thảo đã có sẵn một đoạn code mẫu. Bạn có nhận ra dòng nào là code và dòng nào là chú thích không?
+- Thêm dòng code tính tổng của 6 và 12, rồi gửi đáp án của bạn.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Chỉ cần thêm một dòng code tính tổng của 6 và 12, giống hệt ví dụ trong dòng code mẫu!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +58,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Hãy chắc chắn thêm `6 + 12` trên một dòng mới. Đừng bắt đầu dòng bằng `#`, nếu không mã R của bạn sẽ không được thực thi!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Tuyệt vời! Bạn thấy cách bảng điều khiển hiển thị kết quả của mã R bạn đã gửi không? Bây giờ bạn đã quen với giao diện, hãy bắt đầu với công việc R!")
 ```
 
 ---
 
-## Arithmetic with R
+## Thực hiện phép tính với R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +75,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+Ở dạng cơ bản nhất, R có thể dùng như một máy tính đơn giản. Hãy xem xét các toán tử số học sau:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- Cộng: `+`
+- Trừ: `-`
+- Nhân: `*`
+- Chia: `/`
+- Lũy thừa: `^`
+- Phép chia lấy số dư (phép modulo): `%%`
 
-The last two might need some explaining:
+Hai toán tử cuối có thể cần giải thích thêm:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Toán tử `^` nâng số bên trái lên lũy thừa của số bên phải: ví dụ `3^2` bằng 9.
+- Phép modulo trả về phần dư khi chia số bên trái cho số bên phải, ví dụ 5 modulo 3 hay `5 %% 3` bằng 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+Bạn hãy vận dụng những kiến thức này để làm bài tập.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Gõ `2^5` trong trình soạn thảo để tính 2 lũy thừa 5.
+- Gõ `28 %% 6` để tính 28 modulo 6.
+- Gửi câu trả lời và xem đầu ra của R trong console.
+- Lưu ý cách dùng ký hiệu `#` để thêm chú thích vào đoạn code R.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Một ví dụ khác về phép modulo: `9 %% 2` bằng `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +149,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Không được xóa các ví dụ số học khác!"
+ex() %>% check_output_expr("2^5", missing_msg = "Ví dụ về phép lũy thừa không đúng. Viết `2 ^ 5` trên một dòng mới.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Có vẻ có vấn đề với ví dụ về phép chia lấy dư. Viết `28 %% 6` trên một dòng mới.")
+success_msg("Tuyệt vời! Hãy chuyển sang bài tập tiếp theo.")
 ```
 
 ---
 
-## Variable assignment
+## Gán giá trị cho biến
 
 ```yaml
 type: NormalExercise
@@ -167,21 +168,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Một khái niệm cơ bản trong lập trình (thống kê) là **biến**.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Biến cho phép chúng ta lưu một giá trị (ví dụ: 4) hoặc một đối tượng (ví dụ: mô tả một hàm) trong R. Sau đó, ta có thể dùng tên biến này để dễ dàng truy cập giá trị hoặc đối tượng được lưu trong biến đó.
 
-You can assign a value 4 to a variable `my_var` with the command
+Ví dụ, ta có thể gán giá trị 4 cho biến `my_var` với lệnh
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Bây giờ bạn hãy viết nốt đoạn code trong trình soạn thảo để gán giá trị 42 cho biến `x`. Sau đó, gửi đáp án. Lưu ý rằng khi bạn yêu cầu R hiển thị giá trị của `x`, giá trị 42 sẽ xuất hiện.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Tham khảo cách gán giá trị 4 cho biến `my_var` trong phần bài tập mẫu. Hãy làm y hệt trong trình soạn thảo, nhưng lần này gán 42 cho biến `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +209,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Hãy chắc chắn rằng bạn đã định nghĩa một biến `x`.")  %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng bạn đã gán giá trị đúng cho `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Làm tốt lắm! Bạn có nhận thấy rằng R không in giá trị của một biến ra bảng điều khiển khi bạn thực hiện gán không? `x <- 42` không tạo ra bất kỳ đầu ra nào, vì R cho rằng bạn sẽ cần biến này trong tương lai. Nếu không, bạn đã không lưu trữ giá trị trong một biến ngay từ đầu, đúng không? Hãy tiếp tục với bài tập tiếp theo!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Gán giá trị cho biến (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +226,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Giả sử bạn có một giỏ trái cây với năm quả táo, để học làm nhà phân tích dữ liệu, bạn hãy lưu số lượng táo vào một biến tên là `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Gõ đoạn code sau vào trình soạn thảo: `my_apples <- 5`. Lệnh này sẽ gán giá trị 5 cho biến `my_apples`.
+- Ở dưới dòng chú thích thứ hai, gõ: `my_apples`. Lệnh này sẽ hiển thị ra giá trị của biến `my_apples`.
+- Gửi đáp án của bạn và xem phần kết quả hiển thị ra: bạn sẽ thấy số 5. Như vậy R đã liên kết biến `my_apples` với giá trị 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Lưu ý rằng để gán một số hoặc một đối tượng cho một biến trong R, ta dùng dấu gán `<-`. Ngoài ra, ta cũng có thể dùng dấu `=`, nhưng dấu `<-` được dùng phổ biến hơn trong R.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +261,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Vui lòng đảm bảo rằng bạn đã định nghĩa một biến `my_apples`.") %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng bạn gán giá trị đúng cho `my_apples`.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Bạn đã yêu cầu R in ra biến `my_apples` ra console chưa?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Gán giá trị cho biến (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +280,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+Để có một giỏ trái cây ngon thì cần có cam nên bạn quyết định thêm sáu quả cam. Là một nhà phân tích dữ liệu, việc đầu tiên là tạo biến `my_oranges` và gán cho nó giá trị 6. Tiếp theo, bạn muốn tính xem tổng cộng có bao nhiêu trái cây. Vì các biến đã được đặt tên rõ ràng, bạn có thể viết code dễ hiểu như sau  :
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Gán giá trị 6 cho biến `my_oranges`
+- Cộng hai biến `my_apples` và `my_oranges` và để R hiển thị kết quả.
+- Gán kết quả của phép cộng `my_apples` và `my_oranges` cho biến mới `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` chỉ là tổng của `my_apples` và `my_oranges`. Bạn có thể dùng dấu `+` để cộng hai giá trị này và dùng dấu `<-` để gán kết quả cho biến `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +327,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Bạn đã sử dụng `my_fruit <- my_apples + my_oranges` để tạo biến `my_fruit` chưa?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Giữ dòng lệnh gán 5 cho `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Giữ dòng lệnh gán 6 cho `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Hãy chắc chắn rằng bạn đã in ra kết quả của việc cộng `my_apples` và `my_oranges`. Ví dụ mã trong phần mô tả đã cho bạn câu trả lời cho hướng dẫn này!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Tuyệt vời! Lợi thế lớn của việc thực hiện tính toán với các biến là tính tái sử dụng. Nếu bạn chỉ cần thay đổi `my_apples` thành 12 thay vì 5 và chạy lại script, `my_fruit` sẽ tự động cập nhật. Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Apples and oranges
+## Táo và cam
 
 ```yaml
 type: NormalExercise
@@ -350,14 +350,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Người ta nói đừng làm lẫn táo với cam. Nhưng chúng ta vừa cho chúng vào một giỏ đấy thôi nhỉ! Ở bài trước, cả hai biến `my_apples` và `my_oranges` đều chứa các giá trị số. Dấu `+` hoạt động với các biến kiểu số trong R. Nếu ta gán một giá trị kiểu chữ cho biến `my_oranges` rồi cộng <span translate="no">"apples"</span> và <span translate="no">"oranges"</span>,  như trong trình soạn thảo, thì tức là ta đang gán kết quả cộng giữa một biến kiểu số và một biến kiểu chữ cho biến `my_fruit`. Và điều này là không thể!
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Gửi đáp án và đọc thông báo lỗi. Hãy chắc chắn rằng bạn hiểu vì sao đoạn code không chạy được.
+- Chỉnh code để R biết bạn có 6 quả cam và do đó giỏ trái cây có tổng cộng 11 quả.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Bạn cần gán giá trị số `6` cho biến `my_oranges` thay vì giá trị kiểu chữ `"six"`. Lưu ý dùng dấu ngoặc kép để thể hiện `"six"` là một chuỗi ký tự.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +392,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Bạn có thể làm điều này bằng cách đặt biến `my_oranges` thành một giá trị số, không phải là một chuỗi!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng `my_apples` vẫn chứa `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng `my_oranges` bằng `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "Giá trị của `my_fruit` không đúng. Nó nên là 11, tổng của `my_apples` và `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Bạn đã tạo `my_fruit` như là tổng của các biến `my_apples` và `my_oranges` chưa?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Bạn đã tạo `my_fruit` như là tổng của các biến `my_apples` và `my_oranges` chưa?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Đừng xóa dòng in ra `my_fruit`.")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Tuyệt vời, hãy tiếp tục phát huy! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Basic data types in R
+## Các kiểu dữ liệu cơ bản trong R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +421,25 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
-
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
-
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+R có nhiều kiểu dữ liệu khác nhau. Một số kiểu cơ bản là:
+- Kiểu dữ liệu dạng số thập phân, như số `4.5` được gọi là **numeric**.
+- Kiểu dữ liệu dạng số nguyên, như số `4` được gọi là **integer**. Integer cũng là một dạng numeric.
+- Kiểu dữ liệu dạng giá trị Boolean (`TRUE` hoặc `FALSE`) được gọi là **logical**.
+- Kiểu dữ liệu dạng văn bản (hay dạng chuỗi) được gọi là **character**.
+Lưu ý dấu ngoặc kép trong trình soạn thảo để thể hiện `"some text"` là một chuỗi (string).
 
 `@instructions`
-Change the value of the:
+Hãy thay giá trị của:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- biến `my_numeric` thành `42`.
+- biến `my_character` thành `"universe"`. Nhớ dùng dấu ngoặc kép để thể hiện `"universe"` là một giá trị character.
+- biến `my_logical` thành `FALSE`.
 
-Note that R is case sensitive!
+Lưu ý rằng R phân biệt chữ hoa chữ thường!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Thay các giá trị trong trình soạn thảo bằng các giá trị mà bài tập yêu cầu. Ví dụ, đoạn code:
+`my_numeric <- 42` để gán giá trị 42 cho biến `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +472,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Bạn đã thay đổi đúng khai báo của `my_numeric` để nó chứa giá trị 42 chưa?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Bạn đã thay đổi đúng `my_character` thành `\"universe\"` chưa? Đừng quên dấu ngoặc kép!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Bạn đã thay đổi đúng `my_logical` thành `FALSE` chưa? Tất cả các chữ cái của `FALSE` phải được viết hoa!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Làm tốt lắm! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## What's that data type?
+## Cách tìm ra kiểu dữ liệu
 
 ```yaml
 type: NormalExercise
@@ -497,13 +493,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Bạn còn nhớ khi cộng `5 + "six"` thì gặp lỗi do không khớp kiểu dữ liệu chứ? Chúng ta có thể tránh những lỗi phiền toái như vậy bằng cách kiểm tra trước kiểu dữ liệu của biến. Và ta có thể kiểm tra với hàm `class()`, như đoạn code mình hoạ trong trình soạn thảo.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Hoàn thiện đoạn code trong trình soạn thảo và hiển thị kiểu dữ liệu của `my_character` và `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Đã có sẵn đoạn code thể hiện kiểu dữ liệu của `my_numeric`; hãy tham khảo và làm tương tự với `my_character` và `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +542,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Không được thay đổi khai báo của các biến!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Bạn đã bao gồm `class(%1$s)` để in ra kiểu dữ liệu của `%1$s` chưa?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Không được xóa mã in ra kiểu của `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Chúc mừng! Đây là bài tập cuối cùng của chương này. Hãy chuyển sang chương tiếp theo để đắm mình vào thế giới của các vector!")
 ```

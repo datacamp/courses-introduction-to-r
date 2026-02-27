@@ -1,13 +1,13 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Chương 6
+title: Danh sách (List)
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  Khác với vector, danh sách (list) có thể chứa các phần tử thuộc nhiều kiểu dữ
+  liệu khác nhau, giống như to-do list của bạn gồm nhiều loại công việc. Chương
+  này sẽ dạy bạn cách tạo list, đặt tên list và trích xuất list.
 ---
 
-## Lists, why would you need them?
+## Danh sách (list). Tại sao cần list?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +17,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Xin chúc mừng! Đến thời điểm này, bạn đã quen với:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectors** (mảng một chiều): có thể chứa giá trị kiểu số, ký tự hoặc logic. Các phần tử trong một vector đều cùng kiểu dữ liệu.
+- **Matrices** (mảng hai chiều): có thể chứa giá trị kiểu số, ký tự hoặc logic. Các phần tử trong một ma trận đều cùng kiểu dữ liệu.
+- **Data frames** (đối tượng hai chiều): có thể chứa giá trị kiểu số, ký tự hoặc logic. Trong cùng một cột, mọi phần tử đều có cùng kiểu dữ liệu, nhưng các cột khác nhau có thể thuộc các kiểu dữ liệu khác nhau.
 
-Pretty sweet for an R newbie, right? ;-)
+Khá xịn với một người mới học R, đúng không? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Gửi đáp án để bắt đầu học mọi thứ về list!
 
 `@hint`
-Just submit the answer!
+Chỉ cần gửi đáp án!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +48,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("Sẵn sàng, chuẩn bị, bắt đầu! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Tại sao cần list? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +63,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+Một **list** trong R khá giống to-do list của chúng ta ở trường hay ở công ty: các mục trong danh sách đó thường có độ dài, đặc điểm, loại nhiệm vụ khác nhau. 
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+Một list trong R cho phép ta gom nhiều đối tượng lại dưới một tên (tên của list) theo một thứ tự nhất định. Các đối tượng này có thể là ma trận, vector, data frame, thậm chí là các list khác, v.v. Các đối tượng này không cần phải liên quan đến nhau.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Chúng ta có thể coi list như một kiểu siêu dữ liệu: hầu như có thể lưu bất kỳ mẩu thông tin nào vào đó!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Chỉ cần gửi đáp án để bắt đầu bài tập đầu tiên về lists.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Gửi đáp án để bắt đầu bài tập đầu tiên về lists.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +92,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Tuyệt vời. Hãy bắt tay vào làm thôi!")
 ```
 
 ---
 
-## Creating a list
+## Tạo một list
 
 ```yaml
 type: NormalExercise
@@ -107,19 +107,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Hãy tạo list đầu tiên của chúng ta! Để tạo một list, ta dùng hàm `list()`: 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Các đối số đặt trong hàm list chính là các thành phần của list. Nhớ rằng, những thành phần này có thể là ma trận, vector, list khác, ...
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Tạo một list tên `my_list`, chứa các biến `my_vector`, `my_matrix` và `my_df` làm các thành phần của list.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Dùng hàm `list()` với `my_vector`, `my_matrix` và `my_df` làm đối số, ngăn cách chúng bằng dấu phẩy.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +158,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Không được xóa hoặc thay đổi định nghĩa của các biến `my_vector`, `my_matrix` hoặc `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Có vẻ như `my_list` không chứa các phần tử chính xác. Hãy chắc chắn rằng bạn truyền các biến `my_vector`, `my_matrix` và `my_df` vào hàm `list()`, ngăn cách bởi dấu phẩy, theo thứ tự này.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Tuyệt vời! Hãy chuyển sang bài tập tiếp theo.")
 ```
 
 ---
 
-## Creating a named list
+## Tạo list có tên
 
 ```yaml
 type: NormalExercise
@@ -182,16 +182,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Hoan hô, bạn đang tiến bộ rất nhanh! 
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Giống như to-do list, chúng ta muốn tránh việc không biết hoặc quên các thành phần trong list nghĩa là gì. Vì vậy, ta nên đặt tên cho chúng:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Điều này tạo một list với các thành phần được đặt tên là `name1`, `name2`, v.v. Nếu sau khi tạo list, ta mới nghĩ đến chuyện đặt tên thì có thể dùng hàm `names()` giống như với vector. Các lệnh sau đây hoàn toàn tương đương với phép gán ở trên:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +199,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Sửa code của bài trước (xem trong trình soạn thảo) bằng cách thêm tên cho các thành phần. Dùng tên `vec` cho `my_vector`, tên `mat` cho `my_matrix` và tên `df` cho `my_df`.
+- Hiển thị `my_list` ra để xem kết quả.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+Cách gán tên đầu tiên là dễ nhất. Cách đó bắt đầu như sau: 
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Hãy làm tương tự để thêm hai thành phần còn lại.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +251,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Không được xóa hoặc thay đổi định nghĩa của các biến `my_vector`, `my_matrix` hoặc `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Có vẻ như `my_list` không chứa các phần tử đúng.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Có vẻ như `my_list` không chứa tên đúng cho các thành phần. Hãy chắc chắn rằng bạn sử dụng các tên `vec`, `mat` và `df`, tương ứng. Hãy xem gợi ý nếu bạn đang gặp khó khăn.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Đừng quên in `my_list` ra console! Chỉ cần thêm `my_list` vào một dòng mới trong trình soạn thảo.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Tuyệt vời! Không chỉ bạn biết cách tạo danh sách bây giờ, bạn còn có thể đặt tên cho chúng; một kỹ năng sẽ rất hữu ích trong thực tế. Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Tạo list có tên (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +279,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Là một người mê phim (nhớ công việc của bạn ở LucasFilms chứ?), bạn quyết định bắt đầu lưu trữ thông tin về các bộ phim hay bằng list.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Hãy bắt đầu bằng cách tạo một list cho bộ phim "The Shining". Đã có sẵn các biến `mov`, `act` và `rev` trong workspace R. Bạn có thể kiểm tra chúng trong console.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Viết nốt đoạn code trong trình soạn thảo để tạo `shining_list`; list này gồm ba phần tử:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: một chuỗi ký tự chứa tên phim (lưu trong `mov`)
+- `actors`: một vector chứa tên các diễn viên chính (lưu trong `act`)
+- `reviews`: một data frame chứa một số bài đánh giá (lưu trong `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Đừng quên đặt tên cho các thành phần của list tương ứng (tên là `moviename`, `actors` và `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` mới chỉ là một phần của đáp án. Hãy thêm cả `act` và `rev` vào list với tên phù hợp.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +324,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Không được xóa hoặc thay đổi định nghĩa của các biến đã được thiết lập trước!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Có vẻ như `shining_list` không chứa các phần tử đúng: phần tử đầu tiên nên là `mov`, phần tử thứ hai là `act`, và phần tử thứ ba là `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Có vẻ như `shining_list` không chứa tên đúng cho các thành phần: đặt tên phần tử đầu tiên là `moviename`, phần tử thứ hai là `actors`, và phần tử thứ ba là `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Tuyệt vời! Bây giờ bạn đã biết cách xây dựng và đặt tên cho danh sách. Như trong các chương trước, hãy xem cách chọn các phần tử cho danh sách. Hãy chuyển sang bài tập tiếp theo.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Chọn phần tử từ một list
 
 ```yaml
 type: NormalExercise
@@ -350,32 +350,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+List thường gồm nhiều thành phần (component) và phần tử (element). Vì vậy, việc lấy một phần tử, nhiều phần tử, hoặc một thành phần từ list không phải lúc nào cũng đơn giản.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Cách để chọn một thành phần là dùng vị trí của nó. Ví dụ, để "lấy" thành phần đầu tiên của `shining_list`, bạn gõ
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Cách kiểm tra nhanh là gõ lệnh này trong console. Lưu ý quan trọng: để chọn phần tử từ vector, bạn dùng ngoặc vuông đơn: `[ ]`. Đừng nhầm lẫn hai loại ngoặc!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Ta cũng có thể chọn các thành phần bằng tên của chúng, dùng dấu `[[ ]]` hoặc dấu `$`. Cả hai cách dưới đây đều sẽ chọn data frame chứa các đánh giá:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Ngoài việc chọn thành phần, ta thường cần chọn các phần tử cụ thể bên trong các thành phần này. Ví dụ, với `shining_list[[2]][1]` ta chọn phần tử thứ nhất (`[1]`) từ thành phần thứ hai `actors` (`shining_list[[2]]`) . Khi ta gõ lệnh này trong console, kết quả sẽ là Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Chọn vector chứa thông tin về các diễn viên  từ `shining_list` Chỉ cần hiển thị vector này ra. 
+- Chọn phần tử thứ hai trong vector chứa thông tin về các diễn viên từ `shining_list`. Hiển thị kết quả ra.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- Để chọn vector chứa thông tin diễn viên, bạn có thể dùng `$actors`.
+- Để chọn phần tử thứ ba trong vector chứa thông tin diễn viên, ta dùng `shining_list$actors[3]`. Vậy cần thay đổi gì để chọn phần tử thứ hai?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +405,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Không được xóa hoặc thay đổi định nghĩa của `shining_list`, đã được tải sẵn trong không gian làm việc!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Bạn đã chọn và in ra chính xác vector đại diện cho các diễn viên chưa? Bạn có thể sử dụng `shining_list$actors`, ví dụ.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Để chọn diễn viên thứ hai từ vector đại diện cho các diễn viên, bạn nên kết hợp các lựa chọn của mình: `shining_list$actors` đại diện cho các diễn viên, vì vậy bạn có thể thêm `[2]` để chọn phần tử thứ hai.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Tuyệt vời! Việc chọn các phần tử từ danh sách khá dễ phải không? Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Tạo một list mới cho một bộ phim khác
 
 ```yaml
 type: NormalExercise
@@ -425,7 +425,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Bạn vừa tìm được các nhận xét đánh giá về một bộ phim gần đây của Jack Nicholson: The Departed!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +435,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Nếu gom được tất cả thông tin về bộ phim như tiêu đề, diễn viên và các đánh giá vào một biến duy nhất thì sẽ rất tiện lợi. Vì các dữ liệu này có cấu trúc khác nhau, cách dễ nhất là tổng hợp chúng trong một biến list.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title` (chứa tiêu đề phim) và `movie_actors` (chứa tên một số diễn viên trong phim) đã có sẵn trong workspace.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Hãy tạo hai vector `scores` và `comments` chứa thông tin đánh giá như trong bảng.
+- Tính điểm trung bình của vector `scores` và lưu vào `avg_review`. 
+- Kết hợp các vector `scores` và `comments` thành một data frame tên là `reviews_df`. 
+- Tạo một list tên `departed_list` chứa `movie_title`, `movie_actors`, data frame đánh giá là `reviews_df`, và điểm đánh giá trung bình là `avg_review`, rồi hiển thị ra.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Bạn dùng hàm `c()` để tạo các vector. 
+- Để tính điểm trung bình của một vector, đặt tên vector vào hàm `mean()`. 
+- Dùng hàm `data.frame()` để tạo data frame `reviews_df`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +492,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Không thay đổi hoặc xóa các đối tượng đã tải sẵn."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Bạn đã tạo đúng vector `scores` chưa?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Bạn đã tạo đúng vector `comments` chưa?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Bạn đã tạo đúng đối tượng `avg_review` chưa?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Bạn đã tạo đúng `reviews_df` chưa?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Bạn đã tạo đúng `departed_list` chưa?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +518,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Bạn đã in `departed_list` chưa?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Làm tốt lắm! Bạn đã tạo thành công một danh sách thông tin phim khác và kết hợp các thành phần khác nhau thành một danh sách duy nhất. Chúc mừng bạn đã hoàn thành khóa học!")
 ```

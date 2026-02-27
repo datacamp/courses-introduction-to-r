@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Chương 5
+title: Khung dữ liệu (Data frame)
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Phần lớn các tập dữ liệu chúng ta làm đều được lưu dưới dạng khung dữ liệu
+  (data frame). Kết thúc chương này, bạn có thể tạo một data frame, biết cách
+  trích xuất phần dữ liệu bạn cần và sắp xếp một data frame theo các biến nhất
+  định.
 ---
 
-## What's a data frame?
+## Khung dữ liệu (Data frame) là gì?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +18,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Bạn còn nhớ trong chương về ma trận, chúng ta đã học rằng mọi phần tử trong một ma trận phải cùng kiểu dữ liệu? Bộ dữ liệu về Star Wars của chúng ta chỉ chứa các phần tử dạng số.
 
-When doing a market research survey, however, you often have questions such as:
+Tuy nhiên, khi khảo sát nghiên cứu thị trường, chúng ta thường có những câu hỏi như:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- "Bạn đã kết hôn chưa?" thuộc kiểu câu hỏi "có/không" (`logical`)
+- "Bạn bao nhiêu tuổi?" (`numeric`)
+- "Bạn đánh giá thế nào về sản phẩm này?" hoặc các câu hỏi "mở" khác (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Kết quả đầu ra, tức là câu trả lời của người tham gia khảo sát, tạo thành một bộ dữ liệu gồm nhiều kiểu dữ liệu khác nhau. Chúng ta sẽ thường xuyên phải làm việc với các bộ dữ liệu chứa nhiều kiểu dữ liệu thay vì chỉ một kiểu.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Data frame là một cấu trúc dữ liệu trong đó các biến của bộ dữ liệu được biểu diễn theo cột và các quan sát được biểu diễn theo hàng. Những ai đã từng làm việc trên các các phần mềm thống kê như SAS hoặc SPSS sẽ thấy quen thuộc với khái niệm này. 
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Gửi đáp án. Kết quả hiển thị trong console là một ví dụ về data frame `mtcars`
 
 `@hint`
-Submit the answer and witness the magic!
+Chỉ cần nhấp gửi đáp án và xem điều kì diệu xảy ra!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +56,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Không thay đổi bất kỳ điều gì về mã, hãy đảm bảo rằng bạn xuất `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Cùng xem nhanh một bộ dữ liệu
 
 ```yaml
 type: NormalExercise
@@ -73,19 +73,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Ồ, nhiều mẫu xe quá!
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Khi phân tích dữ liệu, chúng ta thường phải làm việc với bộ dữ liệu lớn. Khi xử lý các bộ dữ liệu và data frame (rất) lớn, nhiệm vụ đầu tiên là nắm rõ cấu trúc và các thành phần chính của chúng. Vì vậy, lúc đầu, chỉ hiển thị một phần nhỏ của toàn bộ bộ dữ liệu sẽ tiện lợi hơn. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Vậy làm điều này trong R như thế nào? Hàm `head()` cho phép chúng ta xem các quan sát đầu tiên của một data frame. Tương tự, hàm `tail()` sẽ hiển thị ra các quan sát cuối cùng trong bộ dữ liệu.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Cả `head()` và `tail()` đều hiển thị một dòng trên cùng gọi là 'header', chứa tên các biến trong bộ dữ liệu.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Gọi `head()` trên bộ dữ liệu `mtcars` để xem header và các quan sát đầu tiên.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` sẽ hiển thị những quan sát đầu tiên của data frame `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +106,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Bạn đã truyền chính xác `mtcars` vào hàm `head()` chưa?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Chỉ cần in ra kết quả của lệnh gọi `head()`, không cần gán nó vào một biến mới.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Tuyệt vời! Vậy, chúng ta có gì trong tập dữ liệu này? Ví dụ, `hp` đại diện cho mã lực của xe; Datsun có mã lực thấp nhất trong số 6 xe được hiển thị. Để có cái nhìn tổng quan đầy đủ về ý nghĩa của các biến, hãy gõ `?mtcars` trong bảng điều khiển và đọc trang trợ giúp. Tiếp tục đến bài tập tiếp theo!"); 
 ```
 
 ---
 
-## Have a look at the structure
+## Cùng xem cấu trúc của data frame
 
 ```yaml
 type: NormalExercise
@@ -125,21 +125,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Một cách phổ biến khác để xem xét nhanh dữ liệu là dùng hàm `str()`. Hàm `str()` hiển thị cấu trúc của bộ dữ liệu. Với một data frame, nó cho bạn biết:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Tổng số quan sát (ví dụ: 32 kiểu xe)
+- Tổng số biến (ví dụ: 11 đặc trưng của xe)
+- Danh sách đầy đủ tên các biến (ví dụ: `mpg`, `cyl` ... )
+- Kiểu dữ liệu của từng biến (ví dụ: `num`)
+- Một vài quan sát đầu tiên
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Khi nhận một bộ dữ liệu hoặc data frame mới, việc đầu tiên chúng ta thường phải làm là dùng hàm `str()`. Đây là cách tiện lợi và hữu ích để hiểu dữ liệu trước khi bắt tay vào phân tích. 
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Khám phá cấu trúc của `mtcars`. Hãy kiểm tra để thấy các con số, biến và kiểu dữ liệu giống như đã nêu ở trên.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Dùng hàm `str()` trên `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +160,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Bạn đã gọi chính xác `str()` trên `mtcars` chưa?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Làm tốt lắm! Bạn có thể tìm thấy rất nhiều thông tin bằng cách xem `str()` của một tập dữ liệu. Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Creating a data frame
+## Tạo một data frame
 
 ```yaml
 type: NormalExercise
@@ -177,28 +177,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Chỉ dùng các bộ dữ liệu có sẵn thì không vui bằng tự tạo dữ liệu của riêng mình nên phần còn lại của chương này, chúng ta sẽ làm việc dựa trên bộ dữ liệu do chính ta tạo ra. Xách balo lên và đi...vào vũ trụ nào! 
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Mục tiêu đầu tiên là tạo một data frame mô tả các đặc điểm chính của tám hành tinh trong Hệ Mặt Trời. Theo người bạn tốt Buzz, những đặc trưng chính của một hành tinh gồm:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Loại hành tinh (Terrestrial hay Gas Giant).
+- Đường kính của hành tinh đó so với đường kính Trái Đất.
+- Thời gian tự quay quanh Mặt Trời của hành tinh đó so với Trái Đất.
+- Hành tinh đó có vành đai hay không (TRUE hoặc FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Sau khi nghiên cứu kỹ trên [Wikipedia](https://en.wikipedia.org/wiki/Planet), chúng ta đã có các vector cần thiết: `name`, `type`, `diameter`, `rotation` và `rings`; các vector này đã được viết sẵn trong trình soạn thảo. Phần tử đầu tiên của mỗi vector tương ứng với quan sát đầu tiên.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Hãy một data frame với hàm `data.frame()`. Các đối số là các vector ở trên: chúng sẽ trở thành các cột khác nhau của data frame. Vì mỗi cột có cùng độ dài, nên các vector cũng phải có cùng độ dài. Nhưng lưu ý rằng chúng có thể (và thường sẽ) chứa các kiểu dữ liệu khác nhau.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Dùng hàm `data.frame()` để tạo một data frame. Đặt các vector `name`, `type`, `diameter`, `rotation` và `rings` làm đối số cho `data.frame()` theo đúng thứ tự đó. Đặt tên data frame thu được là `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Lệnh gọi `data.frame()` bắt đầu như sau:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Bạn có thể hoàn thiện lênh này không?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +250,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Không thay đổi bất kỳ điều gì về định nghĩa của các vector. Chỉ cần thêm một lệnh gọi `data.frame()` để tạo `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +261,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Bạn đã gọi đúng `data.frame()` để tạo `planets_df` chưa? Bên trong `data.frame()`, hãy chắc chắn truyền tất cả các vector theo thứ tự đúng: `name`, `type`, `diameter`, `rotation` và cuối cùng là `rings`.")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Làm tốt lắm! Bước tiếp theo hợp lý, như bạn đã biết, là kiểm tra khung dữ liệu bạn vừa tạo. Hãy chuyển sang bài tập tiếp theo.")
 ```
 
 ---
 
-## Creating a data frame (2)
+## Tạo một data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Data frame `planets_df` gồm 8 quan sát và 5 biến. Nó đã có sẵn trong workspace nên bạn có thể làm luôn.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Dùng `str()` để kiểm tra cấu trúc của biến `planets_df` mới.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` đã có sẵn trong workspace của bạn, nên chỉ cần viết `str(planets_df)` là được.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Không được xóa hoặc ghi đè khung dữ liệu `planets_df` đã có sẵn trong không gian làm việc!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Bạn đã hiển thị đúng cấu trúc của `planets_df` chưa? Sử dụng `str()` để làm điều này!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Tuyệt vời! Bây giờ bạn đã hiểu rõ về tập dữ liệu `planets_df`, đã đến lúc xem cách bạn có thể chọn các phần tử từ nó. Tìm hiểu tất cả trong các bài tập tiếp theo!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Chọn phần tử từ data frame
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Tương tự vector và ma trận, chúng ta chọn phần tử từ một data frame bằng ngoặc vuông `[ ]`. Dùng dấu phẩy để chỉ định phần chọn từ hàng và cột tương ứng. Ví dụ:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` chọn giá trị ở hàng thứ nhất và cột thứ hai trong `my_df`.
+- `my_df[1:3,2:4]` chọn các hàng 1, 2, 3 và các cột 2, 3, 4 trong `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Đôi khi chúng ta muốn chọn toàn bộ phần tử của một hàng hoặc một cột. Chẳng hạn, `my_df[1, ]` để chọn tất cả phần tử của hàng thứ nhất. Hãy áp dụng cách chọn này với `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Chọn đường kính của Mercury từ `planets_df`: đây là giá trị ở hàng thứ nhất, cột thứ ba. Chỉ cần hiển thị kết quả ra.
+- Chọn toàn bộ dữ liệu của Mars từ `planets_df`: ở hàng thứ tư. Chỉ cần hiển thị kết quả ra.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Để chọn đường kính của Venus (hàng thứ hai), bạn sẽ cần: `planets_df[2,3]`. Vậy với Mercury thì bạn cần gì?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Không được xóa hoặc ghi đè lên khung dữ liệu `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Bạn đã chọn và in ra đúng đường kính của Sao Thủy chưa? Bạn có thể sử dụng `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Bạn đã chọn và in ra tất cả dữ liệu cho Sao Hỏa chưa? Bạn có thể sử dụng `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Tuyệt vời! Ngoài việc chọn các phần tử từ khung dữ liệu của bạn bằng chỉ số, bạn cũng có thể sử dụng tên cột. Để tìm hiểu cách thực hiện, hãy chuyển sang bài tập tiếp theo.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Chọn phần tử từ data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Thay vì dùng số chỉ vị trí của phần tử để chọn phần tử đó trong một data frame, chúng ta cũng có thể dùng tên biến để chọn các cột. 
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Giả sử ta muốn chọn 3 phần tử đầu tiên của cột `type`, có một cách làm là:
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Nhược điểm của cách này là ta phải biết (hoặc tra) số thứ tự của cột `type`. Nếu có nhiều biến thì sẽ khó tìm ra. Vậy nên sẽ dễ hơn nếu dùng trực tiếp tên biến:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Hãy chọn và hiển thị ra 5 giá trị đầu tiên trong cột `"diameter"` của `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Bạn có thể chọn 5 giá trị đầu tiên với `planets_df[1:5, ...]`. Bạn có thể điền vào dấu `...` để chỉ chọn cột `"diameter"` không?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Không được xóa hoặc ghi đè lên khung dữ liệu `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Bạn đã chọn đúng năm giá trị đầu tiên từ cột đường kính và in chúng ra chưa? Bạn có thể sử dụng `[1:5, \"diameter\"]` ở đây.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo!")
 ```
 
 ---
 
-## Only planets with rings
+## Chỉ chọn các hành tinh có vành đai
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Thường chúng ta sẽ muốn chọn toàn bộ một cột, tức là một biến cụ thể từ data frame. Chẳng hạn, nếu muốn chọn tất cả phần tử của biến `diameter`, cả hai cách sau đều được:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Tuy nhiên, có một cách viết tắt. Nếu các cột có tên, chúng ta có thể dùng dấu `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Dùng dấu `$` để chọn biến `rings` từ `planets_df`. Lưu vector thu được vào `rings_vector`.
+- Hiển thị `rings_vector` ra để kiểm tra kết quả.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` chọn cột `diameter` từ `planets_df`; vậy bạn cần gì để chọn cột `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Không được xóa hoặc ghi đè lên khung dữ liệu `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Bạn đã chọn đúng biến `rings` từ `planets_df` chưa? Sử dụng `$rings`. Lưu kết quả dưới dạng `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Đừng quên in ra `rings_vector` sau khi bạn đã tạo nó!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo và khám phá một cách khác để phân đoạn!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Chỉ chọn các hành tinh có vành đai (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Chúng ta biết rằng một số hành tinh trong hệ Mặt Trời có vành đai, một số khác thì không. Nhưng chúng ta lại không biết chính xác hành tinh nào. Liệu R có thể giúp ta được không?
 
-If you type `rings_vector` in the console, you get:
+Nếu gõ `rings_vector` trong console, ta sẽ nhận được:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Điều này có nghĩa là bốn quan sát (hay hành tinh) đầu tiên không có vành đai (`FALSE`), còn bốn hành tinh còn lại thì có (`TRUE`). Tuy nhiên, ta vẫn chưa có cái nhìn hoàn thiện về tên các hành tinh này hay đường kính của chúng, v.v. Hãy thử dùng `rings_vector` để chọn dữ liệu cho bốn hành tinh có vành đai.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Đoạn code trong trình soạn thảo đang chọn cột `name` của tất cả các hành tinh có vành đai. Hãy chỉnh sửa để thay vì chỉ cột `name`, bạn chọn _tất cả_ các cột cho những hành tinh có vành đai.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Hãy nhớ rằng để chọn _tất cả_ các cột, chỉ cần để trống phần cột bên trong `[ ]`! Tức là bạn cần phải dùng `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Không được xóa hoặc ghi đè `planets_df` hoặc `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Bạn đã điều chỉnh mã đúng cách để chọn _tất cả_ các cột cho các hành tinh có vòng chưa? Bạn có thể sử dụng `planets_df[rings_vector, ]`. Hãy chắc chắn bao gồm dấu phẩy ở đây, nó rất quan trọng!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Tuyệt vời! Đây là một giải pháp khá tẻ nhạt. Bài tập tiếp theo sẽ dạy bạn cách làm điều đó một cách ngắn gọn hơn.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Chỉ chọn các hành tinh có vành đai nhưng theo cách ngắn hơn
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Vậy chính xác thì chúng ta bạn đã học những gì ở các bài trước? Chúng ta đã chọn một tập con từ data frame (`planets_df`) dựa trên việc một điều kiện nào đó đúng hay không (có vành đai hay không), và ta đã trích xuất được toàn bộ dữ liệu liên quan. Quá xịn! Chắc NASA đã để mắt tới CV của bạn rồi ;-).
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Bây giờ, hãy tăng độ khó và dùng hàm `subset()`. Hãy coi `subset()` như một cách viết ngắn gọn để làm đúng những gì chúng ta đã làm ở các bài trước.
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Đối số đầu tiên của `subset()` chỉ định tập dữ liệu mà ta muốn lấy tập con. Đối số thứ hai cho R biết thông tin và điều kiện cần thiết để chọn đúng tập con.
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Đoạn code dưới đây sẽ cho đúng kết quả như ở bài trước, nhưng lần này ta không cần `rings_vector` nữa!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Dùng `subset()` trên `planets_df` để chọn các hành tinh có đường kính nhỏ hơn Trái Đất. Vì biến `diameter` là thước đo tương đối theo đường kính của Trái Đất, điều kiện ở đây là `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+Đoạn code `subset(planets_df, subset = ...)` đã gần như xong; bạn có điền được phần dấu `...` không?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Không được xóa hoặc ghi đè lên khung dữ liệu `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Bạn đã chỉ định đúng phần `subset = ...` bên trong `subset()` chưa. Điều kiện trong trường hợp này là `diameter < 1`. Chỉ cần in ra kết quả.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Tham số đầu tiên bạn truyền vào `subset()` nên là `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Tuyệt vời! Không chỉ hàm `subset()` ngắn gọn hơn, mà có lẽ nó cũng dễ hiểu hơn cho những người đọc mã của bạn. Tiếp tục đến bài tập tiếp theo.");
 ```
 
 ---
 
-## Sorting
+## Sắp xếp dữ liệu
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Một trong những chuyện con người ưa thích là tạo ra các bảng xếp hạng. Có những bảng hữu ích (các trường đại học hàng đầu thế giới), có những bảng để giải trí (ngôi sao điện ảnh có tầm ảnh hưởng nhất), có những bảng thì vô nghĩa (ai giống điệp viên 007 nhất).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+Trong phân tích dữ liệu, chúng ta có thể sắp xếp dữ liệu theo một biến trong tập dữ liệu. Trong R, việc này được thực hiện với hàm `order()`.
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` là một hàm trả về vị trí xếp hạng của từng phần tử khi áp dụng lên một biến, ví dụ như một vector:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +763,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+Giá trị 10, là phần tử thứ hai trong `a`, là giá trị nhỏ nhất, nên 2 xuất hiện đầu tiên trong kết quả của `order(a)`. Giá trị 100, là phần tử thứ nhất trong `a`, là giá trị nhỏ thứ hai, nên 1 xuất hiện thứ hai trong kết quả của `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Điều này có nghĩa là chúng ta có thể dùng kết quả của `order(a)` để sắp xếp lại `a`:
     
 ```
 a[order(a)]
@@ -774,10 +773,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Hãy thử áp dụng hàm `order()` trong console. Gửi câu trả lời khi bạn đã sẵn sàng học tiếp.
 
 `@hint`
-Just play with the `order()` function in the console!
+Hãy thử viết hàm `order()` trong bảng console!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +795,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Tuyệt vời! Bây giờ hãy sử dụng hàm `order()` để sắp xếp khung dữ liệu của bạn!")
 ```
 
 ---
 
-## Sorting your data frame
+## Sắp xếp dữ liệu trong data frame của bạn
 
 ```yaml
 type: NormalExercise
@@ -811,15 +810,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Được rồi, bây giờ đã hiểu hàm `order()`, hãy cùng áp dụng nó. Chúng ta muốn sắp xếp lại data frame sao cho bắt đầu từ hành tinh nhỏ nhất và kết thúc ở hành tinh lớn nhất. Tức là sắp theo cột `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Gọi hàm `order()` trên `planets_df$diameter` (cột `diameter` của `planets_df`). Lưu kết quả vào biến `positions`.
+- Sau đó, sắp xếp lại `planets_df` bằng cách dùng vector `positions` làm chỉ số hàng trong ngoặc vuông. Giữ nguyên tất cả các cột. Hiển thị kết quả ra.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Dùng `order(planets_df$diameter)` để tạo `positions`.
+- Sau đó dùng `positions` trong ngoặc vuông: `planets_df[...]`; bạn điền gì vào dấu `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +865,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Không được xóa hoặc ghi đè lên khung dữ liệu `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Bạn đã tính toán chính xác biến `positions` chưa? Bạn có thể sử dụng `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Sử dụng `planets_df[positions, ]` để sắp xếp `planets_df`; dấu phẩy bên trong dấu ngoặc vuông là rất quan trọng!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Tuyệt vời! Bài tập này kết thúc chương về khung dữ liệu. Hãy nhớ rằng khung dữ liệu rất quan trọng trong R, bạn sẽ cần chúng mọi lúc. Một cấu trúc dữ liệu khác cũng được sử dụng rất thường xuyên là danh sách. Đây sẽ là chủ đề của chương tiếp theo!")
 ```

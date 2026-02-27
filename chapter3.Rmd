@@ -1,15 +1,14 @@
 ---
-title_meta: Chapter 3
-title: Matrices
+title_meta: Chương 3
+title: Ma trận (Matrix)
 description: >-
-  In this chapter, you will learn how to work with matrices in R. By the end of
-  the chapter, you will be able to create matrices and understand how to do
-  basic computations with them. You will analyze the box office numbers of the
-  Star Wars movies and learn how to use matrices in R. May the force be with
-  you!
+  Trong chương này, chúng ta sẽ học cách làm việc với các ma trận (matrix) trong
+  R. Kết thúc chương, bạn có thể tạo được matrix và hiểu cách thực hiện các phép
+  tính cơ bản với chúng. Bạn sẽ phân tích doanh thu phòng vé của phim Star Wars
+  và học cách sử dụng matrix trong R. “May the Force be with you!"
 ---
 
-## What's a matrix?
+## Ma trận (matrix) là gì?
 
 ```yaml
 type: NormalExercise
@@ -19,25 +18,25 @@ skills:
   - 1
 ```
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+Trong R, ma trận (matrix) là một tập hợp các phần tử cùng kiểu dữ liệu (số, ký tự hoặc logic) được sắp xếp theo một số lượng hàng và cột cố định. Vì chỉ làm việc với hàng và cột, ma trận được gọi là cấu trúc hai chiều.
 
-You can construct a matrix in R with the `matrix()` function. Consider the following example:
+Chúng ta có thể tạo ma trận trong R với hàm `matrix()`. Xem ví dụ sau:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the `matrix()` function:
+Trong hàm `matrix()`:
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- Đối số đầu tiên là tập hợp phần tử mà R sẽ sắp xếp vào các hàng và cột của ma trận. Ở đây, chúng ta dùng `1:9`, là cách viết tắt của `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
+- Đối số `byrow` cho biết ma trận được điền theo hàng. Nếu muốn điền theo cột, chỉ cần đặt `byrow = FALSE`.
+- Đối số thứ ba `nrow` cho biết ma trận sẽ có 3 hàng.
 
 `@instructions`
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+Hãy tạo một ma trận có 3 hàng chứa các số từ 1 đến 9, được điền theo từng hàng.
 
 `@hint`
-Read the assignment carefully, the answer is already given!
+Hãy đọc kỹ yêu cầu, đáp án đã có sẵn rồi!
 
 `@pre_exercise_code`
 ```{r}
@@ -58,19 +57,19 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 `@sct`
 ```{r}
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Bạn đã tạo ma trận chính xác chưa? Hãy xem lại bài tập, câu trả lời đã được đưa ra!")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Bạn đã tạo ma trận chính xác chưa? Hãy xem lại bài tập, câu trả lời đã được đưa ra!")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Bạn đã tạo ma trận chính xác chưa? Hãy xem lại bài tập, câu trả lời đã được đưa ra!")
 	}
 
-ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "Có vẻ có vấn đề với định nghĩa ma trận. Hãy xem lại bài tập, câu trả lời đã được đưa ra!")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Analyze matrices, you shall
+## Phân tích ma trận
 
 ```yaml
 type: NormalExercise
@@ -80,19 +79,19 @@ skills:
   - 1
 ```
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+Đến lúc bắt tay vào làm rồi. Trong các bài tập sau, chúng ta sẽ phân tích doanh thu phòng vé của loạt phim Star Wars. Chúc bạn may mắn. May the force be with you!
+ 
+Trong trình soạn thảo, đã có sẵn ba vector. Mỗi vector biểu thị doanh thu phòng vé của ba phần Star Wars đầu tiên. Phần tử thứ nhất của mỗi vector là doanh thu tại Mỹ, phần tử thứ hai là doanh thu ngoài Mỹ (nguồn: Wikipedia).
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
-
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+Trong bài tập này, chúng ta sẽ gộp tất cả các con số đó vào một vector duy nhất. Rồi từ vector này, chúng ta sẽ tạo ra một ma trận. 
 
 `@instructions`
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to do this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- Dùng `c(new_hope, empire_strikes, return_jedi)` để gộp ba vector thành một vector. Gọi vector này là `box_office`.
+- Tạo một ma trận với 3 hàng, mỗi hàng là một bộ phim. Dùng hàm `matrix()` để thực hiện. Đối số đầu tiên là vector `box_office` chứa toàn bộ số liệu doanh thu. Tiếp theo, bạn cần chỉ định `nrow = 3` và `byrow = TRUE`. Đặt tên ma trận tạo được là `star_wars_matrix`.
 
 `@hint`
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., byrow =  ...)` is a template for the solution to the second instruction.
+-  Gộp tất cả các số trong các vector khác nhau thành một vector duy nhất với 6 phần tử bằng `box_office <- c(new_hope, empire_strikes, return_jedi)`
+- Cú pháp mẫu cho đáp án của yêu cầu thứ hai là `matrix(box_office, nrow = ..., byrow =  ...)`
 
 `@pre_exercise_code`
 ```{r}
@@ -129,7 +128,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "Không thay đổi bất kỳ điều gì về các biến doanh thu phòng vé `new_hope`, `empire_strikes` và `return_jedi`!"
 
 ex() %>% check_object("new_hope", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -137,23 +136,22 @@ ex() %>% check_object("empire_strikes", undefined_msg = msg) %>% check_equal(inc
 
 ex() %>% check_object("return_jedi", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Bạn đã kết hợp chính xác các giá trị của `new_hope`, `empire_strikes` và `return_jedi` vào vector `box_office` chưa?")
 
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng bạn đã chỉ định chính xác các đối số bạn truyền vào `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng bạn đã chỉ định chính xác các đối số bạn truyền vào `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Hãy chắc chắn rằng bạn đã chỉ định chính xác các đối số bạn truyền vào `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
 	}
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Bạn đã gán kết quả của lệnh gọi `matrix()` cho `star_wars_matrix` chưa?")
 
-
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("Thực sự có lực lượng với bạn! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Naming a matrix
+## Gán tên cho hàng và cột trong ma trận
 
 ```yaml
 type: NormalExercise
@@ -163,24 +161,24 @@ skills:
   - 1
 ```
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
+Để dễ nhớ `star_wars_matrix` lưu những gì, chúng ta có thể gán tên các bộ phim cho từng hàng. Cách này không chỉ giúp chúng ta đọc dữ liệu dễ hơn mà còn hữu ích khi cần chọn các phần tử cụ thể từ ma trận.
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+Tương tự như vector, bạn có thể gán tên cho các hàng và cột của một ma trận
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+Đã có sẵn hai vector: `region` và `titles`. Chúng ta sẽ dùng các vector này để lần lượt gán tên cho cột và hàng của ma trận `star_wars_matrix`.
 
 `@instructions`
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- Dùng `colnames()` để gán tên cho các cột của `star_wars_matrix` bằng vector `region`.
+- Dùng `rownames()` để gán tên cho các hàng của `star_wars_matrix` bằng vector `titles`.
+- Hiển thị `star_wars_matrix` ra để xem kết quả.
 
 `@hint`
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+Dùng `colnames(star_wars_matrix) <- region` để gán tên cho các cột của `star_wars_matrix`. Làm tương tự để gán tên cho các hàng.
 
 `@pre_exercise_code`
 ```{r}
@@ -236,7 +234,7 @@ star_wars_matrix
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "Không thay đổi bất kỳ điều gì về các biến phòng vé `new_hope`, `empire_strikes` và `return_jedi`!"
 
 ex()  %>% check_object("new_hope", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
@@ -244,25 +242,25 @@ ex()  %>% check_object("empire_strikes", undefined_msg = msg)  %>% check_equal(i
 
 ex()  %>% check_object("return_jedi", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+msg <- "Đừng thay đổi nội dung của `star_wars_matrix`; chỉ thay đổi tên của các hàng và cột!" 
 
 ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- "Đừng thay đổi bất kỳ điều gì về các vector `region` và `titles` đã được định nghĩa cho bạn."
 
 ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Bạn đã đặt tên hàng và cột của `star_wars_matrix` đúng chưa? Sử dụng `colnames(star_wars_matrix) <- region` cho tên cột; làm tương tự để đặt tên cho các hàng.")
 
-ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Đừng quên in ra `star_wars_matrix` sau khi bạn đã đặt tên cho các hàng và cột.")
 
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+success_msg("Tuyệt vời! Bạn đang trên đường trở thành một R jedi! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Calculating the worldwide box office
+## Tính doanh thu phòng vé toàn cầu
 
 ```yaml
 type: NormalExercise
@@ -272,21 +270,21 @@ skills:
   - 1
 ```
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+Yếu tố quan trọng nhất để ngay lập tức, một bộ phim trở thành huyền thoại ở Hollywood chính là doanh thu phòng vé toàn cầu của nó. 
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+Để tính tổng doanh thu phòng vé cho 3 phần phim Star Wars, bạn cần cộng cột doanh thu tại Mỹ với cột doanh thu ngoài Mỹ.
 
-In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+Trong R, hàm `rowSums()` giúp chúng ta tính tổng cho từng hàng của một ma trận. Hàm này tạo ra một vector mới:
 
 ```
 rowSums(my_matrix)
 ```
 
 `@instructions`
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+Hãy tính doanh thu phòng vé toàn cầu cho 3 phần phim và lưu vào vector có tên `worldwide_vector`.
 
 `@hint`
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+`rowSums(star_wars_matrix)` sẽ tính tổng của từng hàng, tức là tổng doanh thu phòng vé cho mỗi phần phim.
 
 `@pre_exercise_code`
 ```{r}
@@ -329,20 +327,20 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "Không thay đổi bất kỳ điều gì về các biến đã được thiết lập sẵn `box_office_all` và `star_wars_marix`!"
 
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Gọi `rowSums()` trên `star_wars_matrix` và lưu kết quả vào `worldwide_vector`.")
 
-success_msg("Well done! Continue to the next exercise.")
+success_msg("Làm tốt lắm! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Adding a column for the Worldwide box office
+## Thêm cột vào ma trận doanh thu phòng vé toàn cầu
 
 ```yaml
 type: NormalExercise
@@ -352,19 +350,19 @@ skills:
   - 1
 ```
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+Ở bài trước, chúng ta đã tạo được vector chứa doanh thu phòng vé toàn cầu cho từng phần phim Star Wars. Tuy nhiên, vector này vẫn chưa nằm trong `star_wars_matrix`.
 
-You can add a column or multiple columns to a matrix with the `cbind()` function, which merges matrices and/or vectors together by column. For example: 
+Chúng ta có thể thêm một hoặc nhiều cột vào ma trận bằng hàm `cbind()`. Hàm này dùng để ghép vector vào ma trận hoặc ghép các vector với nhau, hoặc ghép các ma trận lại với nhau theo cột. Ví dụ:
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 `@instructions`
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the `cbind()` function.
+Dùng hàm `cbind()` để thêm `worldwide_vector` vào thành một cột mới trong ma trận `star_wars_matrix` và gán kết quả cho `all_wars_matrix`.
 
 `@hint`
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+Trong bài tập này, bạn cần đặt hai biến `star_wars_matrix` và `worldwide_vector` vào hàm `cbind()` theo đúng thứ tự này. Sau đó gán kết quả cho `all_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
@@ -413,24 +411,22 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "Không thay đổi bất kỳ điều gì về các biến đã được thiết lập sẵn `box_office_all` và `star_wars_marix`!"
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Lưu kết quả của `rowSums(star_wars_matrix)` vào `worldwide_vector`.")
 
-
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+msg <- "Bạn đã sử dụng đúng `cbind()` để thêm `worldwide_vector` vào `star_wars_matrix` chưa? Bạn nên truyền `star_wars_matrix` và `world_wide_vector` vào `cbind()`, theo thứ tự này. Ma trận kết quả, `all_wars_matrix`, nên bao gồm ba hàng và ba cột."
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("Làm tốt lắm! Sau khi thêm cột vào một ma trận, bước tiếp theo hợp lý là thêm hàng. Hãy học cách thực hiện trong bài tập tiếp theo.")
 ```
 
 ---
 
-## Adding a row
+## Thêm hàng vào ma trận
 
 ```yaml
 type: NormalExercise
@@ -440,24 +436,23 @@ skills:
   - 1
 ```
 
-Just like every action has a reaction, every `cbind()` has an `rbind()`. (We admit, we are pretty bad with metaphors.) 
+Trong R có `cbind()` để ghép thêm cột thì cũng có “"người anh em” `rbind()` để ghép thêm hàng.  
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
+Môi trường làm việc trong R, nơi chứa tất cả các biến mà chúng ta đã tạo, ([xem môi trường làm việc là gì](http://www.statmethods.net/interface/workspace.html)), đã được khởi tạo sẵn và chứa hai ma trận:
+- `star_wars_matrix` mà ta đã dùng từ đầu, với dữ liệu về bộ ba phần phim gốc,
+- `star_wars_matrix2`, với dữ liệu tương tự về bộ ba tiền truyện. 
 
-- `star_wars_matrix` that we have used all along, with data on the original trilogy,
-- `star_wars_matrix2`, with similar data for the prequels trilogy. 
-
-Explore these matrices in the console if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+Để xem kĩ hơn các ma trận này, hãy nhập tên ma trận vào console. Để xem môi trường làm việc có những biến nào, hãy gõ `ls()` trong console. 
 
 `@instructions`
-Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
+Dùng `rbind()` để ghép `star_wars_matrix` và `star_wars_matrix2` theo đúng thứ tự này. Gán ma trận thu được cho `all_wars_matrix`.
 
 `@hint`
-Bind the two matrices together like this:
+Gắn hai ma trận lại với nhau như sau:
 ```
 rbind(matrix1, matrix2)
 ```
-Assign the result to `all_wars_matrix`.
+Gán kết quả cho `all_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
@@ -502,20 +497,19 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 `@sct`
 ```{r}
-msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+msg = "Không được ghi đè các biến đã được định nghĩa cho bạn trong không gian làm việc (`star_wars_matrix` và `star_wars_matrix2`)."
 ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Bạn đã sử dụng `rbind()` đúng cách để tạo `all_wars_matrix()` chưa? `rbind()` nên nhận hai đối số: `star_wars_matrix` và `star_wars_matrix2`, theo thứ tự này.")
 
-
-success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+success_msg("Tuyệt vời! Tiếp tục với bài tập tiếp theo và xem cách bạn có thể kết hợp kết quả của hàm `rbind()` với hàm `colSums()`!")
 ```
 
 ---
 
-## The total box office revenue for the entire saga
+## Tổng doanh thu phòng vé của toàn bộ loạt phim
 
 ```yaml
 type: NormalExercise
@@ -525,14 +519,14 @@ skills:
   - 1
 ```
 
-Just like `cbind()` has  `rbind()`, `colSums()` has `rowSums()`. Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+Giống như `cbind()` có `rbind()`, `colSums()` cũng có `rowSums()`. Môi trường làm việc R của chúng ta đã có sẵn `all_wars_matrix` mà ta đã tạo ở bài trước. Hãy gõ `all_wars_matrix` trong console để xem lại. Bây giờ, hãy tính tổng doanh thu phòng vé của toàn bộ loạt phim.
 
 `@instructions`
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()`function.
-- Print out `total_revenue_vector` to have a look at the results.
+- Dùng hàm `colSums()` để tính tổng doanh thu trong nước Mỹ và ngoài nước Mỹ. Sau đó, gán vào `total_revenue_vector`.  
+- Hiển thị `total_revenue_vector` ra để xem kết quả.
 
 `@hint`
-You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
+Để tìm doanh thu phòng vé theo từng khu vực, bạn dùng hàm `colSums()` với đối số là `star_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
@@ -564,21 +558,21 @@ total_revenue_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+msg = "Không thay đổi nội dung của `all_wars_matrix`; nó đã được tạo cho bạn trong không gian làm việc."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Bạn đã sử dụng hàm `colSums()` trên all_wars_matrix chưa?")
 
-ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Bạn đã gán đúng kết quả của `colSums(all_wars_matrix)` cho `total_revenue_vector` chưa?")
 
-ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Don't forget to print out `total_revenue_vector`!")
+ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Đừng quên in ra `total_revenue_vector`!")
 
-success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
+success_msg("Bellissimo! Hãy chuyển sang bài tập tiếp theo để học cách lấy phần tử của ma trận.")
 ```
 
 ---
 
-## Selection of matrix elements
+## Chọn phần tử trong ma trận
 
 ```yaml
 type: NormalExercise
@@ -588,26 +582,26 @@ skills:
   - 1
 ```
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns. For example: 
+Tương tự như với vector, chúng ta có thể dùng ngoặc vuông `[ ]` để chọn một hoặc nhiều phần tử từ một ma trận. Vector chỉ có một chiều, còn ma trận thì có hai chiều. Vì vậy, ta cần dùng dấu phẩy để tách phần hàng và phần cột. Ví dụ:
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+- `my_matrix[1,2]` chọn phần tử ở hàng thứ nhất cột thứ hai.
+- `my_matrix[1:3,2:4]` chọn ra một ma trận gồm dữ liệu thuộc các hàng 1, 2, 3 và các cột 2, 3, 4. 
 
-If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
+Nếu muốn chọn toàn bộ một hàng, ta để trống phần trước dấu phẩy. Nếu muốn chọn toàn bộ một cột, ta có thể để trống phần sau dấu phẩy. Ví dụ:
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[,1]` chọn tất cả các phần tử của cột số 1.
+- `my_matrix[1,]` chọn tất cả các phần tử của hàng số 1.
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+Quay lại Star Wars với kiến thức vừa học! Như ở bài trước, `all_wars_matrix` đã có sẵn trong môi trường làm việc của chúng ta.
 
 `@instructions`
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
-- This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
-- Use `mean()` again to print out the average of the values in `non_us_some`.
+- Chọn doanh thu ngoài nước Mỹ của tất cả các phim (toàn bộ cột thứ hai của `all_wars_matrix`), lưu kết quả vào `non_us_all`.
+- Dùng hàm `mean()` trên biến `non_us_all` để tính doanh thu trung bình ngoài nước Mỹ cho tất cả các phim.
+- Tiếp theo, chọn doanh thu ngoài nước Mỹ cho hai phim đầu tiên trong `all_wars_matrix`. Lưu kết quả vào `non_us_some`.
+- Tiếp tục dùng `mean()` để hiển thị giá trị trung bình của các số trong `non_us_some`.
 
 `@hint`
-You can select the entire second column of a matrix `my_matrix` with `my_matrix[,2]`.
+Bạn có thể chọn toàn bộ cột thứ hai của một ma trận `my_matrix` bằng `my_matrix[,2]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -652,24 +646,24 @@ mean(non_us_some)
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "Không thay đổi nội dung của `all_wars_matrix`; ma trận này đã được tạo sẵn cho bạn trong không gian làm việc."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Bạn đã gán toàn bộ cột thứ hai của `all_wars_matrix` cho `non_us_all` chưa? Bạn có thể sử dụng `[, 2]` để làm điều này!")
 
-ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Bạn đã tính trung bình của các giá trị trong `non_us_all` bằng cách gọi `mean(non_us_all)` chưa? Chỉ cần in ra kết quả.")
 
-ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Bạn đã gán doanh thu không phải của Mỹ cho hai bộ phim đầu tiên vào `non_us_some` chưa? Bạn có thể sử dụng `[1:2,2]` để làm điều này!")
 
-ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Bạn đã tính trung bình của các giá trị trong `non_us_some` bằng cách gọi `mean(non_us_some)` chưa? Chỉ cần in ra kết quả.")
 
-success_msg("Nice one! Continue to the next exercise.")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## A little arithmetic with matrices
+## Một số phép toán cơ bản với ma trận
 
 ```yaml
 type: NormalExercise
@@ -679,18 +673,18 @@ skills:
   - 1
 ```
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Tương tự như với vector, các toán tử chuẩn như `+`, `-`, `/`, `*`, v.v. hoạt động theo từng phần tử trên ma trận trong R.
 
-For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
+Ví dụ, `2 * my_matrix` sẽ nhân mỗi phần tử của `my_matrix` với hai.
 
-As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+Giả sử bạn là nhà phân tích dữ liệu cho hãng Lucasfilm, công việc của bạn là tìm xem có bao nhiêu khán giả đã đến xem mỗi tập phim ở từng thị trường (trong nước Mỹ và ngoài nước Mỹ). Bạn đã có tổng doanh thu trong `all_wars_matrix`, giả sử giá vé là 5 đô la, chỉ cần chia doanh thu phòng vé cho giá vé này là bạn sẽ có số lượng khán giả.
 
 `@instructions`
-- Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
-- Print out `visitors` so you can have a look.
+- Chia `all_wars_matrix` cho 5 để ra số lượng khán giả tính theo đơn vị triệu người. Gán ma trận kết quả vào `visitors`.
+- Hiển thị `visitors` ra để xem kết quả.
 
 `@hint`
-The number of visitors is equal to `all_wars_matrix` divided by 5.
+Số lượng khán giả bằng `all_wars_matrix` chia cho 5.
 
 `@pre_exercise_code`
 ```{r}
@@ -723,21 +717,20 @@ visitors
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "Không thay đổi nội dung của `all_wars_matrix`; ma trận này đã được tạo sẵn cho bạn trong không gian làm việc."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Có vẻ như `visitors` không đúng. Chỉ cần chia `all_wars_matrix` cho 5 và lưu ma trận kết quả dưới tên `visitors`.")
 
-ex() %>% check_output_expr("visitors", missing_msg = "Don't forget to also print out `visitors` so you can have a look.")
+ex() %>% check_output_expr("visitors", missing_msg = "Đừng quên in ra `visitors` để bạn có thể xem qua.")
 
-
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+success_msg("Tuyệt vời! Những kết quả này cho bạn biết điều gì? Có đến 92 triệu người đã đến xem A New Hope tại các rạp chiếu phim ở Mỹ! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## A little arithmetic with matrices (2)
+## Một số phép toán cơ bản với ma trận (2)
 
 ```yaml
 type: NormalExercise
@@ -747,20 +740,20 @@ skills:
   - 1
 ```
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+Tương tự như phép toán `2 * my_matrix` nhân mỗi phần tử của `my_matrix` với hai,  phép toán `my_matrix1 * my_matrix2` sẽ tạo ra một ma trận mà mỗi phần tử là tích của các phần tử tương ứng trong `my_matrix1` và `my_matrix2`.
 
-After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+Sau khi xem kết quả của bài trước, sếp lớn Lucas nhắc nhở rằng giá vé đã tăng theo thời gian. Sếp yêu cầu phân tích lại dựa trên mức giá có trong `ticket_prices_matrix` (nguồn: trí tưởng tượng).
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_Lưu ý: đây không phải là phép nhân ma trận thông thường. Để nhân ma trận chuẩn trong R, ta cần dùng toán tử `%*%`._
 
 `@instructions`
-- Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
-- From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- Chia `all_wars_matrix` cho `ticket_prices_matrix` để ước tính số lượng khán giả tại Mỹ và ngoài Mỹ cho sáu tập phim. Gán kết quả vào `visitors`.
+- Từ ma trận `visitors`, chọn toàn bộ cột thứ nhất, đại diện cho số khán giả tại Mỹ. Lưu lựa chọn này vào `us_visitors`.
+- Tính số khán giả trung bình tại Mỹ; hiển thị kết quả ra.
 
 `@hint`
-- You can use the function `mean()` to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- Bạn có thể dùng hàm `mean()` để tính giá trị trung bình của các đầu vào của hàm.
+- Để lấy số lượng khách xem tại Mỹ, hãy chọn cột thứ nhất từ `visitors` bằng `visitors[ ,1]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -804,17 +797,17 @@ mean(us_visitors)
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg <- "Không thay đổi nội dung của `all_wars_matrix`; ma trận này đã được tạo sẵn cho bạn trong không gian làm việc."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Bạn đã tạo đúng ma trận `visitors` chưa? Bạn nên chia `all_wars_matrix` cho `ticket_prices_matrix` để đạt được điều đó.")
 
-ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "Để tạo `us_visitors`, bạn nên chọn đúng toàn bộ cột đầu tiên từ `visitors`. Bạn có thể sử dụng `[,1]` cho việc này!")
 
-ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Khi bạn đã tạo `us_visitors`, bạn có thể sử dụng `mean()` để tính toán số lượng khách trung bình ở Mỹ. Hãy chắc chắn in ra kết quả.")
 
 
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("Đó là sự thật: sức mạnh R đang ở bên bạn! Bài tập này kết thúc chương về ma trận. Điểm dừng tiếp theo trong hành trình của bạn qua ngôn ngữ R: các yếu tố.")
 ```

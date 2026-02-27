@@ -1,15 +1,15 @@
 ---
-title_meta: Chapter 4
-title: Factors
+title_meta: Chương 4
+title: Kiểu dữ liệu factor
 description: >-
-  Data often falls into a limited number of categories. For example, human hair
-  color can be categorized as black, brown, blond, red, grey, or white—and
-  perhaps a few more options for people who color their hair. In R, categorical
-  data is stored in factors. Factors are very important in data analysis, so
-  start learning how to create, subset, and compare them now.
+  Dữ liệu thường được chia vào một số nhóm nhất định. VD màu tóc được chia thành
+  đen, nâu, vàng, đỏ... có thể còn vài màu khác cho tóc nhuộm. Trong R, những dữ
+  liệu có thể phân loại sẽ được lưu theo kiểu dữ liệu factor. Factor rất quan
+  trọng trong phân tích dữ liệu. Vì vậy hãy bắt đầu học cách tạo, trích xuất và
+  so sánh chúng ngay bây giờ!
 ---
 
-## What's a factor and why would you use it?
+## Kiểu dữ liệu factor là gì và tại sao dùng nó?
 
 ```yaml
 type: NormalExercise
@@ -19,19 +19,19 @@ skills:
   - 1
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+Trong chương này, chúng ta sẽ tìm hiểu **factor**.
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+Factor là một kiểu dữ liệu thống kê dùng để lưu trữ các biến phân loại (categorical variable). Sự khác biệt giữa biến phân loại và biến liên tục (continuous variable) là: biến phân loại chỉ có một **số lượng nhóm hữu hạn**, còn biến liên tục có thể nhận vô số giá trị.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+Việc cho R biết nó đang xử lý biến liên tục hay biến phân loại là rất quan trọng vì các mô hình thống kê mà ta xây dựng sau này sẽ xử lý hai loại biến này theo những cách khác nhau. (Bạn sẽ hiểu rõ lý do ở phần sau.)
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
+Một ví dụ điển hình của biến phân loại là giới tính. Trong hầu hết các trường hợp, chúng ta có thể chia giới tính thành "Male" và "Female". (Đôi khi có thể cần các nhóm khác. Ví dụ như biến thể nhiễm sắc thể, động vật lưỡng tính hoặc tuỳ theo các chuẩn mực văn hoá khác nhau, nhưng số nhóm vẫn luôn hữu hạn.)
 
 `@instructions`
-Assign to variable `theory` the value `"factors"`.
+Gán giá trị `"factors"` cho biến `theory`
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+Chỉ cần gán biến với dấu `<-`; nhớ quy tắc viết hoa, viết thường.
 
 `@pre_exercise_code`
 ```{r}
@@ -51,20 +51,20 @@ theory <- "factors"
 
 `@sct`
 ```{r}
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- "Có vẻ như bạn chưa định nghĩa biến `theory`."
+msg_incor <- "Giá trị của `theory` có vẻ không chính xác. Hãy chắc chắn gán cho nó chuỗi ký tự `\"factors\"`. Hãy nhớ rằng R phân biệt chữ hoa và chữ thường."
+msg_err <- "Hãy chắc chắn rằng bạn đã định nghĩa `theory` đúng cách, sử dụng `<-` để gán giá trị."
 
 # If get error and theory is undefined, point out the error
 ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
 check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg("Làm tốt lắm! Sẵn sàng để bắt đầu chưa? Tiếp tục đến bài tập tiếp theo!")
 ```
 
 ---
 
-## What's a factor and why would you use it? (2)
+## Kiểu dữ liệu factor là gì và tại sao dùng nó? (2) 
 
 ```yaml
 type: NormalExercise
@@ -74,26 +74,26 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+Để tạo factor trong R, chúng ta dùng hàm `factor()`. Trước tiên, cần tạo một vector chứa tất cả các quan sát thuộc một số lượng nhóm hữu hạn. Ví dụ, `sex_vector` chứa giới tính của 5 người:
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
+Có thể thấy ở đây có hai nhóm, trong R gọi là **factor levels**: <span translate="no">"Male"</span> và <span translate="no">"Female"</span>.
 
-The function `factor()` will encode the vector as a factor:
+Hàm `factor()` sẽ chuyển vector thành một factor:
 
 ```
 factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
-- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
+- Dùng hàm `factor()` để chuyển vector chứa các ký tự `sex_vector` thành factor và gán kết quả cho biến `factor_sex_vector`
+- Hiển thị biến `factor_sex_vector` ra và kiểm tra xem R có hiển thị các factor level bên dưới các giá trị thực tế không.
 
 `@hint`
-Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+Chỉ cần dùng hàm `factor()` trên `sex_vector`. Xem lại phần yêu cầu, câu trả lời đã xuất hiện đâu đó rồi...
 
 `@pre_exercise_code`
 ```{r}
@@ -126,15 +126,15 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Bạn đã gán nhân tố của `sex_vector` cho `factor_sex_vector` chưa?")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Đừng quên in ra `factor_sex_vector`!")
 
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+success_msg("Tuyệt vời! Nếu bạn muốn tìm hiểu thêm về hàm `factor()`, đừng ngần ngại gõ `?factor` trong bảng điều khiển. Điều này sẽ mở ra một trang trợ giúp. Tiếp tục đến bài tập tiếp theo.");
 ```
 
 ---
 
-## What's a factor and why would you use it? (3)
+## Kiểu dữ liệu factor là gì và tại sao dùng nó? (3)
 
 ```yaml
 type: NormalExercise
@@ -144,17 +144,17 @@ skills:
   - 1
 ```
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+Có hai loại biến phân loại: **biến phân loại danh nghĩa (nominal)** và **biến phân loại thứ bậc (ordinal)**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+Biến danh nghĩa là biến phân loại không dựa trên so sánh hơn kém, tức là không thể nói “cái này hơn cái kia”. Ví dụ như biến phân loại `animals_vector` có các nhóm `"Elephant"`, `"Giraffe"`, `"Donkey"` và `"Horse"`. Ở đây, không thể nói con nào hơn hay kém con nào (dù một số bạn có thể không đồng ý ;-) ).
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+Ngược lại, biến thứ bậc là biến phân loại mà các nhóm được sắp xếp theo thứ tự. Ví dụ biến phân loại `temperature_vector` có các nhóm: `"Low"`, `"Medium"` và `"High"`. Ở đây, rõ ràng `"Medium"` cao hơn `"Low"`, và `"High"` cao hơn `"Medium"`.
 
 `@instructions`
-Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+Gửi đáp án để xem R tạo và hiển thị ra các biến danh nghĩa và biến thứ bậc như thế nào. Đừng lo nếu bạn chưa hiểu hết đoạn code ngay. Chúng ta sẽ tìm hiểu dần.
 
 `@hint`
-Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+Chỉ cần gửi đáp án và xem console. Hãy chú ý cách R hiển thị thứ tự các factor level đối với biến thứ bậc.
 
 `@pre_exercise_code`
 ```{r}
@@ -189,7 +189,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
+msg <- "Không thay đổi bất kỳ điều gì về mã mẫu. Chỉ cần nộp câu trả lời và kiểm tra giải pháp!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -204,12 +204,12 @@ ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% chec
 ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
 
 
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("Bạn có thể nhận ra điều gì đang xảy ra trong bài tập này không? Tuyệt vời! Tiếp tục đến bài tập tiếp theo và tìm hiểu chi tiết về các mức độ của yếu tố.")
 ```
 
 ---
 
-## Factor levels
+## Các mức của kiểu dữ liệu factor (factor level)
 
 ```yaml
 type: NormalExercise
@@ -219,28 +219,28 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
+Khi nhận một bộ dữ liệu, chúng ta thường thấy trong đó có các factor với những level cụ thể. Tuy nhiên, đôi khi ta muốn đổi tên các level này cho rõ ràng hơn hoặc vì lý do khác. Trong R, ta có thể làm việc này với hàm `levels()`:
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
+Ví dụ điển hình là dữ liệu thô thu được trong các cuộc khảo sát. Một câu hỏi phổ biến trong mọi bảng câu hỏi là giới tính của người được khảo sát. Ở đây, để đơn giản, chỉ có hai nhóm được ghi nhận, `"M"` và `"F"`. (Trong thực tế, dữ liệu khảo sát thường cần nhiều nhóm phân loại giới tính hơn nhưng dù sao đi nữa, chúng ta cũng dùng factor để lưu trữ dữ liệu phân loại.) 
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
+Ghi giới tính bằng cách viết tắt `"M"` và `"F"` sẽ tiện khi ta khảo sát bằng giấy bút, nhưng có thể gây nhầm lẫn khi phân tích. Lúc đó, thường sẽ phải đổi các level của factor thành `"Male"` và `"Female"` thay cho `"M"` và `"F"` để rõ ràng hơn.
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+**Lưu ý:** thứ tự gán các level rất quan trọng. Nếu ta gõ `levels(factor_survey_vector)`, ta sẽ thấy kết quả là `[1] "F" "M"`. Nếu ta không chỉ định level của factor khi tạo vector, `R` sẽ tự động gán theo thứ tự bảng chữ cái. Để khớp đúng `"F"` thành `"Female"` và `"M"` thành `"Male"`, các level phải được đặt là `c("Female", "Male")` theo đúng thứ tự này.
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- Hãy xem đoạn code tạo một factor vector từ `survey_vector`. Sau đó, dùng `factor_survey_vector` ở bước tiếp theo.
+- Đổi các level của `factor_survey_vector` thành `c("Female", "Male")`. Lưu ý thứ tự của các phần tử trong vector.
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+Lưu ý thứ tự khi bạn nhập level của factor. Gợi ý: xem thứ tự các level hiển thị ra khi gõ `levels(factor_survey_vector)`.
 
 `@pre_exercise_code`
 ```{r}
@@ -275,9 +275,9 @@ factor_survey_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = "Không thay đổi định nghĩa của `survey_vector`!"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "Không thay đổi hoặc xóa mã để tạo vector yếu tố."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
@@ -285,15 +285,14 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Bạn đã gán các mức yếu tố đúng cho `factor_survey_vector` chưa? Sử dụng `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Nhớ rằng R phân biệt chữ hoa và chữ thường!"))
 
-
-success_msg("Wonderful! Proceed to the next exercise.")
+success_msg("Tuyệt vời! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Summarizing a factor
+## Tóm tắt biến kiểu factor 
 
 ```yaml
 type: NormalExercise
@@ -303,19 +302,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
+Sau khi hoàn thành khóa học này, một trong những hàm bạn thích nhất trong R chắc sẽ là `summary()`. Hàm này cho chúng ta cái nhìn tổng quan về nội dung của một biến:
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
+Quay lại khảo sát ở bài trước, ta muốn biết có bao nhiêu `"Male"` và bao nhiêu `"Female"`. Hàm `summary` sẽ cho ta câu trả lời.
 
 `@instructions`
-Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+Gọi hàm `summary()` cho `survey_vector` và `factor_survey_vector`. Diễn giải kết quả của cả hai vector. Trong trường hợp này, chúng có hữu ích như nhau không?
 
 `@hint`
-Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+Gọi hàm `summary()` cho cả `survey_vector` và `factor_survey_vector`. Chỉ đơn giản vậy thôi!
 
 `@pre_exercise_code`
 ```{r}
@@ -354,24 +353,24 @@ summary(factor_survey_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "Không thay đổi bất kỳ điều gì về vài dòng đầu tiên định nghĩa `survey_vector` và `factor_survey_vector`."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "Bạn đã sử dụng đúng `summary()` để tạo ra một bản tóm tắt cho `%s` chưa?"
 
 ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
 
 ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
 
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("Tuyệt vời! Hãy xem qua kết quả. Việc bạn xác định `\"Male\"` và `\"Female\"` là các mức độ của yếu tố trong `factor_survey_vector` cho phép R hiển thị số lượng phần tử cho mỗi danh mục.")
 ```
 
 ---
 
-## Battle of the sexes
+## So sánh nam và nữ
 
 ```yaml
 type: NormalExercise
@@ -381,13 +380,13 @@ skills:
   - 1
 ```
 
-You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
+Có thể bạn thắc mắc nếu chúng ta so sánh các phần tử của một factor thì sẽ thế nào. Trong `factor_survey_vector`, chúng ta có một factor với hai level: `"Male"` và `"Female"`. Nhưng R so sánh hai level này với nhau như thế nào?
 
 `@instructions`
-Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
+Xem đoạn code trong trình soạn thảo và ấn gửi đáp án để kiểm tra liệu `male` có lớn hơn (`>`) `female` hay không.
 
 `@hint`
-Just submit the answer and have a look at output that gets printed to the console.
+Chỉ ấn gửi đáp án và xem kết quả hiển thị ra ở console.
 
 `@pre_exercise_code`
 ```{r}
@@ -430,7 +429,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply submit the answer and look at the result."
+msg = "Không thay đổi bất kỳ điều gì về mã; chỉ cần nộp câu trả lời và xem kết quả."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -443,12 +442,12 @@ ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_m
 ex() %>% check_output_expr("male > female", missing_msg = msg)
 
 
-success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+success_msg("Thật thú vị! Theo mặc định, R trả về `NA` khi bạn cố gắng so sánh các giá trị trong một yếu tố, vì ý tưởng này không có ý nghĩa. Tiếp theo, bạn sẽ tìm hiểu về các yếu tố có thứ tự, nơi có thể thực hiện các so sánh có ý nghĩa hơn.")
 ```
 
 ---
 
-## Ordered factors
+## Factor có thứ tự
 
 ```yaml
 type: NormalExercise
@@ -458,25 +457,25 @@ skills:
   - 1
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+Vì `"Male"` và `"Female"` là các factor level không có thứ tự (hay còn gọi là factor danh nghĩa) nên R sẽ trả về một cảnh báo, cho biết toán tử lớn hơn (>) không có ý nghĩa trong trường hợp này. Như chúng ta đã thấy từ bài trước, R xem các factor level như vậy có giá trị ngang nhau. 
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+Tuy nhiên, không phải lúc nào cũng vậy! Đôi khi ta sẽ gặp các factor mà giữa các nhóm của nó vốn đã có thứ tự. Khi đó, chúng ta chắc chắn phải báo cho R biết.  
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
+Giả sử bạn đang quản lý một nhóm nghiên cứu gồm năm nhà phân tích dữ liệu và bạn muốn đánh giá hiệu suất của họ. Bạn theo dõi tốc độ làm việc, đánh giá từng người là `"slow"`, `"medium"` hoặc `"fast"`, và lưu kết quả vào `speed_vector`.
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
+Ở bước đầu tiên, hãy gán cho `speed_vector` một vector gồm 5 phần tử, mỗi phần tử ứng với một người. Mỗi phần tử là một trong các level `"slow"`, `"medium"` hoặc `"fast"` dựa trên danh sách sau:
 
-- Analyst 1 is medium,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is medium and
-- Analyst 5 is fast.
+- Nhà phân tích thứ nhất: medium,
+- Nhà phân tích thứ hai: slow,
+- Nhà phân tích thứ ba: slow,
+- Nhà phân tích thứ tư: medium và
+- Nhà phân tích thứ năm: fast.
 
-No need to specify these are factors yet.
+Ở bước này, chưa cần chỉ định đây là các factor.
 
 `@hint`
-Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
+Gán cho `speed_vector` một vector chứa các chuỗi ký tự `"slow"`, `"medium"` hoặc `"fast"`.
 
 `@pre_exercise_code`
 ```{r}
@@ -497,14 +496,14 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` phải là một vector với 5 phần tử, mỗi phần tử là đánh giá tốc độ của từng nhà phân tích. Đừng sử dụng chữ in hoa; R phân biệt chữ hoa và chữ thường!")
 
-success_msg("A job well done! Continue to the next exercise.")
+success_msg("Làm tốt lắm! Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Ordered factors (2)
+## Factor có thứ tự (2)
 
 ```yaml
 type: NormalExercise
@@ -514,7 +513,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+Nên chuyển `speed_vector` thành một factor có thứ tự vì các nhóm của nó vốn đã có thứ tự tự nhiên. Nếu ta để mặc định thì hàm `factor()` sẽ biến `speed_vector` thành factor không có thứ tự. Để tạo một factor có thứ tự, ta cần thêm hai đối số: `ordered` và `levels`.
 
 ```
 factor(some_vector,
@@ -522,13 +521,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+Khi ta đặt đối số `ordered` là `TRUE` trong hàm `factor()`, ta cho R biết factor này có thứ tự. Với đối số `levels`, ta đưa cho R các giá trị của factor theo đúng thứ tự.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
+Dựa trên `speed_vector`, hãy tạo một vector factor có thứ tự, đặt tên là `factor_speed_vector`, đặt `ordered` là `TRUE`, và đặt `levels` là `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+Dùng hàm `factor()` để tạo `factor_speed_vector` dựa trên `speed_vector`. Đặt đối số `ordered` là `TRUE` vì có thứ tự tự nhiên, đặt `levels = c("slow", "medium", "fast")`.
 
 `@pre_exercise_code`
 ```{r}
@@ -563,26 +562,26 @@ summary(factor_speed_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = "Không thay đổi bất kỳ điều gì về lệnh chỉ định biến `speed_vector`."
 
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_function("factor") %>% {
-	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
-	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	check_arg(., 'x') %>% check_equal(incorrect_msg="Tham số đầu tiên bạn truyền vào `factor()` nên là `speed_vector`.")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Đảm bảo đặt `ordered = TRUE` trong lời gọi `factor()` của bạn.")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="Đảm bảo đặt `levels = c(\"slow\", \"medium\", \"fast\")` trong lời gọi `factor()` của bạn.")
 	}
 
-ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="Vẫn còn điều gì đó sai với `factor_speed_vector`; đảm bảo chỉ truyền `speed_vector`, `ordered = TRUE` và `levels = c(\"slow\", \"medium\", \"fast\")` trong lời gọi `factor()` của bạn.")
 
                       
                       
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+success_msg("Tuyệt vời! Hãy xem bảng điều khiển. Bây giờ đã chỉ ra rằng các Mức độ thực sự có một thứ tự liên kết, với ký hiệu `<`. Tiếp tục đến bài tập tiếp theo.")
 ```
 
 ---
 
-## Comparing ordered factors
+## So sánh các factor có thứ tự
 
 ```yaml
 type: NormalExercise
@@ -592,18 +591,18 @@ skills:
   - 1
 ```
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+Một hôm, công việc không mấy suôn sẻ, nhà phân tích dữ liệu thứ hai vào văn phòng của bạn, phàn nàn rằng nhà phân tích dữ liệu số năm đang làm chậm cả dự án. Vì bạn biết nhà phân tích dữ liệu số hai này hay tỏ ra biết tuốt nên bạn quyết định phải kiểm tra xem anh ta nói có đúng không.
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+`factor_speed_vector` giờ đã là factor có thứ tự nên chúng ta có thể so sánh các phần tử khác nhau (trong trường hợp này là các nhà phân tích dữ liệu). Chúng ta chỉ cần dùng các toán tử quen thuộc để làm điều này.
 
 `@instructions`
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- Dùng `[2]` để chọn từ `factor_speed_vector` giá trị factor cho nhà phân tích dữ liệu thứ hai. Lưu vào `da2`.
+- Dùng `[5]` để chọn giá trị factor trong `factor_speed_vector` cho nhà phân tích dữ liệu thứ năm. Lưu vào `da5`.
+- Kiểm tra xem `da2` có lớn hơn `da5` không. Nhớ rằng bạn có thể dùng toán tử `>` để kiểm tra liệu một phần tử có lớn hơn phần tử kia hay không.
 
 `@hint`
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- Để chọn giá trị factor của nhà phân tích dữ liệu thứ ba, bạn cần `factor_speed_vector[3]`.
+- Để so sánh hai giá trị, bạn có thể dùng `>`. Ví dụ: `da3 > da4`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "Không thay đổi bất kỳ điều gì về các lệnh định nghĩa `speed_vector` và `factor_speed_vector`!"
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
+msg <- "Bạn đã chọn đúng giá trị nhân tố cho nhà phân tích dữ liệu %s chưa? Bạn có thể sử dụng `factor_speed_vector[%s]`."
+ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"thứ hai", "2"))
 
-ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
+ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("thứ năm", "5"))
 
-ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_output_expr("da2 > da5", missing_msg = "Bạn đã so sánh đúng `da2` và `da5` chưa? Bạn có thể sử dụng `>`. Chỉ cần in ra kết quả.")
 
 
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("Bellissimo! Kết quả cho bạn biết điều gì? Nhà phân tích dữ liệu thứ hai đang phàn nàn về nhà phân tích dữ liệu thứ năm trong khi thực tế họ mới là người làm chậm mọi thứ! Điều này kết thúc chương về các nhân tố. Với nền tảng vững chắc về vector, ma trận và nhân tố, bạn đã sẵn sàng khám phá thế giới tuyệt vời của các khung dữ liệu, một cấu trúc dữ liệu rất quan trọng trong R!")
 ```
