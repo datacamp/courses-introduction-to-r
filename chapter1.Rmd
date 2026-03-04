@@ -1,14 +1,13 @@
 ---
 title_meta: Chapter 1
-title: Intro to basics
+title: 기초 소개
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  R과 함께 첫걸음을 내디뎌 보세요. 이 장에서는 콘솔을 계산기처럼 사용하는 방법과 변수를 할당하는 방법을 배웁니다. 또한 R의 기본 데이터
+  타입도 익히게 됩니다. 시작해 볼까요?
 free_preview: true
 ---
 
-## How it works
+## 작동 방식 알아보기
 
 ```yaml
 type: NormalExercise
@@ -18,18 +17,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+에디터에서 연습 문제를 해결하기 위한 R 코드를 입력하시면 됩니다. 코드를 제출하면, R이 각 줄을 해석해 실행하고 코드가 올바른지 여부를 알려 줘요. R 코드의 출력은 콘솔에 표시됩니다.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R에서는 주석을 달 때 `#` 기호를 사용합니다. 주석을 달면 본인과 다른 사람들이 코드의 의미를 이해하는 데 도움이 돼요. 트위터와 비슷하죠! 주석은 R 코드로 실행되지 않으므로 결과에 영향을 주지 않습니다. 예를 들어, 에디터의 <span translate="no">_Calculate 3 + 4_</span>는 주석입니다.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+또한 콘솔에서 바로 R 명령을 실행할 수도 있어요. 제출물이 정답으로 채점되지 않기 때문에 R 코드를 실험해 보기 좋은 방법입니다.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- 에디터에 샘플 코드가 이미 들어 있어요. 어떤 줄이 실제 R 코드이고 어떤 줄이 주석인지 구분해 보세요.
+- 6과 12의 합을 계산하는 코드를 한 줄 추가하고, 코드를 제출하세요.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+샘플 코드의 예시처럼, 6과 12의 합을 계산하는 R 코드를 한 줄 추가해 보세요!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +56,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "`6 + 12`을 새 줄에 추가했는지 확인하세요. 줄을 `#`로 시작하지 마세요. 그렇지 않으면 R 코드가 실행되지 않습니다!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("훌륭합니다! 제출한 R 코드의 결과가 콘솔에 표시되는 것을 보셨나요? 이제 인터페이스에 익숙해졌으니, R 작업을 시작해 봅시다!")
 ```
 
 ---
 
-## Arithmetic with R
+## R로 하는 산술 연산
 
 ```yaml
 type: NormalExercise
@@ -74,30 +73,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+가장 기본적으로 R은 간단한 계산기처럼 사용할 수 있어요. 다음은 기본 산술 연산자입니다:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- 덧셈: `+`
+- 뺄셈: `-`
+- 곱셈: `*`
+- 나눗셈: `/`
+- 거듭제곱: `^`
+- 모듈로(나머지): `%%`
 
-The last two might need some explaining:
+마지막 두 연산자는 간단히 설명이 필요해요:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- `^` 연산자는 왼쪽 숫자를 오른쪽 숫자의 거듭제곱으로 계산해요. 예를 들어 `3^2`는 9예요.
+- 모듈로는 왼쪽 숫자를 오른쪽 숫자로 나눌 때의 나머지를 반환해요. 예를 들어 5 모듈로 3, 즉 `5 %% 3`의 결과는 2예요.
 
-With this knowledge, follow the instructions to complete the exercise.
+이 내용을 바탕으로 지침을 따라 연습 문제를 완료해 보세요.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- 2의 5제곱을 계산하려면 에디터에 `2^5`를 입력하세요.
+- 28 모듈로 6을 계산하려면 `28 %% 6`을 입력하세요.
+- "**Submit Answer**"를 눌러 제출하고 콘솔의 R 출력 결과를 확인하세요.
+- R 코드에서 주석은 `#` 기호로 표시한다는 점을 확인하세요.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+모듈로 연산자의 또 다른 예: `9 %% 2`의 결과는 `1`이에요.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +147,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "다른 산술 예제를 제거하지 마십시오!"
+ex() %>% check_output_expr("2^5", missing_msg = "지수 예제가 올바르지 않습니다. 새 줄에 `2 ^ 5`를 작성하십시오.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "모듈로 예제에 문제가 있는 것 같습니다. 새 줄에 `28 %% 6`을 작성하십시오.")
+success_msg("훌륭합니다! 다음 연습으로 이동하십시오.")
 ```
 
 ---
 
-## Variable assignment
+## 변수 할당
 
 ```yaml
 type: NormalExercise
@@ -167,21 +166,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+(통계) 프로그래밍의 기본 개념 중 하나는 **변수**입니다.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+변수는 R에서 값(예: 4)이나 객체(예: 함수 설명)를 저장할 수 있게 해 줍니다. 이후에 이 변수의 이름을 사용해, 변수에 저장된 값이나 객체에 쉽게 접근할 수 있어요.
 
-You can assign a value 4 to a variable `my_var` with the command
+다음 명령으로 값 4를 변수 `my_var`에 할당할 수 있습니다.
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+이제 직접 해 보세요. 편집기에서 코드를 완성해 변수 `x`에 값 42가 할당되도록 하세요. 답변을 제출하세요. R에 `x`를 출력하도록 요청하면 값 42가 나타나는 것을 확인할 수 있습니다.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+연습 문제의 예시에서 값 4가 어떻게 `my_var`에 할당되었는지 확인해 보세요. 편집기에서도 똑같이 하되, 이번에는 변수 `x`에 42를 할당하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +207,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "`x` 변수를 정의했는지 확인하세요.")  %>% check_equal(incorrect_msg = "`x`에 올바른 값을 할당했는지 확인하세요.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("잘하셨습니다! R이(가) 할당을 수행할 때 변수의 값을 콘솔에 출력하지 않는다는 것을 알아차리셨나요? `x <- 42`는 아무 출력도 생성하지 않았습니다. 왜냐하면 R은 이 변수를 나중에 사용할 것이라고 가정하기 때문입니다. 그렇지 않다면 처음부터 값을 변수에 저장하지 않았겠죠? 다음 연습으로 진행하세요!")
 ```
 
 ---
 
-## Variable assignment (2)
+## 변수 할당 (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +224,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+사과 다섯 개가 든 과일 바구니가 있다고 가정해 볼게요. 연습 중인 데이터 분석가로서, 사과의 개수를 `my_apples`라는 변수에 저장하려고 합니다.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- 에디터에 다음 코드를 입력하세요: `my_apples <- 5`. 그러면 값 5가 `my_apples`에 할당됩니다.
+- 두 번째 주석 아래에 `my_apples`를 입력하세요. 그러면 `my_apples`의 값이 출력됩니다.
+- 답변을 제출하고 출력 결과를 확인하세요. 숫자 5가 출력되는 것을 볼 수 있어요. 이제 R은 변수 `my_apples`를 값 5와 연결합니다.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+R에서 숫자나 객체를 변수에 저장하려면 할당 연산자 `<-`를 사용하면 됩니다. `=`도 사용할 수 있지만, R 커뮤니티에서는 `<-`가 더 널리 쓰입니다.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +259,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "변수 `my_apples`를 정의했는지 확인하십시오.") %>% check_equal(incorrect_msg = "`my_apples`에 올바른 값을 할당했는지 확인하십시오.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "`my_apples` 변수를 콘솔에 출력하도록 R에게 명시적으로 지시했는지 확인하십시오.")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("훌륭합니다! 다음 연습으로 계속하십시오!")
 ```
 
 ---
 
-## Variable assignment (3)
+## 변수 할당 (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +278,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+맛있는 과일 바구니에는 오렌지가 꼭 필요하죠. 그래서 오렌지 여섯 개를 추가하기로 했어요. 데이터 분석가다운 습관으로, 곧바로 변수 `my_oranges`를 만들고 값 6을 할당해 봅시다. 다음으로, 과일이 모두 몇 개인지 계산하고 싶어요. 값에 의미 있는 이름을 붙였으니, 이제 아래처럼 깔끔하게 작성할 수 있어요:
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- `my_oranges`에 값 6을 할당하세요.
+- 변수 `my_apples`와 `my_oranges`를 더하고, R이 그 결과를 바로 출력하도록 하세요.
+- `my_apples`와 `my_oranges`를 더한 결과를 새 변수 `my_fruit`에 할당하세요.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit`은 `my_apples`와 `my_oranges`의 합이에요. 두 값을 더하려면 `+` 연산자를 쓰고, 그 값을 변수 `my_fruit`에 할당하려면 `<-`를 사용하면 돼요.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +325,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "`my_fruit` 변수를 생성하기 위해 `my_fruit <- my_apples + my_oranges`를 사용하셨나요?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples`에 5를 할당하는 줄을 유지하세요.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges`에 6을 할당하는 줄을 유지하세요.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "`my_apples`와 `my_oranges`를 더한 결과를 출력했는지 확인하세요. 설명의 코드 예시는 이 지시사항에 대한 답을 이미 제공합니다!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("잘하셨습니다! 변수를 사용하여 계산을 수행하는 큰 장점은 재사용성입니다. `my_apples`를 5 대신 12로 변경하고 스크립트를 다시 실행하면 `my_fruit`도 자동으로 업데이트됩니다. 다음 연습으로 계속하세요.")
 ```
 
 ---
 
-## Apples and oranges
+## 사과와 오렌지
 
 ```yaml
 type: NormalExercise
@@ -350,14 +348,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+사과와 오렌지를 더하지 말라는 말이 흔하지만, 방금 그렇게 하셨죠 :-)? 이전 연습 문제에서 `my_apples`와 `my_oranges` 변수에는 모두 숫자가 들어 있었어요. R에서 `+` 연산자는 숫자형 변수에 대해 동작합니다. 만약 정말로 <span translate="no">"apples"</span>와 <span translate="no">"oranges"</span>를 더하려고 해서, 편집기에서 보듯이 `my_oranges` 변수에 텍스트 값을 할당했다면, 숫자형 변수와 문자형 변수를 더한 값을 `my_fruit` 변수에 할당하려는 셈이에요. 이는 불가능합니다.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- 답변을 제출하고 오류 메시지를 확인하세요. 왜 동작하지 않았는지 꼭 이해하시기 바랍니다.
+- 코드를 수정해 R이 오렌지가 6개임을 알 수 있게 하여, 과일 바구니에 과일이 총 11개가 되도록 하세요.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+문자열 값 `"six"`이 아니라 숫자 값 `6`을 `my_oranges` 변수에 할당해야 해요. `"six"`이 문자형임을 표시하기 위해 따옴표를 사용했다는 점에 주의하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +390,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "`my_oranges` 변수를 문자열이 아닌 숫자 값으로 설정하여 이 작업을 수행할 수 있습니다!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples`에 여전히 `5`가 포함되어 있는지 확인하세요.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges`가 `6`과 같은지 확인하세요.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "`my_fruit`의 값이 올바르지 않습니다. `my_apples`와 `my_oranges`의 합인 11이어야 합니다.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "`my_fruit`를 `my_apples`와 `my_oranges` 변수의 합으로 생성했는지 확인하세요.", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "`my_fruit`를 `my_apples`와 `my_oranges` 변수의 합으로 생성했는지 확인하세요.", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "`my_fruit`을 출력하는 줄을 제거하지 마세요.")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("훌륭합니다, 계속해서 좋은 작업을 유지하세요! 다음 연습으로 진행하세요.")
 ```
 
 ---
 
-## Basic data types in R
+## R의 기본 데이터 유형
 
 ```yaml
 type: NormalExercise
@@ -423,27 +419,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R은 여러 데이터 유형을 다룹니다. 시작할 때 알아두면 좋은 기본 유형은 다음과 같습니다.
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- `4.5`와 같은 소수는 **numeric(실수)**라고 합니다.
+- `4`와 같은 정수는 **integer(정수)**라고 합니다. 정수는 numeric의 한 종류이기도 합니다.
+- 불리언 값(`TRUE` 또는 `FALSE`)은 **logical(논리형)**이라고 합니다.
+- 텍스트(문자열) 값은 **character(문자형)**이라고 합니다.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+에디터에서 따옴표로 둘러싼 `"some text"`가 문자열임을 확인해 보세요.
 
 `@instructions`
-Change the value of the:
+다음 변수의 값을 변경하세요.
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- `my_numeric` 변수를 `42`로.
+- `my_character` 변수를 `"universe"`로. 따옴표는 `"universe"`가 문자형임을 나타냅니다.
+- `my_logical` 변수를 `FALSE`로.
 
-Note that R is case sensitive!
+R은 대소문자를 구분합니다!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+에디터에 있는 값을 연습 문제에서 제시한 값으로 바꿔 보세요. 예를 들어,
+`my_numeric <- 42` 는 변수 `my_numeric`에 42를 할당합니다.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +472,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "`my_numeric`의 선언을 올바르게 변경하여 값이 42가 되도록 했는지 확인하십시오.")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "`my_character`를 `\"universe\"`로 올바르게 변경했는지 확인하십시오. 따옴표를 잊지 마세요!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "`my_logical`을 `FALSE`로 올바르게 변경했는지 확인하십시오. `FALSE`의 모든 문자는 대문자여야 합니다!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("훌륭합니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## What's that data type?
+## 데이터 타입이 뭘까요?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +493,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+`5 + "six"`을(를) 더했을 때, 데이터 타입이 맞지 않아 오류가 났던 것 기억하시나요? 변수의 데이터 타입을 미리 확인하면 이런 난감한 상황을 피할 수 있어요. 편집기에 있는 코드처럼 `class()` 함수를 사용하면 됩니다.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+편집기의 코드를 완성하여 `my_character`와 `my_logical`의 클래스도 출력하세요.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+`my_numeric`의 데이터 타입을 출력하는 코드는 이미 있어요. 같은 방식으로 `my_character`와 `my_logical`의 타입도 출력해 보세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +542,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "변수의 선언을 변경하지 마십시오!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "`%1$s`의 데이터 유형을 출력하기 위해 `class(%1$s)`를 포함하셨습니까?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = " `my_numeric`의 유형을 출력하는 코드를 제거하지 마십시오.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("축하합니다! 이 장의 마지막 연습 문제였습니다. 다음 장으로 넘어가 벡터의 세계에 몰입해 보세요!")
 ```

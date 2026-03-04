@@ -1,13 +1,12 @@
 ---
 title_meta: Chapter 6
-title: Lists
+title: 리스트
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  벡터와 달리, 리스트는 서로 다른 타입의 구성 요소를 담을 수 있습니다. 할 일 목록에 다양한 종류의 작업이 섞여 있는 것과 비슷하죠. 이
+  장에서는 이러한 리스트를 생성하고, 이름을 붙이고, 부분 집합을 만드는 방법을 학습합니다.
 ---
 
-## Lists, why would you need them?
+## 리스트, 왜 필요할까요?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +16,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+축하합니다! 이제까지 수업을 통해 다음 개념에 이미 익숙해지셨습니다:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **벡터**(1차원 배열): 숫자, 문자 또는 논리 값을 담을 수 있어요. 벡터의 모든 원소는 같은 데이터 타입입니다.
+- **행렬**(2차원 배열): 숫자, 문자 또는 논리 값을 담을 수 있어요. 행렬의 모든 원소는 같은 데이터 타입입니다.
+- **데이터 프레임**(2차원 객체): 숫자, 문자 또는 논리 값을 담을 수 있어요. 한 열 안에서는 모든 원소의 데이터 타입이 같지만, 열마다 서로 다른 데이터 타입을 가질 수 있습니다.
 
-Pretty sweet for an R newbie, right? ;-)
+R 초보자에게 꽤 근사하죠? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+리스트에 대해 본격적으로 배워 보려면 **답변 제출**을 눌러 주세요!
 
 `@hint`
-Just submit the answer!
+그냥 답변 제출만 하세요!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +47,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("준비, 시작! 다음 연습 문제로 계속하세요.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## 리스트, 왜 필요할까요? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +62,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+R의 **list**는 직장이나 학교에서 쓰는 할 일 목록과 비슷해요. 그 목록의 각 항목은 길이, 성격, 해야 하는 활동의 종류가 제각각일 가능성이 크죠.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+R의 list는 서로 다른 여러 객체를 하나의 이름(즉, 리스트의 이름) 아래에 순서 있게 모을 수 있게 해요. 이 객체들은 행렬, 벡터, 데이터 프레임, 심지어 다른 리스트까지 될 수 있어요. 게다가 이 객체들이 서로 어떤 관련이 있어야 할 필요도 없어요.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+리스트는 일종의 슈퍼 데이터 타입이라고 할 수 있어요. 사실상 어떤 정보든 담을 수 있거든요!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+목록(list) 첫 번째 연습 문제를 시작하려면 답변을 제출하세요.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+답변을 제출해 목록(list) 첫 번째 연습 문제를 시작하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +91,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("좋습니다. 이제 실습을 시작해 봅시다!")
 ```
 
 ---
 
-## Creating a list
+## 리스트 만들기
 
 ```yaml
 type: NormalExercise
@@ -107,19 +106,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+첫 번째 리스트를 만들어 볼까요? 리스트를 생성하려면 `list()` 함수를 사용합니다:
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+list 함수의 인수는 리스트의 구성 요소입니다. 이 구성 요소에는 행렬, 벡터, 다른 리스트 등이 올 수 있어요.
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+`my_vector`, `my_matrix`, `my_df` 변수를 리스트 구성 요소로 담은 `my_list`라는 이름의 리스트를 만드세요.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+쉼표로 구분해 `my_vector`, `my_matrix`, `my_df`를 인수로 넣어 `list()` 함수를 사용하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +157,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "변수 `my_vector`, `my_matrix` 또는 `my_df`의 정의를 제거하거나 변경하지 마십시오!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list`에 올바른 요소가 포함되어 있지 않은 것 같습니다. `list()` 함수에 `my_vector`, `my_matrix` 및 `my_df` 변수를 쉼표로 구분하여 이 순서대로 전달했는지 확인하십시오.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("훌륭합니다! 다음 연습으로 넘어가십시오.")
 ```
 
 ---
 
-## Creating a named list
+## 이름이 있는 리스트 만들기
 
 ```yaml
 type: NormalExercise
@@ -182,16 +181,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+아주 잘하셨어요. 이제 탄력 받으셨네요!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+할 일 목록처럼, 리스트의 각 구성요소가 무엇을 의미하는지 모르는 상황은 피해야 해요. 그래서 구성요소에 이름을 붙여야 합니다:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+이 코드는 `name1`, `name2` 등의 이름을 가진 구성요소로 리스트를 만듭니다. 리스트를 만든 뒤에 이름을 붙이고 싶다면, 벡터에서처럼 `names()` 함수를 사용할 수 있어요. 아래 명령어는 위의 대입과 완전히 동일합니다:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +198,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- 이전 연습 문제의 코드를(에디터에서 확인) 수정해 구성요소에 이름을 추가하세요. `my_vector`에는 `vec`, `my_matrix`에는 `mat`, `my_df`에는 `df`라는 이름을 사용하세요.
+- `my_list`를 출력해 결과를 확인하세요.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+리스트 구성요소에 이름을 붙이는 첫 번째 방법이 가장 간단해요. 이렇게 시작합니다:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+나머지 두 구성요소도 같은 방식으로 추가하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +250,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "변수 `my_vector`, `my_matrix` 또는 `my_df`의 정의를 제거하거나 변경하지 마십시오!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list`에 올바른 요소가 포함되어 있지 않은 것 같습니다.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`my_list`에 구성 요소의 올바른 이름이 포함되어 있지 않은 것 같습니다. 이름 `vec`, `mat`, `df`를 각각 사용했는지 확인하십시오. 어려움을 겪고 있다면 힌트를 확인하세요.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "`my_list`를 콘솔에 출력하는 것을 잊지 마십시오! 편집기의 새 줄에 `my_list`를 추가하기만 하면 됩니다.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("훌륭합니다! 이제 리스트를 구성하는 방법뿐만 아니라 이름을 지정하는 방법도 알게 되었습니다. 이는 실무에서 매우 유용한 기술이 될 것입니다. 다음 연습으로 계속하세요.")
 ```
 
 ---
 
-## Creating a named list (2)
+## 이름이 있는 리스트 만들기 (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +278,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+당신은 영화 덕후예요(루카스필름에서 일했던 거 기억하시죠). 이제 좋은 영화 정보를 리스트로 저장해 보려고 합니다.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+우선 영화 "The Shining"에 대한 리스트를 만들어 보세요. R 작업 공간에 이미 `mov`, `act`, `rev` 변수가 준비되어 있습니다. 콘솔에서 확인해 보셔도 좋아요.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+에디터의 코드를 완성해 `shining_list`를 만드세요. 이 리스트에는 다음 세 요소가 포함됩니다:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: 영화 제목이 들어 있는 문자형 문자열(`mov`에 저장됨)
+- `actors`: 주연 배우 이름이 들어 있는 벡터(`act`에 저장됨)
+- `reviews`: 일부 리뷰가 들어 있는 데이터 프레임(`rev`에 저장됨)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+리스트 구성 요소의 이름을 반드시 지정해 주세요(이름은 `moviename`, `actors`, `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` 만으로는 충분하지 않아요. 여기에 `act`와 `rev`도 각각 알맞은 이름으로 리스트에 추가해 주세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +323,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "미리 설정된 변수의 정의를 제거하거나 변경하지 마십시오!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "`shining_list`에 올바른 요소가 포함되어 있지 않은 것 같습니다: 첫 번째 요소는 `mov`, 두 번째 요소는 `act`, 세 번째 요소는 `rev`여야 합니다.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`shining_list`에 구성 요소의 올바른 이름이 포함되어 있지 않은 것 같습니다: 첫 번째 요소의 이름은 `moviename`, 두 번째 요소는 `actors`, 세 번째 요소는 `reviews`로 지정하십시오.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("훌륭합니다! 이제 리스트를 구성하고 이름을 지정하는 방법을 알게 되었습니다. 이전 장에서처럼 리스트의 요소를 선택하는 방법을 살펴보겠습니다. 다음 연습으로 이동하십시오.")
 ```
 
 ---
 
-## Selecting elements from a list
+## 리스트에서 원소 선택하기
 
 ```yaml
 type: NormalExercise
@@ -350,32 +349,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+리스트는 보통 여러 개의 요소와 구성 요소로 만들어져요. 그래서 리스트에서 단일 원소, 여러 원소, 또는 구성 요소 하나를 꺼내는 일이 항상 간단하지만은 않아요.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+구성 요소를 선택하는 한 가지 방법은 그 구성 요소의 번호 위치를 이용하는 거예요. 예를 들어 `shining_list`의 첫 번째 구성 요소를 "가져오려면" 다음과 같이 입력해요.
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+콘솔에 바로 입력해 확인해 보세요. 중요한 점: 벡터에서 원소를 선택할 때는 대괄호 하나(`[ ]`)를 사용해요. 헷갈리지 않도록 주의하세요!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+구성 요소의 이름을 이용해 `[[ ]]`나 `$` 기호로 참조할 수도 있어요. 두 방법 모두 리뷰를 나타내는 데이터 프레임을 선택해요:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+구성 요소 자체를 선택하는 것 외에도, 그 구성 요소 안의 특정 원소를 선택해야 할 때가 많아요. 예를 들어 `shining_list[[2]][1]`은 두 번째 구성 요소인 `actors`(`shining_list[[2]]`)에서 첫 번째 원소(`[1]`)를 선택해요. 콘솔에 입력해 보면 결과가 Jack Nicholson인 것을 확인할 수 있어요.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- `shining_list`에서 배우를 나타내는 벡터를 선택하세요. 이 벡터를 그대로 출력하세요.
+- `shining_list`에서 배우 벡터의 두 번째 원소를 선택하세요. 앞과 같이 출력하세요.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- 배우를 나타내는 벡터를 선택하려면 `$actors`를 사용하면 돼요.
+- 배우 벡터의 세 번째 원소를 선택하는 코드는 `shining_list$actors[3]`예요. 두 번째 원소를 선택하려면 무엇을 바꿔야 할까요?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +404,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "워크스페이스에 미리 로드된 `shining_list`의 정의를 제거하거나 변경하지 마십시오!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "배우를 나타내는 벡터를 올바르게 선택하고 출력했는지 확인하십시오. 예를 들어 `shining_list$actors`를 사용할 수 있습니다.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "배우를 나타내는 벡터에서 두 번째 배우를 선택하려면 선택을 연결해야 합니다: `shining_list$actors`는 배우를 나타내므로 `[2]`를 추가하여 두 번째 요소를 선택할 수 있습니다.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("훌륭합니다! 리스트에서 요소를 선택하는 것은 꽤 쉽지 않습니까? 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## 다른 영화에 대한 새 리스트 만들기
 
 ```yaml
 type: NormalExercise
@@ -425,7 +424,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Jack Nicholson의 더 최근 영화인 The Departed에 대한 리뷰를 찾았어요!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +434,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+영화와 관련된 제목, 배우, 리뷰 같은 정보를 하나의 변수로 모아두면 유용해요. 이 정보들은 형태가 서로 다르므로, 리스트 변수로 묶는 것이 자연스러워요.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+영화 제목이 들어 있는 `movie_title`과, 영화에 출연한 일부 배우 이름이 들어 있는 `movie_actors`가 작업 공간에 준비되어 있어요.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- 표의 리뷰 정보를 담은 두 개의 벡터 `scores`와 `comments`를 만드세요.
+- `scores` 벡터의 평균을 구해 `avg_review`로 저장하세요. 
+- `scores`와 `comments` 벡터를 결합해 `reviews_df`라는 데이터 프레임을 만드세요. 
+- `movie_title`, `movie_actors`, 리뷰 데이터 프레임 `reviews_df`, 평균 리뷰 점수 `avg_review`를 담은 리스트 `departed_list`를 만들고 출력하세요.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- 벡터를 만들 때는 `c()` 함수를 사용해요. 
+- 어떤 벡터의 평균을 구하려면 그 벡터 이름을 `mean()` 함수에 전달하세요. 
+- `data.frame()` 함수를 사용해 `reviews_df` 데이터 프레임을 만드세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +491,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "미리 로드된 객체를 변경하거나 제거하지 마십시오."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "정확하게 `scores` 벡터를 생성하셨나요?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "정확하게 `comments` 벡터를 생성하셨나요?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "정확하게 `avg_review` 객체를 생성하셨나요?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "정확하게 `reviews_df`를 생성하셨나요?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "정확하게 `departed_list`를 생성하셨나요?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +517,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "`departed_list`를 출력하셨나요?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("잘하셨습니다! 영화 정보의 또 다른 목록을 성공적으로 생성하고, 다양한 구성 요소를 단일 목록으로 결합하셨습니다. 과정을 마치신 것을 축하드립니다!")
 ```

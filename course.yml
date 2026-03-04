@@ -1,23 +1,18 @@
 datasets:
   Introduction to R.pdf: Course Glossary
 description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
+  이 R 입문 과정에서는 벡터, 팩터, 리스트, 데이터 프레임 등 널리 쓰이는 오픈 소스 언어 R의 기본기를 익히게 됩니다. 이 코스에서 익힌
+  코딩 실력으로 R에서 스스로 데이터 분석을 시작할 수 있어요. 전 세계 수백만 명이 R을 사용하며, 통계와 데이터 사이언스 분야의 대표적인
+  프로그래밍 언어로 자리 잡았습니다. DataCamp에서 가장 인기 있는 코스 중 하나로 지금 코딩 여정을 시작해 보세요!
 
 
-  The course glossary can be found on the right in the resources section.
+  코스 용어집은 오른쪽 리소스 섹션에서 확인하실 수 있어요.
 
-  To obtain CPE credits you need to complete the course and reach a score of 70%
-  on the qualified assessment. You can navigate to the assessment by clicking on
-  the CPE credits callout on the right.
-from: 'r-base-prod:v3.0.0'
+  CPE 학점을 받으려면 코스를 완료하고 인증 평가에서 70% 이상을 취득해야 합니다. 오른쪽의 CPE 학점 안내를 클릭하면 평가로 이동할 수
+  있어요.
+from: r-base-prod:v3.0.0
 id: 58
 practice_pool_id: 106
 programming_language: r
 runtime_config: minimal
-title: Introduction to R
+title: R 입문

@@ -1,15 +1,12 @@
 ---
 title_meta: Chapter 3
-title: Matrices
+title: 행렬
 description: >-
-  In this chapter, you will learn how to work with matrices in R. By the end of
-  the chapter, you will be able to create matrices and understand how to do
-  basic computations with them. You will analyze the box office numbers of the
-  Star Wars movies and learn how to use matrices in R. May the force be with
-  you!
+  이 장에서는 R에서 행렬을 다루는 방법을 배웁니다. 장이 끝날 때쯤이면 행렬을 생성하고 기본 연산을 수행하는 방법을 이해하게 됩니다.
+  스타워즈 영화의 박스오피스 수치를 분석하면서 R에서 행렬을 활용하는 방법을 익혀 보세요. 포스가 함께하길!
 ---
 
-## What's a matrix?
+## 행렬이란 무엇인가요?
 
 ```yaml
 type: NormalExercise
@@ -19,25 +16,25 @@ skills:
   - 1
 ```
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+R에서 행렬(matrix)은 같은 자료형(숫자형, 문자형, 논리형)의 원소들을 일정한 행과 열에 배치한 구조입니다. 행과 열만 다루므로 행렬은 2차원 구조라고 해요.
 
-You can construct a matrix in R with the `matrix()` function. Consider the following example:
+R에서는 `matrix()` 함수를 사용해 행렬을 만들 수 있습니다. 다음 예를 보세요:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the `matrix()` function:
+`matrix()` 함수에서:
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- 첫 번째 인자는 R이 행렬의 행과 열에 배치할 원소들의 집합입니다. 여기서는 `1:9`를 사용했는데, 이는 `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`의 축약형이에요.
+- `byrow` 인자는 행 단위로 값을 채울지를 나타냅니다. 열 단위로 채우려면 `byrow = FALSE`로 설정하면 됩니다.
+- 세 번째 인자인 `nrow`는 행렬의 행 개수가 3이어야 함을 나타냅니다.
 
 `@instructions`
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+1부터 9까지의 숫자를 행 단위로 채워 넣은, 행이 3개인 행렬을 만드세요.
 
 `@hint`
-Read the assignment carefully, the answer is already given!
+지시문을 주의 깊게 읽어 보세요. 정답이 이미 나와 있어요!
 
 `@pre_exercise_code`
 ```{r}
@@ -58,19 +55,19 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 `@sct`
 ```{r}
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "행렬을 올바르게 생성하셨나요? 과제를 확인해 보세요. 답이 이미 주어져 있습니다!")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "행렬을 올바르게 생성하셨나요? 과제를 확인해 보세요. 답이 이미 주어져 있습니다!")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "행렬을 올바르게 생성하셨나요? 과제를 확인해 보세요. 답이 이미 주어져 있습니다!")
 	}
 
-ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "행렬 정의에 문제가 있는 것 같습니다. 과제를 확인해 보세요. 답이 이미 주어져 있습니다!")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("훌륭합니다! 다음 연습으로 계속하세요.")
 ```
 
 ---
 
-## Analyze matrices, you shall
+## 행렬을 분석해 보아요
 
 ```yaml
 type: NormalExercise
@@ -80,19 +77,19 @@ skills:
   - 1
 ```
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+이제 직접 손을 움직여 볼 차례입니다. 다음 연습 문제에서는 Star Wars 시리즈의 박스오피스 성적을 분석해 보겠습니다. May the force be with you!
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+에디터에는 세 개의 벡터가 정의되어 있습니다. 각 벡터는 초기 Star Wars 영화 세 편의 박스오피스 수치를 나타냅니다. 각 벡터의 첫 번째 원소는 미국(US) 박스오피스 수익을, 두 번째 원소는 미국 외(Non-US) 박스오피스를 의미합니다(출처: Wikipedia).
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+이 연습에서는 우선 이 수치들을 하나의 벡터로 합칩니다. 다음으로, 이 벡터로부터 행렬을 만들어 보겠습니다.
 
 `@instructions`
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to do this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- `c(new_hope, empire_strikes, return_jedi)`를 사용해 세 벡터를 하나의 벡터로 합치세요. 이 벡터의 이름은 `box_office`로 하세요.
+- 각 행이 한 영화를 나타내도록, 행이 3개인 행렬을 구성하세요. 이를 위해 `matrix()` 함수를 사용합니다. 첫 번째 인자는 모든 박스오피스 수치를 담은 벡터 `box_office`입니다. 그런 다음 `nrow = 3`와 `byrow = TRUE`를 지정하세요. 결과로 만들어지는 행렬의 이름은 `star_wars_matrix`로 하세요.
 
 `@hint`
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., byrow =  ...)` is a template for the solution to the second instruction.
+- `box_office <- c(new_hope, empire_strikes, return_jedi)`를 사용하면 서로 다른 벡터의 모든 숫자를 하나로 합쳐 6개의 원소를 가진 단일 벡터가 됩니다.
+- `matrix(box_office, nrow = ..., byrow =  ...)`는 두 번째 지침에 대한 해법의 템플릿입니다.
 
 `@pre_exercise_code`
 ```{r}
@@ -129,7 +126,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "박스 오피스 변수 `new_hope`, `empire_strikes`, `return_jedi`에 대해 아무것도 변경하지 마십시오!"
 
 ex() %>% check_object("new_hope", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -137,23 +134,22 @@ ex() %>% check_object("empire_strikes", undefined_msg = msg) %>% check_equal(inc
 
 ex() %>% check_object("return_jedi", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "`new_hope`, `empire_strikes`, `return_jedi`의 값을 벡터 `box_office`로 올바르게 결합하셨습니까?")
 
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "`matrix()`에 전달하는 인수를 올바르게 지정했는지 확인하십시오: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "`matrix()`에 전달하는 인수를 올바르게 지정했는지 확인하십시오: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "`matrix()`에 전달하는 인수를 올바르게 지정했는지 확인하십시오: `box_office`, `nrow = 3`, `by_row = TRUE`.")
 	}
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "`matrix()` 호출 결과를 `star_wars_matrix`에 할당하셨습니까?")
 
-
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("포스가 당신과 함께합니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Naming a matrix
+## 행렬에 이름 붙이기
 
 ```yaml
 type: NormalExercise
@@ -163,24 +159,24 @@ skills:
   - 1
 ```
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
+`star_wars_matrix`에 무엇이 저장되어 있는지 기억하기 쉽도록, 각 행에 영화 제목을 추가하려고 해요. 이렇게 하면 데이터를 읽기 쉬울 뿐 아니라, 행렬에서 특정 요소를 선택할 때도 유용합니다.
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+벡터와 마찬가지로, 행렬의 행과 열에 이름을 지정할 수 있어요.
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+두 개의 벡터 `region`과 `titles`는 미리 준비되어 있습니다. 각각 이 벡터들을 사용해 `star_wars_matrix`의 열과 행 이름을 지정하세요.
 
 `@instructions`
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- `colnames()`를 사용해 `region` 벡터로 `star_wars_matrix`의 열 이름을 지정하세요.
+- `rownames()`를 사용해 `titles` 벡터로 `star_wars_matrix`의 행 이름을 지정하세요.
+- 작업 결과를 확인할 수 있도록 `star_wars_matrix`를 출력하세요.
 
 `@hint`
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+`colnames(star_wars_matrix) <- region`을 사용하면 `star_wars_matrix`의 열 이름을 지정할 수 있어요. 비슷한 방식으로 행 이름도 지정해 보세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -236,7 +232,7 @@ star_wars_matrix
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "박스 오피스 변수 `new_hope`, `empire_strikes` 및 `return_jedi`에 대해 아무것도 변경하지 마십시오!"
 
 ex()  %>% check_object("new_hope", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
@@ -244,25 +240,25 @@ ex()  %>% check_object("empire_strikes", undefined_msg = msg)  %>% check_equal(i
 
 ex()  %>% check_object("return_jedi", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+msg <- "`star_wars_matrix`의 내용은 변경하지 마십시오; 행과 열의 이름만 변경하십시오!"
 
 ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- "정의된 `region` 및 `titles` 벡터에 대해 아무것도 변경하지 마십시오."
 
 ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "`star_wars_matrix`의 행과 열 이름을 올바르게 설정했습니까? 열 이름에는 `colnames(star_wars_matrix) <- region`을 사용하십시오; 행 이름을 지정하기 위해 유사한 작업을 수행하십시오.")
 
-ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+ex() %>% check_output_expr("star_wars_matrix", missing_msg = "행과 열의 이름을 지정한 후 `star_wars_matrix`를 출력하는 것을 잊지 마십시오.")
 
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+success_msg("훌륭합니다! R 제다이가 되는 길에 있습니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Calculating the worldwide box office
+## 전 세계 박스 오피스 계산하기
 
 ```yaml
 type: NormalExercise
@@ -272,21 +268,21 @@ skills:
   - 1
 ```
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+할리우드에서 한순간에 전설이 되는 영화의 가장 중요한 요소는 전 세계 박스 오피스 수치예요.
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+세 편의 Star Wars 영화에 대한 총 박스 오피스 수익을 계산하려면, US 수익 열과 비(非)US 수익 열의 합을 구해야 해요.
 
-In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+R에서는 `rowSums()` 함수가 행렬의 각 행에 대한 합계를 편리하게 계산해 줍니다. 이 함수는 새로운 벡터를 만듭니다:
 
 ```
 rowSums(my_matrix)
 ```
 
 `@instructions`
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+세 영화의 전 세계 박스 오피스 수치를 계산해 `worldwide_vector`라는 벡터에 저장하세요.
 
 `@hint`
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+`rowSums(star_wars_matrix)`는 각 행의 합계를 계산하므로, 각 영화의 전 세계 박스 오피스 총액을 구할 수 있어요.
 
 `@pre_exercise_code`
 ```{r}
@@ -329,20 +325,20 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "사전 설정된 변수 `box_office_all` 및 `star_wars_marix`에 대해 아무것도 변경하지 마십시오!"
 
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "`rowSums()`를 `star_wars_matrix`에 호출하고 결과를 `worldwide_vector`에 저장하십시오.")
 
-success_msg("Well done! Continue to the next exercise.")
+success_msg("잘하셨습니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Adding a column for the Worldwide box office
+## 전 세계 박스오피스 열 추가하기
 
 ```yaml
 type: NormalExercise
@@ -352,19 +348,19 @@ skills:
   - 1
 ```
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+이전 연습 문제에서 세 편의 Star Wars 영화 각각의 전 세계 박스오피스 수익을 담은 벡터를 계산하셨습니다. 하지만 이 벡터는 아직 `star_wars_matrix`의 일부가 아니에요.
 
-You can add a column or multiple columns to a matrix with the `cbind()` function, which merges matrices and/or vectors together by column. For example: 
+`cbind()` 함수를 사용하면 행렬에 하나 이상의 열을 추가할 수 있어요. 이 함수는 행렬과/또는 벡터를 열 기준으로 합쳐 줍니다. 예를 들어:
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 `@instructions`
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the `cbind()` function.
+`worldwide_vector`를 `star_wars_matrix`의 새 열로 추가하고, 결과를 `all_wars_matrix`에 할당하세요. `cbind()` 함수를 사용하세요.
 
 `@hint`
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+이번 연습 문제에서는 `cbind()`에 두 변수를 이 순서대로 전달해야 해요: `star_wars_matrix`, `worldwide_vector`. 결과를 `all_wars_matrix`에 할당하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -413,24 +409,22 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "사전 설정된 변수 `box_office_all` 및 `star_wars_marix`에 대해 아무것도 변경하지 마십시오!"
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "`rowSums(star_wars_matrix)`의 결과를 `worldwide_vector`에 저장하십시오.")
 
-
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+msg <- "`cbind()`를 사용하여 `worldwide_vector`를 `star_wars_matrix`에 올바르게 추가했습니까? `cbind()`에 `star_wars_matrix`와 `world_wide_vector`를 이 순서로 전달해야 합니다. 결과 행렬 `all_wars_matrix`는 세 개의 행과 세 개의 열로 구성되어야 합니다."
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("잘하셨습니다! 행렬에 열을 추가한 후에는 논리적으로 다음 단계는 행을 추가하는 것입니다. 다음 연습에서 배우십시오.");
 ```
 
 ---
 
-## Adding a row
+## 행 추가하기
 
 ```yaml
 type: NormalExercise
@@ -440,24 +434,24 @@ skills:
   - 1
 ```
 
-Just like every action has a reaction, every `cbind()` has an `rbind()`. (We admit, we are pretty bad with metaphors.) 
+모든 작용에 반작용이 있듯, `cbind()`가 있으면 `rbind()`도 있어요. (비유가 썩 좋진 않다는 건 인정합니다.)
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
+여러분이 정의한 변수들이 '존재'하는 R 작업 공간([작업 공간이 무엇인지 확인해 보세요](http://www.statmethods.net/interface/workspace.html))은 이미 초기화되어 있으며, 두 개의 행렬을 포함하고 있어요:
 
-- `star_wars_matrix` that we have used all along, with data on the original trilogy,
-- `star_wars_matrix2`, with similar data for the prequels trilogy. 
+- 오리지널 3부작 데이터를 담고 그동안 계속 사용해 온 `star_wars_matrix`,
+- 프리퀄 3부작에 대한 유사한 데이터를 담은 `star_wars_matrix2`.
 
-Explore these matrices in the console if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+더 자세히 보려면 콘솔에서 이 행렬들을 직접 살펴보세요. 작업 공간의 내용을 확인하려면 콘솔에 `ls()`를 입력하면 됩니다.
 
 `@instructions`
-Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
+`rbind()`를 사용해 `star_wars_matrix`와 `star_wars_matrix2`를 이 순서로 이어 붙이세요. 결과 행렬을 `all_wars_matrix`에 할당하세요.
 
 `@hint`
-Bind the two matrices together like this:
+두 행렬을 다음과 같이 붙이세요:
 ```
 rbind(matrix1, matrix2)
 ```
-Assign the result to `all_wars_matrix`.
+결과를 `all_wars_matrix`에 할당하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -502,20 +496,19 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 `@sct`
 ```{r}
-msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+msg = "워크스페이스에 정의된 변수(`star_wars_matrix` 및 `star_wars_matrix2`)를 재정의하지 마십시오."
 ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "`rbind()`를 사용하여 `all_wars_matrix()`를 올바르게 생성하셨습니까? `rbind()`는 두 개의 인수를 가져야 합니다: `star_wars_matrix` 및 `star_wars_matrix2`, 이 순서로."
 
-
-success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+success_msg("멋집니다! 다음 연습을 계속 진행하여 `rbind()` 함수의 결과를 `colSums()` 함수와 어떻게 결합할 수 있는지 확인해 보세요!")
 ```
 
 ---
 
-## The total box office revenue for the entire saga
+## 전 시리즈의 총 박스 오피스 수익
 
 ```yaml
 type: NormalExercise
@@ -525,14 +518,14 @@ skills:
   - 1
 ```
 
-Just like `cbind()` has  `rbind()`, `colSums()` has `rowSums()`. Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+`cbind()`에 `rbind()`가 있듯이, `colSums()`에는 `rowSums()`가 있어요. 이전 연습 문제에서 만들었던 `all_wars_matrix`가 이미 작업 공간에 있습니다. 다시 보려면 `all_wars_matrix`를 입력해 보세요. 이제 전 시리즈의 총 박스 오피스 수익을 계산해 봅시다.
 
 `@instructions`
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()`function.
-- Print out `total_revenue_vector` to have a look at the results.
+- 미국 지역과 비(非)미국 지역의 총수익을 계산해 `total_revenue_vector`에 할당하세요. `colSums()` 함수를 사용할 수 있어요.
+- 결과를 확인하려면 `total_revenue_vector`를 출력하세요.
 
 `@hint`
-You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
+지역별 총 박스 오피스를 구하려면 `colSums()` 함수에 `star_wars_matrix`를 인수로 사용하면 됩니다.
 
 `@pre_exercise_code`
 ```{r}
@@ -564,21 +557,21 @@ total_revenue_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+msg = "`all_wars_matrix`의 내용을 변경하지 마십시오. 작업 공간에 이미 생성되어 있습니다."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "`colSums()` 함수를 `all_wars_matrix`에 사용하셨습니까?")
 
-ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "`colSums(all_wars_matrix)`의 결과를 `total_revenue_vector`에 올바르게 할당하셨습니까?")
 
-ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Don't forget to print out `total_revenue_vector`!")
+ex() %>% check_output_expr("total_revenue_vector", missing_msg = "`total_revenue_vector`를 출력하는 것을 잊지 마십시오!")
 
-success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
+success_msg("아주 좋습니다! 다음 연습으로 넘어가서 행렬 서브셋팅을 배우십시오.")
 ```
 
 ---
 
-## Selection of matrix elements
+## 행렬 원소 선택
 
 ```yaml
 type: NormalExercise
@@ -588,26 +581,26 @@ skills:
   - 1
 ```
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns. For example: 
+벡터와 마찬가지로, 대괄호 `[ ]`를 사용해 행렬에서 하나 이상의 원소를 선택할 수 있어요. 벡터는 1차원이지만, 행렬은 2차원이므로 선택하려는 행과 열을 쉼표로 구분해야 합니다. 예를 들어:
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+- `my_matrix[1,2]`는 1행 2열의 원소를 선택합니다.
+- `my_matrix[1:3,2:4]`는 1, 2, 3행과 2, 3, 4열의 데이터를 가진 행렬을 반환합니다.
 
-If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
+특정 행 또는 열의 모든 원소를 선택하려면, 각각 쉼표 앞 또는 뒤에 숫자를 쓰지 않습니다:
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[,1]`는 첫 번째 열의 모든 원소를 선택합니다.
+- `my_matrix[1,]`는 첫 번째 행의 모든 원소를 선택합니다.
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+이제 새로 배운 내용을 가지고 Star Wars 예제로 돌아가 봅시다! 이전 연습 문제와 마찬가지로, `all_wars_matrix`는 이미 작업 공간에 준비되어 있습니다.
 
 `@instructions`
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
-- This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
-- Use `mean()` again to print out the average of the values in `non_us_some`.
+- 모든 영화의 미국 외 수익(즉, `all_wars_matrix`의 두 번째 전체 열)을 선택해 `non_us_all`로 저장하세요.
+- `non_us_all`에 `mean()`을 사용해 모든 영화의 미국 외 평균 수익을 계산하고, 결과를 바로 출력하세요.
+- 이번에는 `all_wars_matrix`에서 처음 두 영화의 미국 외 수익만 선택하세요. 결과를 `non_us_some`으로 저장합니다.
+- 다시 `mean()`을 사용해 `non_us_some`의 평균 값을 출력하세요.
 
 `@hint`
-You can select the entire second column of a matrix `my_matrix` with `my_matrix[,2]`.
+행렬 `my_matrix`의 두 번째 전체 열을 선택하려면 `my_matrix[,2]`를 사용하면 됩니다.
 
 `@pre_exercise_code`
 ```{r}
@@ -652,24 +645,24 @@ mean(non_us_some)
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "`all_wars_matrix`의 내용을 변경하지 마십시오. 이 행렬은 이미 작업 공간에 생성되어 있습니다."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "`non_us_all`에 `all_wars_matrix`의 두 번째 열 전체를 할당하셨습니까? 이를 위해 `[, 2]`를 사용할 수 있습니다!")
 
-ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "`mean(non_us_all)`을 호출하여 `non_us_all`의 값의 평균을 계산하셨습니까? 결과를 단순히 출력하십시오.")
 
-ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "`non_us_some`에 첫 두 영화의 비미국 수익을 할당하셨습니까? 이를 위해 `[1:2,2]`를 사용할 수 있습니다!")
 
-ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "`mean(non_us_some)`을 호출하여 `non_us_some`의 값의 평균을 계산하셨습니까? 결과를 단순히 출력하십시오.")
 
-success_msg("Nice one! Continue to the next exercise.")
+success_msg("잘하셨습니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## A little arithmetic with matrices
+## 행렬로 하는 간단한 산술 연산
 
 ```yaml
 type: NormalExercise
@@ -679,18 +672,18 @@ skills:
   - 1
 ```
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+벡터에서 배운 것과 마찬가지로, R의 행렬에도 `+`, `-`, `/`, `*` 등의 표준 연산자가 원소별(element-wise)로 적용돼요.
 
-For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
+예를 들어, `2 * my_matrix`는 `my_matrix`의 각 원소에 2를 곱합니다.
 
-As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+여러분은 이제 Lucasfilm의 신입 데이터 분석가예요. 각 지역별로 각 영화에 몇 명이 방문했는지 알아내야 합니다. 총수입 정보는 이미 `all_wars_matrix`에 있어요. 영화표 가격이 5달러라고 가정하세요. 박스오피스 수입을 이 티켓 가격으로 나누면 방문객 수를 구할 수 있습니다.
 
 `@instructions`
-- Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
-- Print out `visitors` so you can have a look.
+- `all_wars_matrix`를 5로 나눠, 방문객 수(단위: 백만 명)를 구하세요. 결과 행렬을 `visitors`에 할당하세요.
+- 확인을 위해 `visitors`를 출력하세요.
 
 `@hint`
-The number of visitors is equal to `all_wars_matrix` divided by 5.
+방문객 수는 `all_wars_matrix`를 5로 나눈 값과 같아요.
 
 `@pre_exercise_code`
 ```{r}
@@ -723,21 +716,20 @@ visitors
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "`all_wars_matrix`의 내용을 변경하지 마십시오. 이 행렬은 이미 작업 공간에 생성되어 있습니다."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "`visitors`가 올바르지 않은 것 같습니다. `all_wars_matrix`를 5로 나누고 결과 행렬을 `visitors`로 저장하십시오.")
 
-ex() %>% check_output_expr("visitors", missing_msg = "Don't forget to also print out `visitors` so you can have a look.")
+ex() %>% check_output_expr("visitors", missing_msg = "`visitors`를 출력하여 확인하는 것을 잊지 마십시오.")
 
-
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+success_msg("훌륭합니다! 이 결과가 무엇을 말해주나요? 무려 9,200만 명이 미국 극장에서 A New Hope를 보았습니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## A little arithmetic with matrices (2)
+## 행렬로 간단한 계산 (2)
 
 ```yaml
 type: NormalExercise
@@ -747,20 +739,20 @@ skills:
   - 1
 ```
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+`2 * my_matrix`가 `my_matrix`의 모든 원소에 2를 곱했던 것처럼, `my_matrix1 * my_matrix2`는 `my_matrix1`과 `my_matrix2`에서 같은 위치의 원소끼리 곱한 결과로 이루어진 행렬을 만들어요.
 
-After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+이전 연습 문제의 결과를 본 큰손 루카스가 시간이 지나며 티켓 가격이 올랐다고 지적하네요. 그는 상상 속 자료인 `ticket_prices_matrix`에 있는 가격을 바탕으로 다시 분석해 달라고 요청했습니다.
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_행렬에 익숙하신 분을 위해 덧붙이면, 이것은 표준 행렬 곱셈이 아닙니다. R에서 표준 행렬 곱셈은 `%*%`를 사용하세요._
 
 `@instructions`
-- Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
-- From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- `all_wars_matrix`를 `ticket_prices_matrix`로 나눠, 여섯 편 영화의 미국 및 비(非)미국 방문자 추정치를 구하세요. 결과를 `visitors`에 할당하세요.
+- `visitors` 행렬에서 미국 방문자 수를 나타내는 첫 번째 열 전체를 선택해 `us_visitors`로 저장하세요.
+- 미국 방문자 수의 평균을 계산해 결과를 출력하세요.
 
 `@hint`
-- You can use the function `mean()` to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- 함수 `mean()`을 사용하면 함수의 입력값 평균을 계산할 수 있어요.
+- 미국 방문자 수를 얻으려면 `visitors[ ,1]`처럼 `visitors`에서 첫 번째 열을 선택하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -804,17 +796,16 @@ mean(us_visitors)
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg <- "`all_wars_matrix`의 내용을 변경하지 마십시오. 이 행렬은 이미 작업 공간에 생성되어 있습니다."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "`visitors` 행렬을 올바르게 생성하셨습니까? `all_wars_matrix`를 `ticket_prices_matrix`로 나누어야 합니다.")
 
-ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "`us_visitors`를 생성하려면 `visitors`의 첫 번째 열 전체를 올바르게 선택해야 합니다. 이를 위해 `[,1]`을 사용할 수 있습니다!")
 
-ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "`us_visitors`를 생성한 후에는 `mean()`을 사용하여 미국 방문자의 평균 수를 계산할 수 있습니다. 결과를 출력하는 것을 잊지 마십시오.")
 
-
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("사실입니다: R의 힘이 당신과 함께합니다! 이 연습은 행렬에 대한 장을 마무리합니다. R 언어 여행의 다음 목적지: 요인입니다.")
 ```

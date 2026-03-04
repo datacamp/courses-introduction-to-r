@@ -1,15 +1,13 @@
 ---
 title_meta: Chapter 4
-title: Factors
+title: 팩터
 description: >-
-  Data often falls into a limited number of categories. For example, human hair
-  color can be categorized as black, brown, blond, red, grey, or white—and
-  perhaps a few more options for people who color their hair. In R, categorical
-  data is stored in factors. Factors are very important in data analysis, so
-  start learning how to create, subset, and compare them now.
+  데이터는 종종 제한된 몇 가지 범주로 나뉩니다. 예를 들어 사람의 머리카락 색은 검정, 갈색, 금발, 빨강, 회색, 흰색 등으로 구분할 수
+  있고, 염색에 따라 더 많은 선택지도 있겠죠. R에서는 이런 범주형 데이터를 팩터로 저장합니다. 팩터는 데이터 분석에서 매우 중요하니,
+  지금부터 팩터를 생성하고, 부분 집합을 만들고, 비교하는 방법을 배워 보세요.
 ---
 
-## What's a factor and why would you use it?
+## 요인은 무엇이며, 왜 사용할까요?
 
 ```yaml
 type: NormalExercise
@@ -19,19 +17,19 @@ skills:
   - 1
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+이번 장에서는 **요인(factor)** 의 세계를 살펴봅니다.
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+factor는 범주형 변수를 저장하는 통계 데이터 유형을 뜻합니다. 범주형 변수와 연속형 변수의 차이는, 범주형 변수는 **제한된 개수의 범주**에 속한다는 점입니다. 반면 연속형 변수는 이론적으로 무한한 값에 대응할 수 있습니다.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+R이 어떤 변수가 연속형인지 범주형인지 아는 것은 매우 중요합니다. 앞으로 만들 통계 모델에서 두 변수를 다루는 방식이 다르기 때문입니다. (왜 그런지는 뒤에서 확인하게 됩니다.)
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
+범주형 변수의 좋은 예는 성별입니다. 많은 경우 성별 범주는 "Male" 또는 "Female"로 제한할 수 있습니다. (상황에 따라 다른 범주가 필요할 수도 있습니다. 예를 들어 염색체 변이, 자웅동체 동물, 문화적 규범 등을 고려해야 할 수 있지만, 언제나 범주의 수는 유한합니다.)
 
 `@instructions`
-Assign to variable `theory` the value `"factors"`.
+변수 `theory` 에 값 `"factors"` 를 할당하세요.
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+변수에 값을 할당하세요 (`<-`). 대소문자를 정확히 구분해 주세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -51,20 +49,20 @@ theory <- "factors"
 
 `@sct`
 ```{r}
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- "변수 `theory`를 정의하지 않은 것 같습니다."
+msg_incor <- "`theory`의 값이 올바르지 않은 것 같습니다. 문자 문자열 `\"factors\"`를 할당했는지 확인하세요. R은 대소문자를 구분합니다."
+msg_err <- "`theory`를 올바르게 정의했는지 확인하고, 할당에는 `<-`를 사용하세요."
 
 # If get error and theory is undefined, point out the error
 ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
 check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg("잘하셨습니다! 시작할 준비가 되셨나요? 다음 연습으로 계속하세요!")
 ```
 
 ---
 
-## What's a factor and why would you use it? (2)
+## 요인은 무엇이고 왜 사용할까요? (2)
 
 ```yaml
 type: NormalExercise
@@ -74,26 +72,26 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+R에서 요인(factor)을 만들려면 `factor()` 함수를 사용합니다. 먼저 해야 할 일은 제한된 몇 가지 범주에 속하는 모든 관측값을 담은 벡터를 만드는 것입니다. 예를 들어, `sex_vector`에는 서로 다른 5명의 성별이 들어 있습니다:
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
+여기에는 두 가지 범주, 즉 R에서 말하는 **'요인 수준(factor levels)'**이 있습니다: <span translate="no">"Male"</span>과 <span translate="no">"Female"</span>.
 
-The function `factor()` will encode the vector as a factor:
+`factor()` 함수는 이 벡터를 요인으로 인코딩합니다:
 
 ```
 factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
-- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
+- 문자 벡터 `sex_vector`를 `factor()`로 요인으로 변환하고 결과를 `factor_sex_vector`에 할당하세요.
+- `factor_sex_vector`를 출력하고, 실제 값 아래에 R이 요인 수준을 함께 출력하는지 확인하세요.
 
 `@hint`
-Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+`sex_vector`에 `factor()` 함수를 그대로 사용하면 됩니다. 할당 예시를 살펴보면, 정답이 이미 어딘가에 있어요...
 
 `@pre_exercise_code`
 ```{r}
@@ -126,15 +124,15 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "`sex_vector`의 팩터를 `factor_sex_vector`에 할당하셨습니까?")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "`factor_sex_vector`를 출력하는 것을 잊지 마세요!")
 
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+success_msg("훌륭합니다! `factor()` 함수에 대해 더 알고 싶다면, 주저하지 말고 콘솔에 `?factor`를 입력하세요. 그러면 도움말 페이지가 열립니다. 다음 연습으로 계속하세요.");
 ```
 
 ---
 
-## What's a factor and why would you use it? (3)
+## 팩터란 무엇이며 왜 사용할까요? (3)
 
 ```yaml
 type: NormalExercise
@@ -144,17 +142,17 @@ skills:
   - 1
 ```
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+범주형 변수에는 두 가지 유형이 있습니다: **명목형 범주형 변수**와 **순서형 범주형 변수**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+명목형 변수는 암묵적인 순서가 없는 범주형 변수예요. 즉, ‘어느 한쪽이 다른 쪽보다 더 크다’라고 말할 수 없다는 뜻입니다. 예를 들어, 범주가 `"Elephant"`, `"Giraffe"`, `"Donkey"`, `"Horse"`인 범주형 변수 `animals_vector`를 떠올려 보세요. 이 경우 어느 것이 위나 아래에 있다고 말하기는 불가능합니다(물론 의견이 다를 수도 있겠죠 ;-) ).
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+반대로, 순서형 변수에는 자연스러운 순서가 있습니다. 예를 들어 `"Low"`, `"Medium"`, `"High"`라는 범주를 가진 범주형 변수 `temperature_vector`를 생각해 보세요. 여기서는 `"Medium"`이 `"Low"`보다 위에 있고, `"High"`가 `"Medium"`보다 위에 있다는 것이 분명합니다.
 
 `@instructions`
-Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+답변을 제출해 R이 명목형과 순서형 변수를 어떻게 구성하고 출력하는지 확인하세요. 아직 모든 코드를 이해하지 못해도 괜찮아요. 곧 함께 살펴보겠습니다.
 
 `@hint`
-Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+그냥 답변을 제출하고 콘솔 출력을 확인해 보세요. 순서형 범주형 변수의 경우 R이 팩터 레벨의 순서를 어떻게 표시하는지 살펴보세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -189,7 +187,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
+msg <- "샘플 코드에 대해 아무것도 변경하지 마십시오. 답을 제출하고 솔루션을 확인하십시오!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -204,12 +202,12 @@ ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% chec
 ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
 
 
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("이 연습에서 무슨 일이 일어나고 있는지 이미 알 수 있습니까? 훌륭합니다! 다음 연습으로 넘어가서 팩터 레벨의 세부 사항을 알아보십시오.")
 ```
 
 ---
 
-## Factor levels
+## 팩터 레벨
 
 ```yaml
 type: NormalExercise
@@ -219,28 +217,28 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
+데이터셋을 처음 받으면, 특정 레벨을 가진 팩터가 포함되어 있는 경우가 많습니다. 하지만 더 명확하게 하거나 다른 이유로 이 레벨의 이름을 바꾸고 싶을 때가 있죠. R에서는 `levels()` 함수를 사용해 이를 변경할 수 있어요:
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
+좋은 예로 설문조사에서 제공되는 원시 데이터를 들 수 있습니다. 대부분의 설문에는 응답자의 성별을 묻는 질문이 포함되는데요, 여기서는 단순화를 위해 `"M"`과 `"F"` 두 가지 범주만 기록되었다고 가정하겠습니다. (실제 설문 데이터에서는 더 많은 범주가 필요할 수 있지만, 어쨌든 범주형 데이터는 팩터로 저장합니다.) 
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
+성별을 `"M"`과 `"F"` 같은 약어로 기록하면 펜과 종이로 데이터를 수집할 때는 편리하지만, 데이터를 분석할 때 혼란을 줄 수 있습니다. 분석 단계에서는 보통 명확성을 위해 `"M"`과 `"F"` 대신 `"Male"`과 `"Female"`로 팩터 레벨을 바꾸고 싶어질 거예요.
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+주의: 레벨을 할당하는 순서는 매우 중요합니다. `levels(factor_survey_vector)`를 입력하면 출력이 `[1] "F" "M"`임을 볼 수 있어요. 벡터를 만들 때 팩터의 레벨을 지정하지 않으면 `R`은 알파벳 순으로 자동 할당합니다. `"F"`를 `"Female"`에, `"M"`을 `"Male"`에 올바르게 매핑하려면 레벨을 이 순서로 `c("Female", "Male")`로 설정해야 합니다.
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- `survey_vector`에서 팩터 벡터를 만드는 코드를 확인하세요. 다음 지침에서는 `factor_survey_vector`를 사용합니다.
+- `factor_survey_vector`의 팩터 레벨을 `c("Female", "Male")`로 변경하세요. 여기서 벡터 요소의 순서에 유의하세요.
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+팩터 레벨을 입력하는 순서에 주의하세요. 힌트: `levels(factor_survey_vector)`를 입력했을 때 출력되는 레벨의 순서를 확인해 보세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -275,9 +273,9 @@ factor_survey_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = " `survey_vector`의 정의를 변경하지 마십시오!"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "팩터 벡터를 생성하는 코드를 변경하거나 제거하지 마십시오."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
@@ -285,15 +283,15 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste(" `factor_survey_vector`에 올바른 팩터 레벨을 할당했습니까? `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`을 사용하십시오. R은 대소문자를 구분한다는 것을 기억하십시오!"))
 
 
-success_msg("Wonderful! Proceed to the next exercise.")
+success_msg("훌륭합니다! 다음 연습으로 진행하십시오.")
 ```
 
 ---
 
-## Summarizing a factor
+## 팩터 요약하기
 
 ```yaml
 type: NormalExercise
@@ -303,19 +301,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
+이 과정을 마치고 나면, R에서 가장 좋아하는 함수 중 하나가 `summary()`가 될 거예요. 이 함수는 변수의 내용을 빠르게 훑어볼 수 있게 해줍니다:
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
+설문 예시로 돌아가서, 연구에 `"Male"` 응답이 몇 개이고 `"Female"` 응답이 몇 개인지 알고 싶다고 해볼게요. `summary` 함수가 이 질문에 대한 답을 제공합니다.
 
 `@instructions`
-Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+`survey_vector`와 `factor_survey_vector`에 대해 각각 `summary()`를 호출하세요. 두 벡터의 결과를 해석해 보세요. 이 경우 두 결과가 똑같이 유용한가요?
 
 `@hint`
-Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+`survey_vector`와 `factor_survey_vector` 각각에 `summary()` 함수를 호출하세요. 그대로 하면 됩니다!
 
 `@pre_exercise_code`
 ```{r}
@@ -354,24 +352,24 @@ summary(factor_survey_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "첫 번째 몇 줄에서 `survey_vector`와 `factor_survey_vector`를 정의하는 부분을 변경하지 마십시오."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "`%s`에 대한 요약을 생성하기 위해 `summary()`를 올바르게 사용하셨습니까?"
 
 ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
 
 ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
 
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("좋습니다! 출력을 확인해 보세요. `factor_survey_vector`에서 `\"Male\"`과 `\"Female\"`을 팩터 수준으로 식별한 덕분에 R이 각 범주에 대한 요소 수를 표시할 수 있습니다.")
 ```
 
 ---
 
-## Battle of the sexes
+## 남녀의 대결
 
 ```yaml
 type: NormalExercise
@@ -381,13 +379,13 @@ skills:
   - 1
 ```
 
-You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
+요인(factor)의 원소를 비교하면 어떻게 될지 궁금하실 수 있어요. `factor_survey_vector`에는 `"Male"`와 `"Female"` 두 수준(level)이 있는 요인이 들어 있어요. 그렇다면 R은 이 둘의 상대적인 값을 어떻게 판단할까요?
 
 `@instructions`
-Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
+에디터의 코드를 읽고, `male`이 `female`보다 큰지(`>`)를 테스트하기 위해 답변을 제출하세요.
 
 `@hint`
-Just submit the answer and have a look at output that gets printed to the console.
+그냥 답변을 제출하고 콘솔에 출력되는 결과를 확인해 보세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -430,7 +428,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply submit the answer and look at the result."
+msg = "코드에 대해 아무것도 변경하지 말고, 답을 제출한 후 결과를 확인하십시오."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -443,12 +441,12 @@ ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_m
 ex() %>% check_output_expr("male > female", missing_msg = msg)
 
 
-success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+success_msg("참 흥미롭습니다! 기본적으로, R은 팩터 내의 값을 비교하려고 할 때 `NA`를 반환합니다. 이는 그 아이디어가 의미가 없기 때문입니다. 다음으로, 더 의미 있는 비교가 가능한 순서가 있는 팩터에 대해 배우게 될 것입니다.")
 ```
 
 ---
 
-## Ordered factors
+## 순서가 있는 팩터
 
 ```yaml
 type: NormalExercise
@@ -458,25 +456,25 @@ skills:
   - 1
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+`"Male"`과 `"Female"`은 순서가 없는(또는 명목형) 팩터 수준이기 때문에, R은 보다 큼 연산자가 의미가 없다고 경고 메시지를 반환합니다. 앞서 본 것처럼, 이런 팩터의 수준에는 R이 동일한 값을 부여해요.
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+하지만 항상 그런 것은 아닙니다! 때로는 범주 간에 자연스러운 순서가 있는 팩터를 다루기도 합니다. 이런 경우에는 이 정보를 R에 반드시 알려줘야 해요...
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
+여러분이 다섯 명의 데이터 애널리스트로 구성된 연구팀을 이끌고 있고, 그들의 성과를 평가하려 한다고 가정해 볼게요. 이를 위해 각 애널리스트의 속도를 `"slow"`, `"medium"`, 또는 `"fast"`로 평가하고, 그 결과를 `speed_vector`에 저장하려고 합니다.
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
+첫 단계로, 각 애널리스트당 하나씩 총 5개의 항목을 가진 벡터를 `speed_vector`에 할당하세요. 각 항목은 `"slow"`, `"medium"`, 또는 `"fast"` 중 하나여야 합니다. 아래 목록을 사용하세요.
 
-- Analyst 1 is medium,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is medium and
-- Analyst 5 is fast.
+- 애널리스트 1은 medium,
+- 애널리스트 2는 slow,
+- 애널리스트 3은 slow,
+- 애널리스트 4는 medium, 그리고
+- 애널리스트 5는 fast.
 
-No need to specify these are factors yet.
+아직 이를 팩터로 지정할 필요는 없습니다.
 
 `@hint`
-Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
+`speed_vector`에 `"slow"`, `"medium"`, 또는 `"fast"`라는 문자열을 담은 벡터를 할당하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -497,14 +495,14 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector`는 각 분석가의 속도 등급에 대한 5개의 항목이 있는 벡터여야 합니다. 대문자를 사용하지 마십시오. R은 대소문자를 구분합니다!")
 
-success_msg("A job well done! Continue to the next exercise.")
+success_msg("잘하셨습니다! 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Ordered factors (2)
+## 순서형 팩터 (2)
 
 ```yaml
 type: NormalExercise
@@ -514,7 +512,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector`의 범주는 자연스러운 순서가 있으므로 순서형(ordinal) 팩터로 변환해야 해요. 기본적으로 `factor()` 함수는 `speed_vector`를 순서가 없는 팩터로 변환합니다. 순서형 팩터를 만들려면 `ordered`와 `levels`라는 두 개의 추가 인수를 제공해야 해요.
 
 ```
 factor(some_vector,
@@ -522,13 +520,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+`factor()` 함수에서 `ordered` 인수를 `TRUE`로 설정하면 해당 팩터가 순서형임을 나타냅니다. `levels` 인수에는 올바른 순서대로 팩터의 값을 지정하세요.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
+`speed_vector`에서 순서형 팩터 벡터 `factor_speed_vector`를 만드세요. `ordered`는 `TRUE`로, `levels`는 `c("slow", "medium", "fast")`로 설정하세요.
 
 `@hint`
-Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+자연스러운 순서가 있으므로 `factor()` 함수를 사용해 `speed_character_vector`를 기반으로 `factor_speed_vector`를 만드세요. `ordered` 인수는 `TRUE`로 설정하고, `levels = c("slow", "medium", "fast")`로 지정하세요.
 
 `@pre_exercise_code`
 ```{r}
@@ -563,26 +561,26 @@ summary(factor_speed_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = " `speed_vector` 변수를 지정하는 명령에 대해 아무것도 변경하지 마십시오."
 
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_function("factor") %>% {
-	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
-	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	check_arg(., 'x') %>% check_equal(incorrect_msg="`factor()`에 전달하는 첫 번째 인수는 `speed_vector`여야 합니다.")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="`factor()` 호출 내에서 `ordered = TRUE`로 설정했는지 확인하십시오.")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="`factor()` 호출 내에서 `levels = c(\"slow\", \"medium\", \"fast\")`로 설정했는지 확인하십시오.")
 	}
 
-ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="`factor_speed_vector`에 여전히 문제가 있습니다. `factor()` 호출 내에서 `speed_vector`, `ordered = TRUE` 및 `levels = c(\"slow\", \"medium\", \"fast\")`만 전달했는지 확인하십시오.")
 
                       
                       
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+success_msg("훌륭합니다! 콘솔을 확인하십시오. 이제 `<` 기호와 함께 레벨에 순서가 연결되어 있음을 나타냅니다. 다음 연습으로 계속하십시오.")
 ```
 
 ---
 
-## Comparing ordered factors
+## 순서 있는 팩터 비교하기
 
 ```yaml
 type: NormalExercise
@@ -592,18 +590,18 @@ skills:
   - 1
 ```
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+업무가 잘 풀리지 않는 '데이터 분석가 2번'이 당신의 사무실에 와서 '데이터 분석가 5번' 때문에 프로젝트 전체가 느려진다고 불평합니다. 그가 약간 잘난 체로 유명하다는 걸 알기에, 먼저 그 말이 사실인지 확인해 보기로 합니다.
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+`factor_speed_vector`가 이제 순서가 있는 상태이므로 서로 다른 요소(여기서는 데이터 분석가)를 비교할 수 있어요. 잘 알려진 비교 연산자를 사용하면 간단히 확인할 수 있습니다.
 
 `@instructions`
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- `factor_speed_vector`에서 두 번째 데이터 분석가의 요인 값을 선택하려면 `[2]`를 사용하세요. 선택한 값을 `da2`에 저장하세요.
+- 다섯 번째 데이터 분석가의 요인 값을 선택하려면 `[5]`를 사용해 `factor_speed_vector`에서 값을 가져오세요. 선택한 값을 `da5`에 저장하세요.
+- `da2`가 `da5`보다 큰지 확인하고, 그 결과를 그대로 출력하세요. 한 요소가 다른 요소보다 큰지 확인하려면 `>` 연산자를 사용할 수 있습니다.
 
 `@hint`
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- 세 번째 데이터 분석가의 요인 값을 선택하려면 `factor_speed_vector[3]`를 사용하세요.
+- 두 값을 비교하려면 `>`를 사용할 수 있어요. 예: `da3 > da4`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +642,19 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "speed_vector와 factor_speed_vector를 정의하는 명령어에 대해 아무것도 변경하지 마십시오!"
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
+msg <- "두 번째 데이터 분석가에 대한 요인 값을 올바르게 선택하셨습니까? `factor_speed_vector[%s]`를 사용할 수 있습니다."
 ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
 
 ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
 
-ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_output_expr("da2 > da5", missing_msg = "`da2`와 `da5`를 올바르게 비교하셨습니까? `>`를 사용할 수 있습니다. 결과를 단순히 출력하십시오.")
 
 
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("Bellissimo! 결과가 무엇을 말해줍니까? 데이터 분석가 두 명이 데이터 분석가 다섯 명에 대해 불평하고 있지만 실제로는 그들이 모든 것을 느리게 하고 있습니다! 벡터, 행렬 및 요인에 대한 확고한 기초를 바탕으로 R에서 매우 중요한 데이터 구조인 데이터 프레임의 멋진 세계로 뛰어들 준비가 되었습니다!")
 ```
