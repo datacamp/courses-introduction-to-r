@@ -501,7 +501,7 @@ ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(
 
 ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "`rbind()`를 사용하여 `all_wars_matrix()`를 올바르게 생성하셨습니까? `rbind()`는 두 개의 인수를 가져야 합니다: `star_wars_matrix` 및 `star_wars_matrix2`, 이 순서로."
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "`rbind()`를 사용하여 `all_wars_matrix()`를 올바르게 생성하셨습니까? `rbind()`는 두 개의 인수를 가져야 합니다: `star_wars_matrix` 및 `star_wars_matrix2`, 이 순서로.")
 
 success_msg("멋집니다! 다음 연습을 계속 진행하여 `rbind()` 함수의 결과를 `colSums()` 함수와 어떻게 결합할 수 있는지 확인해 보세요!")
 ```
