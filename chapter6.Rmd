@@ -1,13 +1,10 @@
 ---
-title_meta: Chapter 6
-title: Lists
-description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+title_meta: 第 6 章
+title: リスト
+description: ベクトルとは異なり、リストは異なる型の要素を一つにまとめて格納できます。この章では、リストの作成、名前の付け方、そして部分抽出の方法を学びます。
 ---
 
-## Lists, why would you need them?
+## リストが必要な理由とは？
 
 ```yaml
 type: NormalExercise
@@ -17,19 +14,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+おめでとうございます！ここまでで、以下のデータ構造についてすでに学びました。
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **ベクトル**（1次元配列）：数値、文字、または論理値を格納できます。ベクトル内のすべての要素は同じデータ型です。
+- **行列**（2次元配列）：数値、文字、または論理値を格納できます。行列内のすべての要素は同じデータ型です。
+- **データフレーム**（2次元オブジェクト）：数値、文字、または論理値を格納できます。列内のすべての要素は同じデータ型ですが、列ごとに異なるデータ型を持つことができます。
 
-Pretty sweet for an R newbie, right? ;-)
+R を学び始めたばかりにしては、なかなか順調ですね！
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+リストについてすべて学ぶために、回答を送信しましょう！
 
 `@hint`
-Just submit the answer!
+回答を送信してください！
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +45,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("準備、用意、スタート！次の演習に進んでください。")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## リストが必要な理由は？（2）
 
 ```yaml
 type: NormalExercise
@@ -63,17 +60,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+R の**リスト**は、職場や学校の To-Do リストに似ています。リストに含まれる項目は、長さも特性も、必要な作業の種類もそれぞれ異なります。
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+R のリストを使うと、さまざまなオブジェクトを1つの名前（リスト名）のもとに、順序立てて格納できます。行列、ベクトル、データフレーム、さらには別のリストなど、あらゆるオブジェクトを格納することが可能です。それらのオブジェクトが互いに関連していなくても構いません。
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+リストはいわば「万能データ型」とも言えます。ほぼどんな情報でも格納できる、非常に便利な構造です！
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+回答を送信して、リストの最初の演習を始めましょう。
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+回答を送信して、リストの最初の演習を始めましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +89,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("素晴らしいです。さっそく実践してみましょう！")
 ```
 
 ---
 
-## Creating a list
+## リストを作成する
 
 ```yaml
 type: NormalExercise
@@ -116,10 +113,10 @@ my_list <- list(comp1, comp2 ...)
 The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+`my_list`、`my_vector`、`my_matrix` をコンポーネントとして含む、`my_df` という名前のリストを作成してください。
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+引数に `list()`、`my_vector`、`my_matrix` をカンマで区切って指定し、`my_df` 関数を使いましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +155,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "変数 `my_vector`、`my_matrix`、または `my_df` の定義を削除したり変更したりしないでください！"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list` に正しい要素が含まれていないようです。変数 `my_vector`、`my_matrix`、および `my_df` をこの順序でカンマで区切って `list()` 関数に渡すことを確認してください。")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("素晴らしいです！次の演習に進んでください。")
 ```
 
 ---
 
-## Creating a named list
+## 名前付きリストの作成
 
 ```yaml
 type: NormalExercise
@@ -182,16 +179,14 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
-
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+よくできました、この調子で進みましょう！やることリストと同様に、リストの各要素が何を表しているかわからなくなると困ります。そのため、要素に名前を付けておくことが大切です：
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+こうすると、`name1`、`name2` などの名前が付いた要素を持つリストが作成されます。リストを作成した後に名前を付けたい場合は、ベクトルのときと同様に `names()` 関数を使用できます。次のコードは、上記の代入と完全に同等です：
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +194,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- 前の演習のコード（エディターを参照）を変更して、各要素に名前を付けましょう。`my_vector` には `vec`、`my_matrix` には `mat`、`my_df` には `df` という名前を使用してください。
+- `my_list` を出力して、結果を確認しましょう。
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+リストの要素に名前を付ける最も簡単な方法は、作成時に直接指定することです。次のように記述します：
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+同じ方法で、残りの2つの要素も追加しましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +246,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "変数 `my_vector`、`my_matrix`、または `my_df` の定義を削除したり変更したりしないでください！"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list` に正しい要素が含まれていないようです。")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`my_list` のコンポーネントの命名が正しくないようです。`vec`、`mat`、および `df` という名前をそれぞれ使用してください。困ったときはヒントを確認してください。")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "`my_list` をコンソールに出力するのを忘れないでください！エディタの新しい行に `my_list` を追加するだけです。")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("素晴らしいです！リストを構築する方法を知っているだけでなく、それに名前を付けることもできます。これは実践で非常に役立つスキルです。次の演習に進んでください。")
 ```
 
 ---
 
-## Creating a named list (2)
+## 名前付きリストの作成（2）
 
 ```yaml
 type: NormalExercise
@@ -279,21 +274,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+大の映画好きとして（LucasFilms での仕事を思い出してください）、良い映画の情報をリストで管理することにしました。
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+まず、映画「シャイニング」のリストを作成しましょう。変数 `mov`、`act`、`rev` はすでに R のワークスペースに用意されています。コンソールで内容を確認してみてください。
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+エディターのコードを完成させて `shining_list` を作成しましょう。このリストには次の3つの要素が含まれます。
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`：映画のタイトルを表す文字列（`mov` に格納済み）
+- `actors`：主要な俳優名を格納したベクトル（`act` に格納済み）
+- `reviews`：レビュー情報を含むデータフレーム（`rev` に格納済み）
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+リストの各要素には、必ず適切な名前（`moviename`、`actors`、`reviews`）を付けることを忘れないでください。
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` はあくまで解答の一部です。`act` と `rev` も適切な名前でリストに追加しましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +319,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "プリセットされた変数の定義を削除または変更しないでください！"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "`shining_list`が正しい要素を含んでいないようです: 最初の要素は`mov`、2番目の要素は`act`、3番目の要素は`rev`であるべきです。")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`shining_list`がコンポーネントの正しい命名を含んでいないようです: 最初の要素を`moviename`、2番目の要素を`actors`、3番目の要素を`reviews`と名付けてください。")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("素晴らしいです！リストを構築し、名前を付ける方法を学びました。前の章と同様に、リストの要素を選択する方法を見てみましょう。次の演習に進んでください。")
 ```
 
 ---
 
-## Selecting elements from a list
+## リストから要素を選択する
 
 ```yaml
 type: NormalExercise
@@ -350,32 +345,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+リストは多くの場合、さまざまな要素やコンポーネントで構成されています。そのため、特定の1つの要素、複数の要素、またはコンポーネントを取り出す方法を理解しておくことが大切です。
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+コンポーネントを選択する方法の1つは、そのコンポーネントの番号を使う方法です。たとえば、`shining_list` の最初のコンポーネントを取得するには、次のように入力します。
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+コンソールで実際に試してみると、動作をすぐに確認できます。重要なポイント：ベクトルから要素を選択する場合は、一重の角かっこ `[ ]` を使います。二重かっこと混同しないよう注意してください。
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+コンポーネント名を使って選択することもできます。`[[ ]]` または `$` 記号を使うと、どちらもレビューを表すデータフレームを選択できます。
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+コンポーネントを選択するだけでなく、そのコンポーネント内の特定の要素を取り出す場面もよくあります。たとえば、`shining_list[[2]][1]` と書くと、2番目のコンポーネントである `actors`（`shining_list[[2]]`）から最初の要素（`[1]`）を選択できます。コンソールで入力すると、Jack Nicholson という結果が表示されます。
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- `shining_list` から俳優を表すベクトルを選択して、そのまま出力してください。
+- `shining_list` から俳優を表すベクトルの2番目の要素を選択して、同様に出力してください。
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- 俳優を表すベクトルを選択するには、`$actors` を使います。
+- 俳優を表すベクトルの3番目の要素を選択するには、`shining_list$actors[3]` を使います。2番目の要素を選択するには、どこを変えればよいでしょうか？
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +400,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "ワークスペースに事前にロードされている `shining_list` の定義を削除または変更しないでください！"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "俳優を表すベクターを正しく選択して印刷しましたか？例えば、`shining_list$actors` を使用できます。")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "俳優を表すベクターから2番目の俳優を選択するには、選択を連鎖する必要があります。`shining_list$actors` は俳優を表すので、`[2]` を追加して2番目の要素を選択できます。")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("素晴らしいです！リストから要素を選択するのは簡単ですよね？次の演習に進んでください。")
 ```
 
 ---
 
-## Creating a new list for another movie
+## 別の映画のリストを新たに作成する
 
 ```yaml
 type: NormalExercise
@@ -425,9 +420,9 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+ジャック・ニコルソン出演の別の映画『ディパーテッド』のレビューが見つかりました。
 
-| Scores | Comments               |
+| スコア | コメント               |
 |--------|------------------------|
 | 4.6    | <span translate="no">I would watch it again</span> |
 | 5      | <span translate="no">Amazing!</span>               |
@@ -435,20 +430,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+タイトル、出演俳優、レビューなど映画に関するさまざまな情報を1つの変数にまとめておくと便利です。これらのデータは形式が異なるため、リスト変数にまとめるのが自然な方法です。
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+映画のタイトルを格納した `movie_title` と、一部の出演俳優名を格納した `movie_actors` は、すでにワークスペースに用意されています。
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- 表に示されているレビューの情報をもとに、`scores` と `comments` という2つのベクトルを作成してください。
+- `scores` ベクトルの平均を求め、`avg_review` として保存してください。
+- `scores` と `comments` のベクトルを組み合わせて、`reviews_df` というデータフレームを作成してください。
+- `departed_list`、`movie_title`、`movie_actors` としてのレビューデータフレーム、`reviews_df` としての平均レビュースコアを含む `avg_review` というリストを作成し、出力してください。
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- ベクトルを作成するには `c()` 関数を使います。
+- ベクトルの平均を求めるには、ベクトル名を `mean()` 関数に渡します。
+- `data.frame()` データフレームを作成するには `reviews_df` 関数を使います。
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +487,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "事前にロードされたオブジェクトを変更または削除しないでください。"
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "「scores」ベクターを正しく作成しましたか？")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "「comments」ベクターを正しく作成しましたか？")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "「avg_review」オブジェクトを正しく作成しましたか？"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "「reviews_df」を正しく作成しましたか？"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "「departed_list」を正しく作成しましたか？"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +513,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "「departed_list」を出力しましたか？")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("お疲れ様でした！映画情報のリストをもう一つ作成し、異なるコンポーネントを単一のリストに組み合わせることに成功しました。コースの終了おめでとうございます！")
 ```

@@ -1,15 +1,12 @@
 ---
-title_meta: Chapter 4
-title: Factors
+title_meta: 第 4 章
+title: 因子
 description: >-
-  Data often falls into a limited number of categories. For example, human hair
-  color can be categorized as black, brown, blond, red, grey, or white—and
-  perhaps a few more options for people who color their hair. In R, categorical
-  data is stored in factors. Factors are very important in data analysis, so
-  start learning how to create, subset, and compare them now.
+  データはしばしば限られたカテゴリに分類されます。たとえば、髪の色は黒・茶・金・赤・灰・白などに分けられます。R
+  では、このようなカテゴリデータを因子（factor）として扱います。因子はデータ分析において非常に重要な概念です。作成・抽出・比較の方法をしっかり学んでいきましょう。
 ---
 
-## What's a factor and why would you use it?
+## 因子とは何か、なぜ使うのか？
 
 ```yaml
 type: NormalExercise
@@ -19,19 +16,19 @@ skills:
   - 1
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+この章では、**因子（factor）**の世界を探っていきましょう。
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+因子とは、カテゴリ変数を格納するために使われる統計的なデータ型です。カテゴリ変数と連続変数の違いは、カテゴリ変数が**限られた数のカテゴリ**にしか属せない点にあります。一方、連続変数は無限の値を取ることができます。
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+Rが連続変数とカテゴリ変数のどちらを扱っているかを正しく認識することは非常に重要です。将来作成する統計モデルは、この2種類の変数を異なる方法で処理するからです。（その理由については、後ほど詳しく説明します。）
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
+カテゴリ変数のわかりやすい例として、性別が挙げられます。多くの場合、性別は「男性（Male）」または「女性（Female）」という2つのカテゴリに限定できます。（染色体の多様性や雌雄同体の動物、文化的な違いなどを考慮する場面では、異なるカテゴリが必要になることもあります。ただし、いずれの場合もカテゴリの数は有限です。）
 
 `@instructions`
-Assign to variable `theory` the value `"factors"`.
+変数 `theory` に値 `"factors"` を代入してください。
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+変数に値を代入（`<-`）しましょう。大文字・小文字に注意してください。
 
 `@pre_exercise_code`
 ```{r}
@@ -51,20 +48,20 @@ theory <- "factors"
 
 `@sct`
 ```{r}
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- "変数 `theory` が定義されていないようです。"
+msg_incor <- "`theory` の値が正しくないようです。文字列 `\"factors\"` を割り当てていることを確認してください。R は大文字と小文字を区別することを忘れないでください。"
+msg_err <- "`theory` を正しく定義し、代入には `<-` を使用していることを確認してください。"
 
 # If get error and theory is undefined, point out the error
 ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
 check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg("よくできました！準備はできましたか？次の演習に進んでください！")
 ```
 
 ---
 
-## What's a factor and why would you use it? (2)
+## 因子とは何か、なぜ使うのか？（2）
 
 ```yaml
 type: NormalExercise
@@ -74,26 +71,26 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+R で因子を作成するには、`factor()` 関数を使います。まず、限られた数のカテゴリに属する観測値を含むベクトルを用意します。たとえば、`sex_vector` には 5 人の性別が格納されています。
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
+ここには 2 つのカテゴリ、つまり R の用語で言う**「因子レベル」**が存在します。<span translate="no">"Male"</span> と <span translate="no">"Female"</span> です。
 
-The function `factor()` will encode the vector as a factor:
+`factor()` 関数を使うと、ベクトルを因子としてエンコードできます。
 
 ```
 factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
-- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
+- 文字ベクトル `sex_vector` を `factor()` で因子に変換し、結果を `factor_sex_vector` に代入しましょう。
+- `factor_sex_vector` を出力し、実際の値の下に因子レベルが表示されることを確認しましょう。
 
 `@hint`
-Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+`factor()` 関数を `sex_vector` に使うだけです。課題の内容をよく読むと、答えがすでに含まれています。
 
 `@pre_exercise_code`
 ```{r}
@@ -126,15 +123,15 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "`sex_vector` の因子を `factor_sex_vector` に割り当てましたか？")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "`factor_sex_vector` を出力するのを忘れないでください！")
 
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+success_msg("素晴らしいです！`factor()` 関数についてもっと知りたい場合は、コンソールで `?factor` と入力してください。これにより、ヘルプページが開きます。次の演習に進んでください。");
 ```
 
 ---
 
-## What's a factor and why would you use it? (3)
+## 因子とは何か、なぜ使うのか？（3）
 
 ```yaml
 type: NormalExercise
@@ -144,17 +141,17 @@ skills:
   - 1
 ```
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+カテゴリカル変数には、**名義カテゴリカル変数**と**順序カテゴリカル変数**の2種類があります。
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+名義変数は、順序が決まっていないカテゴリカル変数です。つまり、「どちらが上か・下か」という比較ができません。たとえば、`animals_vector`、`"Elephant"`、`"Giraffe"`、`"Donkey"` というカテゴリを持つ `"Horse"` を考えてみましょう。これらの間に、上下関係はありません（異論がある方もいるかもしれませんが ;-) ）。
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+一方、順序変数には自然な順序があります。たとえば、`temperature_vector`、`"Low"`、`"Medium"` というカテゴリを持つ `"High"` を考えてみましょう。この場合、`"Medium"` は `"Low"` より上、`"High"` は `"Medium"` より上であることは明らかです。
 
 `@instructions`
-Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+回答を送信して、R が名義変数と順序変数をどのように構築・表示するかを確認しましょう。まだすべてのコードが理解できなくても大丈夫です。これから順番に学んでいきます。
 
 `@hint`
-Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+回答を送信して、コンソールを確認しましょう。順序のある因子レベルを、R がどのように表示するかに注目してください。
 
 `@pre_exercise_code`
 ```{r}
@@ -189,7 +186,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
+msg <- "サンプルコードについては何も変更しないでください。単に答えを提出し、解決策を確認してください！"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -204,12 +201,12 @@ ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% chec
 ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
 
 
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("この演習で何が起こっているのか、すでにわかりますか？素晴らしい！次の演習に進み、因子レベルの詳細に入りましょう。")
 ```
 
 ---
 
-## Factor levels
+## 因子水準
 
 ```yaml
 type: NormalExercise
@@ -219,28 +216,28 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
+データセットを初めて扱うとき、特定の因子水準を持つ因子が含まれていることがよくあります。しかし、わかりやすさなどの理由から、レベルの名前を変更したい場合もあります。Rでは、`levels()` 関数を使ってこれを行えます。
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
+わかりやすい例として、アンケートで得られた生データを見てみましょう。アンケートの定番の質問に、回答者の性別があります。ここでは簡単にするため、`"M"` と `"F"` の2つのカテゴリのみが記録されているとします。（アンケートデータでは通常さらに多くのカテゴリが必要ですが、いずれの場合もカテゴリカルデータの保存には因子を使います。）
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
+性別を `"M"` や `"F"` という略称で記録するのは、ペンと紙でデータを収集する場合には便利です。しかし、データを分析する際に混乱を招くことがあります。そのため、明確にするために因子水準を `"Male"` と `"Female"` から `"M"` と `"F"` に変更したいことがよくあります。
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+**注意：** レベルを割り当てる順番は重要です。`levels(factor_survey_vector)` と入力すると、`[1] "F" "M"` と出力されます。ベクトルの作成時に因子の水準（レベル）を指定しない場合、`R` は自動的にアルファベット順で割り当てます。`"F"` を `"Female"` に、`"M"` を `"Male"` に正しく対応させるには、この順番で `c("Female", "Male")` と水準レベルを設定する必要があります。
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- `survey_vector` から因子ベクトルを作成するコードを確認しましょう。次の指示では `factor_survey_vector` を使います。
+- `factor_survey_vector` の因子水準を `c("Female", "Male")` に変更しましょう。ベクトルの要素の順番に注意してください。
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+因子レベルを入力する順番に注意しましょう。ヒント：`levels(factor_survey_vector)` と入力したときに表示されるレベルの順番を確認してください。
 
 `@pre_exercise_code`
 ```{r}
@@ -275,9 +272,9 @@ factor_survey_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = "「survey_vector」の定義を変更しないでください！"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "ファクターベクターを作成するコードを変更または削除しないでください。"
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
@@ -285,15 +282,15 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("`factor_survey_vector` に正しいファクターレベルを割り当てましたか？`levels(factor_survey_vector) <- c(\"Female\", \"Male\")` を使用してください。Rは大文字と小文字を区別することを忘れないでください！"))
 
 
-success_msg("Wonderful! Proceed to the next exercise.")
+success_msg("素晴らしいです！次の演習に進んでください。")
 ```
 
 ---
 
-## Summarizing a factor
+## 因子の要約
 
 ```yaml
 type: NormalExercise
@@ -303,19 +300,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
+このコースを修了すると、R でよく使う関数のひとつが `summary()` になるでしょう。この関数を使うと、変数の内容をすばやく確認できます。
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
+アンケートの話に戻りましょう。調査の中に `"Male"` の回答がいくつあり、`"Female"` の回答がいくつあるかを確認したいとします。`summary` 関数を使えば、この疑問に答えることができます。
 
 `@instructions`
-Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+`summary()` と `survey_vector` それぞれに `factor_survey_vector` を適用してください。両方の結果を確認してみましょう。この場合、どちらも同じくらい役に立つのでしょうか？
 
 `@hint`
-Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+`summary()` 関数を `survey_vector` と `factor_survey_vector` の両方に対して呼び出すだけです！
 
 `@pre_exercise_code`
 ```{r}
@@ -354,24 +351,24 @@ summary(factor_survey_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "最初の数行で定義されている `survey_vector` と `factor_survey_vector` については何も変更しないでください。"
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "`%s` の要約を生成するために `summary()` を正しく使用しましたか？"
 
 ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
 
 ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
 
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("素晴らしいです！出力を見てください。`factor_survey_vector` で `\"Male\"` と `\"Female\"` を因子レベルとして識別したことにより、R は各カテゴリの要素数を表示できるようになっています。")
 ```
 
 ---
 
-## Battle of the sexes
+## 性別の比較
 
 ```yaml
 type: NormalExercise
@@ -381,13 +378,13 @@ skills:
   - 1
 ```
 
-You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
+ファクターの要素を比較しようとすると、どうなるのか気になりますよね。`factor_survey_vector` には `"Male"` と `"Female"` という2つのレベルを持つファクターがあります。では、R はこれらをどのように評価するのでしょうか？
 
 `@instructions`
-Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
+エディター内のコードを読んで、`male` が `>` より大きい（`female`）かどうかを確かめるために、回答を送信してみましょう。
 
 `@hint`
-Just submit the answer and have a look at output that gets printed to the console.
+回答を送信して、コンソールに出力される結果を確認しましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -430,7 +427,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply submit the answer and look at the result."
+msg = "コードを変更せずに、単に答えを提出して結果を確認してください。"
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -443,12 +440,12 @@ ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_m
 ex() %>% check_output_expr("male > female", missing_msg = msg)
 
 
-success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+success_msg("これは興味深いですね！デフォルトでは、Rはファクター内の値を比較しようとすると`NA`を返します。これは意味がないためです。次に、より意味のある比較が可能な順序付きファクターについて学びます。")
 ```
 
 ---
 
-## Ordered factors
+## 順序付き因子
 
 ```yaml
 type: NormalExercise
@@ -458,25 +455,21 @@ skills:
   - 1
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+`"Male"` と `"Female"` は順序なし（名義）の因子レベルであるため、R は「大なり演算子は意味を持たない」という警告メッセージを返します。このようなファクターでは、R は各レベルに同等の値を割り当てます。
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+ただし、これは常に当てはまるわけではありません。カテゴリ間に自然な順序が存在する因子を扱うこともあります。その場合は、その順序情報を R に正しく伝える必要があります。
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
+例として、あなたが 5 人のデータアナリストからなる研究チームをリードしており、各メンバーのパフォーマンスを評価する場面を考えてみましょう。作業スピードを記録し、各アナリストを `"slow"`、`"medium"`、`"fast"` のいずれかで評価した結果を `speed_vector` に保存します。
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
+最初のステップとして、5 人のアナリストそれぞれに対応する 5 つの要素を持つベクトルを `speed_vector` に代入しましょう。各要素は `"slow"`、`"medium"`、`"fast"` のいずれかにします。以下のリストを参考にしてください。
 
-- Analyst 1 is medium,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is medium and
-- Analyst 5 is fast.
+- アナリスト 1 は medium、- アナリスト 2 は slow、- アナリスト 3 は slow、- アナリスト 4 は medium、- アナリスト 5 は fast。
 
-No need to specify these are factors yet.
+この時点では、ファクターとして指定する必要はありません。
 
 `@hint`
-Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
+`speed_vector` に、`"slow"`、`"medium"`、`"fast"` のいずれかの文字列を含むベクトルを代入しましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -497,14 +490,14 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` は各アナリストの速度評価のための5つのエントリを持つベクトルであるべきです。大文字は使用しないでください。Rは大文字と小文字を区別します！")
 
-success_msg("A job well done! Continue to the next exercise.")
+success_msg("よくできました！次の演習に進んでください。")
 ```
 
 ---
 
-## Ordered factors (2)
+## 順序付き因子 (2)
 
 ```yaml
 type: NormalExercise
@@ -514,7 +507,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector` のカテゴリには自然な順序があるため、順序付き因子に変換する必要があります。デフォルトでは、`factor()` 関数は `speed_vector` を順序なし因子に変換します。順序付き因子を作成するには、`ordered` と `levels` という2つの引数を追加します。
 
 ```
 factor(some_vector,
@@ -522,13 +515,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+`ordered` 関数の引数 `TRUE` を `factor()` に設定すると、その因子が順序付きであることを指定できます。引数 `levels` では、因子の値を正しい順序で指定します。
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
+`speed_vector` をもとに、順序付き因子ベクトル `factor_speed_vector` を作成しましょう。`ordered` を `TRUE` に設定し、`levels` を `c("slow", "medium", "fast")` に設定してください。
 
 `@hint`
-Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+`factor()` 関数を使って、`factor_speed_vector` をもとに `speed_character_vector` を作成しましょう。カテゴリに自然な順序があるため、引数 `ordered` は `TRUE` に設定します。また、`levels = c("slow", "medium", "fast")` も指定してください。
 
 `@pre_exercise_code`
 ```{r}
@@ -563,26 +556,26 @@ summary(factor_speed_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = "「speed_vector」変数を指定するコマンドについては何も変更しないでください。"
 
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_function("factor") %>% {
-	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
-	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	check_arg(., 'x') %>% check_equal(incorrect_msg="`factor()` に渡す最初の引数は `speed_vector` であるべきです。")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="`factor()` の呼び出し内で `ordered = TRUE` を設定してください。")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="`factor()` の呼び出し内で `levels = c(\"slow\", \"medium\", \"fast\")` を設定してください。")
 	}
 
-ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="`factor_speed_vector` にまだ何か問題があります。`factor()` の呼び出し内で `speed_vector`、`ordered = TRUE`、`levels = c(\"slow\", \"medium\", \"fast\")` のみを渡すようにしてください。")
 
                       
                       
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+success_msg("素晴らしいです！コンソールを見てください。レベルに順序が関連付けられていることが `<` 記号で示されています。次の演習に進んでください。")
 ```
 
 ---
 
-## Comparing ordered factors
+## 順序付き因子の比較
 
 ```yaml
 type: NormalExercise
@@ -592,18 +585,18 @@ skills:
   - 1
 ```
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+仕事で嫌なことがあった「データアナリスト2番」があなたのオフィスにやってきて、「データアナリスト5番」がプロジェクト全体の進行を遅らせていると文句を言い始めました。データアナリスト2番はちょっと生意気なところがあるので、まずその発言が本当かどうか確認することにしましょう。
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+`factor_speed_vector` が順序付き因子になったことで、各要素（ここではデータアナリスト）を比較できるようになります。おなじみの演算子を使うだけで簡単に比較できます。
 
 `@instructions`
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- `[2]` を使って `factor_speed_vector` から2番目のデータアナリストのファクター値を選択し、`da2` として保存してください。
+- `[5]` を使って `factor_speed_vector` から5番目のデータアナリストのファクター値を選択し、`da5` として保存してください。
+- `da2` が `da5` より大きいかどうかを確認し、結果をそのまま出力してください。一方の要素がもう一方より大きいかどうかを調べるには `>` 演算子を使います。
 
 `@hint`
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- 3番目のデータアナリストのファクター値を選択するには、`factor_speed_vector[3]` を使います。
+- 2つの値を比較するには、`>` を使います。例：`da3 > da4`。
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +637,19 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "「speed_vector」と「factor_speed_vector」を定義するコマンドについては何も変更しないでください！"
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
+msg <- "「%s」データアナリストのために正しいファクター値を選択しましたか？ `factor_speed_vector[%s]` を使用できます。"
+ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"2番目", "2"))
 
-ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
+ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("5番目", "5"))
 
-ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_output_expr("da2 > da5", missing_msg = "「da2」と「da5」を正しく比較しましたか？ `>` を使用できます。結果を単に出力してください。")
 
 
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("素晴らしいです！結果は何を示していますか？データアナリスト2はデータアナリスト5について不満を言っていますが、実際には彼らがすべてを遅らせているのです！これでファクターに関する章は終了です。ベクトル、行列、ファクターの基礎をしっかりと身につけたので、Rの非常に重要なデータ構造であるデータフレームの素晴らしい世界に飛び込む準備ができました！")
 ```

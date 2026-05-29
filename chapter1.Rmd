@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: 第 1 章
+title: 基礎入門
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  R の最初の一歩を踏み出しましょう。この章では、コンソールを電卓として使う方法と、変数への代入方法を学びます。また、R
+  の基本的なデータ型についても理解を深めます。さっそく始めましょう。
 free_preview: true
 ---
 
-## How it works
+## 仕組みを知ろう
 
 ```yaml
 type: NormalExercise
@@ -18,18 +17,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+エディタに R コードを入力して、演習の問題を解きましょう。コードを送信すると、R がすべての行を解釈して実行し、コードが正しいかどうかのメッセージが表示されます。R コードの出力はコンソールに表示されます。
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R では記号 `#` を使ってコメントを追加できます。コメントを書いておくと、自分や他の人がコードの内容を理解しやすくなります。コメントは R コードとして実行されないため、結果には影響しません。たとえば、エディタ内の <span translate="no">_Calculate 3 + 4_</span> はコメントです。
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+コンソールに直接 R コマンドを入力して実行することもできます。正誤チェックなしでコードを試せるため、R をいろいろ試してみるのに最適な方法です。
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- エディタにはすでにサンプルコードが入力されています。実際の R コードとコメントの違いを確認してみましょう。
+- 6 と 12 の合計を計算するコードを1行追加して、コードを送信しましょう。
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+サンプルコードの例を参考に、6 と 12 の合計を計算する R コードを1行追加しましょう！
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +56,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "新しい行に `6 + 12` を追加することを確認してください。行の先頭に `#` を付けないでください。そうしないと、Rコードが実行されません！")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("素晴らしいです！コンソールが送信したRコードの結果を表示しているのがわかりますか？インターフェースに慣れたところで、Rの作業に取り掛かりましょう！")
 ```
 
 ---
 
-## Arithmetic with R
+## R で算術計算
 
 ```yaml
 type: NormalExercise
@@ -74,30 +73,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+R の最も基本的な使い方の一つが、電卓として利用することです。以下の算術演算子を確認しましょう。
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- 加算: `+`
+- 減算: `-`
+- 乗算: `*`
+- 除算: `/`
+- 累乗: `^`
+- 剰余: `%%`
 
-The last two might need some explaining:
+最後の2つについて補足します。
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- `^` 演算子は、左の数値を右の数値で累乗します。例えば、`3^2` は 9 になります。
+- 剰余演算子は、左の数値を右の数値で割った余りを返します。例えば、5 を 3 で割った余り、つまり `5 %% 3` は 2 です。
 
-With this knowledge, follow the instructions to complete the exercise.
+これらを踏まえて、指示に従って演習を進めましょう。
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- エディターに `2^5` と入力して、2 の 5 乗を計算しましょう。
+- `28 %% 6` と入力して、28 を 6 で割った余りを計算しましょう。
+- 回答を送信して、コンソールに表示される R の出力を確認しましょう。
+- `#` 記号を使って R コードにコメントを追加できることも覚えておきましょう。
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+剰余演算子の別の例：`9 %% 2` の結果は `1` です。
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +147,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "他の算術の例を削除しないでください！"
+ex() %>% check_output_expr("2^5", missing_msg = "べき乗の例が正しくありません。新しい行に `2 ^ 5` と書いてください。")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "剰余の例に問題があるようです。新しい行に `28 %% 6` と書いてください。")
+success_msg("素晴らしいです！次の演習に進んでください。")
 ```
 
 ---
 
-## Variable assignment
+## 変数への代入
 
 ```yaml
 type: NormalExercise
@@ -167,21 +166,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+（統計）プログラミングの基本的な概念として、**変数**があります。
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+変数を使うと、値（例：4）やオブジェクト（例：関数の説明）を R に保存できます。変数名を使えば、保存した値やオブジェクトに後から簡単にアクセスできます。
 
-You can assign a value 4 to a variable `my_var` with the command
+変数 `my_var` に値 4 を代入するには、次のコマンドを使います。
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+エディターのコードを完成させて、変数 `x` に値 42 を代入しましょう。完成したら「**回答を送信**」をクリックしてください。R に `x` を表示させると、42 が出力されることを確認できます。
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+演習の説明で、変数 `my_var` に値 4 を代入する方法を確認しましょう。同じ方法で、変数 `x` に 42 を代入してみてください。
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +207,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "変数 `x` を定義してください。")  %>% check_equal(incorrect_msg = "`x` に正しい値を割り当てていることを確認してください。")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("よくできました！Rが代入を行ったときに変数の値をコンソールに表示しないことに気づきましたか？`x <- 42` は出力を生成しませんでした。これは、Rが将来的にこの変数を必要とするだろうと仮定しているからです。そうでなければ、最初に変数に値を保存することはないでしょう？次の演習に進んでください！")
 ```
 
 ---
 
-## Variable assignment (2)
+## 変数への代入（2）
 
 ```yaml
 type: NormalExercise
@@ -225,15 +224,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+果物かごにリンゴが5つ入っているとします。データアナリストを目指すあなたは、このリンゴの数を `my_apples` という名前の変数に保存したいと思っています。
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- エディターに次のコードを入力しましょう：`my_apples <- 5`。これにより、値 5 が `my_apples` に代入されます。
+- 2つ目のコメントの下に `my_apples` と入力しましょう。これで `my_apples` の値が出力されます。
+- 回答を送信して、出力を確認しましょう。数値 5 が表示されます。これで R は変数 `my_apples` と値 5 を結びつけました。
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+変数に数値やオブジェクトを代入するには、代入演算子 `<-` を使います。`=` を使うこともできますが、R コミュニティでは `<-` が広く使われています。
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +259,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "変数 `my_apples` を定義してください。") %>% check_equal(incorrect_msg = "`my_apples` に正しい値を割り当てていることを確認してください。")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "`my_apples` 変数をコンソールに出力するように R に明示的に指示しましたか？")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("素晴らしいです！次の演習に進んでください！")
 ```
 
 ---
 
-## Variable assignment (3)
+## 変数への代入（3）
 
 ```yaml
 type: NormalExercise
@@ -279,19 +278,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+おいしいフルーツバスケットにはオレンジが欠かせません。そこで、オレンジを6個追加することにしました。データアナリストらしく、さっそく変数 `my_oranges` を作成して、値 6 を代入しましょう。次に、フルーツの合計数を計算します。これらの値に意味のある名前を付けたので、これから明確にコードを書くことができます:
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- `my_oranges` に値 6 を代入してください。
+- `my_apples` と `my_oranges` を足し合わせて、R にその結果を表示させてください。
+- `my_apples` と `my_oranges` の合計を新しい変数 `my_fruit` に代入してください。
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` は `my_apples` と `my_oranges` の合計です。`+` 演算子で2つの値を足し合わせ、`<-` を使ってその結果を変数 `my_fruit` に代入しましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +325,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "変数 `my_fruit` を作成するために `my_fruit <- my_apples + my_oranges` を使用しましたか？"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples` に 5 を代入する行を保持してください。")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges` に 6 を代入する行を保持してください。")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "`my_apples` と `my_oranges` を加算した結果を出力することを確認してください。説明のコード例はこの指示の答えをすでに示しています！")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("素晴らしいです！変数を使って計算を行う大きな利点は再利用性です。`my_apples` を 5 ではなく 12 に変更してスクリプトを再実行するだけで、`my_fruit` も自動的に更新されます。次の演習に進んでください。")
 ```
 
 ---
 
-## Apples and oranges
+## リンゴとオレンジ
 
 ```yaml
 type: NormalExercise
@@ -350,14 +348,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+リンゴとオレンジは足せない、というのは常識ですね。でも、前の演習ではそれをやってしまいました。前の演習では、`my_apples` と `my_oranges` はどちらも数値でした。R では `+` 演算子は数値変数に対して使えます。しかし、<span translate="no">"apples"</span> と <span translate="no">"oranges"</span> を本当に足そうとして、`my_oranges` にテキスト値を代入した場合（エディターを確認してください）、数値変数と文字変数を足した結果を `my_fruit` に代入しようとすることになります。これは実行できません。
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- 回答を送信して、エラーメッセージを確認しましょう。なぜエラーが発生したかを理解してみましょう。
+- オレンジが6個あることをRが認識できるようにコードを修正し、合計11個のフルーツが入ったバスケットになるようにしましょう。
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+数値の `6` を `my_oranges` 変数に代入する必要があります。文字値の `"six"` ではなく、数値を使いましょう。引用符があると、`"six"` が文字列として扱われる点に注意してください。
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +390,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "変数 `my_oranges` を文字列ではなく数値に設定することでこれを行うことができます。")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples` がまだ `5` を含んでいることを確認してください。")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges` が `6` と等しいことを確認してください。")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "`my_fruit` の値が正しくありません。`my_apples` と `my_oranges` の合計である 11 であるべきです。")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "変数 `my_apples` と `my_oranges` の合計として `my_fruit` を作成しましたか？", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "変数 `my_apples` と `my_oranges` の合計として `my_fruit` を作成しましたか？", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "`my_fruit` を出力する行を削除しないでください。")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("素晴らしいです。この調子で頑張ってください！次の演習に進みましょう。")
 ```
 
 ---
 
-## Basic data types in R
+## R の基本データ型
 
 ```yaml
 type: NormalExercise
@@ -423,27 +419,26 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R にはさまざまなデータ型があります。まず覚えておきたい基本的なデータ型は次のとおりです。
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- `4.5` のような小数値は **numeric（数値型）** と呼ばれます。
+- `4` のような整数は **integer（整数型）** と呼ばれます。整数型も数値型の一種です。
+- `TRUE` または `FALSE` のようなブール値は **logical（論理型）** と呼ばれます。
+- テキスト（文字列）の値は **character（文字型、またはキャラクター型）** と呼ばれます。
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+エディター内で `"some text"` のように引用符で囲まれている値は、文字列であることを示しています。
 
 `@instructions`
-Change the value of the:
+以下の変数の値を変更しましょう。
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- `my_numeric` 変数の値を `42` にする。
+- `my_character` 変数の値を `"universe"` にする。引用符は `"universe"` が文字型であることを示しています。
+- `my_logical` 変数の値を `FALSE` にする。
 
-Note that R is case sensitive!
+R は大文字と小文字を区別することに注意しましょう。
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+演習で指定された値に置き換えましょう。例えば、`my_numeric <- 42` は変数 `my_numeric` に値 42 を代入します。
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +471,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "変数 `my_numeric` の宣言を正しく変更して、値が 42 になるようにしましたか？")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "`my_character` を `\"universe\"` に正しく変更しましたか？引用符を忘れないでください！")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "`my_logical` を `FALSE` に正しく変更しましたか？`FALSE` のすべての文字は大文字である必要があります！")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("素晴らしい仕事です！次の演習に進んでください。")
 ```
 
 ---
 
-## What's that data type?
+## データ型を確認しよう
 
 ```yaml
 type: NormalExercise
@@ -497,13 +492,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+以前、`5 + "six"` を実行するとデータ型の不一致によってエラーが発生しましたね。事前に変数のデータ型を確認しておくことで、こうした問題を避けることができます。エディターのコードにあるように、`class()` 関数を使うと確認できます。
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+エディターのコードを完成させ、`my_character` と `my_logical` のクラスも表示させましょう。
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+`my_numeric` のデータ型を表示するコードはすでに記述されています。同じように、`my_character` と `my_logical` についても同様の操作を行いましょう。
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +541,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "変数の宣言を変更しないでください！"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "`%1$s` のデータ型を出力するために `class(%1$s)` を含めましたか？"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "`my_numeric` の型を出力するコードを削除しないでください。")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("おめでとうございます！この章の最後の演習でした。次の章に進んで、ベクトルの世界に没頭してください！")
 ```
