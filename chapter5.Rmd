@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Kapitola 5
+title: Datové rámce
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Většina datových sad, se kterými budeš pracovat, bude uložena jako datové
+  rámce. Po dokončení této kapitoly budeš umět datový rámec vytvořit, vybrat z
+  něj zajímavé části a seřadit ho podle vybraných proměnných.
 ---
 
-## What's a data frame?
+## Co je to datový rámec?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +17,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Z kapitoly o maticích si možná pamatuješ, že všechny prvky vložené do matice musí být stejného datového typu. Tehdy tvůj dataset o Star Wars obsahoval pouze numerické hodnoty.
 
-When doing a market research survey, however, you often have questions such as:
+Při provádění průzkumu trhu ale narazíš třeba na otázky jako:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- „Jsi ženatý/vdaná?" nebo otázky typu ano/ne (`logical`)
+- „Kolik je ti let?" (`numeric`)
+- „Jaký máš názor na tento produkt?" nebo jiné otevřené otázky (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Výsledkem, tedy odpověďmi respondentů na výše uvedené otázky, je dataset různých datových typů. V praxi budeš velmi často pracovat s datasety, které obsahují více různých datových typů najednou.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Dataový rámec (data frame) ukládá proměnné datasetu jako sloupce a jednotlivá pozorování jako řádky. Pokud znáš statistické nástroje jako SAS nebo SPSS, bude ti tento koncept povědomý.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Odešli odpověď. Data z vestavěného ukázkového datového rámce `mtcars` se vypíší do konzole.
 
 `@hint`
-Submit the answer and witness the magic!
+Odešli odpověď a sleduj, co se stane!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +55,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Nic neměňte v kódu, ujistěte se, že výstupem je `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Výborně! Pokračujte na další cvičení.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Rychlý pohled na dataset
 
 ```yaml
 type: NormalExercise
@@ -73,19 +72,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+To je ale pořádná sbírka aut! 
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Práce s rozsáhlými datasety je v datové analýze naprosto běžná. Když pracuješ s (extrémně) velkými datasety a datovými rámci, tvým prvním úkolem jako datového analytika je dobře pochopit jejich strukturu a hlavní prvky. Proto se často hodí zobrazit jen malou část celého datasetu. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Jak na to v R? Funkce `head()` ti ukáže první záznamy datového rámce. Podobně funkce `tail()` vypíše poslední záznamy z tvého datasetu.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Obě funkce — `head()` i `tail()` — zobrazí také záhlaví (tzv. 'header'), které obsahuje názvy jednotlivých proměnných v datasetu.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Zavolej funkci `head()` na dataset `mtcars` a prohlédni si záhlaví spolu s prvními záznamy.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` zobrazí první záznamy datového rámce `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +105,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Předali jste správně `mtcars` funkci `head()`?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Jednoduše vypište výsledek volání `head()`, není třeba jej přiřazovat do nové proměnné.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Výborně! Co tedy máme v tomto datovém souboru? Například `hp` představuje výkon automobilu v koních; Datsun má nejnižší výkon ze 6 zobrazených automobilů. Pro úplný přehled významu proměnných zadejte do konzole `?mtcars` a přečtěte si stránku nápovědy. Pokračujte k dalšímu cvičení!");
 ```
 
 ---
 
-## Have a look at the structure
+## Prozkoumej strukturu dat
 
 ```yaml
 type: NormalExercise
@@ -125,21 +124,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Dalším užitečným nástrojem pro rychlý přehled o datech je funkce `str()`. Ukáže ti strukturu celého datasetu. V případě datového rámce se dozvíš:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Celkový počet pozorování (např. 32 typů aut)
+- Celkový počet proměnných (např. 11 vlastností aut)
+- Úplný seznam názvů proměnných (např. `mpg`, `cyl` ... )
+- Datový typ každé proměnné (např. `num`)
+- První pozorování
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Funkci `str()` se vyplatí spustit jako první věc pokaždé, když dostaneš nový dataset nebo datový rámec. Je to skvělý způsob, jak lépe pochopit data ještě před samotnou analýzou.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Prozkoumej strukturu datového rámce `mtcars`. Ověř, že vidíš stejné počty, proměnné a datové typy, jaké jsou zmíněné výše.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Použij funkci `str()` na datovém rámci `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +159,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Zavolali jste správně `str()` na `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Výborně! Prohlížením `str()` datové sady lze najít mnoho informací. Pokračujte na další cvičení.")
 ```
 
 ---
 
-## Creating a data frame
+## Vytvoření datového rámce
 
 ```yaml
 type: NormalExercise
@@ -177,28 +176,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Používat vestavěné datové sady je jen polovina zábavy – mnohem zajímavější je vytvořit si vlastní. Zbytek této kapitoly proto vychází z datasetu, který si sestavíš sám/sama. Zapni raketový pohon, protože nás čeká průzkum vesmíru!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Prvním úkolem je sestavit datový rámec popisující hlavní charakteristiky osmi planet naší sluneční soustavy. Podle tvého dobrého přítele Buzze jsou klíčové vlastnosti každé planety tyto:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Typ planety (zemská nebo plynný obr).
+- Průměr planety ve srovnání s průměrem Země.
+- Doba oběhu planety kolem Slunce ve srovnání se Zemí.
+- Zda má planeta prstence, nebo ne (TRUE nebo FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Po důkladném průzkumu na [Wikipedii](https://en.wikipedia.org/wiki/Planet) máš vše potřebné k vytvoření vektorů: `name`, `type`, `diameter`, `rotation` a `rings` – tyto vektory jsou už v editoru připravené. První prvek každého vektoru odpovídá prvnímu pozorování.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Dataový rámec sestavíš pomocí funkce `data.frame()`. Jako argumenty jí předáš výše zmíněné vektory – každý z nich se stane samostatným sloupcem. Protože všechny sloupce musí mít stejnou délku, musí mít stejnou délku i předávané vektory. Nezapomeň ale, že mohou (a pravděpodobně budou) obsahovat různé typy dat.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Pomocí funkce `data.frame()` vytvoř datový rámec. Předej jí jako argumenty vektory `name`, `type`, `diameter`, `rotation` a `rings` – v tomto pořadí. Výsledný datový rámec pojmenuj `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Volání funkce `data.frame()` začíná takto:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Dokážeš ho dokončit?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +249,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Neměňte nic na definici vektorů. Pouze přidejte volání `data.frame()` pro vytvoření `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +260,15 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Zavolali jste správně `data.frame()` pro vytvoření `planets_df`? Uvnitř `data.frame()` se ujistěte, že předáváte všechny vektory ve správném pořadí: `name`, `type`, `diameter`, `rotation` a nakonec `rings`.")
 
 
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Skvělá práce! Logickým dalším krokem, jak již víte, je prohlédnout si datový rámec, který jste právě vytvořili. Přejděte k dalšímu cvičení.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Vytvoření datového rámce (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Datový rámec `planets_df` by měl mít 8 pozorování a 5 proměnných. Je už připravený v pracovním prostoru, takže ho můžeš rovnou použít.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Pomocí funkce `str()` prozkoumej strukturu nové proměnné `planets_df`.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` je už dostupný v tvém pracovním prostoru, takže `str(planets_df)` bude stačit.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`, který je již dostupný v pracovním prostoru!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Zobrazili jste správně strukturu `planets_df`? Použijte k tomu funkci `str()`!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Výborně! Nyní, když dobře rozumíte datové sadě `planets_df`, je čas podívat se, jak z ní lze vybírat prvky. Vše se dozvíte v následujících cvičeních!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Výběr prvků datového rámce
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Podobně jako u vektorů a matic vybíráš prvky z datového rámce pomocí hranatých závorek `[ ]`. Čárkou oddělíš, co chceš vybrat z řádků a co ze sloupců. Například:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` vybere hodnotu na prvním řádku a ve druhém sloupci v `my_df`.
+- `my_df[1:3,2:4]` vybere řádky 1, 2, 3 a sloupce 2, 3, 4 v `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Někdy chceš vybrat všechny prvky určitého řádku nebo sloupce. Například `my_df[1, ]` vybere všechny prvky prvního řádku. Teď tuto techniku vyzkoušíme na `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Z `planets_df` vyber průměr Merkuru: jde o hodnotu na prvním řádku a ve třetím sloupci. Výsledek jednoduše vypiš.
+- Z `planets_df` vyber všechna data o Marsu (čtvrtý řádek). Výsledek jednoduše vypiš.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Pro výběr průměru Venuše (druhý řádek) bys použil/a: `planets_df[2,3]`. Co tedy potřebuješ pro Merkur?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Vybrali jste správně a vytiskli průměr Merkuru? Můžete použít `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Vybrali jste správně a vytiskli všechna data pro Mars? Můžete použít `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Výborně! Kromě výběru prvků z datového rámce pomocí indexu můžete také použít názvy sloupců. Chcete-li se dozvědět jak, přejděte k dalšímu cvičení.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Výběr prvků datového rámce (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Místo čísel můžeš k výběru prvků datového rámce používat také názvy proměnných.
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Řekněme, že chceš vybrat první tři prvky sloupce `type`. Jedním způsobem je:
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Nevýhodou tohoto přístupu je, že musíš znát (nebo dohledat) číslo sloupce `type` — což může být při větším počtu proměnných docela nepraktické. Často je jednodušší použít přímo název proměnné:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Vyber a vypiš prvních 5 hodnot ze sloupce `"diameter"` datového rámce `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+První pět hodnot můžeš vybrat pomocí `planets_df[1:5, ...]`. Dokážeš doplnit `...` tak, aby se vybrал pouze sloupec `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Vybrali jste správně prvních pět hodnot ze sloupce průměru a vytiskli jste je? Můžete zde použít `[1:5, \"diameter\"]`.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Výborně! Pokračujte k dalšímu cvičení!")
 ```
 
 ---
 
-## Only planets with rings
+## Pouze planety s prstenci
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Často budeš chtít vybrat celý sloupec, tedy jednu konkrétní proměnnou z datového rámce. Pokud chceš vybrat všechny prvky proměnné `diameter`, můžeš použít oba tyto způsoby:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Existuje ale i zkratka. Pokud mají tvoje sloupce názvy, stačí použít znak `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Pomocí znaku `$` vyber proměnnou `rings` z `planets_df`. Výsledný vektor ulož jako `rings_vector`.
+- Vypiš `rings_vector`, abys ověřil/a, že je vše správně.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` vybere sloupec `diameter` z `planets_df`; co tedy potřebuješ použít pro výběr sloupce `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Vybrali jste správně proměnnou `rings` z `planets_df`? Použijte `$rings`. Uložte výsledek jako `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Nezapomeňte vypsat `rings_vector` poté, co jste jej vytvořili!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Výborně! Pokračujte k dalšímu cvičení a objevte další způsob výběru podmnožin!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Pouze planety s prstenci (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Ze školy si pravděpodobně pamatuješ, že některé planety ve sluneční soustavě mají prstence a jiné ne. Jejich názvy ti ale teď nevycházejí z hlavy. Mohlo by R pomoct?
 
-If you type `rings_vector` in the console, you get:
+Pokud do konzole zadáš `rings_vector`, dostaneš:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+To znamená, že první čtyři pozorování (tedy planety) prstence nemají (`FALSE`), ale zbývající čtyři ano (`TRUE`). Nezobrazí se ti ale přehledný seznam s názvy těchto planet, jejich průměrem a dalšími údaji. Zkus použít `rings_vector` k výběru dat pro čtyři planety s prstenci.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Kód v editoru vybírá sloupec `name` pro všechny planety, které mají prstence. Uprav ho tak, aby se místo samotného sloupce `name` vybraly _všechny_ sloupce pro planety s prstenci.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Nezapomeň, že pro výběr _všech_ sloupců jednoduše necháš část se sloupci uvnitř `[ ]` prázdnou! To znamená, že budeš potřebovat `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Neodstraňujte ani nepřepisujte `planets_df` nebo `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Upravili jste správně kód tak, aby byly vybrány _všechny_ sloupce pro planety, které mají prstence? Můžete použít `planets_df[rings_vector, ]`. Nezapomeňte zde uvést čárku, je to zásadní!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Výborně! Toto je poměrně zdlouhavé řešení. V následujícím cvičení se naučíte, jak to provést stručnějším způsobem.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Jen planety s prstenci, ale kratší
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Tak co ses vlastně naučil/a v předchozích cvičeních? Vybral/a jsi podmnožinu z datového rámce (`planets_df`) podle toho, zda platí určitá podmínka (prstence nebo ne), a podařilo se ti vytáhnout všechna relevantní data. Skvělá práce! NASA si tě už asi brzy všimne ;-).
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Teď postoupíme o úroveň výš a použijeme funkci `subset()`. Funkci `subset()` si představ jako zkratku, která dělá přesně to samé jako předchozí cvičení.
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+První argument funkce `subset()` určuje datový rámec, ze kterého chceš vybírat. Druhým argumentem předáš R informace a podmínky potřebné k výběru správné podmnožiny.
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Následující kód vrátí úplně stejný výsledek jako v předchozím cvičení – tentokrát ale bez nutnosti použít `rings_vector`!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Použij `subset()` na `planets_df` a vyber planety s průměrem menším než Země. Proměnná `diameter` je relativní míra průměru planety vůči průměru Země, takže tvoje podmínka je `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` je skoro hotové – zvládneš doplnit `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Zadali jste správně část `subset = ...` uvnitř funkce `subset()`? Podmínka v tomto případě je `diameter < 1`. Jednoduše vypište výsledek.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Prvním argumentem, který předáváte funkci `subset()`, by měl být `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Výborně! Funkce `subset()` je nejen stručnější, ale pravděpodobně také srozumitelnější pro osoby, které čtou váš kód. Pokračujte k dalšímu cvičení.");
 ```
 
 ---
 
-## Sorting
+## Řazení
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Sestavování žebříčků a pořadí je jednou z lidských oblíbených činností. Taková pořadí mohou být užitečná (nejlepší univerzity světa), zábavná (nejvlivnější filmové hvězdy) nebo zcela zbytečná (nejlepší dvojník agenta 007).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+V datové analýze můžeš data seřadit podle určité proměnné v datasetu. V R k tomu slouží funkce `order()`.
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` vrátí pro každý prvek jeho pořadové místo – tedy pořadí, v jakém by prvky šly za sebou od nejmenšího po největší. Zkus to třeba na vektoru:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +763,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+Hodnota 10 je druhým prvkem vektoru `a` a zároveň nejmenším číslem – proto se na výstupu `order(a)` objeví číslo 2 jako první. Hodnota 100 je prvním prvkem `a` a druhým nejmenším číslem – proto následuje číslo 1.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Výstup funkce `order(a)` můžeš použít k přeřazení prvků vektoru `a`:
     
 ```
 a[order(a)]
@@ -774,10 +773,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Prozkoumej funkci `order()` v konzoli. Až budeš připraven/a pokračovat, odešli odpověď.
 
 `@hint`
-Just play with the `order()` function in the console!
+Zkus si funkci `order()` přímo v konzoli!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +795,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Skvělé! Nyní použijeme funkci `order()` k seřazení datového rámce!")
 ```
 
 ---
 
-## Sorting your data frame
+## Řazení datového rámce
 
 ```yaml
 type: NormalExercise
@@ -811,15 +810,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Teď, když rozumíš funkci `order()`, ji využijeme v praxi. Cílem je přeuspořádat datový rámec tak, aby začínal nejmenší planetou a končil největší – tedy seřadit ho podle sloupce `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Zavolej funkci `order()` na `planets_df$diameter` (sloupec `diameter` v datovém rámci `planets_df`). Výsledek ulož do proměnné `positions`.
+- Teď přeuspořádej `planets_df` tak, že použiješ vektor `positions` jako indexy řádků v hranatých závorkách. Ponech všechny sloupce a výsledek jednoduše vypiš.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Pomocí `order(planets_df$diameter)` vytvoř proměnnou `positions`.
+- Teď můžeš použít `positions` v hranatých závorkách: `planets_df[...]` – dokážeš doplnit `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +865,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Neodstraňujte ani nepřepisujte datový rámec `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Vypočítal/a jste správně proměnnou `positions`? Můžete použít `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Použijte `planets_df[positions, ]` k seřazení `planets_df`; čárka uvnitř hranatých závorek je zásadní!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Výborně! Toto cvičení uzavírá kapitolu o datových rámcích. Pamatujte, že datové rámce jsou v jazyce R nesmírně důležité a budete je potřebovat neustále. Další velmi často používanou datovou strukturou je seznam. To bude předmětem následující kapitoly!")
 ```

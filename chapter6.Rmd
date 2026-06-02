@@ -1,13 +1,13 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Kapitola 6
+title: Seznamy
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  Na rozdíl od vektorů mohou seznamy obsahovat prvky různých typů – podobně jako
+  tvůj seznam úkolů může zahrnovat různé kategorie činností. V této kapitole se
+  naučíš, jak seznamy vytvářet, pojmenovávat a jak z nich vybírat prvky.
 ---
 
-## Lists, why would you need them?
+## Listy – k čemu je potřebuješ?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +17,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Gratulujeme! V tomto bodě kurzu už ovládáš:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vektory** (jednorozměrné pole): mohou obsahovat číselné, znakové nebo logické hodnoty. Všechny prvky vektoru musí být stejného datového typu.
+- **Matice** (dvourozměrné pole): mohou obsahovat číselné, znakové nebo logické hodnoty. Všechny prvky matice musí být stejného datového typu.
+- **Datové rámce** (dvourozměrné objekty): mohou obsahovat číselné, znakové nebo logické hodnoty. V rámci jednoho sloupce musí mít všechny prvky stejný datový typ, ale různé sloupce mohou mít typy různé.
 
-Pretty sweet for an R newbie, right? ;-)
+Na začátečníka v R pěkný výsledek, co říkáš? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Odešli odpověď a pusť se do světa listů!
 
 `@hint`
-Just submit the answer!
+Stačí odeslat odpověď!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +48,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("Připraveni, pozor, start! Pokračujte na další cvičení.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Listy – k čemu je vlastně potřebuješ? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +63,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+**List** v R je podobný tvému pracovnímu nebo školnímu seznamu úkolů: jednotlivé položky se nejspíš liší délkou, povahou i typem činnosti, kterou je potřeba udělat.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+List v R ti umožňuje shromáždit různé objekty pod jedním názvem (tedy názvem listu) v uspořádaném pořadí. Těmito objekty mohou být matice, vektory, datové rámce, dokonce i další listy a podobně. Není přitom vůbec nutné, aby spolu tyto objekty nějak souvisely.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Dalo by se říct, že list je takový super datový typ: můžeš do něj uložit prakticky jakékoli informace!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Stačí odeslat odpověď a začneš první cvičení o listech.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Odešli odpověď a začni první cvičení o listech.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +92,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Skvělé. Pojďme se pustit do práce!")
 ```
 
 ---
 
-## Creating a list
+## Vytvoření listu
 
 ```yaml
 type: NormalExercise
@@ -107,19 +107,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Pojďme vytvořit první list! K sestavení listu slouží funkce `list()`: 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Argumenty funkce `list()` jsou jednotlivé komponenty listu. Pamatuj, že těmito komponentami mohou být matice, vektory, jiné listy a další.
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Vytvoř list s názvem `my_list`, který bude obsahovat proměnné `my_vector`, `my_matrix` a `my_df` jako komponenty listu.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Použij funkci `list()` s argumenty `my_vector`, `my_matrix` a `my_df` oddělenými čárkou.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +158,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Neodstraňujte ani neměňte definici proměnných `my_vector`, `my_matrix` nebo `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Zdá se, že `my_list` neobsahuje správné prvky. Ujistěte se, že předáváte proměnné `my_vector`, `my_matrix` a `my_df` funkci `list()`, oddělené čárkami, v tomto pořadí.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Výborně! Přejděte k dalšímu cvičení.")
 ```
 
 ---
 
-## Creating a named list
+## Vytvoření pojmenovaného seznamu
 
 ```yaml
 type: NormalExercise
@@ -182,16 +182,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Skvělá práce, jde ti to!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Stejně jako na svém seznamu úkolů chceš vědět, co jednotlivé komponenty seznamu představují. Proto by sis je měl/měla pojmenovat:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Tímto způsobem vznikne seznam s komponentami pojmenovanými `name1`, `name2` atd. Pokud chceš seznam pojmenovat až po jeho vytvoření, použij funkci `names()` – stejně jako u vektorů. Následující příkazy jsou zcela ekvivalentní předchozímu přiřazení:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +199,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Uprav kód z předchozího cvičení (viz editor) tak, že přidáš komponenty názvů. Pro `my_vector` použij název `vec`, pro `my_matrix` název `mat` a pro `my_df` název `df`.
+- Vypiš `my_list`, abys mohl/a zkontrolovat výstup.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+První způsob pojmenování komponent seznamu je nejjednodušší. Začíná takto:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Ostatní dvě komponenty přidej stejným způsobem.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +251,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Neodstraňujte ani neměňte definici proměnných `my_vector`, `my_matrix` nebo `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Zdá se, že `my_list` neobsahuje správné prvky.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Zdá se, že `my_list` neobsahuje správné názvy komponent. Ujistěte se, že používáte názvy `vec`, `mat` a `df`. Pokud si nevíte rady, podívejte se na nápovědu.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Nezapomeňte vypsat `my_list` do konzole! Jednoduše přidejte `my_list` na nový řádek v editoru.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Výborně! Nyní nejenže víte, jak vytvářet seznamy, ale také je umíte pojmenovat – dovednost, která se v praxi ukáže jako velmi užitečná. Pokračujte k dalšímu cvičení.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Vytvoření pojmenovaného seznamu (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +279,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Jako velký filmový nadšenec (pamatuješ na svou práci v LucasFilms) se rozhodneš začít ukládat informace o skvělých filmech pomocí seznamů.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Začni vytvořením seznamu pro film "The Shining". Proměnné `mov`, `act` a `rev` už máš připravené v R workspace. Klidně si je prohlédni v konzoli.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Doplň kód v editoru tak, aby vznikl `shining_list`; obsahuje tři prvky:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: řetězec znaků s názvem filmu (uložený v `mov`)
+- `actors`: vektor s jmény hlavních herců (uložený v `act`)
+- `reviews`: datový rámec s několika recenzemi (uložený v `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Nezapomeň jednotlivé složky seznamu odpovídajícím způsobem pojmenovat (názvy jsou `moviename`, `actors` a `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` je jen část řešení; tvým úkolem je přidat do seznamu také `act` a `rev` s příslušnými názvy.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +324,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Neodstraňujte ani neměňte definici přednastavených proměnných!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Zdá se, že `shining_list` neobsahuje správné prvky: první prvek by měl být `mov`, druhý prvek `act` a třetí `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Zdá se, že `shining_list` neobsahuje správné názvy komponent: pojmenujte první prvek `moviename`, druhý prvek `actors` a třetí prvek `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Výborně! Nyní víte, jak sestavovat a pojmenovávat seznamy. Stejně jako v předchozích kapitolách se podívejme na to, jak vybírat prvky ze seznamů. Přejděte k dalšímu cvičení.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Výběr prvků ze seznamu
 
 ```yaml
 type: NormalExercise
@@ -350,32 +350,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+Seznamy bývají složeny z mnoha prvků a komponent, takže získat z nich jednu komponentu, více komponent nebo konkrétní prvek nemusí být vždy jednoduché.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Jeden ze způsobů, jak komponentu vybrat, je použít její číselnou pozici. Například pro získání první komponenty seznamu `shining_list` napíšeš
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Nejrychlejší způsob, jak si to ověřit, je zadat příkaz přímo do konzole. Důležité upozornění: pro výběr prvků z vektorů se používají jednoduché hranaté závorky `[ ]`. Nezaměňuj je!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Na komponenty se můžeš odkazovat také jejich názvem — pomocí `[[ ]]` nebo operátoru `$`. Oba způsoby vrátí datový rámec s recenzemi:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
 ``` 
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Kromě výběru celých komponent často potřebuješ vybrat konkrétní prvky uvnitř nich. Například `shining_list[[2]][1]` vybere z druhé komponenty `actors` (`shining_list[[2]]`) první prvek (`[1]`). Pokud to zadáš do konzole, uvidíš, že odpověď je Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Ze seznamu `shining_list` vyber vektor představující herce a jednoduše ho vypiš.
+- Ze seznamu `shining_list` vyber druhý prvek vektoru představujícího herce a vypiš ho stejným způsobem.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- Pro výběr vektoru představujícího herce můžeš použít `$actors`.
+- Pro výběr třetího prvku z vektoru představujícího herce použiješ `shining_list$actors[3]`. Co je potřeba změnit, abys vybral/a druhý prvek?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +405,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Neodstraňujte ani neměňte definici `shining_list`, která je předem načtena v pracovním prostoru!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Vybrali jste správně a vytiskli jste vektor představující herce? Můžete použít například `shining_list$actors`.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Chcete-li vybrat druhého herce z vektoru představujícího herce, měli byste řetězit svá výběry: `shining_list$actors` představuje herce, takže můžete přidat `[2]` pro výběr druhého prvku.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Výborně! Výběr prvků ze seznamů je poměrně snadný, že ano? Pokračujte k dalšímu cvičení.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Vytvoření nového seznamu pro další film
 
 ```yaml
 type: NormalExercise
@@ -425,30 +425,30 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Našel/našla jsi recenze dalšího, novějšího filmu s Jackem Nicholsonem: Skrytá identita!
 
-| Scores | Comments               |
-|--------|------------------------|
-| 4.6    | <span translate="no">I would watch it again</span> |
-| 5      | <span translate="no">Amazing!</span>               |
-| 4.8    | <span translate="no">I liked it</span>             |
-| 5      | <span translate="no">One of the best movies</span> |
-| 4.2    | <span translate="no">Fascinating plot</span>       |
+| Hodnocení | Komentáře              |
+|-----------|------------------------|
+| 4.6       | <span translate="no">I would watch it again</span> |
+| 5         | <span translate="no">Amazing!</span>               |
+| 4.8       | <span translate="no">I liked it</span>             |
+| 5         | <span translate="no">One of the best movies</span> |
+| 4.2       | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Bude se hodit shromáždit všechny informace o filmu – jako název, herce a recenze – do jediné proměnné. Protože tato data mají různé tvary, je přirozené uložit je do seznamu.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+V tvém pracovním prostředí jsou dostupné proměnné `movie_title` s názvem filmu a `movie_actors` se jmény některých herců.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Vytvoř dva vektory s názvy `scores` a `comments`, které budou obsahovat informace z recenzí zobrazených v tabulce.
+- Vypočítej průměr vektoru `scores` a ulož ho jako `avg_review`. 
+- Spoj vektory `scores` a `comments` do data frame s názvem `reviews_df`. 
+- Vytvoř seznam s názvem `departed_list`, který bude obsahovat `movie_title`, `movie_actors`, data frame s recenzemi jako `reviews_df` a průměrné hodnocení jako `avg_review`, a vypiš ho.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Vektory vytvoříš pomocí funkce `c()`. 
+- Průměr vektoru zjistíš tak, že název vektoru předáš funkci `mean()`. 
+- Data frame `reviews_df` vytvoříš pomocí funkce `data.frame()`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +492,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Neměňte ani neodstraňujte předem načtené objekty."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Vytvořili jste vektor `scores` správně?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Vytvořili jste vektor `comments` správně?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Vytvořili jste objekt `avg_review` správně?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Vytvořili jste `reviews_df` správně?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Vytvořili jste `departed_list` správně?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +518,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Vypsal/a jste `departed_list`?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Výborná práce! Úspěšně jste vytvořili další seznam informací o filmu a zkombinovali různé komponenty do jednoho seznamu. Gratulujeme k dokončení kurzu!")
 ```

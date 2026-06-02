@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Kapitola 1
+title: Úvod do základů
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Udělej první kroky s R. V této kapitole se naučíš používat konzoli jako
+  kalkulačku a přiřazovat proměnné. Také se seznámíš se základními datovými typy
+  v R. Pojďme na to!
 free_preview: true
 ---
 
-## How it works
+## Jak to funguje
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+V editoru píšeš kód v R, kterým řešíš jednotlivá cvičení. Po odeslání kódu R každý řádek interpretuje a spustí – a ty okamžitě uvidíš, jestli bylo řešení správné. Výstup tvého kódu se zobrazí v konzoli.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R používá znak `#` pro přidávání komentářů, aby bylo jasné, co daný kód dělá – tobě i ostatním. Trochu jako na Twitteru! Komentáře se jako kód nespouštějí, takže výsledek neovlivní. Například <span translate="no">_Calculate 3 + 4_</span> v editoru je komentář.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Příkazy v R můžeš spouštět také přímo v konzoli. Je to skvělý způsob, jak si s kódem pohrát, protože zadání se zde na správnost nekontroluje.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- V editoru už najdeš ukázkový kód. Dokážeš rozpoznat, které řádky jsou skutečný kód v R a které jsou komentáře?
+- Přidej řádek kódu, který vypočítá součet čísel 6 a 12, a odešli svůj kód.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Přidej řádek kódu v R, který vypočítá součet čísel 6 a 12 – stejně jako v ukázkovém kódu!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Ujistěte se, že jste přidali `6 + 12` na nový řádek. Nezačínejte řádek znakem `#`, jinak váš kód v jazyce R nebude spuštěn!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Výborně! Vidíte, jak konzole zobrazuje výsledek kódu v jazyce R, který jste odeslali? Nyní, když jste obeznámeni s rozhraním, pojďme se pustit do práce s jazykem R!")
 ```
 
 ---
 
-## Arithmetic with R
+## Aritmetika v R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+R lze v základní podobě používat jako jednoduchý kalkulátor. Podívej se na následující aritmetické operátory:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
+- Sčítání: `+`
+- Odčítání: `-`
+- Násobení: `*`
+- Dělení: `/`
+- Umocňování: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+Posledním dvěma se věnujme trochu víc:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Operátor `^` umocní číslo vlevo na hodnotu čísla vpravo – například `3^2` je 9.
+- Modulo vrátí zbytek po dělení čísla vlevo číslem vpravo – například 5 modulo 3, tedy `5 %% 3`, je 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+S těmito znalostmi splň následující úkoly.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Do editoru zadej `2^5` pro výpočet 2 na pátou.
+- Zadej `28 %% 6` pro výpočet 28 modulo 6.
+- Odešli odpověď a prohlédni si výstup R v konzoli.
+- Všimni si, jak se symbol `#` používá k přidávání komentářů do kódu R.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Další příklad operátoru modulo: `9 %% 2` se rovná `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Neodstraňujte ostatní příklady aritmetiky!"
+ex() %>% check_output_expr("2^5", missing_msg = "Příklad umocňování není správný. Napište `2 ^ 5` na nový řádek.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Zdá se, že je problém s příkladem modulo. Napište `28 %% 6` na nový řádek.")
+success_msg("Výborně! Přejděte k dalšímu cvičení.")
 ```
 
 ---
 
-## Variable assignment
+## Přiřazení proměnné
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Základním pojmem v (statistickém) programování je **proměnná**. 
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Proměnná ti umožňuje uložit hodnotu (např. 4) nebo objekt (např. popis funkce) do R. Název proměnné pak můžeš kdykoli použít k snadnému přístupu k uložené hodnotě nebo objektu. 
 
-You can assign a value 4 to a variable `my_var` with the command
+Hodnotu 4 přiřadíš proměnné `my_var` příkazem
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Teď je řada na tobě: doplň kód v editoru tak, aby proměnné `x` byla přiřazena hodnota 42. Pak odešli odpověď. Všimni si, že když požádáš R o výpis `x`, zobrazí se hodnota 42.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Podívej se, jak byla hodnota 4 přiřazena proměnné `my_var` v zadání cvičení. Udělej přesně to samé v editoru, ale tentokrát přiřaď hodnotu 42 proměnné `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Ujistěte se, že definujete proměnnou `x`.")  %>% check_equal(incorrect_msg = "Ujistěte se, že přiřadíte správnou hodnotu proměnné `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Výborně! Všimli jste si, že R nevypíše hodnotu proměnné do konzole, když provedete přiřazení? `x <- 42` nevygenerovalo žádný výstup, protože R předpokládá, že tuto proměnnou budete v budoucnu potřebovat. Jinak byste hodnotu do proměnné vůbec neukládali, že? Pokračujte k dalšímu cvičení!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Přiřazení proměnné (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Představ si, že máš košík s pěti jablky. Jako začínající datový analytik chceš počet jablek uložit do proměnné s názvem `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Do editoru zadej tento kód: `my_apples <- 5`. Tím přiřadíš hodnotu 5 proměnné `my_apples`.
+- Pod druhý komentář napiš: `my_apples`. Tím se hodnota proměnné `my_apples` vypíše.
+- Odešli odpověď a podívej se na výstup: uvidíš, že se vypíše číslo 5. R teď propojuje proměnnou `my_apples` s hodnotou 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Pamatuj, že pro přiřazení čísla nebo objektu do proměnné v R můžeš použít operátor přiřazení `<-`. Alternativně lze použít `=`, ale `<-` je v R komunitě mnohem rozšířenější.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Ujistěte se, že jste definovali proměnnou `my_apples`.") %>% check_equal(incorrect_msg = "Ujistěte se, že proměnné `my_apples` přiřazujete správnou hodnotu.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Uvedli jste R explicitně pokyn, aby proměnnou `my_apples` vypsal do konzole?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Výborně! Pokračujte k dalšímu cvičení!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Přiřazení proměnných (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+Každý dobrý košík s ovocem potřebuje pomeranče, takže se rozhodneš přidat šest kusů. Jako datový analytik/analytička si hned řekneš: čas vytvořit proměnnou `my_oranges` a přiřadit jí hodnotu 6. Pak chceš spočítat, kolik kusů ovoce máš celkem. Protože jsi dal/a proměnným smysluplné názvy, kód je teď přehledný a jasný: 
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Přiřaď proměnné `my_oranges` hodnotu 6.
+- Sečti proměnné `my_apples` a `my_oranges` a nech R výsledek jednoduše vypsat.
+- Přiřaď výsledek součtu `my_apples` a `my_oranges` do nové proměnné `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` je součet `my_apples` a `my_oranges`. Použij operátor `+` pro sečtení těchto dvou hodnot a `<-` pro přiřazení výsledku do proměnné `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Použili jste `my_fruit <- my_apples + my_oranges` pro vytvoření proměnné `my_fruit`?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Ponechte řádek, který přiřazuje hodnotu 5 proměnné `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Ponechte řádek, který přiřazuje hodnotu 6 proměnné `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Ujistěte se, že vytisknete výsledek součtu `my_apples` a `my_oranges`. Příklad kódu v popisu již prozrazuje odpověď na tento pokyn!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Výborně! Velkou výhodou provádění výpočtů s proměnnými je jejich znovupoužitelnost. Pokud změníte hodnotu `my_apples` na 12 místo 5 a skript spustíte znovu, proměnná `my_fruit` se automaticky aktualizuje. Pokračujte k dalšímu cvičení.")
 ```
 
 ---
 
-## Apples and oranges
+## Jablka a pomeranče
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Každý ví, že jablka a pomeranče se dohromady sčítat nemají. Ale to jsi právě udělal/a, že? :-) V předchozím cvičení obsahovaly obě proměnné `my_apples` i `my_oranges` číslo. Operátor `+` v R funguje s číselnými proměnnými. Pokud bys ale skutečně zkusil/a přičíst <span translate="no">"apples"</span> k <span translate="no">"oranges"</span> tak, že proměnné `my_oranges` přiřadíš textovou hodnotu (viz editor), R by se pokoušel sečíst číselnou a textovou proměnnou a výsledek uložit do `my_fruit`. To ale není možné.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Odešli odpověď a přečti si chybovou zprávu. Ujisti se, že rozumíš, proč to nefungovalo.
+- Uprav kód tak, aby R věděl, že máš 6 pomerančů, a tedy košík s celkem 11 kusy ovoce.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Proměnné `my_oranges` musíš přiřadit číselnou hodnotu `6` místo textové hodnoty `"six"`. Všimni si, jak uvozovky naznačují, že `"six"` je textový řetězec.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,28 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Můžete to provést nastavením proměnné `my_oranges` na číselnou hodnotu, nikoli na řetězec!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Ujistěte se, že `my_apples` stále obsahuje `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Ujistěte se, že `my_oranges` se rovná `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "Hodnota `my_fruit` není správná. Měla by být 11, součet `my_apples` a `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Vytvořili jste `my_fruit` jako součet proměnných `my_apples` a `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Vytvořili jste `my_fruit` jako součet proměnných `my_apples` a `my_oranges`?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Neodstraňujte řádek, který vypíše `my_fruit`.")
 
 
 
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Výborně, pokračujte v dobré práci! Přejděte k dalšímu cvičení.")
 ```
 
 ---
 
-## Basic data types in R
+## Základní datové typy v R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +422,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R pracuje s mnoha datovými typy. Tady jsou ty nejzákladnější, se kterými začneš:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Desetinná čísla jako `4.5` se nazývají **numerics**.
+- Celá čísla jako `4` se nazývají **integers**. I celá čísla jsou numerics.
+- Logické hodnoty (`TRUE` nebo `FALSE`) se nazývají **logical**.
+- Textové hodnoty (řetězce) se nazývají **characters**.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Všimni si, že uvozovky v editoru označují `"some text"` jako řetězec.
 
 `@instructions`
-Change the value of the:
+Změň hodnotu:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- proměnné `my_numeric` na `42`.
+- proměnné `my_character` na `"universe"`. Uvozovky označují, že `"universe"` je character.
+- proměnné `my_logical` na `FALSE`.
 
-Note that R is case sensitive!
+Pozor – R rozlišuje velká a malá písmena!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Nahraď hodnoty v editoru těmi, které jsou zadané v úloze. Například: 
+`my_numeric <- 42` přiřadí hodnotu 42 proměnné `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +475,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Změnili jste správně deklaraci `my_numeric` tak, aby obsahovala hodnotu 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Změnili jste správně `my_character` na `\"universe\"`? Nezapomeňte na uvozovky!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Změnili jste správně `my_logical` na `FALSE`? Všechna písmena `FALSE` by měla být velká!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Výborná práce! Pokračujte k dalšímu cvičení.")
 ```
 
 ---
 
-## What's that data type?
+## Jaký je to datový typ?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +496,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Pamatuješ si, že když jsi sečetl/a `5 + "six"`, dostals chybu kvůli neshodě datových typů? Takovým situacím se dá předejít – stačí si datový typ proměnné ověřit předem. Použij k tomu funkci `class()`, jak ukazuje kód v editoru.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Doplň kód v editoru a vypiš také třídy proměnných `my_character` a `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Kód pro výpis datového typu proměnné `my_numeric` už je připravený – udělej totéž pro `my_character` a `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +545,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Neměňte deklaraci proměnných!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Zahrnuli jste `class(%1$s)` pro výpis datového typu `%1$s`?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Neodstraňujte kód, který vypisuje typ `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Gratulujeme! Toto bylo poslední cvičení této kapitoly. Přejděte na další kapitolu a ponořte se do světa vektorů!")
 ```
