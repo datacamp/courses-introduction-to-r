@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Capitolul 5
+title: Cadre de date
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Majoritatea seturilor de date cu care vei lucra vor fi stocate ca cadre de
+  date. Până la finalul acestui capitol, vei ști să creezi un cadru de date, să
+  selectezi părți relevante din el și să îl ordonezi în funcție de anumite
+  variabile.
 ---
 
-## What's a data frame?
+## Ce este un data frame?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +18,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Poate îți amintești din capitolul despre matrici că toate elementele dintr-o matrice trebuie să fie de același tip. În acel caz, setul de date despre Star Wars conținea doar elemente numerice.
 
-When doing a market research survey, however, you often have questions such as:
+Atunci când realizezi un sondaj de piață, însă, întâlnești adesea întrebări de genul:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- „Ești căsătorit/ă?" sau întrebări cu răspuns „da/nu" (`logical`)
+- „Câți ani ai?" (`numeric`)
+- „Care este părerea ta despre acest produs?" sau alte întrebări deschise (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Răspunsurile respondenților la aceste întrebări formează un set de date cu tipuri diferite de date. De cele mai multe ori vei lucra cu seturi de date care conțin mai multe tipuri de date, nu doar unul singur.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Un data frame are variabilele setului de date pe coloane și observațiile pe rânduri. Acest concept îți va fi familiar dacă ai mai lucrat cu pachete statistice precum SAS sau SPSS.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Trimite răspunsul. Datele din data frame-ul de exemplu `mtcars` vor fi afișate în consolă.
 
 `@hint`
-Submit the answer and witness the magic!
+Trimite răspunsul și privește ce se întâmplă!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +56,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Nu modificați nimic din cod. Asigurați-vă că afișați `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Excelent! Continuați cu următorul exercițiu.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Aruncă o privire rapidă asupra setului de date
 
 ```yaml
 type: NormalExercise
@@ -73,19 +73,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Wow, câte mașini! 
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Lucrul cu seturi de date mari este ceva obișnuit în analiza datelor. Când lucrezi cu seturi de date și cadre de date (extrem de) mari, primul tău obiectiv ca analist este să înțelegi clar structura și elementele principale ale acestora. De aceea, este adesea util să afișezi doar o parte din întregul set de date. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Cum faci asta în R? Funcția `head()` îți permite să vizualizezi primele observații dintr-un cadru de date. În mod similar, funcția `tail()` afișează ultimele observații din setul tău de date.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Atât `head()`, cât și `tail()` afișează un rând de antet (numit 'header'), care conține numele variabilelor din setul tău de date.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Apelează `head()` pe setul de date `mtcars` pentru a vedea antetul și primele observații.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` va afișa primele observații din cadrul de date `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +106,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Ați transmis corect `mtcars` funcției `head()`?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Pur și simplu afișați rezultatul apelului `head()`, nu este necesar să îl atribuiți unei noi variabile.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Minunat! Deci, ce avem în acest set de date? De exemplu, `hp` reprezintă puterea motorului mașinii; Datsun are cea mai mică putere dintre cele 6 mașini afișate. Pentru o prezentare completă a semnificației variabilelor, tastați `?mtcars` în consolă și citiți pagina de ajutor. Continuați la exercițiul următor!");
 ```
 
 ---
 
-## Have a look at the structure
+## Explorează structura
 
 ```yaml
 type: NormalExercise
@@ -125,21 +125,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+O altă metodă des folosită pentru a obține o privire de ansamblu rapidă asupra datelor tale este funcția `str()`. Aceasta îți arată structura setului de date. Pentru un data frame, `str()` îți oferă:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Numărul total de observații (de ex. 32 de tipuri de mașini)
+- Numărul total de variabile (de ex. 11 caracteristici ale mașinilor)
+- Lista completă a numelor variabilelor (de ex. `mpg`, `cyl` ... )
+- Tipul de date al fiecărei variabile (de ex. `num`)
+- Primele observații
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Aplicarea funcției `str()` este adesea primul lucru pe care îl faci când primești un set de date sau un data frame nou. Este o modalitate excelentă de a înțelege mai bine datele înainte de a trece la analiza propriu-zisă.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Investighează structura lui `mtcars`. Asigură-te că observi aceleași numere, variabile și tipuri de date menționate mai sus.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Folosește funcția `str()` pe `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +160,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Ați apelat corect `str()` pe `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Bună treabă! Puteți găsi multe informații vizualizând `str()` al unui set de date. Continuați cu exercițiul următor.")
 ```
 
 ---
 
-## Creating a data frame
+## Crearea unui data frame
 
 ```yaml
 type: NormalExercise
@@ -177,28 +177,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Folosirea seturilor de date integrate nu e nici pe departe la fel de distractivă ca și crearea propriilor seturi de date, așa că restul acestui capitol se bazează pe un set de date dezvoltat chiar de tine. Pregătește-te, pentru că e momentul să explorăm spațiul cosmic!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Ca prim obiectiv, vrei să construiești un data frame care să descrie principalele caracteristici ale celor opt planete din sistemul nostru solar. Conform bunului tău prieten Buzz, principalele caracteristici ale unei planete sunt:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Tipul planetei (terestră sau gigant gazos).
+- Diametrul planetei raportat la diametrul Pământului.
+- Perioada de rotație a planetei în jurul Soarelui raportată la cea a Pământului.
+- Dacă planeta are inele sau nu (TRUE sau FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+După o cercetare amănunțită pe [Wikipedia](https://en.wikipedia.org/wiki/Planet), ești pregătit să creezi vectorii necesari: `name`, `type`, `diameter`, `rotation` și `rings`; aceștia au fost deja introduși în editor. Primul element din fiecare vector corespunde primei observații.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Constructiezi un data frame folosind funcția `data.frame()`. Ca argumente, îi transmiți vectorii de mai sus: aceștia vor deveni coloanele data frame-ului. Deoarece fiecare coloană are aceeași lungime, vectorii transmiși trebuie să aibă și ei aceeași lungime. Nu uita însă că este posibil (și probabil) ca aceștia să conțină tipuri diferite de date.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Folosește funcția `data.frame()` pentru a construi un data frame. Transmite vectorii `name`, `type`, `diameter`, `rotation` și `rings` ca argumente ale funcției `data.frame()`, în această ordine. Numește data frame-ul rezultat `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Apelul tău `data.frame()` începe astfel:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Poți să-l completezi?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +250,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Nu modificați nimic în legătură cu definiția vectorilor. Adăugați doar un apel `data.frame()` pentru a crea `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +261,15 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Ați apelat corect `data.frame()` pentru a crea `planets_df`? În interiorul `data.frame()`, asigurați-vă că transmiteți toți vectorii în ordinea corectă: `name`, `type`, `diameter`, `rotation` și în final `rings`.")
 
 
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Excelent! Următorul pas logic, după cum știți deja, este inspectarea cadrului de date pe care tocmai l-ați creat. Continuați cu exercițiul următor.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Crearea unui data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +279,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Data frame-ul `planets_df` ar trebui să aibă 8 observații și 5 variabile. A fost deja încărcat în spațiul de lucru, așa că îl poți folosi direct.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Folosește `str()` pentru a investiga structura noii variabile `planets_df`.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` este deja disponibil în spațiul tău de lucru, deci `str(planets_df)` va rezolva problema.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +321,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Nu ștergeți și nu suprascrieți cadrul de date `planets_df` care este deja disponibil în spațiul de lucru!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Ați afișat corect structura `planets_df`? Utilizați `str()` pentru a face acest lucru!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Excelent! Acum că aveți o înțelegere clară a setului de date `planets_df`, este timpul să vedeți cum puteți selecta elemente din acesta. Aflați totul în exercițiile următoare!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Selectarea elementelor dintr-un data frame
 
 ```yaml
 type: NormalExercise
@@ -341,19 +341,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+La fel ca în cazul vectorilor și matricelor, selectezi elementele dintr-un data frame cu ajutorul parantezelor pătrate `[ ]`. Folosind o virgulă, poți indica ce anume să selectezi din rânduri și, respectiv, din coloane. De exemplu:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` selectează valoarea de la primul rând și a doua coloană din `my_df`.
+- `my_df[1:3,2:4]` selectează rândurile 1, 2, 3 și coloanele 2, 3, 4 din `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Uneori vrei să selectezi toate elementele unui rând sau ale unei coloane. De exemplu, `my_df[1, ]` selectează toate elementele primului rând. Aplică acum această tehnică pe `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Din `planets_df`, selectează diametrul lui Mercur: aceasta este valoarea de la primul rând și a treia coloană. Afișează pur și simplu rezultatul.
+- Din `planets_df`, selectează toate datele despre Marte (al patrulea rând). Afișează pur și simplu rezultatul.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Pentru a selecta diametrul lui Venus (al doilea rând), ai nevoie de: `planets_df[2,3]`. Dar pentru Mercur?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +400,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Nu ștergeți și nu suprascrieți cadrul de date `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Ați selectat și afișat corect diametrul pentru Mercur? Puteți utiliza `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Ați selectat și afișat corect toate datele pentru Marte? Puteți utiliza `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Excelent! Pe lângă selectarea elementelor din cadrul de date după index, puteți utiliza și numele coloanelor. Pentru a afla cum, treceți la exercițiul următor.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Selectarea elementelor dintr-un data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +422,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+În loc să folosești numere pentru a selecta elemente dintr-un data frame, poți folosi și numele variabilelor pentru a selecta coloane.
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Să presupunem că vrei să selectezi primele trei elemente din coloana `type`. O modalitate de a face acest lucru este:
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Un posibil dezavantaj al acestei abordări este că trebuie să știi (sau să cauți) numărul coloanei `type`, ceea ce devine dificil când ai multe variabile. De cele mai multe ori, este mai simplu să folosești direct numele variabilei:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Selectează și afișează primele 5 valori din coloana `"diameter"` a lui `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Poți selecta primele cinci valori cu `planets_df[1:5, ...]`. Poți completa partea `...` pentru a selecta doar coloana `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +481,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Nu ștergeți și nu suprascrieți cadrul de date `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Ați selectat corect primele cinci valori din coloana diameter și le-ați afișat? Puteți utiliza `[1:5, \"diameter\"]` aici.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Excelent! Continuați cu următorul exercițiu!")
 ```
 
 ---
 
-## Only planets with rings
+## Doar planetele cu inele
 
 ```yaml
 type: NormalExercise
@@ -501,25 +501,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+De multe ori vei dori să selectezi o coloană întreagă, adică o singură variabilă dintr-un data frame. Dacă vrei să selectezi toate elementele variabilei `diameter`, de exemplu, ambele variante de mai jos funcționează:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Există însă o scurtătură. Dacă coloanele au nume, poți folosi semnul `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Folosește semnul `$` pentru a selecta variabila `rings` din `planets_df`. Stochează vectorul rezultat în `rings_vector`.
+- Afișează `rings_vector` pentru a verifica dacă ai obținut rezultatul corect.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` selectează coloana `diameter` din `planets_df`; ce trebuie să folosești pentru a selecta coloana `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +565,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Nu ștergeți și nu suprascrieți cadrul de date `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Ați selectat corect variabila `rings` din `planets_df`? Utilizați `$rings`. Stocați rezultatul ca `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Nu uitați să afișați `rings_vector` după ce l-ați creat!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Excelent! Continuați cu exercițiul următor și descoperiți o altă modalitate de a face subset!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Doar planetele cu inele (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +587,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Probabil îți amintești din școală că unele planete din sistemul nostru solar au inele, iar altele nu. Din păcate, nu îți mai amintești numele lor. Te poate ajuta R?
 
-If you type `rings_vector` in the console, you get:
+Dacă tastezi `rings_vector` în consolă, obții:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Asta înseamnă că primele patru observații (sau planete) nu au inele (`FALSE`), dar celelalte patru au (`TRUE`). Totuși, nu obții o prezentare clară a numelor acestor planete, a diametrului lor etc. Să folosim `rings_vector` pentru a selecta datele celor patru planete cu inele.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Codul din editor selectează coloana `name` pentru toate planetele care au inele. Modifică codul astfel încât, în loc să fie selectată doar coloana `name`, să fie selectate _toate_ coloanele pentru planetele cu inele.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Ține minte că pentru a selecta _toate_ coloanele, trebuie pur și simplu să lași goală partea rezervată coloanelor din `[ ]`! Asta înseamnă că vei folosi `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +644,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Nu ștergeți și nu suprascrieți `planets_df` sau `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Ați adaptat corect codul pentru a selecta _toate_ coloanele pentru planetele care au inele? Puteți utiliza `planets_df[rings_vector, ]`. Asigurați-vă că includeți virgula aici, este esențială!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Minunat! Aceasta este o soluție destul de laborioasă. Exercițiul următor vă va învăța cum să procedați într-un mod mai concis.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Doar planetele cu inele, dar mai scurt
 
 ```yaml
 type: NormalExercise
@@ -666,27 +666,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Ce ai învățat în exercițiile anterioare? Ai selectat un subset dintr-un cadru de date (`planets_df`) în funcție de îndeplinirea sau neîndeplinirea unei anumite condiții (inele sau fără inele) și ai reușit să extragi toate datele relevante. Impresionant! Până acum, NASA probabil că și-a aruncat deja ochii pe CV-ul tău ;-).
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Acum, să trecem la nivelul următor și să folosim funcția `subset()`. Poți considera funcția `subset()` ca pe o scurtătură pentru a face exact același lucru ca în exercițiile anterioare.
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Primul argument al funcției `subset()` specifică setul de date din care vrei să extragi un subset. Adăugând al doilea argument, îi oferi lui R informațiile și condițiile necesare pentru a selecta subsetul corect.
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Codul de mai jos produce exact același rezultat ca în exercițiul anterior, dar de această dată nu ai mai avut nevoie de `rings_vector`!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Folosește `subset()` pe `planets_df` pentru a selecta planetele care au un diametru mai mic decât cel al Pământului. Deoarece variabila `diameter` reprezintă o măsură relativă a diametrului planetei față de cel al Pământului, condiția ta este `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` este aproape soluția; poți completa `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +727,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Nu eliminați și nu suprascrieți cadrul de date `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Ați specificat corect partea `subset = ...` din interiorul funcției `subset()`? Condiția în acest caz este `diameter < 1`. Afișați pur și simplu rezultatul.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Primul argument pe care îl transmiteți funcției `subset()` ar trebui să fie `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Excelent! Funcția `subset()` nu este doar mai concisă, ci este probabil și mai ușor de înțeles pentru persoanele care vă citesc codul. Continuați cu exercițiul următor.");
 ```
 
 ---
 
-## Sorting
+## Sortare
 
 ```yaml
 type: NormalExercise
@@ -752,11 +752,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Realizarea și crearea de clasamente este una dintre activitățile preferate ale oamenilor. Aceste clasamente pot fi utile (cele mai bune universități din lume), distractive (cei mai influenți actori de film) sau fără sens (cel mai bun dublu al lui 007).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+În analiza datelor, poți sorta datele după o anumită variabilă din set. În R, acest lucru se face cu ajutorul funcției `order()`.
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` este o funcție care îți oferă poziția ordonată a fiecărui element atunci când este aplicată pe o variabilă, cum ar fi un vector, de exemplu:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,20 +764,20 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10, care este al doilea element din `a`, este cel mai mic element, deci 2 apare primul în rezultatul lui `order(a)`. 100, care este primul element din `a`, este al doilea cel mai mic element, deci 1 apare al doilea în rezultatul lui `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
-    
+Asta înseamnă că putem folosi rezultatul lui `order(a)` pentru a rearanja `a`:
+
 ```
 a[order(a)]
 [1]   10  100 1000
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Experimentează cu funcția `order()` în consolă. Trimite răspunsul când ești gata să continui.
 
 `@hint`
-Just play with the `order()` function in the console!
+Experimentează cu funcția `order()` în consolă!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +796,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Excelent! Acum să folosim funcția `order()` pentru a sorta cadrul de date!")
 ```
 
 ---
 
-## Sorting your data frame
+## Sortarea unui data frame
 
 ```yaml
 type: NormalExercise
@@ -811,15 +811,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Acum că înțelegi funcția `order()`, hai să o folosim la ceva concret. Vrei să reordonezi data frame-ul astfel încât să înceapă cu cea mai mică planetă și să se termine cu cea mai mare. Practic, o sortare după coloana `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Aplică `order()` pe `planets_df$diameter` (coloana `diameter` din `planets_df`). Stochează rezultatul în `positions`.
+- Reordonează `planets_df` folosind vectorul `positions` ca indecși de rând între paranteze pătrate. Păstrează toate coloanele. Afișează pur și simplu rezultatul.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Folosește `order(planets_df$diameter)` pentru a crea `positions`.
+- Acum poți folosi `positions` între paranteze pătrate: `planets_df[...]`; poți completa `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +866,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Nu ștergeți și nu suprascrieți cadrul de date `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Ați calculat corect variabila `positions`? Puteți utiliza `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Utilizați `planets_df[positions, ]` pentru a sorta `planets_df`; virgula din interiorul parantezelor pătrate este esențială!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Minunat! Acest exercițiu încheie capitolul despre cadre de date. Rețineți că cadrele de date sunt extrem de importante în R și veți avea nevoie de ele în permanență. O altă structură de date foarte frecvent utilizată este lista. Aceasta va fi subiectul capitolului următor!")
 ```

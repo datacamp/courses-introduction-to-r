@@ -1,13 +1,14 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Capitolul 6
+title: Liste
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  Spre deosebire de vectori, listele pot conține componente de tipuri diferite,
+  la fel cum listele tale de activități pot include sarcini din categorii
+  diverse. Acest capitol te va învăța cum să creezi, să denumești și să filtrezi
+  aceste liste.
 ---
 
-## Lists, why would you need them?
+## Liste – de ce ai nevoie de ele?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +18,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Felicitări! Până în acest punct al cursului, te-ai familiarizat deja cu:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectori** (array unidimensional): pot conține valori numerice, de tip caracter sau logice. Toate elementele unui vector au același tip de date.
+- **Matrice** (array bidimensional): pot conține valori numerice, de tip caracter sau logice. Toate elementele unei matrice au același tip de date.
+- **Data frames** (obiecte bidimensionale): pot conține valori numerice, de tip caracter sau logice. În cadrul unei coloane, toate elementele au același tip de date, dar coloane diferite pot avea tipuri de date diferite.
 
-Pretty sweet for an R newbie, right? ;-)
+Impresionant pentru cineva la început de drum în R, nu-i așa? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Trimite răspunsul pentru a începe să înveți totul despre liste!
 
 `@hint`
-Just submit the answer!
+Trimite răspunsul și continuă!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +49,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("Gata, pregătiți-vă, porniți! Continuați cu următorul exercițiu.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Liste – de ce ai nevoie de ele? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +64,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+O **listă** în R este asemănătoare cu lista ta de sarcini de la serviciu sau de la școală: elementele de pe acea listă diferă cel mai probabil ca lungime, caracteristici și tip de activitate. 
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+O listă în R îți permite să reunești o varietate de obiecte sub un singur nume (adică numele listei), într-un mod ordonat. Aceste obiecte pot fi matrice, vectori, seturi de date, chiar și alte liste etc. Nu este obligatoriu ca aceste obiecte să aibă vreo legătură între ele.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Am putea spune că o listă este un fel de super tip de date: poți stoca în ea practic orice informație!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Trimite răspunsul pentru a începe primul exercițiu despre liste.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Trimite răspunsul pentru a începe primul exercițiu despre liste.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +93,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Bine. Să ne apucăm de treabă!")
 ```
 
 ---
 
-## Creating a list
+## Crearea unei liste
 
 ```yaml
 type: NormalExercise
@@ -107,19 +108,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Să creăm prima noastră listă! Pentru a construi o listă, folosești funcția `list()`:
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Argumentele funcției `list()` reprezintă componentele listei. Reține că acestea pot fi matrice, vectori, alte liste, ...
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Construiește o listă numită `my_list`, care să conțină variabilele `my_vector`, `my_matrix` și `my_df` ca elemente ale listei.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Folosește funcția `list()` cu argumentele `my_vector`, `my_matrix` și `my_df`, separate prin virgulă.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +159,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Nu eliminați și nu modificați definiția variabilelor `my_vector`, `my_matrix` sau `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Se pare că `my_list` nu conține elementele corecte. Asigurați-vă că transmiteți variabilele `my_vector`, `my_matrix` și `my_df` funcției `list()`, separate prin virgule, în această ordine.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Minunat! Continuați cu următorul exercițiu.")
 ```
 
 ---
 
-## Creating a named list
+## Crearea unei liste cu nume
 
 ```yaml
 type: NormalExercise
@@ -182,16 +183,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Bine făcut, ești pe val!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+La fel ca pe lista ta de sarcini, vrei să eviți situația în care nu știi sau nu îți amintești ce reprezintă componentele listei tale. De aceea, ar trebui să le dai nume: 
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Astfel se creează o listă ale cărei componente sunt numite `name1`, `name2` și așa mai departe. Dacă vrei să denumești lista după ce ai creat-o, poți folosi funcția `names()`, la fel cum ai procedat cu vectorii. Următoarele comenzi sunt complet echivalente cu atribuirea de mai sus:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +200,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Modifică codul din exercițiul anterior (vezi editorul) adăugând nume componentelor. Folosește numele `vec` pentru `my_vector`, numele `mat` pentru `my_matrix` și numele `df` pentru `my_df`. 
+- Afișează `my_list` pentru a putea inspecta rezultatul.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+Prima metodă de atribuire a numelor componentelor listei tale este cea mai simplă. Arată astfel: 
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Adaugă celelalte două componente în același mod.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +252,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Nu eliminați și nu modificați definiția variabilelor `my_vector`, `my_matrix` sau `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Se pare că `my_list` nu conține elementele corecte.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Se pare că `my_list` nu conține denumirea corectă pentru componente. Asigurați-vă că utilizați numele `vec`, `mat` și `df`, respectiv. Consultați indiciul dacă întâmpinați dificultăți.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Nu uitați să afișați `my_list` în consolă! Adăugați pur și simplu `my_list` pe o linie nouă în editor.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Excelent! Nu numai că știți acum cum să construiți liste, dar le puteți și denumi; o abilitate care se va dovedi foarte utilă în practică. Continuați cu exercițiul următor.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Crearea unei liste cu nume (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +280,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Fiind un mare pasionat de filme (îți amintești de jobul tău la LucasFilms), decizi să începi să stochezi informații despre filmele bune cu ajutorul listelor.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Începe prin a crea o listă pentru filmul "The Shining". Am creat deja variabilele `mov`, `act` și `rev` în spațiul tău de lucru R. Nu ezita să le explorezi în consolă.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Completează codul din editor pentru a crea `shining_list`; aceasta conține trei elemente:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: un șir de caractere cu titlul filmului (stocat în `mov`)
+- `actors`: un vector cu numele actorilor principali (stocat în `act`)
+- `reviews`: un data frame care conține câteva recenzii (stocat în `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Nu uita să denumești componentele listei corespunzător (numele sunt `moviename`, `actors` și `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` este doar o parte din soluție; mai trebuie să adaugi și `act` și `rev` la listă, cu numele corespunzătoare.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +325,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Nu eliminați și nu modificați definiția variabilelor predefinite!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Se pare că `shining_list` nu conține elementele corecte: primul element ar trebui să fie `mov`, al doilea element `act`, iar al treilea `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Se pare că `shining_list` nu conține denumirile corecte pentru componente: denumiți primul element `moviename`, al doilea element `actors`, iar al treilea element `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Minunat! Acum știți cum să construiți și să denumiți liste. Ca în capitolele anterioare, să vedem cum să selectăm elemente din liste. Treceți la exercițiul următor.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Selectarea elementelor dintr-o listă
 
 ```yaml
 type: NormalExercise
@@ -350,32 +351,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+O listă conține de obicei numeroase elemente și componente. Prin urmare, extragerea unui singur element, a mai multor elemente sau a unei componente întregi nu este întotdeauna simplă.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+O modalitate de a selecta o componentă este folosind poziția sa numerică. De exemplu, pentru a „extrage" prima componentă din `shining_list`, scrii
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Poți verifica rapid acest lucru scriind comanda direct în consolă. Important de reținut: pentru a selecta elemente din vectori, folosești paranteze pătrate simple: `[ ]`. Nu le confunda!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Poți face referire și la numele componentelor, folosind `[[ ]]` sau semnul `$`. Ambele variante selectează același cadru de date cu recenziile:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Pe lângă selectarea componentelor, vei avea adesea nevoie să extragi anumite elemente din interiorul acestora. De exemplu, cu `shining_list[[2]][1]` selectezi din a doua componentă, `actors` (`shining_list[[2]]`), primul element (`[1]`). Dacă tastezi asta în consolă, vei vedea că răspunsul este Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Selectează din `shining_list` vectorul care reprezintă actorii. Afișează pur și simplu acest vector.
+- Selectează din `shining_list` al doilea element din vectorul care reprezintă actorii. Afișează-l la fel ca înainte.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- Pentru a selecta vectorul care reprezintă actorii, poți folosi `$actors`.
+- Pentru a selecta al treilea element din vectorul care reprezintă actorii, folosești `shining_list$actors[3]`. Ce trebuie să modifici pentru a selecta al doilea element?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +406,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Nu eliminați și nu modificați definiția `shining_list`, care este preîncărcată în spațiul de lucru!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Ați selectat și afișat corect vectorul care reprezintă actorii? Puteți utiliza `shining_list$actors`, de exemplu.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Pentru a selecta al doilea actor din vectorul care reprezintă actorii, ar trebui să înlănțuiți selecțiile: `shining_list$actors` reprezintă actorii, astfel încât puteți adăuga `[2]` pentru a selecta al doilea element.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Excelent! Selectarea elementelor din liste este destul de ușoară, nu-i așa? Continuați cu următorul exercițiu.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Crearea unei liste noi pentru un alt film
 
 ```yaml
 type: NormalExercise
@@ -425,9 +426,9 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Ai găsit recenzii ale unui alt film mai recent cu Jack Nicholson: The Departed!
 
-| Scores | Comments               |
+| Scoruri | Comentarii               |
 |--------|------------------------|
 | 4.6    | <span translate="no">I would watch it again</span> |
 | 5      | <span translate="no">Amazing!</span>               |
@@ -435,20 +436,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Ar fi util să aduni toate informațiile despre film – titlul, actorii și recenziile – într-o singură variabilă. Deoarece aceste date au forme diferite, este firesc să le combini într-o variabilă de tip listă.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`, care conține titlul filmului, și `movie_actors`, care conține numele unor actori din film, sunt disponibile în spațiul tău de lucru.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Creează doi vectori, numiți `scores` și `comments`, care să conțină informațiile din recenziile prezentate în tabel.
+- Calculează media vectorului `scores` și salvează rezultatul ca `avg_review`. 
+- Combină vectorii `scores` și `comments` într-un cadru de date numit `reviews_df`. 
+- Creează o listă numită `departed_list`, care să conțină `movie_title`, `movie_actors`, cadrul de date al recenziilor ca `reviews_df` și scorul mediu al recenziilor ca `avg_review`, apoi afișeaz-o.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Folosește funcția `c()` pentru a crea vectorii. 
+- Pentru a calcula media unui vector, transmite numele vectorului funcției `mean()`. 
+- Folosește funcția `data.frame()` pentru a crea cadrul de date `reviews_df`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +493,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Nu modificați și nu eliminați obiectele preîncărcate."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Ați creat corect vectorul `scores`?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Ați creat corect vectorul `comments`?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Ați creat corect obiectul `avg_review`?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Ați creat corect `reviews_df`?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Ați creat corect `departed_list`?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +519,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Ați afișat `departed_list`?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Bună treabă! Ați creat cu succes o altă listă de informații despre film și ați combinat diferite componente într-o singură listă. Felicitări pentru finalizarea cursului!")
 ```
