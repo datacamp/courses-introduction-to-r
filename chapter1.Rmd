@@ -1,14 +1,14 @@
 ---
 title_meta: Chapter 1
-title: Intro to basics
+title: बेसिक्स परिचय
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  R के साथ अपनी पहली शुरुआत कीजिए। इस चैप्टर में, आप सीखेंगे कि कंसोल को
+  कैलकुलेटर की तरह कैसे इस्तेमाल करें और वैरिएबल्स कैसे असाइन करें। आप R में
+  बेसिक डेटा टाइप्स के बारे में भी जानेंगे। चलिए शुरू करते हैं।
 free_preview: true
 ---
 
-## How it works
+## यह कैसे काम करता है
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+एडिटर में, आपको अभ्यास हल करने के लिए R कोड टाइप करना है। जब आप अपना कोड सबमिट करते हैं, तो R आपके कोड की हर पंक्ति को इंटरप्रेट और एक्ज़िक्यूट करता है, और आपको संदेश मिलता है कि आपका कोड सही था या नहीं। आपके R कोड का आउटपुट कंसोल में दिखाया जाता है.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R, कमेंट जोड़ने के लिए `#` साइन का उपयोग करता है, ताकि आप और दूसरे लोग समझ सकें कि R कोड किस बारे में है. बिलकुल Twitter की तरह! कमेंट R कोड की तरह नहीं चलाए जाते, इसलिए वे आपके परिणाम को प्रभावित नहीं करेंगे. उदाहरण के लिए, एडिटर में <span translate="no">_Calculate 3 + 4_</span> एक कमेंट है.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+आप सीधे कंसोल में भी R कमांड चला सकते हैं. यह R कोड के साथ प्रयोग करने का अच्छा तरीका है, क्योंकि आपकी सबमिशन की शुद्धता चेक नहीं की जाती.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- एडिटर में पहले से कुछ नमूना कोड है. क्या आप देख सकते हैं कि कौन-सी पंक्तियाँ वास्तविक R कोड हैं और कौन-सी कमेंट हैं?
+- 6 और 12 का योग निकालने वाली एक कोड पंक्ति जोड़ें, और अपना कोड सबमिट करें.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+नमूना कोड के उदाहरण की तरह ही 6 और 12 का योग निकालने वाली R कोड की एक पंक्ति जोड़ें!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "सुनिश्चित करें कि `6 + 12` को एक नई पंक्ति में जोड़ें। पंक्ति की शुरुआत `#` से न करें, अन्यथा आपका R कोड निष्पादित नहीं होगा!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("बहुत बढ़िया! देखें कि कंसोल आपके द्वारा सबमिट किए गए R कोड का परिणाम कैसे दिखाता है? अब जब आप इंटरफ़ेस से परिचित हो गए हैं, तो चलिए R के काम में लग जाते हैं!")
 ```
 
 ---
 
-## Arithmetic with R
+## R के साथ अंकगणित
 
 ```yaml
 type: NormalExercise
@@ -74,7 +74,7 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+अपनी सबसे बुनियादी रूप में, R को एक साधारण कैलकुलेटर की तरह इस्तेमाल किया जा सकता है। निम्नलिखित arithmetic ऑपरेटर देखें:
 
 - Addition: `+`
 - Subtraction: `-`
@@ -83,21 +83,21 @@ In its most basic form, R can be used as a simple calculator. Consider the follo
 - Exponentiation: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+आखिरी दो के लिए थोड़ी व्याख्या ज़रूरी है:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- `^` ऑपरेटर बाएँ वाले नंबर को दाएँ वाले नंबर की power तक उठाता है: उदाहरण के लिए `3^2` का मान 9 है.
+- मॉड्यूलो, बाएँ वाले नंबर को दाएँ वाले नंबर से भाग देने पर जो remainder बचता है, वही लौटाता है। उदाहरण के लिए 5 मॉड्यूलो 3 या `5 %% 3` का मान 2 है.
 
-With this knowledge, follow the instructions to complete the exercise.
+अब इन बातों के आधार पर, अभ्यास पूरा करने के लिए दिए गए निर्देशों का पालन कीजिए.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- 2 की power 5 निकालने के लिए एडिटर में `2^5` टाइप करें.
+- 28 मॉड्यूलो 6 निकालने के लिए `28 %% 6` टाइप करें.
+- "**Submit Answer**" करके उत्तर सबमिट करें और कंसोल में R का आउटपुट देखें.
+- ध्यान दें कि R कोड में कमेंट जोड़ने के लिए `#` सिंबल का उपयोग किया जाता है.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+मॉड्यूलो ऑपरेटर का एक और उदाहरण: `9 %% 2` का मान `1` होता है.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "अन्य अंकगणितीय उदाहरणों को न हटाएँ!"
+ex() %>% check_output_expr("2^5", missing_msg = "घातांक उदाहरण सही नहीं है। एक नई पंक्ति पर `2 ^ 5` लिखें।")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "मॉड्यूलो उदाहरण में कोई समस्या प्रतीत होती है। एक नई पंक्ति पर `28 %% 6` लिखें।")
+success_msg("बहुत बढ़िया! अगले अभ्यास पर जाएँ।")
 ```
 
 ---
 
-## Variable assignment
+## Variable असाइनमेंट
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+(statistical) प्रोग्रामिंग में एक बुनियादी कॉन्सेप्ट को **variable** कहा जाता है.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+एक वैरिएबल आपको किसी मान (जैसे 4) या किसी ऑब्जेक्ट (जैसे किसी फंक्शन का विवरण) को R में स्टोर करने देता है। बाद में आप इस वैरिएबल के नाम का उपयोग करके उस मान या ऑब्जेक्ट तक आसानी से पहुँच सकते हैं जो इसमें स्टोर है.
 
-You can assign a value 4 to a variable `my_var` with the command
+आप वैरिएबल `my_var` को मान 4 इस कमांड से असाइन कर सकते हैं:
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+अब आपकी बारी: एडिटर में कोड ऐसा पूरा कीजिए कि वैरिएबल `x` को मान 42 असाइन हो जाए। "**Submit Answer**" पर क्लिक करें। ध्यान दें, जब आप R से `x` प्रिंट करवाते हैं, तो मान 42 दिखाई देता है.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+अभ्यास में `my_var` को मान 4 असाइन कैसे किया गया है, उसे देखें। एडिटर में बिल्कुल वही करें, लेकिन इस बार वैरिएबल `x` को 42 असाइन करें.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,9 +208,9 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "सुनिश्चित करें कि आपने एक चर `x` परिभाषित किया है।")  %>% check_equal(incorrect_msg = "सुनिश्चित करें कि आपने `x` को सही मान सौंपा है।")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("शानदार काम! क्या आपने देखा कि जब आपने असाइनमेंट किया तो R ने किसी चर के मान को कंसोल पर प्रिंट नहीं किया? `x <- 42` ने कोई आउटपुट उत्पन्न नहीं किया, क्योंकि R मानता है कि आपको भविष्य में इस चर की आवश्यकता होगी। अन्यथा आपने पहले स्थान पर मान को एक चर में संग्रहीत नहीं किया होता, है ना? अगले अभ्यास पर आगे बढ़ें!")
 ```
 
 ---
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+मान लीजिए आपके पास फलों की टोकरी में पाँच सेब हैं। एक प्रशिक्षु डेटा एनालिस्ट के तौर पर, आप सेबों की संख्या को `my_apples` नाम के वैरिएबल में स्टोर करना चाहते हैं।
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- एडिटर में यह कोड टाइप करें: `my_apples <- 5`. इससे `my_apples` को 5 वैल्यू असाइन होगी.
+- दूसरी टिप्पणी के नीचे टाइप करें: `my_apples`. इससे `my_apples` का वैल्यू प्रिंट होगा.
+- अपना उत्तर सबमिट करें और आउटपुट देखें: आपको संख्या 5 प्रिंट होती दिखेगी। यानी अब R ने वैरिएबल `my_apples` को वैल्यू 5 से लिंक कर दिया है.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+याद रखें, अगर आप R में किसी वैरिएबल को कोई संख्या या ऑब्जेक्ट असाइन करना चाहते हैं, तो आप असाइनमेंट ऑपरेटर `<-` का उपयोग कर सकते हैं। वैकल्पिक रूप से आप `=` भी उपयोग कर सकते हैं, लेकिन R समुदाय में `<-` को अधिक पसंद किया जाता है.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,11 +260,11 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "कृपया सुनिश्चित करें कि आपने एक चर `my_apples` परिभाषित किया है।") %>% check_equal(incorrect_msg = "`my_apples` को सही मान असाइन करना सुनिश्चित करें।")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "क्या आपने स्पष्ट रूप से R को `my_apples` चर को कंसोल में प्रिंट करने के लिए कहा है?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("बहुत बढ़िया! अगले अभ्यास पर जारी रखें!")
 ```
 
 ---
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+हर स्वादिष्ट फ्रूट बास्केट में ऑरेंज ज़रूर होते हैं, इसलिए आप छह ऑरेंज जोड़ने का फैसला करते हैं। एक डेटा एनालिस्ट के तौर पर, आपका पहला कदम वैरिएबल `my_oranges` बनाकर उसे 6 असाइन करना है। अगला कदम है कि आप कुल फलों की संख्या निकालें। चूँकि आपने इन मानों के अर्थपूर्ण नाम रखे हैं, आप इसे अब साफ़ तरीके से कोड कर सकते हैं:
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- `my_oranges` को मान 6 असाइन करें।
+- वैरिएबल `my_apples` और `my_oranges` को जोड़ें और R से सिर्फ़ परिणाम प्रिंट करवाएँ।
+- `my_apples` और `my_oranges` के जोड़ के परिणाम को नए वैरिएबल `my_fruit` को असाइन करें।
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` बस `my_apples` और `my_oranges` का योग है। आप दोनों को जोड़ने के लिए `+` ऑपरेटर का उपयोग कर सकते हैं और उस मान को वैरिएबल `my_fruit` को असाइन करने के लिए `<-` का उपयोग करें।
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "`my_fruit` वेरिएबल बनाने के लिए क्या आपने `my_fruit <- my_apples + my_oranges` का उपयोग किया है?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples` को 5 असाइन करने वाली पंक्ति को बनाए रखें।")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges` को 6 असाइन करने वाली पंक्ति को बनाए रखें।")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "`my_apples` और `my_oranges` को जोड़ने के परिणाम को प्रिंट करना सुनिश्चित करें। विवरण में दिए गए कोड उदाहरण में पहले से ही इस निर्देश का उत्तर दिया गया है!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("अच्छा किया! वेरिएबल्स के साथ गणना करने का बड़ा लाभ पुन: प्रयोज्यता है। यदि आप `my_apples` को 5 के बजाय 12 के बराबर बदलते हैं और स्क्रिप्ट को फिर से चलाते हैं, तो `my_fruit` भी स्वचालित रूप से अपडेट हो जाएगा। अगले अभ्यास पर जारी रखें।")
 ```
 
 ---
 
-## Apples and oranges
+## Apples और Oranges
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+आम समझ कहती है कि Apples और Oranges को जोड़ना नहीं चाहिए। लेकिन आपने अभी वही किया, है न :-)? पिछले अभ्यास में `my_apples` और `my_oranges` दोनों वैरिएबल्स में संख्या थी। R में `+` ऑपरेटर संख्यात्मक वैरिएबल्स के साथ काम करता है। अगर आप सच में <span translate="no">"apples"</span> और <span translate="no">"oranges"</span> को जोड़ने की कोशिश करते, और `my_oranges` वैरिएबल को टेक्स्ट वैल्यू असाइन करते (एडिटर देखें), तो आप `my_fruit` वैरिएबल में एक संख्यात्मक और एक कैरेक्टर वैरिएबल का जोड़ असाइन करने की कोशिश कर रहे होते। यह संभव नहीं है।
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- उत्तर सबमिट करें और त्रुटि संदेश पढ़ें। यह क्यों नहीं चला, इसे ज़रूर समझिए।
+- कोड ऐसा बदलें कि R को पता चले कि आपके पास 6 oranges हैं और इस तरह फल की टोकरी में कुल 11 फल हैं।
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+आपको `my_oranges` वैरिएबल में कैरेक्टर वैल्यू `"six"` के बजाय संख्यात्मक वैल्यू `6` असाइन करनी है। ध्यान दें, उद्धरण चिह्न यह दर्शाते हैं कि `"six"` एक कैरेक्टर है।
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "आप इसे `my_oranges` वेरिएबल को एक संख्यात्मक मान पर सेट करके कर सकते हैं, न कि एक स्ट्रिंग पर!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "`my_apples` में अभी भी `5` होना सुनिश्चित करें।")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "`my_oranges` के `6` के बराबर होने की पुष्टि करें।")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "`my_fruit` का मान सही नहीं है। यह `my_apples` और `my_oranges` के योग, 11 के बराबर होना चाहिए।")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "क्या आपने `my_fruit` को वेरिएबल `my_apples` और `my_oranges` के योग के रूप में बनाया?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "क्या आपने `my_fruit` को वेरिएबल `my_apples` और `my_oranges` के योग के रूप में बनाया?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "`my_fruit` को प्रिंट करने वाली पंक्ति को न हटाएं।")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("बहुत बढ़िया, अच्छे काम को जारी रखें! अगले अभ्यास पर जाएं।")
 ```
 
 ---
 
-## Basic data types in R
+## R में बेसिक डेटा टाइप्स
 
 ```yaml
 type: NormalExercise
@@ -423,27 +420,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R कई तरह के डेटा टाइप्स के साथ काम करता है। शुरुआत के लिए कुछ बेसिक टाइप्स ये हैं:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- `4.5` जैसे दशमलव मान को **numeric** कहा जाता है.
+- `4` जैसे पूर्णांक मान को **integer** कहा जाता है. Integers भी numerics ही होते हैं.
+- Boolean मान (`TRUE` या `FALSE`) को **logical** कहा जाता है.
+- टेक्स्ट (या string) मान को **character** कहा जाता है.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+ध्यान दें कि एडिटर में कोटेशन मार्क्स यह दर्शाते हैं कि `"some text"` एक string है.
 
 `@instructions`
-Change the value of the:
+इनका मान बदलें:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- वैरिएबल `my_numeric` का मान `42` करें.
+- वैरिएबल `my_character` का मान `"universe"` करें. ध्यान दें, कोटेशन मार्क्स दर्शाते हैं कि `"universe"` एक character है.
+- वैरिएबल `my_logical` का मान `FALSE` करें.
 
-Note that R is case sensitive!
+ध्यान रखें कि R case sensitive है!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+एडिटर में दिए गए मानों को इस अभ्यास में बताए गए मानों से बदलें। उदाहरण के लिए:
+`my_numeric <- 42` वैरिएबल `my_numeric` को 42 असाइन करता है.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +473,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "क्या आपने `my_numeric` की घोषणा को सही ढंग से बदलकर उसमें 42 मान शामिल किया है?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "क्या आपने `my_character` को सही ढंग से `\"universe\"` में बदल दिया है? उद्धरण चिह्नों को मत भूलिए!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "क्या आपने `my_logical` को सही ढंग से `FALSE` में बदल दिया है? `FALSE` के सभी अक्षर बड़े होने चाहिए!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("बहुत बढ़िया काम! अगले अभ्यास पर जारी रखें।")
 ```
 
 ---
 
-## What's that data type?
+## यह डेटा टाइप क्या है?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +494,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+क्या आपको याद है कि जब आपने `5 + "six"` किया था, तो डेटा टाइप मैच न होने के कारण एरर आया था? ऐसी असहज स्थितियों से बचने के लिए, पहले से ही किसी वैरिएबल का डेटा टाइप चेक कर लें। आप यह `class()` फंक्शन से कर सकते हैं, जैसा कि एडिटर में दिए कोड में दिखाया गया है।
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+एडिटर में दिए कोड को पूरा करें और `my_character` तथा `my_logical` की classes भी प्रिंट करें।
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+`my_numeric` के डेटा टाइप को प्रिंट करने वाला कोड दिया हुआ है; इसी तरह `my_character` और `my_logical` के लिए भी कीजिए।
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +543,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "चर के घोषणापत्र को न बदलें!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "क्या आपने `%1$s` के डेटा प्रकार को प्रिंट करने के लिए `class(%1$s)` शामिल किया है?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "उस कोड को न हटाएं जो `my_numeric` के प्रकार को प्रिंट करता है।")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("बधाई हो! यह इस अध्याय के लिए अंतिम अभ्यास था। अगले अध्याय में जाएं और वेक्टर की दुनिया में डूब जाएं!")
 ```

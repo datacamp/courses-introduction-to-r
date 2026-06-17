@@ -2,12 +2,12 @@
 title_meta: Chapter 6
 title: Lists
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  vectors के विपरीत, lists अलग-अलग प्रकार के components रख सकती हैं, जैसे आपकी
+  to-do lists में अलग-अलग कैटेगरी के tasks होते हैं। यह चैप्टर आपको ऐसी lists
+  बनाना, उन्हें नाम देना, और उनका subset लेना सिखाएगा।
 ---
 
-## Lists, why would you need them?
+## Lists, इनकी ज़रूरत क्यों पड़ेगी?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +17,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+बधाई हो! कोर्स के इस बिंदु तक आते-आते आप इनसे पहले ही परिचित हैं:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectors** (एक-आयामी array): इनमें numeric, character या logical मान हो सकते हैं. एक vector के सभी एलिमेंट्स का data type एक जैसा होता है.
+- **Matrices** (दो-आयामी array): इनमें numeric, character या logical मान हो सकते हैं. एक matrix के सभी एलिमेंट्स का data type एक जैसा होता है.
+- **Data frames** (दो-आयामी objects): इनमें numeric, character या logical मान हो सकते हैं. किसी एक कॉलम के सभी एलिमेंट्स का data type एक जैसा होता है, लेकिन अलग-अलग कॉलम्स के data type अलग हो सकते हैं.
 
-Pretty sweet for an R newbie, right? ;-)
+R के नए सीखने वालों के लिए यह काफ़ी बढ़िया शुरुआत है, है न? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Lists के बारे में सब कुछ सीखना शुरू करने के लिए उत्तर सबमिट करें!
 
 `@hint`
-Just submit the answer!
+बस उत्तर सबमिट करें!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,7 +48,7 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("तैयार, सेट, गो! अगले अभ्यास पर जारी रखें।")
 ```
 
 ---
@@ -63,17 +63,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+R में **list** आपके काम या स्कूल की टू-डू लिस्ट जैसी होती है: उस लिस्ट के आइटम अक्सर लंबाई, विशेषताओं और करने वाली गतिविधि के प्रकार में अलग-अलग होते हैं.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+R में list आपको अलग-अलग ऑब्जेक्ट्स को एक नाम (यानी लिस्ट का नाम) के तहत क्रमबद्ध तरीके से इकट्ठा करने देती है. ये ऑब्जेक्ट्स matrices, vectors, data frames, यहाँ तक कि दूसरी lists भी हो सकते हैं, आदि. यह ज़रूरी नहीं है कि ये ऑब्जेक्ट्स आपस में किसी भी तरह से संबंधित हों.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+आप कह सकते हैं कि list एक तरह का सुपर डेटा टाइप है: आप इसमें लगभग किसी भी तरह की जानकारी स्टोर कर सकते हैं!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+सूचियों पर पहला अभ्यास शुरू करने के लिए बस उत्तर सबमिट करें.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+सूचियों पर पहला अभ्यास शुरू करने के लिए उत्तर सबमिट करें.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +92,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("बहुत बढ़िया। चलिए हम व्यावहारिक अनुभव प्राप्त करते हैं!")
 ```
 
 ---
 
-## Creating a list
+## एक list बनाना
 
 ```yaml
 type: NormalExercise
@@ -107,19 +107,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+आइए अपनी पहली list बनाएँ! किसी list का निर्माण करने के लिए आप `list()` फंक्शन का उपयोग करते हैं:
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+list फंक्शन के आर्ग्युमेंट्स ही list के components होते हैं. याद रखिए, ये components matrices, vectors, अन्य lists, ... हो सकते हैं.
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+एक list बनाएँ, जिसका नाम `my_list` हो, और जिसमें `my_vector`, `my_matrix` और `my_df` वैरिएबल list components के रूप में शामिल हों.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+कॉमा से अलग किए गए आर्ग्युमेंट्स के रूप में `my_vector`, `my_matrix` और `my_df` के साथ `list()` फंक्शन का उपयोग करें.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +158,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "कृपया `my_vector`, `my_matrix` या `my_df` वेरिएबल्स की परिभाषा को न हटाएँ और न ही बदलें!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list` में सही तत्व नहीं हैं। सुनिश्चित करें कि `my_vector`, `my_matrix` और `my_df` वेरिएबल्स को `list()` फ़ंक्शन में पास करें, उन्हें कॉमा से अलग करें, और इसी क्रम में रखें।")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("शानदार! अगले अभ्यास पर जाएँ।")
 ```
 
 ---
 
-## Creating a named list
+## Named list बनाना
 
 ```yaml
 type: NormalExercise
@@ -182,16 +182,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+शाबाश, आप बढ़िया गति में हैं!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+जिस तरह अपनी to-do लिस्ट में होता है, वैसे ही आप यह नहीं चाहेंगे कि लिस्ट के कंपोनेंट्स का मतलब आपको याद न रहे। इसलिए इन्हें नाम दें:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
-``` 
+```
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+यह एक ऐसी लिस्ट बनाता है जिसके कंपोनेंट्स के नाम `name1`, `name2`, आदि होते हैं। अगर आप लिस्ट बनाने के बाद उनके कंपोनेंट्स को नाम देना चाहें, तो `names()` फंक्शन का इस्तेमाल कर सकते हैं, जैसा आपने vectors के साथ किया था। नीचे दिए गए कमांड्स ऊपर वाले असाइनमेंट के पूरी तरह समकक्ष हैं:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +199,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- पिछले अभ्यास के कोड (एडिटर में देखें) में कंपोनेंट्स को नाम देकर बदलाव करें। `my_vector` के लिए नाम `vec`, `my_matrix` के लिए `mat` और `my_df` के लिए `df` इस्तेमाल करें.
+- `my_list` को प्रिंट करें ताकि आप आउटपुट देख सकें.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+लिस्ट के कंपोनेंट्स को नाम देने की पहली विधि सबसे आसान है। यह ऐसे शुरू होती है:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+बाकी दो कंपोनेंट्स इसी तरह जोड़ें.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +251,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "कृपया `my_vector`, `my_matrix` या `my_df` वेरिएबल्स की परिभाषा को न हटाएँ और न ही बदलें!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list` में सही तत्व नहीं हैं ऐसा प्रतीत होता है।")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`my_list` में घटकों के लिए सही नामकरण नहीं है ऐसा प्रतीत होता है। सुनिश्चित करें कि आप क्रमशः `vec`, `mat` और `df` नामों का उपयोग कर रहे हैं। यदि आप संघर्ष कर रहे हैं तो संकेत देखें।")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "कंसोल में `my_list` को प्रिंट करना न भूलें! संपादक में एक नई पंक्ति पर बस `my_list` जोड़ें।")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("बहुत बढ़िया! अब आप न केवल सूचियाँ बनाना जानते हैं, बल्कि उन्हें नाम भी दे सकते हैं; एक कौशल जो अभ्यास में अत्यधिक उपयोगी साबित होगा। अगले अभ्यास पर जारी रखें।")
 ```
 
 ---
 
-## Creating a named list (2)
+## Named list बनाना (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +279,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+आप एक बड़े मूवी फैन हैं (LucasFilms वाली अपनी नौकरी याद है), इसलिए आप अच्छी फिल्मों की जानकारी लिस्ट की मदद से सहेजने का फैसला करते हैं.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+शुरुआत करें मूवी "The Shining" के लिए एक लिस्ट बनाकर. हमने आपके R वर्कस्पेस में पहले से वैरिएबल `mov`, `act` और `rev` बनाए हुए हैं. उन्हें कंसोल में देख सकते हैं.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+एडिटर में कोड पूरा करके `shining_list` बनाइए; इसमें तीन एलिमेंट होंगे:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: मूवी टाइटल वाला एक character स्ट्रिंग (जो `mov` में स्टोर है)
+- `actors`: मुख्य अभिनेताओं के नामों वाला एक वेक्टर (जो `act` में स्टोर है)
+- `reviews`: कुछ रिव्यू वाला एक data frame (जो `rev` में स्टोर है)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+लिस्ट के कॉम्पोनेंट्स के नाम ठीक से देना न भूलें (नाम हैं `moviename`, `actors` और `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` समाधान का केवल एक हिस्सा है; आपका काम `act` और `rev` को भी उपयुक्त नामों के साथ लिस्ट में जोड़ना है.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +324,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "पूर्व-निर्धारित चर की परिभाषा को न हटाएँ और न ही बदलें!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "`shining_list` में सही तत्व नहीं हैं: पहला तत्व `mov` होना चाहिए, दूसरा तत्व `act`, और तीसरा `rev`।")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`shining_list` में घटकों के लिए सही नामकरण नहीं है: पहले तत्व का नाम `moviename`, दूसरे का `actors`, और तीसरे का `reviews` रखें।")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("शानदार! अब आप जानते हैं कि सूचियों का निर्माण और नामकरण कैसे किया जाता है। पिछले अध्यायों की तरह, आइए देखें कि सूचियों के लिए तत्वों का चयन कैसे किया जाता है। अगले अभ्यास पर जाएँ।")
 ```
 
 ---
 
-## Selecting elements from a list
+## लिस्ट से एलिमेंट चुनना
 
 ```yaml
 type: NormalExercise
@@ -350,32 +350,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+आपकी लिस्ट अक्सर अनेक एलिमेंट्स और कंपोनेंट्स से बनी होगी. इसलिए, उसमें से एकल एलिमेंट, कई एलिमेंट्स, या कोई कंपोनेंट निकालना हमेशा सीधा नहीं होता.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+किसी कंपोनेंट को चुनने का एक तरीका है उसके नंबर वाले पोज़िशन का उपयोग करना. उदाहरण के लिए, `shining_list` के पहले कंपोनेंट को "ग्रैब" करने के लिए आप टाइप करेंगे 
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+इसे जल्दी जाँचने का तरीका है इसे कंसोल में टाइप करना. याद रखने की बात: वेक्टर से एलिमेंट चुनने के लिए आप सिंगल स्क्वेयर ब्रैकेट्स `[ ]` का उपयोग करते हैं. इन्हें मिलाइए मत!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+आप कंपोनेंट्स के नामों का भी संदर्भ दे सकते हैं, `[[ ]]` के साथ या `$` साइन के साथ. दोनों ही रिव्यूज़ को दर्शाने वाले डेटा फ़्रेम को चुनेंगे:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+कंपोनेंट्स चुनने के अलावा, आपको अक्सर इन्हीं कंपोनेंट्स में से विशेष एलिमेंट्स भी चुनने पड़ते हैं. उदाहरण के लिए, `shining_list[[2]][1]` के साथ आप दूसरे कंपोनेंट `actors` (`shining_list[[2]]`) से पहला एलिमेंट (`[1]`) चुनते हैं. जब आप इसे कंसोल में टाइप करेंगे, तो आप देखेंगे कि उत्तर Jack Nicholson है.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- `shining_list` से actors को दर्शाने वाला वेक्टर चुनें. इस वेक्टर को बस प्रिंट कर दें.
+- `shining_list` से actors वाले वेक्टर का दूसरा एलिमेंट चुनें. पहले की तरह इसे भी प्रिंट करें.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- actors को दर्शाने वाले वेक्टर को चुनने के लिए, आप `$actors` का उपयोग कर सकते हैं.
+- actors वाले वेक्टर के तीसरे एलिमेंट को चुनने के लिए आप `shining_list$actors[3]` इस्तेमाल करते हैं. दूसरे एलिमेंट को चुनने के लिए इसमें क्या बदलना होगा?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +405,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "`shining_list` की परिभाषा को न हटाएँ या बदलें, जो कार्यक्षेत्र में पहले से लोड है!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "क्या आपने सही ढंग से अभिनेताओं का प्रतिनिधित्व करने वाले वेक्टर का चयन और प्रिंट किया है? आप उदाहरण के लिए `shining_list$actors` का उपयोग कर सकते हैं।")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "अभिनेताओं का प्रतिनिधित्व करने वाले वेक्टर से दूसरे अभिनेता का चयन करने के लिए, आपको अपने चयन को चेन करना चाहिए: `shining_list$actors` अभिनेताओं का प्रतिनिधित्व करता है, इसलिए आप दूसरे तत्व का चयन करने के लिए `[2]` जोड़ सकते हैं।")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("बहुत बढ़िया! सूचियों से तत्वों का चयन करना काफी आसान है, है ना? अगले अभ्यास पर जारी रखें।")
 ```
 
 ---
 
-## Creating a new list for another movie
+## एक और फिल्म के लिए नई list बनाना
 
 ```yaml
 type: NormalExercise
@@ -425,7 +425,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+आपको जैक निकोलसन की एक और, अधिक हाल की, फिल्म The Departed की समीक्षाएँ मिली हैं!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +435,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+फिल्म के बारे में सभी जानकारी—जैसे शीर्षक, कलाकार, और रिव्यू—को एक ही वैरिएबल में इकट्ठा करना उपयोगी होगा. क्योंकि ये जानकारियाँ अलग-अलग रूप में हैं, इसलिए इन्हें एक list वैरिएबल में जोड़ना स्वाभाविक है.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`, जिसमें फिल्म का शीर्षक है, और `movie_actors`, जिसमें फिल्म के कुछ कलाकारों के नाम हैं, आपके वर्कस्पेस में उपलब्ध हैं.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- तालिका में दिए गए रिव्यू से जानकारी लेते हुए `scores` और `comments` नाम के दो वेक्टर बनाइए.
+- `scores` वेक्टर का औसत निकालकर उसे `avg_review` के रूप में सेव कीजिए.
+- `scores` और `comments` वेक्टर को मिलाकर `reviews_df` नाम का डेटा फ्रेम बनाइए.
+- `departed_list` नाम की एक list बनाइए, जिसमें `movie_title`, `movie_actors`, रिव्यू वाला डेटा फ्रेम `reviews_df`, और औसत रिव्यू स्कोर `avg_review` शामिल हों, और उसे प्रिंट कीजिए.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- आप वेक्टर बनाने के लिए `c()` फंक्शन का उपयोग करेंगे.
+- किसी वेक्टर का औसत निकालने के लिए, उस वेक्टर का नाम `mean()` फंक्शन को पास करें.
+- `reviews_df` डेटा फ्रेम बनाने के लिए `data.frame()` फंक्शन का उपयोग करें.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +492,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "पूर्व-लोडेड ऑब्जेक्ट्स को न बदलें या हटाएं।"
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "`scores` वेक्टर को सही ढंग से बनाया?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "`comments` वेक्टर को सही ढंग से बनाया?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "`avg_review` ऑब्जेक्ट को सही ढंग से बनाया?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "`reviews_df` को सही ढंग से बनाया?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "`departed_list` को सही ढंग से बनाया?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +518,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "`departed_list` को प्रिंट किया?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("अच्छा काम! आपने सफलतापूर्वक मूवी जानकारी की एक और सूची बनाई, और विभिन्न घटकों को एकल सूची में संयोजित किया। पाठ्यक्रम समाप्त करने पर बधाई!")
 ```

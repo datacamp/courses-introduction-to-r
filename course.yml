@@ -1,23 +1,23 @@
 datasets:
   Introduction to R.pdf: Course Glossary
 description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
+  इस R परिचय कोर्स में, आप इस व्यापक रूप से उपयोग होने वाली ओपन सोर्स लैंग्वेज
+  की बुनियादी बातें सीखेंगे—जिनमें vectors, factors, lists, और data frames शामिल
+  हैं। इस कोर्स से मिलने वाले कोडिंग स्किल्स के साथ, आप R में अपना खुद का data
+  analysis करने के लिए तैयार होंगे। दुनिया भर में लाखों R यूज़र्स हैं, जो इसे
+  statistics और data science में अग्रणी programming language के रूप में स्थापित
+  करते हैं। आज ही DataCamp के सबसे लोकप्रिय कोर्सेज़ में से एक के साथ अपनी
+  coding journey शुरू करें!
 
 
-  The course glossary can be found on the right in the resources section.
+  कोर्स का glossary दाईं ओर resources सेक्शन में उपलब्ध है।
 
-  To obtain CPE credits you need to complete the course and reach a score of 70%
-  on the qualified assessment. You can navigate to the assessment by clicking on
-  the CPE credits callout on the right.
-from: 'r-base-prod:v3.0.0'
+  CPE credits प्राप्त करने के लिए आपको कोर्स पूरा करना होगा और qualified
+  assessment में 70% स्कोर हासिल करना होगा। दाईं ओर दिए गए CPE credits कॉलआउट पर
+  क्लिक करके आप assessment तक नेविगेट कर सकते हैं।
+from: r-base-prod:v3.0.0
 id: 58
 practice_pool_id: 106
 programming_language: r
 runtime_config: minimal
-title: Introduction to R
+title: R परिचय
