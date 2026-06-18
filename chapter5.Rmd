@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Розділ 5
+title: Датафрейми
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  Більшість наборів даних, з якими ви працюватимете, зберігаються як датафрейми.
+  Наприкінці цього розділу ви зможете створити датафрейм, вибирати з нього
+  цікаві частини та впорядковувати його за певними змінними.
 ---
 
-## What's a data frame?
+## Що таке датафрейм?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +17,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Ви, мабуть, пам'ятаєте з розділу про матриці: усі елементи в матриці мають бути одного типу. Тоді ваш набір даних про Star Wars містив лише числові елементи.
 
-When doing a market research survey, however, you often have questions such as:
+Однак під час маркетингових опитувань часто трапляються запитання на кшталт:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- «Ви одружені?» або запитання «так/ні» (`logical`)
+- «Скільки вам років?» (`numeric`)
+- «Яка ваша думка про цей продукт?» або інші відкриті запитання (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Результат, тобто відповіді респондентів на наведені вище запитання, — це набір даних із різними типами даних. Дуже часто ви працюватимете саме з такими наборами, а не з тими, що містять лише один тип.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+Датафрейм зберігає змінні набору даних у стовпцях, а спостереження — у рядках. Тим, хто переходить з інших статистичних пакетів, як-от SAS чи SPSS, це буде знайома концепція.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Надішліть відповідь. Дані з вбудованого прикладу датафрейму `mtcars` буде виведено в консоль.
 
 `@hint`
-Submit the answer and witness the magic!
+Надішліть відповідь і подивіться, що вийде!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +55,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Не змінюйте нічого в коді, переконайтеся, що ви виводите `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Чудово! Продовжуйте до наступної вправи.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Швидко перегляньте свій набір даних
 
 ```yaml
 type: NormalExercise
@@ -73,19 +72,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Ого, автомобілів багато!
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Працювати з великими наборами даних у аналізі даних — звична справа. Коли ви маєте справу з (дуже) великими наборами даних і датафреймами, ваше перше завдання як аналітика — зрозуміти їхню структуру та основні елементи. Тому часто корисно показати лише невелику частину всього набору даних.
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Як це зробити в R? Функція `head()` дає змогу показати перші спостереження датафрейму. Аналогічно, функція `tail()` виводить останні спостереження у вашому наборі даних.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+І `head()`, і `tail()` друкують верхній рядок — «заголовок», який містить назви змінних у вашому наборі даних.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Викличте `head()` для набору даних `mtcars`, щоб переглянути заголовок і перші спостереження.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` покаже перші спостереження датафрейму `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +105,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Чи правильно Ви передали `mtcars` до функції `head()`?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Просто виведіть результат виклику `head()`, не потрібно присвоювати його новій змінній.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Чудово! Отже, що ми маємо в цьому наборі даних? Наприклад, `hp` представляє потужність автомобіля; Datsun має найнижчу потужність серед 6 автомобілів, які відображаються. Для повного огляду значень змінних введіть `?mtcars` у консолі та прочитайте сторінку довідки. Продовжуйте до наступної вправи!");
 ```
 
 ---
 
-## Have a look at the structure
+## Ознайомтеся зі структурою
 
 ```yaml
 type: NormalExercise
@@ -125,21 +124,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+Ще один спосіб швидко оглянути ваші дані — функція `str()`. Функція `str()` показує структуру вашого набору даних. Для датафрейму вона повідомляє:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Загальну кількість спостережень (наприклад, 32 типи авто)
+- Загальну кількість змінних (наприклад, 11 характеристик авто)
+- Повний перелік назв змінних (наприклад, `mpg`, `cyl` ... )
+- Тип даних кожної змінної (наприклад, `num`)
+- Перші спостереження
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Застосування функції `str()` часто є першим кроком, коли ви отримуєте новий набір даних або датафрейм. Це чудовий спосіб краще зрозуміти дані перед тим, як переходити до справжнього аналізу.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Дослідіть структуру `mtcars`. Переконайтеся, що ви бачите ті самі числа, змінні та типи даних, згадані вище.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Використайте функцію `str()` для `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +159,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Чи правильно Ви викликали `str()` для `mtcars`?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Гарна робота! Ви можете знайти багато інформації, переглянувши `str()` набору даних. Продовжуйте до наступної вправи.")
 ```
 
 ---
 
-## Creating a data frame
+## Створення датафрейму
 
 ```yaml
 type: NormalExercise
@@ -177,28 +176,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Оскільки працювати лише з вбудованими наборами даних — це й половини задоволення не дає порівняно зі створенням власних, решту цього розділу ми побудуємо на наборі даних, який ви створите самі. Пристебніть реактивний ранець — час досліджувати космос!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Ваше перше завдання — зібрати датафрейм, що описує основні характеристики восьми планет Сонячної системи. За словами вашого доброго друга Базза, головні ознаки планети такі:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Тип планети (Terrestrial або Gas Giant).
+- Діаметр планети відносно діаметра Землі.
+- Обертання планети навколо Сонця відносно обертання Землі.
+- Чи є в планети кільця (TRUE або FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Після якісного дослідження на [Вікіпедії](https://en.wikipedia.org/wiki/Planet) ви впевнено створюєте потрібні вектори: `name`, `type`, `diameter`, `rotation` і `rings`; ці вектори вже підготовлено в редакторі. Перший елемент у кожному з векторів відповідає першому спостереженню.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Використайте функцію `data.frame()` для побудови датафрейму. Як аргументи передайте створені раніше вектори — вони стануть різними стовпцями вашого датафрейму. Оскільки кожен стовпець має однакову довжину, вектори, які ви передаєте, теж повинні мати однакову довжину. Проте не забувайте, що вони можуть (і ймовірно будуть) містити дані різних типів.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Скористайтеся функцією `data.frame()`, щоб створити датафрейм. Передайте вектори `name`, `type`, `diameter`, `rotation` і `rings` як аргументи до `data.frame()` у такому порядку. Назвіть отриманий датафрейм `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Ваш виклик `data.frame()` починається так:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Зможете завершити його?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +249,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Не змінюйте нічого у визначенні векторів. Лише додайте виклик `data.frame()`, щоб створити `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +260,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Чи правильно Ви викликали `data.frame()`, щоб створити `planets_df`. Усередині `data.frame()`, переконайтеся, що передали всі вектори у правильному порядку: `name`, `type`, `diameter`, `rotation` і нарешті `rings`.")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Чудова робота! Логічним наступним кроком, як Ви вже знаєте, є перевірка фрейму даних, який Ви щойно створили. Перейдіть до наступної вправи.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Створення датафрейму (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +277,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Датафрейм `planets_df` має містити 8 спостережень і 5 змінних. Він уже доступний у робочому просторі, тож ви можете відразу його використовувати.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Використайте `str()`, щоб дослідити структуру змінної `planets_df`.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` уже доступний у вашому робочому просторі, тож достатньо виконати `str(planets_df)`.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +319,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`, який вже доступний у робочій області!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Чи правильно Ви відобразили структуру `planets_df`? Використовуйте `str()` для цього!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Чудово! Тепер, коли Ви маєте чітке уявлення про набір даних `planets_df`, настав час дізнатися, як можна вибирати елементи з нього. Дізнайтеся про це у наступних вправах!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Вибір елементів датафрейму
 
 ```yaml
 type: NormalExercise
@@ -341,19 +339,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Подібно до векторів і матриць, елементи з датафрейму вибирають за допомогою квадратних дужок `[ ]`. За допомогою коми ви можете окремо вказати, що вибрати з рядків і зі стовпців. Наприклад:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` вибирає значення у першому рядку та другому стовпці в `my_df`.
+- `my_df[1:3,2:4]` вибирає рядки 1, 2, 3 і стовпці 2, 3, 4 у `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Іноді потрібно вибрати всі елементи рядка або стовпця. Наприклад, `my_df[1, ]` вибирає всі елементи першого рядка. Застосуймо цю техніку до `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- З `planets_df` виберіть діаметр Меркурія: це значення у першому рядку та третьому стовпці. Просто виведіть результат.
+- З `planets_df` виберіть усі дані про Марс (четвертий рядок). Просто виведіть результат.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+Щоб вибрати діаметр Венери (другий рядок), потрібно: `planets_df[2,3]`. А що потрібно для Меркурія?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +398,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Чи правильно Ви вибрали та вивели діаметр для Меркурія? Ви можете використовувати `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Чи правильно Ви вибрали та вивели всі дані для Марса? Ви можете використовувати `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Чудово! Окрім вибору елементів з Вашого фрейму даних за індексом, Ви також можете використовувати назви стовпців. Щоб дізнатися як, перейдіть до наступної вправи.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Вибір елементів датафрейму (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +420,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Замість числових індексів для вибору елементів датафрейму можна використовувати й назви змінних, щоб вибирати стовпчики.
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Припустімо, ви хочете вибрати перші три елементи стовпчика `type`. Один зі способів зробити це —
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+Можливий недолік цього підходу в тому, що потрібно знати (або шукати) номер стовпчика `type`, що складно, коли змінних багато. Часто простіше скористатися назвою змінної:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Виберіть і виведіть перші 5 значень у стовпчику `"diameter"` датафрейму `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Ви можете вибрати перші пʼять значень за допомогою `planets_df[1:5, ...]`. Чи зможете підставити замість `...`, щоб вибрати лише стовпчик `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +479,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Чи правильно Ви вибрали перші п'ять значень зі стовпця діаметра та вивели їх? Ви можете використовувати `[1:5, \"diameter\"]` тут.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Чудово! Продовжуйте до наступної вправи!")
 ```
 
 ---
 
-## Only planets with rings
+## Лише планети з кільцями
 
 ```yaml
 type: NormalExercise
@@ -501,25 +499,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Часто вам потрібно вибрати цілий стовпчик, тобто одну конкретну змінну з датафрейму. Якщо ви хочете отримати всі елементи змінної `diameter`, наприклад, обидва варіанти спрацюють:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Однак є коротший шлях. Якщо ваші стовпчики мають назви, ви можете використати знак `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Використайте знак `$`, щоб вибрати змінну `rings` з `planets_df`. Збережіть отриманий вектор як `rings_vector`.
+- Виведіть `rings_vector`, щоб перевірити результат.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` вибирає стовпчик `diameter` з `planets_df`; що тоді потрібно, щоб вибрати стовпчик `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +563,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Чи правильно Ви вибрали змінну `rings` з `planets_df`? Використовуйте `$rings`. Збережіть результат як `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Не забудьте вивести `rings_vector` після його створення!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Чудово! Продовжуйте до наступної вправи та відкрийте ще один спосіб підмножини!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Лише планети з кільцями (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +585,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Напевно, ви пам'ятаєте зі школи, що деякі планети Сонячної системи мають кільця, а інші — ні. На жаль, ви не можете пригадати їхні назви. Чи може R допомогти?
 
-If you type `rings_vector` in the console, you get:
+Якщо ввести `rings_vector` у консолі, ви отримаєте:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Це означає, що перші чотири спостереження (або планети) не мають кілець (`FALSE`), а решта чотири — мають (`TRUE`). Однак так ви не бачите зручного огляду назв цих планет, їхніх діаметрів тощо. Спробуймо використати `rings_vector`, щоб вибрати дані для чотирьох планет із кільцями.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Код в редакторі вибирає стовпець `name` для всіх планет, які мають кільця. Змініть код так, щоб замість одного стовпця `name` було вибрано всі стовпці для планет із кільцями.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Пам'ятайте: щоб вибрати всі стовпці, залиште частину зі стовпцями всередині `[ ]` порожньою! Тобто вам знадобиться `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +642,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Не видаляйте та не перезаписуйте `planets_df` або `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Чи правильно Ви адаптували код для вибору _всіх_ стовпців для планет, які мають кільця? Ви можете використовувати `planets_df[rings_vector, ]`. Переконайтеся, що тут є кома, це важливо!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Чудово! Це досить нудне рішення. Наступна вправа навчить Вас, як зробити це більш стисло.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Лише планети з кільцями, але коротше
 
 ```yaml
 type: NormalExercise
@@ -666,27 +664,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+То що саме ви вивчили в попередніх вправах? Ви вибирали підмножину з датафрейму (`planets_df`) залежно від того, чи є певна умова істинною (є кільця чи ні), і змогли отримати всі потрібні дані. Чудово! На цей момент NASA, мабуть, уже придивляється до вашого резюме ;-).
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Тепер піднімімося на рівень вище й скористаймося функцією `subset()`. Сприймайте `subset()` як скорочений спосіб зробити те саме, що ви робили в попередніх вправах.
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Перший аргумент `subset()` задає набір даних, для якого ви хочете отримати підмножину. Додавши другий аргумент, ви надаєте R потрібну інформацію й умови, щоб вибрати правильну підмножину.
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Код нижче дасть той самий результат, що й у попередній вправі, але цього разу вам не знадобився `rings_vector`!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Використайте `subset()` для `planets_df`, щоб вибрати планети з діаметром меншим за Землю. Оскільки змінна `diameter` — це відносна міра діаметра планети щодо діаметра Землі, ваша умова така: `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` майже вирішує завдання; чи зможете ви заповнити `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +725,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Чи правильно Ви вказали частину `subset = ...` всередині `subset()`. У цьому випадку умова - `diameter < 1`. Просто виведіть результат.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Перший аргумент, який Ви передаєте у `subset()`, повинен бути `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Чудово! Функція `subset()` не лише більш лаконічна, але й, ймовірно, більш зрозуміла для людей, які читають Ваш код. Продовжуйте до наступної вправи.");
 ```
 
 ---
 
-## Sorting
+## Сортування
 
 ```yaml
 type: NormalExercise
@@ -752,11 +750,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Створювати й порівнювати рейтинги — одне з улюблених занять людства. Такі рейтинги можуть бути корисними (найкращі університети світу), розважальними (найвпливовіші кінозірки) або безглуздими (найкращий двійник 007).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+В аналізі даних ви можете відсортувати дані за певною змінною в наборі даних. В R це робиться за допомогою функції `order()`.
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` — це функція, яка повертає рангові позиції кожного елемента, якщо застосувати її до змінної, наприклад до вектора:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +762,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10, другий елемент у `a`, є найменшим, тому 2 стоїть першою у виведенні `order(a)`. 100, перший елемент у `a`, є другим за зростанням, тож 1 іде другою у виведенні `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Це означає, що ми можемо використати результат `order(a)`, щоб переставити елементи `a`:
     
 ```
 a[order(a)]
@@ -774,10 +772,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Поекспериментуйте з функцією `order()` у консолі. Коли будете готові, натисніть **Submit Answer**.
 
 `@hint`
-Just play with the `order()` function in the console!
+Просто поекспериментуйте з функцією `order()` у консолі!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +794,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Чудово! Тепер давайте використаємо функцію `order()`, щоб відсортувати ваш датафрейм!")
 ```
 
 ---
 
-## Sorting your data frame
+## Сортування вашого датафрейму
 
 ```yaml
 type: NormalExercise
@@ -811,15 +809,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Гаразд, тепер, коли ви розумієте функцію `order()`, зробімо з нею щось корисне. Ви хочете переставити рядки датафрейму так, щоб він починався з найменшої планети й закінчувався найбільшою. Тобто відсортувати за стовпцем `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Викличте `order()` для `planets_df$diameter` (стовпця `diameter` у `planets_df`). Збережіть результат у змінній `positions`.
+- Тепер перетасуйте `planets_df`, використавши вектор `positions` як індекси рядків у квадратних дужках. Залиште всі стовпці. Просто виведіть результат.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Використайте `order(planets_df$diameter)`, щоб створити `positions`.
+- Тепер можна використати `positions` у квадратних дужках: `planets_df[...]`; чи зможете підставити `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +864,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Не видаляйте та не перезаписуйте фрейм даних `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Чи правильно Ви обчислили змінну `positions`? Ви можете використовувати `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Використовуйте `planets_df[positions, ]` для сортування `planets_df`; кома всередині квадратних дужок є важливою!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Чудово! Ця вправа завершує розділ про фрейми даних. Пам'ятайте, що фрейми даних є надзвичайно важливими в R, Ви будете використовувати їх постійно. Ще однією дуже часто використовуваною структурою даних є список. Це буде темою наступного розділу!")
 ```

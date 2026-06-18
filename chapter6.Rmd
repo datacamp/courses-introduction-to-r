@@ -1,13 +1,14 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Розділ 6
+title: Списки
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  На відміну від векторів, списки можуть містити складники різних типів — так
+  само, як у вашому переліку справ можуть бути різні категорії завдань. У цьому
+  розділі ви навчитеся створювати ці списки, надавати їм імена та отримувати з
+  них підмножини.
 ---
 
-## Lists, why would you need them?
+## Списки: навіщо вони потрібні?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +18,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Вітаємо! На цьому етапі курсу ви вже знайомі з:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Вектором** (одновимірний масив): може містити числові, текстові або логічні значення. Усі елементи у векторі мають один і той самий тип даних.
+- **Матрицею** (двовимірний масив): може містити числові, текстові або логічні значення. Усі елементи в матриці мають один і той самий тип даних.
+- **Датафреймом** (двовимірний об'єкт): може містити числові, текстові або логічні значення. У межах одного стовпця всі елементи мають однаковий тип даних, але різні стовпці можуть мати різні типи.
 
-Pretty sweet for an R newbie, right? ;-)
+Непогано для новачка в R, чи не так? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Надішліть відповідь, щоб почати вивчати все про списки!
 
 `@hint`
-Just submit the answer!
+Просто надішліть відповідь!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +49,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("На старт, увага, руш! Продовжуйте до наступної вправи.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Списки: навіщо вони потрібні? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +64,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+**Список** у R схожий на ваш список справ на роботі чи в навчанні: окремі пункти в ньому зазвичай відрізняються за довжиною, характеристиками та типом дій, які треба виконати.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+Список у R дає змогу впорядковано зібрати під однією назвою (тобто назвою списку) різні об'єкти. Це можуть бути матриці, вектори, датафрейми, навіть інші списки тощо. І цим об'єктам навіть не обов'язково якось між собою бути пов'язаними.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Можна сказати, що список — це своєрідний «супертип» даних: у ньому можна зберігати майже будь-який фрагмент інформації!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Просто надішліть відповідь, щоб розпочати першу вправу про списки.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Надішліть відповідь, щоб розпочати першу вправу про списки.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +93,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Круто. Давайте забруднимо руки!")
 ```
 
 ---
 
-## Creating a list
+## Створення списку
 
 ```yaml
 type: NormalExercise
@@ -107,19 +108,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Створімо наш перший список! Щоб побудувати список, використайте функцію `list()`: 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Аргументи функції списку — це його компоненти. Пам'ятайте: цими компонентами можуть бути матриці, вектори, інші списки тощо.
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Створіть список з назвою `my_list`, який міститиме змінні `my_vector`, `my_matrix` та `my_df` як компоненти списку.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Використайте функцію `list()` з `my_vector`, `my_matrix` та `my_df` як аргументами, розділеними комами.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +159,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Не видаляйте та не змінюйте визначення змінних `my_vector`, `my_matrix` або `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Схоже, що `my_list` не містить правильних елементів. Переконайтеся, що передали змінні `my_vector`, `my_matrix` та `my_df` до функції `list()`, розділені комами, у цьому порядку.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Чудово! Перейдіть до наступної вправи.")
 ```
 
 ---
 
-## Creating a named list
+## Створення іменованого списку
 
 ```yaml
 type: NormalExercise
@@ -182,16 +183,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Чудово, у вас чудовий темп!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Як і у переліку справ, ви не хочете забути, що означають компоненти вашого списку. Тому варто надати їм імена:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
-``` 
+```
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Це створює список з компонентами, які мають імена `name1`, `name2` тощо. Якщо ви хочете надати імена вже створеним компонентам списку, скористайтеся функцією `names()`, як і для векторів. Наступні команди повністю еквівалентні наведеному вище присвоєнню:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +200,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Змініть код з попередньої вправи (див. редактор), додавши імена компонентам. Для `my_vector` використайте ім'я `vec`, для `my_matrix` — `mat`, а для `my_df` — `df`.
+- Виведіть `my_list`, щоб переглянути результат.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+Перший спосіб надати імена компонентам списку — найлегший. Він починається так:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Додайте ще два компоненти аналогічно.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +252,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Не видаляйте та не змінюйте визначення змінних `my_vector`, `my_matrix` або `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Схоже, що `my_list` не містить правильних елементів.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Схоже, що `my_list` не містить правильних назв для компонентів. Переконайтеся, що ви використовуєте імена `vec`, `mat` та `df`, відповідно. Перегляньте підказку, якщо у вас виникають труднощі.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Не забудьте вивести `my_list` на консоль! Просто додайте `my_list` на новому рядку в редакторі.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Чудово! Тепер ви не тільки знаєте, як створювати списки, але й можете їх називати; навичка, яка буде дуже корисною на практиці. Продовжуйте до наступної вправи.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Створення іменованого списку (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +280,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Як завзятий поціновувач кіно (пам'ятаєте свою роботу в LucasFilms), ви вирішили зберігати інформацію про хороші фільми за допомогою списків.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Почніть зі створення списку для фільму «The Shining». Ми вже створили змінні `mov`, `act` і `rev` у вашому середовищі R. За потреби перегляньте їх у консолі.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Доповніть код в редакторі, щоб створити `shining_list`; він має містити три елементи:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: символьний рядок із назвою фільму (збережено в `mov`)
+- `actors`: вектор з іменами головних акторів (збережено в `act`)
+- `reviews`: датафрейм із деякими відгуками (збережено в `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Не забудьте відповідно назвати компоненти списку (назви — `moviename`, `actors` і `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` — це лише частина розв'язку; вам потрібно також додати до списку `act` і `rev` з відповідними назвами.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +325,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Не видаляйте та не змінюйте визначення попередньо встановлених змінних!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Схоже, що `shining_list` не містить правильних елементів: перший елемент має бути `mov`, другий елемент `act`, а третій `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Схоже, що `shining_list` не містить правильних назв для компонентів: назвіть перший елемент `moviename`, другий елемент `actors`, а третій елемент `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Чудово! Тепер Ви знаєте, як створювати та називати списки. Як і в попередніх розділах, давайте подивимося, як вибирати елементи для списків. Перейдіть до наступної вправи.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Вибір елементів зі списку
 
 ```yaml
 type: NormalExercise
@@ -350,32 +351,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+Ваш список часто складатиметься з багатьох елементів і компонентів. Тому отримати один елемент, кілька елементів або цілий компонент буває не так просто.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Один зі способів вибору компонента — скористатися його порядковою позицією. Наприклад, щоб «дістати» перший компонент `shining_list`, введіть
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Швидко перевірити це можна, надрукувавши команду в консолі. Важливо пам'ятати: щоб вибирати елементи з векторів, використовуйте одинарні квадратні дужки: `[ ]`. Не плутайте їх!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Також можна звертатися до назв компонентів за допомогою `[[ ]]` або знака `$`. Обидва способи виберуть датафрейм із рецензіями:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Окрім вибору компонентів, часто потрібно вибирати конкретні елементи всередині цих компонентів. Наприклад, за допомогою `shining_list[[2]][1]` ви вибираєте з другого компонента, `actors` (`shining_list[[2]]`), перший елемент (`[1]`). Якщо ви введете це в консолі, побачите, що відповідь — Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Виберіть із `shining_list` вектор, що відповідає акторам. Просто виведіть цей вектор.
+- Виберіть із `shining_list` другий елемент у векторі акторів. Зробіть вивід, як і раніше.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- Щоб вибрати вектор, який відповідає акторам, скористайтеся `$actors`.
+- Щоб вибрати третій елемент у векторі акторів, використовуйте `shining_list$actors[3]`. Що треба змінити, щоб вибрати другий елемент?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +406,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Не видаляйте та не змінюйте визначення `shining_list`, яке завантажено в робочу область!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Чи правильно Ви вибрали та вивели вектор, що представляє акторів? Ви можете використати `shining_list$actors`, наприклад.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "Щоб вибрати другого актора з вектора, що представляє акторів, Ви повинні з'єднати свої вибори: `shining_list$actors` представляє акторів, тому Ви можете додати `[2]`, щоб вибрати другий елемент.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Чудово! Вибирати елементи зі списків досить легко, чи не так? Продовжуйте до наступної вправи.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Створення нового списку для іншого фільму
 
 ```yaml
 type: NormalExercise
@@ -425,7 +426,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Ви знайшли відгуки про інший, більш новий, фільм із Джеком Ніколсоном: The Departed!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +436,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Було б зручно зібрати всю інформацію про фільм — назву, акторів і відгуки — в одній змінній. Оскільки ці частини даних мають різну структуру, природно об'єднати їх у змінній-списку.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`, що містить назву фільму, і `movie_actors`, що містить імена деяких акторів цього фільму, вже доступні у вашому робочому просторі.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Створіть два вектори `scores` і `comments`, які міститимуть дані з відгуків, показаних у таблиці.
+- Знайдіть середнє значення вектора `scores` і збережіть його як `avg_review`.
+- Об'єднайте вектори `scores` і `comments` у датафрейм під назвою `reviews_df`.
+- Створіть список `departed_list`, який міститиме `movie_title`, `movie_actors`, датафрейм відгуків `reviews_df` та середній бал відгуків `avg_review`, і виведіть його на друк.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Використайте функцію `c()` для створення векторів.
+- Щоб знайти середнє значення вектора, передайте імʼя вектора у функцію `mean()`.
+- Скористайтеся функцією `data.frame()` для створення датафрейму `reviews_df`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +493,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Не змінюйте та не видаляйте попередньо завантажені об'єкти."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Чи правильно Ви створили вектор `scores`?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Чи правильно Ви створили вектор `comments`?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Чи правильно Ви створили об'єкт `avg_review`?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Чи правильно Ви створили `reviews_df`?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Чи правильно Ви створили `departed_list`?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +519,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Чи вивели Ви `departed_list`?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Гарна робота! Ви успішно створили ще один список інформації про фільм та об'єднали різні компоненти в один список. Вітаємо з завершенням курсу!")
 ```
