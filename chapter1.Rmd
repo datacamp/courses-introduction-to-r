@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Kapitel 1
+title: Introduktion till grunderna
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Ta dina första steg med R. I det här kapitlet lär du dig att använda konsolen
+  som en miniräknare och att tilldela variabler. Du får också bekanta dig med de
+  grundläggande datatyperna i R. Då sätter vi igång!
 free_preview: true
 ---
 
-## How it works
+## Så här fungerar det
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+I editorn skriver du R-kod för att lösa övningarna. När du skickar in din kod tolkas och körs varje kodrad av R, och du får ett meddelande om din kod var korrekt eller inte. Resultatet av din R-kod visas i konsolen.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R använder tecknet `#` för att lägga till kommentarer, så att du och andra kan förstå vad koden gör. Kommentarer körs inte som R-kod och påverkar därför inte resultatet. Till exempel är <span translate="no">_Calculate 3 + 4_</span> i editorn en kommentar.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Du kan också köra R-kommandon direkt i konsolen. Det är ett bra sätt att experimentera med R-kod, eftersom din inmatning inte kontrolleras för korrekthet.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- I editorn finns redan exempelkod. Kan du se vilka rader som är faktisk R-kod och vilka som är kommentarer?
+- Lägg till en kodrad som beräknar summan av 6 och 12, och skicka sedan in din kod.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Lägg bara till en rad R-kod som beräknar summan av 6 och 12, precis som exemplet i exempelkoden!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Se till att lägga till `6 + 12` på en ny rad. Börja inte raden med ett `#`, annars körs inte din R-kod!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Utmärkt! Ser du hur konsolen visar resultatet av den R-kod du skickade in? Nu när du är bekant med gränssnittet, låt oss sätta igång med R!")
 ```
 
 ---
 
-## Arithmetic with R
+## Aritmetik i R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+I sin enklaste form kan R användas som en vanlig kalkylator. Här är de grundläggande aritmetiska operatorerna:
 
 - Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
+- Subtraktion: `-`
+- Multiplikation: `*`
 - Division: `/`
-- Exponentiation: `^`
+- Exponentiering: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+De två sista kan behöva lite förklaring:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Operatorn `^` upphöjer talet till vänster till potensen av talet till höger: till exempel är `3^2` lika med 9.
+- Modulo returnerar resten av divisionen av talet till vänster med talet till höger – till exempel är 5 modulo 3, eller `5 %% 3`, lika med 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+Med den här kunskapen är du redo att följa instruktionerna och slutföra övningen.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Skriv `2^5` i editorn för att beräkna 2 upphöjt till 5.
+- Skriv `28 %% 6` för att beräkna 28 modulo 6.
+- Skicka in svar och titta på resultatet i konsolen.
+- Lägg märke till hur symbolen `#` används för att lägga till kommentarer i R-koden.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Ett annat exempel på modulo-operatorn: `9 %% 2` är lika med `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Ta inte bort de andra aritmetikexemplen!"
+ex() %>% check_output_expr("2^5", missing_msg = "Exponentiationsexemplet är inte korrekt. Skriv `2 ^ 5` på en ny rad.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Det verkar finnas ett problem med moduloexemplet. Skriv `28 %% 6` på en ny rad.")
+success_msg("Bra! Gå vidare till nästa övning.")
 ```
 
 ---
 
-## Variable assignment
+## Tilldela variabler
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Ett grundläggande begrepp inom (statistisk) programmering är **variabeln**.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+En variabel låter dig lagra ett värde (t.ex. 4) eller ett objekt (t.ex. en funktionsbeskrivning) i R. Du kan sedan använda variabelns namn för att enkelt komma åt det värde eller objekt som lagrats i variabeln.
 
-You can assign a value 4 to a variable `my_var` with the command
+Du kan tilldela värdet 4 till en variabel `my_var` med kommandot
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Nu är det din tur: komplettera koden i editorn så att värdet 42 tilldelas variabeln `x`. Skicka in svaret. Observera att när du ber R skriva ut `x` visas värdet 42.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Titta på hur värdet 4 tilldelades `my_var` i övningens beskrivning. Gör exakt samma sak i editorn, men tilldela nu 42 till variabeln `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Se till att definiera en variabel `x`.")  %>% check_equal(incorrect_msg = "Se till att du tilldelar rätt värde till `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Bra jobbat! Har du lagt märke till att R inte skriver ut värdet av en variabel i konsolen när du gjorde tilldelningen? `x <- 42` genererade ingen utdata, eftersom R antar att du kommer att behöva denna variabel i framtiden. Annars skulle du inte ha lagrat värdet i en variabel från början, eller hur? Fortsätt till nästa övning!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Variabeltilldelning (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Anta att du har en fruktkorg med fem äpplen. Som blivande dataanalytiker vill du lagra antalet äpplen i en variabel med namnet `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Skriv följande kod i editorn: `my_apples <- 5`. Detta tilldelar värdet 5 till `my_apples`.
+- Skriv: `my_apples` under den andra kommentaren. Då skrivs värdet av `my_apples` ut.
+- Skicka in ditt svar och titta på utdata: du ser att siffran 5 skrivs ut. R kopplar nu variabeln `my_apples` till värdet 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Kom ihåg att du använder tilldelningsoperatorn `<-` för att tilldela ett tal eller ett objekt till en variabel i R. Du kan också använda `=`, men `<-` är det vanligaste alternativet i R-communityn.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Se till att definiera en variabel `my_apples`.") %>% check_equal(incorrect_msg = "Se till att du tilldelar rätt värde till `my_apples`.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Har du uttryckligen bett R att skriva ut variabeln `my_apples` till konsolen?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Bra! Fortsätt till nästa övning!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Tilldela variabler (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+En fruktkorg är inte komplett utan apelsiner, så du bestämmer dig för att lägga till sex stycken. Som dataanalytiker är din första impuls att skapa variabeln `my_oranges` och tilldela den värdet 6. Sedan vill du beräkna hur många frukter du har totalt. Eftersom du har gett variablerna meningsfulla namn kan du nu skriva detta på ett tydligt sätt:
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Tilldela `my_oranges` värdet 6.
+- Addera variablerna `my_apples` och `my_oranges` och låt R skriva ut resultatet.
+- Tilldela resultatet av additionen till en ny variabel `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` är helt enkelt summan av `my_apples` och `my_oranges`. Använd operatorn `+` för att addera de två variablerna och `<-` för att tilldela resultatet till variabeln `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Har du använt `my_fruit <- my_apples + my_oranges` för att skapa variabeln `my_fruit`?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Behåll raden som tilldelar 5 till `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Behåll raden som tilldelar 6 till `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Se till att skriva ut resultatet av att addera `my_apples` och `my_oranges`. Kodexemplet i beskrivningen ger redan svaret på denna instruktion!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Bra jobbat! Den stora fördelen med att utföra beräkningar med variabler är återanvändbarhet. Om du bara ändrar `my_apples` till 12 istället för 5 och kör skriptet igen, kommer `my_fruit` att uppdateras automatiskt. Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Apples and oranges
+## Äpplen och apelsiner
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Alla vet att man inte ska blanda äpplen och apelsiner. Men det var precis vad du nyss gjorde :-)? Variablerna `my_apples` och `my_oranges` innehöll båda ett tal i föregående övning. Operatorn `+` fungerar med numeriska variabler i R. Om du däremot försöker addera <span translate="no">"apples"</span> och <span translate="no">"oranges"</span>, och tilldelar ett textvärde till variabeln `my_oranges` (se editorn), försöker du tilldela summan av en numerisk variabel och en teckensträng till variabeln `my_fruit`. Det är inte möjligt.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Skicka in svaret och läs felmeddelandet. Se till att du förstår varför det inte fungerade.
+- Justera koden så att R vet att du har 6 apelsiner och alltså en fruktkorg med 11 frukter.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Du måste tilldela det numeriska värdet `6` till variabeln `my_oranges` i stället för textvärdet `"six"`. Notera hur citationstecknen används för att ange att `"six"` är en teckensträng.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,28 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Du kan göra detta genom att sätta variabeln `my_oranges` till ett numeriskt värde, inte en sträng!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Se till att `my_apples` fortfarande innehåller `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Se till att `my_oranges` är lika med `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "Värdet på `my_fruit` är inte korrekt. Det ska vara 11, summan av `my_apples` och `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Skapade du `my_fruit` som summan av variablerna `my_apples` och `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Skapade du `my_fruit` som summan av variablerna `my_apples` och `my_oranges`?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Ta inte bort raden som skriver ut `my_fruit`.")
 
 
 
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Utmärkt, fortsätt det goda arbetet! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Basic data types in R
+## Grundläggande datatyper i R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +422,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R arbetar med många olika datatyper. Några av de vanligaste att känna till från start är:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Decimalvärden som `4.5` kallas **numerics**.
+- Heltal som `4` kallas **integers**. Heltal räknas också som numerics.
+- Booleska värden (`TRUE` eller `FALSE`) kallas **logical**.
+- Text- (eller sträng-) värden kallas **characters**.
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Observera att citattecknen i editorn visar att `"some text"` är en sträng.
 
 `@instructions`
-Change the value of the:
+Ändra värdet på:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- variabeln `my_numeric` till `42`.
+- variabeln `my_character` till `"universe"`. Observera att citattecknen visar att `"universe"` är en character.
+- variabeln `my_logical` till `FALSE`.
 
-Note that R is case sensitive!
+Tänk på att R är skiftlägeskänsligt!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Ersätt värdena i editorn med de värden som anges i övningen. Till exempel: 
+`my_numeric <- 42` tilldelar värdet 42 till variabeln `my_numeric`.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +475,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Har du korrekt ändrat deklarationen av `my_numeric` så att den innehåller värdet 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Har du korrekt ändrat `my_character` till `\"universe\"`? Glöm inte citattecknen!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Har du korrekt ändrat `my_logical` till `FALSE`? Alla bokstäver i `FALSE` ska vara versaler!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Bra jobbat! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## What's that data type?
+## Vilken datatyp är det?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +496,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Minns du att när du försökte beräkna `5 + "six"` fick du ett felmeddelande på grund av att datatyperna inte stämde överens? Du kan undvika sådana situationer genom att kontrollera en variabels datatyp i förväg. Det gör du med funktionen `class()`, som koden i editorn visar.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Komplettera koden i editorn och skriv även ut klasserna för `my_character` och `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Koden som skriver ut datatypen för `my_numeric` finns redan med. Gör på samma sätt för `my_character` och `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +545,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Ändra inte deklarationen av variablerna!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Har du inkluderat `class(%1$s)` för att skriva ut datatypen för `%1$s`?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Ta inte bort koden som skriver ut typen av `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Grattis! Detta var den sista övningen för det här kapitlet. Gå vidare till nästa kapitel för att fördjupa dig i världen av vektorer!")
 ```

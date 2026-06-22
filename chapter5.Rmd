@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 5
-title: Data frames
+title_meta: Kapitel 5
+title: Dataramar
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  De flesta datamängder du arbetar med lagras som dataramar. När du har slutfört
+  det här kapitlet kan du skapa en dataram, välja ut intressanta delar av den
+  och sortera den efter olika variabler.
 ---
 
-## What's a data frame?
+## Vad är en dataram?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +17,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+Du kanske minns från kapitlet om matriser att alla element i en matris måste vara av samma typ. I det kapitlet innehöll din Star Wars-datamängd enbart numeriska element.
 
-When doing a market research survey, however, you often have questions such as:
+När du genomför en marknadsundersökning brukar du dock stöta på frågor som:
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- 'Är du gift?' eller ja/nej-frågor (`logical`)
+- 'Hur gammal är du?' (`numeric`)
+- 'Vad tycker du om den här produkten?' eller andra öppna frågor (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+Svaren på dessa frågor utgör en datamängd med olika datatyper. Det är mycket vanligt att arbeta med datamängder som innehåller flera olika typer av data, inte bara en.
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+En dataram har datamängdens variabler som kolumner och observationerna som rader. Det här är ett bekant upplägg för dig som tidigare arbetat med statistikprogram som SAS eller SPSS.
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+Skicka in svaret. Data från den inbyggda exempeldataramen `mtcars` skrivs ut i konsolen.
 
 `@hint`
-Submit the answer and witness the magic!
+Skicka in svaret och se vad som händer!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +55,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "Ändra ingenting i koden. Se till att du skriver ut `mtcars`.")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Bra! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## Ta en snabb titt på din datamängd
 
 ```yaml
 type: NormalExercise
@@ -73,19 +72,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+Wow, det är verkligen många bilar! 
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+Att arbeta med stora datamängder är vanligt inom dataanalys. När du hanterar (extremt) stora datamängder och dataramar är din första uppgift som dataanalytiker att skapa en tydlig bild av strukturen och de viktigaste elementen. Därför är det ofta praktiskt att bara visa en liten del av hela datamängden. 
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+Hur gör man det i R? Funktionen `head()` visar de första observationerna i en dataram. På samma sätt skriver funktionen `tail()` ut de sista observationerna i din datamängd.
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+Både `head()` och `tail()` skriver ut en rubrikrad – den så kallade 'header' – som innehåller namnen på de olika variablerna i din datamängd.
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+Anropa `head()` på datamängden `mtcars` för att se rubrikraden och de första observationerna.
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` visar de första observationerna i dataramen `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +105,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Har du skickat `mtcars` korrekt till funktionen `head()`?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "Skriv helt enkelt ut resultatet av anropet till `head()`, det finns inget behov av att tilldela det till en ny variabel.")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("Underbart! Vad har vi i detta dataset? Till exempel representerar `hp` bilens hästkrafter; Datsun har den lägsta hästkraften av de 6 bilar som visas. För en fullständig översikt över variablernas betydelse, skriv `?mtcars` i konsolen och läs hjälpsidan. Fortsätt till nästa övning!");
 ```
 
 ---
 
-## Have a look at the structure
+## Undersök strukturen
 
 ```yaml
 type: NormalExercise
@@ -125,21 +124,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+En annan metod som ofta används för att snabbt få en överblick av dina data är funktionen `str()`. Den visar dig strukturen hos din datamängd. För en data frame berättar den:
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- Det totala antalet observationer (t.ex. 32 biltyper)
+- Det totala antalet variabler (t.ex. 11 bilegenskaper)
+- En fullständig lista med variabelnamn (t.ex. `mpg`, `cyl` ... )
+- Datatypen för varje variabel (t.ex. `num`)
+- De första observationerna
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+Att använda funktionen `str()` är ofta det första du gör när du får en ny datamängd eller data frame. Det är ett utmärkt sätt att lära känna dina data innan du börjar med den egentliga analysen.
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+Undersök strukturen hos `mtcars`. Kontrollera att du ser samma antal, variabler och datatyper som nämnts ovan.
 
 `@hint`
-Use the `str()` function on `mtcars`.
+Använd funktionen `str()` på `mtcars`.
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +159,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "Har du anropat `str()` på `mtcars` på rätt sätt?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("Bra jobbat! Du kan hitta mycket information genom att visa `str()` för ett dataset. Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Creating a data frame
+## Skapa en dataram
 
 ```yaml
 type: NormalExercise
@@ -177,28 +176,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+Att använda inbyggda datamängder är inte ens hälften så roligt som att skapa egna – därför bygger resten av det här kapitlet på en datamängd som du utvecklar själv. Ta på dig jetpacken, för nu är det dags att utforska rymden!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+Ditt första mål är att konstruera en dataram som beskriver de viktigaste egenskaperna hos åtta planeter i vårt solsystem. Enligt din gode vän Buzz är de viktigaste kännetecknen för en planet:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- Planettyp (stenplanet eller gasjätte).
+- Planetens diameter i förhållande till jordens diameter.
+- Planetens omloppstid runt solen i förhållande till jordens.
+- Om planeten har ringar eller inte (TRUE eller FALSE).
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+Efter lite grundlig research på [Wikipedia](https://en.wikipedia.org/wiki/Planet) känner du dig redo att skapa de nödvändiga vektorerna: `name`, `type`, `diameter`, `rotation` och `rings`. Dessa vektorer har redan skapats i editorn. Det första elementet i varje vektor motsvarar den första observationen.
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+Du konstruerar en dataram med funktionen `data.frame()`. Som argument skickar du in vektorerna från tidigare – de blir de olika kolumnerna i din dataram. Eftersom varje kolumn har samma längd måste vektorerna du skickar in också ha samma längd. Kom ihåg att det är möjligt – och vanligt – att de innehåller olika typer av data.
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+Använd funktionen `data.frame()` för att konstruera en dataram. Skicka in vektorerna `name`, `type`, `diameter`, `rotation` och `rings` som argument till `data.frame()`, i den ordningen. Kalla den resulterande dataramen `planets_df`.
 
 `@hint`
-Your `data.frame()` call starts as follows:
+Ditt anrop till `data.frame()` börjar så här:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+Kan du slutföra det?
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +249,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "Ändra ingenting i definitionen av vektorerna. Lägg bara till ett `data.frame()`-anrop för att skapa `planets_df`."
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +260,15 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Har ni anropat `data.frame()` korrekt för att skapa `planets_df`? Inuti `data.frame()`, se till att skicka alla vektorer i rätt ordning: `name`, `type`, `diameter`, `rotation` och slutligen `rings`.")
 
 
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("Bra jobbat! Det logiska nästa steget, som ni nu känner till, är att inspektera den dataram ni just skapade. Gå vidare till nästa övning.");
 ```
 
 ---
 
-## Creating a data frame (2)
+## Skapa en dataram (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+Dataramen `planets_df` ska ha 8 observationer och 5 variabler. Den finns redan tillgänglig i arbetsmiljön, så du kan använda den direkt.
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+Använd `str()` för att undersöka strukturen hos den nya variabeln `planets_df`.
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` finns redan i din arbetsmiljö, så `str(planets_df)` löser det.
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df` som redan finns tillgänglig i arbetsytan!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "Har du visat strukturen för `planets_df` på rätt sätt? Använd `str()` för att göra detta!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("Utmärkt! Nu när du har en tydlig förståelse för datamängden `planets_df` är det dags att se hur du kan välja element från den. Lär dig allt om det i nästa övningar!")
 ```
 
 ---
 
-## Selection of data frame elements
+## Välja element i en dataram
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+Precis som med vektorer och matriser väljer du element från en dataram med hjälp av hakparenteser `[ ]`. Med ett kommatecken anger du vad som ska väljas från rader respektive kolumner. Till exempel:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` väljer värdet på den första raden och den andra kolumnen i `my_df`.
+- `my_df[1:3,2:4]` väljer raderna 1, 2, 3 och kolumnerna 2, 3, 4 i `my_df`.
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+Ibland vill du markera alla element i en rad eller kolumn. Till exempel väljer `my_df[1, ]` alla element på den första raden. Nu tillämpar vi den här tekniken på `planets_df`!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- Välj diametern för Merkurius från `planets_df`: det är värdet på den första raden och den tredje kolumnen. Skriv bara ut resultatet.
+- Välj all data om Mars (den fjärde raden) från `planets_df`. Skriv bara ut resultatet.
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+För att välja diametern för Venus (den andra raden) behöver du: `planets_df[2,3]`. Vad behöver du då för Merkurius?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Har du korrekt valt och skrivit ut diametern för Merkurius? Du kan använda `[1,3]`.")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Har du korrekt valt och skrivit ut all data för Mars? Du kan använda `[4,]`.")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("Bra! Förutom att välja element från din dataram med hjälp av index kan du även använda kolumnnamnen. För att lära dig hur, gå vidare till nästa övning.")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## Välj element i en dataram (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+Istället för att använda siffror för att välja element i en dataram kan du även använda variabelnamn för att välja kolumner.
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+Anta att du vill välja de tre första elementen i kolumnen `type`. Ett sätt att göra det är:
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+En nackdel med det här tillvägagångssättet är att du måste känna till (eller slå upp) kolumnnumret för `type`, vilket kan bli svårt när du har många variabler. Det är ofta enklare att använda variabelnamnet direkt:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+Välj och skriv ut de fem första värdena i kolumnen `"diameter"` i `planets_df`.
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+Du kan välja de fem första värdena med `planets_df[1:5, ...]`. Kan du fylla i `...` för att bara välja kolumnen `"diameter"`?
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Har du korrekt valt de första fem värdena från diameterkolumnen och skrivit ut dem? Du kan använda `[1:5, \"diameter\"]` här.")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("Bra! Fortsätt till nästa övning!")
 ```
 
 ---
 
-## Only planets with rings
+## Bara planeter med ringar
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+Ofta vill du markera en hel kolumn – det vill säga en specifik variabel från en dataram. Om du till exempel vill välja alla element i variabeln `diameter` fungerar båda dessa:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+Det finns dock en genväg. Om kolumnerna har namn kan du använda tecknet `$`:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- Använd tecknet `$` för att välja variabeln `rings` från `planets_df`. Spara den resulterande vektorn som `rings_vector`.
+- Skriv ut `rings_vector` för att kontrollera att det blev rätt.
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` väljer ut kolumnen `diameter` från `planets_df`; vad behöver du skriva för att välja kolumnen `rings`?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Har du valt variabeln `rings` korrekt från `planets_df`? Använd `$rings`. Spara resultatet som `rings_vector`.")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "Glöm inte att skriva ut `rings_vector` efter att du har skapat den!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("Bra! Fortsätt till nästa övning och upptäck ytterligare ett sätt att göra delmängder!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## Bara planeter med ringar (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+Du minns förmodligen från skolan att vissa planeter i vårt solsystem har ringar och andra inte. Men du kan inte riktigt komma ihåg vilka. Kan R hjälpa dig?
 
-If you type `rings_vector` in the console, you get:
+Om du skriver `rings_vector` i konsolen får du:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+Det betyder att de fyra första observationerna (eller planeterna) inte har en ring (`FALSE`), men de andra fyra har det (`TRUE`). Du får dock ingen bra överblick över namnen på dessa planeter, deras diameter och så vidare. Låt oss använda `rings_vector` för att välja ut data för de fyra planeter som har ringar.
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+Koden i editorn väljer kolumnen `name` för alla planeter som har ringar. Anpassa koden så att _alla_ kolumner för planeter med ringar väljs ut, inte bara kolumnen `name`.
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+Kom ihåg att för att markera _alla_ kolumner behöver du bara lämna kolumndelen inuti `[ ]` tom! Det betyder att du behöver `[rings_vector, ]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "Ta inte bort eller skriv över `planets_df` eller `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Har du anpassat koden korrekt för att välja _alla_ kolumner för de planeter som har ringar? Du kan använda `planets_df[rings_vector, ]`. Se till att inkludera kommatecknet här, det är avgörande!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("Underbart! Detta är en ganska omständlig lösning. Nästa övning lär dig hur man gör det på ett mer kortfattat sätt.")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## Bara planeter med ringar, fast kortare
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+Vad lärde du dig egentligen i de föregående övningarna? Du valde ut ett delmängd från en dataram (`planets_df`) baserat på om ett visst villkor var uppfyllt eller inte (ringar eller inga ringar), och du lyckades hämta ut all relevant data. Imponerande! NASA har förmodligen redan börjat nosa på ditt CV ;-).
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+Nu tar vi det ett steg längre och använder funktionen `subset()`. Tänk på `subset()` som en genväg för att göra exakt samma sak som i de föregående övningarna.
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+Det första argumentet i `subset()` anger den dataram du vill skapa en delmängd av. Med det andra argumentet ger du R den information och de villkor som behövs för att välja rätt delmängd.
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+Koden nedan ger exakt samma resultat som i föregående övning – men den här gången behövde du inte `rings_vector`!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+Använd `subset()` på `planets_df` för att välja ut planeter med en diameter som är mindre än jordens. Eftersom variabeln `diameter` är ett relativt mått på planetens diameter i förhållande till jordens, är ditt villkor `diameter < 1`.
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` är nästan rätt – kan du fylla i `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Har ni angett `subset = ...`-delen inuti `subset()` korrekt? Villkoret i detta fall är `diameter < 1`. Skriv helt enkelt ut resultatet.")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "Det första argumentet ni skickar till `subset()` bör vara `planets_df`.")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("Utmärkt! Funktionen `subset()` är inte bara mer koncis, den är förmodligen också mer lättförståelig för personer som läser er kod. Fortsätt till nästa övning.");
 ```
 
 ---
 
-## Sorting
+## Sortering
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+Att skapa rankningar är något som människor älskar. De kan vara användbara (världens bästa universitet), underhållande (mest inflytelserika filmstjärnor) eller helt poänglösa (bästa James Bond-lookalike).
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+I dataanalys kan du sortera dina data utifrån en viss variabel i datamängden. I R görs detta med hjälp av funktionen `order()`.
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` är en funktion som returnerar rangordningen för varje element när den tillämpas på en variabel, till exempel en vektor:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +763,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10, som är det andra elementet i `a`, är det minsta elementet – därför kommer 2 först i resultatet från `order(a)`. 100, som är det första elementet i `a`, är det näst minsta elementet – därför kommer 1 på andra plats i resultatet från `order(a)`.
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+Det innebär att vi kan använda resultatet från `order(a)` för att sortera om `a`:
     
 ```
 a[order(a)]
@@ -774,10 +773,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+Experimentera med funktionen `order()` i konsolen. Skicka in svar när du är redo att fortsätta.
 
 `@hint`
-Just play with the `order()` function in the console!
+Experimentera med funktionen `order()` i konsolen!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +795,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("Bra! Nu ska vi använda funktionen `order()` för att sortera din dataram!")
 ```
 
 ---
 
-## Sorting your data frame
+## Sortera din dataram
 
 ```yaml
 type: NormalExercise
@@ -811,15 +810,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+Nu när du förstår hur funktionen `order()` fungerar är det dags att använda den på ett praktiskt sätt. Målet är att ordna om dataramen så att den börjar med den minsta planeten och slutar med den största – en sortering baserad på kolumnen `diameter`.
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- Anropa `order()` på `planets_df$diameter` (kolumnen `diameter` i `planets_df`). Spara resultatet som `positions`.
+- Ordna om `planets_df` med vektorn `positions` som radindex inom hakparenteser. Behåll alla kolumner. Skriv ut resultatet.
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- Använd `order(planets_df$diameter)` för att skapa `positions`.
+- Nu kan du använda `positions` inom hakparenteser: `planets_df[...]`; kan du fylla i `...`?
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +865,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "Ta inte bort eller skriv över dataramen `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Har du beräknat variabeln `positions` korrekt? Du kan använda `order(planets_df$diameter)`.")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Använd `planets_df[positions, ]` för att sortera `planets_df`; kommatecknet inuti hakparenteserna är avgörande!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("Utmärkt! Denna övning avslutar kapitlet om dataramar. Kom ihåg att dataramar är oerhört viktiga i R och att du kommer att behöva dem hela tiden. En annan mycket ofta använd datastruktur är listan. Detta kommer att vara ämnet för nästa kapitel!")
 ```

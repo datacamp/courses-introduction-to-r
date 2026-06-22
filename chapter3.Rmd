@@ -1,15 +1,14 @@
 ---
-title_meta: Chapter 3
-title: Matrices
+title_meta: Kapitel 3
+title: Matriser
 description: >-
-  In this chapter, you will learn how to work with matrices in R. By the end of
-  the chapter, you will be able to create matrices and understand how to do
-  basic computations with them. You will analyze the box office numbers of the
-  Star Wars movies and learn how to use matrices in R. May the force be with
-  you!
+  I det här kapitlet lär du dig att arbeta med matriser i R. När du är klar med
+  kapitlet kan du skapa matriser och utföra grundläggande beräkningar med dem.
+  Du analyserar biografintäkterna från Star Wars-filmerna och lär dig hur
+  matriser används i R. Må kraften vara med dig!
 ---
 
-## What's a matrix?
+## Vad är en matris?
 
 ```yaml
 type: NormalExercise
@@ -19,25 +18,25 @@ skills:
   - 1
 ```
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+I R är en matris en samling element av samma datatyp (numerisk, text eller logisk) ordnade i ett fast antal rader och kolumner. Eftersom du enbart arbetar med rader och kolumner kallas en matris tvådimensionell.
 
-You can construct a matrix in R with the `matrix()` function. Consider the following example:
+Du skapar en matris i R med funktionen `matrix()`. Titta på följande exempel:
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the `matrix()` function:
+I funktionen `matrix()`:
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- Det första argumentet är den samling element som R ordnar i matrisens rader och kolumner. Här använder vi `1:9`, vilket är en genväg för `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
+- Argumentet `byrow` anger att matrisen fylls rad för rad. Vill du i stället fylla den kolumn för kolumn anger du `byrow = FALSE`.
+- Det tredje argumentet `nrow` anger att matrisen ska ha tre rader.
 
 `@instructions`
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+Skapa en matris med 3 rader som innehåller talen 1 till och med 9, ifylld rad för rad.
 
 `@hint`
-Read the assignment carefully, the answer is already given!
+Läs uppgiften noggrant – svaret finns redan där!
 
 `@pre_exercise_code`
 ```{r}
@@ -58,19 +57,19 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 `@sct`
 ```{r}
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Har du skapat matrisen korrekt? Ta en titt på uppgiften, svaret ges redan!")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Har du skapat matrisen korrekt? Ta en titt på uppgiften, svaret ges redan!")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Har du skapat matrisen korrekt? Ta en titt på uppgiften, svaret ges redan!")
 	}
 
-ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "Det verkar finnas ett problem med matrisdefinitionen. Ta en titt på uppgiften, svaret ges redan!")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("Bra! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Analyze matrices, you shall
+## Analysera matriser, du ska
 
 ```yaml
 type: NormalExercise
@@ -80,19 +79,19 @@ skills:
   - 1
 ```
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+Nu är det dags att sätta igång på riktigt. I de följande övningarna analyserar du kassaresultaten från Star Wars-franchisen. Måtte kraften vara med dig!
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+I editorn finns tre vektorer definierade. Var och en representerar kassaresultaten från de tre första Star Wars-filmerna. Det första elementet i varje vektor anger intäkterna från den amerikanska marknaden, det andra elementet avser intäkterna utanför USA (källa: Wikipedia).
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+I den här övningen kombinerar du alla dessa siffror till en enda vektor. Därefter bygger du en matris utifrån den vektorn.
 
 `@instructions`
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to do this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- Använd `c(new_hope, empire_strikes, return_jedi)` för att kombinera de tre vektorerna till en enda vektor. Kalla vektorn `box_office`.
+- Konstruera en matris med 3 rader, där varje rad representerar en film. Använd funktionen `matrix()` för att göra detta. Det första argumentet är vektorn `box_office`, som innehåller alla kassasiffror. Ange sedan `nrow = 3` och `byrow = TRUE`. Döp den resulterande matrisen till `star_wars_matrix`.
 
 `@hint`
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., byrow =  ...)` is a template for the solution to the second instruction.
+- `box_office <- c(new_hope, empire_strikes, return_jedi)` kombinerar alla tal från de olika vektorerna till en enda vektor med 6 element.
+- `matrix(box_office, nrow = ..., byrow =  ...)` är en mall för lösningen på den andra instruktionen.
 
 `@pre_exercise_code`
 ```{r}
@@ -129,7 +128,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "Ändra ingenting om kassavariablerna `new_hope`, `empire_strikes` och `return_jedi`!"
 
 ex() %>% check_object("new_hope", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -137,23 +136,23 @@ ex() %>% check_object("empire_strikes", undefined_msg = msg) %>% check_equal(inc
 
 ex() %>% check_object("return_jedi", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Har ni kombinerat värdena för `new_hope`, `empire_strikes` och `return_jedi` korrekt i vektorn `box_office`?")
 
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "Se till att ni anger argumenten korrekt när ni anropar `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Se till att ni anger argumenten korrekt när ni anropar `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Se till att ni anger argumenten korrekt när ni anropar `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
 	}
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Har ni tilldelat resultatet av anropet till `matrix()` till `star_wars_matrix`?")
 
 
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("Kraften är verkligen med er! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Naming a matrix
+## Namnge en matris
 
 ```yaml
 type: NormalExercise
@@ -163,24 +162,24 @@ skills:
   - 1
 ```
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
+För att lättare komma ihåg vad som finns lagrat i `star_wars_matrix` vill du lägga till filmtitlarna som radnamn. Det gör det inte bara enklare att läsa datan, utan underlättar också när du vill välja ut specifika element ur matrisen.
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+Precis som med vektorer kan du lägga till namn för rader och kolumner i en matris:
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+Vi har förberett två vektorer åt dig: `region` och `titles`. Du behöver dessa vektorer för att namnge kolumnerna respektive raderna i `star_wars_matrix`.
 
 `@instructions`
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- Använd `colnames()` för att namnge kolumnerna i `star_wars_matrix` med vektorn `region`.
+- Använd `rownames()` för att namnge raderna i `star_wars_matrix` med vektorn `titles`.
+- Skriv ut `star_wars_matrix` för att se resultatet av ditt arbete.
 
 `@hint`
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+Du kan använda `colnames(star_wars_matrix) <- region` för att namnge kolumnerna i `star_wars_matrix`. Gör på samma sätt för att namnge raderna.
 
 `@pre_exercise_code`
 ```{r}
@@ -236,7 +235,7 @@ star_wars_matrix
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "Ändra ingenting om biljettintäktsvariablerna `new_hope`, `empire_strikes` och `return_jedi`!"
 
 ex()  %>% check_object("new_hope", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
@@ -244,25 +243,25 @@ ex()  %>% check_object("empire_strikes", undefined_msg = msg)  %>% check_equal(i
 
 ex()  %>% check_object("return_jedi", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+msg <- "Ändra inte innehållet i `star_wars_matrix`; endast namnen på rader och kolumner!" 
 
 ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- "Ändra ingenting om vektorerna `region` och `titles` som har definierats åt er."
 
 ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Angav ni rad- och kolumnnamnen för `star_wars_matrix` korrekt? Använd `colnames(star_wars_matrix) <- region` för kolumnnamnen; gör på liknande sätt för att namnge raderna.")
 
-ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Glöm inte att skriva ut `star_wars_matrix` efter att ni har namngett rader och kolumner.")
 
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+success_msg("Bra! Ni är på väg att bli en R-jedi! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Calculating the worldwide box office
+## Beräkna de globala biointäkterna
 
 ```yaml
 type: NormalExercise
@@ -272,21 +271,21 @@ skills:
   - 1
 ```
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+Det viktigaste för en film som vill bli en legend i branschen är dess globala biointäkter.
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+För att beräkna de totala biointäkterna för de tre Star Wars-filmerna behöver du summera kolumnen för USA-intäkter och kolumnen för intäkter utanför USA.
 
-In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+I R beräknar funktionen `rowSums()` summorna för varje rad i en matris. Funktionen skapar en ny vektor:
 
 ```
 rowSums(my_matrix)
 ```
 
 `@instructions`
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+Beräkna de globala biointäkterna för de tre filmerna och lagra resultatet i vektorn `worldwide_vector`.
 
 `@hint`
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+`rowSums(star_wars_matrix)` beräknar summan av varje rad, det vill säga den totala biointäkten för varje film.
 
 `@pre_exercise_code`
 ```{r}
@@ -329,20 +328,20 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "Ändra ingenting om de förinställda variablerna `box_office_all` och `star_wars_marix`!"
 
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Anropa `rowSums()` på `star_wars_matrix` och lagra resultatet i `worldwide_vector`.")
 
-success_msg("Well done! Continue to the next exercise.")
+success_msg("Bra gjort! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Adding a column for the Worldwide box office
+## Lägga till en kolumn för världsomspännande biointäkter
 
 ```yaml
 type: NormalExercise
@@ -352,19 +351,19 @@ skills:
   - 1
 ```
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+I föregående övning beräknade du en vektor med de totala biointäkterna från hela världen för var och en av de tre Star Wars-filmerna. Den vektorn är dock inte en del av `star_wars_matrix` ännu.
 
-You can add a column or multiple columns to a matrix with the `cbind()` function, which merges matrices and/or vectors together by column. For example: 
+Du kan lägga till en eller flera kolumner i en matris med funktionen `cbind()`, som slår ihop matriser och/eller vektorer kolumnvis. Till exempel:
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 `@instructions`
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the `cbind()` function.
+Lägg till `worldwide_vector` som en ny kolumn i `star_wars_matrix` och tilldela resultatet till `all_wars_matrix`. Använd funktionen `cbind()`.
 
 `@hint`
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+I den här övningen ska du skicka två variabler till `cbind()`: `star_wars_matrix` och `worldwide_vector`, i den ordningen. Tilldela resultatet till `all_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
@@ -413,24 +412,24 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "Ändra ingenting om förinställda variabler `box_office_all` och `star_wars_marix`!"
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Lagra resultatet av `rowSums(star_wars_matrix)` i `worldwide_vector`.")
 
 
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+msg <- "Har du använt `cbind()` korrekt för att lägga till `worldwide_vector` till `star_wars_matrix`? Du bör skicka `star_wars_matrix` och `world_wide_vector` till `cbind()`, i denna ordning. Den resulterande matrisen, `all_wars_matrix`, bör bestå av tre rader och tre kolumner."
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
 
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("Bra jobbat! Efter att ha lagt till en kolumn i en matris är det logiska nästa steget att lägga till rader. Lär dig hur i nästa övning.");
 ```
 
 ---
 
-## Adding a row
+## Lägga till en rad
 
 ```yaml
 type: NormalExercise
@@ -440,24 +439,24 @@ skills:
   - 1
 ```
 
-Just like every action has a reaction, every `cbind()` has an `rbind()`. (We admit, we are pretty bad with metaphors.) 
+Precis som varje aktion har en reaktion, har varje `cbind()` sin `rbind()`. (Vi erkänner att vi inte är särskilt bra på metaforer.)
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
+Din R-arbetsyta, där alla variabler du har definierat "lever" ([läs mer om vad en arbetsyta är](http://www.statmethods.net/interface/workspace.html)), har redan initierats och innehåller två matriser:
 
-- `star_wars_matrix` that we have used all along, with data on the original trilogy,
-- `star_wars_matrix2`, with similar data for the prequels trilogy. 
+- `star_wars_matrix`, som vi har använt hela tiden, med data om den ursprungliga trilogin,
+- `star_wars_matrix2`, med liknande data för prequel-trilogin.
 
-Explore these matrices in the console if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+Utforska gärna matriserna i konsolen om du vill titta närmare på dem. Om du vill se vad arbetsytan innehåller kan du skriva `ls()` i konsolen.
 
 `@instructions`
-Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
+Använd `rbind()` för att slå ihop `star_wars_matrix` och `star_wars_matrix2`, i den ordningen. Tilldela den resulterande matrisen till `all_wars_matrix`.
 
 `@hint`
-Bind the two matrices together like this:
+Bind ihop de två matriserna så här:
 ```
 rbind(matrix1, matrix2)
 ```
-Assign the result to `all_wars_matrix`.
+Tilldela resultatet till `all_wars_matrix`.
 
 `@pre_exercise_code`
 ```{r}
@@ -502,20 +501,20 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 `@sct`
 ```{r}
-msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+msg = "Åsidosätt inte de variabler som har definierats åt er i arbetsytan (`star_wars_matrix` och `star_wars_matrix2`)."
 ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Använde ni `rbind()` korrekt för att skapa `all_wars_matrix()`? `rbind()` ska ta två argument: `star_wars_matrix` och `star_wars_matrix2`, i denna ordning.")
 
 
-success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+success_msg("Utmärkt! Fortsätt med nästa övning och se hur ni kan kombinera resultaten av funktionen `rbind()` med funktionen `colSums()`!")
 ```
 
 ---
 
-## The total box office revenue for the entire saga
+## Den totala biointäkten för hela sagan
 
 ```yaml
 type: NormalExercise
@@ -525,14 +524,14 @@ skills:
   - 1
 ```
 
-Just like `cbind()` has  `rbind()`, `colSums()` has `rowSums()`. Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+Precis som `cbind()` har sin motsvarighet i `rbind()`, finns det en `rowSums()` till `colSums()`. Din R-miljö innehåller redan `all_wars_matrix` som du skapade i föregående övning – skriv `all_wars_matrix` för att ta en ny titt på den. Nu ska vi beräkna den totala biointäkten för hela sagan.
 
 `@instructions`
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()`function.
-- Print out `total_revenue_vector` to have a look at the results.
+- Beräkna den totala intäkten för USA och regionen utanför USA, och tilldela resultatet till `total_revenue_vector`. Du kan använda funktionen `colSums()`.
+- Skriv ut `total_revenue_vector` för att se resultaten.
 
 `@hint`
-You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
+Använd funktionen `colSums()` med `star_wars_matrix` som argument för att beräkna den totala intäkten per region.
 
 `@pre_exercise_code`
 ```{r}
@@ -564,21 +563,21 @@ total_revenue_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+msg = "Ändra inte innehållet i `all_wars_matrix`; den skapades åt dig i arbetsytan."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Använde du funktionen `colSums()` på all_wars_matrix?")
 
-ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Har du korrekt tilldelat resultatet av `colSums(all_wars_matrix)` till `total_revenue_vector`?")
 
-ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Don't forget to print out `total_revenue_vector`!")
+ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Glöm inte att skriva ut `total_revenue_vector`!")
 
 success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
 ```
 
 ---
 
-## Selection of matrix elements
+## Urval av matriselement
 
 ```yaml
 type: NormalExercise
@@ -588,26 +587,26 @@ skills:
   - 1
 ```
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns. For example: 
+Precis som med vektorer kan du använda hakparenteser `[ ]` för att välja ett eller flera element från en matris. Till skillnad från vektorer, som har en dimension, har matriser två dimensioner. Du behöver därför använda ett kommatecken för att skilja de rader du vill välja från kolumnerna. Till exempel:
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+- `my_matrix[1,2]` väljer elementet på första raden och andra kolumnen.
+- `my_matrix[1:3,2:4]` ger en matris med data från raderna 1, 2, 3 och kolumnerna 2, 3, 4.
 
-If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
+Om du vill välja alla element i en rad eller en kolumn behöver du inte ange något tal före eller efter kommatecknet:
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[,1]` väljer alla element i den första kolumnen.
+- `my_matrix[1,]` väljer alla element i den första raden.
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+Dags att återvända till Star Wars med denna nyförvärvade kunskap! Precis som i föregående övning finns `all_wars_matrix` redan tillgänglig i din workspace.
 
 `@instructions`
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
-- This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
-- Use `mean()` again to print out the average of the values in `non_us_some`.
+- Välj intäkterna utanför USA för alla filmer (hela den andra kolumnen i `all_wars_matrix`) och lagra resultatet i `non_us_all`.
+- Använd `mean()` på `non_us_all` för att beräkna den genomsnittliga intäkten utanför USA för alla filmer. Skriv ut resultatet.
+- Välj nu intäkterna utanför USA för de två första filmerna i `all_wars_matrix`. Lagra resultatet i `non_us_some`.
+- Använd `mean()` igen för att skriva ut medelvärdet av värdena i `non_us_some`.
 
 `@hint`
-You can select the entire second column of a matrix `my_matrix` with `my_matrix[,2]`.
+Du kan markera hela den andra kolumnen i en matris `my_matrix` med `my_matrix[,2]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -652,24 +651,24 @@ mean(non_us_some)
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "Ändra inte innehållet i `all_wars_matrix`; denna matris har redan skapats åt dig i arbetsytan."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Tilldelade du `non_us_all` hela den andra kolumnen i `all_wars_matrix`? Du kan använda `[, 2]` för att göra detta!")
 
-ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Har du beräknat medelvärdet av värdena i `non_us_all` genom att anropa `mean(non_us_all)`? Skriv bara ut resultatet.")
 
-ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Tilldelade du `non_us_some` de icke-amerikanska intäkterna för de två första filmerna? Du kan använda `[1:2,2]` för att göra detta!")
 
-ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Har du beräknat medelvärdet av värdena i `non_us_some` genom att anropa `mean(non_us_some)`? Skriv bara ut resultatet.")
 
-success_msg("Nice one! Continue to the next exercise.")
+success_msg("Bra gjort! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## A little arithmetic with matrices
+## Lite aritmetik med matriser
 
 ```yaml
 type: NormalExercise
@@ -679,18 +678,18 @@ skills:
   - 1
 ```
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+Precis som du lärt dig med vektorer fungerar standardoperatorerna som `+`, `-`, `/`, `*` och så vidare element-för-element på matriser i R.
 
-For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
+Exempel: `2 * my_matrix` multiplicerar varje element i `my_matrix` med två.
 
-As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+Som nyanställd dataanalytiker på Lucasfilm är det din uppgift att ta reda på hur många besökare varje film hade i respektive geografiskt område. Du har redan de totala intäktssiffrorna i `all_wars_matrix`. Utgå från att biljettpriset var 5 dollar. Genom att helt enkelt dividera kassaintäkterna med detta biljettpris får du antalet besökare.
 
 `@instructions`
-- Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
-- Print out `visitors` so you can have a look.
+- Dividera `all_wars_matrix` med 5 för att få antalet besökare i miljoner. Tilldela den resulterande matrisen till `visitors`.
+- Skriv ut `visitors` så att du kan se resultatet.
 
 `@hint`
-The number of visitors is equal to `all_wars_matrix` divided by 5.
+Antalet besökare är lika med `all_wars_matrix` dividerat med 5.
 
 `@pre_exercise_code`
 ```{r}
@@ -723,21 +722,21 @@ visitors
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "Ändra inte innehållet i `all_wars_matrix`; denna matris har redan skapats åt dig i arbetsytan."
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Det verkar som att `visitors` inte är korrekt. Dela helt enkelt `all_wars_matrix` med 5 och lagra den resulterande matrisen som `visitors`.")
 
-ex() %>% check_output_expr("visitors", missing_msg = "Don't forget to also print out `visitors` so you can have a look.")
+ex() %>% check_output_expr("visitors", missing_msg = "Glöm inte att även skriva ut `visitors` så att du kan ta en titt.")
 
 
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+success_msg("Utmärkt! Vad berättar dessa resultat för dig? Häpnadsväckande 92 miljoner människor såg A New Hope på biografer i USA! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## A little arithmetic with matrices (2)
+## Lite aritmetik med matriser (2)
 
 ```yaml
 type: NormalExercise
@@ -747,20 +746,20 @@ skills:
   - 1
 ```
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+Precis som `2 * my_matrix` multiplicerade varje element i `my_matrix` med två, skapar `my_matrix1 * my_matrix2` en matris där varje element är produkten av motsvarande element i `my_matrix1` och `my_matrix2`.
 
-After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+Efter att ha sett resultatet från föregående övning påpekar storbossen Lucas att biljettpriserna har stigit över tid. Han vill att analysen görs om baserat på de priser som finns i `ticket_prices_matrix` (källa: fantasin).
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_De som känner till matriser bör notera att detta inte är den vanliga matrismultiplikationen – för den används `%*%` i R._
 
 `@instructions`
-- Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
-- From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- Dividera `all_wars_matrix` med `ticket_prices_matrix` för att få det uppskattade antalet besökare i USA och utanför USA för de sex filmerna. Tilldela resultatet till `visitors`.
+- Välj hela den första kolumnen från matrisen `visitors`, som representerar antalet besökare i USA. Spara urvalet som `us_visitors`.
+- Beräkna det genomsnittliga antalet besökare i USA och skriv ut resultatet.
 
 `@hint`
-- You can use the function `mean()` to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- Du kan använda funktionen `mean()` för att beräkna medelvärdet av indata till funktionen.
+- För att hämta antalet besökare i USA, välj den första kolumnen från `visitors` med `visitors[ ,1]`.
 
 `@pre_exercise_code`
 ```{r}
@@ -804,17 +803,17 @@ mean(us_visitors)
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg <- "Ändra inte innehållet i `all_wars_matrix`; denna matris har redan skapats åt dig i arbetsytan."
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Har du skapat matrisen `visitors` på rätt sätt? Du bör dividera `all_wars_matrix` med `ticket_prices_matrix` för att komma dit.")
 
-ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "För att skapa `us_visitors` bör du välja hela den första kolumnen från `visitors` på rätt sätt. Du kan använda `[,1]` för detta!")
 
-ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "När du har skapat `us_visitors` kan du använda `mean()` för att beräkna det genomsnittliga antalet besökare i USA. Se till att skriva ut resultatet.")
 
 
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("Det är ett faktum: R-kraften är med dig! Denna övning avslutar kapitlet om matriser. Nästa stopp på din resa genom programspråket R: faktorer.")
 ```

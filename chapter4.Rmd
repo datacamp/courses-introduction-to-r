@@ -1,15 +1,15 @@
 ---
-title_meta: Chapter 4
-title: Factors
+title_meta: Kapitel 4
+title: Faktorer
 description: >-
-  Data often falls into a limited number of categories. For example, human hair
-  color can be categorized as black, brown, blond, red, grey, or white—and
-  perhaps a few more options for people who color their hair. In R, categorical
-  data is stored in factors. Factors are very important in data analysis, so
-  start learning how to create, subset, and compare them now.
+  Data faller ofta in i ett begränsat antal kategorier. Hårfärg kan till exempel
+  kategoriseras som svart, brunt, blont, rött, grått eller vitt – med några fler
+  alternativ för den som färgar håret. I R lagras kategorisk data i faktorer.
+  Faktorer är mycket viktiga inom dataanalys, så börja lära dig att skapa,
+  filtrera och jämföra dem redan nu.
 ---
 
-## What's a factor and why would you use it?
+## Vad är en faktor och varför ska man använda det?
 
 ```yaml
 type: NormalExercise
@@ -19,19 +19,19 @@ skills:
   - 1
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+I det här kapitlet utforskar du **faktorernas** värld.
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+Begreppet faktor syftar på en statistisk datatyp som används för att lagra kategoriska variabler. Skillnaden mellan en kategorisk variabel och en kontinuerlig variabel är att en kategorisk variabel kan tillhöra ett **begränsat antal kategorier**. En kontinuerlig variabel kan däremot anta ett oändligt antal värden.
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+Det är viktigt att R vet om det arbetar med en kontinuerlig eller en kategorisk variabel, eftersom de statistiska modeller du kommer att utveckla framöver behandlar de två typerna på olika sätt. (Du kommer senare att förstå varför.)
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
+Ett bra exempel på en kategorisk variabel är kön. I många sammanhang kan du begränsa könskategorierna till "Male" eller "Female". (Ibland kan du behöva fler kategorier – till exempel för att ta hänsyn till kromosomvariationer, hermafroditiska djur eller olika kulturella normer – men det finns alltid ett ändligt antal kategorier.)
 
 `@instructions`
-Assign to variable `theory` the value `"factors"`.
+Tilldela variabeln `theory` värdet `"factors"`.
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+Tilldela bara en variabel (`<-`); se till att du använder rätt versaler och gemener.
 
 `@pre_exercise_code`
 ```{r}
@@ -51,20 +51,20 @@ theory <- "factors"
 
 `@sct`
 ```{r}
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- "Det verkar som att du inte har definierat variabeln `theory`."
+msg_incor <- "Värdet på `theory` verkar felaktigt. Se till att tilldela det teckensträngen `\"factors\"`. Kom ihåg att R är skiftlägeskänsligt."
+msg_err <- "Se till att du har definierat `theory` korrekt med `<-` för tilldelning."
 
 # If get error and theory is undefined, point out the error
 ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
 check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg("Bra jobbat! Redo att börja? Fortsätt till nästa övning!")
 ```
 
 ---
 
-## What's a factor and why would you use it? (2)
+## Vad är en faktor och varför skulle du använda den? (2)
 
 ```yaml
 type: NormalExercise
@@ -74,26 +74,26 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+För att skapa faktorer i R använder du funktionen `factor()`. Det första du behöver göra är att skapa en vektor som innehåller alla observationer som tillhör ett begränsat antal kategorier. Till exempel innehåller `sex_vector` könet för 5 olika individer:
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
+Här finns det tydligt två kategorier, eller i R-termer **'faktornivåer'**: <span translate="no">"Male"</span> och <span translate="no">"Female"</span>.
 
-The function `factor()` will encode the vector as a factor:
+Funktionen `factor()` kodar om vektorn som en faktor:
 
 ```
 factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
-- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
+- Konvertera teckenvektorn `sex_vector` till en faktor med `factor()` och tilldela resultatet till `factor_sex_vector`
+- Skriv ut `factor_sex_vector` och kontrollera att R skriver ut faktornivåerna under de faktiska värdena.
 
 `@hint`
-Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+Använd helt enkelt funktionen `factor()` på `sex_vector`. Ta en titt på uppgiften – svaret finns redan där någonstans...
 
 `@pre_exercise_code`
 ```{r}
@@ -126,15 +126,15 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Tilldelade du faktorn av `sex_vector` till `factor_sex_vector`?")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Glöm inte att skriva ut `factor_sex_vector`!")
 
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+success_msg("Bra! Om du vill veta mer om funktionen `factor()`, tveka inte att skriva `?factor` i konsolen. Detta öppnar en hjälpsida. Fortsätt till nästa övning.");
 ```
 
 ---
 
-## What's a factor and why would you use it? (3)
+## Vad är en faktor och varför ska man använda den? (3)
 
 ```yaml
 type: NormalExercise
@@ -144,17 +144,17 @@ skills:
   - 1
 ```
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+Det finns två typer av kategoriska variabler: en **nominell kategorisk variabel** och en **ordinal kategorisk variabel**.
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+En nominell variabel är en kategorisk variabel utan inbördes ordning. Det innebär att det är omöjligt att säga att 'ett värde är mer värt än ett annat'. Ta till exempel den kategoriska variabeln `animals_vector` med kategorierna `"Elephant"`, `"Giraffe"`, `"Donkey"` och `"Horse"`. Här går det inte att säga att något värde är högre eller lägre än ett annat. (Visst kan man diskutera det ;-) ).
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+Ordinala variabler har däremot en naturlig ordning. Ta till exempel den kategoriska variabeln `temperature_vector` med kategorierna: `"Low"`, `"Medium"` och `"High"`. Här är det tydligt att `"Medium"` är högre än `"Low"`, och att `"High"` är högre än `"Medium"`.
 
 `@instructions`
-Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+Skicka in svaret för att se hur R skapar och skriver ut nominella och ordinala variabler. Oroa dig inte om du inte förstår all kod än – det kommer vi att gå igenom längre fram.
 
 `@hint`
-Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+Skicka bara in svaret och titta på konsolen. Lägg märke till hur R anger ordningen för faktornivåerna hos ordinala kategoriska variabler.
 
 `@pre_exercise_code`
 ```{r}
@@ -189,7 +189,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
+msg <- "Ändra ingenting i exempelkoden. Skicka bara in svaret och granska lösningen!"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -204,12 +204,12 @@ ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% chec
 ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
 
 
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("Kan ni redan se vad som händer i den här övningen? Utmärkt! Fortsätt till nästa övning och fördjupa er i detaljerna kring faktornivåer.")
 ```
 
 ---
 
-## Factor levels
+## Faktornivåer
 
 ```yaml
 type: NormalExercise
@@ -219,28 +219,28 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
+När du får ett nytt dataset märker du ofta att det innehåller faktorer med specifika faktornivåer. Ibland vill du dock byta namn på dessa nivåer för att göra dem tydligare eller av andra skäl. I R kan du göra det med funktionen `levels()`:
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
+Ett bra exempel är rådata från en enkät. En vanlig fråga i enkäter är respondentens kön. Här har, för enkelhetens skull, bara två kategorier registrerats: `"M"` och `"F"`. (I praktiken behöver du ofta fler kategorier för enkätdata – oavsett vilket använder du en faktor för att lagra kategoriska data.)
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
+Att registrera kön med förkortningarna `"M"` och `"F"` kan vara praktiskt när du samlar in data med penna och papper, men det kan skapa förvirring vid analysen. Då vill du ofta byta faktornivåerna till `"Male"` och `"Female"` i stället för `"M"` och `"F"` för att göra det tydligare.
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+**Observera:** ordningen i vilken du tilldelar nivåerna är viktig. Om du skriver `levels(factor_survey_vector)` ser du att utdata är `[1] "F" "M"`. Om du inte anger nivåerna när du skapar vektorn tilldelar `R` dem automatiskt i alfabetisk ordning. För att korrekt mappa `"F"` till `"Female"` och `"M"` till `"Male"` ska nivåerna anges som `c("Female", "Male")`, i den ordningen.
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- Titta på koden som skapar en faktorvektor från `survey_vector`. Du ska använda `factor_survey_vector` i nästa steg.
+- Ändra faktornivåerna i `factor_survey_vector` till `c("Female", "Male")`. Tänk på ordningen på vektorelementen.
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+Tänk på i vilken ordning du anger faktornivåerna. Tips: titta på den ordning nivåerna skrivs ut när du anger `levels(factor_survey_vector)`.
 
 `@pre_exercise_code`
 ```{r}
@@ -275,9 +275,9 @@ factor_survey_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = "Ändra inte definitionen av `survey_vector`!"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "Ändra eller ta inte bort koden för att skapa faktorvektorn."
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
@@ -285,15 +285,15 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Tilldelade du rätt faktornivåer till `factor_survey_vector`? Använd `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Kom ihåg att R är skiftlägeskänsligt!"))
 
 
-success_msg("Wonderful! Proceed to the next exercise.")
+success_msg("Underbart! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Summarizing a factor
+## Sammanfatta en faktor
 
 ```yaml
 type: NormalExercise
@@ -303,19 +303,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
+När du är klar med den här kursen kommer `summary()` att bli en av dina favoritfunktioner i R. Den ger dig en snabb överblick över innehållet i en variabel:
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
+Åter till vår enkät: du vill veta hur många `"Male"`- respektive `"Female"`-svar som finns i din studie. Funktionen `summary` ger dig svaret på den frågan.
 
 `@instructions`
-Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+Anropa `summary()` på både `survey_vector` och `factor_survey_vector`. Tolka resultaten från båda vektorerna. Är de lika användbara i det här fallet?
 
 `@hint`
-Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+Anropa funktionen `summary()` på både `survey_vector` och `factor_survey_vector` – det är allt som krävs!
 
 `@pre_exercise_code`
 ```{r}
@@ -354,24 +354,24 @@ summary(factor_survey_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "Ändra ingenting i de första raderna som definierar `survey_vector` och `factor_survey_vector`."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "Har du använt `summary()` på rätt sätt för att generera en sammanfattning för `%s`?"
 
 ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
 
 ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
 
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("Bra gjort! Ta en titt på resultatet. Det faktum att du identifierade `\"Male\"` och `\"Female\"` som faktornivåer i `factor_survey_vector` gör det möjligt för R att visa antalet element för varje kategori.")
 ```
 
 ---
 
-## Battle of the sexes
+## Kampen mellan könen
 
 ```yaml
 type: NormalExercise
@@ -381,13 +381,13 @@ skills:
   - 1
 ```
 
-You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
+Du kanske undrar vad som händer när du försöker jämföra element i en faktor. I `factor_survey_vector` har du en faktor med två nivåer: `"Male"` och `"Female"`. Men hur värderar R dessa i förhållande till varandra?
 
 `@instructions`
-Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
+Läs koden i editorn och skicka in svaret för att testa om `male` är större än (`>`) `female`.
 
 `@hint`
-Just submit the answer and have a look at output that gets printed to the console.
+Skicka bara in svaret och titta på det som skrivs ut i konsolen.
 
 `@pre_exercise_code`
 ```{r}
@@ -430,7 +430,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply submit the answer and look at the result."
+msg = "Ändra ingenting i koden; skicka bara in svaret och se resultatet."
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -443,12 +443,12 @@ ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_m
 ex() %>% check_output_expr("male > female", missing_msg = msg)
 
 
-success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+success_msg("Intressant! Som standard returnerar R `NA` när du försöker jämföra värden i en faktor, eftersom det inte är ett meningsfullt koncept. Härnäst får du lära dig om ordnade faktorer, där mer meningsfulla jämförelser är möjliga.")
 ```
 
 ---
 
-## Ordered factors
+## Ordnade faktorer
 
 ```yaml
 type: NormalExercise
@@ -458,25 +458,25 @@ skills:
   - 1
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+Eftersom `"Male"` och `"Female"` är oordnade (eller nominala) faktornivåer returnerar R ett varningsmeddelande som talar om att operatorn för större än inte är meningsfull. Som du sett tidigare tilldelar R ett likvärdigt värde till nivåerna för den typen av faktorer.
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+Men det är inte alltid fallet! Ibland arbetar du även med faktorer som har en naturlig ordning mellan sina kategorier. I sådana fall måste vi se till att vi skickar den informationen till R ...
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
+Säg att du leder ett forskarteam med fem dataanalytiker och vill utvärdera deras prestationer. För att göra det mäter du deras arbetstakt, bedömer varje analytiker som `"slow"`, `"medium"` eller `"fast"`, och sparar resultaten i `speed_vector`.
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
+Som ett första steg tilldelar du `speed_vector` en vektor med 5 element, ett för varje analytiker. Varje element ska vara antingen `"slow"`, `"medium"` eller `"fast"`. Använd listan nedan:
 
-- Analyst 1 is medium,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is medium and
-- Analyst 5 is fast.
+- Analytiker 1 är medium,
+- Analytiker 2 är slow,
+- Analytiker 3 är slow,
+- Analytiker 4 är medium och
+- Analytiker 5 är fast.
 
-No need to specify these are factors yet.
+Du behöver inte ange att det rör sig om faktorer ännu.
 
 `@hint`
-Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
+Tilldela `speed_vector` en vektor som innehåller teckensträngar som `"slow"`, `"medium"` eller `"fast"`.
 
 `@pre_exercise_code`
 ```{r}
@@ -497,14 +497,14 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` bör vara en vektor med 5 poster, en för varje analytikerns hastighetsbedömning. Använd inte versaler; R är skiftlägeskänsligt!")
 
-success_msg("A job well done! Continue to the next exercise.")
+success_msg("Bra jobbat! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Ordered factors (2)
+## Ordnade faktorer (2)
 
 ```yaml
 type: NormalExercise
@@ -514,7 +514,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector` bör konverteras till en ordinalfaktor eftersom dess kategorier har en naturlig ordning. Som standard omvandlar funktionen `factor()` `speed_vector` till en oordnad faktor. För att skapa en ordnad faktor behöver du lägga till två extra argument: `ordered` och `levels`.
 
 ```
 factor(some_vector,
@@ -522,13 +522,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+Genom att sätta argumentet `ordered` till `TRUE` i funktionen `factor()` anger du att faktorn är ordnad. Med argumentet `levels` anger du faktorns värden i rätt ordning.
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
+Skapa en ordnad faktorvektor från `speed_vector`: `factor_speed_vector`. Sätt `ordered` till `TRUE` och `levels` till `c("slow", "medium", "fast")`.
 
 `@hint`
-Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+Använd funktionen `factor()` för att skapa `factor_speed_vector` baserat på `speed_character_vector`. Argumentet `ordered` ska sättas till `TRUE` eftersom det finns en naturlig ordning. Sätt även `levels = c("slow", "medium", "fast")`.
 
 `@pre_exercise_code`
 ```{r}
@@ -563,26 +563,26 @@ summary(factor_speed_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = "Ändra ingenting i kommandot som specificerar variabeln `speed_vector`."
 
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_function("factor") %>% {
-	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
-	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	check_arg(., 'x') %>% check_equal(incorrect_msg="Det första argumentet du skickar till `factor()` ska vara `speed_vector`.")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Se till att ange `ordered = TRUE` i ditt anrop av `factor()`.")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="Se till att ange `levels = c(\"slow\", \"medium\", \"fast\")` i ditt anrop av `factor()`.")
 	}
 
-ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="Det är fortfarande något fel med `factor_speed_vector`; se till att endast skicka `speed_vector`, `ordered = TRUE` och `levels = c(\"slow\", \"medium\", \"fast\")` i ditt anrop av `factor()`.")
 
                       
                       
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+success_msg("Bra gjort! Ta en titt på konsolen. Det anges nu att nivåerna verkligen har en ordning associerad, med tecknet `<`. Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Comparing ordered factors
+## Jämföra ordnade faktorer
 
 ```yaml
 type: NormalExercise
@@ -592,18 +592,18 @@ skills:
   - 1
 ```
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+En tråkig dag på jobbet kommer 'dataanalytiker nummer två' in på ditt kontor och klagar på att 'dataanalytiker nummer fem' håller tillbaka hela projektet. Eftersom du vet att 'dataanalytiker nummer två' har rykte om sig att vara lite självgod, bestämmer du dig för att först kontrollera om påståendet stämmer.
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+Eftersom `factor_speed_vector` nu är ordnad kan vi jämföra olika element (i det här fallet dataanalytikerna). Det gör du enkelt med de välbekanta jämförelseoperatorerna.
 
 `@instructions`
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- Använd `[2]` för att välja faktorvärdet för den andra dataanalytikern från `factor_speed_vector`. Spara det som `da2`.
+- Använd `[5]` för att välja faktorvärdet för den femte dataanalytikern från `factor_speed_vector`. Spara det som `da5`.
+- Kontrollera om `da2` är större än `da5` och skriv ut resultatet direkt. Kom ihåg att du kan använda operatorn `>` för att jämföra om ett element är större än ett annat.
 
 `@hint`
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- För att välja faktorvärdet för den tredje dataanalytikern använder du `factor_speed_vector[3]`.
+- För att jämföra två värden kan du använda `>`. Till exempel: `da3 > da4`.
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +644,19 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "Ändra ingenting om kommandona som definierar `speed_vector` och `factor_speed_vector`!"
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
+msg <- "Har ni korrekt valt faktorvärdet för den %s dataanalytikern? Ni kan använda `factor_speed_vector[%s]`."
 ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
 
 ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
 
-ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_output_expr("da2 > da5", missing_msg = "Har ni korrekt jämfört `da2` och `da5`? Ni kan använda `>`. Skriv helt enkelt ut resultatet.")
 
 
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("Bellissimo! Vad berättar resultatet för er? Dataanalytiker två klagar på dataanalytiker fem, medan det i själva verket är de själva som bromsar allt! Detta avslutar kapitlet om faktorer. Med en solid grund i vektorer, matriser och faktorer är ni redo att dyka in i den underbara världen av dataramar, en mycket viktig datastruktur i R!")
 ```

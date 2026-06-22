@@ -1,13 +1,13 @@
 ---
-title_meta: Chapter 6
-title: Lists
+title_meta: Kapitel 6
+title: Listor
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  Till skillnad från vektorer kan listor innehålla element av olika typer –
+  precis som en att göra-lista kan innehålla uppgifter av olika slag. I det här
+  kapitlet lär du dig att skapa, namnge och ta ut delar ur listor.
 ---
 
-## Lists, why would you need them?
+## Listor – varför behöver du dem?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +17,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+Grattis! Nu när du kommit så här långt i kursen är du redan bekant med:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vektorer** (endimensionella arrayer): kan innehålla numeriska värden, textvärden eller logiska värden. Alla element i en vektor har samma datatyp.
+- **Matriser** (tvådimensionella arrayer): kan innehålla numeriska värden, textvärden eller logiska värden. Alla element i en matris har samma datatyp.
+- **Dataramar** (tvådimensionella objekt): kan innehålla numeriska värden, textvärden eller logiska värden. Alla element inom en kolumn har samma datatyp, men olika kolumner kan ha olika datatyper.
 
-Pretty sweet for an R newbie, right? ;-)
+Inget illa för den som är ny på R, eller hur? ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+Skicka in svaret och börja lära dig allt om listor!
 
 `@hint`
-Just submit the answer!
+Skicka bara in svaret!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +48,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("Redo, klart, kör! Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## Listor – varför behöver du dem? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +63,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+En **lista** i R påminner om en att-göra-lista på jobbet eller i skolan: de olika punkterna på listan skiljer sig troligen åt i längd, egenskaper och typ av uppgift som ska utföras.
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+En lista i R låter dig samla en mängd olika objekt under ett namn – det vill säga listans namn – i en ordnad struktur. Objekten kan vara matriser, vektorer, dataramer och till och med andra listor. Det krävs inte ens att objekten har något gemensamt.
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+Man kan säga att en lista är en sorts superdatatyp: du kan lagra i princip vad som helst i den!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+Skicka bara in svaret för att starta den första övningen om listor.
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+Skicka in svaret för att starta den första övningen om listor.
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +92,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("Bra. Nu sätter vi igång på allvar!")
 ```
 
 ---
 
-## Creating a list
+## Skapa en lista
 
 ```yaml
 type: NormalExercise
@@ -107,19 +107,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+Nu skapar vi vår första lista! För att konstruera en lista använder du funktionen `list()`:
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+Argumenten till `list()` är listans komponenter. Kom ihåg att dessa komponenter kan vara matriser, vektorer, andra listor, ...
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+Skapa en lista med namnet `my_list` som innehåller variablerna `my_vector`, `my_matrix` och `my_df` som listkomponenter.
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+Använd funktionen `list()` med `my_vector`, `my_matrix` och `my_df` som argument, separerade med komma.
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +158,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Ta inte bort eller ändra definitionen av variablerna `my_vector`, `my_matrix` eller `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Det verkar som att `my_list` inte innehåller rätt element. Se till att skicka variablerna `my_vector`, `my_matrix` och `my_df` till funktionen `list()`, separerade med kommatecken, i denna ordning.")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("Underbart! Gå vidare till nästa övning.")
 ```
 
 ---
 
-## Creating a named list
+## Skapa en namngiven lista
 
 ```yaml
 type: NormalExercise
@@ -182,16 +182,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+Bra jobbat, du är i full fart!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+Precis som på en att-göra-lista vill du undvika att behöva gissa vad dina listkomponenter innehåller. Därför bör du ge dem namn:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+Detta skapar en lista med komponenter som heter `name1`, `name2` och så vidare. Om du vill namnge listans komponenter efter att du har skapat den kan du använda funktionen `names()`, precis som du gjorde med vektorer. Följande kommandon är helt ekvivalenta med tilldelningen ovan:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +199,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- Ändra koden från föregående övning (se editorn) genom att lägga till namn på komponenterna. Ge `my_vector` namnet `vec`, `my_matrix` namnet `mat` och `my_df` namnet `df`.
+- Skriv ut `my_list` så att du kan granska resultatet.
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+Det enklaste sättet att namnge dina listkomponenter är att göra det direkt när du skapar listan. Det börjar så här:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+Lägg till de andra två komponenterna på samma sätt.
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +251,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "Ta inte bort eller ändra definitionen av variablerna `my_vector`, `my_matrix` eller `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "Det verkar som att `my_list` inte innehåller rätt element.")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Det verkar som att `my_list` inte innehåller rätt namngivning för komponenterna. Se till att du använder namnen `vec`, `mat` och `df` respektive. Ta en titt på ledtråden om du har svårigheter.")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "Glöm inte att skriva ut `my_list` i konsolen! Lägg helt enkelt till `my_list` på en ny rad i editorn.")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("Utmärkt! Nu vet du inte bara hur man konstruerar listor, utan också hur man namnger dem – en färdighet som kommer att visa sig mycket användbar i praktiken. Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Creating a named list (2)
+## Skapa en namngiven lista (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +279,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+Som den stora filmälskare du är (kom ihåg ditt jobb på LucasFilm) bestämmer du dig för att börja lagra information om bra filmer med hjälp av listor.
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+Börja med att skapa en lista för filmen "The Shining". Vi har redan skapat variablerna `mov`, `act` och `rev` i din R-miljö. Du är välkommen att utforska dem i konsolen.
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+Komplettera koden i editorn för att skapa `shining_list`. Den ska innehålla tre element:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: en teckensträng med filmens titel (lagrad i `mov`)
+- `actors`: en vektor med huvudskådespelarnas namn (lagrad i `act`)
+- `reviews`: en dataram med vissa recensioner (lagrad i `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+Glöm inte att namnge listans komponenter på rätt sätt (namnen är `moviename`, `actors` och `reviews`).
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` är bara en del av lösningen. Du behöver också lägga till `act` och `rev` i listan med rätt namn.
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +324,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "Ta inte bort eller ändra definitionen av de förinställda variablerna!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "Det verkar som att `shining_list` inte innehåller rätt element: det första elementet ska vara `mov`, det andra elementet `act` och det tredje `rev`.")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "Det verkar som att `shining_list` inte innehåller rätt namngivning för komponenterna: namnge det första elementet `moviename`, det andra elementet `actors` och det tredje elementet `reviews`.")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("Utmärkt! Nu vet du hur man konstruerar och namnger listor. Precis som i de tidigare kapitlen, låt oss titta på hur man väljer element i listor. Gå vidare till nästa övning.")
 ```
 
 ---
 
-## Selecting elements from a list
+## Välja element från en lista
 
 ```yaml
 type: NormalExercise
@@ -350,32 +350,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+En lista består ofta av många element och komponenter. Det är därför inte alltid självklart hur man hämtar ett enskilt element, flera element eller en hel komponent ur den.
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+Ett sätt att välja en komponent är att använda dess numrerade position. För att till exempel hämta den första komponenten i `shining_list` skriver du
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+Ett snabbt sätt att prova detta är att skriva det direkt i konsolen. Kom ihåg: för att välja element ur vektorer använder du enkla hakparenteser: `[ ]`. Blanda inte ihop dem!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+Du kan också referera till komponenternas namn med `[[ ]]` eller med `$`-tecknet. Båda alternativen väljer den dataram som representerar recensionerna:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+Förutom att välja komponenter behöver du ofta hämta specifika element ur dessa komponenter. Med `shining_list[[2]][1]` väljer du till exempel det första elementet (`[1]`) från den andra komponenten, `actors` (`shining_list[[2]]`). Skriver du detta i konsolen ser du att svaret är Jack Nicholson.
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- Välj vektorn som representerar skådespelarna från `shining_list`. Skriv ut vektorn.
+- Välj det andra elementet i vektorn som representerar skådespelarna från `shining_list`. Skriv ut det på samma sätt som tidigare.
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- För att välja vektorn som representerar skådespelarna kan du använda `$actors`.
+- För att välja det tredje elementet i vektorn som representerar skådespelarna använder du `shining_list$actors[3]`. Vad behöver ändras för att välja det andra elementet?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +405,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "Ta inte bort eller ändra definitionen av `shining_list`, som är förinläst i arbetsytan!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "Har du korrekt valt och skrivit ut vektorn som representerar skådespelarna? Du kan använda `shining_list$actors`, till exempel.")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "För att välja den andra skådespelaren från vektorn som representerar skådespelarna bör du kedja dina val: `shining_list$actors` representerar skådespelarna, så du kan lägga till ett `[2]` för att välja det andra elementet.")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("Utmärkt! Att välja element från listor är ganska enkelt, eller hur? Fortsätt till nästa övning.")
 ```
 
 ---
 
-## Creating a new list for another movie
+## Skapa en ny lista för en annan film
 
 ```yaml
 type: NormalExercise
@@ -425,30 +425,30 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+Du hittade recensioner av en annan, nyare Jack Nicholson-film: The Departed!
 
-| Scores | Comments               |
-|--------|------------------------|
-| 4.6    | <span translate="no">I would watch it again</span> |
-| 5      | <span translate="no">Amazing!</span>               |
-| 4.8    | <span translate="no">I liked it</span>             |
-| 5      | <span translate="no">One of the best movies</span> |
-| 4.2    | <span translate="no">Fascinating plot</span>       |
+| Betyg | Kommentarer            |
+|-------|------------------------|
+| 4.6   | <span translate="no">I would watch it again</span> |
+| 5     | <span translate="no">Amazing!</span>               |
+| 4.8   | <span translate="no">I liked it</span>             |
+| 5     | <span translate="no">One of the best movies</span> |
+| 4.2   | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+Det vore praktiskt att samla all information om filmen – titel, skådespelare och recensioner – i en enda variabel. Eftersom dessa data har olika former passar det bra att kombinera dem i en listvariabel.
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`, som innehåller filmens titel, och `movie_actors`, som innehåller namnen på några av skådespelarna, finns tillgängliga i din arbetsmiljö.
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- Skapa två vektorer, `scores` och `comments`, som innehåller informationen från recensionerna i tabellen.
+- Beräkna medelvärdet av vektorn `scores` och spara det som `avg_review`. 
+- Kombinera vektorerna `scores` och `comments` i en dataram som du kallar `reviews_df`. 
+- Skapa en lista som du kallar `departed_list`, med `movie_title`, `movie_actors`, dataframe med recensioner som `reviews_df` och det genomsnittliga betyget som `avg_review`, och skriv ut den.
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- Använd funktionen `c()` för att skapa vektorerna. 
+- För att beräkna medelvärdet av en vektor skickar du vektorns namn till funktionen `mean()`. 
+- Använd funktionen `data.frame()` för att skapa dataramen `reviews_df`.
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +492,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "Ändra eller ta inte bort de förinlästa objekten."
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Skapade du vektorn `scores` korrekt?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Skapade du vektorn `comments` korrekt?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Skapade du objektet `avg_review` korrekt?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Skapade du `reviews_df` korrekt?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Skapade du `departed_list` korrekt?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +518,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "Skrev du ut `departed_list`?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("Bra jobbat! Du skapade framgångsrikt en ny lista med filminformation och kombinerade olika komponenter till en enda lista. Grattis till att du har slutfört kursen!")
 ```
