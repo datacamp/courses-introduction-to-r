@@ -1,14 +1,14 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: Глава 1
+title: Основы R
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  Сделайте первые шаги в R. В этой главе вы научитесь использовать консоль как
+  калькулятор и работать с переменными. Вы также познакомитесь с основными
+  типами данных в R. Приступим!
 free_preview: true
 ---
 
-## How it works
+## Как это работает
 
 ```yaml
 type: NormalExercise
@@ -18,18 +18,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+В редакторе вы вводите код на R для решения упражнений. После того как вы отправите код, R выполнит каждую его строку и сообщит, правильный ли ответ. Результат выполнения кода отображается в консоли.
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+В R символ `#` используется для добавления комментариев — чтобы вы и другие могли понять, что делает тот или иной фрагмент кода. Комментарии не выполняются как код и не влияют на результат. Например, <span translate="no">_Calculate 3 + 4_</span> в редакторе — это комментарий.
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+Вы также можете выполнять команды R напрямую в консоли. Это удобный способ поэкспериментировать с кодом: такие команды не проверяются на правильность.
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- В редакторе уже есть несколько строк кода. Определите, какие из них являются реальным кодом на R, а какие — комментариями.
+- Добавьте строку кода, которая вычисляет сумму 6 и 12, и отправьте ответ.
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+Просто добавьте строку кода на R, которая вычисляет сумму 6 и 12, — как в примере из исходного кода!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +57,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "Убедитесь, что вы добавили `6 + 12` на новой строке. Не начинайте строку с `#`, иначе ваш код на R не будет выполнен!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("Отлично! Видите, как консоль показывает результат выполненного кода на R? Теперь, когда вы знакомы с интерфейсом, давайте приступим к работе с R!")
 ```
 
 ---
 
-## Arithmetic with R
+## Арифметика в R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +74,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+В самом простом случае R можно использовать как обычный калькулятор. Вот основные арифметические операторы:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- Сложение: `+`
+- Вычитание: `-`
+- Умножение: `*`
+- Деление: `/`
+- Возведение в степень: `^`
+- Остаток от деления: `%%`
 
-The last two might need some explaining:
+Последние два оператора требуют небольшого пояснения:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- Оператор `^` возводит число слева в степень, указанную справа. Например, `3^2` равно 9.
+- Оператор остатка от деления возвращает остаток от деления левого числа на правое. Например, 5 по модулю 3, или `5 %% 3`, равно 2.
 
-With this knowledge, follow the instructions to complete the exercise.
+Используя эти знания, выполните инструкции ниже.
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- Введите `2^5` в редакторе, чтобы вычислить 2 в степени 5.
+- Введите `28 %% 6`, чтобы вычислить остаток от деления 28 на 6.
+- Нажмите **Отправить ответ** и посмотрите на результат в консоли.
+- Обратите внимание, как символ `#` используется для добавления комментариев в код R.
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+Ещё один пример оператора остатка от деления: `9 %% 2` равно `1`.
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +148,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "Не удаляйте другие примеры арифметических операций!"
+ex() %>% check_output_expr("2^5", missing_msg = "Пример возведения в степень выполнен неверно. Напишите `2 ^ 5` на новой строке.")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "Похоже, возникла проблема с примером на остаток от деления. Напишите `28 %% 6` на новой строке.")
+success_msg("Отлично! Переходите к следующему упражнению.")
 ```
 
 ---
 
-## Variable assignment
+## Присвоение переменных
 
 ```yaml
 type: NormalExercise
@@ -167,21 +167,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+Одно из ключевых понятий в (статистическом) программировании — это **переменная**.
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+Переменная позволяет сохранить значение (например, 4) или объект (например, описание функции) в R. В дальнейшем вы можете обращаться к этому значению или объекту, используя имя переменной.
 
-You can assign a value 4 to a variable `my_var` with the command
+Чтобы присвоить значение 4 переменной `my_var`, используйте команду
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+Теперь ваша очередь: дополните код в редакторе так, чтобы переменной `x` было присвоено значение 42. Нажмите **Отправить ответ**. Обратите внимание: когда вы попросите R вывести `x`, на экране появится значение 42.
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+Посмотрите, как значение 4 было присвоено переменной `my_var` в условии упражнения. Сделайте то же самое в редакторе, но теперь присвойте значение 42 переменной `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +208,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "Убедитесь, что переменная `x` определена.")  %>% check_equal(incorrect_msg = "Убедитесь, что вы присваиваете правильное значение переменной `x`.")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("Отличная работа! Вы заметили, что R не выводит значение переменной в консоль при присваивании? Выражение `x <- 42` не сгенерировало никакого вывода, потому что R предполагает, что эта переменная понадобится вам в будущем. Иначе вы бы не стали хранить значение в переменной, не так ли? Переходите к следующему упражнению!")
 ```
 
 ---
 
-## Variable assignment (2)
+## Присвоение переменных (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +225,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+Предположим, у вас есть корзина с пятью яблоками. Как начинающий аналитик данных, вы хотите сохранить количество яблок в переменной с именем `my_apples`.
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- Введите в редакторе следующий код: `my_apples <- 5`. Это присвоит значение 5 переменной `my_apples`.
+- Введите `my_apples` под вторым комментарием. Так вы выведете значение переменной `my_apples`.
+- Нажмите **Отправить ответ** и посмотрите на вывод: вы увидите, что напечатается число 5. Таким образом, R связывает переменную `my_apples` со значением 5.
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+Помните, что для присвоения числа или объекта переменной в R используется оператор присваивания `<-`. Также можно использовать `=`, однако `<-` значительно предпочтительнее в сообществе R.
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +260,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "Пожалуйста, убедитесь, что переменная `my_apples` определена.") %>% check_equal(incorrect_msg = "Убедитесь, что вы присваиваете правильное значение переменной `my_apples`.")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "Вы явно указали R вывести переменную `my_apples` в консоль?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("Отлично! Продолжайте к следующему упражнению!")
 ```
 
 ---
 
-## Variable assignment (3)
+## Присвоение переменных (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +279,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+В каждой корзине с фруктами должны быть апельсины, поэтому вы решаете добавить шесть штук. Как настоящий аналитик данных, вы сразу же создаёте переменную `my_oranges` и присваиваете ей значение 6. Теперь нужно подсчитать общее количество фруктов. Поскольку вы дали переменным понятные имена, это можно записать наглядно: 
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- Присвойте переменной `my_oranges` значение 6.
+- Сложите переменные `my_apples` и `my_oranges` и выведите результат на экран.
+- Присвойте результат сложения `my_apples` и `my_oranges` новой переменной `my_fruit`.
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` — это просто сумма `my_apples` и `my_oranges`. Используйте оператор `+` для сложения и `<-` для присвоения результата переменной `my_fruit`.
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +326,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "Вы использовали `my_fruit <- my_apples + my_oranges` для создания переменной `my_fruit`?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Сохраните строку, которая присваивает значение 5 переменной `my_apples`.")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Сохраните строку, которая присваивает значение 6 переменной `my_oranges`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Убедитесь, что результат сложения `my_apples` и `my_oranges` выводится на экран. Пример кода в описании уже содержит ответ на это задание!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("Отлично! Главное преимущество вычислений с использованием переменных — это возможность повторного использования. Если изменить значение `my_apples` с 5 на 12 и запустить скрипт заново, значение `my_fruit` обновится автоматически. Переходите к следующему упражнению.")
 ```
 
 ---
 
-## Apples and oranges
+## Яблоки и апельсины
 
 ```yaml
 type: NormalExercise
@@ -350,14 +349,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+Всем известно, что яблоки нельзя складывать с апельсинами. Но именно это вы только что и сделали, не правда ли? В предыдущем упражнении обе переменные — `my_apples` и `my_oranges` — содержали числа. Оператор `+` работает с числовыми переменными в R. Однако если попытаться сложить <span translate="no">"apples"</span> и <span translate="no">"oranges"</span> и при этом присвоить текстовое значение переменной `my_oranges` (как в редакторе), то при вычислении переменной `my_fruit` R попытается сложить числовую переменную с символьной. Это невозможно.
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- Нажмите **Отправить ответ** и прочитайте сообщение об ошибке. Убедитесь, что понимаете, почему код не сработал.
+- Исправьте код так, чтобы R знал: у вас 6 апельсинов, а значит, в корзине 11 фруктов.
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+Переменной `my_oranges` нужно присвоить числовое значение `6`, а не символьное значение `"six"`. Обратите внимание: кавычки указывают на то, что `"six"` является символьной строкой.
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +391,28 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "Вы можете сделать это, присвоив переменной `my_oranges` числовое значение, а не строку!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Убедитесь, что `my_apples` по-прежнему содержит `5`.")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Убедитесь, что `my_oranges` равно `6`.")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "Значение `my_fruit` неверно. Оно должно быть равно 11 — сумме `my_apples` и `my_oranges`.")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Вы создали `my_fruit` как сумму переменных `my_apples` и `my_oranges`?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Вы создали `my_fruit` как сумму переменных `my_apples` и `my_oranges`?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "Не удаляйте строку, которая выводит `my_fruit`.")
 
 
 
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("Отлично, продолжайте в том же духе! Переходите к следующему упражнению.")
 ```
 
 ---
 
-## Basic data types in R
+## Базовые типы данных в R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +422,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R работает со множеством типов данных. Вот основные из них, с которых стоит начать:
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- Десятичные числа, например `4.5`, называются **числовыми** (numerics).
+- Целые числа, например `4`, называются **целыми** (integers). Целые числа также относятся к числовым.
+- Булевы значения (`TRUE` или `FALSE`) называются **логическими** (logical).
+- Текстовые значения называются **символьными** (characters).
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+Обратите внимание: кавычки в редакторе указывают на то, что `"some text"` является строкой.
 
 `@instructions`
-Change the value of the:
+Измените значение следующих переменных:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- `my_numeric` — присвойте значение `42`.
+- `my_character` — присвойте значение `"universe"`. Обратите внимание: кавычки указывают, что `"universe"` является символьным значением.
+- `my_logical` — присвойте значение `FALSE`.
 
-Note that R is case sensitive!
+Учтите, что R чувствителен к регистру!
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+Замените значения в редакторе на те, что указаны в упражнении. Например: 
+`my_numeric <- 42` присваивает переменной `my_numeric` значение 42.
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +475,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Вы правильно изменили объявление `my_numeric` так, чтобы оно содержало значение 42?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Вы правильно изменили `my_character` на `\"universe\"`? Не забудьте про кавычки!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Вы правильно изменили `my_logical` на `FALSE`? Все буквы `FALSE` должны быть заглавными!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("Отличная работа! Переходите к следующему упражнению.")
 ```
 
 ---
 
-## What's that data type?
+## Что за тип данных?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +496,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+Помните, как при попытке сложить `5 + "six"` возникла ошибка из-за несовпадения типов данных? Избежать подобных ситуаций поможет предварительная проверка типа переменной. Для этого используйте функцию `class()` — пример уже есть в редакторе.
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+Дополните код в редакторе: выведите типы данных переменных `my_character` и `my_logical`.
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+Код для вывода типа данных переменной `my_numeric` уже есть в редакторе; сделайте то же самое для `my_character` и `my_logical`.
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +545,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "Не изменяйте объявление переменных!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "Вы включили `class(%1$s)` для вывода типа данных `%1$s`?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Не удаляйте код, который выводит тип `my_numeric`.")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("Поздравляем! Это было последнее упражнение данной главы. Переходите к следующей главе, чтобы погрузиться в мир векторов!")
 ```
