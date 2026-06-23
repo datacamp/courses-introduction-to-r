@@ -1,13 +1,13 @@
 ---
-title_meta: Chapter 6
+title_meta: บทที่ 6
 title: Lists
 description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+  ต่างจาก vectors ตรงที่ lists สามารถเก็บข้อมูลหลายประเภทไว้ด้วยกันได้
+  เหมือนรายการสิ่งที่ต้องทำที่มีได้หลายหมวด บทนี้จะสอนวิธีสร้าง ตั้งชื่อ
+  และเลือกสมาชิกจาก lists
 ---
 
-## Lists, why would you need them?
+## List คืออะไร และทำไมถึงต้องใช้?
 
 ```yaml
 type: NormalExercise
@@ -17,19 +17,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+ยินดีด้วย! ถึงตอนนี้ คุณคุ้นเคยกับสิ่งเหล่านี้แล้ว:
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectors** (อาร์เรย์หนึ่งมิติ): เก็บค่าตัวเลข ข้อความ หรือค่าตรรกะได้ โดยทุก element ใน vector ต้องมีชนิดข้อมูลเดียวกัน
+- **Matrices** (อาร์เรย์สองมิติ): เก็บค่าตัวเลข ข้อความ หรือค่าตรรกะได้ โดยทุก element ใน matrix ต้องมีชนิดข้อมูลเดียวกัน
+- **Data frames** (อ็อบเจกต์สองมิติ): เก็บค่าตัวเลข ข้อความ หรือค่าตรรกะได้ ภายในคอลัมน์เดียวกัน element ทุกตัวต้องมีชนิดข้อมูลเดียวกัน แต่แต่ละคอลัมน์สามารถมีชนิดข้อมูลต่างกันได้
 
-Pretty sweet for an R newbie, right? ;-)
+ไม่เลวเลยสำหรับมือใหม่ R ;-)
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+ส่งคำตอบเพื่อเริ่มเรียนรู้ทุกอย่างเกี่ยวกับ list!
 
 `@hint`
-Just submit the answer!
+ส่งคำตอบได้เลย!
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +48,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("พร้อมแล้ว ไปต่อได้เลย! ดำเนินการต่อไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## ลิสต์ มีไว้ทำไม? (2)
 
 ```yaml
 type: NormalExercise
@@ -63,17 +63,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+**ลิสต์ (list)** ใน R นั้นคล้ายกับรายการสิ่งที่ต้องทำในชีวิตประจำวัน ซึ่งแต่ละรายการอาจมีความยาว ลักษณะ และประเภทของงานที่แตกต่างกันออกไป
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+ลิสต์ใน R ช่วยให้เก็บรวบรวมออบเจกต์หลากหลายประเภทไว้ภายใต้ชื่อเดียวกันได้อย่างเป็นระเบียบ ไม่ว่าจะเป็นเมทริกซ์ เวกเตอร์ ดาต้าเฟรม หรือแม้แต่ลิสต์ซ้อนลิสต์ และที่สำคัญคือออบเจกต์เหล่านี้ไม่จำเป็นต้องมีความสัมพันธ์กันแต่อย่างใด
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+อาจกล่าวได้ว่าลิสต์คือชนิดข้อมูลขั้นสูงรูปแบบหนึ่ง เพราะสามารถเก็บข้อมูลได้แทบทุกประเภทในที่เดียว!
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+ส่งคำตอบเพื่อเริ่มแบบฝึกหัดแรกเกี่ยวกับลิสต์
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+ส่งคำตอบเพื่อเริ่มแบบฝึกหัดแรกเกี่ยวกับลิสต์
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +92,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("เยี่ยมมาก มาเริ่มลงมือทำกันเลย!")
 ```
 
 ---
 
-## Creating a list
+## การสร้างลิสต์
 
 ```yaml
 type: NormalExercise
@@ -107,19 +107,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+มาสร้างลิสต์แรกกัน! ในการสร้างลิสต์ ให้ใช้ฟังก์ชัน `list()` ดังนี้:
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+อาร์กิวเมนต์ของฟังก์ชัน `list()` คือองค์ประกอบต่างๆ ของลิสต์ ซึ่งสามารถเป็นได้ทั้งเมทริกซ์ เวกเตอร์ ลิสต์อื่น และอื่นๆ อีกมากมาย
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+สร้างลิสต์ชื่อ `my_list` โดยใช้ตัวแปร `my_vector`, `my_matrix` และ `my_df` เป็นองค์ประกอบของลิสต์
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+ใช้ฟังก์ชัน `list()` โดยส่ง `my_vector`, `my_matrix` และ `my_df` เป็นอาร์กิวเมนต์คั่นด้วยเครื่องหมายจุลภาค
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +158,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "อย่าลบหรือเปลี่ยนแปลงนิยามของตัวแปร `my_vector`, `my_matrix` หรือ `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "ดูเหมือนว่า `my_list` ไม่มีองค์ประกอบที่ถูกต้อง กรุณาตรวจสอบให้แน่ใจว่าได้ส่งตัวแปร `my_vector`, `my_matrix` และ `my_df` ไปยังฟังก์ชัน `list()` โดยคั่นด้วยเครื่องหมายจุลภาค และเรียงตามลำดับนี้")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("ยอดเยี่ยมมาก! ไปยังแบบฝึกหัดถัดไปได้เลย")
 ```
 
 ---
 
-## Creating a named list
+## การสร้างลิสต์แบบมีชื่อ
 
 ```yaml
 type: NormalExercise
@@ -182,16 +182,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+เยี่ยมมาก ไปได้สวย!
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+เช่นเดียวกับรายการสิ่งที่ต้องทำ เราควรตั้งชื่อให้กับส่วนประกอบในลิสต์ เพื่อให้รู้ว่าแต่ละส่วนแทนอะไร ทำได้ดังนี้:
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+คำสั่งนี้จะสร้างลิสต์ที่มีส่วนประกอบชื่อ `name1`, `name2` และอื่นๆ ตามลำดับ หากต้องการตั้งชื่อหลังจากสร้างลิสต์แล้ว ให้ใช้ฟังก์ชัน `names()` เหมือนกับที่ทำกับเวกเตอร์ คำสั่งด้านล่างนี้ให้ผลเหมือนกันกับตัวอย่างข้างต้นทุกประการ:
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +199,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- แก้ไขโค้ดจากแบบฝึกหัดก่อนหน้า (ดูในตัวแก้ไขโค้ด) โดยเพิ่มชื่อให้กับส่วนประกอบแต่ละรายการ ใช้ชื่อ `vec` สำหรับ `my_vector`, ชื่อ `mat` สำหรับ `my_matrix` และชื่อ `df` สำหรับ `my_df`
+- พิมพ์ `my_list` เพื่อตรวจสอบผลลัพธ์
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+วิธีแรกในการกำหนดชื่อให้กับส่วนประกอบในลิสต์ทำได้ง่ายมาก เริ่มต้นแบบนี้:
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+เพิ่มส่วนประกอบอีกสองรายการในลักษณะเดียวกัน
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +251,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "อย่าลบหรือเปลี่ยนแปลงนิยามของตัวแปร `my_vector`, `my_matrix` หรือ `my_df`!"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "ดูเหมือนว่า `my_list` ไม่มีองค์ประกอบที่ถูกต้อง")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "ดูเหมือนว่า `my_list` ไม่มีการตั้งชื่อที่ถูกต้องสำหรับส่วนประกอบต่างๆ กรุณาตรวจสอบให้แน่ใจว่าใช้ชื่อ `vec`, `mat` และ `df` ตามลำดับ หากมีปัญหา กรุณาดูคำใบ้")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "อย่าลืมพิมพ์ `my_list` ไปยังคอนโซล! เพียงเพิ่ม `my_list` ในบรรทัดใหม่ในตัวแก้ไข")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("ยอดเยี่ยม! ขณะนี้ท่านไม่เพียงแต่ทราบวิธีสร้างรายการเท่านั้น แต่ยังสามารถตั้งชื่อรายการได้อีกด้วย ซึ่งเป็นทักษะที่มีประโยชน์อย่างยิ่งในทางปฏิบัติ กรุณาดำเนินการต่อไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Creating a named list (2)
+## การสร้างลิสต์แบบมีชื่อ (2)
 
 ```yaml
 type: NormalExercise
@@ -279,21 +279,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+ในฐานะคนที่ชื่นชอบภาพยนตร์เป็นชีวิตจิตใจ (จำได้ไหมว่าคุณทำงานอยู่ที่ LucasFilms) คุณตัดสินใจเก็บข้อมูลภาพยนตร์ที่ชื่นชอบไว้ในลิสต์
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+เริ่มต้นด้วยการสร้างลิสต์สำหรับภาพยนตร์เรื่อง "The Shining" เราได้สร้างตัวแปร `mov`, `act` และ `rev` ไว้ใน R workspace ให้แล้ว ลองเรียกดูค่าเหล่านี้ใน console ได้เลย
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+เติมโค้ดในตัวแก้ไขให้สมบูรณ์เพื่อสร้าง `shining_list` ซึ่งประกอบด้วยสามองค์ประกอบ:
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`: character string ที่เก็บชื่อภาพยนตร์ (เก็บอยู่ใน `mov`)
+- `actors`: เวกเตอร์ที่เก็บชื่อนักแสดงหลัก (เก็บอยู่ใน `act`)
+- `reviews`: data frame ที่เก็บข้อมูลรีวิว (เก็บอยู่ใน `rev`)
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+อย่าลืมตั้งชื่อองค์ประกอบในลิสต์ให้ถูกต้องด้วย (ชื่อที่ต้องใช้คือ `moviename`, `actors` และ `reviews`)
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` เป็นเพียงส่วนหนึ่งของคำตอบ อย่าลืมเพิ่ม `act` และ `rev` เข้าไปในลิสต์ด้วย พร้อมระบุชื่อให้ถูกต้อง
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +324,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "อย่าลบหรือเปลี่ยนแปลงนิยามของตัวแปรที่กำหนดไว้ล่วงหน้า!"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "ดูเหมือนว่า `shining_list` ไม่มีองค์ประกอบที่ถูกต้อง: องค์ประกอบแรกควรเป็น `mov` องค์ประกอบที่สองควรเป็น `act` และองค์ประกอบที่สามควรเป็น `rev`")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "ดูเหมือนว่า `shining_list` ไม่มีการตั้งชื่อองค์ประกอบที่ถูกต้อง: ตั้งชื่อองค์ประกอบแรกว่า `moviename` องค์ประกอบที่สองว่า `actors` และองค์ประกอบที่สามว่า `reviews`")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("ยอดเยี่ยมมาก! ขณะนี้คุณทราบวิธีสร้างและตั้งชื่อรายการแล้ว เช่นเดียวกับบทก่อนหน้า มาดูวิธีการเลือกองค์ประกอบสำหรับรายการกัน ไปที่แบบฝึกหัดถัดไปได้เลย")
 ```
 
 ---
 
-## Selecting elements from a list
+## การเลือกองค์ประกอบจาก list
 
 ```yaml
 type: NormalExercise
@@ -350,32 +350,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+โดยทั่วไป list มักประกอบด้วย element และ component หลายรายการ ดังนั้นการดึงข้อมูลออกมาไม่ว่าจะเป็น element เดียว หลาย element หรือทั้ง component จึงอาจไม่ตรงไปตรงมาเสมอไป
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+วิธีหนึ่งในการเลือก component คือระบุตำแหน่งด้วยหมายเลข ตัวอย่างเช่น หากต้องการดึง component แรกของ `shining_list` ให้พิมพ์
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+ลองพิมพ์ในคอนโซลเพื่อทดสอบดูได้เลย สิ่งสำคัญที่ต้องจำไว้คือ การเลือก element จาก vector ใช้วงเล็บเหลี่ยมชั้นเดียว `[ ]` อย่าสับสนกัน!
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+นอกจากนี้ยังอ้างอิง component ด้วยชื่อได้ โดยใช้ `[[ ]]` หรือเครื่องหมาย `$` ทั้งสองแบบจะเลือก data frame ที่แทนข้อมูล reviews ได้เหมือนกัน:
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
 ``` 
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+นอกจากการเลือก component แล้ว บางครั้งยังต้องการดึง element เฉพาะจาก component นั้นด้วย ตัวอย่างเช่น `shining_list[[2]][1]` จะเลือก element แรก (`[1]`) จาก component ที่สอง ซึ่งก็คือ `actors` (`shining_list[[2]]`) ลองพิมพ์ในคอนโซลดู จะเห็นว่าคำตอบคือ Jack Nicholson
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- เลือก vector ที่แทนรายชื่อนักแสดงจาก `shining_list` แล้วพิมพ์ผลลัพธ์ออกมา
+- เลือก element ที่สองใน vector รายชื่อนักแสดงจาก `shining_list` แล้วพิมพ์ผลลัพธ์เช่นเดิม
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- ใช้ `$actors` เพื่อเลือก vector ที่แทนรายชื่อนักแสดง
+- ใช้ `shining_list$actors[3]` เพื่อเลือกองค์ประกอบที่สามใน vector นั้น แล้วต้องเปลี่ยนอะไรเพื่อเลือกองค์ประกอบที่สองแทน?
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +405,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "อย่าลบหรือเปลี่ยนแปลงนิยามของ `shining_list` ซึ่งถูกโหลดไว้ล่วงหน้าในพื้นที่ทำงานแล้ว!"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "ท่านได้เลือกและแสดงผลเวกเตอร์ที่แทนนักแสดงอย่างถูกต้องหรือไม่? ท่านสามารถใช้ `shining_list$actors` เป็นตัวอย่างได้")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "หากต้องการเลือกนักแสดงคนที่สองจากเวกเตอร์ที่แทนนักแสดง ท่านควรเชื่อมต่อการเลือกของท่าน: `shining_list$actors` แทนนักแสดง ดังนั้นท่านสามารถเพิ่ม `[2]` เพื่อเลือกองค์ประกอบที่สองได้")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("ยอดเยี่ยม! การเลือกองค์ประกอบจากรายการนั้นค่อนข้างง่ายใช่ไหม? ดำเนินการต่อไปยังแบบฝึกหัดถัดไปได้เลย")
 ```
 
 ---
 
-## Creating a new list for another movie
+## สร้างลิสต์ใหม่สำหรับภาพยนตร์อีกเรื่อง
 
 ```yaml
 type: NormalExercise
@@ -425,7 +425,7 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+คุณพบรีวิวของภาพยนตร์ของ Jack Nicholson อีกเรื่องที่เพิ่งออกฉาย นั่นคือ The Departed!
 
 | Scores | Comments               |
 |--------|------------------------|
@@ -435,20 +435,20 @@ You found reviews of another, more recent, Jack Nicholson movie: The Departed!
 | 5      | <span translate="no">One of the best movies</span> |
 | 4.2    | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+การรวบรวมข้อมูลทั้งหมดเกี่ยวกับภาพยนตร์ เช่น ชื่อเรื่อง นักแสดง และรีวิว ไว้ในตัวแปรเดียวจะเป็นประโยชน์มาก เนื่องจากข้อมูลเหล่านี้มีรูปแบบที่แตกต่างกัน การเก็บรวมกันในตัวแปรประเภทลิสต์จึงเหมาะสมที่สุด
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title` ซึ่งเก็บชื่อภาพยนตร์ และ `movie_actors` ซึ่งเก็บชื่อนักแสดงบางส่วน มีอยู่แล้วใน workspace ของคุณ
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- สร้างเวกเตอร์สองตัวชื่อ `scores` และ `comments` ที่บรรจุข้อมูลจากรีวิวในตารางด้านบน
+- หาค่าเฉลี่ยของเวกเตอร์ `scores` แล้วบันทึกไว้เป็น `avg_review`
+- รวมเวกเตอร์ `scores` และ `comments` เข้าด้วยกันเป็นดาต้าเฟรมชื่อ `reviews_df`
+- สร้างลิสต์ชื่อ `departed_list` ที่ประกอบด้วย `movie_title`, `movie_actors`, ดาต้าเฟรมรีวิวเป็น `reviews_df` และคะแนนรีวิวเฉลี่ยเป็น `avg_review` จากนั้นแสดงผลลัพธ์ออกมา
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- ใช้ฟังก์ชัน `c()` เพื่อสร้างเวกเตอร์
+- หากต้องการหาค่าเฉลี่ยของเวกเตอร์ ให้ส่งชื่อเวกเตอร์ไปยังฟังก์ชัน `mean()`
+- ใช้ฟังก์ชัน `data.frame()` เพื่อสร้างดาต้าเฟรม `reviews_df`
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +492,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "อย่าเปลี่ยนแปลงหรือลบออบเจกต์ที่โหลดไว้ล่วงหน้า"
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "คุณสร้างเวกเตอร์ `scores` อย่างถูกต้องหรือไม่?")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "คุณสร้างเวกเตอร์ `comments` อย่างถูกต้องหรือไม่?")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "คุณสร้างออบเจกต์ `avg_review` อย่างถูกต้องหรือไม่?"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "คุณสร้าง `reviews_df` อย่างถูกต้องหรือไม่?"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "คุณสร้าง `departed_list` อย่างถูกต้องหรือไม่?"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +518,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "คุณพิมพ์ `departed_list` หรือไม่?")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("ทำได้ดีมาก! คุณสร้างรายการข้อมูลภาพยนตร์อีกรายการหนึ่งได้สำเร็จ และรวมองค์ประกอบต่าง ๆ เข้าไว้ในรายการเดียว ขอแสดงความยินดีที่สำเร็จหลักสูตรนี้!")
 ```

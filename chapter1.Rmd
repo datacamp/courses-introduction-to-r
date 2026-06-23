@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
+title_meta: บทที่ 1
+title: พื้นฐาน R เบื้องต้น
 description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+  เริ่มต้นก้าวแรกกับ R ในบทนี้ จะได้เรียนรู้วิธีใช้คอนโซลเป็นเครื่องคิดเลข
+  การกำหนดค่าให้ตัวแปร และทำความรู้จักกับประเภทข้อมูลพื้นฐานใน R ไปเริ่มกันเลย
 free_preview: true
 ---
 
-## How it works
+## เริ่มต้นใช้งาน
 
 ```yaml
 type: NormalExercise
@@ -18,18 +17,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+ในตัวแก้ไขโค้ด ให้พิมพ์โค้ด R เพื่อทำแบบฝึกหัด เมื่อส่งคำตอบแล้ว R จะอ่านและรันโค้ดทุกบรรทัด จากนั้นจะแจ้งให้ทราบว่าโค้ดถูกต้องหรือไม่ ผลลัพธ์ของโค้ด R จะแสดงในคอนโซล
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R ใช้เครื่องหมาย `#` สำหรับเพิ่มคอมเมนต์ เพื่อให้คุณและผู้อื่นเข้าใจว่าโค้ดทำอะไร คอมเมนต์จะไม่ถูกรันเป็นโค้ด R จึงไม่มีผลต่อผลลัพธ์ ตัวอย่างเช่น <span translate="no">_Calculate 3 + 4_</span> ในตัวแก้ไขโค้ดคือคอมเมนต์
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+นอกจากนี้ยังสามารถรันคำสั่ง R ได้โดยตรงในคอนโซล ซึ่งเป็นวิธีที่ดีสำหรับการทดลองเขียนโค้ด เนื่องจากโค้ดที่รันในคอนโซลจะไม่ถูกตรวจสอบความถูกต้อง
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- ในตัวแก้ไขโค้ดมีโค้ดตัวอย่างอยู่แล้ว ลองดูว่าบรรทัดไหนเป็นโค้ด R จริง และบรรทัดไหนเป็นคอมเมนต์
+- เพิ่มบรรทัดโค้ดเพื่อคำนวณผลรวมของ 6 และ 12 แล้วส่งคำตอบ
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+เพิ่มโค้ด R อีกหนึ่งบรรทัดเพื่อคำนวณผลรวมของ 6 และ 12 เหมือนกับตัวอย่างในโค้ดตัวอย่าง!
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +56,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "โปรดตรวจสอบให้แน่ใจว่าได้เพิ่ม `6 + 12` ในบรรทัดใหม่ อย่าเริ่มบรรทัดด้วย `#` มิฉะนั้นโค้ด R ของท่านจะไม่ถูกประมวลผล!")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("ยอดเยี่ยมมาก! ท่านเห็นแล้วว่าคอนโซลแสดงผลลัพธ์ของโค้ด R ที่ท่านส่งมาอย่างไร? เมื่อท่านคุ้นเคยกับอินเทอร์เฟซแล้ว มาเริ่มต้นใช้งาน R กันเลย!")
 ```
 
 ---
 
-## Arithmetic with R
+## การคำนวณเลขคณิตด้วย R
 
 ```yaml
 type: NormalExercise
@@ -74,30 +73,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+ในรูปแบบพื้นฐานที่สุด R สามารถใช้เป็นเครื่องคิดเลขได้ ลองดูตัวดำเนินการทางคณิตศาสตร์ต่อไปนี้:
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
+- การบวก: `+`
+- การลบ: `-`
+- การคูณ: `*`
+- การหาร: `/`
+- การยกกำลัง: `^`
 - Modulo: `%%`
 
-The last two might need some explaining:
+สองตัวสุดท้ายอาจต้องอธิบายเพิ่มเติม:
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- ตัวดำเนินการ `^` ใช้ยกกำลังตัวเลขทางซ้ายด้วยตัวเลขทางขวา เช่น `3^2` มีค่าเท่ากับ 9
+- Modulo คือเศษที่เหลือจากการหารตัวเลขทางซ้ายด้วยตัวเลขทางขวา เช่น 5 modulo 3 หรือ `5 %% 3` มีค่าเท่ากับ 2
 
-With this knowledge, follow the instructions to complete the exercise.
+เมื่อเข้าใจแล้ว ให้ทำตามคำแนะนำเพื่อทำแบบฝึกหัดให้สำเร็จ
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- พิมพ์ `2^5` ในตัวแก้ไขโค้ดเพื่อคำนวณ 2 ยกกำลัง 5
+- พิมพ์ `28 %% 6` เพื่อคำนวณ 28 modulo 6
+- คลิก **ส่งคำตอบ** แล้วดูผลลัพธ์ที่แสดงใน console
+- สังเกตวิธีใช้สัญลักษณ์ `#` เพื่อเพิ่มคอมเมนต์ในโค้ด R
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+ตัวอย่างเพิ่มเติมของตัวดำเนินการ modulo: `9 %% 2` มีค่าเท่ากับ `1`
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +147,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "อย่าลบตัวอย่างเลขคณิตอื่นๆ ออก!"
+ex() %>% check_output_expr("2^5", missing_msg = "ตัวอย่างการยกกำลังไม่ถูกต้อง กรุณาเขียน `2 ^ 5` ในบรรทัดใหม่")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "ดูเหมือนจะมีปัญหากับตัวอย่างโมดูโล กรุณาเขียน `28 %% 6` ในบรรทัดใหม่")
+success_msg("ยอดเยี่ยม! ไปยังแบบฝึกหัดถัดไปได้เลย")
 ```
 
 ---
 
-## Variable assignment
+## การกำหนดค่าตัวแปร
 
 ```yaml
 type: NormalExercise
@@ -167,21 +166,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+แนวคิดพื้นฐานในการเขียนโปรแกรม (เชิงสถิติ) อย่างหนึ่งคือ **ตัวแปร**
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+ตัวแปรช่วยให้เก็บค่า (เช่น 4) หรือออบเจ็กต์ (เช่น คำอธิบายฟังก์ชัน) ไว้ใน R ได้ แล้วจึงนำชื่อตัวแปรนั้นมาใช้เพื่อเข้าถึงค่าหรือออบเจ็กต์ที่เก็บไว้ได้ในภายหลัง
 
-You can assign a value 4 to a variable `my_var` with the command
+สามารถกำหนดค่า 4 ให้กับตัวแปร `my_var` ได้ด้วยคำสั่ง
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+ถึงคิวแล้ว: เติมโค้ดในตัวแก้ไขให้ครบ เพื่อกำหนดค่า 42 ให้กับตัวแปร `x` จากนั้นกด **ส่งคำตอบ** สังเกตว่าเมื่อสั่งให้ R แสดงค่าของ `x` ค่า 42 จะปรากฏขึ้น
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+ดูวิธีที่ค่า 4 ถูกกำหนดให้กับ `my_var` ในตัวอย่างของแบบฝึกหัด แล้วทำแบบเดียวกัน แต่คราวนี้กำหนดค่า 42 ให้กับตัวแปร `x`
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +207,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "โปรดตรวจสอบให้แน่ใจว่าได้กำหนดตัวแปร `x` แล้ว")  %>% check_equal(incorrect_msg = "โปรดตรวจสอบให้แน่ใจว่าคุณกำหนดค่าที่ถูกต้องให้กับ `x`")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("ยอดเยี่ยมมาก! คุณสังเกตเห็นไหมว่า R ไม่แสดงค่าของตัวแปรในคอนโซลเมื่อคุณทำการกำหนดค่า? `x <- 42` ไม่ได้สร้างผลลัพธ์ใดๆ เนื่องจาก R ถือว่าคุณจะต้องใช้ตัวแปรนี้ในภายหลัง มิฉะนั้นคุณคงไม่เก็บค่าไว้ในตัวแปรตั้งแต่แรก ใช่ไหม? ดำเนินการไปยังแบบฝึกหัดถัดไปได้เลย!")
 ```
 
 ---
 
-## Variable assignment (2)
+## การกำหนดค่าตัวแปร (2)
 
 ```yaml
 type: NormalExercise
@@ -225,15 +224,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+สมมติว่ามีตะกร้าผลไม้ที่ใส่แอปเปิลไว้ 5 ลูก ในฐานะนักวิเคราะห์ข้อมูลมือใหม่ เราต้องการเก็บจำนวนแอปเปิลไว้ในตัวแปรชื่อ `my_apples`
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- พิมพ์โค้ดต่อไปนี้ในตัวแก้ไข: `my_apples <- 5` เพื่อกำหนดค่า 5 ให้กับ `my_apples`
+- พิมพ์: `my_apples` ใต้คอมเมนต์บรรทัดที่สอง เพื่อแสดงค่าของ `my_apples`
+- คลิก **ส่งคำตอบ** แล้วดูผลลัพธ์ จะเห็นว่าตัวเลข 5 ถูกแสดงออกมา ซึ่งหมายความว่าตอนนี้ R เชื่อมโยงตัวแปร `my_apples` กับค่า 5 แล้ว
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+จำไว้ว่าหากต้องการกำหนดค่าตัวเลขหรือออบเจกต์ให้กับตัวแปรใน R สามารถใช้ตัวดำเนินการกำหนดค่า `<-` ได้ นอกจากนี้ยังใช้ `=` ได้เช่นกัน แต่ `<-` เป็นรูปแบบที่นิยมใช้กันอย่างแพร่หลายในชุมชน R
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +259,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "โปรดตรวจสอบให้แน่ใจว่าได้กำหนดตัวแปร `my_apples` แล้ว") %>% check_equal(incorrect_msg = "โปรดตรวจสอบให้แน่ใจว่าคุณกำหนดค่าที่ถูกต้องให้กับ `my_apples`")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "คุณได้บอกให้ R แสดงผลตัวแปร `my_apples` ออกทางคอนโซลอย่างชัดเจนแล้วหรือไม่?")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("ยอดเยี่ยม! ดำเนินการต่อไปยังแบบฝึกหัดถัดไปได้เลย!")
 ```
 
 ---
 
-## Variable assignment (3)
+## การกำหนดค่าตัวแปร (3)
 
 ```yaml
 type: NormalExercise
@@ -279,19 +278,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+ตะกร้าผลไม้ที่สมบูรณ์แบบขาดส้มไม่ได้ คุณจึงตัดสินใจเพิ่มส้มอีก 6 ผล ในฐานะนักวิเคราะห์ข้อมูล สิ่งแรกที่ทำคือสร้างตัวแปร `my_oranges` และกำหนดค่า 6 ให้กับมัน จากนั้นคำนวณว่ามีผลไม้ทั้งหมดกี่ชิ้น เนื่องจากตั้งชื่อตัวแปรไว้อย่างมีความหมาย จึงสามารถเขียนโค้ดได้อย่างชัดเจนดังนี้
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- กำหนดค่า 6 ให้กับ `my_oranges`
+- บวกตัวแปร `my_apples` และ `my_oranges` แล้วให้ R แสดงผลลัพธ์
+- กำหนดผลลัพธ์ของการบวก `my_apples` และ `my_oranges` ให้กับตัวแปรใหม่ชื่อ `my_fruit`
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` คือผลรวมของ `my_apples` และ `my_oranges` ใช้ตัวดำเนินการ `+` เพื่อบวกค่าทั้งสอง และใช้ `<-` เพื่อกำหนดค่านั้นให้กับตัวแปร `my_fruit`
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +325,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "คุณได้ใช้ `my_fruit <- my_apples + my_oranges` เพื่อสร้างตัวแปร `my_fruit` หรือไม่?"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "โปรดคงบรรทัดที่กำหนดค่า 5 ให้กับ `my_apples` ไว้")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "โปรดคงบรรทัดที่กำหนดค่า 6 ให้กับ `my_oranges` ไว้")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "โปรดตรวจสอบให้แน่ใจว่าได้แสดงผลลัพธ์ของการบวก `my_apples` และ `my_oranges` ตัวอย่างโค้ดในคำอธิบายได้เฉลยคำตอบสำหรับคำสั่งนี้ไว้แล้ว!")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("ยอดเยี่ยมมาก! ข้อได้เปรียบที่สำคัญของการคำนวณด้วยตัวแปรคือความสามารถในการนำกลับมาใช้ใหม่ได้ หากเปลี่ยนค่า `my_apples` จาก 5 เป็น 12 แล้วรันสคริปต์ใหม่ ค่าของ `my_fruit` จะอัปเดตโดยอัตโนมัติ โปรดดำเนินการแบบฝึกหัดถัดไปได้เลย")
 ```
 
 ---
 
-## Apples and oranges
+## แอปเปิลและส้ม
 
 ```yaml
 type: NormalExercise
@@ -350,14 +348,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+ตามสามัญสำนึกแล้ว เราไม่ควรนำแอปเปิลมารวมกับส้ม แต่นั่นคือสิ่งที่เพิ่งทำไปในแบบฝึกหัดที่แล้ว ตัวแปร `my_apples` และ `my_oranges` ต่างก็เก็บค่าตัวเลข และตัวดำเนินการ `+` ใช้งานได้กับตัวแปรประเภทตัวเลขใน R แต่ถ้าลองกำหนดค่าข้อความให้กับตัวแปร `my_oranges` (ดูในตัวแก้ไขโค้ด) แล้วพยายามบวก <span translate="no">"apples"</span> กับ <span translate="no">"oranges"</span> เข้าด้วยกัน R จะไม่สามารถบวกตัวแปรประเภทตัวเลขกับตัวแปรประเภทข้อความได้ และการกำหนดค่าผลลัพธ์ให้กับตัวแปร `my_fruit` ก็จะเกิดข้อผิดพลาดขึ้น
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- คลิก **ส่งคำตอบ** แล้วอ่านข้อความแสดงข้อผิดพลาด ทำความเข้าใจว่าเหตุใดโค้ดนี้จึงทำงานไม่ได้
+- ปรับแก้โค้ดให้ R รู้ว่ามีส้ม 6 ผล และผลไม้ทั้งหมดในตะกร้ารวมเป็น 11 ผล
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+ต้องกำหนดค่าตัวเลข `6` ให้กับตัวแปร `my_oranges` แทนที่จะเป็นค่าข้อความ `"six"` สังเกตว่าเครื่องหมายคำพูดใช้เพื่อระบุว่า `"six"` เป็นข้อความ
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +390,28 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "คุณสามารถทำได้โดยการกำหนดค่าตัวแปร `my_oranges` เป็นค่าตัวเลข ไม่ใช่สตริง!")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "โปรดตรวจสอบให้แน่ใจว่า `my_apples` ยังคงมีค่าเป็น `5`")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "โปรดตรวจสอบให้แน่ใจว่า `my_oranges` มีค่าเท่ากับ `6`")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "ค่าของ `my_fruit` ไม่ถูกต้อง ควรมีค่าเป็น 11 ซึ่งเป็นผลรวมของ `my_apples` และ `my_oranges`")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "คุณได้สร้าง `my_fruit` เป็นผลรวมของตัวแปร `my_apples` และ `my_oranges` หรือไม่?", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "คุณได้สร้าง `my_fruit` เป็นผลรวมของตัวแปร `my_apples` และ `my_oranges` หรือไม่?", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "โปรดอย่าลบบรรทัดที่แสดงผลลัพธ์ของ `my_fruit`")
 
 
 
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("ยอดเยี่ยมมาก จงรักษาความพยายามนี้ไว้! ดำเนินการต่อไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Basic data types in R
+## ชนิดข้อมูลพื้นฐานใน R
 
 ```yaml
 type: NormalExercise
@@ -423,27 +421,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R รองรับข้อมูลหลายชนิด ชนิดพื้นฐานที่ควรรู้จักก่อนมีดังนี้
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- ค่าทศนิยม เช่น `4.5` เรียกว่า **numeric**
+- จำนวนเต็ม เช่น `4` เรียกว่า **integer** ซึ่งถือเป็น numeric ด้วยเช่นกัน
+- ค่าบูลีน (`TRUE` หรือ `FALSE`) เรียกว่า **logical**
+- ข้อความ (หรือสตริง) เรียกว่า **character**
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+สังเกตว่าเครื่องหมายคำพูดในตัวแก้ไขบ่งบอกว่า `"some text"` คือข้อความชนิด character
 
 `@instructions`
-Change the value of the:
+เปลี่ยนค่าของตัวแปรต่อไปนี้:
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- ตัวแปร `my_numeric` เป็น `42`
+- ตัวแปร `my_character` เป็น `"universe"` โดยเครื่องหมายคำพูดบ่งบอกว่า `"universe"` เป็นข้อมูลชนิด character
+- ตัวแปร `my_logical` เป็น `FALSE`
 
-Note that R is case sensitive!
+อย่าลืมว่า R แยกความแตกต่างระหว่างตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+แทนที่ค่าในตัวแก้ไขด้วยค่าที่กำหนดไว้ในแบบฝึกหัด ตัวอย่างเช่น:
+`my_numeric <- 42` คือการกำหนดค่า 42 ให้กับตัวแปร `my_numeric`
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +474,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "คุณได้เปลี่ยนการประกาศค่าของ `my_numeric` ให้มีค่าเป็น 42 อย่างถูกต้องหรือไม่?")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "คุณได้เปลี่ยน `my_character` เป็น `\"universe\"` อย่างถูกต้องหรือไม่? อย่าลืมใส่เครื่องหมายคำพูดด้วย!")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "คุณได้เปลี่ยน `my_logical` เป็น `FALSE` อย่างถูกต้องหรือไม่? ตัวอักษรทุกตัวใน `FALSE` ควรเป็นตัวพิมพ์ใหญ่!")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("ทำได้ดีมาก! ดำเนินการต่อไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## What's that data type?
+## ชนิดข้อมูลคืออะไร?
 
 ```yaml
 type: NormalExercise
@@ -497,13 +495,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+จำได้ไหมว่าเมื่อลองบวก `5 + "six"` แล้วเกิดข้อผิดพลาดเพราะชนิดข้อมูลไม่ตรงกัน? วิธีหนึ่งที่ช่วยหลีกเลี่ยงปัญหานี้คือการตรวจสอบชนิดข้อมูลของตัวแปรก่อนใช้งาน ซึ่งทำได้ด้วยฟังก์ชัน `class()` ดังที่แสดงในโค้ดตัวอย่าง
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+เติมโค้ดในเอดิเตอร์ให้ครบ แล้วแสดงชนิดข้อมูลของ `my_character` และ `my_logical` ด้วย
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+โค้ดสำหรับแสดงชนิดข้อมูลของ `my_numeric` มีอยู่แล้ว ลองทำแบบเดียวกันกับ `my_character` และ `my_logical` ด้วย
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +544,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "อย่าเปลี่ยนแปลงการประกาศตัวแปร!"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "คุณได้รวม `class(%1$s)` เพื่อแสดงประเภทข้อมูลของ `%1$s` หรือไม่?"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "อย่าลบโค้ดที่แสดงประเภทของ `my_numeric`")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("ขอแสดงความยินดี! นี่คือแบบฝึกหัดสุดท้ายของบทนี้ ไปยังบทถัดไปเพื่อเรียนรู้เกี่ยวกับโลกของเวกเตอร์!")
 ```

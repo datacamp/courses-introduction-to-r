@@ -1,14 +1,13 @@
 ---
-title_meta: Chapter 5
+title_meta: บทที่ 5
 title: Data frames
 description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+  ชุดข้อมูลส่วนใหญ่ที่จะได้ใช้งานจะจัดเก็บในรูปแบบ data frames เมื่อจบบทนี้
+  จะสามารถสร้าง data frame เลือกส่วนที่ต้องการ และเรียงลำดับ data frame
+  ตามตัวแปรที่กำหนดได้
 ---
 
-## What's a data frame?
+## Data frame คืออะไร?
 
 ```yaml
 type: NormalExercise
@@ -18,24 +17,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+จากบทเรื่อง matrix คงจำได้ว่าข้อมูลทุกอย่างที่ใส่ใน matrix ต้องเป็นประเภทเดียวกัน ในตอนนั้น ชุดข้อมูล Star Wars มีแต่ค่าตัวเลขเท่านั้น
 
-When doing a market research survey, however, you often have questions such as:
+แต่ในงานวิจัยตลาด คำถามในแบบสำรวจมักมีหลายรูปแบบ เช่น
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+- 'คุณแต่งงานแล้วหรือยัง?' หรือคำถามแบบ 'ใช่/ไม่ใช่' (`logical`)
+- 'คุณอายุเท่าไร?' (`numeric`)
+- 'คุณคิดเห็นอย่างไรกับสินค้านี้?' หรือคำถามปลายเปิดอื่น ๆ (`character`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+คำตอบที่ได้จากผู้ตอบแบบสอบถามจึงเป็นชุดข้อมูลที่มีหลายประเภทผสมกัน ในทางปฏิบัติ เราจะพบชุดข้อมูลแบบนี้บ่อยมาก ไม่ใช่ข้อมูลประเภทเดียวล้วน ๆ
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+ใน data frame แต่ละคอลัมน์แทนตัวแปรหนึ่งตัว และแต่ละแถวแทนการสังเกตหนึ่งครั้ง รูปแบบนี้คุ้นเคยดีสำหรับผู้ที่เคยใช้ซอฟต์แวร์สถิติอย่าง SAS หรือ SPSS
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+ส่งคำตอบได้เลย ข้อมูลจาก data frame ตัวอย่างในตัว R ชื่อ `mtcars` จะแสดงผลใน console
 
 `@hint`
-Submit the answer and witness the magic!
+ส่งคำตอบแล้วดูผลลัพธ์ที่ได้!
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +55,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "อย่าเปลี่ยนแปลงโค้ดใดๆ โปรดตรวจสอบให้แน่ใจว่าท่านแสดงผลลัพธ์ `mtcars`")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("ยอดเยี่ยม! ดำเนินการต่อไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## มาดูชุดข้อมูลของคุณกันก่อนเลย
 
 ```yaml
 type: NormalExercise
@@ -73,19 +72,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+มีรถยนต์เยอะมากเลย!
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+การทำงานกับชุดข้อมูลขนาดใหญ่เป็นเรื่องปกติในการวิเคราะห์ข้อมูล เมื่อต้องจัดการกับชุดข้อมูลหรือ data frame ขนาดใหญ่ สิ่งแรกที่นักวิเคราะห์ข้อมูลควรทำคือทำความเข้าใจโครงสร้างและองค์ประกอบหลักของข้อมูลให้ชัดเจน ดังนั้นการแสดงเพียงบางส่วนของชุดข้อมูลทั้งหมดจึงมักเป็นประโยชน์มาก
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+แล้วจะทำแบบนี้ใน R ได้อย่างไร? ฟังก์ชัน `head()` ช่วยให้แสดงข้อมูลแถวแรก ๆ ของ data frame ได้ ในทำนองเดียวกัน ฟังก์ชัน `tail()` จะแสดงข้อมูลแถวท้าย ๆ ของชุดข้อมูล
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+ทั้ง `head()` และ `tail()` จะแสดงบรรทัดบนสุดที่เรียกว่า 'header' ซึ่งประกอบด้วยชื่อของตัวแปรต่าง ๆ ในชุดข้อมูล
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+เรียกใช้ `head()` กับชุดข้อมูล `mtcars` เพื่อดู header และข้อมูลแถวแรก ๆ
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` จะแสดงข้อมูลแถวแรก ๆ ของ data frame `mtcars`
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +105,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "คุณได้ส่ง `mtcars` ไปยังฟังก์ชัน `head()` อย่างถูกต้องหรือไม่?")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "เพียงแค่พิมพ์ผลลัพธ์ของคำสั่ง `head()` โดยไม่จำเป็นต้องกำหนดให้กับตัวแปรใหม่")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("ยอดเยี่ยมมาก! ดังนั้น เรามีข้อมูลอะไรในชุดข้อมูลนี้บ้าง? ตัวอย่างเช่น `hp` แทนแรงม้าของรถยนต์ โดย Datsun มีแรงม้าต่ำที่สุดในบรรดารถยนต์ 6 คันที่แสดงอยู่ สำหรับภาพรวมทั้งหมดของความหมายของตัวแปร ให้พิมพ์ `?mtcars` ในคอนโซลและอ่านหน้าวิธีใช้ จากนั้นดำเนินการต่อไปยังแบบฝึกหัดถัดไป!");
 ```
 
 ---
 
-## Have a look at the structure
+## ดูโครงสร้างของข้อมูล
 
 ```yaml
 type: NormalExercise
@@ -125,21 +124,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+อีกวิธีหนึ่งที่นิยมใช้เพื่อดูภาพรวมของข้อมูลอย่างรวดเร็วคือฟังก์ชัน `str()` ซึ่งจะแสดงโครงสร้างของชุดข้อมูล สำหรับ data frame ฟังก์ชันนี้จะบอกข้อมูลดังต่อไปนี้
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- จำนวน observation ทั้งหมด (เช่น รถยนต์ 32 ประเภท)
+- จำนวนตัวแปรทั้งหมด (เช่น คุณสมบัติของรถ 11 รายการ)
+- รายชื่อตัวแปรทั้งหมด (เช่น `mpg`, `cyl` ...)
+- ประเภทข้อมูลของแต่ละตัวแปร (เช่น `num`)
+- ค่าสังเกตแรก ๆ ในชุดข้อมูล
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+การเรียกใช้ฟังก์ชัน `str()` มักเป็นสิ่งแรกที่ควรทำเมื่อได้รับชุดข้อมูลหรือ data frame ใหม่ เพราะช่วยให้เข้าใจชุดข้อมูลได้ดีขึ้นก่อนจะเริ่มวิเคราะห์จริง
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+ตรวจสอบโครงสร้างของ `mtcars` และตรวจดูให้แน่ใจว่าตัวเลข ตัวแปร และประเภทข้อมูลที่ปรากฏตรงกับที่กล่าวไว้ข้างต้น
 
 `@hint`
-Use the `str()` function on `mtcars`.
+ใช้ฟังก์ชัน `str()` กับ `mtcars`
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +159,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "คุณได้เรียกใช้ `str()` บน `mtcars` อย่างถูกต้องหรือไม่?")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("ยอดเยี่ยม! คุณสามารถค้นหาข้อมูลได้มากมายโดยการดู `str()` ของชุดข้อมูล ดำเนินการต่อในแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Creating a data frame
+## การสร้าง data frame
 
 ```yaml
 type: NormalExercise
@@ -177,28 +176,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+การใช้ชุดข้อมูลที่มีอยู่แล้วนั้นสนุกไม่เท่าการสร้างชุดข้อมูลขึ้นมาเอง ส่วนที่เหลือของบทนี้จึงอิงจากชุดข้อมูลที่คุณสร้างขึ้นด้วยตัวเอง ได้เวลาออกสำรวจอวกาศกันแล้ว!
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+เป้าหมายแรกคือการสร้าง data frame ที่อธิบายลักษณะสำคัญของดาวเคราะห์ 8 ดวงในระบบสุริยะ ตามที่ Buzz บอกไว้ คุณสมบัติหลักของดาวเคราะห์ประกอบด้วย:
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- ประเภทของดาวเคราะห์ (Terrestrial หรือ Gas Giant)
+- ขนาดเส้นผ่านศูนย์กลางของดาวเคราะห์เทียบกับโลก
+- คาบการโคจรรอบดวงอาทิตย์เทียบกับโลก
+- ดาวเคราะห์มีวงแหวนหรือไม่ (TRUE หรือ FALSE)
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+หลังจากค้นคว้าข้อมูลจาก [Wikipedia](https://en.wikipedia.org/wiki/Planet) แล้ว ก็ถึงเวลาสร้าง vector ที่จำเป็น ได้แก่ `name`, `type`, `diameter`, `rotation` และ `rings` ซึ่งได้เขียนโค้ดไว้ในตัวแก้ไขให้แล้ว โดยสมาชิกตัวแรกในแต่ละ vector จะตรงกับข้อมูลของดาวเคราะห์ดวงแรก
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+ใช้ฟังก์ชัน `data.frame()` เพื่อสร้าง data frame โดยส่ง vector เหล่านั้นเป็นอาร์กิวเมนต์ ซึ่งจะกลายเป็นคอลัมน์ต่าง ๆ ใน data frame เนื่องจากทุกคอลัมน์ต้องมีความยาวเท่ากัน vector ที่ส่งเข้าไปจึงต้องมีจำนวนสมาชิกเท่ากันด้วย ทั้งนี้ แต่ละคอลัมน์อาจมีประเภทข้อมูลที่แตกต่างกันได้
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+ใช้ฟังก์ชัน `data.frame()` เพื่อสร้าง data frame โดยส่ง vector `name`, `type`, `diameter`, `rotation` และ `rings` เป็นอาร์กิวเมนต์ให้ `data.frame()` ตามลำดับนี้ แล้วตั้งชื่อ data frame ที่ได้ว่า `planets_df`
 
 `@hint`
-Your `data.frame()` call starts as follows:
+การเรียกใช้ `data.frame()` เริ่มต้นดังนี้:
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+ลองเติมส่วนที่เหลือให้ครบดูสิ
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +249,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "อย่าเปลี่ยนแปลงสิ่งใดเกี่ยวกับการกำหนดเวกเตอร์ เพียงเพิ่มการเรียกใช้ `data.frame()` เพื่อสร้าง `planets_df`"
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +260,15 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "ท่านเรียกใช้ `data.frame()` เพื่อสร้าง `planets_df` อย่างถูกต้องหรือไม่ ภายใน `data.frame()` โปรดตรวจสอบให้แน่ใจว่าได้ส่งเวกเตอร์ทั้งหมดตามลำดับที่ถูกต้อง ได้แก่ `name`, `type`, `diameter`, `rotation` และสุดท้ายคือ `rings`")
 
 
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("ยอดเยี่ยมมาก! ขั้นตอนต่อไปตามที่ท่านทราบอยู่แล้วคือการตรวจสอบ data frame ที่ท่านเพิ่งสร้างขึ้น ไปที่แบบฝึกหัดถัดไปได้เลย");
 ```
 
 ---
 
-## Creating a data frame (2)
+## การสร้าง data frame (2)
 
 ```yaml
 type: NormalExercise
@@ -279,13 +278,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+data frame `planets_df` ควรมี 8 observations และ 5 variables โดยได้เตรียมไว้ใน workspace แล้ว สามารถใช้งานได้เลย
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+ใช้ `str()` เพื่อตรวจสอบโครงสร้างของตัวแปร `planets_df` ที่สร้างขึ้น
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` มีอยู่ใน workspace ของคุณแล้ว ดังนั้น `str(planets_df)` จะช่วยได้
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +320,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "อย่าลบหรือเขียนทับ data frame `planets_df` ที่มีอยู่แล้วใน workspace!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "คุณแสดงโครงสร้างของ `planets_df` อย่างถูกต้องหรือไม่? ใช้ `str()` เพื่อดำเนินการนี้!")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("ยอดเยี่ยม! เมื่อคุณเข้าใจชุดข้อมูล `planets_df` อย่างชัดเจนแล้ว ถึงเวลาที่จะดูวิธีการเลือกองค์ประกอบจากชุดข้อมูลนี้ เรียนรู้เพิ่มเติมได้ในแบบฝึกหัดถัดไป!")
 ```
 
 ---
 
-## Selection of data frame elements
+## การเลือกองค์ประกอบใน Data Frame
 
 ```yaml
 type: NormalExercise
@@ -341,19 +340,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+การเลือกองค์ประกอบใน data frame ทำได้เหมือนกับเวกเตอร์และเมทริกซ์ โดยใช้วงเล็บเหลี่ยม `[ ]` และใช้เครื่องหมายคอมมาเพื่อระบุแถวและคอลัมน์ที่ต้องการ ตัวอย่างเช่น:
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` เลือกค่าในแถวที่ 1 คอลัมน์ที่ 2 ของ `my_df`
+- `my_df[1:3,2:4]` เลือกแถวที่ 1, 2, 3 และคอลัมน์ที่ 2, 3, 4 ของ `my_df`
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+บางครั้งอาจต้องการเลือกข้อมูลทั้งหมดในแถวหรือคอลัมน์ใดคอลัมน์หนึ่ง เช่น `my_df[1, ]` จะเลือกข้อมูลทุกค่าในแถวที่ 1 ลองนำเทคนิคนี้ไปใช้กับ `planets_df` กัน!
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- เลือกเส้นผ่านศูนย์กลางของดาวพุธจาก `planets_df` ซึ่งเป็นค่าในแถวที่ 1 คอลัมน์ที่ 3 แล้วแสดงผลลัพธ์
+- เลือกข้อมูลทั้งหมดของดาวอังคาร (แถวที่ 4) จาก `planets_df` แล้วแสดงผลลัพธ์
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+หากต้องการเลือกเส้นผ่านศูนย์กลางของดาวศุกร์ (แถวที่สอง) ให้ใช้: `planets_df[2,3]` แล้วถ้าเป็นดาวพุธล่ะ ต้องใช้อะไร?
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +399,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "อย่าลบหรือเขียนทับ data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "ท่านได้เลือกและแสดงผลเส้นผ่านศูนย์กลางของดาวพุธอย่างถูกต้องหรือไม่? ท่านสามารถใช้ `[1,3]` ได้")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "ท่านได้เลือกและแสดงผลข้อมูลทั้งหมดของดาวอังคารอย่างถูกต้องหรือไม่? ท่านสามารถใช้ `[4,]` ได้")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("ยอดเยี่ยม! นอกจากการเลือกองค์ประกอบจาก data frame โดยใช้ดัชนีแล้ว ท่านยังสามารถใช้ชื่อคอลัมน์ได้อีกด้วย หากต้องการเรียนรู้วิธีการดังกล่าว โปรดไปยังแบบฝึกหัดถัดไป")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## การเลือกองค์ประกอบใน Data Frame (2)
 
 ```yaml
 type: NormalExercise
@@ -422,25 +421,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+นอกจากการใช้ตัวเลขเพื่อเลือกองค์ประกอบใน data frame แล้ว ยังสามารถใช้ชื่อตัวแปรเพื่อเลือกคอลัมน์ได้อีกด้วย
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+สมมติว่าต้องการเลือก 3 องค์ประกอบแรกของคอลัมน์ `type` วิธีหนึ่งคือ
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+ข้อเสียของวิธีนี้คือต้องรู้ (หรือค้นหา) หมายเลขคอลัมน์ของ `type` ซึ่งจะยุ่งยากขึ้นเมื่อมีตัวแปรจำนวนมาก วิธีที่สะดวกกว่าคือใช้ชื่อตัวแปรโดยตรง:
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+เลือกและแสดงผล 5 ค่าแรกในคอลัมน์ `"diameter"` ของ `planets_df`
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+เลือก 5 ค่าแรกได้ด้วย `planets_df[1:5, ...]` ลองเติมส่วน `...` เพื่อเลือกเฉพาะคอลัมน์ `"diameter"` ดูสิ
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +480,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "อย่าลบหรือเขียนทับ data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "คุณได้เลือกค่าห้าค่าแรกจากคอลัมน์ diameter และแสดงผลอย่างถูกต้องหรือไม่? คุณสามารถใช้ `[1:5, \"diameter\"]` ได้ที่นี่")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("ยอดเยี่ยม! ดำเนินการต่อไปยังแบบฝึกหัดถัดไป!")
 ```
 
 ---
 
-## Only planets with rings
+## เฉพาะดาวเคราะห์ที่มีวงแหวน
 
 ```yaml
 type: NormalExercise
@@ -501,25 +500,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+บ่อยครั้งที่ต้องการเลือกคอลัมน์ทั้งหมด ซึ่งก็คือตัวแปรหนึ่งตัวจาก data frame ตัวอย่างเช่น หากต้องการเลือกค่าทั้งหมดของตัวแปร `diameter` สามารถทำได้ทั้งสองวิธีนี้:
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+อย่างไรก็ตาม มีวิธีลัดที่สะดวกกว่า หากคอลัมน์มีชื่อ ให้ใช้เครื่องหมาย `$` ได้เลย:
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- ใช้เครื่องหมาย `$` เพื่อเลือกตัวแปร `rings` จาก `planets_df` แล้วเก็บเวกเตอร์ที่ได้ไว้ในชื่อ `rings_vector`
+- แสดงผล `rings_vector` เพื่อตรวจสอบว่าถูกต้องหรือไม่
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` ใช้เลือกคอลัมน์ `diameter` จาก `planets_df` แล้วจะเลือกคอลัมน์ `rings` ได้อย่างไร?
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +564,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "อย่าลบหรือเขียนทับ data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "คุณเลือกตัวแปร `rings` จาก `planets_df` อย่างถูกต้องหรือไม่? ใช้ `$rings` และจัดเก็บผลลัพธ์เป็น `rings_vector`")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "อย่าลืมพิมพ์ `rings_vector` หลังจากที่คุณสร้างมันแล้ว!")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("ยอดเยี่ยม! ดำเนินการต่อไปยังแบบฝึกหัดถัดไปและค้นพบวิธีการแบ่งส่วนข้อมูลอีกวิธีหนึ่ง!")
 ```
 
 ---
 
-## Only planets with rings (2)
+## เฉพาะดาวเคราะห์ที่มีวงแหวน (2)
 
 ```yaml
 type: NormalExercise
@@ -587,21 +586,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+คงจำได้ว่าดาวเคราะห์ในระบบสุริยะบางดวงมีวงแหวน บางดวงไม่มี แต่อาจนึกชื่อไม่ออกว่าดวงไหนบ้าง R ช่วยได้!
 
-If you type `rings_vector` in the console, you get:
+เมื่อพิมพ์ `rings_vector` ใน console จะได้ผลลัพธ์ดังนี้:
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+หมายความว่าสี่ดาวเคราะห์แรกไม่มีวงแหวน (`FALSE`) ส่วนอีกสี่ดวงมีวงแหวน (`TRUE`) อย่างไรก็ตาม ยังไม่เห็นข้อมูลอื่น ๆ เช่น ชื่อดาวเคราะห์หรือขนาดเส้นผ่านศูนย์กลาง ลองใช้ `rings_vector` เพื่อเลือกข้อมูลของดาวเคราะห์ทั้งสี่ดวงที่มีวงแหวนกัน
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+โค้ดในตัวแก้ไขตอนนี้เลือกเฉพาะคอลัมน์ `name` ของดาวเคราะห์ที่มีวงแหวน ให้ปรับโค้ดเพื่อเลือก _ทุก_ คอลัมน์ของดาวเคราะห์ที่มีวงแหวน แทนที่จะเลือกเฉพาะคอลัมน์ `name`
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+จำไว้ว่าหากต้องการเลือก _ทุก_ คอลัมน์ ให้เว้นส่วนคอลัมน์ภายใน `[ ]` ว่างไว้ นั่นหมายความว่าต้องใช้ `[rings_vector, ]`
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +643,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "อย่าลบหรือเขียนทับ `planets_df` หรือ `rings_vector`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "คุณได้ปรับโค้ดเพื่อเลือก _ทุก_ คอลัมน์สำหรับดาวเคราะห์ที่มีวงแหวนอย่างถูกต้องหรือไม่? คุณสามารถใช้ `planets_df[rings_vector, ]` ได้ อย่าลืมใส่เครื่องหมายจุลภาคด้วย เนื่องจากมีความสำคัญมาก!")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("ยอดเยี่ยมมาก! นี่เป็นวิธีแก้ปัญหาที่ค่อนข้างซับซ้อน แบบฝึกหัดถัดไปจะสอนวิธีดำเนินการในลักษณะที่กระชับยิ่งขึ้น")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## เฉพาะดาวที่มีวงแหวนแต่สั้นกว่า
 
 ```yaml
 type: NormalExercise
@@ -666,27 +665,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+ในแบบฝึกหัดที่ผ่านมา ได้เรียนรู้การเลือก subset จาก data frame (`planets_df`) โดยอิงจากเงื่อนไขที่กำหนด (มีวงแหวนหรือไม่) และดึงข้อมูลที่ต้องการออกมาได้สำเร็จ ยอดเยี่ยมมาก!
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+ทีนี้ขอยกระดับขึ้นอีกขั้น โดยใช้ฟังก์ชัน `subset()` ซึ่งทำงานเหมือนกับที่ทำในแบบฝึกหัดก่อนหน้าทุกประการ แต่เขียนได้กระชับกว่า
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+อาร์กิวเมนต์แรกของ `subset()` คือชุดข้อมูลที่ต้องการเลือก subset และอาร์กิวเมนต์ที่สองใช้ระบุเงื่อนไขในการคัดกรอง
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+โค้ดด้านล่างนี้ให้ผลลัพธ์เดียวกันกับแบบฝึกหัดก่อนหน้า แต่ครั้งนี้ไม่จำเป็นต้องใช้ `rings_vector` เลย!
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+ใช้ `subset()` กับ `planets_df` เพื่อเลือกดาวที่มีขนาดเส้นผ่านศูนย์กลางเล็กกว่าโลก เนื่องจากตัวแปร `diameter` เป็นค่าเปรียบเทียบสัดส่วนเทียบกับโลก เงื่อนไขที่ใช้คือ `diameter < 1`
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+`subset(planets_df, subset = ...)` เกือบได้แล้ว ลองเติมในส่วน `...` ให้ครบดูสิ
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +726,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "อย่าลบหรือเขียนทับ data frame `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "คุณระบุส่วน `subset = ...` ภายใน `subset()` อย่างถูกต้องหรือไม่ เงื่อนไขในกรณีนี้คือ `diameter < 1` กรุณาแสดงผลลัพธ์ออกมาโดยตรง")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "อาร์กิวเมนต์แรกที่คุณส่งให้ `subset()` ควรเป็น `planets_df`")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("ยอดเยี่ยม! ฟังก์ชัน `subset()` ไม่เพียงแต่กระชับกว่าเท่านั้น แต่ยังน่าจะเข้าใจได้ง่ายกว่าสำหรับผู้ที่อ่านโค้ดของคุณด้วย โปรดดำเนินการต่อในแบบฝึกหัดถัดไป");
 ```
 
 ---
 
-## Sorting
+## การเรียงลำดับ
 
 ```yaml
 type: NormalExercise
@@ -752,11 +751,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+การจัดอันดับเป็นสิ่งที่มนุษย์ชื่นชอบมาโดยตลอด ไม่ว่าจะเป็นอันดับที่มีประโยชน์ (มหาวิทยาลัยที่ดีที่สุดในโลก) อันดับเพื่อความบันเทิง (ดาราภาพยนตร์ที่มีอิทธิพลมากที่สุด) หรืออันดับที่ดูสนุกสนาน (ใครหน้าตาคล้าย 007 มากที่สุด)
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+ในการวิเคราะห์ข้อมูล เราสามารถเรียงลำดับข้อมูลตามตัวแปรที่ต้องการได้ ใน R ใช้ฟังก์ชัน `order()` เพื่อทำสิ่งนี้
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` คือฟังก์ชันที่บอกตำแหน่งอันดับของแต่ละสมาชิก เมื่อนำไปใช้กับตัวแปร เช่น เวกเตอร์:
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +763,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10 คือสมาชิกตัวที่สองใน `a` และมีค่าน้อยที่สุด จึงปรากฏตัวเลข 2 เป็นอันดับแรกในผลลัพธ์ของ `order(a)` ส่วน 100 คือสมาชิกตัวแรกใน `a` และมีค่าน้อยเป็นอันดับสอง จึงปรากฏตัวเลข 1 เป็นอันดับที่สอง
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+นั่นหมายความว่าเราสามารถใช้ผลลัพธ์จาก `order(a)` เพื่อเรียงลำดับสมาชิกใน `a` ใหม่ได้:
     
 ```
 a[order(a)]
@@ -774,10 +773,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+ทดลองใช้ฟังก์ชัน `order()` ใน console แล้วกด **ส่งคำตอบ** เมื่อพร้อมจะไปต่อ
 
 `@hint`
-Just play with the `order()` function in the console!
+ลองเล่นกับฟังก์ชัน `order()` ใน console ดูได้เลย!
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +795,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("ยอดเยี่ยม! ตอนนี้มาใช้ฟังก์ชัน `order()` เพื่อเรียงลำดับข้อมูลในดาต้าเฟรมของคุณกันเถอะ!")
 ```
 
 ---
 
-## Sorting your data frame
+## การเรียงลำดับ data frame
 
 ```yaml
 type: NormalExercise
@@ -811,15 +810,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+ทีนี้เมื่อเข้าใจฟังก์ชัน `order()` แล้ว ลองนำมาใช้งานจริงกัน เป้าหมายคือจัดเรียง data frame ใหม่ให้เริ่มต้นด้วยดาวเคราะห์ที่เล็กที่สุดและลงท้ายด้วยดาวเคราะห์ที่ใหญ่ที่สุด โดยเรียงตามคอลัมน์ `diameter`
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- เรียกใช้ `order()` กับ `planets_df$diameter` (คอลัมน์ `diameter` ของ `planets_df`) แล้วเก็บผลลัพธ์ไว้ในตัวแปรชื่อ `positions`
+- จากนั้นจัดเรียง `planets_df` ใหม่โดยใช้เวกเตอร์ `positions` เป็น index ของแถวภายในวงเล็บเหลี่ยม โดยเก็บทุกคอลัมน์ไว้ แล้วพิมพ์ผลลัพธ์ออกมา
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- ใช้ `order(planets_df$diameter)` เพื่อสร้าง `positions`
+- จากนั้นใช้ `positions` ภายในวงเล็บเหลี่ยม: `planets_df[...]` โดยแทนที่ `...` ด้วยค่าที่เหมาะสม
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +865,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "อย่าลบหรือเขียนทับกรอบข้อมูล `planets_df`!"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "ท่านคำนวณตัวแปร `positions` อย่างถูกต้องหรือไม่? ท่านสามารถใช้ `order(planets_df$diameter)` ได้")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "กรุณาใช้ `planets_df[positions, ]` เพื่อเรียงลำดับ `planets_df` โดยเครื่องหมายจุลภาคภายในวงเล็บเหลี่ยมมีความสำคัญอย่างยิ่ง!")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("ยอดเยี่ยมมาก! แบบฝึกหัดนี้เป็นการสรุปบทเกี่ยวกับกรอบข้อมูล โปรดจำไว้ว่ากรอบข้อมูลมีความสำคัญอย่างยิ่งใน R และท่านจะต้องใช้งานอยู่ตลอดเวลา โครงสร้างข้อมูลอีกประเภทหนึ่งที่ใช้บ่อยมากคือรายการ ซึ่งจะเป็นหัวข้อของบทถัดไป!")
 ```
