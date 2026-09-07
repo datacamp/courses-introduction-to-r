@@ -1,14 +1,10 @@
 ---
-title_meta: Chapter 2
-title: Vectors
-description: >-
-  We take you on a trip to Vegas, where you will learn how to analyze your
-  gambling results using vectors in R. After completing this chapter, you will
-  be able to create vectors in R, name them, select elements from them, and
-  compare different vectors.
+title_meta: 第 2 章
+title: 向量
+description: 我們帶你到拉斯維加斯，以 R 的向量來分析你的博弈結果。完成本章後，你將能在 R 中建立向量、為它們命名、從中選取元素，並比較不同的向量。
 ---
 
-## Create a vector
+## 建立向量
 
 ```yaml
 type: NormalExercise
@@ -18,15 +14,15 @@ skills:
   - 1
 ```
 
-Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
+覺得手氣不錯嗎？希望如此，因為這一章要帶你前往罪惡之城，也就是所謂的「統計學家的天堂」！
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next stop, Vegas Baby... VEGAS!!
+多虧了 R 和你新學到的資料分析技巧，你將學會如何在賭桌上提升表現，並為職業賭徒的生涯開啟第一步。本章會示範如何輕鬆追蹤你的投注進度，並對過去的行為做一些簡單分析。下一站，Vegas，寶貝……VEGAS！！
 
 `@instructions`
-- Do you still remember what you have learned in the first chapter? Assign the value `"Go!"` to the variable `vegas`. Remember: R is case sensitive!
+- 還記得你在第 1 章所學的內容嗎？把值 `"Go!"` 指派給變數 `vegas`。記住：R 會區分大小寫！
 
 `@hint`
-Just type the following line in the editor:
+只要在編輯器輸入下面這一行：
 ```
 vegas <- "Go!"
 ```
@@ -50,14 +46,14 @@ vegas <- "Go!"
 
 `@sct`
 ```{r}
-ex() %>% check_object("vegas") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `vegas`. Do not forget that R is case sensitive!")
+ex() %>% check_object("vegas") %>% check_equal(incorrect_msg = "確保您將正確的值賦予 `vegas`。不要忘記 R 是區分大小寫的！")
 
-success_msg("Great! Head over to the next exercise.")
+success_msg("太好了！前往下一個練習。")
 ```
 
 ---
 
-## Create a vector (2)
+## 建立向量（2）
 
 ```yaml
 type: NormalExercise
@@ -67,24 +63,24 @@ skills:
   - 1
 ```
 
-Let us focus first! 
+先專心一下！
 
-On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
+在你從小資到致富的過程中，會大量用到向量。向量是單一維度的陣列，可以儲存數值資料、字元資料或邏輯資料。也就是說，向量是用來儲存資料的簡單工具。舉例來說，你可以用它來記錄自己在賭場的每日盈虧。
 
-In R, you create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example:
+在 R 中，你可以用合併函式 `c()` 建立向量。把向量的元素以逗號分隔，放在括號裡即可。範例：
 
 ```
 numeric_vector <- c(1, 2, 3)
 character_vector <- c("a", "b", "c")
 ```
 
-Once you have created these vectors in R, you can use them to do calculations.
+在 R 建立好這些向量之後，你就可以用它們來進行計算。
 
 `@instructions`
-Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order).
+完成程式碼，讓 `boolean_vector` 依序包含三個元素：`TRUE`、`FALSE` 和 `TRUE`。
 
 `@hint`
-Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` operator.
+使用 `<-` 運算子將 `c(TRUE, FALSE, TRUE)` 指派給變數 `boolean_vector`。
 
 `@pre_exercise_code`
 ```{r}
@@ -111,20 +107,19 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
+msg <- "不要更改定義 `numeric_vector` 和 `character_vector` 的程式碼！"
 ex() %>% check_object("numeric_vector", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
 ex() %>% check_object("character_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("boolean_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
+ex() %>% check_object("boolean_vector") %>% check_equal(incorrect_msg = "確保您將正確的值賦予 `boolean_vector`。使用 `c(TRUE, FALSE, TRUE)`。不要在 `TRUE` 和 `FALSE` 周圍加上引號！此外，請確保採用與指示中列出的相同順序。")
 
-
-success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
+success_msg("完美！注意在 `c()` 函數中的逗號後添加空格可以提高程式碼的可讀性。我們在下一個練習中繼續練習向量創建。")
 ```
 
 ---
 
-## Create a vector (3)
+## 建立向量（3）
 
 ```yaml
 type: NormalExercise
@@ -134,33 +129,33 @@ skills:
   - 1
 ```
 
-After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
+在拉斯維加斯待了一週，你的車庫裡仍然沒有任何法拉利，你決定是時候啟動你的資料分析超能力了。
 
-Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
+在進行第一次分析之前，你先把上週所有贏錢與輸錢的結果整理出來：
 
-For `poker_vector`: 
+`poker_vector`：
 
-- On Monday you won $140
-- Tuesday you lost $50
-- Wednesday you won $20 
-- Thursday you lost $120
-- Friday you won $240
+- 週一贏 $140
+- 週二輸 $50
+- 週三贏 $20
+- 週四輸 $120
+- 週五贏 $240
 
-For `roulette_vector`: 
+`roulette_vector`：
 
-- On Monday you lost $24
-- Tuesday you lost $50
-- Wednesday you won $100
-- Thursday you lost $350
-- Friday you won $10
+- 週一輸 $24
+- 週二輸 $50
+- 週三贏 $100
+- 週四輸 $350
+- 週五贏 $10
 
-You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+你只玩了撲克和輪盤，因為有一個通靈團體把擲骰子（craps）的桌子都佔走了。為了能在 R 中使用這些資料，你決定建立變數 `poker_vector` 和 `roulette_vector`。
 
 `@instructions`
-Assign the winnings/losses for roulette to the variable `roulette_vector`. You lost $24, then lost $50, won $100, lost $350, and won $10.
+請把輪盤的輸贏金額指定給變數 `roulette_vector`。你依序是輸 $24、輸 $50、贏 $100、輸 $350、贏 $10。
 
 `@hint`
-To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
+為了幫助你完成這一步，編輯器已經包含建立 `poker_vector` 的程式碼。請根據題目中的數字，將正確的值指定給 `roulette_vector`。別忘了，輸錢要用負數表示。
 
 `@pre_exercise_code`
 ```{r}
@@ -187,16 +182,16 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 
 `@sct`
 ```{r}
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `poker_vector`.")
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "請確保您將正確的值賦予 `poker_vector`。")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Make sure that you assign the correct values to `roulette_vector`. Make sure to adopt the correct order!")
+ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "請確保您將正確的值賦予 `roulette_vector`。請確保採用正確的順序！")
 
-success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
+success_msg("非常好！要查看向量的內容，請記住您可以隨時在控制台中輸入變量並按 Enter 鍵。繼續進行下一個練習！")
 ```
 
 ---
 
-## Naming a vector
+## 為向量命名
 
 ```yaml
 type: NormalExercise
@@ -206,18 +201,18 @@ skills:
   - 1
 ```
 
-As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. 
+身為資料分析師，清楚掌握你所使用的資料非常重要。了解每個元素代表什麼，因此是不可或缺的。
 
-In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
+在前一個練習中，我們建立了一個向量，記錄你在這一週的贏錢金額。每個向量元素都對應到一週中的某一天，但現在很難看出哪個元素是對應哪一天。如果能直接在向量裡標示出來會更好。
 
-You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+你可以用 `names()` 函式替向量的元素命名。看看這個例子：
 
 ```
 some_vector <- c("John Doe", "poker player")
 names(some_vector) <- c("Name", "Profession")
 ```
 
-This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
+這段程式碼先建立一個向量 `some_vector`，然後替其中兩個元素命名。第一個元素被指派名稱 `Name`，第二個元素則標記為 `Profession`。在主控台列印內容會得到以下輸出：
 
 ```
           Name     Profession 
@@ -225,10 +220,10 @@ This code first creates a vector `some_vector` and then gives the two elements a
 ```
 
 `@instructions`
-- The code in the editor names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- 編輯器中的程式碼已把 `poker_vector` 的元素用一週中的天數命名。請補上程式碼，讓 `roulette_vector` 也做相同的命名。
 
 `@hint`
-You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
+你可以使用 `names(roulette_vector)` 來設定變數 `roulette_vector` 的名稱。請確保使用與前面相同、以一週中的天數作為名稱的向量。記得 R 會區分大小寫！
 
 `@pre_exercise_code`
 ```{r}
@@ -267,21 +262,20 @@ names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 
 `@sct`
 ```{r}
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Do not change the values inside `poker_vector`; they were already coded for you.")
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "請勿更改 `poker_vector` 中的值；它們已經為您編碼。")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "Do not change the values inside `roulette_vector`; they were already coded for you.")
+ex() %>% check_object("roulette_vector") %>% check_equal(incorrect_msg = "請勿更改 `roulette_vector` 中的值；它們已經為您編碼。")
 
-ex() %>% check_object("poker_vector") %>% check_equal(eq_condition = 'equal', incorrect_msg = "Do not change the code that names the elements in `poker_vector`; focus on `roulette_vector`!")
+ex() %>% check_object("poker_vector") %>% check_equal(eq_condition = 'equal', incorrect_msg = "請勿更改命名 `poker_vector` 元素的代碼；請專注於 `roulette_vector`！")
 
-ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = 'equal',incorrect_msg = "Make sure that you assign the correct names vector to `roulette_vector`. Use the exact same vector as the one that was used to name `poker_vector`.")
+ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = 'equal',incorrect_msg = "確保您為 `roulette_vector` 指派了正確的名稱向量。使用與命名 `poker_vector` 時相同的向量。")
 
-
-success_msg("Well done! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Naming a vector (2)
+## 向量命名（2）
 
 ```yaml
 type: NormalExercise
@@ -291,18 +285,18 @@ skills:
   - 1
 ```
 
-If you want to become a good statistician, you have to become efficient.
+如果你想成為一位出色的統計學家，就要學會提高效率。
 
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
+在前面的練習裡，你可能已經體會到重複輸入像是一週中的各天，既無聊又令人挫折。不過，從更高的角度來看，有一個更有效率的做法：把「一週各天」這個向量指定給一個**變數**！
 
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+就像你處理撲克和輪盤的報酬一樣，你也可以建立一個包含一週各天的變數。這樣你就能重複使用它。
 
 `@instructions`
-- A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- 我們已經幫你建立了一個包含一週各天的變數 `days_vector`。
+- 使用 `days_vector` 來設定 `poker_vector` 和 `roulette_vector` 的名稱。
 
 `@hint`
-You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
+你可以用 `names(poker_vector) <- days_vector` 來設定 `poker_vector` 各元素的名稱。對 `roulette_vector` 做同樣的事。
 
 `@pre_exercise_code`
 ```{r}
@@ -343,7 +337,7 @@ names(roulette_vector) <- days_vector
 
 `@sct`
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- "請勿更改預定義變數 `poker_vector`、`roulette_vector` 或 `days_vector`。"
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -351,17 +345,17 @@ ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(in
 
 ex() %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "Make sure that you assign `days_vector` to the names of `poker_vector`.", eq_condition = "equal",)
+ex() %>% check_object("poker_vector") %>% check_equal(incorrect_msg = "請確保您將 `days_vector` 指派給 `poker_vector` 的名稱。", eq_condition = "equal",)
 
-ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = "Make sure that you assign `days_vector` to the names of `roulette_vector`.")
+ex() %>% check_object("roulette_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = "請確保您將 `days_vector` 指派給 `roulette_vector` 的名稱。")
 
 
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
+success_msg("做得好！一個建議：請盡量避免代碼重複。繼續進行下一個練習，學習如何使用向量進行算術運算！")
 ```
 
 ---
 
-## Calculating total winnings
+## 計算總贏額
 
 ```yaml
 type: NormalExercise
@@ -371,17 +365,17 @@ skills:
   - 1
 ```
 
-Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. 
+現在你已經把撲克和輪盤的贏款整理成具名向量，可以開始做一些資料分析的功夫了。
 
-You want to find out the following type of information:
+你想要找出以下資訊：
 
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
+- 一週中每一天的整體盈虧各是多少？
+- 這一週總體有沒有賠錢？
+- 你是在撲克或輪盤上賺錢／賠錢？
 
-To get the answers, you have to do arithmetic calculations on vectors. 
+要回答這些問題，你需要對向量做算術運算。
 
-It is important to know that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+重點是，在 R 中把兩個向量相加時，會進行元素對元素的加總。舉例來說，以下三個敘述是完全等價的：
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -389,7 +383,7 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-You can also do the calculations with variables that represent vectors:
+你也可以用代表向量的變數來進行計算：
 
 ```
 a <- c(1, 2, 3) 
@@ -398,11 +392,11 @@ c <- a + b
 ```
 
 `@instructions`
-- Take the sum of the variables `A_vector` and `B_vector` and assign it to `total_vector`.
-- Inspect the result by printing out `total_vector`.
+- 將變數 `A_vector` 和 `B_vector` 相加，並指定給 `total_vector`。
+- 列印 `total_vector` 檢視結果。
 
 `@hint`
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+使用 `+` 運算子將 `A_vector` 和 `B_vector` 相加。用 `<-` 把結果指定給 `total_vector`。
 
 `@pre_exercise_code`
 ```{r}
@@ -435,21 +429,21 @@ total_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+msg <- "請勿更改 `A_vector` 或 `B_vector` 的內容！"
 ex() %>% check_object("A_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("B_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("total_vector") %>% check_equal(incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
+ex() %>% check_object("total_vector") %>% check_equal(incorrect_msg = "請確保 `total_vector` 包含 `A_vector` 和 `B_vector` 的總和。")
 
-ex() %>% check_output_expr("total_vector", missing_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
+ex() %>% check_output_expr("total_vector", missing_msg = "別忘了輸出 `total_vector`！只需在新行寫上 `total_vector`。")
 
-success_msg("Good job! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Calculating total winnings (2)
+## 計算總贏款（2）
 
 ```yaml
 type: NormalExercise
@@ -459,15 +453,15 @@ skills:
   - 1
 ```
 
-Now you understand how R does arithmetic with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+既然你已經理解 R 如何對向量做運算，是時候把那些法拉利開進車庫了！首先，你需要知道每週每天的整體獲利或虧損是多少。每日總獲利等於你每天在撲克上的獲利／虧損，加上你每天在輪盤上的獲利／虧損。
 
-In R, this is just the sum of `roulette_vector` and `poker_vector`.
+在 R 中，這就是把 `roulette_vector` 和 `poker_vector` 相加的總和。
 
 `@instructions`
-Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
+將你每天總共贏或輸的金額（撲克加上輪盤）指定給變數 `total_daily`。
 
 `@hint`
-Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+和上一個練習一樣，把兩個向量的總和指定給新變數 `total_daily`。
 
 `@pre_exercise_code`
 ```{r}
@@ -502,22 +496,21 @@ total_daily <- poker_vector + roulette_vector
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_object("total_daily") %>% check_equal(incorrect_msg = "Make sure that you assign the sum of `poker_vector` and `roulette_vector` to `total_daily`.")
+ex() %>% check_object("total_daily") %>% check_equal(incorrect_msg = "請確保將 `poker_vector` 和 `roulette_vector` 的總和賦值給 `total_daily`。")
 
-
-success_msg("Great! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Calculating total winnings (3)
+## 計算總獲利（3）
 
 ```yaml
 type: NormalExercise
@@ -527,21 +520,21 @@ skills:
   - 1
 ```
 
-Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
+根據先前的分析，你有好日子也有壞日子。這和你的自信有點不符，所以你在想，會不會有一點點可能，整週加總下來其實是賠錢的？
 
-A function that helps you to answer this question is `sum()`. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+可以幫你回答這個問題的函式是 `sum()`。它會計算向量中所有元素的總和。舉例來說，若要計算你玩撲克時整體輸贏的總金額，可以這樣做：
 
 ```
 total_poker <- sum(poker_vector)
 ```
 
 `@instructions`
-- Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
-- Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
-- Print out `total_week`.
+- 計算你在輪盤的總輸贏金額，指派給變數 `total_roulette`。
+- 現在你已經有輪盤和撲克的總額，可以輕鬆計算 `total_week`（也就是本週所有獲利與虧損的總和）。
+- 列印 `total_week`。
 
 `@hint`
-Use the `sum()` function to get the total of the `roulette_vector`. `total_week` is then the sum of `total_roulette` and `total_poker`.
+使用 `sum()` 函式來取得 `roulette_vector` 的總和。接著，`total_week` 就是 `total_roulette` 與 `total_poker` 的總和。
 
 `@pre_exercise_code`
 ```{r}
@@ -594,27 +587,26 @@ total_week
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "不要更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex()  %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 ex() %>% check_object("poker_vector",  undefined_msg = msg, ) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
+ex() %>% check_object("total_poker") %>% check_equal(incorrect_msg = "確保您將 `poker_vector` 的總和賦值給 `total_poker`。")
 
-ex() %>% check_object("total_poker") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
+ex() %>% check_object("total_roulette") %>% check_equal(incorrect_msg = "確保您將 `roulette_vector` 的總和賦值給 `total_roulette`。")
 
-ex() %>% check_object("total_roulette") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
+ex() %>% check_object("total_week") %>% check_equal(incorrect_msg = "確保您將其他兩個總向量的總和賦值給 `total_week`：`total_roulette` 和 `total_poker`。")
 
-ex() %>% check_object("total_week") %>% check_equal(incorrect_msg = "Make sure that you assign to `total_week` the sum of the other two total vectors: `total_roulette` and `total_poker`.")
+ex() %>% check_output_expr("total_week", missing_msg = "別忘了在新行上寫 `total_week` 以打印出變量。")
 
-ex() %>% check_output_expr("total_week", missing_msg = "Don't forget to write `total_week` on a new line to print out the variable.")
-
-success_msg("Well done. This is pretty bad news...")
+success_msg("做得好。這真是個壞消息...")
 ```
 
 ---
 
-## Comparing total winnings
+## 比較總贏款
 
 ```yaml
 type: NormalExercise
@@ -624,17 +616,17 @@ skills:
   - 1
 ```
 
-Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+糟糕，看起來你在賠錢。是時候重新思考並調整策略了！這需要更深入的分析……
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+在飯店的按摩浴缸裡稍微腦力激盪後，你意識到，一種可能的解釋是：你在輪盤的功力沒有撲克好。所以也許你在撲克的總獲利比輪盤更高（或 `>` ）。
 
 `@instructions`
-- Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- 如同上一題，計算 `total_poker` 與 `total_roulette`。請各自使用一次 `sum()` 函式。
+- 透過比較來檢查你在撲克的總獲利是否高於輪盤。直接印出這個比較的結果。你有什麼結論？該把重點放在輪盤還是撲克？
 
 `@hint`
-- You partly calculated the answer to this question in the previous exercise already!
-- To check if 6 is larger than 5, you type `6 > 5`. This returns a logical value (`TRUE` or `FALSE`).
+- 你在上一題其實已經部分算出這題的答案了！
+- 若要檢查 6 是否大於 5，輸入 `6 > 5`。這會回傳一個布林值（`TRUE` 或 `FALSE`）。
 
 `@pre_exercise_code`
 ```{r}
@@ -677,24 +669,23 @@ total_poker > total_roulette
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex()  %>% check_object("days_vector", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg)  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
+ex()  %>% check_object("total_poker")  %>% check_equal(incorrect_msg = "請確保您將 `poker_vector` 的總和賦值給 `total_poker`。使用 `sum()`。")
+ex()  %>% check_object("total_roulette")  %>% check_equal(incorrect_msg = "請確保您將 `roulette_vector` 的總和賦值給 `total_roulette`。使用 `sum()`。")
+ex() %>% check_output_expr("total_poker > total_roulette",missing_msg = "您是否正確地進行了比較？要檢查 `total_poker` 是否大於 `total_roulette`，可以使用 `total_poker > total_roulette`。")
 
-ex()  %>% check_object("total_poker")  %>% check_equal(incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`. Use `sum()`.")
-ex()  %>% check_object("total_roulette")  %>% check_equal(incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
-ex() %>% check_output_expr("total_poker > total_roulette",missing_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
-
-success_msg("Good job! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Vector selection: the good times
+## 向量選取：美好時光
 
 ```yaml
 type: NormalExercise
@@ -704,17 +695,17 @@ skills:
   - 1
 ```
 
-Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
+你的直覺看來沒錯。玩撲克似乎比玩輪盤更適合你。
 
-Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
+另一個可探討的方向，是比較你在工作週的開頭與結尾的表現。畢竟你在週末前喝了幾杯瑪格麗特雞尾酒……
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+要回答這個問題，你只需要聚焦在 `total_vector` 的一部分。也就是說，我們的目標是選取向量中的特定元素。若要選取向量（之後也會用在矩陣、資料框等）的元素，可以使用中括號。中括號內指出要選取哪些元素。例如，選取向量的第一個元素，輸入 `poker_vector[1]`；選取第二個元素，輸入 `poker_vector[2]`，依此類推。請注意，向量的第一個元素索引是 1，而不是像許多其他程式語言那樣從 0 開始。
 
 `@instructions`
-Assign the poker results of <span translate="no">Wednesday</span> to the variable `poker_wednesday`.
+將 <span translate="no">Wednesday</span> 的撲克結果指定給變數 `poker_wednesday`。
 
 `@hint`
-Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+Wednesday 是 `poker_vector` 的第 3 個元素，因此可以用 `poker_vector[3]` 來選取。
 
 `@pre_exercise_code`
 ```{r}
@@ -749,22 +740,21 @@ poker_wednesday <- poker_vector[3]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_wednesday", undefined_msg = "Please make sure to define a variable `poker_wednesday`.") %>% check_equal(incorrect_msg = "It looks like `poker_wednesday` does not contain the correct value of the `poker_vector`.")
+ex() %>% check_object("poker_wednesday", undefined_msg = "請確保定義了一個變數 `poker_wednesday`。") %>% check_equal(incorrect_msg = "`poker_wednesday` 看起來不包含 `poker_vector` 的正確值。")
 
-
-success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
+success_msg("太棒了！R 也可以一次選擇向量中的多個元素。在下一個練習中學習如何做到這一點！")
 ```
 
 ---
 
-## Vector selection: the good times (2)
+## 向量選取：好時光（2）
 
 ```yaml
 type: NormalExercise
@@ -774,19 +764,19 @@ skills:
   - 1
 ```
 
-How about analyzing your midweek results? 
+來分析一下你在週中幾天的成果吧？
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+若要從向量中選取多個元素，可以在向量名稱後面加上方括號，並在括號裡指定要選取的元素。例如，假設你想選取一週中的第 1 天和第 5 天：就在方括號中使用向量 `c(1, 5)`。例如，下面的程式碼會選取 `poker_vector` 的第 1 個和第 5 個元素：
 
 ```
 poker_vector[c(1, 5)]
 ```
 
 `@instructions`
-Assign the poker results of <span translate="no">Tuesday, Wednesday</span> and <span translate="no">Thursday</span> to the variable `poker_midweek`.
+請將 <span translate="no">Tuesday, Wednesday</span> 和 <span translate="no">Thursday</span> 的撲克結果指定給變數 `poker_midweek`。
 
 `@hint`
-Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
+使用向量 `c(2, 3, 4)` 置於方括號內，來選取 `poker_vector` 中正確的元素。
 
 `@pre_exercise_code`
 ```{r}
@@ -821,21 +811,21 @@ poker_midweek <- poker_vector[c(2, 3, 4)]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_midweek") %>% check_equal(incorrect_msg = "It looks like `poker_midweek` does not contain the correct values from `poker_vector`. You can use the vector `c(2, 3, 4)` inside square brackets.")
+ex() %>% check_object("poker_midweek") %>% check_equal(incorrect_msg = "`poker_midweek` 似乎不包含來自 `poker_vector` 的正確值。您可以在方括號中使用向量 `c(2, 3, 4)`。")
 
-success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
+success_msg("做得好！繼續進行下一個練習，以進一步專注於向量選擇！");
 ```
 
 ---
 
-## Vector selection: the good times (3)
+## 向量選取：美好時光（3）
 
 ```yaml
 type: NormalExercise
@@ -845,15 +835,15 @@ skills:
   - 1
 ```
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Statisticians created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+用 `c(2, 3, 4)` 來選取 `poker_vector` 的多個元素其實不太方便。統計學家提供了更簡單的方式：`c(2, 3, 4)` 可以縮寫成 `2:4`，它會產生一個從 2 到 4 的自然數向量。
 
-So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
+因此，要找出週中（星期二到星期四）的結果，也可以寫成 `poker_vector[2:4]`。請注意，向量 `2:4` 是放在方括號中，用來選取第 2 到第 4 個元素。
 
 `@instructions`
-Assign to `roulette_selection_vector` the roulette results from <span translate="no">Tuesday</span> up to <span translate="no">Friday</span>; make use of `:` if it makes things easier for you.
+把從 <span translate="no">Tuesday</span> 到 <span translate="no">Friday</span> 的輪盤結果指派給 `roulette_selection_vector`；如果這樣比較方便，請使用 `:`。
 
 `@hint`
-Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
+在方括號中放入 `2:5`，把 `roulette_vector` 的一段選取結果指派給 `roulette_selection_vector`。
 
 `@pre_exercise_code`
 ```{r}
@@ -888,21 +878,21 @@ roulette_selection_vector <- roulette_vector[2:5]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal( eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("roulette_selection_vector", undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.") %>% check_equal(incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
+ex() %>% check_object("roulette_selection_vector", undefined_msg = "請確保定義了一個變數 `roulette_selection_vector`。") %>% check_equal(incorrect_msg = "看起來 `roulette_selection_vector` 不包含從 `roulette_vector` 中正確的選擇。請確保使用正確的索引。")
 
-success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
+success_msg("太棒了！冒號運算符在 R 編程中非常有用且經常使用，所以請牢記它。繼續進行下一個練習。")
 ```
 
 ---
 
-## Vector selection: the good times (4)
+## 向量選取：美好時光（4）
 
 ```yaml
 type: NormalExercise
@@ -912,27 +902,27 @@ skills:
   - 1
 ```
 
-Another way to tackle the previous exercise is by using the names of the vector elements (<span translate="no">Monday, Tuesday,</span> ...) instead of their numeric positions. For example, 
+另一種解前一題的方法，是使用向量元素的名稱（<span translate="no">Monday, Tuesday,</span> ...）而不是它們的數字位置。例如，
 
 ```
 poker_vector["Monday"]
 ```
 
-will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+會選取 `poker_vector` 的第一個元素，因為 `"Monday"` 是第一個元素的名稱。
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
+就像你在上一題用數字做的那樣，你也可以用元素名稱來選取多個元素，例如：
 
 ```
 poker_vector[c("Monday","Tuesday")]
 ```
 
 `@instructions`
-- Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the `mean()` function. Simply print out the result so you can inspect it.
+- 使用名稱 `"Monday"`、`"Tuesday"` 和 `"Wednesday"`，選取 `poker_vector` 的前三個元素。把選取的結果指定給 `poker_start`。
+- 使用 `mean()` 函式計算 `poker_start` 中數值的平均。直接印出結果以便檢視。
 
 `@hint`
-- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
-- You can use `mean(poker_start)` to get the mean of the elements in `poker_start`. You do not need the mean of all poker elements, but only of the first three days.
+- 你可以在中括號內使用 `c("Monday", "Tuesday", "Wednesday")` 來對 `poker_vector` 做子集選擇。
+- 你可以用 `mean(poker_start)` 來取得 `poker_start` 中元素的平均值。你不需要所有 poker 元素的平均，只需要前 3 天的平均即可。
 
 `@pre_exercise_code`
 ```{r}
@@ -973,23 +963,23 @@ mean(poker_start)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("poker_start") %>% check_equal(incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
+ex() %>% check_object("poker_start") %>% check_equal(incorrect_msg = "`poker_start` 看起來不包含 `poker_vector` 的前三個值。您可以在方括號中使用 `c(\"Monday\", \"Tuesday\", \"Wednesday\")` 來完成此操作。")
 
-ex() %>% check_output_expr("mean(poker_start)", missing_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
+ex() %>% check_output_expr("mean(poker_start)", missing_msg = "您是否正確計算了 `poker_start` 中值的平均值並將其打印出來？使用 `mean(poker_start)`。")
 
-success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!")
+success_msg("做得好！除了可以通過索引或名稱對向量進行子集化之外，您還可以通過比較對向量進行子集化。接下來的練習將向您展示如何做到這一點！")
 ```
 
 ---
 
-## Selection by comparison - Step 1
+## 以比較來選取 - 步驟 1
 
 ```yaml
 type: NormalExercise
@@ -999,32 +989,32 @@ skills:
   - 1
 ```
 
-By making use of comparison operators, we can approach the previous question in a more proactive way. 
+透過比較運算子，我們可以用更主動的方式來處理上一個問題。
 
-The (logical) comparison operators known to R are:
+R 支援的（布林）比較運算子有：
 
-- `<` for less than
-- `>` for greater than
-- `<=` for less than or equal to
-- `>=` for greater than or equal to
-- `==` for equal to each other
-- `!=` not equal to each other
+- `<` 小於
+- `>` 大於
+- `<=` 小於或等於
+- `>=` 大於或等於
+- `==` 等於
+- `!=` 不等於
 
-As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example:
+就像在前一章看到的，寫下 `6 > 5` 會回傳 `TRUE`。R 的好處是，你也可以在向量上使用這些比較運算子。例如：
 
 ```
 c(4, 5, 6) > 5
 [1] FALSE FALSE TRUE
 ```
 
-This command tests for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
+這個指令會針對向量中的每個元素，測試比較運算子所描述的條件是 `TRUE` 還是 `FALSE`。
 
 `@instructions`
-- Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
-- Print out `selection_vector` so you can inspect it. The printout tells you whether you won (`TRUE`) or lost (`FALSE`) any money for each day.
+- 檢查 `poker_vector` 中哪些元素是正的（也就是 > 0），並把結果指定給 `selection_vector`。
+- 印出 `selection_vector` 以便檢視。輸出會告訴你每天是贏錢（`TRUE`）還是輸錢（`FALSE`）。
 
 `@hint`
-In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after.
+為了檢查你哪幾天的撲克獲利為正，R 需要對 `poker_vector` 的每個元素檢查它是否大於 0。使用 `some_vector > 0` 就能告訴 R 你要找的是這個條件。
 
 `@pre_exercise_code`
 ```{r}
@@ -1065,23 +1055,23 @@ selection_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Remember that R uses element wise operations for vectors.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "`selection_vector` 似乎不包含正確的結果。請記住，R 對向量使用元素級操作。")
 
-ex() %>% check_output_expr("selection_vector", missing_msg = "Don't forget to print out `selection_vector` by writing the variable name on a new line.")
+ex() %>% check_output_expr("selection_vector", missing_msg = "別忘了通過在新行上寫變量名稱來打印 `selection_vector`。")
 
-success_msg("Great!")
+success_msg("太棒了！")
 ```
 
 ---
 
-## Selection by comparison - Step 2
+## 用比較來選取 - 步驟 2
 
 ```yaml
 type: NormalExercise
@@ -1091,23 +1081,23 @@ skills:
   - 1
 ```
 
-Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+善用比較可以讓你的資料分析工作更輕鬆。與其像先前一樣自己挑出要觀察的幾天，你可以直接請 R 回傳那些你在撲克牌有正報酬的日子。
 
-In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+在前面的練習中，你使用 `selection_vector <- poker_vector > 0` 找出你在撲克牌有正報酬的日子。現在，你不只想知道哪些天有贏，還想知道那些天各贏了多少。
 
-You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`:
+你可以把 `selection_vector` 放在 `poker_vector` 後面的中括號裡，來選出想要的元素：
 
 ```
 poker_vector[selection_vector]
 ```
 
-R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to `TRUE` in `selection_vector`.
+當你在中括號中傳入邏輯向量時，R 知道該怎麼做：它只會選取 `selection_vector` 中對應為 `TRUE` 的元素。
 
 `@instructions`
-Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+在中括號中使用 `selection_vector`，把你在獲利日子贏得的金額指派給變數 `poker_winning_days`。
 
 `@hint`
-Use `poker_vector[selection_vector]` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
+使用 `poker_vector[selection_vector]` 從 `poker_vector` 中選取需要的元素，並把結果指派給 `poker_winning_days`。
 
 `@pre_exercise_code`
 ```{r}
@@ -1148,23 +1138,23 @@ poker_winning_days <- poker_vector[selection_vector]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("poker_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("roulette_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "Don't change the way `selection_vector` is calculated.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "請勿更改 `selection_vector` 的計算方式。")
 
-ex() %>% check_object("poker_winning_days") %>% check_equal(incorrect_msg = "It looks like `poker_winning_days` does not contain the correct result. Use `poker_vector[selection_vector]`.")
+ex() %>% check_object("poker_winning_days") %>% check_equal(incorrect_msg = "看起來 `poker_winning_days` 不包含正確的結果。請使用 `poker_vector[selection_vector]`。")
 
-success_msg("Good job! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Advanced selection
+## 進階選取
 
 ```yaml
 type: NormalExercise
@@ -1174,14 +1164,14 @@ skills:
   - 1
 ```
 
-Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
+就像你對撲克所做的一樣，你也想知道玩輪盤時哪些天是正報酬。
 
 `@instructions`
-- Create the variable `selection_vector`, this time to see if you made profit with roulette for different days.
-- Assign the amounts that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`. This vector thus contains the positive winnings of `roulette_vector`.
+- 建立變數 `selection_vector`，這次用來檢查你在不同天玩輪盤是否有獲利。
+- 將你在輪盤結算為正的那些天所賺到的金額指定給變數 `roulette_winning_days`。這個向量因此只包含 `roulette_vector` 中的正報酬。
 
 `@hint`
-Once you've correctly calculated `selection_vector`, you can again use `roulette_vector[selection_vector]` to select the positive results from `roulette_vector`.
+當你正確計算出 `selection_vector` 之後，你可以再次使用 `roulette_vector[selection_vector]`，從 `roulette_vector` 中篩出正報酬的結果。
 
 `@pre_exercise_code`
 ```{r}
@@ -1222,7 +1212,7 @@ roulette_winning_days <- roulette_vector[selection_vector]
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "請勿更改 `poker_vector` 和 `roulette_vector` 的定義和命名。"
 
 ex() %>% check_object("days_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -1230,10 +1220,9 @@ ex() %>% check_object("poker_vector", undefined_msg = msg) %>% check_equal(eq_co
 
 ex() %>% check_object("roulette_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Use `roulette_vector > 0`.")
+ex() %>% check_object("selection_vector") %>% check_equal(incorrect_msg = "`selection_vector` 似乎不包含正確的結果。請使用 `roulette_vector > 0`。")
 
-ex() %>% check_object("roulette_winning_days") %>% check_equal(incorrect_msg = "It looks like `roulette_winning_days` does not contain the correct result. Use `roulette_vector[selection_vector]`.")
+ex() %>% check_object("roulette_winning_days") %>% check_equal(incorrect_msg = "`roulette_winning_days` 似乎不包含正確的結果。請使用 `roulette_vector[selection_vector]`。")
 
-
-success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
+success_msg("太棒了！這個練習結束了向量章節。下一章將介紹向量的二維版本：矩陣。")
 ```

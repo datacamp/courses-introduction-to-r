@@ -1,13 +1,10 @@
 ---
-title_meta: Chapter 6
-title: Lists
-description: >-
-  As opposed to vectors, lists can hold components of different types, just as
-  your to-do lists can contain different categories of tasks. This chapter will
-  teach you how to create, name, and subset these lists.
+title_meta: 第 6 章
+title: 列表
+description: 與向量不同，列表可以容納不同型別的元件，就像你的待辦清單可以包含不同類別的任務。本章會教你如何建立、命名與取用這些列表。
 ---
 
-## Lists, why would you need them?
+## Lists，有什麼用？
 
 ```yaml
 type: NormalExercise
@@ -17,19 +14,19 @@ skills:
   - 1
 ```
 
-Congratulations! At this point in the course you are already familiar with:
+恭喜你！走到課程的這一步，你已經熟悉了：
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **Vectors**（一維陣列）：可以包含數值、字串或布林值。向量裡的所有元素都具有相同的資料型別。
+- **Matrices**（二維陣列）：可以包含數值、字串或布林值。矩陣裡的所有元素都具有相同的資料型別。
+- **Data frames**（二維物件）：可以包含數值、字串或布林值。每一欄中的元素型別相同，但不同欄可以是不同的資料型別。
 
-Pretty sweet for an R newbie, right? ;-)
+對剛學 R 的你來說，這樣的進度很不錯吧？；）
 
 `@instructions`
-Submit the answer to start learning everything about lists!
+送出答案，開始學會關於 lists 的一切！
 
 `@hint`
-Just submit the answer!
+就直接送出答案吧！
 
 `@pre_exercise_code`
 ```{r}
@@ -48,12 +45,12 @@ Just submit the answer!
 
 `@sct`
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("準備好了，開始吧！繼續進行下一個練習。")
 ```
 
 ---
 
-## Lists, why would you need them? (2)
+## 為什麼需要清單？（2）
 
 ```yaml
 type: NormalExercise
@@ -63,17 +60,17 @@ skills:
   - 1
 ```
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. 
+在 R 中，**清單（list）**就像你在工作或學校的待辦清單：其中的項目往往長度不同、性質各異，並且需要進行的活動類型也不一樣。
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+R 的清單能讓你用一個名字（也就是清單本身的名字）以有序的方式收納各式各樣的物件。這些物件可以是矩陣、向量、資料框，甚至是其他清單等。這些物件之間不需要有任何關聯也沒關係。
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+你可以把清單看作是一種超級資料型別：幾乎任何資訊都能放進去！
 
 `@instructions`
-Just submit the answer to start the first exercise on lists.
+直接送出答案，開始清單的第一個練習。
 
 `@hint`
-Submit the answer to start the first exercise on lists.
+送出答案即可開始本章關於清單的第一個練習。
 
 `@pre_exercise_code`
 ```{r}
@@ -92,12 +89,12 @@ Submit the answer to start the first exercise on lists.
 
 `@sct`
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("太好了。讓我們開始動手吧！")
 ```
 
 ---
 
-## Creating a list
+## 建立清單
 
 ```yaml
 type: NormalExercise
@@ -107,19 +104,19 @@ skills:
   - 1
 ```
 
-Let us create our first list! To construct a list you use the function `list()`: 
+來建立你的第一個清單吧！要建立清單，請使用 `list()` 函式：
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+傳給 list 函式的引數就是清單的各個組成元件。請記住，這些元件可以是矩陣、向量、其他清單，等等。
 
 `@instructions`
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+建立一個名為 `my_list` 的清單，並將變數 `my_vector`、`my_matrix` 和 `my_df` 作為清單的元件放入。
 
 `@hint`
-Use the `list()` function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+使用 `list()` 函式，將 `my_vector`、`my_matrix` 和 `my_df` 作為以逗號分隔的引數傳入。
 
 `@pre_exercise_code`
 ```{r}
@@ -158,21 +155,21 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "請勿移除或更改變數 `my_vector`、`my_matrix` 或 `my_df` 的定義！"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "看起來 `my_list` 不包含正確的元素。請確保將變數 `my_vector`、`my_matrix` 和 `my_df` 以逗號分隔的方式按此順序傳遞給 `list()` 函數。")
 
-success_msg("Wonderful! Head over to the next exercise.")
+success_msg("太棒了！前往下一個練習。")
 ```
 
 ---
 
-## Creating a named list
+## 建立具名列表
 
 ```yaml
 type: NormalExercise
@@ -182,16 +179,16 @@ skills:
   - 1
 ```
 
-Well done, you're on a roll!
+做得好，你的進度很順利！
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+就像你的待辦清單一樣，你不希望忘記或不清楚列表中每個元件代表什麼。因此應該替它們命名：
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+這會建立一個列表，其中的元件被命名為 `name1`、`name2`，以此類推。若你想在建立列表之後再命名，也可以像對向量那樣使用 `names()` 函式。以下指令與上面的指定完全等價：
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -199,15 +196,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 `@instructions`
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- 修改上一個練習的程式碼（見編輯器），為各元件加上名稱。`my_vector` 用名稱 `vec`，`my_matrix` 用名稱 `mat`，`my_df` 用名稱 `df`。
+- 列印 `my_list`，以便檢視輸出。
 
 `@hint`
-The first method of assigning names to your list components is the easiest. It starts like this: 
+將名稱指定給列表元件的第一種方法最簡單。它是這樣開始的：
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+用相同的方式把另外兩個元件也加上去。
 
 `@pre_exercise_code`
 ```{r}
@@ -251,25 +248,25 @@ my_list
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "請勿移除或更改變數 `my_vector`、`my_matrix` 或 `my_df` 的定義！"
 ex() %>% check_object("my_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("my_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+ex() %>% check_object("my_list") %>% check_equal(incorrect_msg = "`my_list` 似乎不包含正確的元素。")
 
-ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.")
+ex() %>% check_object("my_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "`my_list` 似乎不包含正確的元件命名。請確保您使用的名稱分別為 `vec`、`mat` 和 `df`。如果您遇到困難，請查看提示。")
 
-ex() %>% check_output_expr("my_list", missing_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+ex() %>% check_output_expr("my_list", missing_msg = "別忘了將 `my_list` 輸出到控制台！只需在編輯器中新行添加 `my_list`。")
 
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+success_msg("太棒了！您現在不僅知道如何構建列表，還可以為它們命名；這是一項在實踐中非常有用的技能。繼續進行下一個練習。")
 ```
 
 ---
 
-## Creating a named list (2)
+## 建立具名 list（2）
 
 ```yaml
 type: NormalExercise
@@ -279,21 +276,21 @@ skills:
   - 1
 ```
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+身為一位超愛電影的人（還記得你在 LucasFilms 的工作嗎），你決定用 list 來保存好電影的相關資訊。
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+先為電影「The Shining」建立一個 list。我們已經在你的 R 工作空間裡建立了變數 `mov`、`act` 和 `rev`。可以在主控台查看。
 
 `@instructions`
-Complete the code in the editor to create `shining_list`; it contains three elements:
+完成編輯器中的程式碼以建立 `shining_list`；它需要包含三個元素：
 
-- `moviename`: a character string with the movie title (stored in `mov`)
-- `actors`: a vector with the main actors' names (stored in `act`)
-- `reviews`: a data frame that contains some reviews (stored in `rev`)
+- `moviename`：電影片名的字串（已存於 `mov`）
+- `actors`：主要演員姓名的向量（已存於 `act`）
+- `reviews`：包含一些評論的資料框（已存於 `rev`）
 
-Do not forget to name the list components accordingly (names are `moviename`, `actors` and `reviews`).
+別忘了替 list 的各元件正確命名（名稱為 `moviename`、`actors` 和 `reviews`）。
 
 `@hint`
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` 只是部分解答；你還需要把 `act` 和 `rev` 一併加入這個 list，並使用正確的名稱。
 
 `@pre_exercise_code`
 ```{r}
@@ -324,23 +321,23 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 `@sct`
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "請勿移除或更改預設變數的定義！"
 ex()  %>% check_object("mov", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("rev", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("act", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+ex() %>% check_object("shining_list") %>% check_equal(incorrect_msg = "看起來 `shining_list` 不包含正確的元素：第一個元素應為 `mov`，第二個元素應為 `act`，第三個元素應為 `rev`。")
 
-ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.")
+ex() %>% check_object("shining_list") %>% check_equal(eq_condition = "equal",incorrect_msg = "看起來 `shining_list` 不包含正確的組件命名：將第一個元素命名為 `moviename`，第二個元素命名為 `actors`，第三個元素命名為 `reviews`。")
 
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise.")
+success_msg("太棒了！您現在知道如何構建和命名列表了。就像在前幾章中一樣，讓我們看看如何選擇列表中的元素。前往下一個練習。")
 ```
 
 ---
 
-## Selecting elements from a list
+## 從 list 選取元素
 
 ```yaml
 type: NormalExercise
@@ -350,32 +347,32 @@ skills:
   - 1
 ```
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+你的 list 通常會由多個元素與元件組成。因此，要從中取得單一元素、複數元素，或整個元件，並不總是那麼直覺。
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+選取元件的一種方式，是用該元件的序號位置。例如，要「抓取」`shining_list` 的第一個元件，你可以輸入：
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+最快的方式就是在主控台輸入來試試看。重要提醒：從向量選取元素時，請使用單一中括號（`[ ]`）。不要搞混了！
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+你也可以用元件的名稱來參照，搭配 `[[ ]]` 或 `$` 符號。以下兩種方式都會選到代表影評的 data frame：
 
 ```
 shining_list[["reviews"]]
 shining_list$reviews
-``` 
+```
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+除了選取元件之外，你也常需要從這些元件中選特定元素。例如，使用 `shining_list[[2]][1]`，你會先從第二個元件 `actors`（`shining_list[[2]]`）中，選到第一個元素（`[1]`）。在主控台輸入後，你會看到答案是 Jack Nicholson。
 
 `@instructions`
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- 從 `shining_list` 選取代表演員的向量。直接將此向量印出。
+- 從 `shining_list` 選取演員向量中的第二個元素。和前一題一樣將結果印出。
 
 `@hint`
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- 若要選取演員的向量，可以使用 `$actors`。
+- 若要選取演員向量中的第三個元素，可以用 `shining_list$actors[3]`。那要選第二個元素，應該改成什麼？
 
 `@pre_exercise_code`
 ```{r}
@@ -405,19 +402,19 @@ shining_list$actors[2]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "請勿移除或更改 `shining_list` 的定義，該定義已預載入工作區中！"
 ex() %>% check_object("shining_list", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("shining_list$actors", missing_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+ex() %>% check_output_expr("shining_list$actors", missing_msg = "您是否正確選擇並列印出代表演員的向量？您可以使用 `shining_list$actors`，例如。")
 
-ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+ex() %>% check_output_expr("shining_list$actors[2]", missing_msg = "要從代表演員的向量中選擇第二位演員，您應該鏈接您的選擇：`shining_list$actors` 代表演員，因此您可以添加 `[2]` 來選擇第二個元素。")
 
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+success_msg("太棒了！從列表中選擇元素相當簡單，不是嗎？繼續進行下一個練習。")
 ```
 
 ---
 
-## Creating a new list for another movie
+## 為另一部電影建立新的清單
 
 ```yaml
 type: NormalExercise
@@ -425,30 +422,30 @@ key: ce10c83e5b
 xp: 100
 ```
 
-You found reviews of another, more recent, Jack Nicholson movie: The Departed!
+你找到另一部較新 Jack Nicholson 電影的影評：The Departed！
 
-| Scores | Comments               |
-|--------|------------------------|
-| 4.6    | <span translate="no">I would watch it again</span> |
-| 5      | <span translate="no">Amazing!</span>               |
-| 4.8    | <span translate="no">I liked it</span>             |
-| 5      | <span translate="no">One of the best movies</span> |
-| 4.2    | <span translate="no">Fascinating plot</span>       |
+| 分數 | 評語                       |
+|------|----------------------------|
+| 4.6  | <span translate="no">I would watch it again</span> |
+| 5    | <span translate="no">Amazing!</span>               |
+| 4.8  | <span translate="no">I liked it</span>             |
+| 5    | <span translate="no">One of the best movies</span> |
+| 4.2  | <span translate="no">Fascinating plot</span>       |
 
-It would be useful to collect together all the pieces of information about the movie, like the title, actors, and reviews into a single variable. Since these pieces of data are different shapes, it is natural to combine them in a list variable.
+把與這部電影相關的所有資訊（例如片名、演員、影評）收在同一個變數裡會很方便。由於這些資料的型狀不同，把它們放進清單變數是很自然的做法。
 
-`movie_title`, containing the title of the movie, and `movie_actors`, containing the names of some of the actors in the movie, are available in your workspace.
+`movie_title`（電影片名）與 `movie_actors`（部分演員姓名）已經在你的工作空間中。
 
 `@instructions`
-- Create two vectors, called `scores` and `comments`, that contain the information from the reviews shown in the table.
-- Find the average of the `scores` vector and save it as `avg_review`. 
-- Combine the `scores` and `comments` vectors into a data frame called `reviews_df`. 
-- Create a list, called `departed_list`, that contains the `movie_title`, `movie_actors`, reviews data frame as `reviews_df`, and the average review score as `avg_review`, and print it out.
+- 建立兩個向量 `scores` 與 `comments`，包含表格中影評的資訊。
+- 計算 `scores` 向量的平均值，存成 `avg_review`。
+- 將 `scores` 與 `comments` 合併成名為 `reviews_df` 的資料框。
+- 建立名為 `departed_list` 的清單，內含 `movie_title`、`movie_actors`、作為影評資料框的 `reviews_df`，以及平均分數 `avg_review`，並將它列印出來。
 
 `@hint`
-- You'll use the `c()` function to create the vectors. 
-- To find the average of a vector, pass the name of the vector to the `mean()` function. 
-- Use the `data.frame()` function to create the `reviews_df` data frame.
+- 你會使用 `c()` 函式來建立向量。
+- 若要計算向量的平均值，將向量名稱傳入 `mean()` 函式。
+- 使用 `data.frame()` 函式來建立 `reviews_df` 資料框。
 
 `@pre_exercise_code`
 ```{r}
@@ -492,25 +489,25 @@ departed_list
 
 `@sct`
 ```{r}
-msg <- "Do not change or remove the preloaded objects."
+msg <- "請勿更改或移除預載的物件。"
 
 ex() %>% check_object("movie_title") %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 ex() %>% check_object("movie_actors")  %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
-ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `scores` vector correctly?")
-ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `comments` vector correctly?")
+ex() %>% check_object("scores") %>% check_equal(eq_condition = "equal", incorrect_msg = "您是否正確地創建了 `scores` 向量？")
+ex() %>% check_object("comments") %>% check_equal(eq_condition = "equal", incorrect_msg = "您是否正確地創建了 `comments` 向量？")
 ex() %>% check_correct(
-  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create the `avg_review` object correctly?"),
+  check_object(.,"avg_review") %>% check_equal(eq_condition = "equal", incorrect_msg = "您是否正確地創建了 `avg_review` 物件？"),
   check_function(.,"mean") %>% check_arg("x") %>% check_equal()
 )
 ex() %>% check_correct(
-  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `reviews_df` correctly?"),
+  check_object(.,"reviews_df") %>% check_equal(eq_condition = "equal", incorrect_msg = "您是否正確地創建了 `reviews_df`？"),
   check_function(.,"data.frame") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
   }
 )
 ex() %>% check_correct(
-  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "Did you create `departed_list` correctly?"),
+  check_object(.,"departed_list") %>% check_equal(eq_condition = "equal", incorrect_msg = "您是否正確地創建了 `departed_list`？"),
   check_function(.,"list") %>% {
     check_arg(.,"..1") %>% check_equal()
     check_arg(.,"..2") %>% check_equal()
@@ -518,7 +515,7 @@ ex() %>% check_correct(
     check_arg(.,"..4") %>% check_equal()
   }
 )
-ex() %>% check_output_expr("departed_list", missing_msg = "Did you print the `departed_list`?")
+ex() %>% check_output_expr("departed_list", missing_msg = "您是否打印了 `departed_list`？")
 
-success_msg("Good work! You successfully created another list of movie information, and combined different components into a single list. Congratulations on finishing the course!")
+success_msg("做得好！您成功創建了另一個電影資訊列表，並將不同的組件組合成一個列表。恭喜您完成課程！")
 ```

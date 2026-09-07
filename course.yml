@@ -1,23 +1,17 @@
 datasets:
   Introduction to R.pdf: Course Glossary
 description: >-
-  In this introduction to R course, you'll master the basics of this widely used
-  open source language&mdash;including vectors, factors, lists, and data frames.
-  With the coding skills you'll gain in this course, you'll be ready to
-  undertake your own data analysis in R. There are millions of R users
-  worldwide, cementing it as a leading programming language in statistics and
-  data science. Begin your coding journey in one of DataCamp's most popular
-  courses today!
+  在這門 R 入門課程中，你將學會這個廣泛使用的開源語言的基礎，包括向量、因子、列表與資料框。完成本課程後，你將具備在 R
+  中進行資料分析的程式技能。全球有數百萬名 R 使用者，使其成為統計與資料科學領域的主要程式語言之一。現在就從 DataCamp
+  最受歡迎的課程之一開始你的程式之旅吧！
 
 
-  The course glossary can be found on the right in the resources section.
+  課程名詞表位於右側的資源區。
 
-  To obtain CPE credits you need to complete the course and reach a score of 70%
-  on the qualified assessment. You can navigate to the assessment by clicking on
-  the CPE credits callout on the right.
-from: 'r-base-prod:v3.0.0'
+  若要取得 CPE 學分，你需要完成課程並在合格評量中達到 70% 的分數。你可以點選右側的 CPE 學分提示前往評量。
+from: r-base-prod:v3.0.0
 id: 58
 practice_pool_id: 106
 programming_language: r
 runtime_config: minimal
-title: Introduction to R
+title: R 入門

@@ -1,15 +1,12 @@
 ---
-title_meta: Chapter 3
-title: Matrices
+title_meta: 第 3 章
+title: 矩陣
 description: >-
-  In this chapter, you will learn how to work with matrices in R. By the end of
-  the chapter, you will be able to create matrices and understand how to do
-  basic computations with them. You will analyze the box office numbers of the
-  Star Wars movies and learn how to use matrices in R. May the force be with
-  you!
+  本章將帶你學習如何在 R 中處理矩陣。章末時，你將能建立矩陣並理解如何對其進行基本運算。你會分析星際大戰電影的票房數據，並學會在 R
+  中使用矩陣。願原力與你同在！
 ---
 
-## What's a matrix?
+## 什麼是矩陣？
 
 ```yaml
 type: NormalExercise
@@ -19,25 +16,25 @@ skills:
   - 1
 ```
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+在 R 中，矩陣是由相同資料型別（數值、字元或布林）的元素所組成，並以固定的列與欄排列。因為只包含列與欄，矩陣被稱為二維結構。
 
-You can construct a matrix in R with the `matrix()` function. Consider the following example:
+你可以用 `matrix()` 函式在 R 建立矩陣。看看以下範例：
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the `matrix()` function:
+在 `matrix()` 函式中：
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- 第一個引數是要讓 R 按照矩陣的列與欄去排列的元素集合。這裡我們用 `1:9`，它是 `c(1, 2, 3, 4, 5, 6, 7, 8, 9)` 的速記方式。
+- `byrow` 引數表示按列（row-wise）填入矩陣。若要改為按欄（column-wise）填入，只要設為 `byrow = FALSE`。
+- 第三個引數 `nrow` 表示矩陣應該有 3 列。
 
 `@instructions`
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+建立一個有 3 列的矩陣，內容為數字 1 到 9，並以列為優先順序填入。
 
 `@hint`
-Read the assignment carefully, the answer is already given!
+仔細閱讀題目，答案其實已經告訴你了！
 
 `@pre_exercise_code`
 ```{r}
@@ -58,19 +55,19 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 `@sct`
 ```{r}
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "您是否正確地創建了矩陣？查看作業，答案已經給出！")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "您是否正確地創建了矩陣？查看作業，答案已經給出！")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "您是否正確地創建了矩陣？查看作業，答案已經給出！")
 	}
 
-ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
+ex() %>% check_output_expr("matrix(1:9, byrow=TRUE, nrow=3)",missing_msg = "矩陣定義似乎有問題。查看作業，答案已經給出！")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("太棒了！繼續進行下一個練習。")
 ```
 
 ---
 
-## Analyze matrices, you shall
+## 來分析矩陣吧
 
 ```yaml
 type: NormalExercise
@@ -80,19 +77,19 @@ skills:
   - 1
 ```
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+現在是動手的時候了。接下來的練習，你將分析《星際大戰》系列的票房數據。願原力與你同在！
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+在編輯器中定義了三個向量。每個向量代表前三部《星際大戰》電影的票房數字。每個向量的第 1 個元素是美國票房收入，第 2 個元素是非美國地區的票房（來源：Wikipedia）。
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+在本練習中，你會先把這些數字合併成一個向量。接著，你會用這個向量建立一個矩陣。
 
 `@instructions`
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to do this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- 使用 `c(new_hope, empire_strikes, return_jedi)` 將三個向量合併成一個向量，並將此向量命名為 `box_office`。
+- 建立一個有 3 列的矩陣，每一列代表一部電影。使用 `matrix()` 函式完成此步驟。第一個引數是包含所有票房數字的向量 `box_office`。接著指定 `nrow = 3` 與 `byrow = TRUE`。將產生的矩陣命名為 `star_wars_matrix`。
 
 `@hint`
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., byrow =  ...)` is a template for the solution to the second instruction.
+- `box_office <- c(new_hope, empire_strikes, return_jedi)` 會把不同向量中的所有數字合併成一個含有 6 個元素的向量。
+- `matrix(box_office, nrow = ..., byrow =  ...)` 是完成第二個說明步驟的解題範本。
 
 `@pre_exercise_code`
 ```{r}
@@ -129,7 +126,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "請勿更改任何有關票房變數 `new_hope`、`empire_strikes` 和 `return_jedi` 的內容！"
 
 ex() %>% check_object("new_hope", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -137,23 +134,22 @@ ex() %>% check_object("empire_strikes", undefined_msg = msg) %>% check_equal(inc
 
 ex() %>% check_object("return_jedi", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+ex() %>% check_object("box_office") %>% check_equal(incorrect_msg = "您是否正確地將 `new_hope`、`empire_strikes` 和 `return_jedi` 的值組合到向量 `box_office` 中？")
 
 ex() %>% check_function("matrix") %>% {
-	check_arg(., 'data') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
-	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+	check_arg(., 'data') %>% check_equal(incorrect_msg = "請確保正確指定傳遞給 `matrix()` 的參數：`box_office`、`nrow = 3`、`by_row = TRUE`。")
+	check_arg(., 'nrow') %>% check_equal(incorrect_msg = "請確保正確指定傳遞給 `matrix()` 的參數：`box_office`、`nrow = 3`、`by_row = TRUE`。")
+	check_arg(., 'byrow') %>% check_equal(incorrect_msg = "請確保正確指定傳遞給 `matrix()` 的參數：`box_office`、`nrow = 3`、`by_row = TRUE`。")
 	}
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = "您是否將 `matrix()` 調用的結果賦值給 `star_wars_matrix`？")
 
-
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("原力與您同在！繼續進行下一個練習。")
 ```
 
 ---
 
-## Naming a matrix
+## 為矩陣命名
 
 ```yaml
 type: NormalExercise
@@ -163,24 +159,24 @@ skills:
   - 1
 ```
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
+為了幫助你記住 `star_wars_matrix` 裡存了什麼，你想把電影名稱加到列名稱中。這不僅讓資料更好讀，也方便你從矩陣中選取特定元素。
 
-Similar to vectors, you can add names for the rows and the columns of a matrix
+和向量類似，你可以為矩陣的列與欄加上名稱：
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+我們已經幫你準備了兩個向量：`region` 和 `titles`。你將分別用它們來為 `star_wars_matrix` 的欄與列命名。
 
 `@instructions`
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the rows of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- 使用 `colnames()`，用向量 `region` 為 `star_wars_matrix` 的欄命名。
+- 使用 `rownames()`，用向量 `titles` 為 `star_wars_matrix` 的列命名。
+- 列印 `star_wars_matrix`，查看結果。
 
 `@hint`
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+你可以用 `colnames(star_wars_matrix) <- region` 來為 `star_wars_matrix` 的欄命名。為列命名時也用類似的方式。
 
 `@pre_exercise_code`
 ```{r}
@@ -236,7 +232,7 @@ star_wars_matrix
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "請勿更改有關票房變數 `new_hope`、`empire_strikes` 和 `return_jedi` 的任何內容！"
 
 ex()  %>% check_object("new_hope", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
@@ -244,25 +240,25 @@ ex()  %>% check_object("empire_strikes", undefined_msg = msg)  %>% check_equal(i
 
 ex()  %>% check_object("return_jedi", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+msg <- "請勿更改 `star_wars_matrix` 的內容；僅更改行和列的名稱！"
 
 ex()  %>% check_object("star_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- "請勿更改為您定義的 `region` 和 `titles` 向量的任何內容。"
 
 ex()  %>% check_object("region", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 ex() %>% check_object("titles", undefined_msg = msg) %>% check_equal( incorrect_msg = msg)
 
-ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
+ex() %>% check_object("star_wars_matrix") %>% check_equal(eq_condition = "equal",incorrect_msg = "您是否正確設置了 `star_wars_matrix` 的行和列名稱？使用 `colnames(star_wars_matrix) <- region` 設置列名稱；對行名稱進行類似操作。")
 
-ex() %>% check_output_expr("star_wars_matrix", missing_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
+ex() %>% check_output_expr("star_wars_matrix", missing_msg = "在命名行和列後，別忘了打印出 `star_wars_matrix`。")
 
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+success_msg("太棒了！您正在成為 R 絕地武士的路上！繼續進行下一個練習。")
 ```
 
 ---
 
-## Calculating the worldwide box office
+## 計算全球票房
 
 ```yaml
 type: NormalExercise
@@ -272,21 +268,21 @@ skills:
   - 1
 ```
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+一部電影若要在好萊塢瞬間成為傳奇，最關鍵的就是它的全球票房。
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+要計算這三部 Star Wars 電影的總票房，你需要將美國票房欄與非美國票房欄相加。
 
-In R, the function `rowSums()` conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+在 R 中，`rowSums()` 可以方便地計算矩陣每一列的總和。這個函式會建立一個新的向量：
 
 ```
 rowSums(my_matrix)
 ```
 
 `@instructions`
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+計算三部電影的全球票房，並將結果存入名為 `worldwide_vector` 的向量中。
 
 `@hint`
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+`rowSums(star_wars_matrix)` 會計算每一列的總和，也就是每部電影的全球票房總額。
 
 `@pre_exercise_code`
 ```{r}
@@ -329,20 +325,20 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "請勿更改預設變數 `box_office_all` 和 `star_wars_marix`！"
 
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "請對 `star_wars_matrix` 使用 `rowSums()` 並將結果儲存在 `worldwide_vector` 中。")
 
-success_msg("Well done! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Adding a column for the Worldwide box office
+## 為全球票房新增一個欄
 
 ```yaml
 type: NormalExercise
@@ -352,19 +348,19 @@ skills:
   - 1
 ```
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+在前一題中，你已經計算出一個向量，裡面包含三部 Star Wars 電影各自的全球票房。不過，這個向量尚未加入 `star_wars_matrix`。
 
-You can add a column or multiple columns to a matrix with the `cbind()` function, which merges matrices and/or vectors together by column. For example: 
+你可以用 `cbind()` 函式把一或多個欄位加到矩陣中。它會依欄把矩陣與／或向量合併在一起。例如： 
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 `@instructions`
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the `cbind()` function.
+將 `worldwide_vector` 作為新的欄加入 `star_wars_matrix`，並把結果指定給 `all_wars_matrix`。請使用 `cbind()` 函式。
 
 `@hint`
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+在這題中，你需要依序把兩個變數傳給 `cbind()`：`star_wars_matrix` 與 `worldwide_vector`。把結果指定給 `all_wars_matrix`。
 
 `@pre_exercise_code`
 ```{r}
@@ -413,24 +409,24 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "請勿更改預設變數 `box_office_all` 和 `star_wars_marix` 的任何內容！"
 ex() %>% check_object("box_office", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix", undefined_msg = msg) %>% check_equal(, incorrect_msg = msg)
 
-ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+ex() %>% check_object("worldwide_vector") %>% check_equal(incorrect_msg = "將 `rowSums(star_wars_matrix)` 的結果儲存在 `worldwide_vector` 中。")
 
 
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+msg <- "您是否正確使用了 `cbind()` 將 `worldwide_vector` 添加到 `star_wars_matrix`？您應該將 `star_wars_matrix` 和 `world_wide_vector` 以此順序傳遞給 `cbind()`。結果矩陣 `all_wars_matrix` 應由三行三列組成。"
 ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = msg)
 
 
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("做得好！在矩陣中添加列後，邏輯上的下一步是添加行。在下一個練習中學習如何做到這一點。");
 ```
 
 ---
 
-## Adding a row
+## 新增一列
 
 ```yaml
 type: NormalExercise
@@ -440,24 +436,24 @@ skills:
   - 1
 ```
 
-Just like every action has a reaction, every `cbind()` has an `rbind()`. (We admit, we are pretty bad with metaphors.) 
+就像每個作用都有反作用，`cbind()` 也有個對應的 `rbind()`。（我們承認，比喻不是我們的強項。）
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices:
+你的 R 工作空間，也就是所有你定義的變數「存在」的地方（想更了解工作空間可參考這裡： http://www.statmethods.net/interface/workspace.html ），已經初始化並包含兩個矩陣：
 
-- `star_wars_matrix` that we have used all along, with data on the original trilogy,
-- `star_wars_matrix2`, with similar data for the prequels trilogy. 
+- `star_wars_matrix`：我們一路以來使用的矩陣，含有原始三部曲的資料，
+- `star_wars_matrix2`：包含前傳三部曲的類似資料。
 
-Explore these matrices in the console if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+如果想更仔細看，請在主控台中探索這些矩陣。如果想查看工作空間的內容，可以在主控台輸入 `ls()`。
 
 `@instructions`
-Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
+使用 `rbind()` 依序把 `star_wars_matrix` 和 `star_wars_matrix2` 接在一起。將產生的矩陣指派給 `all_wars_matrix`。
 
 `@hint`
-Bind the two matrices together like this:
+把兩個矩陣這樣接在一起：
 ```
 rbind(matrix1, matrix2)
 ```
-Assign the result to `all_wars_matrix`.
+把結果指派給 `all_wars_matrix`。
 
 `@pre_exercise_code`
 ```{r}
@@ -502,20 +498,19 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 `@sct`
 ```{r}
-msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+msg = "請勿覆蓋已在工作區中為您定義的變數（`star_wars_matrix` 和 `star_wars_matrix2`）。"
 ex() %>% check_object("star_wars_matrix",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
 ex() %>% check_object("star_wars_matrix2", undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+ex() %>% check_object("all_wars_matrix") %>% check_equal(incorrect_msg = "您是否正確使用了 `rbind()` 來創建 `all_wars_matrix()`？`rbind()` 應該接受兩個參數：`star_wars_matrix` 和 `star_wars_matrix2`，按此順序。")
 
-
-success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+success_msg("太棒了！繼續進行下一個練習，看看如何將 `rbind()` 函數的結果與 `colSums()` 函數結合起來！")
 ```
 
 ---
 
-## The total box office revenue for the entire saga
+## 整個系列的總票房收入
 
 ```yaml
 type: NormalExercise
@@ -525,14 +520,14 @@ skills:
   - 1
 ```
 
-Just like `cbind()` has  `rbind()`, `colSums()` has `rowSums()`. Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+就像 `cbind()` 對應 `rbind()` 一樣，`colSums()` 也有 `rowSums()`。你的 R 工作環境中已經有你在前一個練習建立的 `all_wars_matrix`；輸入 `all_wars_matrix` 再看一次。現在來計算整個系列的總票房收入。
 
 `@instructions`
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the `colSums()`function.
-- Print out `total_revenue_vector` to have a look at the results.
+- 計算美國與非美國地區的總收入，並指定給 `total_revenue_vector`。你可以使用 `colSums()` 函式。
+- 印出 `total_revenue_vector`，看看結果。
 
 `@hint`
-You should use the `colSums()` function with `star_wars_matrix` as the argument to find the total box office per region.
+你應該使用 `colSums()` 函式，並以 `star_wars_matrix` 作為引數，來找出各地區的總票房。
 
 `@pre_exercise_code`
 ```{r}
@@ -564,21 +559,21 @@ total_revenue_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+msg = "請勿更改 `all_wars_matrix` 的內容；它已在工作區中為您創建。"
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
-ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+ex() %>% check_function("colSums") %>% check_arg('x') %>% check_equal(incorrect_msg = "您是否在 all_wars_matrix 上使用了 `colSums()` 函數？")
 
-ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+ex() %>% check_object("total_revenue_vector") %>% check_equal(incorrect_msg = "您是否已正確將 `colSums(all_wars_matrix)` 的結果分配給 `total_revenue_vector`？")
 
-ex() %>% check_output_expr("total_revenue_vector", missing_msg = "Don't forget to print out `total_revenue_vector`!")
+ex() %>% check_output_expr("total_revenue_vector", missing_msg = "別忘了打印出 `total_revenue_vector`！")
 
-success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
+success_msg("太棒了！前往下一個練習以學習矩陣子集。")
 ```
 
 ---
 
-## Selection of matrix elements
+## 矩陣元素的選取
 
 ```yaml
 type: NormalExercise
@@ -588,26 +583,26 @@ skills:
   - 1
 ```
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns. For example: 
+和向量類似，你可以用中括號 `[ ]` 從矩陣中選取單一或多個元素。向量只有一個維度，矩陣則有兩個維度，因此你需要用逗號分隔要選取的列與欄。例如：
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+- `my_matrix[1,2]` 會選取第 1 列第 2 欄的元素。
+- `my_matrix[1:3,2:4]` 會得到一個由第 1、2、3 列與第 2、3、4 欄資料組成的矩陣。
 
-If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
+如果你要選取某一整列或整欄，逗號前或後分別不需要填入數字：
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[,1]` 會選取第 1 欄的所有元素。
+- `my_matrix[1,]` 會選取第 1 列的所有元素。
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+把新學到的知識用在星際大戰吧！和前一題一樣，`all_wars_matrix` 已經在你的工作空間中可使用。
 
 `@instructions`
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us_all` to calculate the average non-US revenue for all movies. Simply print out the result.
-- This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
-- Use `mean()` again to print out the average of the values in `non_us_some`.
+- 選取所有電影的非美國票房（`all_wars_matrix` 的整個第 2 欄），將結果存為 `non_us_all`。
+- 對 `non_us_all` 使用 `mean()` 計算所有電影的平均非美國票房，直接印出結果。
+- 這次，選取 `all_wars_matrix` 中前兩部電影的非美國票房。將結果存為 `non_us_some`。
+- 再次使用 `mean()` 印出 `non_us_some` 中數值的平均。
 
 `@hint`
-You can select the entire second column of a matrix `my_matrix` with `my_matrix[,2]`.
+你可以用 `my_matrix[,2]` 來選取矩陣 `my_matrix` 的整個第 2 欄。
 
 `@pre_exercise_code`
 ```{r}
@@ -652,24 +647,24 @@ mean(non_us_some)
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "請勿更改 `all_wars_matrix` 的內容；此矩陣已在工作區中為您創建。"
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+ex() %>% check_object("non_us_all") %>% check_equal(incorrect_msg = "您是否將 `all_wars_matrix` 的整個第二列賦值給 `non_us_all`？您可以使用 `[, 2]` 來完成此操作！")
 
-ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_all)", missing_msg = "您是否通過調用 `mean(non_us_all)` 計算了 `non_us_all` 中值的平均值？只需打印出結果即可。")
 
-ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+ex() %>% check_object("non_us_some") %>% check_equal(incorrect_msg = "您是否將前兩部電影的非美國收入賦值給 `non_us_some`？您可以使用 `[1:2,2]` 來完成此操作！")
 
-ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
+ex() %>% check_output_expr("mean(non_us_some)", missing_msg = "您是否通過調用 `mean(non_us_some)` 計算了 `non_us_some` 中值的平均值？只需打印出結果即可。")
 
-success_msg("Nice one! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## A little arithmetic with matrices
+## 用矩陣做些小算術
 
 ```yaml
 type: NormalExercise
@@ -679,18 +674,18 @@ skills:
   - 1
 ```
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+就像你在向量所學的一樣，`+`、`-`、`/`、`*` 等標準運算子在 R 的矩陣上會逐元素運算。
 
-For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
+例如，`2 * my_matrix` 會把 `my_matrix` 的每個元素都乘以 2。
 
-As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+你剛受聘為 Lucasfilm 的資料分析師，工作是找出各地區每部電影的觀影人次。你已經有 `all_wars_matrix` 中的總票房金額。假設單張票價為 5 美元。只要把票房數字除以這個票價，就能得到觀影人數。
 
 `@instructions`
-- Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
-- Print out `visitors` so you can have a look.
+- 將 `all_wars_matrix` 除以 5，得到以百萬為單位的造訪人數。把結果矩陣指派給 `visitors`。
+- 列印 `visitors`，看看結果。
 
 `@hint`
-The number of visitors is equal to `all_wars_matrix` divided by 5.
+造訪人數等於將 `all_wars_matrix` 除以 5。
 
 `@pre_exercise_code`
 ```{r}
@@ -723,21 +718,21 @@ visitors
 
 `@sct`
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "請勿更改 `all_wars_matrix` 的內容；此矩陣已在工作區中為您創建。"
 
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "`visitors` 看起來不正確。只需將 `all_wars_matrix` 除以 5，並將結果矩陣存儲為 `visitors`。")
 
-ex() %>% check_output_expr("visitors", missing_msg = "Don't forget to also print out `visitors` so you can have a look.")
+ex() %>% check_output_expr("visitors", missing_msg = "別忘了也要打印出 `visitors`，以便查看。")
 
 
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+success_msg("太棒了！這些結果告訴您什麼？令人驚訝的是，有 9200 萬人去美國影院觀看了《星際大戰》。繼續進行下一個練習。")
 ```
 
 ---
 
-## A little arithmetic with matrices (2)
+## 用矩陣做點算術（2）
 
 ```yaml
 type: NormalExercise
@@ -747,20 +742,20 @@ skills:
   - 1
 ```
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+就像 `2 * my_matrix` 會把 `my_matrix` 的每個元素都乘以 2 一樣，`my_matrix1 * my_matrix2` 會建立一個矩陣，其中每個元素都是 `my_matrix1` 與 `my_matrix2` 對應元素相乘的結果。
 
-After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+在看過前一題的結果後，大老闆 Lucas 指出票價隨時間上漲。他要你改用 `ticket_prices_matrix` 中的票價（來源：想像）重新進行分析。
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_熟悉矩陣的人請注意，這不是標準的矩陣相乘。在 R 中標準矩陣乘法應使用 `%*%`。_
 
 `@instructions`
-- Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
-- From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- 用 `all_wars_matrix` 除以 `ticket_prices_matrix`，取得 6 部電影在美國與非美國地區的推估觀影人次。把結果指定給 `visitors`。
+- 從 `visitors` 矩陣選取整個第 1 欄（代表美國的觀影人次）。把這個選取結果存成 `us_visitors`。
+- 計算美國觀影人次的平均值，並印出結果。
 
 `@hint`
-- You can use the function `mean()` to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- 你可以使用 `mean()` 函式計算輸入值的平均。
+- 若要取得美國的觀影人次，從 `visitors` 選取第 1 欄即可，用 `visitors[ ,1]`。
 
 `@pre_exercise_code`
 ```{r}
@@ -804,17 +799,16 @@ mean(us_visitors)
 
 `@sct`
 ```{r}
-msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg <- "請勿更改 `all_wars_matrix` 的內容；此矩陣已在工作區中為您創建。"
 ex() %>% check_object("all_wars_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("ticket_prices_matrix", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+ex() %>% check_object("visitors") %>% check_equal(incorrect_msg = "您是否正確創建了 `visitors` 矩陣？您應該將 `all_wars_matrix` 除以 `ticket_prices_matrix` 來達到目的。")
 
-ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+ex() %>% check_object("us_visitors") %>% check_equal(incorrect_msg = "要創建 `us_visitors`，您應該正確選擇 `visitors` 的整個第一列。您可以使用 `[,1]` 來完成這個操作！")
 
-ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+ex() %>% check_output_expr("mean(us_visitors)", missing_msg = "一旦您創建了 `us_visitors`，您可以使用 `mean()` 來計算美國訪客的平均數量。請確保打印出結果。")
 
-
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("這是一個事實：R 的力量與您同在！本練習結束了矩陣章節。您在 R 語言中的下一站：因子。")
 ```

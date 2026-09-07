@@ -1,14 +1,10 @@
 ---
-title_meta: Chapter 5
-title: Data frames
-description: >-
-  Most datasets you will be working with will be stored as data frames. By the
-  end of this chapter, you will be able to create a data frame, select
-  interesting parts of a data frame, and order a data frame according to certain
-  variables.
+title_meta: 第 5 章
+title: 資料框
+description: 你大多數要處理的資料集會以資料框形式儲存。完成本章後，你將能建立資料框、選取資料框中的重點部分，並依特定變數排序資料框。
 ---
 
-## What's a data frame?
+## 什麼是 data frame？
 
 ```yaml
 type: NormalExercise
@@ -18,24 +14,24 @@ skills:
   - 1
 ```
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your dataset on Star Wars only contained numeric elements. 
+你可能還記得在矩陣那一章中，矩陣裡的所有元素都必須是相同的型別。當時，你的 Star Wars 資料集裡只有數值元素。
 
-When doing a market research survey, however, you often have questions such as:
+不過，在做市場調查時，你常常會遇到這樣的題目：
 
-- 'Are you married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
-- ...
+- 「你已婚嗎？」或其他「是／否」題（`logical`）
+- 「你的年齡？」（`numeric`）
+- 「你對這個產品的看法是什麼？」或其他開放式問題（`character`）
+- ……
 
-The output, namely the respondents' answers to the questions formulated above, is a dataset of different data types. You will often find yourself working with datasets that contain different data types instead of only one. 
+這些題目的作答，也就是受訪者的答案，會形成一個包含不同資料型別的資料集。你經常會處理這種含有多種資料型別的資料集，而不是只有單一型別。
 
-A data frame has the variables of a dataset as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+data frame 會把資料集的變數放在欄，觀測值放在列。若你曾使用過 SAS 或 SPSS 等統計軟體套件，這個概念應該很熟悉。
 
 `@instructions`
-Submit the answer. The data from the built-in example data frame `mtcars` will be printed to the console.
+送出答案。內建範例資料框 `mtcars` 的資料會被印到主控台。
 
 `@hint`
-Submit the answer and witness the magic!
+送出答案，就能見證魔法出現！
 
 `@pre_exercise_code`
 ```{r}
@@ -56,14 +52,14 @@ mtcars
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("mtcars", missing_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+ex() %>% check_output_expr("mtcars", missing_msg = "請勿更改程式碼的任何部分，請確保您輸出 `mtcars`。")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("很好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Quick, have a look at your dataset
+## 快速檢視你的資料集
 
 ```yaml
 type: NormalExercise
@@ -73,19 +69,19 @@ skills:
   - 1
 ```
 
-Wow, that is a lot of cars! 
+哇，這可是一大串車款！
 
-Working with large datasets is not uncommon in data analysis. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire dataset. 
+在資料分析中，處理大型資料集並不罕見。當你面對（非常）大的資料集與資料框時，做為資料分析師，你的第一件事就是先掌握它的結構與主要元素。因此，常常只顯示整個資料集的一小部分會比較實用。
 
-So how to do this in R? Well, the function `head()` enables you to show the first observations of a data frame. Similarly, the function `tail()` prints out the last observations in your dataset.
+那在 R 中要怎麼做呢？`head()` 函式可以顯示資料框前面的觀測值。相對地，`tail()` 函式會列出資料集最後面的觀測值。
 
-Both `head()` and `tail()` print a top line called the 'header', which contains the names of the different variables in your dataset.
+`head()` 與 `tail()` 都會在最上方列印一行稱為「標頭」的列，其中包含資料集中各個變數的名稱。
 
 `@instructions`
-Call `head()` on the `mtcars` dataset to have a look at the header and the first observations.
+對 `mtcars` 資料集呼叫 `head()`，看看標頭與前幾筆觀測值。
 
 `@hint`
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` 會顯示 `mtcars` 資料框前面的幾筆觀測值。
 
 `@pre_exercise_code`
 ```{r}
@@ -106,16 +102,16 @@ head(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+ex() %>% check_function("head") %>% check_arg('x') %>% check_equal(incorrect_msg = "您是否正確地將 `mtcars` 傳遞給 `head()` 函數？")
 
-ex() %>% check_output_expr("head(mtcars)", missing_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+ex() %>% check_output_expr("head(mtcars)", missing_msg = "只需打印出 `head()` 調用的結果，無需將其賦值給新變量。")
 
-success_msg("Wonderful! So, what do we have in this dataset? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+success_msg("太棒了！那麼，我們在這個數據集中有什麼呢？例如，`hp` 代表汽車的馬力；在顯示的6輛車中，Datsun的馬力最低。要全面了解變量的含義，請在控制台中輸入 `?mtcars` 並閱讀幫助頁面。繼續進行下一個練習！");
 ```
 
 ---
 
-## Have a look at the structure
+## 看看資料結構
 
 ```yaml
 type: NormalExercise
@@ -125,21 +121,21 @@ skills:
   - 1
 ```
 
-Another method that is often used to get a rapid overview of your data is the function `str()`. The function `str()` shows you the structure of your dataset. For a data frame it tells you:
+另一個常用來快速掌握資料概況的方法是使用 `str()` 函式。`str()` 會顯示資料集的結構。針對 data frame，它會告訴你：
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- 總觀測值數量（例如 32 種車款）
+- 總變數數量（例如 11 個車輛特徵）
+- 變數名稱的完整清單（例如 `mpg`、`cyl` …）
+- 每個變數的資料型別（例如 `num`）
+- 前幾筆觀測值
 
-Applying the `str()`] function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+拿到新的資料集或 data frame 時，呼叫 `str()` 通常是你會做的第一件事。這是在進入正式分析前，快速了解資料的好方法。
 
 `@instructions`
-Investigate the structure of `mtcars`. Make sure that you see the same numbers, variables and data types as mentioned above.
+檢視 `mtcars` 的結構。確認你看到的數量、變數與資料型別與上面提到的相同。
 
 `@hint`
-Use the `str()` function on `mtcars`.
+在 `mtcars` 上使用 `str()` 函式。
 
 `@pre_exercise_code`
 ```{r}
@@ -160,14 +156,14 @@ str(mtcars)
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("str(mtcars)", missing_msg = "Have you correctly called `str()` on `mtcars`?")
+ex() %>% check_output_expr("str(mtcars)", missing_msg = "您是否正確地在 `mtcars` 上呼叫了 `str()`？")
 
-success_msg("Nice work! You can find lots of information by viewing the `str()` of a dataset. Continue to the next exercise.")
+success_msg("做得好！您可以透過查看資料集的 `str()` 來找到許多資訊。繼續進行下一個練習。")
 ```
 
 ---
 
-## Creating a data frame
+## 建立資料框
 
 ```yaml
 type: NormalExercise
@@ -177,28 +173,28 @@ skills:
   - 1
 ```
 
-Since using built-in datasets is not even half the fun of creating your own datasets, the rest of this chapter is based on your personally developed dataset. Put your jet pack on because it is time for some space exploration! 
+使用內建資料集，遠不如自己動手做資料集有趣。因此，本章其餘內容都會用你親手建立的資料集。穿上你的噴射背包，準備展開太空探索吧！
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+你的第一個目標，是建立一個資料框，描述太陽系中 8 顆行星的主要特性。根據你好友 Buzz 的說法，行星的關鍵特徵包括：
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- 行星的種類（類地行星或氣態巨行星）。
+- 與地球直徑相比的行星直徑。
+- 與地球相比，行星繞太陽公轉的相對速度。
+- 行星是否有環（TRUE 或 FALSE）。
 
-After doing some high-quality research on [Wikipedia](https://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up in the editor. The first element in each of these vectors correspond to the first observation.
+在 [Wikipedia](https://en.wikipedia.org/wiki/Planet) 做過高品質的查資料之後，你已經有把握建立需要的向量：`name`、`type`、`diameter`、`rotation` 和 `rings`；這些向量已經在編輯器中寫好了。每個向量的第一個元素對應到第一筆觀測值。
 
-You construct a data frame with the `data.frame()` function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+你將使用 `data.frame()` 函式來建立資料框。把前面這些向量當作引數傳入：它們會成為資料框的不同欄位。因為每個欄位的長度都相同，你傳入的向量長度也必須一致。不過別忘了，它們很可能包含不同型別的資料。
 
 `@instructions`
-Use the function `data.frame()` to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+使用 `data.frame()` 函式建立一個資料框。依序將向量 `name`、`type`、`diameter`、`rotation` 和 `rings` 傳入 `data.frame()` 作為引數。把建立好的資料框命名為 `planets_df`。
 
 `@hint`
-Your `data.frame()` call starts as follows:
+你的 `data.frame()` 呼叫可以先這樣寫：
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+你能把它完成嗎？
 
 `@pre_exercise_code`
 ```{r}
@@ -250,7 +246,7 @@ planets_df <- data.frame(name, type, diameter, rotation, rings)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "請勿更改向量的定義。只需添加一個 `data.frame()` 調用來創建 `planets_df`。"
 ex() %>% check_object("name", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("type", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
@@ -261,15 +257,14 @@ ex() %>% check_object("rotation", undefined_msg = msg) %>% check_equal(incorrect
 
 ex() %>% check_object("rings", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+ex() %>% check_object("planets_df") %>% check_equal(incorrect_msg = "您是否正確調用了 `data.frame()` 來創建 `planets_df`。在 `data.frame()` 中，請確保按正確順序傳遞所有向量：`name`、`type`、`diameter`、`rotation`，最後是 `rings`。")
 
-
-success_msg("Great job! The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("做得好！正如您現在所知，邏輯上的下一步是檢查您剛創建的數據框。前往下一個練習。");
 ```
 
 ---
 
-## Creating a data frame (2)
+## 建立資料框（2）
 
 ```yaml
 type: NormalExercise
@@ -279,13 +274,13 @@ skills:
   - 1
 ```
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+`planets_df` 資料框應該有 8 個觀測值與 5 個變數。它已經放在工作空間中，你可以直接使用。
 
 `@instructions`
-Use `str()` to investigate the structure of the new `planets_df` variable.
+使用 `str()` 檢視新的 `planets_df` 變數的結構。
 
 `@hint`
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` 已經在你的工作空間中可用，所以輸入 `str(planets_df)` 就可以了。
 
 `@pre_exercise_code`
 ```{r}
@@ -321,17 +316,17 @@ str(planets_df)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "請勿移除或覆蓋工作區中已存在的 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("str(planets_df)", missing_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+ex() %>% check_output_expr("str(planets_df)", missing_msg = "您是否正確顯示了 `planets_df` 的結構？使用 `str()` 來完成此操作！")
 
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` dataset, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+success_msg("太棒了！現在您已經清楚了解 `planets_df` 資料集，是時候看看如何從中選擇元素了。在接下來的練習中了解所有內容！")
 ```
 
 ---
 
-## Selection of data frame elements
+## 選取資料框的元素
 
 ```yaml
 type: NormalExercise
@@ -341,19 +336,19 @@ skills:
   - 1
 ```
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+和向量、矩陣一樣，你可以用方括號 `[ ]` 從資料框中選取元素。加入逗號可以分別指定要從哪些列與哪些欄選取。例如：
 
-- `my_df[1,2]` selects the value at the first row and second column in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` 會選取 `my_df` 中第 1 列第 2 欄的值。
+- `my_df[1:3,2:4]` 會選取 `my_df` 中第 1、2、3 列與第 2、3、4 欄。
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+有時你會想選取某一整列或整欄的所有元素。例如，`my_df[1, ]` 會選取第 1 列的所有元素。現在把這個技巧套用到 `planets_df` 吧！
 
 `@instructions`
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- 從 `planets_df` 選取水星的直徑：也就是第 1 列第 3 欄的值。直接印出結果即可。
+- 從 `planets_df` 選取關於火星的所有資料（第 4 列）。直接印出結果即可。
 
 `@hint`
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+要選取金星（第二列）的直徑，你會用：`planets_df[2,3]`。那麼水星要怎麼選呢？
 
 `@pre_exercise_code`
 ```{r}
@@ -400,19 +395,19 @@ planets_df[4, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "請勿移除或覆寫 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+ex() %>% check_output_expr("planets_df[1,3]", missing_msg = "您是否正確選擇並列印出水星的直徑？您可以使用 `[1,3]`。")
 
-ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+ex() %>% check_output_expr("planets_df[4, ]", missing_msg = "您是否正確選擇並列印出火星的所有數據？您可以使用 `[4,]`。")
 
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+success_msg("太棒了！除了可以用索引選擇資料框中的元素外，您還可以使用欄位名稱。要了解如何操作，請進入下一個練習。")
 ```
 
 ---
 
-## Selection of data frame elements (2)
+## 資料框元素的選取（2）
 
 ```yaml
 type: NormalExercise
@@ -422,25 +417,25 @@ skills:
   - 1
 ```
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+與其用數字來選取資料框的元素，你也可以用變數名稱來選取資料框的欄位。
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+假設你想選取 `type` 欄位的前 3 個元素。一種作法是：
 
 ```
 planets_df[1:3,2]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+這種作法可能的缺點是你必須知道（或查出）`type` 的欄位編號。當變數很多時會變得困難。通常直接使用變數名稱會更容易：
 
 ```
 planets_df[1:3,"type"]
 ```
 
 `@instructions`
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+選取並印出 `planets_df` 中 `"diameter"` 欄位的前 5 個值。
 
 `@hint`
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+你可以用 `planets_df[1:5, ...]` 來選取前 5 個值。你能把 `...` 補上，只選取 `"diameter"` 這個欄位嗎？
 
 `@pre_exercise_code`
 ```{r}
@@ -481,17 +476,17 @@ planets_df[1:5, "diameter"]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "請勿移除或覆寫 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+ex() %>% check_output_expr("planets_df[1:5, \"diameter\"]", missing_msg = "您是否正確選擇了直徑欄的前五個值並將其列印出來？您可以在此使用 `[1:5, \"diameter\"]`。")
 
-success_msg("Nice! Continue to the next exercise!")
+success_msg("很好！繼續進行下一個練習！")
 ```
 
 ---
 
-## Only planets with rings
+## 只挑有環的行星
 
 ```yaml
 type: NormalExercise
@@ -501,25 +496,25 @@ skills:
   - 1
 ```
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+你常常會想選取整個欄，也就是從資料框中選取某個特定變數。舉例來說，如果你想選取變數 `diameter` 的所有元素，以下兩種方式都可以：
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+不過，有個更快的方法。如果欄有名稱，你可以使用 `$` 符號：
 
 ```
 planets_df$diameter
 ```
 
 `@instructions`
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- 使用 `$` 符號從 `planets_df` 中選取變數 `rings`，並將得到的向量存成 `rings_vector`。
+- 列印 `rings_vector`，檢查結果是否正確。
 
 `@hint`
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+`planets_df$diameter` 會從 `planets_df` 中選取 `diameter` 欄。那要如何選取 `rings` 欄呢？
 
 `@pre_exercise_code`
 ```{r}
@@ -565,19 +560,19 @@ rings_vector
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "請勿移除或覆寫 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+ex() %>% check_object("rings_vector") %>% check_equal(incorrect_msg = "您是否正確地從 `planets_df` 中選擇了 `rings` 變數？使用 `$rings`。將結果儲存為 `rings_vector`。")
 
-ex() %>% check_output_expr("rings_vector", missing_msg = "Don't forget to print out `rings_vector` after you've created it!")
+ex() %>% check_output_expr("rings_vector", missing_msg = "別忘了在創建 `rings_vector` 後將其列印出來！")
 
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+success_msg("太棒了！繼續進行下一個練習，探索另一種子集化的方法！")
 ```
 
 ---
 
-## Only planets with rings (2)
+## 只有有光環的行星（2）
 
 ```yaml
 type: NormalExercise
@@ -587,21 +582,21 @@ skills:
   - 1
 ```
 
-You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+你或許還記得高中時學過，太陽系裡有些行星有光環，有些沒有。但你已經記不得它們的名字了。R 能幫上忙嗎？
 
-If you type `rings_vector` in the console, you get:
+如果你在主控台輸入 `rings_vector`，會得到：
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings.
+這表示前 4 個觀測值（也就是行星）沒有光環（`FALSE`），後面 4 個有光環（`TRUE`）。不過，這樣看不到這些行星的名稱、直徑等整理好的資訊。讓我們試著用 `rings_vector` 選出那 4 顆有光環行星的資料。
 
 `@instructions`
-The code in the editor selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+編輯器中的程式碼會選取所有有光環行星的 `name` 欄位。請修改程式碼，改為選取有光環行星的「所有」欄位，而不是只有 `name` 欄位。
 
 `@hint`
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+記得如果要選取「所有」欄位，只要把 `[]` 中的欄位位置留空即可！也就是需要使用 `[rings_vector, ]`。
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +639,19 @@ planets_df[rings_vector, ]
 
 `@sct`
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "請勿移除或覆寫 `planets_df` 或 `rings_vector`！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("rings_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
+ex() %>% check_output_expr('planets_df[rings_vector, ]', missing_msg = "您是否正確地調整了代碼以選擇所有有環的行星的列？您可以使用 `planets_df[rings_vector, ]`。請確保在此處包含逗號，這很重要！")
 
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+success_msg("太棒了！這是一個相當繁瑣的解決方案。下一個練習將教您如何以更簡潔的方式完成它。")
 ```
 
 ---
 
-## Only planets with rings but shorter
+## 只有有環的行星，但更精簡
 
 ```yaml
 type: NormalExercise
@@ -666,27 +661,27 @@ skills:
   - 1
 ```
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+在前面的練習裡，你到底學到了什麼？你根據某個條件是否為真（有環或無環），從資料框（`planets_df`）中選出一個子集，並成功取出了所有相關資料。很不錯！此時 NASA 大概已經在注意你的履歷了 ;-)。
 
-Now, let us move up one level and use the function `subset()`. You should see the `subset()` function as a short-cut to do exactly the same as what you did in the previous exercises. 
+現在，我們往上一層，改用 `subset()` 函式。你可以把 `subset()` 看成是達成和前面練習一樣目標的捷徑。
 
 ```
 subset(my_df, subset = some_condition)
-``` 
+```
 
-The first argument of `subset()` specifies the dataset for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+`subset()` 的第一個引數指明你要從哪個資料集取出子集。加入第二個引數後，你就提供了讓 R 挑選正確子集所需的條件。
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+下面的程式碼會給出和上一個練習完全相同的結果，但這次你不需要 `rings_vector`！
 
 ```
 subset(planets_df, subset = rings)
 ```
 
 `@instructions`
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+在 `planets_df` 上使用 `subset()`，選出直徑小於地球的行星。因為 `diameter` 變數是相對於地球直徑的度量，所以條件是 `diameter < 1`。
 
 `@hint`
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+用 `subset(planets_df, subset = ...)` 幾乎就完成了；你能把 `...` 補上嗎？
 
 `@pre_exercise_code`
 ```{r}
@@ -727,22 +722,22 @@ subset(planets_df, subset = diameter < 1)
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "請勿移除或覆寫 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex()  %>% check_correct({
-  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  ex() %>% check_output_expr("subset(planets_df, subset = diameter < 1)", missing_msg = "您是否正確指定了 `subset = ...` 部分在 `subset()` 中。此情況下的條件是 `diameter < 1`。只需列印出結果即可。")  
 
 }, {
-  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+  ex() %>% check_function("subset") %>% check_arg('x') %>% check_equal(incorrect_msg = "您傳遞給 `subset()` 的第一個參數應該是 `planets_df`。")
 
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("太棒了！`subset()` 函數不僅更簡潔，對於閱讀您的代碼的人來說可能也更易於理解。繼續進行下一個練習。");
 ```
 
 ---
 
-## Sorting
+## 排序
 
 ```yaml
 type: NormalExercise
@@ -752,11 +747,11 @@ skills:
   - 1
 ```
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+製作與建立排行榜是人類最愛做的事之一。這些排行榜可能很實用（世界最佳大學）、很有娛樂性（最具影響力的電影明星），或毫無意義（最像 007 的臉）。
 
-In data analysis you can sort your data according to a certain variable in the dataset. In R, this is done with the help of the function `order()`. 
+在資料分析中，你可以依照資料集中的某個變數來排序資料。在 R 中，可以使用 `order()` 函式來完成。
 
-`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+`order()` 會回傳在某個變數（例如向量）上，元素由小到大時各元素的名次位置，例如：
 
 ```
 a <- c(100, 10, 1000)
@@ -764,9 +759,9 @@ order(a)
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest element, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10 是 `a` 的第 2 個元素，也是最小的元素，所以在 `order(a)` 的輸出中 2 會先出現。100 是 `a` 的第 1 個元素，是第二小的元素，所以在 `order(a)` 的輸出中 1 會第二個出現。
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+這代表我們可以用 `order(a)` 的輸出來重新排列 `a`：
     
 ```
 a[order(a)]
@@ -774,10 +769,10 @@ a[order(a)]
 ```
 
 `@instructions`
-Experiment with the `order()` function in the console. Submit the answer when you are ready to continue.
+在主控台試著使用 `order()` 函式做實驗。準備好繼續時再**送出答案**。
 
 `@hint`
-Just play with the `order()` function in the console!
+在主控台試著操作 `order()` 函式就好！
 
 `@pre_exercise_code`
 ```{r}
@@ -796,12 +791,12 @@ Just play with the `order()` function in the console!
 
 `@sct`
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("太好了！現在讓我們使用 `order()` 函數來排序您的資料框！")
 ```
 
 ---
 
-## Sorting your data frame
+## 排序你的資料框
 
 ```yaml
 type: NormalExercise
@@ -811,15 +806,15 @@ skills:
   - 1
 ```
 
-Alright, now that you understand the `order()` function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+很好，既然你已經理解 `order()` 函式，來做點實用的事吧。你想重新排列資料框，讓它以最小的行星開頭、最大者結尾。也就是針對 `diameter` 欄位進行排序。
 
 `@instructions`
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- 對 `planets_df$diameter`（`planets_df` 的 `diameter` 欄位）呼叫 `order()`。把結果存成 `positions`。
+- 現在用 `positions` 向量作為列索引，放在中括號中來重排 `planets_df`。保留所有欄位。直接把結果印出即可。
 
 `@hint`
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- 使用 `order(planets_df$diameter)` 來建立 `positions`。
+- 接著把 `positions` 放進中括號裡：`planets_df[...]`；你能把 `...` 補上嗎？
 
 `@pre_exercise_code`
 ```{r}
@@ -866,12 +861,12 @@ planets_df[positions, ]
 
 `@sct`
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "請勿移除或覆寫 `planets_df` 資料框！"
 ex() %>% check_object("planets_df", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
-ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+ex() %>% check_object("positions") %>% check_equal(incorrect_msg = "您是否正確計算了 `positions` 變數？您可以使用 `order(planets_df$diameter)`。")
 
-ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+ex() %>% check_output_expr("planets_df[positions,]",missing_msg = "使用 `planets_df[positions, ]` 來排序 `planets_df`；方括號內的逗號是關鍵！")
 
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+success_msg("太棒了！這個練習結束了有關資料框的章節。請記住，資料框在 R 中非常重要，您將一直需要它們。另一個非常常用的資料結構是列表。這將是下一章的主題！")
 ```
