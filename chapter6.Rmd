@@ -442,7 +442,7 @@ xp: 100
 - 위 표의 리뷰 정보를 담은 `scores`와 `comments` 두 벡터를 만드세요.
 - `scores` 벡터의 평균을 구하여 `avg_review`로 저장하세요. 
 - `scores`와 `comments` 벡터를 결합하여 `reviews_df`라는 데이터 프레임을 만드세요. 
-- `movie_title`, 데이터 프레임 `movie_actors`, `avg_review`, `reviews_df`를 포함하는 `departed_list`라는 리스트를 만들고 출력하세요.
+- `movie_title`, `movie_actors`, 리뷰 데이터 프레임인 `reviews_df`, 평균 리뷰 점수인 `avg_review`를 포함하는 `departed_list`라는 리스트를 만들고 출력하세요.
 
 `@hint`
 - `c()` 함수를 사용하여 벡터를 만드세요. 
