@@ -1,14 +1,11 @@
 ---
-title_meta: Chapter 1
-title: Intro to basics
-description: >-
-  Take your first steps with R. In this chapter, you will learn how to use the
-  console as a calculator and how to assign variables. You will also get to know
-  the basic data types in R. Let's get started.
+title_meta: 第 1 章
+title: 基礎入門
+description: 透過 R 語言邁出第一步。本章中，你將學會如何將主控台當作計算機使用，以及如何為變數賦值。你還將瞭解 R 語言的基本資料型別。我們開始吧。
 free_preview: true
 ---
 
-## How it works
+## 運作原理
 
 ```yaml
 type: NormalExercise
@@ -18,18 +15,18 @@ skills:
   - 1
 ```
 
-In the editor, you should type R code to solve the exercises. When you submit your code, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console.
+在編輯器中，你需要輸入 R 語言程式碼來解題。送出程式碼後，R 語言會逐行解讀並執行，然後透過訊息告訴你程式是否正確。你的 R 語言程式碼輸出會顯示在主控台。
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, <span translate="no">_Calculate 3 + 4_</span> in the editor is a comment.
+R 語言使用 `#` 符號來添加註解，讓你和其他人明白這段 R 語言程式碼的具體內容。就像 Twitter 一樣！註解不會被當成 R 語言程式碼執行，因此不會影響結果。例如，編輯器中的 <span translate="no">_Calculate 3 + 4_</span> 是一則註解。
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+你也可以直接在主控台執行 R 語言指令。這是練習 R 語言程式碼的好方法，因為不會檢查你的輸入正確與否。
 
 `@instructions`
-- In the editor there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and submit your code.
+- 編輯器裡已有一些範例程式碼。你看得出哪些行是實際的 R 語言程式碼、哪些是註解嗎？
+- 新增一行程式碼來計算 6 加 12 的和，然後送出程式碼。
 
 `@hint`
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+只需仿照範例程式碼，加一行 R 語言程式碼，計算 6 與 12 的和！
 
 `@pre_exercise_code`
 ```{r}
@@ -57,14 +54,14 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 `@sct`
 ```{r}
-ex() %>% check_output_expr("18", missing_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+ex() %>% check_output_expr("18", missing_msg = "請確保在新行中添加 `6 + 12`。不要以 `#` 開頭，否則您的 R 代碼不會執行！")
 
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+success_msg("太棒了！看到控制台顯示您提交的 R 代碼的結果了嗎？現在您已經熟悉了界面，讓我們開始 R 的工作吧！")
 ```
 
 ---
 
-## Arithmetic with R
+## R 語言的算術運算
 
 ```yaml
 type: NormalExercise
@@ -74,30 +71,30 @@ skills:
   - 1
 ```
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+R 語言最基礎的用途，就是當簡易計算機。請看以下算術運算子：
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- 加法：`+`
+- 減法：`-`
+- 乘法：`*`
+- 除法：`/`
+- 次方：`^`
+- 取餘數：`%%`
 
-The last two might need some explaining:
+最後兩項稍加解釋：
 
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+- `^` 運算子會將左數取右數的次方：例如 `3^2` 等於 9。
+- 取餘運算子會得出左數除以右數的餘數。例如 5 對 3 取餘數，也就是 `5 %% 3`，結果是 2。
 
-With this knowledge, follow the instructions to complete the exercise.
+具備這些知識後，請依指示完成習題。
 
 `@instructions`
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Submit the answer and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- 在編輯器輸入 `2^5`，計算 2 的 5 次方。
+- 輸入 `28 %% 6`，計算 28 對 6 取餘數。
+- 送出答案，並在主控台查看 R 語言的輸出結果。
+- 注意如何使用 `#` 符號對 R 語言程式碼添加註解。
 
 `@hint`
-Another example of the modulo operator: `9 %% 2` equals `1`.
+取餘運算子再舉一例：`9 %% 2` 等於 `1`。
 
 `@pre_exercise_code`
 ```{r}
@@ -148,16 +145,16 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 `@sct`
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
-ex() %>% check_output_expr("2^5", missing_msg = "The exponentiation example is not correct. Write `2 ^ 5` on a new line.")
+msg = "不要移除其他算術範例！"
+ex() %>% check_output_expr("2^5", missing_msg = "指數範例不正確。請在新行寫上 `2 ^ 5`。")
 
-ex() %>% check_output_expr("28 %% 6", missing_msg = "There seems to be an issue with the modulo example. Write `28 %% 6` on a new line.")
-success_msg("Great! Head over to the next exercise.")
+ex() %>% check_output_expr("28 %% 6", missing_msg = "模數範例似乎有問題。請在新行寫上 `28 %% 6`。")
+success_msg("太好了！前往下一個練習。")
 ```
 
 ---
 
-## Variable assignment
+## 變數賦值
 
 ```yaml
 type: NormalExercise
@@ -167,21 +164,21 @@ skills:
   - 1
 ```
 
-A basic concept in (statistical) programming is called a **variable**. 
+（統計）程式設計中的一個基本概念稱為**變數**。
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+變數可讓你在 R 語言中儲存一個數值（例如 4）或一個物件（例如函式描述）。之後，你便能使用此變數的名稱，輕鬆存取儲存於該變數內的數值或物件。
 
-You can assign a value 4 to a variable `my_var` with the command
+你可以用以下指令把數值 4 賦值給變數 `my_var`：
 
 ```
 my_var <- 4
 ```
 
 `@instructions`
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Submit the answer. Notice that when you ask R to print `x`, the value 42 appears.
+換你來做：在編輯器中完成程式碼，將數值 42 賦值給變數 `x`。送出答案。注意，當你要求 R 語言印出 `x` 時，會顯示數值 42。
 
 `@hint`
-Look at how the value 4 was assigned to `my_var` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+查看在習題中如何把數值 4 賦值給 `my_var`。在編輯器中如法炮製，但這次將 42 賦值給變數 `x`。
 
 `@pre_exercise_code`
 ```{r}
@@ -208,14 +205,14 @@ x
 
 `@sct`
 ```{r}
-ex() %>% check_object("x", undefined_msg = "Make sure to define a variable `x`.")  %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `x`.")
+ex() %>% check_object("x", undefined_msg = "請確保定義變數 `x`。")  %>% check_equal(incorrect_msg = "請確保您為 `x` 賦予正確的值。")
 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+success_msg("做得好！您是否注意到當您進行賦值時，R 不會將變數的值打印到控制台？`x <- 42` 沒有生成任何輸出，因為 R 假設您將來會需要這個變數。否則，您一開始就不會將值存儲在變數中，對吧？繼續進行下一個練習！")
 ```
 
 ---
 
-## Variable assignment (2)
+## 變數賦值（2）
 
 ```yaml
 type: NormalExercise
@@ -225,15 +222,15 @@ skills:
   - 1
 ```
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+假設你有一籃水果，裡面有 5 個蘋果。作為正在培訓的資料分析師，你想把蘋果數量存到名為 `my_apples` 的變數中。
 
 `@instructions`
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Submit your answer, and look at the output: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- 在編輯器中輸入如下程式碼：`my_apples <- 5`。這會把數值 5 賦值給 `my_apples`。
+- 在第二個註解下方輸入：`my_apples`。這會印出 `my_apples` 的值。
+- 送出答案並查看輸出：你會看到印出數字 5。所以，R 語言現在已將變數 `my_apples` 連結到數值 5。
 
 `@hint`
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+記住，在 R 語言中，若想將數字或物件賦值給變數，你可以使用賦值運算子 `<-`。你也可以使用 `=`，但 R 語言社群普遍偏好使用 `<-`。
 
 `@pre_exercise_code`
 ```{r}
@@ -260,16 +257,16 @@ my_apples
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_apples", undefined_msg = "Please make sure to define a variable `my_apples`.") %>% check_equal(incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+ex() %>% check_object("my_apples", undefined_msg = "請確保定義變數 `my_apples`。") %>% check_equal(incorrect_msg = "請確保您為 `my_apples` 賦予正確的值。")
 
-ex() %>% check_output_expr("my_apples", missing_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
+ex() %>% check_output_expr("my_apples", missing_msg = "您是否已明確告訴 R 將 `my_apples` 變數輸出到控制台？")
 
-success_msg("Great! Continue to the next exercise!")
+success_msg("太棒了！繼續進行下一個練習！")
 ```
 
 ---
 
-## Variable assignment (3)
+## 變數賦值（3）
 
 ```yaml
 type: NormalExercise
@@ -279,19 +276,19 @@ skills:
   - 1
 ```
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+若想要一籃好吃的水果，那就少不了柳丁，所以你決定添加 6 顆柳丁。身為資料分析師，你立即本能地建立變數 `my_oranges`，並將 6 賦值給它。接著，你想計算一共有多少水果。因為你已為這些數值進行有意義的命名，現在你可以用簡潔的程式寫出：
 
 ```
 my_apples + my_oranges
 ```
 
 `@instructions`
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+- 將數值 6 賦值給 `my_oranges`。
+- 將變數 `my_apples` 與 `my_oranges` 相加，並讓 R 語言直接印出結果。
+- 把 `my_apples` 與 `my_oranges` 相加之和賦值給新變數 `my_fruit`。
 
 `@hint`
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` 就是 `my_apples` 與 `my_oranges` 之和。你可以用 `+` 運算子把兩者相加，並用 `<-` 把結果賦值給變數 `my_fruit`。
 
 `@pre_exercise_code`
 ```{r}
@@ -326,21 +323,20 @@ my_fruit <- my_apples + my_oranges
 
 `@sct`
 ```{r}
+msg <- "您是否使用 `my_fruit <- my_apples + my_oranges` 來創建 `my_fruit` 變數？"
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "保留將 5 賦值給 `my_apples` 的行。")
 
-msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "保留將 6 賦值給 `my_oranges` 的行。")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
-
-ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+ex() %>% check_output_expr("my_apples + my_oranges",missing_msg = "確保輸出 `my_apples` 和 `my_oranges` 相加的結果。描述中的代碼示例已經給出了此指令的答案！")
 
 ex() %>% check_object("my_fruit", undefined_msg = msg)  %>% check_equal(incorrect_msg = msg)
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+success_msg("做得好！使用變數進行計算的最大優勢是可重用性。如果您只需將 `my_apples` 更改為等於 12 而不是 5 並重新運行腳本，`my_fruit` 也會自動更新。繼續進行下一個練習。")
 ```
 
 ---
 
-## Apples and oranges
+## 蘋果與柳丁
 
 ```yaml
 type: NormalExercise
@@ -350,14 +346,14 @@ skills:
   - 1
 ```
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add <span translate="no">"apples"</span> and <span translate="no">"oranges"</span>, and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+眾所周知，蘋果與柳丁不能相加。不過，你剛剛就這麼做了，對吧 :-)? 在前一個練習中，`my_apples` 和 `my_oranges` 都是數值變數。`+` 運算子在 R 語言裡可以用於數值變數。如果你真的想把 <span translate="no">"apples"</span> 和 <span translate="no">"oranges"</span> 相加，並且把文字值賦值給變數 `my_oranges`（參見編輯器），等於是想把「數值變數加上字元變數」的結果賦值給變數 `my_fruit`。這是不可能的。
 
 `@instructions`
-- Submit the answer and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- 送出答案，並閱讀錯誤訊息。務必明白操作失敗的原因。
+- 調整程式碼，讓 R 語言知道你有 6 顆柳丁，進而算出水果籃共有 11 顆水果。
 
 `@hint`
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+你需要把數值 `6` 而非字元值 `"six"` 賦值給變數 `my_oranges`。注意如何使用引號代表 `"six"` 是字元。
 
 `@pre_exercise_code`
 ```{r}
@@ -392,28 +388,26 @@ my_fruit
 
 `@sct`
 ```{r}
-ex() %>% check_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+ex() %>% check_error(incorrect_msg = "您可以透過將 `my_oranges` 變數設為數值而非字串來完成此操作！")
 
-ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+ex() %>% check_object("my_apples") %>% check_equal(incorrect_msg = "請確保 `my_apples` 仍然包含 `5`。")
 
-ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+ex() %>% check_object("my_oranges") %>% check_equal(incorrect_msg = "請確保 `my_oranges` 等於 `6`。")
 
-ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+ex() %>% check_object("my_fruit") %>% check_equal(incorrect_msg = "`my_fruit` 的值不正確。它應該是 11，即 `my_apples` 和 `my_oranges` 的總和。")
 
 ex() %>% check_object("my_fruit")%>% check_or(
-  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F),
-  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "Did you create `my_fruit` as the sum of variables `my_apples` and `my_oranges`?", append=F)
+  check_code(.,"my_fruit\\s*<-\\s*my_apples\\s*\\+\\s*my_oranges", missing_msg = "您是否將 `my_fruit` 創建為變數 `my_apples` 和 `my_oranges` 的總和？", append=F),
+  check_code(.,"my_fruit\\s*<-\\s*my_oranges\\s*\\+\\s*my_apples", missing_msg = "您是否將 `my_fruit` 創建為變數 `my_apples` 和 `my_oranges` 的總和？", append=F)
  )
-ex() %>% check_output_expr("my_fruit", missing_msg = "Don't remove the line that prints out `my_fruit`.")
+ex() %>% check_output_expr("my_fruit", missing_msg = "不要刪除輸出 `my_fruit` 的行。")
 
-
-
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+success_msg("太棒了，繼續保持良好的工作！繼續進行下一個練習。")
 ```
 
 ---
 
-## Basic data types in R
+## R 語言的基本資料型別
 
 ```yaml
 type: NormalExercise
@@ -423,27 +417,27 @@ skills:
   - 1
 ```
 
-R works with numerous data types. Some of the most basic types to get started are:
+R 語言可處理多種資料型別。最基本的入門型別包括：
 
-- Decimal values like `4.5` are called **numerics**.
-- Whole numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- 像 `4.5` 這類小數稱為 **numeric（數值型）**。
+- 像 `4` 這類整數稱為 **integer（整數型）**。整數型亦屬於數值型。
+- 布林值（`TRUE` 或 `FALSE`）稱為 **logical（邏輯型）**。
+- 文字（或字串）值稱為 **character（字元型）**。
 
-Note how the quotation marks in the editor indicate that `"some text"` is a string.
+請注意，編輯器中的引號表示 `"some text"` 是一個字串。
 
 `@instructions`
-Change the value of the:
+更改以下變數的值：
 
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+- 將變數 `my_numeric` 改為 `42`。
+- 將變數 `my_character` 改為 `"universe"`。注意，引號表示 `"universe"` 是字元。
+- 將變數 `my_logical` 改為 `FALSE`。
 
-Note that R is case sensitive!
+注意，R 語言區分大小寫！
 
 `@hint`
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`.
+請將編輯器中的數值替換成習題所提供的數值。例如：
+`my_numeric <- 42` 將數值 42 賦值給變數 `my_numeric`。
 
 `@pre_exercise_code`
 ```{r}
@@ -476,18 +470,18 @@ my_logical <- FALSE
 
 `@sct`
 ```{r}
-ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+ex() %>% check_object("my_numeric") %>% check_equal(incorrect_msg = "您是否正確地更改了 `my_numeric` 的宣告，使其包含值 42？")
 
-ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+ex() %>% check_object("my_character") %>% check_equal(incorrect_msg = "您是否正確地將 `my_character` 更改為 `\"universe\"`？別忘了引號！")
 
-ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+ex() %>% check_object("my_logical") %>% check_equal(incorrect_msg = "您是否正確地將 `my_logical` 更改為 `FALSE`？`FALSE` 的所有字母都應大寫！")
 
-success_msg("Great work! Continue to the next exercise.")
+success_msg("做得好！繼續進行下一個練習。")
 ```
 
 ---
 
-## What's that data type?
+## 這是什麼資料型別？
 
 ```yaml
 type: NormalExercise
@@ -497,13 +491,13 @@ skills:
   - 1
 ```
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code in the editor shows.
+你是否記得添加 `5 + "six"` 時，因為資料型別不相符而出錯？你可以先檢查變數的資料型別，從而避免這種尷尬情況。正如編輯器中的程式碼所示，你可以用 `class()` 函式實現。
 
 `@instructions`
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`.
+在編輯器中完成程式碼，並印出 `my_character` 和 `my_logical` 的類別。
 
 `@hint`
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`.
+用來印出 `my_numeric` 資料型別的程式碼已經包含在內；對 `my_character` 和 `my_logical` 進行類似操作。
 
 `@pre_exercise_code`
 ```{r}
@@ -546,18 +540,18 @@ class(my_logical)
 
 `@sct`
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "請勿更改變數的宣告！"
 ex()  %>% check_object("my_numeric", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_character", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
 ex()  %>% check_object("my_logical", undefined_msg = msg)  %>%  check_equal(incorrect_msg = msg)
 
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
-ex() %>% check_output_expr("class(my_numeric)",missing_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+patt <- "您是否已包含 `class(%1$s)` 以列印出 `%1$s` 的資料類型？"
+ex() %>% check_output_expr("class(my_numeric)",missing_msg = "請勿移除列印出 `my_numeric` 類型的程式碼。")
 
 ex() %>% check_output_expr("class(my_character)",missing_msg = sprintf(patt, "my_character"))
 
 ex() %>% check_output_expr("class(my_logical)",missing_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("恭喜！這是本章的最後一個練習。前往下一章以深入了解向量的世界！")
 ```

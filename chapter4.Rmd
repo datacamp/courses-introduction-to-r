@@ -1,15 +1,12 @@
 ---
-title_meta: Chapter 4
-title: Factors
+title_meta: 第 4 章
+title: 因子
 description: >-
-  Data often falls into a limited number of categories. For example, human hair
-  color can be categorized as black, brown, blond, red, grey, or white—and
-  perhaps a few more options for people who color their hair. In R, categorical
-  data is stored in factors. Factors are very important in data analysis, so
-  start learning how to create, subset, and compare them now.
+  資料往往歸入有限數量的型別。例如，人類的髮色可分為黑色、棕色、金色、紅色、灰色或白色——染髮的人可能還有其他選項。在 R
+  語言中，類別資料（categorical data）儲存於因子中。因子在資料分析中非常重要，立即開始學習如何建立因子、選取因子的子集，以及比較因子。
 ---
 
-## What's a factor and why would you use it?
+## 什麼是因子？為什麼要用它？
 
 ```yaml
 type: NormalExercise
@@ -19,19 +16,19 @@ skills:
   - 1
 ```
 
-In this chapter you dive into the wonderful world of **factors**.
+在本章中，你將深入探索 **因子（factor）** 的奇妙世界。
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values.
+因子一詞指的是一種統計資料型別，用來儲存類別變數。類別變數與連續變數的差異在於，類別變數只能歸屬於**有限數量的類別**。反之，連續變數則可對應無限多個值。
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+R 語言必須知道它處理的是連續變數還是類別變數，這點很重要，因為你未來建立的統計模型，對這兩種類型的處理方式不同。（你之後會了解原因何在。）
 
-A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
+類別變數的一個好例子是性別。許多情況下，你可以將性別類別限定為「Male」（雄）或「Female」（雌）。（有時你可能需要不同類別。例如，你可能需要考慮染色體變異、雌雄同體動物，或不同的文化規範，但類別數量始終是有限的。）
 
 `@instructions`
-Assign to variable `theory` the value `"factors"`.
+將值 `"factors"` 賦值給變數 `theory`。
 
 `@hint`
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+直接賦值變數（`<-`）；注意大小寫正確。
 
 `@pre_exercise_code`
 ```{r}
@@ -51,20 +48,20 @@ theory <- "factors"
 
 `@sct`
 ```{r}
-msg_undef <- "It looks like you haven't defined the variable `theory`."
-msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors\"`. Remember that R is case sensitive."
-msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+msg_undef <- "看起來您尚未定義變數 `theory`。"
+msg_incor <- "`theory` 的值看起來不正確。請確保將其賦值為字串 `\"factors\"`。請記住，R 是區分大小寫的。"
+msg_err <- "請確保您正確定義了 `theory`，使用 `<-` 進行賦值。"
 
 # If get error and theory is undefined, point out the error
 ex()  %>% check_or(check_error(.,msg_err), check_object(.,"theory")  %>% check_equal(eval = FALSE))
 
 check_object(.,"theory", undefined_msg = msg_undef)  %>% check_equal(incorrect_msg = msg_incor)
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+success_msg("做得好！準備好了嗎？繼續進行下一個練習！")
 ```
 
 ---
 
-## What's a factor and why would you use it? (2)
+## 什麼是因子？為何要使用它？（2）
 
 ```yaml
 type: NormalExercise
@@ -74,26 +71,26 @@ skills:
   - 1
 ```
 
-To create factors in R, you make use of the function `factor()`. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `sex_vector` contains the sex of 5 different individuals:
+在 R 語言中，若要建立因子，可以使用 `factor()` 函式。首先，你需要建立一個向量，內含所有屬於有限類別的觀測值。例如，`sex_vector` 包含 5 位不同個體的性別：
 
 ```
 sex_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: <span translate="no">"Male"</span> and <span translate="no">"Female"</span>.
+顯然，這裡只有兩個類別，或用 R 語言的術語來說是 **「因子水準」**：<span translate="no">"Male"</span> 與 <span translate="no">"Female"</span>。
 
-The function `factor()` will encode the vector as a factor:
+`factor()` 函式會把該向量編碼成因子：
 
 ```
 factor_sex_vector <- factor(sex_vector)
 ```
 
 `@instructions`
-- Convert the character vector `sex_vector` to a factor with `factor()` and assign the result to `factor_sex_vector`
-- Print out `factor_sex_vector` and assert that R prints out the factor levels below the actual values.
+- 使用 `factor()` 將字元向量 `sex_vector` 轉成因子，並將結果賦值給 `factor_sex_vector`。
+- 印出 `factor_sex_vector`，並確認 R 語言會在實際值下方印出因子水準。
 
 `@hint`
-Simply use the function `factor()` on `sex_vector`. Have a look at the assignment, the answer is already there somewhere...
+直接對 `sex_vector` 使用 `factor()` 函式即可。參考題目內容，答案早已藏在其中……
 
 `@pre_exercise_code`
 ```{r}
@@ -126,15 +123,15 @@ factor_sex_vector
 
 `@sct`
 ```{r}
-ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
-ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "Don't forget to print out `factor_sex_vector`!")
+ex()  %>%  check_object("factor_sex_vector")  %>% check_equal(incorrect_msg = "您是否將 `sex_vector` 的因子賦值給 `factor_sex_vector`？")
+ex()  %>%  check_output_expr("factor_sex_vector", missing_msg = "別忘了輸出 `factor_sex_vector`！")
 
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+success_msg("太好了！如果您想了解更多關於 `factor()` 函數的信息，請隨時在控制台中輸入 `?factor`。這將打開一個幫助頁面。繼續進行下一個練習。");
 ```
 
 ---
 
-## What's a factor and why would you use it? (3)
+## 什麼是因子？為什麼要用它？（3）
 
 ```yaml
 type: NormalExercise
@@ -144,17 +141,17 @@ skills:
   - 1
 ```
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**.
+類別變數有兩種類型：**名目類別變數**與**有序類別變數**。
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).
+名目變數是沒有隱含順序的類別變數。這意味著你無法區分價值大小。例如，考慮類別變數 `animals_vector`，其類別包含 `"Elephant"`、`"Giraffe"`、`"Donkey"` 和 `"Horse"`。在這裡，無法區分孰高孰低。（當然，有些人可能不太同意 ;-)）。
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+相對地，有序變數具有自然的順序。以類別變數 `temperature_vector` 為例，其類別包含 `"Low"`、`"Medium"` 和 `"High"`。在這裡很明顯，`"Medium"` 高於 `"Low"`，而 `"High"` 又高於 `"Medium"`。
 
 `@instructions`
-Submit the answer to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+送出答案，查看 R 語言如何建立並印出名目與有序變數。即使尚未完全理解程式碼，也沒關係，稍後會再說明。
 
 `@hint`
-Just submit the answer and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+直接送出答案並查看主控台。留意 R 語言如何為有序類別變數標示因子水準的順序。
 
 `@pre_exercise_code`
 ```{r}
@@ -189,7 +186,7 @@ factor_temperature_vector
 
 `@sct`
 ```{r}
-msg <- "Do not change anything about the sample code. Simply submit the answer and inspect the solution!"
+msg <- "請勿更改範例程式碼的任何內容。只需提交答案並檢查解決方案！"
 
 ex() %>% check_object("animals_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -204,12 +201,12 @@ ex() %>% check_object("factor_temperature_vector", undefined_msg = msg) %>% chec
 ex() %>% check_output_expr("factor_temperature_vector", missing_msg = msg)
 
 
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("您是否已經知道這個練習中發生了什麼？太棒了！繼續進行下一個練習，深入了解因子水平的細節。")
 ```
 
 ---
 
-## Factor levels
+## 因子水準
 
 ```yaml
 type: NormalExercise
@@ -219,28 +216,28 @@ skills:
   - 1
 ```
 
-When you first get a dataset, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function `levels()`:
+初次取得資料集時，你常會注意到它包含帶特定因子水準的因子。不過，有時為了清楚起見或其他緣故，你會想更改這些水準的名稱。R 語言允許你用 `levels()` 函式實現：
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
 
-A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, `"M"` and `"F"`. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) 
+問卷調查提供的原始資料就是很好的例子。每份問卷通常都會詢問受訪者性別。為了簡化，只記錄兩個類別，`"M"` 與 `"F"`。（問卷調查資料通常需要更多類別；無論如何，你都會用因子來存放類別資料。）
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Recording the sex with the abbreviations `"M"` and `"F"` can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` for clarity.
+若用紙筆蒐集資料，用縮寫 `"M"` 和 `"F"` 來記錄性別或許方便，但在分析資料時可能造成混淆。此時，為清楚起見，你常會想將因子水準改為 `"Male"` 與 `"Female"`，而不是 `"M"` 與 `"F"`。
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order.
+**注意：**指定水準的順序很重要。若輸入 `levels(factor_survey_vector)`，你會看到輸出 `[1] "F" "M"`。在建立向量時，若未指定因子水準，`R` 會自動依字母順序指定。若要正確將 `"F"` 對應到 `"Female"`、`"M"` 對應到 `"Male"`，就要把水準依此順序設為 `c("Female", "Male")`。
 
 `@instructions`
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- 查看從 `survey_vector` 建立因子向量的程式碼。你會在下一步用到 `factor_survey_vector`。
+- 將 `factor_survey_vector` 的因子水準改成 `c("Female", "Male")`。注意此處向量元素的順序。
 
 `@hint`
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+注意輸入因子水準的順序。提示：輸入 `levels(factor_survey_vector)` 時，觀察印出的水準順序。
 
 `@pre_exercise_code`
 ```{r}
@@ -275,9 +272,9 @@ factor_survey_vector
 
 `@sct`
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = "請勿更改 `survey_vector` 的定義！"
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "請勿更改或移除用於創建因子向量的程式碼。"
 ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>% check_equal(incorrect_msg = msg)
 
 # MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
@@ -285,15 +282,14 @@ ex()  %>% check_function("factor", not_called_msg = msg) %>% check_arg('x')  %>%
 # MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
 # test_student_typed('c("Male", "Female")')
 
-ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+ex()  %>% check_object("factor_survey_vector") %>% check_equal(eq_condition = "equal", incorrect_msg = paste("您是否為 `factor_survey_vector` 指定了正確的因子層級？使用 `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`。請記住，R 是區分大小寫的！"))
 
-
-success_msg("Wonderful! Proceed to the next exercise.")
+success_msg("太棒了！繼續進行下一個練習。")
 ```
 
 ---
 
-## Summarizing a factor
+## 彙總一個因子
 
 ```yaml
 type: NormalExercise
@@ -303,19 +299,19 @@ skills:
   - 1
 ```
 
-After finishing this course, one of your favorite functions in R will be `summary()`. This will give you a quick overview of the contents of a variable:
+完成這門課之後，`summary()` 會成為你最喜愛的 R 語言函式之一。它能讓你快速綜覽變數內容：
 
 ```
 summary(my_var)
 ```
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The `summary` function gives you the answer to this question.
+回到我們的問卷調查，你想知道研究中有多少回覆是 `"Male"`，以及多少是 `"Female"`。`summary` 函式會回答此問題。
 
 `@instructions`
-Ask a `summary()` of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+對 `survey_vector` 與 `factor_survey_vector` 分別呼叫 `summary()`。解讀這兩個向量的結果。在此情境下，兩者實用程度是否相同？
 
 `@hint`
-Call the `summary()` function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+同時對 `survey_vector` 與 `factor_survey_vector` 呼叫 `summary()` 函式，就這麼簡單！
 
 `@pre_exercise_code`
 ```{r}
@@ -354,24 +350,24 @@ summary(factor_survey_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "請勿更改定義 `survey_vector` 和 `factor_survey_vector` 的前幾行內容。"
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_survey_vector",  undefined_msg = msg) %>% check_equal(eq_condition = "equal",incorrect_msg = msg)
 
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "您是否正確使用 `summary()` 來生成 `%s` 的摘要？"
 
 ex() %>% check_output_expr("summary(survey_vector)", missing_msg = sprintf(msg, "survey_vector"))
 
 ex() %>% check_output_expr("summary(factor_survey_vector)", missing_msg = sprintf(msg, "factor_survey_vector"))
 
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("很好！看看輸出結果。您在 `factor_survey_vector` 中識別 `\"Male\"` 和 `\"Female\"` 作為因子水平，使得 R 能夠顯示每個類別的元素數量。")
 ```
 
 ---
 
-## Battle of the sexes
+## 性別之戰
 
 ```yaml
 type: NormalExercise
@@ -381,13 +377,13 @@ skills:
   - 1
 ```
 
-You might wonder what happens when you try to compare elements of a factor.  In `factor_survey_vector` you have a factor with two levels: `"Male"` and `"Female"`. But how does R value these relative to each other?
+你也許會好奇，比較因子的元素時會發生什麼事。`factor_survey_vector`中包含一個具有兩個水準的因子：`"Male"` 和 `"Female"`。但 R 語言如何判斷兩者的相對大小呢？
 
 `@instructions`
-Read the code in the editor and submit the answer to test if `male` is greater than (`>`) `female`.
+閱讀編輯器中的程式碼，並送出答案，測試 `male` 是否大於（`>`）`female`。
 
 `@hint`
-Just submit the answer and have a look at output that gets printed to the console.
+直接送出答案，並查看主控台輸出的結果。
 
 `@pre_exercise_code`
 ```{r}
@@ -430,7 +426,7 @@ male > female
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the code; simply submit the answer and look at the result."
+msg = "請勿更改程式碼的任何部分；只需提交答案並查看結果。"
 
 ex() %>% check_object("survey_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
@@ -443,12 +439,12 @@ ex() %>% check_object("female", undefined_msg = msg) %>% check_equal(incorrect_m
 ex() %>% check_output_expr("male > female", missing_msg = msg)
 
 
-success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+success_msg("多麼有趣！預設情況下，當您嘗試比較因子中的值時，R 會返回 `NA`，因為這個想法沒有意義。接下來，您將了解有序因子，在這裡可以進行更有意義的比較。")
 ```
 
 ---
 
-## Ordered factors
+## 有序因子
 
 ```yaml
 type: NormalExercise
@@ -458,25 +454,25 @@ skills:
   - 1
 ```
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.
+由於 `"Male"` 與 `"Female"` 是無序（名目）因子水準，R 語言會回傳警告訊息，告訴你大於運算子沒有意義。如先前所見，對於這類因子，R 語言會為各水準賦予相等的值。
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...
+但情況並非總是如此！有時，你也會遇到類別之間確有自然順序的因子。若是如此，我們就必須確保將這項資訊傳遞給 R 語言。
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"medium"` or `"fast"`, and save the results in `speed_vector`.
+假設你帶領一個由五位資料分析師組成的研究團隊，想要評估他們的表現。為此，你追蹤他們的速度，將每位分析師評為 `"slow"`、`"medium"` 或 `"fast"`，並將結果存於 `speed_vector`。
 
 `@instructions`
-As a first step, assign `speed_vector` a vector with 5 entries, one for each analyst. Each entry should be either `"slow"`, `"medium"`, or `"fast"`. Use the list below:
+第一步，將 `speed_vector` 指定為一個含有 5 個項目的向量，每位分析師各一個。每個項目應為 `"slow"`、`"medium"` 或 `"fast"` 其中之一。請使用以下清單：
 
-- Analyst 1 is medium,
-- Analyst 2 is slow,
-- Analyst 3 is slow,
-- Analyst 4 is medium and
-- Analyst 5 is fast.
+- 分析師 1 為 medium（中），
+- 分析師 2 為 slow（慢），
+- 分析師 3 為 slow（慢），
+- 分析師 4 為 medium（中），
+- 分析師 5 為 fast（快）。
 
-No need to specify these are factors yet.
+目前還不必指明這些是因子。
 
 `@hint`
-Assign to `speed_vector` a vector containing the character strings `"slow"`, `"medium"`, or `"fast"`.
+將含有字串 `"slow"`、`"medium"` 或 `"fast"`的向量賦值給 `speed_vector`。
 
 `@pre_exercise_code`
 ```{r}
@@ -497,14 +493,14 @@ speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 `@sct`
 ```{r}
-ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+ex() %>% check_object("speed_vector") %>% check_equal(incorrect_msg = "`speed_vector` 應該是一個包含 5 個條目的向量，每個條目代表分析師的速度評分。不要使用大寫字母；R 區分大小寫！")
 
-success_msg("A job well done! Continue to the next exercise.")
+success_msg("做得很好！繼續進行下一個練習。")
 ```
 
 ---
 
-## Ordered factors (2)
+## 有序因子（2）
 
 ```yaml
 type: NormalExercise
@@ -514,7 +510,7 @@ skills:
   - 1
 ```
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function `factor()` transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`.
+`speed_vector` 應轉換為有序因子，因為其類別有自然順序。預設情況下，`factor()` 函式會將 `speed_vector` 轉成「無序因子」。若要建立有序因子，你需要再增加兩個參數：`ordered` 和 `levels`。
 
 ```
 factor(some_vector,
@@ -522,13 +518,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ```
 
-By setting the argument `ordered` to `TRUE` in the function `factor()`, you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+在 `factor()` 函式中將引數 `ordered` 設為 `TRUE`，即可表示此因子是有序因子。透過引數 `levels`，你可依正確順序給出因子的值。
 
 `@instructions`
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "medium", "fast")`.
+從 `speed_vector` 建立一個有序因子向量 `factor_speed_vector`。將 `ordered` 設為 `TRUE`，並將 `levels` 設為 `c("slow", "medium", "fast")`。
 
 `@hint`
-Use the function `factor()` to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "medium", "fast")`.
+使用 `factor()` 函式，根據 `speed_character_vector` 建立 `factor_speed_vector`。由於有自然順序，引數 `ordered` 應設為 `TRUE`。同時，設定  `levels = c("slow", "medium", "fast")`。
 
 `@pre_exercise_code`
 ```{r}
@@ -563,26 +559,26 @@ summary(factor_speed_vector)
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = "請勿更改指定 `speed_vector` 變數的命令。"
 
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_function("factor") %>% {
-	check_arg(., 'x') %>% check_equal(incorrect_msg="The first argument you pass to `factor()` should be `speed_vector`.")
-	check_arg(., 'ordered') %>% check_equal(incorrect_msg="Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-	check_arg(., 'levels') %>% check_equal(incorrect_msg="Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+	check_arg(., 'x') %>% check_equal(incorrect_msg="您傳遞給 `factor()` 的第一個參數應該是 `speed_vector`。")
+	check_arg(., 'ordered') %>% check_equal(incorrect_msg="請確保在 `factor()` 的調用中設置 `ordered = TRUE`。")
+	check_arg(., 'levels') %>% check_equal(incorrect_msg="請確保在 `factor()` 的調用中設置 `levels = c(\"slow\", \"medium\", \"fast\")`。")
 	}
 
-ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+ex() %>% check_object("factor_speed_vector") %>% check_equal(eq_condition = "equal", incorrect_msg="`factor_speed_vector` 仍然有問題；請確保在 `factor()` 的調用中僅傳遞 `speed_vector`、`ordered = TRUE` 和 `levels = c(\"slow\", \"medium\", \"fast\")`。")
 
                       
                       
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+success_msg("太好了！請查看控制台。現在顯示 Levels 確實有一個與 `<` 符號相關的順序。繼續進行下一個練習。")
 ```
 
 ---
 
-## Comparing ordered factors
+## 比較有序因子
 
 ```yaml
 type: NormalExercise
@@ -592,18 +588,18 @@ skills:
   - 1
 ```
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.
+二號資料分析師今天上班心情不好，走進你的辦公室，開始抱怨五號資料分析師正在拖慢整個專案。由於你知道二號資料分析師一向自以為是，你決定先查證他的說法是否屬實。
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+`factor_speed_vector` 現已為有序因子，我們得以比較不同的元素（這裡就是各位資料分析師）。你只要使用眾所皆知的運算子，即可輕鬆完成。
 
 `@instructions`
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- 用 `[2]` 從 `factor_speed_vector` 中選取第二位資料分析師的因子值。將其存成 `da2`。
+- 用 `[5]` 從 `factor_speed_vector` 中選取第五位資料分析師的因子值。將其存成 `da5`。
+- 檢查 `da2` 是否大於 `da5`，直接印出結果即可。記住，使用運算子 `>`，即可檢查某個元素是否大於另一個元素。
 
 `@hint`
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- 若要選取第三位資料分析師的因子值，可使用 `factor_speed_vector[3]`。
+- 若要比較兩個值，可使用 `>`。例如：`da3 > da4`。
 
 `@pre_exercise_code`
 ```{r}
@@ -644,19 +640,19 @@ da2 > da5
 
 `@sct`
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "請勿更改定義 `speed_vector` 和 `factor_speed_vector` 的命令！"
 ex() %>% check_object("speed_vector", undefined_msg = msg) %>% check_equal(incorrect_msg = msg)
 
 ex() %>% check_object("factor_speed_vector", undefined_msg = msg) %>% check_equal(eq_condition = "equal", incorrect_msg = msg)
 
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"second", "2"))
+msg <- "您是否正確選擇了 %s 資料分析師的因子值？您可以使用 `factor_speed_vector[%s]`。"
+ex() %>% check_object("da2") %>% check_equal(eq_condition = "equal", incorrect_msg = sprintf(msg,"第二", "2"))
 
-ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("fifth", "5"))
+ex() %>% check_object("da5") %>% check_equal(eq_condition = "equal",incorrect_msg = sprintf("第五", "5"))
 
-ex() %>% check_output_expr("da2 > da5", missing_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+ex() %>% check_output_expr("da2 > da5", missing_msg = "您是否正確比較了 `da2` 和 `da5`？您可以使用 `>`。只需打印出結果即可。")
 
 
-success_msg("Bellissimo! What does the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("太棒了！結果告訴您什麼？資料分析師二抱怨資料分析師五，而事實上他們才是拖慢一切的人！這結束了因子的章節。擁有向量、矩陣和因子的堅實基礎後，您已準備好進入資料框這個非常重要的 R 資料結構的奇妙世界！")
 ```
